@@ -19,18 +19,14 @@ func _ready():
 
 func _physics_process(delta):
 	
-	velocity = Vector3.ZERO
-	nav_agent.set_target_position(player.global_transform.origin)
-	var next_nav_point = nav_agent.get_next_path_position()
-	velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
-	rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10.0)
+	#velocity = Vector3.ZERO
+	#nav_agent.set_target_position(player.global_transform.origin)
+	#var next_nav_point = nav_agent.get_next_path_position()
+	#velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
+	#rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10.0)
 	
-	move_and_slide()
-	#$Node3D.look_at(player.global_transform.origin,Vector3.FORWARD)
-	#rotate_y(deg_to_rad($Node3D.rotation.y*turn_speed))
-	#$MeshInstance3D/NavigationAgent3D.set_target_position(player.global_transform.origin)
-	#var velocity = ($MeshInstance3D/NavigationAgent3D.get_next_path_position() - transform.origin).normalized() *SPEED *delta
-	#move_and_collide(velocity)
+	#move_and_slide()
+
 	
 	if(hp <= 0):
 		dying()
