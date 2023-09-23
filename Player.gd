@@ -1,0 +1,234 @@
+extends CharacterBody3D
+
+var speed
+const SPEED_CROUCH = 1.0
+const SPEED_WALK = 5.0
+const SPEED_RUN = 17.0
+const JUMP_VELOCITY = 4.5
+
+
+const SENSITIVITY = 0.001
+
+#head bob
+const BOB_FREQUENCY = 2.0
+const BOB_AMPLITUDE = 0.08
+var t_bob = 0.0
+#fov constants
+const FOV_BASE = 75.0
+const FOV_SPRINT_SCALE = 1.5
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = 9.8
+
+@onready var head = $Head
+@onready var camera = $Head/Camera3D
+@onready var guncamera = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D
+@onready var collisionshape = $CollisionShape3D2
+@onready var mesh = $MeshInstance3D
+@onready var equipped = null
+@onready var animation_player = $AnimationPlayer
+@onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
+@onready var state_move = 0
+#0.. walking
+#1.. running
+#2.. crouching
+#3.. in air
+@onready var equipped_id = -1 #what item in hand
+#-1.. nothing
+#0.. gun
+#1.. shotgun
+
+@onready var inventory = []
+@onready var inventory_selector = 0
+
+#preload equippment? move somewhere
+@onready var asset_gun = preload("res://Scenes/gun.tscn")
+@onready var asset_shotgun = preload("res://Scenes/shotgun.tscn")
+@onready var asset_sniper = preload("res://Scenes/sniper.tscn")
+
+func _ready():
+	#adda gun to inventory
+	inventory.append({
+	"item_id": 0, #pistol
+	"loaded": 7,
+	"max_loaded": 7, # See above assignment.
+	"spare_ammo": 100
+	})
+	
+	inventory.append({
+	"item_id": 2, #sniper
+	"loaded": 5,
+	"max_loaded": 5, 
+	"spare_ammo": 10
+	})
+	
+	inventory.append({
+	"item_id": 1, #shotgun
+	"loaded": 2,
+	"max_loaded": 2, 
+	"spare_ammo": 4
+	})
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	equip_weapon()
+	#var MainEnv = camera.get_environment()
+	#guncamera.set_environment(MainEnv)
+
+	
+func _unhandled_input(event):
+	if event is InputEventMouseMotion:
+		rotate_y(-event.relative.x*SENSITIVITY)
+		camera.rotate_x(-event.relative.y*SENSITIVITY)
+		camera.rotation.x = clamp(camera.rotation.x,deg_to_rad(-89),deg_to_rad(90))
+		
+func _physics_process(delta):
+
+	
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+		state_move = 3
+	else:
+		state_move = 0
+	
+	#display ammo
+	display_ammo.clear()
+	display_ammo.insert_text_at_caret(str(inventory[inventory_selector].loaded)+"/"+str(inventory[inventory_selector].spare_ammo))
+	
+	# Handle Jump.
+	if Input.is_action_just_pressed("key_jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	
+	#run
+	if (Input.is_action_pressed("key_run") && (state_move < 2)):
+		speed = SPEED_RUN
+		state_move = 1
+	elif(Input.is_action_pressed("key_crouch") && (state_move != 2)):
+		speed = SPEED_CROUCH
+		state_move = 2
+	else:
+		speed = SPEED_WALK
+		state_move = 0
+	
+	#swap weapon
+	if Input.is_action_just_pressed("key_next_weapon"):
+		
+		if equipped != null:
+			if equipped.animation_player.is_playing():
+				pass
+			else:
+				equipped.animation_player.play("change weapon out") #this does not work
+		equipped.queue_free() 
+		inventory_selector += 1
+		equip_weapon()
+		
+	#shoot
+	if(Input.is_action_just_pressed("key_shoot")):
+		if equipped_id != -1:
+			equipped.shoot(inventory_selector)
+		else:
+			pass
+	
+	#reload
+	if(Input.is_action_just_pressed("key_reload")):
+		if equipped_id != -1:
+			equipped.reload(inventory_selector)
+		else:
+			pass
+	
+	#crouch
+	match state_move:
+		2:
+			collisionshape.scale.y = 0.5
+			mesh.scale.y = 0.5
+			#if animation_player.is_playing():
+				#pass
+			#elif animation_player.animation_finished("duck"):
+				#pass
+			#else:
+				
+				#animation_player.play("duck")
+		_:
+			collisionshape.scale.y = 1
+			mesh.scale.y = 1
+			pass
+	#if state_move == 2:
+	#else:
+		#crouch
+		
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir = Input.get_vector("key_left", "key_right", "key_forward", "key_backward")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if is_on_floor():
+		if direction:
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+		else:
+			velocity.x = lerp(velocity.x,direction.x*speed,delta*7.0)
+			velocity.z = lerp(velocity.z,direction.z*speed,delta*7.0)
+	else:
+		velocity.x = lerp(velocity.x,direction.x*speed,delta*2.0)
+		velocity.z = lerp(velocity.z,direction.z*speed,delta*2.0)
+	
+	#head bob
+	t_bob += delta *velocity.length()*float(is_on_floor())
+	camera.transform.origin = _headbob(t_bob)
+	
+	#set guncamera to the place of camera
+	guncamera.global_transform = camera.global_transform
+	guncamera.fov = camera.fov
+	
+	#FOV
+	var velocity_clamped = clamp(velocity.length(),0.5,SPEED_RUN*2)	
+	var target_fov = FOV_BASE +FOV_SPRINT_SCALE * velocity_clamped
+	camera.fov = lerp(camera.fov,target_fov, delta*8.0)
+	
+	move_and_slide()
+
+	
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQUENCY)*BOB_AMPLITUDE
+	pos.x = cos(time * BOB_FREQUENCY/2)*BOB_AMPLITUDE/2
+	return pos
+
+func equip_weapon():
+		#equip weapon
+	if(inventory_selector<inventory.size()):
+		equipped_id = inventory[inventory_selector].item_id
+	else:
+		inventory_selector = 0
+	match inventory[inventory_selector].item_id:
+		0:
+			var new_gun = asset_gun.instantiate()
+			camera.add_child(new_gun)
+			new_gun.position = camera.position
+			new_gun.rotate_y(deg_to_rad(90))
+			new_gun.transform.origin = Vector3(1,-0.8,-1)
+			new_gun.animation_player.play("change weapon in")
+			new_gun.player = $"." #get the inventory of the player
+			equipped = new_gun
+		1:
+			var new_shotgun = asset_shotgun.instantiate()
+			camera.add_child(new_shotgun)
+			new_shotgun.position = camera.position
+			new_shotgun.rotate_y(deg_to_rad(90))
+			new_shotgun.transform.origin = Vector3(1,-0.8,-1)
+			new_shotgun.animation_player.play("change weapon in")
+			new_shotgun.player = $"." #get the inventory of the player
+			equipped = new_shotgun
+		2:
+			var new_sniper = asset_sniper.instantiate()
+			camera.add_child(new_sniper)
+			new_sniper.position = camera.position
+			new_sniper.rotate_y(deg_to_rad(90))
+			new_sniper.transform.origin = Vector3(1,-0.8,-1)
+			new_sniper.animation_player.play("change weapon in")
+			new_sniper.player = $"." #get the inventory of the player
+			equipped = new_sniper
+		-1: #nothing equipped
+			pass
+		_:
+			equipped_id = -1
+			pass
