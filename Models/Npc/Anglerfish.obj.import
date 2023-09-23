@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjgu2ncjpalui"
+path="res://.godot/imported/Anglerfish.obj-10164851ef0e091a826e50b2dead49ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Anglerfish.obj-10164851ef0e091a826e50b2dead49ad.mesh"]
+
+source_file="res://Models/Npc/Anglerfish.obj"
+dest_files=["res://.godot/imported/Anglerfish.obj-10164851ef0e091a826e50b2dead49ad.mesh", "res://.godot/imported/Anglerfish.obj-10164851ef0e091a826e50b2dead49ad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

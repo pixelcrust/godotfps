@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6jfr2f43csfk"]
+
+[ext_resource type="ArrayMesh" uid="uid://deyn2uu7t6n8e" path="res://Models/Level/Tent.obj" id="1_q5sya"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0xad"]
+albedo_color = Color(0.388235, 0.145098, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fl1s2"]
+albedo_color = Color(0.101961, 0.2, 0.172549, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfj8g"]
+albedo_color = Color(0.156863, 0.243137, 0.105882, 1)
+metallic = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncgwp"]
+albedo_color = Color(0.4, 0.298039, 0.121569, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tdate"]
+points = PackedVector3Array(-6, 0, -6, -6, 0, 6, 6, 0, -6, 6, 0, 6, 0, 10, 6, 0, 10, -6)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("1_q5sya")
+surface_material_override/0 = SubResource("StandardMaterial3D_r0xad")
+surface_material_override/1 = SubResource("StandardMaterial3D_fl1s2")
+surface_material_override/2 = SubResource("StandardMaterial3D_wfj8g")
+surface_material_override/3 = SubResource("StandardMaterial3D_ncgwp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0714998, -0.127134, 0.0821896)
+shape = SubResource("ConvexPolygonShape3D_tdate")

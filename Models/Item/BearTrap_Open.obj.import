@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2d3etf5e7bip"
+path="res://.godot/imported/BearTrap_Open.obj-96d1dc322e0cc3f6a6e27e301ce2dec6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BearTrap_Open.obj-96d1dc322e0cc3f6a6e27e301ce2dec6.mesh"]
+
+source_file="res://Models/Item/BearTrap_Open.obj"
+dest_files=["res://.godot/imported/BearTrap_Open.obj-96d1dc322e0cc3f6a6e27e301ce2dec6.mesh", "res://.godot/imported/BearTrap_Open.obj-96d1dc322e0cc3f6a6e27e301ce2dec6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

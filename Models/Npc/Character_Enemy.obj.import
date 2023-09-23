@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b13f8yw607lfv"
+path="res://.godot/imported/Character_Enemy.obj-3f9637b80c9d27f7ac4eb1d801dee397.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Character_Enemy.obj-3f9637b80c9d27f7ac4eb1d801dee397.mesh"]
+
+source_file="res://Models/Npc/Character_Enemy.obj"
+dest_files=["res://.godot/imported/Character_Enemy.obj-3f9637b80c9d27f7ac4eb1d801dee397.mesh", "res://.godot/imported/Character_Enemy.obj-3f9637b80c9d27f7ac4eb1d801dee397.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
