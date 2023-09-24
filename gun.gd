@@ -35,9 +35,6 @@ func reload(inventory_selector):
 		animation_player.play("reload")
 		var space = player.inventory[inventory_selector].max_loaded-player.inventory[inventory_selector].loaded
 		if space != 0:
-			if player.inventory[inventory_selector].spare_ammo >= space:
-				player.inventory[inventory_selector].loaded += space
-				player.inventory[inventory_selector].spare_ammo -= space
-			else:
-				player.inventory[inventory_selector].loaded += player.inventory[inventory_selector].spare_ammo
-				player.inventory[inventory_selector].spare_ammo = 0
+			var reload_amount = min(space, player.inventory[inventory_selector].spare_ammo)
+			player.inventory[inventory_selector].loaded += reload_amount
+			player.inventory[inventory_selector].spare_ammo -= reload_amount
