@@ -46,6 +46,9 @@ var gravity = 9.8
 @onready var asset_shotgun = preload("res://Scenes/shotgun.tscn")
 @onready var asset_sniper = preload("res://Scenes/sniper.tscn")
 
+@onready var hp_start = 150
+@onready var hp = hp_start
+
 func _ready():
 	#adda gun to inventory
 	inventory.append({
@@ -83,7 +86,9 @@ func _unhandled_input(event):
 		
 func _physics_process(delta):
 
-	
+	#if ded
+	if hp <= 0:
+		die()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -186,7 +191,9 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
-	
+func die():
+	print("'im dedd', xqc")
+
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQUENCY)*BOB_AMPLITUDE
@@ -232,3 +239,17 @@ func equip_weapon():
 		_:
 			equipped_id = -1
 			pass
+
+
+func _on_bone_head_bodypart_hit(dmg):
+	print("player minus leben" +str(dmg))
+	
+	hp -= dmg
+	print("player hp: " +str(hp))
+
+
+func _on_bone_body_bodypart_hit(dmg):
+	print("player minus leben" +str(dmg))
+	
+	hp -= dmg
+	print("player hp: " +str(hp))

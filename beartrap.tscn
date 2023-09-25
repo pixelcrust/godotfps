@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvihmp2ma48n5"]
+[gd_scene load_steps=8 format=3 uid="uid://cvihmp2ma48n5"]
 
+[ext_resource type="Script" path="res://beartrap.gd" id="1_4l02p"]
 [ext_resource type="ArrayMesh" uid="uid://d2d3etf5e7bip" path="res://Models/Item/BearTrap_Open.obj" id="1_rbux1"]
 [ext_resource type="ArrayMesh" uid="uid://bpu8ejeyvl3ps" path="res://Models/Item/BearTrap_Closed.obj" id="2_gjs45"]
 
@@ -44,10 +45,14 @@ _data = {
 }
 
 [node name="Beartrap" type="Node3D"]
+script = ExtResource("1_4l02p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_rbux1")
 surface_material_override/0 = SubResource("StandardMaterial3D_8xk0m")
+
+[node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
