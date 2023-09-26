@@ -28,6 +28,7 @@ var gravity = 9.8
 @onready var equipped = null
 @onready var animation_player = $AnimationPlayer
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
+@onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
 @onready var state_move = 0
 #0.. walking
 #1.. running
@@ -99,6 +100,10 @@ func _physics_process(delta):
 	#display ammo
 	display_ammo.clear()
 	display_ammo.insert_text_at_caret(str(inventory[inventory_selector].loaded)+"/"+str(inventory[inventory_selector].spare_ammo))
+	
+	#display hp
+	display_hp.clear()
+	display_hp.insert_text_at_caret(str(hp))
 	
 	# Handle Jump.
 	if Input.is_action_just_pressed("key_jump") and is_on_floor():

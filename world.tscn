@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=16 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://background top.png" id="1_pb7b5"]
 [ext_resource type="PackedScene" uid="uid://c7akcggds32mw" path="res://Scenes/tree.tscn" id="3_1elic"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhunj16wsng6n" path="res://propane_tank.tscn" id="5_gh7ya"]
 [ext_resource type="PackedScene" uid="uid://csmo3ugeusx1s" path="res://fish.tscn" id="6_ekceb"]
 [ext_resource type="PackedScene" uid="uid://cjunlnpml1r6h" path="res://gate.tscn" id="8_6stjv"]
+[ext_resource type="PackedScene" uid="uid://cvihmp2ma48n5" path="res://beartrap.tscn" id="8_f6haw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -108,3 +109,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.70704, 3.00369, 0)
 
 [node name="Node3D5" parent="NavigationRegion3D" instance=ExtResource("8_6stjv")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 19.5443, 1.4972, -10.5522)
+
+[node name="Beartrap" parent="." instance=ExtResource("8_f6haw")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.9824, 0.846079, 5.52945)
+
+[node name="Beartrap2" parent="." instance=ExtResource("8_f6haw")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.3315, 0.846078, 10.1137)
+
+[node name="Beartrap3" parent="." instance=ExtResource("8_f6haw")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -13.8407, 0.846079, 14.7131)

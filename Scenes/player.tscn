@@ -157,6 +157,13 @@ offset_right = 1112.0
 offset_bottom = 603.0
 placeholder_text = "L/S"
 
+[node name="display_hp" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 80.0
+placeholder_text = "HP"
+
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["has_hp"]]
 collision_layer = 2
 collision_mask = 2
