@@ -44,7 +44,7 @@ _data = {
 "close": SubResource("Animation_f134b")
 }
 
-[node name="Beartrap" type="Node3D"]
+[node name="Beartrap" type="Node3D" groups=["interactable"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_4l02p")
 
@@ -60,3 +60,5 @@ collision_mask = 2
 libraries = {
 "": SubResource("AnimationLibrary_2i5im")
 }
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -173,6 +173,9 @@ damage_multiplier = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/bone_head"]
 shape = SubResource("SphereShape3D_3bbqp")
 
+[node name="raycast_interaction" type="RayCast3D" parent="Head"]
+transform = Transform3D(5.73206e-15, 1.31134e-07, 3, 3, -1.31134e-07, 0, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_j2af8")

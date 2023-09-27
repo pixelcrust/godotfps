@@ -23,13 +23,17 @@ var gravity = 9.8
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var guncamera = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D
+@onready var raycast_interaction = $Head/raycast_interaction
 @onready var collisionshape = $CollisionShape3D2
 @onready var mesh = $MeshInstance3D
 @onready var equipped = null
 @onready var animation_player = $AnimationPlayer
+
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
 @onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
+
 @onready var state_move = 0
+
 #0.. walking
 #1.. running
 #2.. crouching
@@ -122,6 +126,14 @@ func _physics_process(delta):
 		set_speed(SPEED_WALK)
 		state_move = 0
 	
+	#interact
+	if Input.is_action_pressed("Interact") and raycast_interaction.is_colliding():
+		print("hoi")
+		if raycast_interaction.get_collider().is_in_group("interactable"):
+			pass
+		else:
+			pass
+		
 	#swap weapon
 	if Input.is_action_just_pressed("key_next_weapon"):
 		
