@@ -30,11 +30,12 @@ var gravity = 9.8
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
 @onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
 @onready var state_move = 0
-@onready var is_rooted = false
 #0.. walking
 #1.. running
 #2.. crouching
 #3.. in air
+@onready var is_rooted = false
+
 @onready var equipped_id = -1 #what item in hand
 #-1.. nothing
 #0.. gun
@@ -152,13 +153,6 @@ func _physics_process(delta):
 		2:
 			collisionshape.scale.y = 0.5
 			mesh.scale.y = 0.5
-			#if animation_player.is_playing():
-				#pass
-			#elif animation_player.animation_finished("duck"):
-				#pass
-			#else:
-				
-				#animation_player.play("duck")
 		_:
 			collisionshape.scale.y = 1
 			mesh.scale.y = 1
@@ -198,7 +192,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func die():
-	print("'im dedd', xqc")
+	queue_free()
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -248,16 +242,12 @@ func equip_weapon():
 
 
 func _on_bone_head_bodypart_hit(dmg):
-	print("player minus leben" +str(dmg))
 	hp -= dmg
-	print("player hp: " +str(hp))
 	set_rooted(1)
 
 
 func _on_bone_body_bodypart_hit(dmg):
-	print("player minus leben" +str(dmg))
 	hp -= dmg
-	print("player hp: " +str(hp))
 	set_rooted(1)
 
 
