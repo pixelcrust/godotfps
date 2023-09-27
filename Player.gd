@@ -30,6 +30,7 @@ var gravity = 9.8
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
 @onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
 @onready var state_move = 0
+@onready var is_rooted = false
 #0.. walking
 #1.. running
 #2.. crouching
@@ -111,13 +112,13 @@ func _physics_process(delta):
 	
 	#run
 	if (Input.is_action_pressed("key_run") && (state_move < 2)):
-		speed = SPEED_RUN
+		set_speed(SPEED_RUN)
 		state_move = 1
 	elif(Input.is_action_pressed("key_crouch") && (state_move != 2)):
-		speed = SPEED_CROUCH
+		set_speed(SPEED_CROUCH)
 		state_move = 2
 	else:
-		speed = SPEED_WALK
+		set_speed(SPEED_WALK)
 		state_move = 0
 	
 	#swap weapon
@@ -172,14 +173,14 @@ func _physics_process(delta):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
 		if direction:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
+			velocity.x = direction.x * get_speed()
+			velocity.z = direction.z * get_speed()
 		else:
-			velocity.x = lerp(velocity.x,direction.x*speed,delta*7.0)
-			velocity.z = lerp(velocity.z,direction.z*speed,delta*7.0)
+			velocity.x = lerp(velocity.x,direction.x*get_speed(),delta*7.0)
+			velocity.z = lerp(velocity.z,direction.z*get_speed(),delta*7.0)
 	else:
-		velocity.x = lerp(velocity.x,direction.x*speed,delta*2.0)
-		velocity.z = lerp(velocity.z,direction.z*speed,delta*2.0)
+		velocity.x = lerp(velocity.x,direction.x*get_speed(),delta*2.0)
+		velocity.z = lerp(velocity.z,direction.z*get_speed(),delta*2.0)
 	
 	#head bob
 	t_bob += delta *velocity.length()*float(is_on_floor())
@@ -248,13 +249,33 @@ func equip_weapon():
 
 func _on_bone_head_bodypart_hit(dmg):
 	print("player minus leben" +str(dmg))
-	
 	hp -= dmg
 	print("player hp: " +str(hp))
+	set_rooted(1)
 
 
 func _on_bone_body_bodypart_hit(dmg):
 	print("player minus leben" +str(dmg))
-	
 	hp -= dmg
 	print("player hp: " +str(hp))
+	set_rooted(1)
+
+
+	
+# Ideally we would make `speed` only accessible via the getter and setter
+func get_speed():
+	if is_rooted:
+		return 0;
+	return speed
+
+func set_speed(new_speed):
+	speed = new_speed
+	
+func set_rooted(stun_duration_sec):
+	is_rooted = true
+
+	# Overlapping stuns are currently not supported, stun is cleared after timeout
+	await get_tree().create_timer(stun_duration_sec).timeout
+	
+	is_rooted = false
+	
