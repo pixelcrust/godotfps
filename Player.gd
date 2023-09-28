@@ -31,6 +31,7 @@ var gravity = 9.8
 
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
 @onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
+@onready var display_interaction = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_interaction
 
 
 @onready var state_move = 0
@@ -135,11 +136,19 @@ func _physics_process(delta):
 			print("interacting")
 			is_interacting += 1
 			if(is_interacting >= raycast_interaction.get_collider().object.interactiontime):
+				#interact gui
+				display_interaction.visible = true
+				display_interaction.set_show_percentage(false)
+				display_interaction.value = is_interacting/raycast_interaction.get_collider().object.interactiontime *100
+				
+				
 				raycast_interaction.get_collider().object.interacted = 1
 				is_interacting = 0
 		else:
 			is_interacting = 0
-		
+			display_interaction.visible = false
+			display_interaction.value = 0
+	
 	#swap weapon
 	if Input.is_action_just_pressed("key_next_weapon"):
 		
