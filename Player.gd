@@ -23,7 +23,7 @@ var gravity = 9.8
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var guncamera = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D
-@onready var raycast_interaction = $Head/raycast_interaction
+@onready var raycast_interaction = $Head/Camera3D/raycast_interaction
 @onready var collisionshape = $CollisionShape3D2
 @onready var mesh = $MeshInstance3D
 @onready var equipped = null
@@ -128,9 +128,9 @@ func _physics_process(delta):
 	
 	#interact
 	if Input.is_action_pressed("Interact") and raycast_interaction.is_colliding():
-		print("hoi")
+		print(str(raycast_interaction.get_collider()))
 		if raycast_interaction.get_collider().is_in_group("interactable"):
-			pass
+			print("hoi")
 		else:
 			pass
 		

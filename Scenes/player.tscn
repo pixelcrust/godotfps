@@ -164,6 +164,10 @@ offset_right = 120.0
 offset_bottom = 80.0
 placeholder_text = "HP"
 
+[node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(5.73206e-15, 1.31134e-07, 3, 3, -1.31134e-07, 0, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0)
+collision_mask = 2
+
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["has_hp"]]
 collision_layer = 2
 collision_mask = 2
@@ -172,9 +176,6 @@ damage_multiplier = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/bone_head"]
 shape = SubResource("SphereShape3D_3bbqp")
-
-[node name="raycast_interaction" type="RayCast3D" parent="Head"]
-transform = Transform3D(5.73206e-15, 1.31134e-07, 3, 3, -1.31134e-07, 0, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
