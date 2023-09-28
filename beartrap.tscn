@@ -1,16 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvihmp2ma48n5"]
+[gd_scene load_steps=10 format=3 uid="uid://cvihmp2ma48n5"]
 
 [ext_resource type="Script" path="res://beartrap.gd" id="1_4l02p"]
 [ext_resource type="ArrayMesh" uid="uid://d2d3etf5e7bip" path="res://Models/Item/BearTrap_Open.obj" id="1_rbux1"]
 [ext_resource type="ArrayMesh" uid="uid://bpu8ejeyvl3ps" path="res://Models/Item/BearTrap_Closed.obj" id="2_gjs45"]
+[ext_resource type="Script" path="res://beartrap_collision.gd" id="3_6wdrs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xk0m"]
 albedo_color = Color(0.623529, 0.298039, 0.317647, 1)
 metallic = 0.8
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_lq4kc"]
-height = 0.814991
-radius = 1.37335
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g2bjr"]
+height = 0.852593
+radius = 1.35077
 
 [sub_resource type="Animation" id="Animation_w0imk"]
 length = 0.001
@@ -48,12 +49,11 @@ _data = {
 "close": SubResource("Animation_f134b")
 }
 
-[node name="Beartrap" type="Node3D" groups=["interactable"]]
+[node name="Beartrap" type="Node3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_4l02p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-layers = 2
 mesh = ExtResource("1_rbux1")
 surface_material_override/0 = SubResource("StandardMaterial3D_8xk0m")
 
@@ -61,9 +61,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8xk0m")
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36911, 0.0840054)
-shape = SubResource("CylinderShape3D_lq4kc")
+[node name="Area3D" type="Area3D" parent="MeshInstance3D" groups=["interactable"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("3_6wdrs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.266745, 0)
+shape = SubResource("CylinderShape3D_g2bjr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

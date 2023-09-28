@@ -165,8 +165,9 @@ offset_bottom = 80.0
 placeholder_text = "HP"
 
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
-transform = Transform3D(5.73206e-15, 1.31134e-07, 3, 3, -1.31134e-07, 0, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0)
+transform = Transform3D(5.73206e-15, 1.31134e-07, 3, 3, -1.31134e-07, 0, 1.31134e-07, 3, -1.31134e-07, 0, 0, -0.585909)
 collision_mask = 2
+collide_with_areas = true
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["has_hp"]]
 collision_layer = 2

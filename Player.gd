@@ -32,13 +32,16 @@ var gravity = 9.8
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
 @onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
 
+
 @onready var state_move = 0
 
 #0.. walking
 #1.. running
 #2.. crouching
 #3.. in air
+
 @onready var is_rooted = false
+@onready var is_interacting = 0
 
 @onready var equipped_id = -1 #what item in hand
 #-1.. nothing
@@ -128,11 +131,14 @@ func _physics_process(delta):
 	
 	#interact
 	if Input.is_action_pressed("Interact") and raycast_interaction.is_colliding():
-		print(str(raycast_interaction.get_collider()))
 		if raycast_interaction.get_collider().is_in_group("interactable"):
-			print("hoi")
+			print("interacting")
+			is_interacting += 1
+			if(is_interacting >= raycast_interaction.get_collider().object.interactiontime):
+				raycast_interaction.get_collider().object.interacted = 1
+				is_interacting = 0
 		else:
-			pass
+			is_interacting = 0
 		
 	#swap weapon
 	if Input.is_action_just_pressed("key_next_weapon"):
