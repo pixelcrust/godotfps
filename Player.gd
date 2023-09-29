@@ -139,9 +139,9 @@ func _physics_process(delta):
 				#interact gui
 				display_interaction.visible = true
 				display_interaction.set_show_percentage(false)
-				display_interaction.value = is_interacting/raycast_interaction.get_collider().object.interactiontime *100
+				display_interaction.value = is_interacting/raycast_interaction.get_collider().object.interactiontime * 100
 				
-				
+				print(str(is_interacting/raycast_interaction.get_collider().object.interactiontime * 100))
 				raycast_interaction.get_collider().object.interacted = 1
 				is_interacting = 0
 		else:

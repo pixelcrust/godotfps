@@ -155,4 +155,4 @@ stream = ExtResource("3_w8yes")
 volume_db = 12.19
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.09287, 0.360479, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0306392, 0.360479, 0)
