@@ -135,19 +135,23 @@ func _physics_process(delta):
 		if raycast_interaction.get_collider().is_in_group("interactable"):
 			print("interacting" + str(is_interacting/raycast_interaction.get_collider().object.interactiontime*100))
 			display_interaction.visible = true
+			display_interaction.value = (is_interacting/raycast_interaction.get_collider().object.interactiontime)
+			print(str(is_interacting/raycast_interaction.get_collider().object.interactiontime*100))
 			is_interacting += 0.01
 			if(is_interacting >= raycast_interaction.get_collider().object.interactiontime):
 				#interact gui
 				
 				#display_interaction.set_show_percentage(false)
-				display_interaction.value = (is_interacting/raycast_interaction.get_collider().object.interactiontime)
-				print(str(is_interacting/raycast_interaction.get_collider().object.interactiontime*100))
+				
 				raycast_interaction.get_collider().object.interacted = 1
 				is_interacting = 0
+		else:
+			display_interaction.value = 0
+					
 	else:
 		is_interacting = 0
 		display_interaction.visible = false
-		display_interaction.value = 0
+
 	
 	#swap weapon
 	if Input.is_action_just_pressed("key_next_weapon"):
