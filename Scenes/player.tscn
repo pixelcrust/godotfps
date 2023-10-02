@@ -169,7 +169,6 @@ offset_left = 500.0
 offset_top = 500.0
 offset_right = 700.0
 offset_bottom = 540.0
-show_percentage = false
 
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(5.73206e-15, 1.31134e-07, 3, 3, -1.31134e-07, 0, 1.31134e-07, 3, -1.31134e-07, 0, 0, -0.585909)

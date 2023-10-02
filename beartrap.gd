@@ -5,8 +5,8 @@ extends Node3D
 @onready var trap_set = 1
 @onready var dmg = 50
 
-@onready var interactiontime_open = 2
-@onready var interactiontime_close = 0.5
+@onready var interactiontime_open = 5
+@onready var interactiontime_close = 1
 @onready var interactiontime = interactiontime_close
 @onready var interacted = 0
 
