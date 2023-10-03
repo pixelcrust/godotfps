@@ -133,16 +133,13 @@ func _physics_process(delta):
 	#interact
 	if Input.is_action_pressed("Interact") and raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider().is_in_group("interactable"):
-			print("interacting" + str(is_interacting/raycast_interaction.get_collider().object.interactiontime*100))
 			display_interaction.visible = true
-			display_interaction.value = (is_interacting/raycast_interaction.get_collider().object.interactiontime)
+			display_interaction.value = (is_interacting/raycast_interaction.get_collider().object.interactiontime*100)
 			print(str(is_interacting/raycast_interaction.get_collider().object.interactiontime*100))
 			is_interacting += 0.01
 			if(is_interacting >= raycast_interaction.get_collider().object.interactiontime):
 				#interact gui
-				
-				#display_interaction.set_show_percentage(false)
-				
+				display_interaction.set_show_percentage(false)
 				raycast_interaction.get_collider().object.interacted = 1
 				is_interacting = 0
 		else:
