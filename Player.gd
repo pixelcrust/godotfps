@@ -130,21 +130,29 @@ func _physics_process(delta):
 		set_speed(SPEED_WALK)
 		state_move = 0
 	
-	#interact
-	if Input.is_action_pressed("Interact") and raycast_interaction.is_colliding():
+	# Start interaction
+	if Input.is_action_just_pressed("Interact")  and raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider().is_in_group("interactable"):
 			display_interaction.visible = true
-			display_interaction.value = (is_interacting/raycast_interaction.get_collider().object.interactiontime*100)
-			print(str(is_interacting/raycast_interaction.get_collider().object.interactiontime*100))
+			var obj_interaction_time = raycast_interaction.get_collider().object.get_interaction_time()
+			display_interaction.value = (is_interacting/obj_interaction_time*100)
+			print("Starting interaction")
 			is_interacting += 0.01
-			if(is_interacting >= raycast_interaction.get_collider().object.interactiontime):
-				#interact gui
+	
+	# Continue interaction
+	elif is_interacting > 0 and Input.is_action_pressed("Interact") and raycast_interaction.is_colliding():
+		if raycast_interaction.get_collider().is_in_group("interactable"):
+			var obj_interaction_time = raycast_interaction.get_collider().object.get_interaction_time()
+			display_interaction.value = (is_interacting/obj_interaction_time*100)
+			print("Continuing interaction: " + str(is_interacting/obj_interaction_time*100))
+			is_interacting += 0.01
+			if(is_interacting >= obj_interaction_time):
+				# Finish interaction
 				display_interaction.set_show_percentage(false)
-				raycast_interaction.get_collider().object.interacted = 1
+				raycast_interaction.get_collider().object.play_animation()
 				is_interacting = 0
-		else:
-			display_interaction.value = 0
-					
+	
+	# Stop interaction
 	else:
 		is_interacting = 0
 		display_interaction.visible = false
