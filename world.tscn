@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c7akcggds32mw" path="res://Scenes/tree.tscn" id="3_1elic"]
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player.tscn" id="3_leven"]
 [ext_resource type="PackedScene" uid="uid://b6jfr2f43csfk" path="res://Scenes/tent.tscn" id="4_i8w3f"]
-[ext_resource type="PackedScene" uid="uid://dhunj16wsng6n" path="res://propane_tank.tscn" id="5_gh7ya"]
-[ext_resource type="PackedScene" uid="uid://csmo3ugeusx1s" path="res://fish.tscn" id="6_ekceb"]
-[ext_resource type="PackedScene" uid="uid://cjunlnpml1r6h" path="res://gate.tscn" id="8_6stjv"]
+[ext_resource type="PackedScene" uid="uid://csmo3ugeusx1s" path="res://Scenes/fish.tscn" id="6_ekceb"]
+[ext_resource type="PackedScene" uid="uid://cjunlnpml1r6h" path="res://Scenes/test_level/gate.tscn" id="8_6stjv"]
 [ext_resource type="PackedScene" uid="uid://cvihmp2ma48n5" path="res://beartrap.tscn" id="8_f6haw"]
+[ext_resource type="PackedScene" uid="uid://dfwco3wxtra00" path="res://Scenes/test_level/test_stairs.tscn" id="8_ioa7d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -52,9 +52,6 @@ environment = SubResource("Environment_kl5jl")
 
 [node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("3_leven")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.43754, 4.87839, 0)
-
-[node name="propane_tank" parent="." instance=ExtResource("5_gh7ya")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.99015, 3.53476, -3.888)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_s38hs")
@@ -118,3 +115,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.3315, 0.846078, 10.
 
 [node name="Beartrap3" parent="." instance=ExtResource("8_f6haw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -13.8407, 0.846079, 14.7131)
+
+[node name="test_stairs" parent="." instance=ExtResource("8_ioa7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.3331, 0.846079, 13.5332)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bh1w06vv0gtlt"]
 
-[ext_resource type="Script" path="res://Scenes/sniper.gd" id="1_j4xil"]
+[ext_resource type="Script" path="res://Scripts/sniper.gd" id="1_j4xil"]
 [ext_resource type="ArrayMesh" uid="uid://cnyge50dpdd3d" path="res://Models/Item/SniperRifle_1.obj" id="2_nsaws"]
 [ext_resource type="AudioStream" uid="uid://copwiuwo0h64x" path="res://Models/Sounds/sfx_weapon_singleshot21.wav" id="3_f65nv"]
 

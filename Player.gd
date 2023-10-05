@@ -139,7 +139,7 @@ func _physics_process(delta):
 			print("Starting interaction")
 			is_interacting += 0.01
 	
-	# Continue interaction
+	# Csontinue interaction
 	elif is_interacting > 0 and Input.is_action_pressed("Interact") and raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider().is_in_group("interactable"):
 			var obj_interaction_time = raycast_interaction.get_collider().object.get_interaction_time()

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dces3e55616v5"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_sfosh"]
-[ext_resource type="Script" path="res://Scenes/bodypart.gd" id="2_ugo4k"]
 [ext_resource type="Texture2D" uid="uid://dqlynnw5748ta" path="res://crosshair.png" id="2_v71jm"]
+[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="2_wfych"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gmr4f"]
 
@@ -110,7 +110,7 @@ mesh = SubResource("CapsuleMesh_gmr4f")
 [node name="bone_body" type="PhysicalBone3D" parent="MeshInstance3D" groups=["has_hp"]]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("2_ugo4k")
+script = ExtResource("2_wfych")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/bone_body"]
 shape = SubResource("CapsuleShape3D_uqqjj")
@@ -179,7 +179,7 @@ collide_with_areas = true
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["has_hp"]]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("2_ugo4k")
+script = ExtResource("2_wfych")
 damage_multiplier = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/bone_head"]

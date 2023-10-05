@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://fish.gd" id="1_xcftq"]
 [ext_resource type="ArrayMesh" uid="uid://bjgu2ncjpalui" path="res://Models/Npc/Anglerfish.obj" id="2_6ua5i"]
-[ext_resource type="Script" path="res://Scenes/bodypart.gd" id="3_1ulvn"]
+[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_dmf8u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkdoh"]
 albedo_color = Color(0.513726, 0.356863, 1, 1)
@@ -96,7 +96,7 @@ transform = Transform3D(-2, 1.74846e-07, -7.64274e-15, 0, -8.74228e-08, -2, -1.7
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -2.22745e-07, 0.799543, 2.54791)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("3_1ulvn")
+script = ExtResource("3_dmf8u")
 damage_multiplier = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/PhysicalBone3D"]
@@ -106,7 +106,7 @@ shape = SubResource("CapsuleShape3D_ky4v3")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("3_1ulvn")
+script = ExtResource("3_dmf8u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/PhysicalBone3D2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
