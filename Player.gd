@@ -97,6 +97,10 @@ func _unhandled_input(event):
 		
 func _physics_process(delta):
 
+	#restart scene
+	if(Input.is_action_just_pressed("restart")):
+		get_tree(). reload_current_scene()
+		
 	#if ded
 	if hp <= 0:
 		die()
@@ -137,7 +141,7 @@ func _physics_process(delta):
 			var obj_interaction_time = raycast_interaction.get_collider().object.get_interaction_time()
 			display_interaction.value = (is_interacting/obj_interaction_time*100)
 			print("Starting interaction")
-			is_interacting += 0.01
+			is_interacting += delta
 	
 	# Csontinue interaction
 	elif is_interacting > 0 and Input.is_action_pressed("Interact") and raycast_interaction.is_colliding():
@@ -145,7 +149,7 @@ func _physics_process(delta):
 			var obj_interaction_time = raycast_interaction.get_collider().object.get_interaction_time()
 			display_interaction.value = (is_interacting/obj_interaction_time*100)
 			print("Continuing interaction: " + str(is_interacting/obj_interaction_time*100))
-			is_interacting += 0.01
+			is_interacting += delta
 			if(is_interacting >= obj_interaction_time):
 				# Finish interaction
 				display_interaction.set_show_percentage(false)

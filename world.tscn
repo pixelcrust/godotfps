@@ -53,7 +53,7 @@ shadow_enabled = true
 environment = SubResource("Environment_kl5jl")
 
 [node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("3_leven")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3407, 0.689373, 29.3473)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4184, 2.89448, 30.207)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_s38hs")
@@ -98,7 +98,7 @@ size = Vector3(1, 9.28725, 108.11)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="Node3D4" parent="NavigationRegion3D" instance=ExtResource("4_i8w3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0625, 2.949, -0.817847)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.196, 0, -5.51989)
 
 [node name="fish" parent="NavigationRegion3D" instance=ExtResource("6_ekceb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6422, 3.56703, -11.0024)
@@ -134,7 +134,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0253372, 1.56506, -0.04918
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.504959, 2.32259, -4.40496)
 
 [node name="test_palett2" parent="NavigationRegion3D/test_palett/test_palett/test_palett2" instance=ExtResource("9_mnt0h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12332, -1.7492, -8.10568)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118587, 0.720545, -4.0056)
+
+[node name="test_palett2" parent="NavigationRegion3D/test_palett/test_palett/test_palett2/test_palett2" instance=ExtResource("9_mnt0h")]
+transform = Transform3D(0.971772, -0.235922, 0, 0.235922, 0.971772, 0, 0, 0, 1, 0.501884, -0.689533, -8.60822)
 
 [node name="test_wall" parent="NavigationRegion3D" instance=ExtResource("10_ula7m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6274, 0.846079, 18.1278)
