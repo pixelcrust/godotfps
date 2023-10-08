@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr6ja57rxo2pm"]
+
+[ext_resource type="ArrayMesh" uid="uid://ctm774idm6dni" path="res://addons/kaykit_prototype_bits/Assets/obj/Dummy_Base.obj" id="1_f5bav"]
+[ext_resource type="ArrayMesh" uid="uid://bl8tkvfj84v7c" path="res://addons/kaykit_prototype_bits/Assets/obj/Dummy_Base_Dummy_Body.obj" id="2_r6n3q"]
+[ext_resource type="ArrayMesh" uid="uid://qv7g7ufny12l" path="res://addons/kaykit_prototype_bits/Assets/obj/Dummy_Base_Dummy_Body_Dummy_Head.obj" id="3_fgguw"]
+
+[node name="Node3D" type="CharacterBody3D"]
+
+[node name="base" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_f5bav")
+
+[node name="body" type="MeshInstance3D" parent="base"]
+mesh = ExtResource("2_r6n3q")
+skeleton = NodePath("../..")
+
+[node name="head" type="MeshInstance3D" parent="base/body"]
+mesh = ExtResource("3_fgguw")
