@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://tbef5j2sq4x1" path="res://addons/kaykit_prototype_bits/Assets/obj/Pallet_Small_Decorated_A.obj" id="1_6y70c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7wyp8"]
-size = Vector3(2.09061, 1.58868, 2.05208)
+size = Vector3(1.89661, 1.45816, 1.90317)
 
 [node name="test_palett" type="StaticBody3D"]
 
@@ -11,5 +11,5 @@ size = Vector3(2.09061, 1.58868, 2.05208)
 mesh = ExtResource("1_6y70c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.805392, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.745526, 0)
 shape = SubResource("BoxShape3D_7wyp8")
