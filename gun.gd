@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var animation_player = $AnimationPlayer
-@onready var sound = $AudioStreamPlayer3D
+@onready var sound = $AudiStreamPlayer3D
 @onready var barrel = $RayCast3D
 @onready var bullet = preload("res://Scenes/bullet.tscn")
 @onready var player = null

@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr6ja57rxo2pm"]
+[gd_scene load_steps=7 format=3 uid="uid://cr6ja57rxo2pm"]
 
 [ext_resource type="ArrayMesh" uid="uid://ctm774idm6dni" path="res://addons/kaykit_prototype_bits/Assets/obj/Dummy_Base.obj" id="1_f5bav"]
+[ext_resource type="Script" path="res://Scenes/enemy_dummy.gd" id="1_uae0y"]
 [ext_resource type="ArrayMesh" uid="uid://bl8tkvfj84v7c" path="res://addons/kaykit_prototype_bits/Assets/obj/Dummy_Base_Dummy_Body.obj" id="2_r6n3q"]
 [ext_resource type="ArrayMesh" uid="uid://qv7g7ufny12l" path="res://addons/kaykit_prototype_bits/Assets/obj/Dummy_Base_Dummy_Body_Dummy_Head.obj" id="3_fgguw"]
 [ext_resource type="ArrayMesh" uid="uid://c1l5anooo8g2d" path="res://addons/kaykit_prototype_bits/Assets/obj/Dummy_Base_Dummy_Body_Dummy_ArmLeft.obj" id="4_81hfi"]
+[ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="5_31422"]
 
 [node name="Node3D" type="CharacterBody3D"]
+script = ExtResource("1_uae0y")
 
 [node name="base" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_f5bav")
@@ -20,3 +23,7 @@ mesh = ExtResource("3_fgguw")
 [node name="arm" type="MeshInstance3D" parent="base/body"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.372895, 0, -0.150464)
 mesh = ExtResource("4_81hfi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="base/body/arm"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.94306, 1.15697, 0)
+mesh = ExtResource("5_31422")
