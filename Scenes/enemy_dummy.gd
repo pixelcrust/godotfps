@@ -21,4 +21,4 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 	var dir_to_player = global_position.direction_to(player.global_position)
-	body.rotation.y = dir_to_player
+	#body.y.angle = dir_to_player
