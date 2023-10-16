@@ -24,6 +24,6 @@ mesh = ExtResource("3_fgguw")
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.372895, 0, -0.150464)
 mesh = ExtResource("4_81hfi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="base/body/arm"]
+[node name="gun" type="MeshInstance3D" parent="base/body/arm"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.94306, 1.15697, 0)
 mesh = ExtResource("5_31422")

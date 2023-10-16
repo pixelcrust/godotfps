@@ -2,6 +2,9 @@ extends CharacterBody3D
 
 @onready var body = $base/body
 @onready var arm = $base/body/arm
+@onready var bullet = preload("res://Scenes/bullet.tscn")
+@onready var barrel = $base/body/arm/gun
+
 var player = null
 
 @export var turn_speed = 4.0
@@ -21,4 +24,8 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 	var dir_to_player = global_position.direction_to(player.global_position)
-	#body.y.angle = dir_to_player
+	rotate_y(1.0*delta)
+	var new_bullet = bullet.instantiate()
+	new_bullet.position = barrel.global_position
+	new_bullet.transform.basis = global_transform.basis
+	print("shoot")
