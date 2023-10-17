@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var arm = $base/body/arm
 @onready var bullet = preload("res://Scenes/bullet.tscn")
 @onready var barrel = $base/body/arm/gun/RayCast3D
+@onready var gun = $base/body/arm/gun
 @onready var timer = $base/body/arm/gun/Timer
 
 var player = null
@@ -26,9 +27,15 @@ func _physics_process(delta):
 	
 	#var dir_to_player = body.global_position.direction_to(player.global_position)
 	body.rotate_y(1.0*delta)
-	var new_bullet = bullet.instantiate()
-	await timer.timeout
-	new_bullet.position = barrel.global_position
-	new_bullet.transform.basis = global_transform.basis
-	get_tree().root.get_children()[0].add_child(new_bullet);
+
+	timer.connect("timeout",_timeout)
 	print(get_tree().root.get_children()[0])
+	
+func _timeout():
+	shoot()
+
+func shoot():
+	var new_bullet = bullet.instantiate()	
+	new_bullet.position = barrel.global_position
+	new_bullet.transform.basis = gun.global_transform.basis
+	get_tree().root.get_children()[0].add_child(new_bullet);
