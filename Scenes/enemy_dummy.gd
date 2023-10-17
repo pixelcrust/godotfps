@@ -25,11 +25,10 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
-	#var dir_to_player = body.global_position.direction_to(player.global_position)
+	var dir_to_player = body.global_position.direction_to(player.global_position)
 	body.rotate_y(1.0*delta)
-
 	timer.connect("timeout",_timeout)
-	print(get_tree().root.get_children()[0])
+	print(dir_to_player)
 	
 func _timeout():
 	shoot()

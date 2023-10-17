@@ -52,6 +52,16 @@ var gravity = 9.8
 @onready var inventory = []
 @onready var inventory_selector = 0
 
+#inventory slots and icons
+@onready var display_inventory = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory
+@onready var inv_slot_1 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_1
+@onready var inv_slot_2 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_2
+@onready var inv_slot_3 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_3
+@onready var icon_pistol = preload("res://Sprites/icons/icon_pistol.png")
+@onready var icon_shotgun = preload("res://Sprites/icons/icon_shotgun.png")
+@onready var icon_sniper = preload("res://Sprites/icons/icon_sniper.png")
+@onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_timer
+
 #preload equippment? move somewhere
 @onready var asset_gun = preload("res://Scenes/gun.tscn")
 @onready var asset_shotgun = preload("res://Scenes/shotgun.tscn")
@@ -241,7 +251,17 @@ func _headbob(time) -> Vector3:
 	return pos
 
 func equip_weapon():
-		#equip weapon
+	
+	#show gui for inventory
+	display_inventory.visible = true
+	inventory_timer.connect("timeout",_inventory_gui_timeout)
+	inventory_timer.start()
+	
+	inv_slot_1.texture = icon_pistol
+	inv_slot_2.texture = icon_pistol
+	inv_slot_3.texture = icon_pistol
+	
+	#equip weapon
 	if(inventory_selector<inventory.size()):
 		equipped_id = inventory[inventory_selector].item_id
 	else:
@@ -308,4 +328,6 @@ func set_rooted(stun_duration_sec):
 	await get_tree().create_timer(stun_duration_sec).timeout
 	
 	is_rooted = false
-	
+
+func _inventory_gui_timeout():
+	display_inventory.visible = false
