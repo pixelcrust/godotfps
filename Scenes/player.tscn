@@ -179,10 +179,10 @@ offset_bottom = 40.0
 position = Vector2(400, 500)
 
 [node name="inv_2" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
-position = Vector2(500, 500)
+position = Vector2(550, 500)
 
 [node name="inv_3" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
-position = Vector2(600, 500)
+position = Vector2(700, 500)
 
 [node name="inv_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
 

@@ -257,10 +257,34 @@ func equip_weapon():
 	inventory_timer.connect("timeout",_inventory_gui_timeout)
 	inventory_timer.start()
 	
-	inv_slot_1.texture = icon_pistol
-	inv_slot_2.texture = icon_pistol
-	inv_slot_3.texture = icon_pistol
-	
+	match inventory[0].item_id:
+		0:
+			inv_slot_1.texture = icon_pistol
+		1:
+			inv_slot_1.texture = icon_shotgun
+		2:
+			inv_slot_1.texture = icon_sniper
+		_:
+			pass
+	match inventory[1].item_id:
+		0:
+			inv_slot_2.texture = icon_pistol
+		1:
+			inv_slot_2.texture = icon_shotgun
+		2:
+			inv_slot_2.texture = icon_sniper
+		_:
+			pass
+	match inventory[2].item_id:
+		0:
+			inv_slot_3.texture = icon_pistol
+		1:
+			inv_slot_3.texture = icon_shotgun
+		2:
+			inv_slot_3.texture = icon_sniper
+		_:
+			pass
+			
 	#equip weapon
 	if(inventory_selector<inventory.size()):
 		equipped_id = inventory[inventory_selector].item_id
@@ -298,7 +322,6 @@ func equip_weapon():
 			pass
 		_:
 			equipped_id = -1
-			pass
 
 
 func _on_bone_head_bodypart_hit(dmg):
