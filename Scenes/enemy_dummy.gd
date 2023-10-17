@@ -3,7 +3,8 @@ extends CharacterBody3D
 @onready var body = $base/body
 @onready var arm = $base/body/arm
 @onready var bullet = preload("res://Scenes/bullet.tscn")
-@onready var barrel = $base/body/arm/gun
+@onready var barrel = $base/body/arm/gun/RayCast3D
+@onready var timer = $base/body/arm/gun/Timer
 
 var player = null
 
@@ -23,9 +24,11 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
-	var dir_to_player = global_position.direction_to(player.global_position)
-	rotate_y(1.0*delta)
+	#var dir_to_player = body.global_position.direction_to(player.global_position)
+	body.rotate_y(1.0*delta)
 	var new_bullet = bullet.instantiate()
+	await timer.timeout
 	new_bullet.position = barrel.global_position
 	new_bullet.transform.basis = global_transform.basis
-	print("shoot")
+	get_tree().root.get_children()[0].add_child(new_bullet);
+	print(get_tree().root.get_children()[0])

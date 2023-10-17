@@ -20,13 +20,13 @@ func _ready():
 func _physics_process(delta):
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
 	if raycast.is_colliding():
-		print("raycast collision with:" + str(raycast.get_collider()) )
+		#print("raycast collision with:" + str(raycast.get_collider()) )
 		mesh.visible = false
 		particles.emitting = true
 		if(raycast.get_collider().is_in_group("has_hp")):
 			raycast.get_collider().hit(dmg)
 		raycast.enabled = false
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		queue_free()
 
 
