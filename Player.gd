@@ -60,6 +60,7 @@ var gravity = 9.8
 @onready var icon_pistol = preload("res://Sprites/icons/icon_pistol.png")
 @onready var icon_shotgun = preload("res://Sprites/icons/icon_shotgun.png")
 @onready var icon_sniper = preload("res://Sprites/icons/icon_sniper.png")
+@onready var inventory_marker = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inventory_marker
 @onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_timer
 
 #preload equippment? move somewhere
@@ -207,9 +208,7 @@ func _physics_process(delta):
 			collisionshape.scale.y = 1
 			mesh.scale.y = 1
 			pass
-	#if state_move == 2:
-	#else:
-		#crouch
+	
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -252,39 +251,7 @@ func _headbob(time) -> Vector3:
 
 func equip_weapon():
 	
-	#show gui for inventory
-	display_inventory.visible = true
-	inventory_timer.connect("timeout",_inventory_gui_timeout)
-	inventory_timer.start()
 	
-	match inventory[0].item_id:
-		0:
-			inv_slot_1.texture = icon_pistol
-		1:
-			inv_slot_1.texture = icon_shotgun
-		2:
-			inv_slot_1.texture = icon_sniper
-		_:
-			pass
-	match inventory[1].item_id:
-		0:
-			inv_slot_2.texture = icon_pistol
-		1:
-			inv_slot_2.texture = icon_shotgun
-		2:
-			inv_slot_2.texture = icon_sniper
-		_:
-			pass
-	match inventory[2].item_id:
-		0:
-			inv_slot_3.texture = icon_pistol
-		1:
-			inv_slot_3.texture = icon_shotgun
-		2:
-			inv_slot_3.texture = icon_sniper
-		_:
-			pass
-			
 	#equip weapon
 	if(inventory_selector<inventory.size()):
 		equipped_id = inventory[inventory_selector].item_id
@@ -322,7 +289,53 @@ func equip_weapon():
 			pass
 		_:
 			equipped_id = -1
-
+	#show gui for inventory
+	display_inventory.visible = true
+	inventory_timer.connect("timeout",_inventory_gui_timeout)
+	inventory_timer.start()
+	inventory_marker.visible = true
+	match inventory_selector:
+		0:
+			inventory_marker.global_position.x = inv_slot_1.global_position.x
+			inventory_marker.global_position.y = inv_slot_1.global_position.y
+		1:
+			inventory_marker.global_position.x = inv_slot_2.global_position.x
+			inventory_marker.global_position.y = inv_slot_2.global_position.y
+		2:
+			inventory_marker.global_position.x = inv_slot_3.global_position.x
+			inventory_marker.global_position.y = inv_slot_3.global_position.y
+		_:
+			inventory_marker.global_position.x = 0
+			inventory_marker.global_position.y = 0
+	
+	match inventory[0].item_id:
+		0:
+			inv_slot_1.texture = icon_pistol
+		1:
+			inv_slot_1.texture = icon_shotgun
+		2:
+			inv_slot_1.texture = icon_sniper
+		_:
+			pass
+	match inventory[1].item_id:
+		0:
+			inv_slot_2.texture = icon_pistol
+		1:
+			inv_slot_2.texture = icon_shotgun
+		2:
+			inv_slot_2.texture = icon_sniper
+		_:
+			pass
+	match inventory[2].item_id:
+		0:
+			inv_slot_3.texture = icon_pistol
+		1:
+			inv_slot_3.texture = icon_shotgun
+		2:
+			inv_slot_3.texture = icon_sniper
+		_:
+			pass
+			
 
 func _on_bone_head_bodypart_hit(dmg):
 	hp -= dmg
@@ -353,4 +366,5 @@ func set_rooted(stun_duration_sec):
 	is_rooted = false
 
 func _inventory_gui_timeout():
+	display_inventory.visible = false
 	display_inventory.visible = false

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dces3e55616v5"]
+[gd_scene load_steps=12 format=3 uid="uid://dces3e55616v5"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_sfosh"]
 [ext_resource type="Texture2D" uid="uid://dqlynnw5748ta" path="res://crosshair.png" id="2_v71jm"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="2_wfych"]
+[ext_resource type="Texture2D" uid="uid://d03pvpgtacada" path="res://Sprites/icons/marker_icon.png" id="4_jacde"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gmr4f"]
 
@@ -185,6 +186,9 @@ position = Vector2(550, 500)
 position = Vector2(700, 500)
 
 [node name="inv_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
+
+[node name="inventory_marker" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
+texture = ExtResource("4_jacde")
 
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(5.73206e-15, 1.31134e-07, 3, 3, -1.31134e-07, 0, 1.31134e-07, 3, -1.31134e-07, 0, 0, -0.585909)
