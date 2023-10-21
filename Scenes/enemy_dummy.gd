@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var barrel = $base/body/arm/gun/RayCast3D
 @onready var gun = $base/body/arm/gun
 @onready var timer = $base/body/arm/gun/Timer
+@onready var ray_view = $base/body/head/ray_view
 
 var player = null
 
@@ -25,10 +26,12 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
-	var dir_to_player = body.global_position.direction_to(player.global_position)
-	body.rotate_y(1.0*delta)
+	#var dir_to_player = body.global_position.direction_to(player.global_position)
+	
+	if(ray_view.get_collider() != player):
+		body.rotate_y(1.0*delta)
 	timer.connect("timeout",_timeout)
-	print(dir_to_player)
+	#print(dir_to_player)
 	
 func _timeout():
 	shoot()

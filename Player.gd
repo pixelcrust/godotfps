@@ -6,7 +6,6 @@ const SPEED_WALK = 3.0
 const SPEED_RUN = 6.0
 const JUMP_VELOCITY = 4.5
 
-
 const SENSITIVITY = 0.001
 
 #head bob

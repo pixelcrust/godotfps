@@ -20,6 +20,9 @@ skeleton = NodePath("../..")
 [node name="head" type="MeshInstance3D" parent="base/body"]
 mesh = ExtResource("3_fgguw")
 
+[node name="ray_view" type="RayCast3D" parent="base/body/head"]
+transform = Transform3D(-5.21253e-15, -1.19249e-07, -10, 10, -4.37114e-07, 0, -4.37114e-07, -10, 1.19249e-07, 0, 1.74191, 0.204632)
+
 [node name="arm" type="MeshInstance3D" parent="base/body"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.372895, 0, -0.150464)
 mesh = ExtResource("4_81hfi")

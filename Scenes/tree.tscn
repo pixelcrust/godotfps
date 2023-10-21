@@ -7,7 +7,7 @@ albedo_color = Color(0.533333, 0.545098, 0, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_lp4q2"]
 height = 1.66752
-radius = 0.143299
+radius = 0.168165
 
 [node name="Node3D" type="StaticBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -17,6 +17,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_fkb5v")
 surface_material_override/2 = SubResource("StandardMaterial3D_gntqj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.809964, -0.00617099)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.209573, 1.61993, -0.137026)
 shape = SubResource("CylinderShape3D_lp4q2")
