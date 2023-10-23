@@ -8,12 +8,14 @@ extends CharacterBody3D
 @onready var timer = $base/body/arm/gun/Timer
 @onready var ray_view = $base/body/head/ray_view
 @onready var direction_helper = $base/body/direction_helper
+@onready var head = $base/body/head
+
 
 
 var player = null
 
-@export var turn_speed = 0.1
-
+@export var turn_speed_horizontally = 9
+@export var turn_speed_vertically = 9
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -33,8 +35,9 @@ func _physics_process(delta):
 	#if(ray_view.get_collider() != player):
 		#body.rotate_y(1.0*delta)
 	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
-	body.rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed))
-	arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed))
+	body.rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
+	head.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
+	arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
 	timer.connect("timeout",_timeout)
 	print(dir_to_player)
 	
