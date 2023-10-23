@@ -1,9 +1,10 @@
 extends Node3D
 
 @onready var animation_player = $AnimationPlayer
-@onready var sound = $AudioStreamPlayer3D
-@onready var barrel = $RayCast3D
+@onready var sound = $AudioStreamPlayer
+@onready var barrel = $MeshInstance3D/RayCast3D
 @onready var bullet = preload("res://Scenes/bullet.tscn")
+@onready var sound_shoot = preload("res://Models/Sounds/sfx_weapon_singleshot21.wav")
 @onready var player = null
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +21,6 @@ func shoot(inventory_selector):
 		if player.inventory[inventory_selector].loaded > 0:
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
-			sound.play(0.0)
 			var new_bullet = bullet.instantiate()
 			new_bullet.position = barrel.global_position
 			new_bullet.transform.basis = global_transform.basis

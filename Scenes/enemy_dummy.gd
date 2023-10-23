@@ -39,7 +39,6 @@ func _physics_process(delta):
 	head.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
 	arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
 	timer.connect("timeout",_timeout)
-	print(dir_to_player)
 	
 func _timeout():
 	shoot()

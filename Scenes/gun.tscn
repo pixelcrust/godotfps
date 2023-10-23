@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://gun.gd" id="1_wbae3"]
 [ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="2_wtbyh"]
-[ext_resource type="AudioStream" uid="uid://copwiuwo0h64x" path="res://Models/Sounds/sfx_weapon_singleshot21.wav" id="3_w8yes"]
+[ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilcsg"]
 albedo_color = Color(0.439216, 0.176471, 0, 1)
@@ -33,18 +33,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer3D:stream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_w8yes")]
 }
 
 [sub_resource type="Animation" id="Animation_oomti"]
@@ -109,18 +97,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0.701378), Vector3(0, 0, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer3D:stream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_w8yes")]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0rj0"]
 _data = {
@@ -144,15 +120,13 @@ surface_material_override/2 = SubResource("StandardMaterial3D_gyfmp")
 surface_material_override/3 = SubResource("StandardMaterial3D_toemc")
 surface_material_override/4 = SubResource("StandardMaterial3D_fdtim")
 
+[node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
+transform = Transform3D(-6.24449e-08, -1.42857, 0, 1.42857, -6.24449e-08, 0, 0, 0, 1.42857, 0.0437703, 0.51497, 0)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_o0rj0")
 }
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.878984, -0.476852, 0, 0.476852, 0.878984, 0, 0, 0)
-stream = ExtResource("3_w8yes")
-volume_db = 12.19
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0306392, 0.360479, 0)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_ismwp")
