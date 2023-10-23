@@ -240,7 +240,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func die():
-	queue_free()
+	pass
+	#queue_free()
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
