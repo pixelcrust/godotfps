@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckcsadk7qymfp"]
+[gd_scene load_steps=9 format=3 uid="uid://ckcsadk7qymfp"]
 
 [ext_resource type="Script" path="res://Scripts/shotgun_shell.gd" id="1_uy22w"]
+[ext_resource type="AudioStream" uid="uid://d3mn5xmo276dc" path="res://Models/Sounds/20 Gauge Single Isolated.wav" id="2_a0lku"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxnks"]
 albedo_color = Color(0.988235, 0, 0.47451, 1)
@@ -60,5 +61,8 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_rdlu4")
 draw_pass_1 = SubResource("BoxMesh_yfcpt")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_a0lku")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -9,10 +9,12 @@ const dmg = 10
 @onready var particles = $GPUParticles3D
 @onready var abweichung_x = randf_range(-ACCURACY,ACCURACY)
 @onready var abweichung_y = randf_range(-ACCURACY,ACCURACY)
+@onready var sound = $AudioStreamPlayer3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	
+	sound.play(0.0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
