@@ -102,6 +102,7 @@ _data = {
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0040685, 0)
+collision_layer = 4
 script = ExtResource("1_sfosh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

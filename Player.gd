@@ -339,12 +339,12 @@ func equip_weapon():
 
 func _on_bone_head_bodypart_hit(dmg):
 	hp -= dmg
-	set_rooted(1)
+	#set_rooted(1)
 
 
 func _on_bone_body_bodypart_hit(dmg):
 	hp -= dmg
-	set_rooted(1)
+	#set_rooted(1)
 
 
 	

@@ -10,12 +10,15 @@ extends CharacterBody3D
 @onready var direction_helper = $base/body/direction_helper
 @onready var head = $base/body/head
 
+@onready var hp_start = 100
+@onready var hp = hp_start
+
 
 
 var player = null
 
-@export var turn_speed_horizontally = 9
-@export var turn_speed_vertically = 9
+@export var turn_speed_horizontally = 11
+@export var turn_speed_vertically = 59
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,7 +26,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	
 	player = get_tree().get_nodes_in_group("player")[0]
-	
+	timer.connect("timeout",_timeout)
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -32,13 +35,13 @@ func _physics_process(delta):
 	
 	var dir_to_player = rad_to_deg(body.global_position.angle_to(player.global_position))
 	
-	#if(ray_view.get_collider() != player):
+	if(ray_view.get_collider() != player):
 		#body.rotate_y(1.0*delta)
-	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
-	body.rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
-	head.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
-	arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
-	timer.connect("timeout",_timeout)
+		direction_helper.look_at(player.global_transform.origin,Vector3.UP)
+		body.rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
+		head.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
+		arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
+	
 	
 func _timeout():
 	shoot()
@@ -48,3 +51,9 @@ func shoot():
 	new_bullet.position = barrel.global_position
 	new_bullet.transform.basis = gun.global_transform.basis
 	get_tree().root.get_children()[0].add_child(new_bullet);
+
+
+func _on_physical_bone_3d_bodypart_hit(dmg):
+	hp-=dmg
+	
+
