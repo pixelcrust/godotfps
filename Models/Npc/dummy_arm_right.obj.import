@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b41oturvqyo8"
+path="res://.godot/imported/dummy_arm_right.obj-19bc173f216a08513b41b0fc0c5a2b25.mesh"
+
+[deps]
+
+files=["res://.godot/imported/dummy_arm_right.obj-19bc173f216a08513b41b0fc0c5a2b25.mesh"]
+
+source_file="res://Models/Npc/dummy_arm_right.obj"
+dest_files=["res://.godot/imported/dummy_arm_right.obj-19bc173f216a08513b41b0fc0c5a2b25.mesh", "res://.godot/imported/dummy_arm_right.obj-19bc173f216a08513b41b0fc0c5a2b25.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

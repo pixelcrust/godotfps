@@ -35,13 +35,14 @@ func _physics_process(delta):
 	
 	var dir_to_player = rad_to_deg(body.global_position.angle_to(player.global_position))
 	
+	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
 	if(ray_view.get_collider() != player):
+		print("raycastcollider"+str(player))
 		#body.rotate_y(1.0*delta)
-		direction_helper.look_at(player.global_transform.origin,Vector3.UP)
+		
 		body.rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
 		head.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
 		arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
-	
 	
 func _timeout():
 	shoot()
