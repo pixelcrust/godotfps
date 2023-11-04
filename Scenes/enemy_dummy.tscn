@@ -8,13 +8,13 @@
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="5_emdjp"]
 [ext_resource type="ArrayMesh" uid="uid://b41oturvqyo8" path="res://Models/Npc/dummy_arm_right.obj" id="6_fvfbj"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17am3"]
-radius = 0.445306
-height = 1.08753
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d0pkj"]
 radius = 0.358898
 height = 0.86842
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17am3"]
+radius = 0.445306
+height = 1.08753
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_konw4"]
 height = 2.08689
@@ -30,8 +30,34 @@ mesh = ExtResource("1_f5bav")
 mesh = ExtResource("2_r6n3q")
 skeleton = NodePath("../..")
 
+[node name="arm" type="MeshInstance3D" parent="base/body"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.372895, 1.03686, -0.0186033)
+mesh = ExtResource("6_fvfbj")
+
+[node name="gun" type="MeshInstance3D" parent="base/body/arm"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.679228, 0.028181, 0)
+mesh = ExtResource("5_31422")
+
+[node name="RayCast3D" type="RayCast3D" parent="base/body/arm/gun"]
+transform = Transform3D(-4.37114e-08, -1, -2.66454e-15, 1, -4.37114e-08, 0, -5.29396e-23, -2.66454e-15, 1, 0.788636, 0.544651, 0)
+
+[node name="Timer" type="Timer" parent="base/body/arm/gun"]
+autostart = true
+
+[node name="direction_helper" type="Node3D" parent="base/body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59332, 1.75008)
+
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="base/body" groups=["has_hp"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_emdjp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="base/body/PhysicalBone3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.751204, 0)
+shape = SubResource("CapsuleShape3D_d0pkj")
+
 [node name="head" type="MeshInstance3D" parent="base/body"]
-transform = Transform3D(1, 0, 0, 0, 0.999444, 0.0333296, 0, -0.0333296, 0.999444, 0, 1.1412, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999444, 0.0333296, 0, -0.0333296, 0.999444, 0, 1.15633, 0)
 mesh = ExtResource("4_sl70n")
 
 [node name="ray_view" type="RayCast3D" parent="base/body/head"]
@@ -48,35 +74,9 @@ damage_multiplier = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0217953, 0)
 shape = SubResource("CapsuleShape3D_17am3")
 
-[node name="arm" type="MeshInstance3D" parent="base/body"]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.372895, 1.03686, -0.0186033)
-mesh = ExtResource("6_fvfbj")
-
-[node name="gun" type="MeshInstance3D" parent="base/body/arm"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.679228, 0.028181, 0)
-mesh = ExtResource("5_31422")
-
-[node name="RayCast3D" type="RayCast3D" parent="base/body/arm/gun"]
-transform = Transform3D(-4.37114e-08, -1, -2.66454e-15, 1, -4.37114e-08, 0, -5.29396e-23, -2.66454e-15, 1, 0.788636, 0.544651, 0)
-
-[node name="Timer" type="Timer" parent="base/body/arm/gun"]
-autostart = true
-
-[node name="direction_helper" type="Node3D" parent="base/body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0040338, 0.0125428)
-
-[node name="PhysicalBone3D" type="PhysicalBone3D" parent="base/body" groups=["has_hp"]]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("5_emdjp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="base/body/PhysicalBone3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.751204, 0)
-shape = SubResource("CapsuleShape3D_d0pkj")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13833, 0)
 shape = SubResource("CapsuleShape3D_konw4")
 
-[connection signal="bodypart_hit" from="base/body/head/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="bodypart_hit" from="base/body/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
+[connection signal="bodypart_hit" from="base/body/head/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
