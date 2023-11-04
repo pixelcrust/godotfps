@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://cvihmp2ma48n5"]
 
-[ext_resource type="Script" path="res://beartrap.gd" id="1_4l02p"]
-[ext_resource type="ArrayMesh" uid="uid://d2d3etf5e7bip" path="res://Models/Item/BearTrap_Open.obj" id="1_rbux1"]
-[ext_resource type="ArrayMesh" uid="uid://bpu8ejeyvl3ps" path="res://Models/Item/BearTrap_Closed.obj" id="2_gjs45"]
-[ext_resource type="Script" path="res://beartrap_collision.gd" id="3_6wdrs"]
+[ext_resource type="Script" path="res://Scripts/beartrap.gd" id="1_nnbfk"]
+[ext_resource type="ArrayMesh" uid="uid://d2d3etf5e7bip" path="res://Models/Item/BearTrap_Open.obj" id="2_oqcbj"]
+[ext_resource type="Script" path="res://Scripts/beartrap_collision.gd" id="3_muo8f"]
+[ext_resource type="ArrayMesh" uid="uid://bpu8ejeyvl3ps" path="res://Models/Item/BearTrap_Closed.obj" id="4_tymt3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xk0m"]
 albedo_color = Color(0.623529, 0.298039, 0.317647, 1)
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_rbux1")]
+"values": [ExtResource("2_oqcbj")]
 }
 
 [sub_resource type="Animation" id="Animation_f134b"]
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 0.101532),
 "update": 0,
-"values": [ExtResource("1_rbux1"), ExtResource("2_gjs45")]
+"values": [ExtResource("2_oqcbj"), ExtResource("4_tymt3")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2i5im"]
@@ -51,10 +51,10 @@ _data = {
 
 [node name="Beartrap" type="Node3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-script = ExtResource("1_4l02p")
+script = ExtResource("1_nnbfk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_rbux1")
+mesh = ExtResource("2_oqcbj")
 surface_material_override/0 = SubResource("StandardMaterial3D_8xk0m")
 
 [node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
@@ -64,7 +64,7 @@ collision_mask = 2
 [node name="Area3D" type="Area3D" parent="MeshInstance3D" groups=["interactable"]]
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("3_6wdrs")
+script = ExtResource("3_muo8f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.266745, 0)

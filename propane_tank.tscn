@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhunj16wsng6n"]
+[gd_scene load_steps=11 format=3 uid="uid://dhunj16wsng6n"]
 
 [ext_resource type="Script" path="res://propane_tank.gd" id="1_dkd06"]
 [ext_resource type="ArrayMesh" uid="uid://bv3v80qvoron5" path="res://Models/PropaneTank.obj" id="1_t0cj5"]
@@ -21,6 +21,22 @@ metallic = 0.94
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rl6vm"]
 points = PackedVector3Array(0.593265, 1.54904, 0.143384, -1.04737, -0.745866, -0.0833979, -1.04801, -0.746375, 0.00342042, 0.958313, -0.924494, 0.00358698, 0.344503, 0.86297, -0.996039, -0.393965, 0.81863, 0.915392, -0.553562, 1.54904, -0.36099, -0.350084, -0.829991, -0.993715, 0.304053, -0.929114, 0.881743, 0.817525, 0.771534, 0.607845, -0.344428, -1.2844, -0.381025, 0.869438, -0.748212, -0.607123, 1.0396, 0.775467, -0.0833337, -0.872521, 0.819272, -0.605084, -0.827938, -0.831205, 0.56775, -0.872913, 0.819605, 0.525334, 0.134232, 1.54904, 0.556428, -0.393504, 0.81776, -0.994269, 0.226082, 1.54904, -0.636422, 0.303671, -0.927861, -0.9608, 0.387481, 0.818136, 0.914752, 0.166705, -1.27846, 0.426893, 0.817525, -0.739968, 0.607845, 0.822655, 0.862997, -0.648642, -0.350476, -0.831021, 0.914789, -1.05354, 0.824206, -0.0401001, -0.823135, -0.739357, -0.687368, 0.416593, -1.26266, -0.291675, -0.490784, 1.49999, 0.314609, -0.345454, -1.2885, 0.302042, 0.341615, -0.0484867, -1.03158, 1.04024, -0.745148, 0.00335585)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_msdle"]
+lifetime_randomness = 1.0
+spread = 180.0
+initial_velocity_min = 53.58
+initial_velocity_max = 53.58
+linear_accel_min = 10.72
+linear_accel_max = 10.72
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2572u"]
+albedo_color = Color(0.87451, 0, 0.137255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wxpfs"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_2572u")
+
 [node name="propane_tank" type="Node3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 script = ExtResource("1_dkd06")
@@ -32,5 +48,11 @@ surface_material_override/1 = SubResource("StandardMaterial3D_hh45f")
 surface_material_override/2 = SubResource("StandardMaterial3D_mcehn")
 surface_material_override/3 = SubResource("StandardMaterial3D_anae4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["has_hp"]]
 shape = SubResource("ConvexPolygonShape3D_rl6vm")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 16
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_msdle")
+draw_pass_1 = SubResource("BoxMesh_wxpfs")

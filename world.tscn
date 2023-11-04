@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b6jfr2f43csfk" path="res://Scenes/tent.tscn" id="4_i8w3f"]
 [ext_resource type="PackedScene" uid="uid://csmo3ugeusx1s" path="res://Scenes/fish.tscn" id="6_ekceb"]
 [ext_resource type="PackedScene" uid="uid://cjunlnpml1r6h" path="res://Scenes/test_level/gate.tscn" id="8_6stjv"]
-[ext_resource type="PackedScene" uid="uid://cvihmp2ma48n5" path="res://beartrap.tscn" id="8_f6haw"]
+[ext_resource type="PackedScene" uid="uid://cvihmp2ma48n5" path="res://Scenes/beartrap.tscn" id="8_f6haw"]
 [ext_resource type="PackedScene" uid="uid://dfwco3wxtra00" path="res://Scenes/test_level/test_stairs.tscn" id="8_ioa7d"]
 [ext_resource type="PackedScene" uid="uid://d3srmqybd7g8v" path="res://Scenes/test_level/test_palett.tscn" id="9_mnt0h"]
 [ext_resource type="PackedScene" uid="uid://dkq7ua57mcu8c" path="res://Scenes/test_level/test_wall.tscn" id="10_ula7m"]
@@ -149,17 +149,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2461, 0.0273198, -1.22501)
 [node name="test_wall" parent="NavigationRegion3D/test_wall/test_wall" instance=ExtResource("10_ula7m")]
 transform = Transform3D(-0.0656295, 0, 0.997844, 0, 1, 0, -0.997844, 0, -0.0656295, -2.42813, -0.00250828, -2.94403)
 
-[node name="Beartrap" parent="." instance=ExtResource("8_f6haw")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.9824, 0.846079, 5.52945)
-
-[node name="Beartrap2" parent="." instance=ExtResource("8_f6haw")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.3315, 0.846078, 10.1137)
-
-[node name="Beartrap3" parent="." instance=ExtResource("8_f6haw")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -13.8407, 0.846079, 14.7131)
-
-[node name="Beartrap3" parent="Beartrap3" instance=ExtResource("8_f6haw")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -21.1279, 8.03268, 6.88274)
+[node name="Beartrap" parent="NavigationRegion3D" instance=ExtResource("8_f6haw")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.4957, 0.971957, 27.3195)
 
 [node name="Node3D" parent="." instance=ExtResource("11_yb4fu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2686, 2.77979, 27.479)
