@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhunj16wsng6n"]
+[gd_scene load_steps=12 format=3 uid="uid://dhunj16wsng6n"]
 
 [ext_resource type="Script" path="res://propane_tank.gd" id="1_dkd06"]
 [ext_resource type="ArrayMesh" uid="uid://bv3v80qvoron5" path="res://Models/PropaneTank.obj" id="1_t0cj5"]
@@ -28,6 +28,7 @@ initial_velocity_min = 53.58
 initial_velocity_max = 53.58
 linear_accel_min = 10.72
 linear_accel_max = 10.72
+scale_max = 5.0
 collision_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2572u"]
@@ -36,23 +37,39 @@ albedo_color = Color(0.87451, 0, 0.137255, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_wxpfs"]
 lightmap_size_hint = Vector2i(14, 21)
 material = SubResource("StandardMaterial3D_2572u")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_id3ht"]
+radius = 8.76777
 
 [node name="propane_tank" type="Node3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 script = ExtResource("1_dkd06")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["has_hp"]]
+layers = 3
 mesh = ExtResource("1_t0cj5")
 surface_material_override/0 = SubResource("StandardMaterial3D_s5hn4")
 surface_material_override/1 = SubResource("StandardMaterial3D_hh45f")
 surface_material_override/2 = SubResource("StandardMaterial3D_mcehn")
 surface_material_override/3 = SubResource("StandardMaterial3D_anae4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["has_hp"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
 shape = SubResource("ConvexPolygonShape3D_rl6vm")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-amount = 16
+emitting = false
+amount = 64
+lifetime = 0.21
+one_shot = true
 explosiveness = 1.0
+fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_msdle")
 draw_pass_1 = SubResource("BoxMesh_wxpfs")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_id3ht")
