@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://ctk8y3gtl1yj7"]
+
+[ext_resource type="Script" path="res://Scenes/explosion.gd" id="1_qmu6a"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ym6lv"]
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+linear_accel_min = -10.0
+linear_accel_max = -10.0
+radial_accel_min = 5.0
+radial_accel_max = 5.0
+damping_min = 10.0
+damping_max = 10.0
+scale_max = 2.0
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2572u"]
+albedo_color = Color(0.87451, 0, 0.137255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1w5dx"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_2572u")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r3k68"]
+lifetime_randomness = 1.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_y83fs"]
+radius = 4.0
+height = 8.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p375i"]
+lifetime_randomness = 0.9
+emission_shape = 1
+emission_sphere_radius = 4.0
+spread = 180.0
+gravity = Vector3(0, 1, 0)
+scale_min = 0.5
+scale_max = 1.5
+color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y88t3"]
+albedo_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_sd2aa"]
+material = SubResource("StandardMaterial3D_y88t3")
+radius = 1.5
+height = 3.0
+
+[node name="explosion" type="Node3D"]
+script = ExtResource("1_qmu6a")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 64
+explosiveness = 0.82
+randomness = 0.84
+fixed_fps = 60
+trail_lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_ym6lv")
+draw_pass_1 = SubResource("BoxMesh_1w5dx")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+amount = 1
+lifetime = 0.2
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_r3k68")
+draw_passes = 2
+draw_pass_1 = SubResource("SphereMesh_y83fs")
+draw_pass_2 = null
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="."]
+explosiveness = 0.7
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_p375i")
+draw_pass_1 = SubResource("SphereMesh_sd2aa")
