@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhunj16wsng6n"]
+[gd_scene load_steps=11 format=3 uid="uid://dhunj16wsng6n"]
 
 [ext_resource type="Script" path="res://propane_tank.gd" id="1_dkd06"]
 [ext_resource type="ArrayMesh" uid="uid://bv3v80qvoron5" path="res://Models/PropaneTank.obj" id="1_t0cj5"]
+[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_dckxd"]
 [ext_resource type="PackedScene" uid="uid://ctk8y3gtl1yj7" path="res://Scenes/explosion.tscn" id="3_jeavc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5hn4"]
@@ -23,11 +24,15 @@ metallic = 0.94
 radius = 1.08493
 height = 2.9936
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1edai"]
+radius = 1.07069
+height = 2.84607
+
 [node name="propane_tank" type="Node3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 script = ExtResource("1_dkd06")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["has_hp"]]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_t0cj5")
 surface_material_override/0 = SubResource("StandardMaterial3D_s5hn4")
 surface_material_override/1 = SubResource("StandardMaterial3D_hh45f")
@@ -37,4 +42,14 @@ surface_material_override/3 = SubResource("StandardMaterial3D_anae4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
 shape = SubResource("CapsuleShape3D_moxfh")
 
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="MeshInstance3D" groups=["has_hp"]]
+collision_layer = 2
+script = ExtResource("3_dckxd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/PhysicalBone3D"]
+shape = SubResource("CapsuleShape3D_1edai")
+
 [node name="explosion" parent="." instance=ExtResource("3_jeavc")]
+
+[connection signal="signal_explosion" from="." to="explosion" method="_signal_explosion"]
+[connection signal="bodypart_hit" from="MeshInstance3D/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]

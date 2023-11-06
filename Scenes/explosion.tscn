@@ -54,17 +54,21 @@ height = 3.0
 script = ExtResource("1_qmu6a")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-amount = 64
-explosiveness = 0.82
-randomness = 0.84
+emitting = false
+amount = 512
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
 fixed_fps = 60
 trail_lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_ym6lv")
 draw_pass_1 = SubResource("BoxMesh_1w5dx")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+emitting = false
 amount = 1
 lifetime = 0.2
+one_shot = true
 explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_r3k68")
@@ -73,6 +77,8 @@ draw_pass_1 = SubResource("SphereMesh_y83fs")
 draw_pass_2 = null
 
 [node name="GPUParticles3D3" type="GPUParticles3D" parent="."]
+emitting = false
+one_shot = true
 explosiveness = 0.7
 randomness = 1.0
 fixed_fps = 60
