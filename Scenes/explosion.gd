@@ -16,6 +16,7 @@ func _process(delta):
 		gpu_particles_3d_3.set_emitting(true)
 		gpu_particles_3d_2.set_emitting(true)
 		gpu_particles_3d.set_emitting(true)
+		idle = true
 
 
 
