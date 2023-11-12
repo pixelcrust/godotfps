@@ -20,36 +20,42 @@ albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 albedo_color = Color(0.733333, 0.203922, 0.121569, 1)
 metallic = 0.94
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_moxfh"]
-radius = 1.08493
-height = 2.9936
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1edai"]
 radius = 1.07069
 height = 2.84607
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_moxfh"]
+radius = 1.08493
+height = 2.9936
 
 [node name="propane_tank" type="Node3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 script = ExtResource("1_dkd06")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 mesh = ExtResource("1_t0cj5")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_s5hn4")
 surface_material_override/1 = SubResource("StandardMaterial3D_hh45f")
 surface_material_override/2 = SubResource("StandardMaterial3D_mcehn")
 surface_material_override/3 = SubResource("StandardMaterial3D_anae4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
-shape = SubResource("CapsuleShape3D_moxfh")
-
-[node name="PhysicalBone3D" type="PhysicalBone3D" parent="MeshInstance3D" groups=["has_hp"]]
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="RigidBody3D/MeshInstance3D" groups=["has_hp"]]
 collision_layer = 2
 script = ExtResource("3_dckxd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/PhysicalBone3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D/PhysicalBone3D"]
 shape = SubResource("CapsuleShape3D_1edai")
 
-[node name="explosion" parent="." instance=ExtResource("3_jeavc")]
+[node name="explosion" parent="RigidBody3D" instance=ExtResource("3_jeavc")]
 
-[connection signal="signal_explosion" from="." to="explosion" method="_signal_explosion"]
-[connection signal="bodypart_hit" from="MeshInstance3D/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_moxfh")
+
+[connection signal="signal_explosion" from="." to="RigidBody3D/explosion" method="_signal_explosion"]
+[connection signal="bodypart_hit" from="RigidBody3D/MeshInstance3D/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]

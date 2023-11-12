@@ -1,9 +1,9 @@
 extends Node3D
 @onready var hp_start = 10
 @onready var hp = hp_start
-@onready var emitter = $explosion
+@onready var emitter = $RigidBody3D/explosion
 @onready var once = 0
-@onready var mesh = $MeshInstance3D
+@onready var mesh = $RigidBody3D/MeshInstance3D
 
 
 signal signal_explosion()
@@ -18,11 +18,11 @@ func _process(delta):
 		dying()
 
 func dying():
-	mesh.visible = false
+	#mesh.visible = false
 	if once == 0:
 		emit_signal("signal_explosion")
 		once = 1
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(10.0).timeout
 	queue_free()
 
 

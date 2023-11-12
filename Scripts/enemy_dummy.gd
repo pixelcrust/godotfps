@@ -46,8 +46,8 @@ func aim(delta):
 		#body.rotate_y(1.0*delta)
 		
 		body.rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
-		head.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
-		arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
+		#head.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
+		#arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
 	else:
 		print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
 		
@@ -65,3 +65,7 @@ func _on_physical_bone_3d_bodypart_hit(dmg):
 	hp-=dmg
 	
 
+
+
+func _on_attention_area_body_entered(body):
+	pass # Replace with function body.
