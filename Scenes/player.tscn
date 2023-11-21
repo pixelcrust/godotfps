@@ -109,7 +109,7 @@ script = ExtResource("1_sfosh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12679, 0)
 mesh = SubResource("CapsuleMesh_gmr4f")
 
-[node name="bone_body" type="PhysicalBone3D" parent="MeshInstance3D" groups=["has_hp"]]
+[node name="bone_body" type="PhysicalBone3D" parent="MeshInstance3D" groups=["group_player", "has_hp"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_wfych")

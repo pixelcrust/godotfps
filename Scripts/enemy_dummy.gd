@@ -12,6 +12,9 @@ extends CharacterBody3D
 
 @onready var hp_start = 100
 @onready var hp = hp_start
+@onready var state = 1 
+#0.. idle
+#1..aiming at player
 
 
 
@@ -32,7 +35,14 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	aim(delta)
+	match state:
+		_:
+			state = 0
+		0:
+			print_debug("state 0 idle")
+		1:
+			print_debug("state 1 aiming")
+			aim(delta)
 	move_and_slide()
 	
 func aim(delta):
@@ -49,14 +59,14 @@ func aim(delta):
 		#head.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
 		#arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
 	else:
-		print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
-		
+		#print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
+		pass
 func _timeout():
 	shoot()
 
 func shoot():
 	var new_bullet = bullet.instantiate()	
-	new_bullet.position = barrel.global_position
+	new_bullet.position = gun.global_position
 	new_bullet.transform.basis = gun.global_transform.basis
 	get_tree().root.get_children()[0].add_child(new_bullet);
 
@@ -65,7 +75,14 @@ func _on_physical_bone_3d_bodypart_hit(dmg):
 	hp-=dmg
 	
 
-
-
 func _on_attention_area_body_entered(body):
-	pass # Replace with function body.
+	if body.is_in_group("group_player"):
+		state = 1
+	
+	
+
+
+func _on_attention_area_body_exited(body):
+	if body.is_in_group("group_player"):
+		state = 0
+		print_debug("body exited collisionarea")

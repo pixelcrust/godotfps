@@ -20,7 +20,7 @@ height = 1.08753
 height = 2.08689
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vtcpw"]
-radius = 13.3811
+radius = 20.0
 
 [node name="Node3D" type="CharacterBody3D"]
 collision_layer = 4
@@ -42,7 +42,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.679228, 0.028181, 0)
 mesh = ExtResource("5_31422")
 
 [node name="RayCast3D" type="RayCast3D" parent="base/body/arm/gun"]
-transform = Transform3D(-4.37114e-08, -1, -2.66454e-15, 1, -4.37114e-08, 0, -5.29396e-23, -2.66454e-15, 1, 0.788636, 0.544651, 0)
+transform = Transform3D(-4.37114e-08, -1, 1.85125e-29, 1, -4.37114e-08, -4.23516e-22, 4.23516e-22, 6.01853e-36, 1, 0.788636, 0.544651, 0)
 
 [node name="Timer" type="Timer" parent="base/body/arm/gun"]
 autostart = true
@@ -82,6 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13833, 0)
 shape = SubResource("CapsuleShape3D_konw4")
 
 [node name="attention_area" type="Area3D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="attention_area"]
 shape = SubResource("SphereShape3D_vtcpw")
@@ -89,3 +90,4 @@ shape = SubResource("SphereShape3D_vtcpw")
 [connection signal="bodypart_hit" from="base/body/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="bodypart_hit" from="base/body/head/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="body_entered" from="attention_area" to="." method="_on_attention_area_body_entered"]
+[connection signal="body_exited" from="attention_area" to="." method="_on_attention_area_body_exited"]
