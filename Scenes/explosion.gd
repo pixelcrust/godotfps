@@ -4,6 +4,7 @@ extends Node3D
 @onready var sparks = $sparks
 @onready var flash = $flash
 @onready var smoke = $smoke
+@onready var radius = 20
 
 
 

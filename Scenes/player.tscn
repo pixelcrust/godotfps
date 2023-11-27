@@ -196,7 +196,7 @@ transform = Transform3D(5.73206e-15, 1.31134e-07, 3, 3, -1.31134e-07, 0, 1.31134
 collision_mask = 2
 collide_with_areas = true
 
-[node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["has_hp"]]
+[node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_hp"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_wfych")

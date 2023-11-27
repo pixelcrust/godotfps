@@ -154,7 +154,7 @@ transform = Transform3D(-0.0656295, 0, 0.997844, 0, 1, 0, -0.997844, 0, -0.06562
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.4957, 0.971957, 27.3195)
 
 [node name="Node3D" parent="." instance=ExtResource("11_yb4fu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2686, 2.77979, 27.479)
+transform = Transform3D(-0.982411, 0, 0.18673, 0, 1, 0, -0.18673, 0, -0.982411, -5.75391, 4.1886, 33.11)
 
 [node name="propane_tank" parent="." instance=ExtResource("12_k60m2")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -18.0156, 5.60119, 22.3881)

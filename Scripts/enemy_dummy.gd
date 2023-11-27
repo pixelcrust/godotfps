@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var body = $base/body
 @onready var arm = $base/body/arm
 @onready var bullet = preload("res://Scenes/bullet.tscn")
-@onready var barrel = $base/body/arm/gun/RayCast3D
+@onready var ray_gun = $base/body/arm/gun/ray_gun
 @onready var gun = $base/body/arm/gun
 @onready var timer = $base/body/arm/gun/Timer
 @onready var ray_view = $base/body/head/ray_view
@@ -12,7 +12,7 @@ extends CharacterBody3D
 
 @onready var hp_start = 100
 @onready var hp = hp_start
-@onready var state = 1 
+@onready var state = -1 
 #0.. idle
 #1..aiming at player
 
@@ -36,28 +36,65 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	match state:
+		0:
+			pass
+			#print_debug("state 0 idle")
+		1:
+			#print_debug("state 1 aiming")
+			aim(delta)
 		_:
 			state = 0
-		0:
-			print_debug("state 0 idle")
-		1:
-			print_debug("state 1 aiming")
-			aim(delta)
 	move_and_slide()
+	
+	if hp <= 0:
+		die()
 	
 func aim(delta):
 	var dir_to_player = rad_to_deg(body.global_position.angle_to(player.global_position))
 	
+	# aiming from the arm of the enemy to the head of the player
+	var global_pos1 = arm.global_transform.origin
+	var global_pos2 = player.head.global_transform.origin
+
+	# Calculate the vector between the two nodes
+	var direction = abs(global_pos2 - global_pos1)
+
+	# Calculate the vertical angle (angle in the Y-axis)
+	var vertical_angle = atan2(direction.y, direction.x)
+	print_debug(rad_to_deg(vertical_angle))
+	
+	# Convert the angle to degrees
+	#vertical_angle = rad_to_deg(vertical_angle)
+	#set the angle of the arm
+	
+	
+	arm.rotation.z = vertical_angle
+	
+	
 	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
 	#arm.look_at(player.global_transform.origin,Vector3.UP)
+	var ray_collider = ray_view.get_collider()
+	var vertical_angle_to_player = 0
 	
-	if(ray_view.get_collider() != player):
+	
+	if( ray_collider != player):
 		
 		#body.rotate_y(1.0*delta)
 		
 		body.rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
-		#head.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
-		#arm.rotate_x(-deg_to_rad(direction_helper.rotation.x * turn_speed_vertically*delta))
+		#arm.rotate_z(deg_to_rad(dir_to_player) * turn_speed_horizontally*delta)
+		var ray_gun_collider = ray_gun.get_collider()
+		
+		#for n in range(0,360,10):
+			#if ray_gun.get_collider().is_in_group("group_player"):
+				#vertical_angle_to_player = n
+			#arm.rotation.z = n
+		
+		#while !ray_gun_collider.is_in_group("group_player"):
+			#gun.rotate_z(turn_speed_vertically*delta)
+		#head.rotate_x(-head.angle_to(player.globals_position)*turn_speed_vertically*delta)
+		#arm.rotate_x(-turn_speed_vertically*delta)
+		
 	else:
 		#print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
 		pass
@@ -85,4 +122,6 @@ func _on_attention_area_body_entered(body):
 func _on_attention_area_body_exited(body):
 	if body.is_in_group("group_player"):
 		state = 0
-		print_debug("body exited collisionarea")
+
+func die():
+	queue_free()
