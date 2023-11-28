@@ -12,6 +12,7 @@ extends CharacterBody3D
 
 @onready var hp_start = 100
 @onready var hp = hp_start
+var vertical_shooting_error_range = 2
 @onready var state = -1 
 #0.. idle
 #1..aiming at player
@@ -29,19 +30,29 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	
 	player = get_tree().get_nodes_in_group("player")[0]
-	timer.connect("timeout",_timeout)
+	
 	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+	
+	print_debug("state:" + str(state))
 	match state:
 		0:
 			pass
-			#print_debug("state 0 idle")
-		1:
-			#print_debug("state 1 aiming")
+			timer.stop()
+			state = 2
+		1: #aiming and shooting
+			if timer.time_left == 0:
+				timer.start()
+			#print_debug(timer.time_left)
 			aim(delta)
+			timer.connect("timeout",_timeout)
+			velocity.x = 0
+			velocity.z = 0
+		2: #move
+			velocity = Vector3(-5,0,0)
 		_:
 			state = 0
 	move_and_slide()
@@ -50,7 +61,7 @@ func _physics_process(delta):
 		die()
 	
 func aim(delta):
-	var dir_to_player = rad_to_deg(body.global_position.angle_to(player.global_position))
+	#var dir_to_player = rad_to_deg(body.global_position.angle_to(player.global_position))
 	
 	# aiming from the arm of the enemy to the head of the player
 	var global_pos1 = arm.global_transform.origin
@@ -68,7 +79,7 @@ func aim(delta):
 	#set the angle of the arm
 	
 	
-	arm.rotation.z = vertical_angle
+	arm.rotation.z = vertical_angle + deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
 	
 	
 	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
@@ -81,7 +92,7 @@ func aim(delta):
 		
 		#body.rotate_y(1.0*delta)
 		
-		body.rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
+		rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
 		#arm.rotate_z(deg_to_rad(dir_to_player) * turn_speed_horizontally*delta)
 		var ray_gun_collider = ray_gun.get_collider()
 		
@@ -96,10 +107,13 @@ func aim(delta):
 		#arm.rotate_x(-turn_speed_vertically*delta)
 		
 	else:
+		#timer.start()
 		#print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
 		pass
 func _timeout():
 	shoot()
+	if state == 1:
+		timer.start()
 
 func shoot():
 	var new_bullet = bullet.instantiate()	

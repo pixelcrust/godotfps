@@ -46,7 +46,6 @@ transform = Transform3D(-4.37114e-08, -100, 1.77636e-14, 1, -4.37114e-06, -1.327
 collision_mask = 4
 
 [node name="Timer" type="Timer" parent="base/body/arm/gun"]
-autostart = true
 
 [node name="direction_helper" type="Node3D" parent="base/body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59332, 1.75008)

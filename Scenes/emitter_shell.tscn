@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://chsas1jluft0x"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_be4kk"]
+direction = Vector3(1, 1, 0)
+spread = 30.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dm6xt"]
+albedo_color = Color(0.784314, 0.701961, 0.12549, 1)
+metallic = 0.76
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7w3yc"]
+material = SubResource("StandardMaterial3D_dm6xt")
+flip_faces = true
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.1
+
+[node name="emitter_shell" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 1
+one_shot = true
+explosiveness = 1.0
+randomness = 0.47
+process_material = SubResource("ParticleProcessMaterial_be4kk")
+draw_pass_1 = SubResource("CylinderMesh_7w3yc")

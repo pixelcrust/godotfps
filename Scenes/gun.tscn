@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://brid1ads3hnl2"]
+[gd_scene load_steps=16 format=3 uid="uid://brid1ads3hnl2"]
 
 [ext_resource type="Script" path="res://gun.gd" id="1_wbae3"]
 [ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="2_wtbyh"]
+[ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
 [ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilcsg"]
@@ -122,6 +123,9 @@ surface_material_override/4 = SubResource("StandardMaterial3D_fdtim")
 
 [node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
 transform = Transform3D(-6.24449e-08, -1.42857, 0, 1.42857, -6.24449e-08, 0, 0, 0, 1.42857, 0.0437703, 0.51497, 0)
+
+[node name="emitter_shell" parent="MeshInstance3D" instance=ExtResource("3_woa2a")]
+transform = Transform3D(-0.116948, 0, -0.993138, 0, 1, 0, 0.993138, 0, -0.116948, 0.814452, 0.61147, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
