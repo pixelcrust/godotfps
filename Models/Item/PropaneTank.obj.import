@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bv3v80qvoron5"
+path="res://.godot/imported/PropaneTank.obj-085ee1449f7ce88f4e7124451f27acfd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PropaneTank.obj-085ee1449f7ce88f4e7124451f27acfd.mesh"]
+
+source_file="res://Models/Item/PropaneTank.obj"
+dest_files=["res://.godot/imported/PropaneTank.obj-085ee1449f7ce88f4e7124451f27acfd.mesh", "res://.godot/imported/PropaneTank.obj-085ee1449f7ce88f4e7124451f27acfd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

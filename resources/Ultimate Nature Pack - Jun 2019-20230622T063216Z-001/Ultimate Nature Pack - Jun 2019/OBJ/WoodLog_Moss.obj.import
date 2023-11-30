@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://r7kpa13efo3e"
+path="res://.godot/imported/WoodLog_Moss.obj-0fbfc2a71b600a1b7284cb2ce6dcc9a3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/WoodLog_Moss.obj-0fbfc2a71b600a1b7284cb2ce6dcc9a3.mesh"]
+
+source_file="res://resources/Ultimate Nature Pack - Jun 2019-20230622T063216Z-001/Ultimate Nature Pack - Jun 2019/OBJ/WoodLog_Moss.obj"
+dest_files=["res://.godot/imported/WoodLog_Moss.obj-0fbfc2a71b600a1b7284cb2ce6dcc9a3.mesh", "res://.godot/imported/WoodLog_Moss.obj-0fbfc2a71b600a1b7284cb2ce6dcc9a3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

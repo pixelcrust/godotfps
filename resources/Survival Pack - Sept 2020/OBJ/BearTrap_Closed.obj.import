@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bo7k1rpxck3n5"
+path="res://.godot/imported/BearTrap_Closed.obj-17b10a74a3270f4250bfa7470b0eb202.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BearTrap_Closed.obj-17b10a74a3270f4250bfa7470b0eb202.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/BearTrap_Closed.obj"
+dest_files=["res://.godot/imported/BearTrap_Closed.obj-17b10a74a3270f4250bfa7470b0eb202.mesh", "res://.godot/imported/BearTrap_Closed.obj-17b10a74a3270f4250bfa7470b0eb202.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

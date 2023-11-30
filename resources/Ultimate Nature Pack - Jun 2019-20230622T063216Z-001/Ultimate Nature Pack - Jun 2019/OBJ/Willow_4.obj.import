@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://df4emielv8lxm"
+path="res://.godot/imported/Willow_4.obj-b592913bb7b900a1f8ed50bd899d8222.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Willow_4.obj-b592913bb7b900a1f8ed50bd899d8222.mesh"]
+
+source_file="res://resources/Ultimate Nature Pack - Jun 2019-20230622T063216Z-001/Ultimate Nature Pack - Jun 2019/OBJ/Willow_4.obj"
+dest_files=["res://.godot/imported/Willow_4.obj-b592913bb7b900a1f8ed50bd899d8222.mesh", "res://.godot/imported/Willow_4.obj-b592913bb7b900a1f8ed50bd899d8222.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cj714yo7xf1lt"
+path="res://.godot/imported/Wheat.obj-fd6ca752266345347593093553d1e2d8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wheat.obj-fd6ca752266345347593093553d1e2d8.mesh"]
+
+source_file="res://resources/Ultimate Nature Pack - Jun 2019-20230622T063216Z-001/Ultimate Nature Pack - Jun 2019/OBJ/Wheat.obj"
+dest_files=["res://.godot/imported/Wheat.obj-fd6ca752266345347593093553d1e2d8.mesh", "res://.godot/imported/Wheat.obj-fd6ca752266345347593093553d1e2d8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

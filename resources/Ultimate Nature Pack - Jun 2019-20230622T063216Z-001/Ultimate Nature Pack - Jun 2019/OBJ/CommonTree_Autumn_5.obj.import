@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cn5ibwiduy6x6"
+path="res://.godot/imported/CommonTree_Autumn_5.obj-99b2a21ebd0bf5c6a040ca16ac8cba65.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CommonTree_Autumn_5.obj-99b2a21ebd0bf5c6a040ca16ac8cba65.mesh"]
+
+source_file="res://resources/Ultimate Nature Pack - Jun 2019-20230622T063216Z-001/Ultimate Nature Pack - Jun 2019/OBJ/CommonTree_Autumn_5.obj"
+dest_files=["res://.godot/imported/CommonTree_Autumn_5.obj-99b2a21ebd0bf5c6a040ca16ac8cba65.mesh", "res://.godot/imported/CommonTree_Autumn_5.obj-99b2a21ebd0bf5c6a040ca16ac8cba65.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

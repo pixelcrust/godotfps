@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dpyloebva08nk"
+path="res://.godot/imported/WaterBottle_2.obj-496e2dbaf147088aeb663dcb96b49cb7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/WaterBottle_2.obj-496e2dbaf147088aeb663dcb96b49cb7.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/WaterBottle_2.obj"
+dest_files=["res://.godot/imported/WaterBottle_2.obj-496e2dbaf147088aeb663dcb96b49cb7.mesh", "res://.godot/imported/WaterBottle_2.obj-496e2dbaf147088aeb663dcb96b49cb7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

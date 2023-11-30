@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dr3aiygxrfano"
+path="res://.godot/imported/Shovel.obj-8aed9fcefa0f810ced9b10cddfef9bf8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Shovel.obj-8aed9fcefa0f810ced9b10cddfef9bf8.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/Shovel.obj"
+dest_files=["res://.godot/imported/Shovel.obj-8aed9fcefa0f810ced9b10cddfef9bf8.mesh", "res://.godot/imported/Shovel.obj-8aed9fcefa0f810ced9b10cddfef9bf8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

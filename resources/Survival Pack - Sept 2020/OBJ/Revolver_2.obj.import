@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cv6bargq6567g"
+path="res://.godot/imported/Revolver_2.obj-5e365ebb8b3f8f92952bf2263844161b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Revolver_2.obj-5e365ebb8b3f8f92952bf2263844161b.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/Revolver_2.obj"
+dest_files=["res://.godot/imported/Revolver_2.obj-5e365ebb8b3f8f92952bf2263844161b.mesh", "res://.godot/imported/Revolver_2.obj-5e365ebb8b3f8f92952bf2263844161b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

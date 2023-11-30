@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=21 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://background top.png" id="1_pb7b5"]
 [ext_resource type="PackedScene" uid="uid://c7akcggds32mw" path="res://Scenes/tree.tscn" id="3_1elic"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dkq7ua57mcu8c" path="res://Scenes/test_level/test_wall.tscn" id="10_ula7m"]
 [ext_resource type="PackedScene" uid="uid://cr6ja57rxo2pm" path="res://Scenes/enemy_dummy.tscn" id="11_yb4fu"]
 [ext_resource type="PackedScene" uid="uid://dhunj16wsng6n" path="res://propane_tank.tscn" id="12_k60m2"]
+[ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="13_qy556"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -158,3 +159,6 @@ transform = Transform3D(-0.982411, 0, 0.18673, 0, 1, 0, -0.18673, 0, -0.982411, 
 
 [node name="propane_tank" parent="." instance=ExtResource("12_k60m2")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -18.0156, 5.60119, 22.3881)
+
+[node name="Medikit" parent="." instance=ExtResource("13_qy556")]
+transform = Transform3D(0.12, 0, 0, 0, 1.43099e-09, 0.12, 0, -0.12, 1.43099e-09, -41.0838, 1.07299, 32.5584)

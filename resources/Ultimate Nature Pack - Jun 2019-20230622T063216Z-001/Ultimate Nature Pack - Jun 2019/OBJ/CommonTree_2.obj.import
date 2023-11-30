@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bdx73gy6j1g1c"
+path="res://.godot/imported/CommonTree_2.obj-dd6f6b9af5bb87cd82eb0996e7d69ae4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CommonTree_2.obj-dd6f6b9af5bb87cd82eb0996e7d69ae4.mesh"]
+
+source_file="res://resources/Ultimate Nature Pack - Jun 2019-20230622T063216Z-001/Ultimate Nature Pack - Jun 2019/OBJ/CommonTree_2.obj"
+dest_files=["res://.godot/imported/CommonTree_2.obj-dd6f6b9af5bb87cd82eb0996e7d69ae4.mesh", "res://.godot/imported/CommonTree_2.obj-dd6f6b9af5bb87cd82eb0996e7d69ae4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

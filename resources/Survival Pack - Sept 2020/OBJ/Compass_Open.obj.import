@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6oa101q6rsmb"
+path="res://.godot/imported/Compass_Open.obj-a302e6c3dba2c69738981544c049b0d5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Compass_Open.obj-a302e6c3dba2c69738981544c049b0d5.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/Compass_Open.obj"
+dest_files=["res://.godot/imported/Compass_Open.obj-a302e6c3dba2c69738981544c049b0d5.mesh", "res://.godot/imported/Compass_Open.obj-a302e6c3dba2c69738981544c049b0d5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

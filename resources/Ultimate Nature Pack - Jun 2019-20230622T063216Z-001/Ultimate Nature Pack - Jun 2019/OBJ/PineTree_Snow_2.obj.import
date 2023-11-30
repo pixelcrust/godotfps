@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5rrnc0o6xe7n"
+path="res://.godot/imported/PineTree_Snow_2.obj-c72fe06aa8cf09a40cf4eaaf6977cd0c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PineTree_Snow_2.obj-c72fe06aa8cf09a40cf4eaaf6977cd0c.mesh"]
+
+source_file="res://resources/Ultimate Nature Pack - Jun 2019-20230622T063216Z-001/Ultimate Nature Pack - Jun 2019/OBJ/PineTree_Snow_2.obj"
+dest_files=["res://.godot/imported/PineTree_Snow_2.obj-c72fe06aa8cf09a40cf4eaaf6977cd0c.mesh", "res://.godot/imported/PineTree_Snow_2.obj-c72fe06aa8cf09a40cf4eaaf6977cd0c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

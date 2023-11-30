@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://canubtmhd3740"
+path="res://.godot/imported/Battery_Big.obj-61e90c10a528f4b70aa2bdba0fb81835.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Battery_Big.obj-61e90c10a528f4b70aa2bdba0fb81835.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/Battery_Big.obj"
+dest_files=["res://.godot/imported/Battery_Big.obj-61e90c10a528f4b70aa2bdba0fb81835.mesh", "res://.godot/imported/Battery_Big.obj-61e90c10a528f4b70aa2bdba0fb81835.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

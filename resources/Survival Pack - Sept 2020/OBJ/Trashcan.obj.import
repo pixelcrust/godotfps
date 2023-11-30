@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bij7s2c2lw7dv"
+path="res://.godot/imported/Trashcan.obj-bc3f64b1b99e964e1d40f025c1571e25.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Trashcan.obj-bc3f64b1b99e964e1d40f025c1571e25.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/Trashcan.obj"
+dest_files=["res://.godot/imported/Trashcan.obj-bc3f64b1b99e964e1d40f025c1571e25.mesh", "res://.godot/imported/Trashcan.obj-bc3f64b1b99e964e1d40f025c1571e25.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dic63nouvw6m5"
+path="res://.godot/imported/Shotgun_2.obj-125b14f902b11f4430dc9c29f3cbab68.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Shotgun_2.obj-125b14f902b11f4430dc9c29f3cbab68.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/Shotgun_2.obj"
+dest_files=["res://.godot/imported/Shotgun_2.obj-125b14f902b11f4430dc9c29f3cbab68.mesh", "res://.godot/imported/Shotgun_2.obj-125b14f902b11f4430dc9c29f3cbab68.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bsjts42qgd084"
+path="res://.godot/imported/Bush_Snow_2.obj-db82625f1ca96249700141cabb2ec461.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bush_Snow_2.obj-db82625f1ca96249700141cabb2ec461.mesh"]
+
+source_file="res://resources/Ultimate Nature Pack - Jun 2019-20230622T063216Z-001/Ultimate Nature Pack - Jun 2019/OBJ/Bush_Snow_2.obj"
+dest_files=["res://.godot/imported/Bush_Snow_2.obj-db82625f1ca96249700141cabb2ec461.mesh", "res://.godot/imported/Bush_Snow_2.obj-db82625f1ca96249700141cabb2ec461.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

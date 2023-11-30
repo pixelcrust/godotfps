@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://dms1akyc4a36y"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxooft7r2m5ar" path="res://Models/Item/FirstAidKit_Hard.obj" id="1_40n4i"]
+[ext_resource type="Script" path="res://Scenes/medikit.gd" id="1_877f1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3ncb"]
+albedo_color = Color(0, 0.341176, 0.341176, 1)
+metallic = 0.51
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3x0yb"]
+albedo_color = Color(0.6, 0, 0.603922, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6cbx"]
+albedo_color = Color(0.780392, 0, 0.784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppmid"]
+albedo_color = Color(0.8, 0, 0.180392, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b0nc4"]
+size = Vector3(1.79987, 1.29618, 0.64373)
+
+[node name="Medikit" type="Node3D"]
+transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 0, 0, 0)
+script = ExtResource("1_877f1")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 2.66454e-16, 0, -2.66454e-16, 0.3, 0, 0, 0)
+mesh = ExtResource("1_40n4i")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_g3ncb")
+surface_material_override/1 = SubResource("StandardMaterial3D_3x0yb")
+surface_material_override/2 = SubResource("StandardMaterial3D_j6cbx")
+surface_material_override/3 = SubResource("StandardMaterial3D_ppmid")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 5.32907e-16, 0, -5.32907e-16, 0.3, 0, 2.20817e-10, 0.0185173)
+shape = SubResource("BoxShape3D_b0nc4")

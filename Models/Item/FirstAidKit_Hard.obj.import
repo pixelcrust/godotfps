@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxooft7r2m5ar"
+path="res://.godot/imported/FirstAidKit_Hard.obj-12222933dd66486336cbc2a46b07f70b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FirstAidKit_Hard.obj-12222933dd66486336cbc2a46b07f70b.mesh"]
+
+source_file="res://Models/Item/FirstAidKit_Hard.obj"
+dest_files=["res://.godot/imported/FirstAidKit_Hard.obj-12222933dd66486336cbc2a46b07f70b.mesh", "res://.godot/imported/FirstAidKit_Hard.obj-12222933dd66486336cbc2a46b07f70b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chaw8eq2w32g2"
+path="res://.godot/imported/Radio.obj-c0ca9d43f112f5ae0a594a2a6881c6cc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Radio.obj-c0ca9d43f112f5ae0a594a2a6881c6cc.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/Radio.obj"
+dest_files=["res://.godot/imported/Radio.obj-c0ca9d43f112f5ae0a594a2a6881c6cc.mesh", "res://.godot/imported/Radio.obj-c0ca9d43f112f5ae0a594a2a6881c6cc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

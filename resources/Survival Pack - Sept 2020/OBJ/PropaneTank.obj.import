@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwf0qy8n2tp2g"
+path="res://.godot/imported/PropaneTank.obj-7bc5817e0482a357292f65044e31f1bf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PropaneTank.obj-7bc5817e0482a357292f65044e31f1bf.mesh"]
+
+source_file="res://resources/Survival Pack - Sept 2020/OBJ/PropaneTank.obj"
+dest_files=["res://.godot/imported/PropaneTank.obj-7bc5817e0482a357292f65044e31f1bf.mesh", "res://.godot/imported/PropaneTank.obj-7bc5817e0482a357292f65044e31f1bf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
