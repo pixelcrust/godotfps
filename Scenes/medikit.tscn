@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dms1akyc4a36y"]
+[gd_scene load_steps=10 format=3 uid="uid://dms1akyc4a36y"]
 
 [ext_resource type="ArrayMesh" uid="uid://cxooft7r2m5ar" path="res://Models/Item/FirstAidKit_Hard.obj" id="1_40n4i"]
 [ext_resource type="Script" path="res://Scenes/medikit.gd" id="1_877f1"]
+[ext_resource type="Script" path="res://Scenes/medikit_collision.gd" id="3_wm7fk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3ncb"]
 albedo_color = Color(0, 0.341176, 0.341176, 1)
@@ -18,6 +19,9 @@ albedo_color = Color(0.8, 0, 0.180392, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b0nc4"]
 size = Vector3(1.79987, 1.29618, 0.64373)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n5vck"]
+size = Vector3(2.06836, 1.40942, 0.670776)
 
 [node name="Medikit" type="Node3D"]
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 0, 0, 0)
@@ -37,3 +41,10 @@ surface_material_override/3 = SubResource("StandardMaterial3D_ppmid")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 5.32907e-16, 0, -5.32907e-16, 0.3, 0, 2.20817e-10, 0.0185173)
 shape = SubResource("BoxShape3D_b0nc4")
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D" groups=["interactable"]]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 2.22267e-13, 0, -2.22267e-13, 0.3, 0.00761719, -0.0102905, 0.00685771)
+shape = SubResource("BoxShape3D_n5vck")
+script = ExtResource("3_wm7fk")

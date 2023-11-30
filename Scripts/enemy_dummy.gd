@@ -37,7 +37,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
-	print_debug("state:" + str(state))
+	#print_debug("state:" + str(state))
 	match state:
 		0:
 			pass
@@ -72,7 +72,7 @@ func aim(delta):
 
 	# Calculate the vertical angle (angle in the Y-axis)
 	var vertical_angle = atan2(direction.y, direction.x)
-	print_debug(rad_to_deg(vertical_angle))
+	#print_debug(rad_to_deg(vertical_angle))
 	
 	# Convert the angle to degrees
 	#vertical_angle = rad_to_deg(vertical_angle)

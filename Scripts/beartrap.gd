@@ -18,14 +18,14 @@ func _process(delta):
 	if is_active and raycast.is_colliding():
 		if(raycast.get_collider().is_in_group("has_hp")):
 			raycast.get_collider().hit(dmg)
-		play_animation()
+		use()
 
 func get_interaction_time():
 	if is_active:
 		return interactiontime_close
 	return interactiontime_open
 	
-func play_animation():
+func use():
 	if is_active:
 		animationplayer.play("close")
 		is_active = false

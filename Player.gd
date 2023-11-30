@@ -144,6 +144,8 @@ func _physics_process(delta):
 		set_speed(SPEED_WALK)
 		state_move = 0
 	
+	if raycast_interaction.is_colliding():
+		print_debug("raycast colliding with " +str(raycast_interaction.get_collider()))
 	# Start interaction
 	if Input.is_action_just_pressed("Interact")  and raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider().is_in_group("interactable"):
@@ -163,7 +165,7 @@ func _physics_process(delta):
 			if(is_interacting >= obj_interaction_time):
 				# Finish interaction
 				display_interaction.set_show_percentage(false)
-				raycast_interaction.get_collider().object.play_animation()
+				raycast_interaction.get_collider().object.use()
 				is_interacting = 0
 	
 	# Stop interaction
@@ -346,7 +348,8 @@ func _on_bone_body_bodypart_hit(dmg):
 	hp -= dmg
 	#set_rooted(1)
 
-
+func _on_signal_heal(heal_amount):
+	hp += heal_amount
 	
 # Ideally we would make `speed` only accessible via the getter and setter
 func get_speed():
