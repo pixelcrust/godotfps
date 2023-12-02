@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctk8y3gtl1yj7"]
+[gd_scene load_steps=11 format=3 uid="uid://ctk8y3gtl1yj7"]
 
 [ext_resource type="Script" path="res://Scripts/explosion.gd" id="1_u8jew"]
 
@@ -50,9 +50,6 @@ material = SubResource("StandardMaterial3D_y88t3")
 radius = 1.5
 height = 3.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_swd13"]
-radius = 3.99398
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_085ni"]
 
 [node name="explosion" type="Node3D"]
@@ -91,12 +88,6 @@ randomness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_p375i")
 draw_pass_1 = SubResource("SphereMesh_sd2aa")
-
-[node name="Area3D" type="Area3D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("SphereShape3D_swd13")
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 7.98845, 0)
