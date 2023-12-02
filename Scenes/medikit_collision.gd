@@ -1,6 +1,6 @@
-extends CollisionShape3D
+extends Area3D
 
-@onready var medikit = $"../../.."
+@onready var object = $"../.."
 
 
 # Called when the node enters the scene tree for the first time.

@@ -348,7 +348,7 @@ func _on_bone_body_bodypart_hit(dmg):
 	hp -= dmg
 	#set_rooted(1)
 
-func _on_signal_heal(heal_amount):
+func heal(heal_amount):
 	hp += heal_amount
 	
 # Ideally we would make `speed` only accessible via the getter and setter

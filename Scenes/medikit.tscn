@@ -42,9 +42,11 @@ surface_material_override/3 = SubResource("StandardMaterial3D_ppmid")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 5.32907e-16, 0, -5.32907e-16, 0.3, 0, 2.20817e-10, 0.0185173)
 shape = SubResource("BoxShape3D_b0nc4")
 
-[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+[node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("3_wm7fk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D" groups=["interactable"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 2.22267e-13, 0, -2.22267e-13, 0.3, 0.00761719, -0.0102905, 0.00685771)
 shape = SubResource("BoxShape3D_n5vck")
-script = ExtResource("3_wm7fk")
