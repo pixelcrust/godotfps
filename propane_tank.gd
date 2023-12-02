@@ -31,5 +31,5 @@ func _on_timer_timeout():
 	
 
 
-func _on_physical_bone_3d_bodypart_hit(dmg):
+func _on_physical_bone_3d_bodypart_hit(dmg,time_rooted):
 	hp -= dmg

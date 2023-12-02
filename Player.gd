@@ -339,14 +339,16 @@ func equip_weapon():
 			pass
 			
 
-func _on_bone_head_bodypart_hit(dmg):
+func _on_bone_head_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
-	#set_rooted(1)
+	if(time_rooted > 0):
+		set_rooted(time_rooted)
 
 
-func _on_bone_body_bodypart_hit(dmg):
+func _on_bone_body_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
-	#set_rooted(1)
+	if(time_rooted > 0):
+		set_rooted(time_rooted)
 
 func heal(heal_amount):
 	hp += heal_amount

@@ -122,7 +122,7 @@ func shoot():
 	get_tree().root.get_children()[0].add_child(new_bullet);
 
 
-func _on_physical_bone_3d_bodypart_hit(dmg):
+func _on_physical_bone_3d_bodypart_hit(dmg,time_rooted):
 	hp-=dmg
 	
 
