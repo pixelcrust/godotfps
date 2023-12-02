@@ -4,8 +4,8 @@ extends Node3D
 @onready var sparks = $sparks
 @onready var flash = $flash
 @onready var smoke = $smoke
-@onready var radius = 20
-
+@onready var damage = 50
+@onready var collision_explosion = $ShapeCast3D
 
 
 
@@ -20,10 +20,13 @@ func _process(delta):
 		sparks.set_emitting(true)
 		flash.set_emitting(true)
 		smoke.set_emitting(true)
+		var number_victims = collision_explosion.get_collision_count()
+		for n in number_victims:
+			var victim = collision_explosion.get_collider(n)
+			victim.hit(damage)
 		idle = true
 
 
 
 func _signal_explosion():
-	print("boom")
 	idle = false # Replace with function body.

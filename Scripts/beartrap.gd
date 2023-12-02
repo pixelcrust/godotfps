@@ -8,7 +8,6 @@ extends Node3D
 @onready var interactiontime_open = 5
 @onready var interactiontime_close = 1
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
