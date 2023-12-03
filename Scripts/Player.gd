@@ -189,6 +189,13 @@ func _physics_process(delta):
 		inventory_selector += 1
 		equip_weapon()
 		
+	#drop weapon
+	if Input.is_action_just_pressed("key_drop_weapon"):
+		equipped.queue_free()
+		inventory.remove_at(inventory_selector)
+		print(inventory)
+		equip_weapon()
+	
 	#shoot
 	if(Input.is_action_just_pressed("key_shoot")):
 		if equipped_id != -1:
@@ -333,6 +340,8 @@ func equip_weapon():
 				inv_slot_2.texture = icon_sniper
 			_:
 				pass
+	else:
+		inv_slot_2.texture = null
 	if len(inventory) >2:
 		match inventory[2].item_id:
 			0:
@@ -343,7 +352,8 @@ func equip_weapon():
 				inv_slot_3.texture = icon_sniper
 			_:
 				pass
-			
+	else:
+		inv_slot_3.texture = null
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
