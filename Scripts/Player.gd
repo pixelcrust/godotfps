@@ -50,6 +50,7 @@ var gravity = 9.8
 
 @onready var inventory = []
 @onready var inventory_selector = 0
+@onready var inventory_space = 3
 
 #inventory slots and icons
 @onready var display_inventory = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory
@@ -80,18 +81,20 @@ func _ready():
 	})
 	
 	inventory.append({
-	"item_id": 2, #sniper
-	"loaded": 5,
-	"max_loaded": 5, 
-	"spare_ammo": 10
-	})
-	
-	inventory.append({
 	"item_id": 1, #shotgun
 	"loaded": 2,
 	"max_loaded": 2, 
 	"spare_ammo": 4
 	})
+	
+	"""
+	inventory.append({
+	"item_id": 2, #sniper
+	"loaded": 5,
+	"max_loaded": 5, 
+	"spare_ammo": 10
+	})
+	"""
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	equip_weapon()
@@ -319,24 +322,27 @@ func equip_weapon():
 			inv_slot_1.texture = icon_sniper
 		_:
 			pass
-	match inventory[1].item_id:
-		0:
-			inv_slot_2.texture = icon_pistol
-		1:
-			inv_slot_2.texture = icon_shotgun
-		2:
-			inv_slot_2.texture = icon_sniper
-		_:
-			pass
-	match inventory[2].item_id:
-		0:
-			inv_slot_3.texture = icon_pistol
-		1:
-			inv_slot_3.texture = icon_shotgun
-		2:
-			inv_slot_3.texture = icon_sniper
-		_:
-			pass
+			
+	if len(inventory) >1:
+		match inventory[1].item_id:
+			0:
+				inv_slot_2.texture = icon_pistol
+			1:
+				inv_slot_2.texture = icon_shotgun
+			2:
+				inv_slot_2.texture = icon_sniper
+			_:
+				pass
+	if len(inventory) >2:
+		match inventory[2].item_id:
+			0:
+				inv_slot_3.texture = icon_pistol
+			1:
+				inv_slot_3.texture = icon_shotgun
+			2:
+				inv_slot_3.texture = icon_sniper
+			_:
+				pass
 			
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):

@@ -6,6 +6,14 @@ extends Node3D
 @onready var bullet = preload("res://Scenes/bullet_big.tscn")
 @onready var player = null
 
+"""
+inventory.append({
+"item_id": 2, #sniper
+"loaded": 5,
+"max_loaded": 5, 
+"spare_ammo": 10
+})
+"""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

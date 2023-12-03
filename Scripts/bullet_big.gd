@@ -3,6 +3,7 @@ extends Node3D
 const SPEED = 60.0
 const ACCURACY = 0.02
 const dmg = 100
+const time_rooted = 1
 
 @onready var mesh = $MeshInstance3D
 @onready var raycast = $RayCast3D
@@ -23,7 +24,7 @@ func _physics_process(delta):
 		mesh.visible = false
 		particles.emitting = true
 		if(raycast.get_collider().is_in_group("has_hp")):
-			raycast.get_collider().hit(dmg)
+			raycast.get_collider().hit(dmg,time_rooted)
 		raycast.enabled = false
 		await get_tree().create_timer(1.0).timeout
 		queue_free()
