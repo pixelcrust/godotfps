@@ -32,7 +32,7 @@ script = ExtResource("1_eyl1h")
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 0, 0)
 mesh = ExtResource("2_5rq2b")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ayjbo")
@@ -42,7 +42,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_r5wdd")
 surface_material_override/4 = SubResource("StandardMaterial3D_mjrbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2244, -0.0480957, 0.0201263)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0189337, -0.0480957, 0.0201263)
 shape = SubResource("BoxShape3D_dt5af")
 
 [node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
@@ -50,5 +50,5 @@ collision_layer = 2
 script = ExtResource("3_pnsxn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12265, 0.0579529, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0124655, -0.0132147, 0)
 shape = SubResource("BoxShape3D_p7d2t")

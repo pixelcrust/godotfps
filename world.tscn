@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=24 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://background top.png" id="1_pb7b5"]
 [ext_resource type="PackedScene" uid="uid://c7akcggds32mw" path="res://Scenes/tree.tscn" id="3_1elic"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dhunj16wsng6n" path="res://Scenes/propane_tank.tscn" id="12_k60m2"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="13_qy556"]
 [ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/sniper_dropped.tscn" id="14_v26te"]
+[ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/gun_dropped.tscn" id="15_hb5cg"]
+[ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="16_hwsol"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -174,4 +176,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.36775, 2.48125, 35.3876)
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -5.00343, 5.331, 34.1705)
 
 [node name="sniper_dropped" parent="." instance=ExtResource("14_v26te")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.876, 4.67792, 29.0546)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0966, 3.1222, 33.4808)
+
+[node name="gun_dropped" parent="." instance=ExtResource("15_hb5cg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2049, 2.26549, 31.6523)
+
+[node name="shotgun_dropped" parent="." instance=ExtResource("16_hwsol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6618, 2.2899, 36.7686)

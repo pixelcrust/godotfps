@@ -3,16 +3,16 @@ extends Node3D
 
 
 @onready var player = 0
-const item_id = 2
-@onready var loaded = 5
-const max_loaded = 5
-@onready var spare_ammo = 10
+const item_id = 0
+@onready var loaded = 7
+const max_loaded = 7
+@onready var spare_ammo = 100
 """
 	inventory.append({
-	"item_id": 2, #sniper
-	"loaded": 5,
-	"max_loaded": 5, 
-	"spare_ammo": 10
+	"item_id": 0, #pistol
+	"loaded": 7,
+	"max_loaded": 7, # See above assignment.
+	"spare_ammo": 100
 	})
 	"""
 
@@ -31,7 +31,7 @@ func get_interaction_time():
 func use():
 	if len(player.inventory) < player.inventory_space:
 		player.inventory.append({
-		"item_id": item_id, #sniper
+		"item_id": item_id, 
 		"loaded": loaded,
 		"max_loaded": max_loaded, 
 		"spare_ammo": spare_ammo
@@ -40,3 +40,6 @@ func use():
 		player.equipped.queue_free()
 		player.equip_weapon()
 		queue_free()
+	else:
+		#swap the gun
+		pass
