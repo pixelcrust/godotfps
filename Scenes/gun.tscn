@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://brid1ads3hnl2"]
 
-[ext_resource type="Script" path="res://gun.gd" id="1_wbae3"]
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
 [ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="2_wtbyh"]
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
 [ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]

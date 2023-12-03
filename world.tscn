@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d3srmqybd7g8v" path="res://Scenes/test_level/test_palett.tscn" id="9_mnt0h"]
 [ext_resource type="PackedScene" uid="uid://dkq7ua57mcu8c" path="res://Scenes/test_level/test_wall.tscn" id="10_ula7m"]
 [ext_resource type="PackedScene" uid="uid://cr6ja57rxo2pm" path="res://Scenes/enemy_dummy.tscn" id="11_yb4fu"]
-[ext_resource type="PackedScene" uid="uid://dhunj16wsng6n" path="res://propane_tank.tscn" id="12_k60m2"]
+[ext_resource type="PackedScene" uid="uid://dhunj16wsng6n" path="res://Scenes/propane_tank.tscn" id="12_k60m2"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="13_qy556"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
@@ -155,10 +155,19 @@ transform = Transform3D(-0.0656295, 0, 0.997844, 0, 1, 0, -0.997844, 0, -0.06562
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.4957, 0.971957, 27.3195)
 
 [node name="Node3D" parent="." instance=ExtResource("11_yb4fu")]
-transform = Transform3D(-0.982411, 0, 0.18673, 0, 1, 0, -0.18673, 0, -0.982411, -5.75391, 4.1886, 33.11)
+transform = Transform3D(-0.982411, 0, 0.18673, 0, 1, 0, -0.18673, 0, -0.982411, -7.08335, 4.1886, 33.11)
 
 [node name="propane_tank" parent="." instance=ExtResource("12_k60m2")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -18.0156, 5.60119, 22.3881)
 
 [node name="Medikit" parent="." instance=ExtResource("13_qy556")]
 transform = Transform3D(0.12, 0, 0, 0, 1.43099e-09, 0.12, 0, -0.12, 1.43099e-09, -41.0838, 1.07299, 32.5584)
+
+[node name="Node3D2" parent="." instance=ExtResource("11_yb4fu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.44896, 3.41732, 31.9742)
+
+[node name="Node3D3" parent="." instance=ExtResource("11_yb4fu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.36775, 2.48125, 35.3876)
+
+[node name="propane_tank2" parent="." instance=ExtResource("12_k60m2")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -5.00343, 5.331, 34.1705)

@@ -7,6 +7,7 @@ extends Node3D
 
 @onready var interactiontime_open = 5
 @onready var interactiontime_close = 1
+const time_rooted = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +17,7 @@ func _ready():
 func _process(delta):
 	if is_active and raycast.is_colliding():
 		if(raycast.get_collider().is_in_group("has_hp")):
-			raycast.get_collider().hit(dmg)
+			raycast.get_collider().hit(dmg,time_rooted)
 		use()
 
 func get_interaction_time():

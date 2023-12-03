@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dwftv3k1yo0ik"]
 
-[ext_resource type="Script" path="res://bullet.gd" id="1_1urrn"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_1urrn"]
 [ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="2_5oqdg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxnks"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://csmo3ugeusx1s"]
 
-[ext_resource type="Script" path="res://fish.gd" id="1_xcftq"]
+[ext_resource type="Script" path="res://Scripts/fish.gd" id="1_xcftq"]
 [ext_resource type="ArrayMesh" uid="uid://bjgu2ncjpalui" path="res://Models/Npc/Anglerfish.obj" id="2_6ua5i"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_dmf8u"]
 

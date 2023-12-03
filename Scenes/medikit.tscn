@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dms1akyc4a36y"]
 
 [ext_resource type="ArrayMesh" uid="uid://cxooft7r2m5ar" path="res://Models/Item/FirstAidKit_Hard.obj" id="1_40n4i"]
-[ext_resource type="Script" path="res://Scenes/medikit.gd" id="1_877f1"]
-[ext_resource type="Script" path="res://Scenes/medikit_collision.gd" id="3_wm7fk"]
+[ext_resource type="Script" path="res://Scripts/medikit.gd" id="1_877f1"]
+[ext_resource type="Script" path="res://Scripts/medikit_collision.gd" id="3_wm7fk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3ncb"]
 albedo_color = Color(0, 0.341176, 0.341176, 1)
