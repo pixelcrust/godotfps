@@ -37,7 +37,8 @@ func use():
 		"spare_ammo": spare_ammo
 		})
 		player.inventory_selector = len(player.inventory)-1
-		player.equipped.queue_free()
+		if player.equipped_id != -1:
+			player.equipped.queue_free()
 		player.equip_weapon()
 		queue_free()
 	else:

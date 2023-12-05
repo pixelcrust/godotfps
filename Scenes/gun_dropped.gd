@@ -1,6 +1,7 @@
 extends Node3D
 @onready var interaction_time = .5
 
+@onready var rigid_body = $RigidBody3D
 
 @onready var player = 0
 const item_id = 0
@@ -37,7 +38,8 @@ func use():
 		"spare_ammo": spare_ammo
 		})
 		player.inventory_selector = len(player.inventory)-1
-		player.equipped.queue_free()
+		if player.equipped_id != -1:
+			player.equipped.queue_free()
 		player.equip_weapon()
 		queue_free()
 	else:

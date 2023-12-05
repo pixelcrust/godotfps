@@ -68,6 +68,11 @@ var gravity = 9.8
 @onready var asset_shotgun = preload("res://Scenes/shotgun.tscn")
 @onready var asset_sniper = preload("res://Scenes/sniper.tscn")
 
+#preload weapons to be dropped
+@onready var asset_drop_gun = preload("res://Scenes/gun_dropped.tscn")
+@onready var  asset_drop_shotgun = preload("res://Scenes/shotgun_dropped.tscn")
+@onready var  asset_drop_sniper = preload("res://Scenes/sniper_dropped.tscn")
+
 @onready var hp_start = 150
 @onready var hp = hp_start
 
@@ -124,13 +129,14 @@ func _physics_process(delta):
 	else:
 		state_move = 0
 	
-	#display ammo
-	display_ammo.clear()
-	display_ammo.insert_text_at_caret(str(inventory[inventory_selector].loaded)+"/"+str(inventory[inventory_selector].spare_ammo))
-	
-	#display hp
-	display_hp.clear()
-	display_hp.insert_text_at_caret(str(hp))
+	if inventory.is_empty() == false:
+		#display ammo
+		display_ammo.clear()
+		display_ammo.insert_text_at_caret(str(inventory[inventory_selector].loaded)+"/"+str(inventory[inventory_selector].spare_ammo))
+		
+		#display hp
+		display_hp.clear()
+		display_hp.insert_text_at_caret(str(hp))
 	
 	# Handle Jump.
 	if Input.is_action_just_pressed("key_jump") and is_on_floor():
@@ -185,15 +191,41 @@ func _physics_process(delta):
 				pass
 			else:
 				equipped.animation_player.play("change weapon out") #this does not work
-		equipped.queue_free() 
+		if inventory.is_empty() == false:
+			equipped.queue_free() 
 		inventory_selector += 1
 		equip_weapon()
 		
 	#drop weapon
-	if Input.is_action_just_pressed("key_drop_weapon"):
+	if Input.is_action_just_pressed("key_drop_weapon") && equipped_id != -1:
 		equipped.queue_free()
+		match inventory[inventory_selector].item_id:
+
+			0:
+				print("dropped gun")
+				var new_dropped_gun = asset_drop_gun.instantiate()
+				new_dropped_gun.position = head.global_position
+				new_dropped_gun.transform.basis = global_transform.basis
+				get_tree().root.get_children()[0].add_child(new_dropped_gun);
+				new_dropped_gun.rigid_body.apply_force(Vector3(5,5,5))
+			1:
+				print("dropped gun")
+				var new_dropped_shotgun = asset_drop_shotgun.instantiate()
+				new_dropped_shotgun.position = head.global_position
+				new_dropped_shotgun.transform.basis = global_transform.basis
+				get_tree().root.get_children()[0].add_child(new_dropped_shotgun);
+			2:
+				print("dropped gun")
+				var new_dropped_sniper = asset_drop_sniper.instantiate()
+				new_dropped_sniper.position = head.global_position
+				new_dropped_sniper.transform.basis = global_transform.basis
+				get_tree().root.get_children()[0].add_child(new_dropped_sniper)
+			-1:
+				pass
+			_:
+				pass
 		inventory.remove_at(inventory_selector)
-		print(inventory)
+		
 		equip_weapon()
 	
 	#shoot
@@ -269,38 +301,41 @@ func equip_weapon():
 		equipped_id = inventory[inventory_selector].item_id
 	else:
 		inventory_selector = 0
-	match inventory[inventory_selector].item_id:
-		0:
-			var new_gun = asset_gun.instantiate()
-			camera.add_child(new_gun)
-			new_gun.position = camera.position
-			new_gun.rotate_y(deg_to_rad(90))
-			new_gun.transform.origin = Vector3(1,-0.8,-1)
-			new_gun.animation_player.play("change weapon in")
-			new_gun.player = $"." #get the inventory of the player
-			equipped = new_gun
-		1:
-			var new_shotgun = asset_shotgun.instantiate()
-			camera.add_child(new_shotgun)
-			new_shotgun.position = camera.position
-			new_shotgun.rotate_y(deg_to_rad(90))
-			new_shotgun.transform.origin = Vector3(1,-0.8,-1)
-			new_shotgun.animation_player.play("change weapon in")
-			new_shotgun.player = $"." #get the inventory of the player
-			equipped = new_shotgun
-		2:
-			var new_sniper = asset_sniper.instantiate()
-			camera.add_child(new_sniper)
-			new_sniper.position = camera.position
-			new_sniper.rotate_y(deg_to_rad(90))
-			new_sniper.transform.origin = Vector3(1,-0.8,-1)
-			new_sniper.animation_player.play("change weapon in")
-			new_sniper.player = $"." #get the inventory of the player
-			equipped = new_sniper
-		-1: #nothing equipped
-			pass
-		_:
-			equipped_id = -1
+	if inventory.is_empty():
+		equipped_id = -1
+	else:
+		match inventory[inventory_selector].item_id:
+			0:
+				var new_gun = asset_gun.instantiate()
+				camera.add_child(new_gun)
+				new_gun.position = camera.position
+				new_gun.rotate_y(deg_to_rad(90))
+				new_gun.transform.origin = Vector3(1,-0.8,-1)
+				new_gun.animation_player.play("change weapon in")
+				new_gun.player = $"." #get the inventory of the player
+				equipped = new_gun
+			1:
+				var new_shotgun = asset_shotgun.instantiate()
+				camera.add_child(new_shotgun)
+				new_shotgun.position = camera.position
+				new_shotgun.rotate_y(deg_to_rad(90))
+				new_shotgun.transform.origin = Vector3(1,-0.8,-1)
+				new_shotgun.animation_player.play("change weapon in")
+				new_shotgun.player = $"." #get the inventory of the player
+				equipped = new_shotgun
+			2:
+				var new_sniper = asset_sniper.instantiate()
+				camera.add_child(new_sniper)
+				new_sniper.position = camera.position
+				new_sniper.rotate_y(deg_to_rad(90))
+				new_sniper.transform.origin = Vector3(1,-0.8,-1)
+				new_sniper.animation_player.play("change weapon in")
+				new_sniper.player = $"." #get the inventory of the player
+				equipped = new_sniper
+			-1: #nothing equipped
+				pass
+			_:
+				equipped_id = -1
 	#show gui for inventory
 	display_inventory.visible = true
 	inventory_timer.connect("timeout",_inventory_gui_timeout)
@@ -320,40 +355,43 @@ func equip_weapon():
 			inventory_marker.global_position.x = 0
 			inventory_marker.global_position.y = 0
 	
-	match inventory[0].item_id:
-		0:
-			inv_slot_1.texture = icon_pistol
-		1:
-			inv_slot_1.texture = icon_shotgun
-		2:
-			inv_slot_1.texture = icon_sniper
-		_:
-			pass
-			
-	if len(inventory) >1:
-		match inventory[1].item_id:
+	if inventory.is_empty() == false:
+		match inventory[0].item_id:
 			0:
-				inv_slot_2.texture = icon_pistol
+				inv_slot_1.texture = icon_pistol
 			1:
-				inv_slot_2.texture = icon_shotgun
+				inv_slot_1.texture = icon_shotgun
 			2:
-				inv_slot_2.texture = icon_sniper
+				inv_slot_1.texture = icon_sniper
 			_:
 				pass
-	else:
-		inv_slot_2.texture = null
-	if len(inventory) >2:
-		match inventory[2].item_id:
-			0:
-				inv_slot_3.texture = icon_pistol
-			1:
-				inv_slot_3.texture = icon_shotgun
-			2:
-				inv_slot_3.texture = icon_sniper
-			_:
-				pass
-	else:
-		inv_slot_3.texture = null
+			-1: 
+				inv_slot_2.texture = null
+				
+		if len(inventory) >1:
+			match inventory[1].item_id:
+				0:
+					inv_slot_2.texture = icon_pistol
+				1:
+					inv_slot_2.texture = icon_shotgun
+				2:
+					inv_slot_2.texture = icon_sniper
+				_:
+					pass
+		else:
+			inv_slot_2.texture = null
+		if len(inventory) >2:
+			match inventory[2].item_id:
+				0:
+					inv_slot_3.texture = icon_pistol
+				1:
+					inv_slot_3.texture = icon_shotgun
+				2:
+					inv_slot_3.texture = icon_sniper
+				_:
+					pass
+		else:
+			inv_slot_3.texture = null
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
