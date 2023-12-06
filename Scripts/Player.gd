@@ -198,35 +198,7 @@ func _physics_process(delta):
 		
 	#drop weapon
 	if Input.is_action_just_pressed("key_drop_weapon") && equipped_id != -1:
-		equipped.queue_free()
-		match inventory[inventory_selector].item_id:
-
-			0:
-				print("dropped gun")
-				var new_dropped_gun = asset_drop_gun.instantiate()
-				new_dropped_gun.position = head.global_position
-				new_dropped_gun.transform.basis = global_transform.basis
-				get_tree().root.get_children()[0].add_child(new_dropped_gun);
-				new_dropped_gun.rigid_body.apply_force(Vector3(5,5,5))
-			1:
-				print("dropped gun")
-				var new_dropped_shotgun = asset_drop_shotgun.instantiate()
-				new_dropped_shotgun.position = head.global_position
-				new_dropped_shotgun.transform.basis = global_transform.basis
-				get_tree().root.get_children()[0].add_child(new_dropped_shotgun);
-			2:
-				print("dropped gun")
-				var new_dropped_sniper = asset_drop_sniper.instantiate()
-				new_dropped_sniper.position = head.global_position
-				new_dropped_sniper.transform.basis = global_transform.basis
-				get_tree().root.get_children()[0].add_child(new_dropped_sniper)
-			-1:
-				pass
-			_:
-				pass
-		inventory.remove_at(inventory_selector)
-		
-		equip_weapon()
+		drop_weapon()
 	
 	#shoot
 	if(Input.is_action_just_pressed("key_shoot")):
@@ -404,6 +376,36 @@ func _on_bone_body_bodypart_hit(dmg,time_rooted):
 	if(time_rooted > 0):
 		set_rooted(time_rooted)
 
+func drop_weapon():
+	equipped.queue_free()
+	match inventory[inventory_selector].item_id:
+
+		0:
+			print("dropped gun")
+			var new_dropped_gun = asset_drop_gun.instantiate()
+			new_dropped_gun.position = head.global_position
+			new_dropped_gun.transform.basis = global_transform.basis
+			get_tree().root.get_children()[0].add_child(new_dropped_gun);
+			new_dropped_gun.rigid_body.apply_force(Vector3(5,5,5))
+		1:
+			print("dropped gun")
+			var new_dropped_shotgun = asset_drop_shotgun.instantiate()
+			new_dropped_shotgun.position = head.global_position
+			new_dropped_shotgun.transform.basis = global_transform.basis
+			get_tree().root.get_children()[0].add_child(new_dropped_shotgun);
+		2:
+			print("dropped gun")
+			var new_dropped_sniper = asset_drop_sniper.instantiate()
+			new_dropped_sniper.position = head.global_position
+			new_dropped_sniper.transform.basis = global_transform.basis
+			get_tree().root.get_children()[0].add_child(new_dropped_sniper)
+		-1:
+			pass
+		_:
+			pass
+	inventory.remove_at(inventory_selector)
+	equip_weapon()
+	
 func heal(heal_amount):
 	hp += heal_amount
 	
