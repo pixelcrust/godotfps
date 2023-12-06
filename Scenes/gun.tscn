@@ -122,7 +122,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_toemc")
 surface_material_override/4 = SubResource("StandardMaterial3D_fdtim")
 
 [node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
-transform = Transform3D(-6.24449e-08, -1.42857, 0, 1.42857, -6.24449e-08, 0, 0, 0, 1.42857, 0.0437703, 0.51497, 0)
+transform = Transform3D(-6.24449e-08, -1.42857, 0, 1.42857, -6.24449e-08, 0, 0, 0, 1.42857, 1.47234, 0.51497, 0)
 
 [node name="emitter_shell" parent="MeshInstance3D" instance=ExtResource("3_woa2a")]
 transform = Transform3D(-0.116948, 0, -0.993138, 0, 1, 0, 0.993138, 0, -0.116948, 0.814452, 0.61147, 0)

@@ -67,6 +67,7 @@ var gravity = 9.8
 @onready var asset_gun = preload("res://Scenes/gun.tscn")
 @onready var asset_shotgun = preload("res://Scenes/shotgun.tscn")
 @onready var asset_sniper = preload("res://Scenes/sniper.tscn")
+@onready var asset_knife = preload("res://Scenes/knife.tscn")
 
 #preload weapons to be dropped
 @onready var asset_drop_gun = preload("res://Scenes/gun_dropped.tscn")
@@ -86,10 +87,10 @@ func _ready():
 	})
 	
 	inventory.append({
-	"item_id": 1, #shotgun
-	"loaded": 2,
-	"max_loaded": 2, 
-	"spare_ammo": 4
+	"item_id": 3, #knife
+	"loaded": 1,
+	"max_loaded": 1, 
+	"spare_ammo": 0
 	})
 	
 	"""
@@ -98,6 +99,13 @@ func _ready():
 	"loaded": 5,
 	"max_loaded": 5, 
 	"spare_ammo": 10
+	})
+	
+	inventory.append({
+	"item_id": 1, #shotgun
+	"loaded": 2,
+	"max_loaded": 2, 
+	"spare_ammo": 4
 	})
 	"""
 	
@@ -304,6 +312,15 @@ func equip_weapon():
 				new_sniper.animation_player.play("change weapon in")
 				new_sniper.player = $"." #get the inventory of the player
 				equipped = new_sniper
+			3:
+				var new_knife = asset_knife.instantiate()
+				camera.add_child(new_knife)
+				new_knife.position = camera.position
+				new_knife.rotate_y(deg_to_rad(90))
+				new_knife.transform.origin = Vector3(1,-0.8,-1)
+				new_knife.animation_player.play("change weapon in")
+				new_knife.player = $"."
+				equipped = new_knife
 			-1: #nothing equipped
 				pass
 			_:
@@ -335,10 +352,13 @@ func equip_weapon():
 				inv_slot_1.texture = icon_shotgun
 			2:
 				inv_slot_1.texture = icon_sniper
-			_:
+			3:
 				pass
 			-1: 
 				inv_slot_2.texture = null
+			_:
+				pass
+
 				
 		if len(inventory) >1:
 			match inventory[1].item_id:
@@ -348,6 +368,8 @@ func equip_weapon():
 					inv_slot_2.texture = icon_shotgun
 				2:
 					inv_slot_2.texture = icon_sniper
+				3:
+					pass
 				_:
 					pass
 		else:
@@ -360,6 +382,9 @@ func equip_weapon():
 					inv_slot_3.texture = icon_shotgun
 				2:
 					inv_slot_3.texture = icon_sniper
+				3:
+					#add icon knife
+					pass
 				_:
 					pass
 		else:
@@ -405,6 +430,9 @@ func drop_weapon():
 			new_dropped_sniper.loaded = inventory[inventory_selector].loaded
 			new_dropped_sniper.spare_ammo = inventory[inventory_selector].spare_ammo
 			get_tree().root.get_children()[0].add_child(new_dropped_sniper)
+		3:
+			#add dropping knife
+			pass
 		-1:
 			pass
 		_:

@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=3 uid="uid://dm2mx7bibfyww"]
+
+[ext_resource type="ArrayMesh" uid="uid://ybhcy3yvmw52" path="res://resources/Survival Pack - Sept 2020/OBJ/Knife.obj" id="1_6u313"]
+[ext_resource type="Script" path="res://knife.gd" id="1_hx75e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dy5pb"]
+albedo_color = Color(0.611765, 0.439216, 0.435294, 1)
+metallic = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilulc"]
+albedo_color = Color(0.745098, 0.458824, 0.615686, 1)
+metallic = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qvq6"]
+albedo_color = Color(0.431373, 0.172549, 0.0588235, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqx51"]
+albedo_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="Animation" id="Animation_8y2jy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.208842, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.08179, -1.68594, 1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_3nbol"]
+resource_name = "shoot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.208842, 0, 0), Vector3(0.481106, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hqr8d"]
+resource_name = "change weapon in"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.08179, -1.68594, 1.5708), Vector3(-0.540895, -3.10874, 1.5708)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eg7wy"]
+_data = {
+"RESET": SubResource("Animation_8y2jy"),
+"change weapon in": SubResource("Animation_hqr8d"),
+"shoot": SubResource("Animation_3nbol")
+}
+
+[node name="Knife" type="Node3D"]
+script = ExtResource("1_hx75e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.876955, 0.114885, -0.466639, 0.469749, 3.54651e-08, 0.8828, 0.10142, -0.993379, -0.0539671, -0.208842, 0, 0)
+mesh = ExtResource("1_6u313")
+surface_material_override/0 = SubResource("StandardMaterial3D_dy5pb")
+surface_material_override/1 = SubResource("StandardMaterial3D_ilulc")
+surface_material_override/2 = SubResource("StandardMaterial3D_0qvq6")
+surface_material_override/3 = SubResource("StandardMaterial3D_lqx51")
+
+[node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 1.69407e-21, 0, 1, 3.05789e-08, 0.699562, -6.11577e-08)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eg7wy")
+}

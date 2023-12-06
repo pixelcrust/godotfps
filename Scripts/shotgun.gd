@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var animation_player = $AnimationPlayer
 #@onready var sound = $AnimationPlayer
-@onready var barrel = $RayCast3D
+@onready var barrel = $MeshInstance3D/RayCast3D
 @onready var shell = preload("res://Scenes/shotgun_shell.tscn")
 @onready var player = null
 

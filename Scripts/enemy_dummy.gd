@@ -52,7 +52,7 @@ func _physics_process(delta):
 			velocity.x = 0
 			velocity.z = 0
 		2: #move
-			velocity = Vector3(-5,0,0)
+			velocity = Vector3(0,-50,-50)*-transform.basis.z *delta
 		_:
 			state = 0
 	move_and_slide()
