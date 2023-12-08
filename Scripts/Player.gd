@@ -417,7 +417,7 @@ func drop_weapon():
 			get_tree().root.get_children()[0].add_child(new_dropped_gun)
 			new_dropped_gun.loaded = inventory[inventory_selector].loaded
 			new_dropped_gun.spare_ammo = inventory[inventory_selector].spare_ammo
-			new_dropped_gun.rigid_body.apply_force(Vector3(5,5,5))
+			new_dropped_gun.rigid_body.apply_impulse(Vector3(0,0,-5)*transform.basis.z,Vector3(0,0,0))
 		1:
 			print("dropped gun")
 			var new_dropped_shotgun = asset_drop_shotgun.instantiate()
