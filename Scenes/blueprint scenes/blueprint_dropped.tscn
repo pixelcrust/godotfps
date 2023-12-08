@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlscv3sge6u5e"]
+[gd_scene load_steps=11 format=3 uid="uid://7alpfeb2tgee"]
 
-[ext_resource type="Script" path="res://Scenes/gun_dropped.gd" id="1_86lvq"]
-[ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="3_h6ckd"]
-[ext_resource type="Script" path="res://Scenes/dropped_collision.gd" id="3_xw75f"]
+[ext_resource type="Script" path="res://Scripts/knife_dropped.gd" id="1_52nmx"]
+[ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="2_83rwr"]
+[ext_resource type="Script" path="res://Scenes/dropped_collision.gd" id="3_ipa1x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n0rn"]
 albedo_color = Color(0.439216, 0.176471, 0, 1)
@@ -26,14 +26,14 @@ size = Vector3(2.09154, 1.22244, 0.492007)
 [sub_resource type="BoxShape3D" id="BoxShape3D_p7d2t"]
 size = Vector3(2.42206, 1.70548, 0.772461)
 
-[node name="gun_dropped" type="Node3D"]
-script = ExtResource("1_86lvq")
+[node name="blueprint_dropped" type="Node3D"]
+script = ExtResource("1_52nmx")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-mesh = ExtResource("3_h6ckd")
+mesh = ExtResource("2_83rwr")
 surface_material_override/0 = SubResource("StandardMaterial3D_0n0rn")
 surface_material_override/1 = SubResource("StandardMaterial3D_h0x4y")
 surface_material_override/2 = SubResource("StandardMaterial3D_02vyu")
@@ -46,7 +46,7 @@ shape = SubResource("BoxShape3D_dt5af")
 
 [node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
 collision_layer = 2
-script = ExtResource("3_xw75f")
+script = ExtResource("3_ipa1x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.142948, 0.0621176, 0.00952148)

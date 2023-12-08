@@ -60,6 +60,7 @@ var gravity = 9.8
 @onready var icon_pistol = preload("res://Sprites/icons/icon_pistol.png")
 @onready var icon_shotgun = preload("res://Sprites/icons/icon_shotgun.png")
 @onready var icon_sniper = preload("res://Sprites/icons/icon_sniper.png")
+const icon_knife = preload("res://Sprites/icons/icon_knife.png")
 @onready var inventory_marker = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inventory_marker
 @onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_timer
 
@@ -73,6 +74,7 @@ var gravity = 9.8
 @onready var asset_drop_gun = preload("res://Scenes/gun_dropped.tscn")
 @onready var  asset_drop_shotgun = preload("res://Scenes/shotgun_dropped.tscn")
 @onready var  asset_drop_sniper = preload("res://Scenes/sniper_dropped.tscn")
+const asset_drop_knife = preload("res://Scenes/knife_dropped.tscn")
 
 @onready var hp_start = 150
 @onready var hp = hp_start
@@ -353,7 +355,7 @@ func equip_weapon():
 			2:
 				inv_slot_1.texture = icon_sniper
 			3:
-				pass
+				inv_slot_1.texture = icon_knife
 			-1: 
 				inv_slot_2.texture = null
 			_:
@@ -369,7 +371,7 @@ func equip_weapon():
 				2:
 					inv_slot_2.texture = icon_sniper
 				3:
-					pass
+					inv_slot_2.texture = icon_knife
 				_:
 					pass
 		else:
@@ -383,7 +385,7 @@ func equip_weapon():
 				2:
 					inv_slot_3.texture = icon_sniper
 				3:
-					#add icon knife
+					inv_slot_3.texture = icon_knife
 					pass
 				_:
 					pass
@@ -422,6 +424,7 @@ func drop_weapon():
 			new_dropped_shotgun.loaded = inventory[inventory_selector].loaded
 			new_dropped_shotgun.spare_ammo = inventory[inventory_selector].spare_ammo
 			get_tree().root.get_children()[0].add_child(new_dropped_shotgun)
+			new_dropped_shotgun.rigid_body.apply_force(Vector3(5,5,5))
 		2:
 			print("dropped gun")
 			var new_dropped_sniper = asset_drop_sniper.instantiate()
@@ -430,8 +433,14 @@ func drop_weapon():
 			new_dropped_sniper.loaded = inventory[inventory_selector].loaded
 			new_dropped_sniper.spare_ammo = inventory[inventory_selector].spare_ammo
 			get_tree().root.get_children()[0].add_child(new_dropped_sniper)
+			new_dropped_sniper.rigid_body.apply_force(Vector3(5,5,5))
 		3:
-			#add dropping knife
+			print("dropped knife")
+			var new_dropped_knife = asset_drop_knife.instantiate()
+			new_dropped_knife.position = raycast_interaction.global_position
+			new_dropped_knife.transform.basis = global_transform.basis
+			get_tree().root.get_children()[0].add_child(new_dropped_knife)
+			new_dropped_knife.rigid_body.apply_force(Vector3(5,5,5))
 			pass
 		-1:
 			pass

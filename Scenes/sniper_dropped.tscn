@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/sniper_dropped.gd" id="1_eyl1h"]
 [ext_resource type="ArrayMesh" uid="uid://cnyge50dpdd3d" path="res://Models/Item/SniperRifle_1.obj" id="2_5rq2b"]
-[ext_resource type="Script" path="res://Scenes/sniper_dropped_collision.gd" id="3_pnsxn"]
+[ext_resource type="Script" path="res://Scenes/dropped_collision.gd" id="3_pnsxn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayjbo"]
 albedo_color = Color(0.439216, 0.176471, 0, 1)

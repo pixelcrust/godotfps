@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/shotgun_dropped.gd" id="1_77pfj"]
 [ext_resource type="ArrayMesh" uid="uid://bcnl4ay0xvw0" path="res://Models/Item/Shotgun_SawedOff.obj" id="2_wt8dp"]
-[ext_resource type="Script" path="res://Scenes/sniper_dropped_collision.gd" id="3_yawhs"]
+[ext_resource type="Script" path="res://Scenes/dropped_collision.gd" id="3_yawhs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w4er"]
 albedo_color = Color(0.356863, 0.372549, 0.313726, 1)

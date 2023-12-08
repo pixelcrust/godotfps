@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://doj4krciulmc7"]
+
+[ext_resource type="Script" path="res://Scenes/knife_dropped.gd" id="1_xjb77"]
+[ext_resource type="ArrayMesh" uid="uid://ybhcy3yvmw52" path="res://resources/Survival Pack - Sept 2020/OBJ/Knife.obj" id="3_cbs2y"]
+[ext_resource type="Script" path="res://Scenes/dropped_collision.gd" id="3_pib5g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jsij"]
+albedo_color = Color(0.611765, 0.439216, 0.435294, 1)
+metallic = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1jgwh"]
+albedo_color = Color(0.745098, 0.458824, 0.615686, 1)
+metallic = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8ddg"]
+albedo_color = Color(0.431373, 0.172549, 0.0588235, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kfwyd"]
+albedo_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt5af"]
+size = Vector3(1.6831, 0.419624, 0.182633)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7d2t"]
+size = Vector3(2.01464, 0.775003, 0.772461)
+
+[node name="knife_dropped" type="Node3D"]
+script = ExtResource("1_xjb77")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1.31134e-08, 0.3, -4.52987e-08, 0.3, -1.31134e-08, 7.6233e-22, -1.98007e-15, -4.52987e-08, -0.3, -0.208842, 0, 0)
+mesh = ExtResource("3_cbs2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_7jsij")
+surface_material_override/1 = SubResource("StandardMaterial3D_1jgwh")
+surface_material_override/2 = SubResource("StandardMaterial3D_j8ddg")
+surface_material_override/3 = SubResource("StandardMaterial3D_kfwyd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0853498, 0.0134492, -0.00283604)
+shape = SubResource("BoxShape3D_dt5af")
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
+collision_layer = 2
+script = ExtResource("3_pib5g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0869171, 0.0315907, 0.00952148)
+shape = SubResource("BoxShape3D_p7d2t")
