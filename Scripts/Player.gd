@@ -164,7 +164,8 @@ func _physics_process(delta):
 		state_move = 0
 	
 	if raycast_interaction.is_colliding():
-		print_debug("raycast colliding with " +str(raycast_interaction.get_collider()))
+		#print_debug("raycast colliding with " +str(raycast_interaction.get_collider()))
+		pass
 	# Start interaction
 	if Input.is_action_just_pressed("Interact")  and raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider().is_in_group("interactable"):
@@ -357,7 +358,7 @@ func equip_weapon():
 			3:
 				inv_slot_1.texture = icon_knife
 			-1: 
-				inv_slot_2.texture = null
+				inv_slot_1.texture = null
 			_:
 				pass
 
@@ -376,6 +377,7 @@ func equip_weapon():
 					pass
 		else:
 			inv_slot_2.texture = null
+			
 		if len(inventory) >2:
 			match inventory[2].item_id:
 				0:
