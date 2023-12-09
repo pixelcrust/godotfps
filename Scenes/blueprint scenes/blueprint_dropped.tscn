@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/knife_dropped.gd" id="1_52nmx"]
 [ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="2_83rwr"]
-[ext_resource type="Script" path="res://Scenes/dropped_collision.gd" id="3_ipa1x"]
+[ext_resource type="Script" path="res://Scripts/dropped_collision.gd" id="3_ipa1x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n0rn"]
 albedo_color = Color(0.439216, 0.176471, 0, 1)

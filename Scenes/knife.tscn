@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dm2mx7bibfyww"]
+[gd_scene load_steps=12 format=3 uid="uid://dm2mx7bibfyww"]
 
 [ext_resource type="ArrayMesh" uid="uid://ybhcy3yvmw52" path="res://resources/Survival Pack - Sept 2020/OBJ/Knife.obj" id="1_6u313"]
 [ext_resource type="Script" path="res://knife.gd" id="1_hx75e"]
@@ -16,6 +16,8 @@ albedo_color = Color(0.431373, 0.172549, 0.0588235, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqx51"]
 albedo_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgh7q"]
 
 [sub_resource type="Animation" id="Animation_8y2jy"]
 length = 0.001
@@ -62,7 +64,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_3nbol"]
 resource_name = "shoot"
-length = 0.5
+length = 0.6
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -71,10 +73,10 @@ tracks/0/path = NodePath("MeshInstance3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.208842, 0, 0), Vector3(0.481106, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.208842, 0, 0), Vector3(0.481106, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eg7wy"]
@@ -96,10 +98,10 @@ surface_material_override/1 = SubResource("StandardMaterial3D_ilulc")
 surface_material_override/2 = SubResource("StandardMaterial3D_0qvq6")
 surface_material_override/3 = SubResource("StandardMaterial3D_lqx51")
 
-[node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
-transform = Transform3D(-0.983242, -0.174426, -0.0530105, 0.159189, -0.679766, -0.715945, 0.088845, -0.712386, 0.696141, 4.12333e-07, 0.805019, 2.06196e-07)
-collision_mask = 3
-hit_from_inside = true
+[node name="ShapeCast3D" type="ShapeCast3D" parent="MeshInstance3D"]
+transform = Transform3D(2, 4.65324e-17, 0, 4.65324e-17, 2, 0, 0, 0, 2, 8.74214e-06, 2.41496, 6.12237e-06)
+shape = SubResource("BoxShape3D_kgh7q")
+collision_mask = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

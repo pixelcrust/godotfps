@@ -113,8 +113,6 @@ func _ready():
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	equip_weapon()
-	#var MainEnv = camera.get_environment()
-	#guncamera.set_environment(MainEnv)
 
 	
 func _unhandled_input(event):
@@ -141,12 +139,15 @@ func _physics_process(delta):
 	
 	if inventory.is_empty() == false:
 		#display ammo
+		display_ammo.visible = true
 		display_ammo.clear()
 		display_ammo.insert_text_at_caret(str(inventory[inventory_selector].loaded)+"/"+str(inventory[inventory_selector].spare_ammo))
+	else:
+		display_ammo.visible = false
 		
-		#display hp
-		display_hp.clear()
-		display_hp.insert_text_at_caret(str(hp))
+	#display hp
+	display_hp.clear()
+	display_hp.insert_text_at_caret(str(hp))
 	
 	# Handle Jump.
 	if Input.is_action_just_pressed("key_jump") and is_on_floor():
@@ -277,8 +278,6 @@ func _headbob(time) -> Vector3:
 	return pos
 
 func equip_weapon():
-	
-	
 	#equip weapon
 	if(inventory_selector<inventory.size()):
 		equipped_id = inventory[inventory_selector].item_id
@@ -399,7 +398,6 @@ func _on_bone_head_bodypart_hit(dmg,time_rooted):
 	if(time_rooted > 0):
 		set_rooted(time_rooted)
 
-
 func _on_bone_body_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
 	if(time_rooted > 0):
@@ -472,5 +470,4 @@ func set_rooted(stun_duration_sec):
 	is_rooted = false
 
 func _inventory_gui_timeout():
-	display_inventory.visible = false
 	display_inventory.visible = false
