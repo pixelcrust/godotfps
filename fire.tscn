@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://scovo1ty57i8"]
+
+[node name="fire" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
