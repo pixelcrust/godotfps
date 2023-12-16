@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvihmp2ma48n5"]
+[gd_scene load_steps=11 format=3 uid="uid://cvihmp2ma48n5"]
 
 [ext_resource type="Script" path="res://Scripts/beartrap.gd" id="1_nnbfk"]
 [ext_resource type="ArrayMesh" uid="uid://d2d3etf5e7bip" path="res://Models/Item/BearTrap_Open.obj" id="2_oqcbj"]
@@ -49,11 +49,16 @@ _data = {
 "close": SubResource("Animation_f134b")
 }
 
-[node name="Beartrap" type="Node3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fdwpp"]
+height = 0.210524
+radius = 1.48008
+
+[node name="Beartrap" type="RigidBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_nnbfk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = ExtResource("2_oqcbj")
 surface_material_override/0 = SubResource("StandardMaterial3D_8xk0m")
 
@@ -74,3 +79,7 @@ shape = SubResource("CylinderShape3D_g2bjr")
 libraries = {
 "": SubResource("AnimationLibrary_2i5im")
 }
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.0592143, 0)
+shape = SubResource("CylinderShape3D_fdwpp")

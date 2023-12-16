@@ -7,6 +7,7 @@ extends Node3D
 @onready var sound_shoot = preload("res://Models/Sounds/sfx_weapon_singleshot21.wav")
 @onready var player = null
 @onready var emitter_shell = $MeshInstance3D/emitter_shell/GPUParticles3D
+const RECOIL = 5
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +22,7 @@ func shoot(inventory_selector):
 		pass
 	else:
 		if player.inventory[inventory_selector].loaded > 0:
+
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
 			emitter_shell.set_emitting(true)
@@ -29,6 +31,7 @@ func shoot(inventory_selector):
 			new_bullet.position = barrel.global_position
 			new_bullet.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_bullet);
+			player.camera.rotation.x += deg_to_rad(RECOIL)
 			await get_tree().create_timer(0.5).timeout
 		else:
 			pass

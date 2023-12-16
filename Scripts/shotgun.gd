@@ -5,6 +5,7 @@ extends Node3D
 @onready var barrel = $MeshInstance3D/RayCast3D
 @onready var shell = preload("res://Scenes/shotgun_shell.tscn")
 @onready var player = null
+const RECOIL = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +25,7 @@ func shoot(inventory_selector):
 					new_shell.position = barrel.global_position
 					new_shell.transform.basis = global_transform.basis
 					get_tree().root.get_children()[0].add_child(new_shell);
+				player.camera.rotation.x += deg_to_rad(RECOIL)
 
 func reload(inventory_selector):
 	if animation_player.is_playing():

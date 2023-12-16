@@ -5,6 +5,7 @@ extends Node3D
 @onready var barrel = $RayCast3D
 @onready var bullet = preload("res://Scenes/bullet_big.tscn")
 @onready var player = null
+const RECOIL = 15
 
 """
 inventory.append({
@@ -31,6 +32,7 @@ func shoot(inventory_selector):
 			new_bullet.position = barrel.global_position
 			new_bullet.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_bullet);
+			player.camera.rotation.x += deg_to_rad(RECOIL)
 		else:
 			pass
 		

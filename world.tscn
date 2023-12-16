@@ -194,3 +194,6 @@ transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 
 use_collision = true
 size = Vector3(1, 103.869, 9.86759)
 material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="Beartrap" parent="." instance=ExtResource("8_f6haw")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.9702, 4.84728, 22.3304)

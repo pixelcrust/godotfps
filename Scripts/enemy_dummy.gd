@@ -9,7 +9,7 @@ extends CharacterBody3D
 @onready var ray_view = $base/body/head/ray_view
 @onready var direction_helper = $base/body/direction_helper
 @onready var head = $base/body/head
-
+const SPEED = 5
 @onready var hp_start = 100
 @onready var hp = hp_start
 var vertical_shooting_error_range = 2
@@ -21,7 +21,7 @@ var vertical_shooting_error_range = 2
 
 var player = null
 
-@export var turn_speed_horizontally = 11
+@export var turn_speed_horizontally = 20
 @export var turn_speed_vertically = 59
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -52,7 +52,7 @@ func _physics_process(delta):
 			velocity.x = 0
 			velocity.z = 0
 		2: #move
-			velocity = Vector3(0,-50,-50)*-transform.basis.z *delta
+			velocity = transform.basis.z * delta * SPEED *70
 		_:
 			state = 0
 	move_and_slide()
@@ -74,42 +74,27 @@ func aim(delta):
 	var vertical_angle = atan2(direction.y, direction.x)
 	#print_debug(rad_to_deg(vertical_angle))
 	
-	# Convert the angle to degrees
-	#vertical_angle = rad_to_deg(vertical_angle)
-	#set the angle of the arm
-	
 	
 	arm.rotation.z = vertical_angle + deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
 	
 	
 	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
-	#arm.look_at(player.global_transform.origin,Vector3.UP)
+	
 	var ray_collider = ray_view.get_collider()
 	var vertical_angle_to_player = 0
 	
-	
 	if( ray_collider != player):
 		
-		#body.rotate_y(1.0*delta)
 		
 		rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
 		#arm.rotate_z(deg_to_rad(dir_to_player) * turn_speed_horizontally*delta)
 		var ray_gun_collider = ray_gun.get_collider()
 		
-		#for n in range(0,360,10):
-			#if ray_gun.get_collider().is_in_group("group_player"):
-				#vertical_angle_to_player = n
-			#arm.rotation.z = n
-		
-		#while !ray_gun_collider.is_in_group("group_player"):
-			#gun.rotate_z(turn_speed_vertically*delta)
-		#head.rotate_x(-head.angle_to(player.globals_position)*turn_speed_vertically*delta)
-		#arm.rotate_x(-turn_speed_vertically*delta)
-		
 	else:
 		#timer.start()
 		#print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
 		pass
+		
 func _timeout():
 	shoot()
 	if state == 1:
