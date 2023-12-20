@@ -1,5 +1,6 @@
 extends Node3D
 @onready var interaction_time = .5
+@onready var rigid_body = $RigidBody3D
 
 
 @onready var player = 0

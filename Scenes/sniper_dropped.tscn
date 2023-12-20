@@ -27,6 +27,7 @@ size = Vector3(7.5174, 1.71729, 0.309418)
 size = Vector3(7.64948, 2.09528, 1)
 
 [node name="sniper_dropped" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_eyl1h")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]

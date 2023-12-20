@@ -25,7 +25,8 @@ func shoot(inventory_selector):
 					new_shell.position = barrel.global_position
 					new_shell.transform.basis = global_transform.basis
 					get_tree().root.get_children()[0].add_child(new_shell);
-				player.camera.rotation.x += deg_to_rad(RECOIL)
+				var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
+				player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
 
 func reload(inventory_selector):
 	if animation_player.is_playing():

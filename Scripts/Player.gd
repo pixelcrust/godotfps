@@ -95,7 +95,7 @@ func _ready():
 	"spare_ammo": 0
 	})
 	
-	"""
+	
 	inventory.append({
 	"item_id": 2, #sniper
 	"loaded": 5,
@@ -103,6 +103,7 @@ func _ready():
 	"spare_ammo": 10
 	})
 	
+	"""
 	inventory.append({
 	"item_id": 1, #shotgun
 	"loaded": 2,
@@ -410,37 +411,37 @@ func drop_weapon():
 		0:
 			print("dropped gun")
 			var new_dropped_gun = asset_drop_gun.instantiate()
-			new_dropped_gun.position = raycast_interaction.global_position
+			new_dropped_gun.position = raycast_interaction.global_position -transform.basis.z*0.5
 			new_dropped_gun.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_dropped_gun)
 			new_dropped_gun.loaded = inventory[inventory_selector].loaded
 			new_dropped_gun.spare_ammo = inventory[inventory_selector].spare_ammo
-			new_dropped_gun.rigid_body.apply_impulse(Vector3(0,0,-5)*transform.basis.z,Vector3(0,0,0))
+			new_dropped_gun.rigid_body.apply_impulse(-transform.basis.z *4)
 		1:
 			print("dropped gun")
 			var new_dropped_shotgun = asset_drop_shotgun.instantiate()
-			new_dropped_shotgun.position = raycast_interaction.global_position
+			new_dropped_shotgun.position = raycast_interaction.global_position -transform.basis.z*0.5
 			new_dropped_shotgun.transform.basis = global_transform.basis
+			get_tree().root.get_children()[0].add_child(new_dropped_shotgun)
 			new_dropped_shotgun.loaded = inventory[inventory_selector].loaded
 			new_dropped_shotgun.spare_ammo = inventory[inventory_selector].spare_ammo
-			get_tree().root.get_children()[0].add_child(new_dropped_shotgun)
-			new_dropped_shotgun.rigid_body.apply_force(Vector3(5,5,5))
+			new_dropped_shotgun.rigid_body.apply_impulse(-transform.basis.z *4)
 		2:
-			print("dropped gun")
+			print("dropped sniper")
 			var new_dropped_sniper = asset_drop_sniper.instantiate()
-			new_dropped_sniper.position = raycast_interaction.global_position
+			new_dropped_sniper.position = raycast_interaction.global_position -transform.basis.z*0.5
 			new_dropped_sniper.transform.basis = global_transform.basis
 			new_dropped_sniper.loaded = inventory[inventory_selector].loaded
 			new_dropped_sniper.spare_ammo = inventory[inventory_selector].spare_ammo
 			get_tree().root.get_children()[0].add_child(new_dropped_sniper)
-			new_dropped_sniper.rigid_body.apply_force(Vector3(5,5,5))
+			new_dropped_sniper.rigid_body.apply_impulse(-transform.basis.z *4)
 		3:
 			print("dropped knife")
 			var new_dropped_knife = asset_drop_knife.instantiate()
-			new_dropped_knife.position = raycast_interaction.global_position
+			new_dropped_knife.position = raycast_interaction.global_position -transform.basis.z*0.5
 			new_dropped_knife.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_dropped_knife)
-			new_dropped_knife.rigid_body.apply_force(Vector3(5,5,5))
+			new_dropped_knife.rigid_body.apply_impulse(-transform.basis.z *4)
 			pass
 		-1:
 			pass
