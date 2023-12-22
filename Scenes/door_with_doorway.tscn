@@ -20,21 +20,6 @@ albedo_color = Color(0.701961, 0.537255, 0.286275, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0txys"]
 size = Vector3(1.61377, 2.84418, 0.308472)
 
-[sub_resource type="Animation" id="Animation_4yfmy"]
-resource_name = "animation_open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("door:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_ejwxp"]
 length = 0.001
 tracks/0/type = "value"
@@ -65,6 +50,21 @@ tracks/0/keys = {
 "values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_4yfmy"]
+resource_name = "animation_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_htqho"]
 _data = {
 "RESET": SubResource("Animation_ejwxp"),
@@ -78,15 +78,17 @@ _data = {
 mesh = ExtResource("1_ndlvi")
 surface_material_override/0 = SubResource("StandardMaterial3D_tfo0t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh_doorway"]
+[node name="Area3D" type="Area3D" parent="mesh_doorway"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh_doorway/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231934, 3.41148, -0.0209045)
 shape = SubResource("BoxShape3D_5kucs")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="mesh_doorway"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="mesh_doorway/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40915, 1.42098, 0.00196221)
 shape = SubResource("BoxShape3D_rbu5r")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="mesh_doorway"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="mesh_doorway/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3803, 1.40464, -0.00703132)
 shape = SubResource("BoxShape3D_rbu5r")
 
@@ -96,14 +98,17 @@ mesh = ExtResource("2_8nr0v")
 surface_material_override/0 = SubResource("StandardMaterial3D_xc44u")
 script = ExtResource("3_v8o8t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="door"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843576, 1.37045, -0.0328201)
-shape = SubResource("BoxShape3D_0txys")
-
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="door" groups=["has_hp"]]
+collision_layer = 2
 script = ExtResource("3_3yhn5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="door/PhysicalBone3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843576, 1.37045, -0.0328201)
+shape = SubResource("BoxShape3D_0txys")
+
+[node name="Area3D" type="Area3D" parent="door"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843576, 1.37045, -0.0328201)
 shape = SubResource("BoxShape3D_0txys")
 
