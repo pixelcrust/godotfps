@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=27 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="PackedScene" uid="uid://c7akcggds32mw" path="res://Scenes/tree.tscn" id="3_1elic"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="16_hwsol"]
 [ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/knife_dropped.tscn" id="17_opru6"]
 [ext_resource type="PackedScene" uid="uid://bs48udd024l4p" path="res://tunnel.tscn" id="18_0nf06"]
+[ext_resource type="PackedScene" uid="uid://d2c7wq7ay3qxj" path="res://Scenes/door_with_doorway.tscn" id="20_cfm4t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -197,3 +198,6 @@ material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="Beartrap" parent="." instance=ExtResource("8_f6haw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.9702, 4.84728, 22.3304)
+
+[node name="door_with_doorway" parent="." instance=ExtResource("20_cfm4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.7262, 0.846079, 32.1004)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://csmo3ugeusx1s"]
+[gd_scene load_steps=13 format=3 uid="uid://csmo3ugeusx1s"]
 
 [ext_resource type="Script" path="res://Scripts/fish.gd" id="1_xcftq"]
 [ext_resource type="ArrayMesh" uid="uid://bjgu2ncjpalui" path="res://Models/Npc/Anglerfish.obj" id="2_6ua5i"]
@@ -39,42 +39,6 @@ height = 3.59214
 radius = 1.15289
 height = 3.37991
 
-[sub_resource type="Animation" id="Animation_4ni0j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_bkqb1"]
-resource_name = "attack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0), Vector3(-0.785398, 3.14159, 0), Vector3(0, 3.14159, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7i744"]
-_data = {
-"RESET": SubResource("Animation_4ni0j"),
-"attack": SubResource("Animation_bkqb1")
-}
-
 [node name="fish" type="CharacterBody3D"]
 collision_layer = 4
 script = ExtResource("1_xcftq")
@@ -88,9 +52,6 @@ surface_material_override/2 = SubResource("StandardMaterial3D_vrdbf")
 surface_material_override/3 = SubResource("StandardMaterial3D_lq025")
 surface_material_override/4 = SubResource("StandardMaterial3D_n3fo3")
 surface_material_override/5 = SubResource("StandardMaterial3D_hulpv")
-
-[node name="attack_raycast" type="RayCast3D" parent="MeshInstance3D"]
-transform = Transform3D(-2, 1.74846e-07, -7.64274e-15, 0, -8.74228e-08, -2, -1.74846e-07, -2, 8.74228e-08, -1.68374e-07, 0, 1.92597)
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="MeshInstance3D" groups=["has_hp"]]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -2.22745e-07, 0.799543, 2.54791)
@@ -115,13 +76,6 @@ shape = SubResource("CapsuleShape3D_hyfje")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
 transform = Transform3D(1.91068e-15, 4.37114e-08, -1, 1, -4.37114e-08, -4.12929e-21, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_f3xxo")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_7i744")
-}
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [connection signal="bodypart_hit" from="MeshInstance3D/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="bodypart_hit" from="MeshInstance3D/PhysicalBone3D2" to="." method="_on_physical_bone_3d_2_bodypart_hit"]
