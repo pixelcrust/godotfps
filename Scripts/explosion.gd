@@ -23,6 +23,7 @@ func _process(delta):
 		for n in number_victims:
 			var victim = collision_explosion.get_collider(n)
 			victim.hit(damage,time_rooted)
+			#victim.apply_impulse(-transform.basis.z *4)
 			print(n)
 		idle = true
 
