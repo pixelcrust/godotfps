@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://7alpfeb2tgee"]
+[gd_scene load_steps=10 format=3 uid="uid://digdc0wdsetba"]
 
-[ext_resource type="Script" path="res://Scripts/flashlight_dropped.gd" id="1_huwnd"]
-[ext_resource type="ArrayMesh" uid="uid://ba5eg4ahx3ih6" path="res://Models/Item/Flashlight.obj" id="2_t3nwy"]
-[ext_resource type="Script" path="res://Scripts/dropped_collision.gd" id="3_ipa1x"]
+[ext_resource type="Script" path="res://Scripts/flashlight_dropped.gd" id="1_c1obu"]
+[ext_resource type="ArrayMesh" uid="uid://ba5eg4ahx3ih6" path="res://Models/Item/Flashlight.obj" id="2_5gxvf"]
+[ext_resource type="Script" path="res://Scripts/dropped_collision.gd" id="3_tsxco"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r3ku"]
 albedo_color = Color(0.47451, 0, 0.478431, 1)
@@ -22,14 +22,14 @@ size = Vector3(2.72442, 0.7508, 0.732621)
 [sub_resource type="BoxShape3D" id="BoxShape3D_p7d2t"]
 size = Vector3(2.42206, 1.2585, 1.27063)
 
-[node name="blueprint_dropped" type="Node3D"]
-script = ExtResource("1_huwnd")
+[node name="flashlight_dropped" type="Node3D"]
+script = ExtResource("1_c1obu")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(-1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0, 0, 0.3, 0.177547, 0, 0)
-mesh = ExtResource("2_t3nwy")
+mesh = ExtResource("2_5gxvf")
 surface_material_override/0 = SubResource("StandardMaterial3D_7r3ku")
 surface_material_override/1 = SubResource("StandardMaterial3D_1tthc")
 surface_material_override/2 = SubResource("StandardMaterial3D_kya4n")
@@ -41,7 +41,7 @@ shape = SubResource("BoxShape3D_dt5af")
 
 [node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
 collision_layer = 2
-script = ExtResource("3_ipa1x")
+script = ExtResource("3_tsxco")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.142948, -0.00492913, -0.00818481)

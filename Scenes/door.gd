@@ -38,9 +38,10 @@ func get_interaction_time():
 	return interactiontime_open
 	
 func use():
-	if state == 0:
-		animation_player.play("animation_open")
-		state = 1
-	else:
-		animation_player.play("animation_close")
-		state = 0
+	if animation_player.is_playing() != true:
+		if state == 0:
+			animation_player.play("animation_open")
+			state = 1
+		else:
+			animation_player.play("animation_close")
+			state = 0

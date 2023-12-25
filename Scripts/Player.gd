@@ -27,6 +27,7 @@ var gravity = 9.8
 @onready var mesh = $MeshInstance3D
 @onready var equipped = null
 @onready var animation_player = $AnimationPlayer
+@onready var node_flashlight = $Head/Camera3D/flashlight
 
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
 @onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
@@ -69,15 +70,18 @@ const icon_knife = preload("res://Sprites/icons/icon_knife.png")
 @onready var asset_shotgun = preload("res://Scenes/shotgun.tscn")
 @onready var asset_sniper = preload("res://Scenes/sniper.tscn")
 @onready var asset_knife = preload("res://Scenes/knife.tscn")
+@onready var asset_flashlight = preload("res://Scenes/flashlight.tscn")
 
 #preload weapons to be dropped
 @onready var asset_drop_gun = preload("res://Scenes/gun_dropped.tscn")
 @onready var  asset_drop_shotgun = preload("res://Scenes/shotgun_dropped.tscn")
 @onready var  asset_drop_sniper = preload("res://Scenes/sniper_dropped.tscn")
 const asset_drop_knife = preload("res://Scenes/knife_dropped.tscn")
+const asset_drop_flashlight = preload("res://Scenes/flashlight_dropped.tscn")
 
 @onready var hp_start = 150
 @onready var hp = hp_start
+@onready var flashlight = 0 #0.. off
 
 func _ready():
 	#adda gun to inventory
@@ -95,20 +99,28 @@ func _ready():
 	"spare_ammo": 0
 	})
 	
-	
 	inventory.append({
-	"item_id": 2, #sniper
-	"loaded": 5,
-	"max_loaded": 5, 
-	"spare_ammo": 10
+	"item_id": 4, #flashlight
+	"loaded": 1,
+	"max_loaded": 1, 
+	"spare_ammo": 0
 	})
 	
+
+	
 	"""
+
 	inventory.append({
 	"item_id": 1, #shotgun
 	"loaded": 2,
 	"max_loaded": 2, 
 	"spare_ammo": 4
+	})
+	inventory.append({
+	"item_id": 2, #sniper
+	"loaded": 5,
+	"max_loaded": 5, 
+	"spare_ammo": 10
 	})
 	"""
 	
@@ -174,7 +186,7 @@ func _physics_process(delta):
 			
 			
 			var obj_interaction_time = raycast_interaction.get_collider().object.get_interaction_time()
-			if obj_interaction_time > .5:
+			if obj_interaction_time > .4:
 				display_interaction.visible = true
 			display_interaction.value = (is_interacting/obj_interaction_time*100)
 			print("Starting interaction")
@@ -207,7 +219,7 @@ func _physics_process(delta):
 				pass
 			else:
 				equipped.animation_player.play("change weapon out") #this does not work
-		if inventory.is_empty() == false:
+			#wait here for animation out 
 			equipped.queue_free() 
 		inventory_selector += 1
 		equip_weapon()
@@ -327,6 +339,15 @@ func equip_weapon():
 				new_knife.animation_player.play("change weapon in")
 				new_knife.player = $"."
 				equipped = new_knife
+			4:
+				var new_flashlight = asset_flashlight.instantiate()
+				camera.add_child(new_flashlight)
+				new_flashlight.position = camera.position
+				new_flashlight.rotate_y(deg_to_rad(90))
+				new_flashlight.transform.origin = Vector3(1,-0.8,-1)
+				new_flashlight.animation_player.play("change weapon in")
+				new_flashlight.player = $"."
+				equipped = new_flashlight
 			-1: #nothing equipped
 				pass
 			_:
@@ -445,7 +466,13 @@ func drop_weapon():
 			new_dropped_knife.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_dropped_knife)
 			new_dropped_knife.rigid_body.apply_impulse(-transform.basis.z *4)
-			pass
+		4:
+			print("dropped flashlight")
+			var new_dropped_flashlight = asset_drop_flashlight.instantiate()
+			new_dropped_flashlight.position = raycast_interaction.global_position -transform.basis.z*0.5
+			new_dropped_flashlight.transform.basis = global_transform.basis
+			get_tree().root.get_children()[0].add_child(new_dropped_flashlight)
+			new_dropped_flashlight.rigid_body.apply_impulse(-transform.basis.z *4)
 		-1:
 			pass
 		_:

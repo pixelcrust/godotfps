@@ -22,7 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://d2c7wq7ay3qxj" path="res://Scenes/door_with_doorway.tscn" id="20_cfm4t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)
+sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
 [sub_resource type="Sky" id="Sky_rs6tw"]
@@ -36,6 +37,7 @@ ambient_light_color = Color(0.886275, 0, 0, 1)
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
 volumetric_fog_albedo = Color(0.529412, 0.435294, 0.560784, 1)
 volumetric_fog_detail_spread = 5.09824
 
@@ -55,7 +57,7 @@ uv1_scale = Vector3(10, 1, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139556, 0.0229417, -0.36441)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, -12.2423, 22.0001, 150.135)
+transform = Transform3D(-0.848388, -0.458452, 0.264686, 8.6873e-08, 0.499998, 0.866027, -0.529375, 0.734727, -0.424192, -12.2423, 80.9664, 150.135)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj1tetsawebyx"]
+
+[ext_resource type="Script" path="res://Scenes/flashlight.gd" id="1_vk74k"]
+[ext_resource type="ArrayMesh" uid="uid://ba5eg4ahx3ih6" path="res://Models/Item/Flashlight.obj" id="1_yd1ak"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqaok"]
+albedo_color = Color(0.47451, 0, 0.478431, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7sxv"]
+albedo_color = Color(0.227451, 0.419608, 0.415686, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qoibg"]
+albedo_color = Color(1, 0.803922, 0.556863, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ce60k"]
+albedo_color = Color(0.176471, 1, 1, 1)
+
+[node name="flashlight" type="Node3D"]
+script = ExtResource("1_vk74k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+layers = 2
+mesh = ExtResource("1_yd1ak")
+surface_material_override/0 = SubResource("StandardMaterial3D_qqaok")
+surface_material_override/1 = SubResource("StandardMaterial3D_l7sxv")
+surface_material_override/2 = SubResource("StandardMaterial3D_qoibg")
+surface_material_override/3 = SubResource("StandardMaterial3D_ce60k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
