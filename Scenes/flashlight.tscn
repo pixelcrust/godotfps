@@ -15,6 +15,21 @@ albedo_color = Color(1, 0.803922, 0.556863, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ce60k"]
 albedo_color = Color(0.176471, 1, 1, 1)
 
+[sub_resource type="Animation" id="Animation_hfdln"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5708)]
+}
+
 [sub_resource type="Animation" id="Animation_a7qei"]
 resource_name = "change weapon in"
 length = 0.5
@@ -31,21 +46,6 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, -2.74779), Vector3(0, 0, -1.5708)]
 }
 
-[sub_resource type="Animation" id="Animation_hfdln"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, -1.5708)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewt36"]
 _data = {
 "RESET": SubResource("Animation_hfdln"),
@@ -53,11 +53,10 @@ _data = {
 }
 
 [node name="flashlight" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_vk74k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(-3.61999e-06, 1, 0, -1, -3.61999e-06, 0, 0, 0, 1, 0, 0, 0)
 layers = 2
 mesh = ExtResource("1_yd1ak")
 surface_material_override/0 = SubResource("StandardMaterial3D_qqaok")
