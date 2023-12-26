@@ -82,8 +82,12 @@ const asset_drop_flashlight = preload("res://Scenes/flashlight_dropped.tscn")
 @onready var hp_start = 150
 @onready var hp = hp_start
 @onready var flashlight = 0 #0.. off
+@onready var flashlight_range = 10
 
 func _ready():
+	
+	node_flashlight.spot_range = flashlight_range #sets the flashlight range in code for everywhere
+	
 	#adda gun to inventory
 	inventory.append({
 	"item_id": 0, #pistol
@@ -162,6 +166,16 @@ func _physics_process(delta):
 	display_hp.clear()
 	display_hp.insert_text_at_caret(str(hp))
 	
+	#turn on flashlight without it in hand
+	print(inventory.find(4))
+	if Input.is_action_just_pressed("key_use_flashlight") && (inventory.find(4,0) != -1): #should only be able if  in invenotry
+		if flashlight == 0:
+			node_flashlight.spot_range = 0
+			flashlight = 1
+		else:
+			node_flashlight.spot_range = flashlight_range
+			flashlight = 0
+			
 	# Handle Jump.
 	if Input.is_action_just_pressed("key_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -347,6 +361,7 @@ func equip_weapon():
 				new_flashlight.transform.origin = Vector3(1,-0.8,-1)
 				new_flashlight.animation_player.play("change weapon in")
 				new_flashlight.player = $"."
+				new_flashlight.range = flashlight_range
 				equipped = new_flashlight
 			-1: #nothing equipped
 				pass
@@ -473,6 +488,7 @@ func drop_weapon():
 			new_dropped_flashlight.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_dropped_flashlight)
 			new_dropped_flashlight.rigid_body.apply_impulse(-transform.basis.z *4)
+			node_flashlight.spot_range = 0
 		-1:
 			pass
 		_:
