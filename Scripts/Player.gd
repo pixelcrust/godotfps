@@ -62,6 +62,7 @@ var gravity = 9.8
 @onready var icon_shotgun = preload("res://Sprites/icons/icon_shotgun.png")
 @onready var icon_sniper = preload("res://Sprites/icons/icon_sniper.png")
 const icon_knife = preload("res://Sprites/icons/icon_knife.png")
+const icon_flashlight = preload("res://Sprites/icons/icon_flashlight.png")
 @onready var inventory_marker = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inventory_marker
 @onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_timer
 
@@ -167,7 +168,7 @@ func _physics_process(delta):
 	display_hp.insert_text_at_caret(str(hp))
 	
 	#turn on flashlight without it in hand
-	print(inventory.find(4))
+	#print(inventory.find(4))
 	if Input.is_action_just_pressed("key_use_flashlight") && (inventory.find(4,0) != -1): #should only be able if  in invenotry
 		if flashlight == 0:
 			node_flashlight.spot_range = 0
@@ -396,6 +397,8 @@ func equip_weapon():
 				inv_slot_1.texture = icon_sniper
 			3:
 				inv_slot_1.texture = icon_knife
+			4:
+				inv_slot_1.texture = icon_flashlight
 			-1: 
 				inv_slot_1.texture = null
 			_:
@@ -412,6 +415,8 @@ func equip_weapon():
 					inv_slot_2.texture = icon_sniper
 				3:
 					inv_slot_2.texture = icon_knife
+				4:
+					inv_slot_2.texture = icon_flashlight
 				_:
 					pass
 		else:
@@ -427,11 +432,14 @@ func equip_weapon():
 					inv_slot_3.texture = icon_sniper
 				3:
 					inv_slot_3.texture = icon_knife
-					pass
+				4:
+					inv_slot_3.texture = icon_flashlight
 				_:
 					pass
 		else:
 			inv_slot_3.texture = null
+	else:
+		inv_slot_1.texture = null
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
