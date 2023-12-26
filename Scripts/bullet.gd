@@ -10,7 +10,7 @@ const time_rooted = .5
 @onready var particles = $GPUParticles3D
 @onready var abweichung_x = randf_range(-ACCURACY,ACCURACY)
 @onready var abweichung_y = randf_range(-ACCURACY,ACCURACY)
-
+@onready var ads = 0 #0.. bullet not shot from ads 1.. bullet shot from ads
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	

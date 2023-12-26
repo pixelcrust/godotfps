@@ -142,7 +142,6 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x,deg_to_rad(-89),deg_to_rad(90))
 		
 func _physics_process(delta):
-	print(state_move)
 	#restart scene
 	if(Input.is_action_just_pressed("restart")):
 		get_tree(). reload_current_scene()
@@ -170,16 +169,6 @@ func _physics_process(delta):
 	display_hp.insert_text_at_caret(str(hp))
 	
 
-	if Input.is_action_pressed("key_ads"):
-		state_before = state_move
-		state_move = 4
-		if equipped != null:
-			equipped.ads = 1
-	else:
-		state_move = state_before
-		if equipped != null:
-			equipped.ads = 0
-		
 		
 	#turn on flashlight without it in hand
 	#print(inventory.find(4))
@@ -202,10 +191,21 @@ func _physics_process(delta):
 	elif(Input.is_action_pressed("key_crouch") && (state_move != 2)):
 		set_speed(SPEED_CROUCH)
 		state_move = 2
+	elif Input.is_action_pressed("key_ads"):
+		#state_before = state_move
+		state_move = 4
+		if equipped != null:
+			equipped.ads = 1
+			#state_move = state_before dont know where thisS
 	else:
 		set_speed(SPEED_WALK)
+		if equipped != null:
+			equipped.ads = 0
+			
 		state_move = 0
+
 	
+		
 	if raycast_interaction.is_colliding():
 		#print_debug("raycast colliding with " +str(raycast_interaction.get_collider()))
 		pass

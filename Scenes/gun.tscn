@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://brid1ads3hnl2"]
+[gd_scene load_steps=17 format=3 uid="uid://brid1ads3hnl2"]
 
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
 [ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="2_wtbyh"]
@@ -30,6 +30,18 @@ tracks/0/path = NodePath("MeshInstance3D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -99,9 +111,38 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0.701378), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_jtqra"]
+resource_name = "ads"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.29033, -1.05734)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.0523599, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0rj0"]
 _data = {
 "RESET": SubResource("Animation_6udym"),
+"ads": SubResource("Animation_jtqra"),
 "change weapon in": SubResource("Animation_oomti"),
 "change weapon out": SubResource("Animation_0jnuw"),
 "reload": SubResource("Animation_7bcll"),
