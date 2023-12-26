@@ -7,6 +7,8 @@ extends Node3D
 @onready var player = null
 const RECOIL = 15
 
+@onready var ads = 0 #0.. false 1..true
+
 """
 inventory.append({
 "item_id": 2, #sniper

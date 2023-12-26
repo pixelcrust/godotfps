@@ -5,6 +5,7 @@ const SPEED_CROUCH = 1.0
 const SPEED_WALK = 3.0
 const SPEED_RUN = 6.0
 const JUMP_VELOCITY = 4.5
+const SPEED_ADS = 0.5
 
 const SENSITIVITY = 0.001
 
@@ -40,6 +41,7 @@ var gravity = 9.8
 #1.. running
 #2.. crouching
 #3.. in air
+#4.. ads
 
 @onready var is_rooted = false
 @onready var is_interacting = 0
@@ -84,9 +86,9 @@ const asset_drop_flashlight = preload("res://Scenes/flashlight_dropped.tscn")
 @onready var hp = hp_start
 @onready var flashlight = 0 #0.. off
 @onready var flashlight_range = 10
+@onready var state_before = 0
 
 func _ready():
-	
 	node_flashlight.spot_range = flashlight_range #sets the flashlight range in code for everywhere
 	
 	#adda gun to inventory
@@ -140,7 +142,7 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x,deg_to_rad(-89),deg_to_rad(90))
 		
 func _physics_process(delta):
-
+	print(state_move)
 	#restart scene
 	if(Input.is_action_just_pressed("restart")):
 		get_tree(). reload_current_scene()
@@ -167,6 +169,18 @@ func _physics_process(delta):
 	display_hp.clear()
 	display_hp.insert_text_at_caret(str(hp))
 	
+
+	if Input.is_action_pressed("key_ads"):
+		state_before = state_move
+		state_move = 4
+		if equipped != null:
+			equipped.ads = 1
+	else:
+		state_move = state_before
+		if equipped != null:
+			equipped.ads = 0
+		
+		
 	#turn on flashlight without it in hand
 	#print(inventory.find(4))
 	if Input.is_action_just_pressed("key_use_flashlight") && (inventory.find(4,0) != -1): #should only be able if  in invenotry
@@ -198,8 +212,6 @@ func _physics_process(delta):
 	# Start interaction
 	if Input.is_action_just_pressed("Interact")  and raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider().is_in_group("interactable"):
-			
-			
 			var obj_interaction_time = raycast_interaction.get_collider().object.get_interaction_time()
 			if obj_interaction_time > .4:
 				display_interaction.visible = true

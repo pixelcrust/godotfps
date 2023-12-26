@@ -9,6 +9,7 @@ extends Node3D
 @onready var emitter_shell = $MeshInstance3D/emitter_shell/GPUParticles3D
 const RECOIL = 5
 
+@onready var ads = 0 #0.. false 1..true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
