@@ -29,6 +29,7 @@ func _process(delta):
 		#transform.origin = Vector3(1.5,-0.8,-1)
 	elif ads == 0:
 		already = 0
+		animation_player.play("RESET")
 		#transform.origin = Vector3(1,-0.8,-1)
 		
 func shoot(inventory_selector):

@@ -33,6 +33,7 @@ var gravity = 9.8
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
 @onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
 @onready var display_interaction = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_interaction
+@onready var display_crosshair = $Head/Camera3D/CanvasLayer/Crosshair
 
 
 @onready var state_move = 0
@@ -196,12 +197,13 @@ func _physics_process(delta):
 		state_move = 4
 		if equipped != null:
 			equipped.ads = 1
+			display_crosshair.visible = false
 			#state_move = state_before dont know where thisS
 	else:
 		set_speed(SPEED_WALK)
 		if equipped != null:
 			equipped.ads = 0
-			
+			display_crosshair.visible = true
 		state_move = 0
 
 	
