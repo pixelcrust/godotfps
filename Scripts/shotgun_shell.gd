@@ -11,6 +11,7 @@ const time_rooted = .1
 @onready var abweichung_x = randf_range(-ACCURACY,ACCURACY)
 @onready var abweichung_y = randf_range(-ACCURACY,ACCURACY)
 @onready var sound = $AudioStreamPlayer3D
+@onready var ads = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
