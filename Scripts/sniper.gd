@@ -5,6 +5,7 @@ extends Node3D
 @onready var barrel = $RayCast3D
 @onready var bullet = preload("res://Scenes/bullet_big.tscn")
 @onready var player = null
+@onready var zoom = 20
 const RECOIL = 15
 
 @onready var ads = 0 #0.. false 1..true
@@ -27,11 +28,13 @@ func _process(delta):
 	print("ads:"+str(ads))
 	if (ads == 1)&&(already== 0):
 		animation_player.play("ads")
+		
+		#player.camera.zoom.y = 0.2
 		already = 1
 	elif (ads == 1) && (already == 1):
-		
+		if animation_player.is_playing()!= true:
+			player.camera.fov = zoom
 		pass
-		#transform.origin = Vector3(1.5,-0.8,-1)
 	elif ads == 0:
 		if already == 1:
 			animation_player.play("RESET")

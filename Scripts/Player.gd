@@ -172,8 +172,8 @@ func _physics_process(delta):
 
 		
 	#turn on flashlight without it in hand
-	#print(inventory.find(4))
-	if Input.is_action_just_pressed("key_use_flashlight") && (inventory.find(4,0) != -1): #should only be able if  in invenotry
+	print("inv"+str(inventory.find(4)))
+	if Input.is_action_just_pressed("key_use_flashlight") && (inventory.find("item_id",0) != -1): #should only be able if  in invenotry
 		if flashlight == 0:
 			node_flashlight.spot_range = 0
 			flashlight = 1
@@ -306,9 +306,10 @@ func _physics_process(delta):
 	guncamera.fov = camera.fov
 	
 	#FOV
-	var velocity_clamped = clamp(velocity.length(),0.5,SPEED_RUN*2)	
-	var target_fov = FOV_BASE +FOV_SPRINT_SCALE * velocity_clamped
-	camera.fov = lerp(camera.fov,target_fov, delta*8.0)
+	if state_move != 4:
+		var velocity_clamped = clamp(velocity.length(),0.5,SPEED_RUN*2)	
+		var target_fov = FOV_BASE +FOV_SPRINT_SCALE * velocity_clamped
+		camera.fov = lerp(camera.fov,target_fov, delta*8.0)
 	
 	move_and_slide()
 
