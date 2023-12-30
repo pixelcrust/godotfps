@@ -86,7 +86,7 @@ const asset_drop_flashlight = preload("res://Scenes/flashlight_dropped.tscn")
 @onready var hp_start = 150
 @onready var hp = hp_start
 @onready var flashlight = 0 #0.. off
-@onready var flashlight_range = 10
+@onready var flashlight_range = 100
 @onready var state_before = 0
 
 func _ready():
@@ -173,13 +173,16 @@ func _physics_process(delta):
 		
 	#turn on flashlight without it in hand
 	print("inv"+str(inventory.find(4)))
-	if Input.is_action_just_pressed("key_use_flashlight") && (inventory.find("item_id",0) != -1): #should only be able if  in invenotry
-		if flashlight == 0:
-			node_flashlight.spot_range = 0
-			flashlight = 1
-		else:
-			node_flashlight.spot_range = flashlight_range
-			flashlight = 0
+	if Input.is_action_just_pressed("key_use_flashlight"):
+		for n in inventory:
+			print(n)
+			if(n.item_id == 4): #should only be able if  in invenotry
+				if flashlight == 0:
+					node_flashlight.spot_range = 0
+					flashlight = 1
+				else:
+					node_flashlight.spot_range = flashlight_range
+					flashlight = 0
 			
 	# Handle Jump.
 	if Input.is_action_just_pressed("key_jump") and is_on_floor():
