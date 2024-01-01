@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqo7g88uvwsta"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vjt6m"]
+radius = 0.1
+height = 0.3
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SpotLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0770845, 0.997025, 0, -0.997025, 0.0770845, 0, -0.232025, -0.0179389)
+light_color = Color(0.988235, 0.984314, 0.505882, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 0.0
+omni_range = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_vjt6m")

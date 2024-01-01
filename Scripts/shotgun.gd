@@ -6,6 +6,7 @@ extends Node3D
 @onready var shell = preload("res://Scenes/shotgun_shell.tscn")
 @onready var player = null
 const RECOIL = 20
+@onready var emitter_shell = $MeshInstance3D/GPUParticles3D
 
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
@@ -50,6 +51,8 @@ func reload(inventory_selector):
 		pass
 	else:
 		animation_player.play("reload")
+		emitter_shell.set_emitting(true)
+		emitter_shell.restart()
 		var space = player.inventory[inventory_selector].max_loaded-player.inventory[inventory_selector].loaded
 		if space != 0:
 			if player.inventory[inventory_selector].spare_ammo >= space:

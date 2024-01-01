@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=28 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="PackedScene" uid="uid://c7akcggds32mw" path="res://Scenes/tree.tscn" id="3_1elic"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bs48udd024l4p" path="res://tunnel.tscn" id="18_0nf06"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://d2c7wq7ay3qxj" path="res://Scenes/door_with_doorway.tscn" id="20_cfm4t"]
+[ext_resource type="PackedScene" uid="uid://dnviiuk2u24bi" path="res://Scenes/table.tscn" id="21_vy3d0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)
@@ -199,3 +200,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.7262, 0.846079, 32.1004)
 
 [node name="Node3D" parent="." instance=ExtResource("20_2tsel")]
 transform = Transform3D(-0.999499, 0, -0.0316375, 0, 1, 0, 0.0316375, 0, -0.999499, -7.13956, 0.977058, 17.3644)
+
+[node name="table" parent="." instance=ExtResource("21_vy3d0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.96896, 1.31498, 14.9687)
+
+[node name="sniper_dropped2" parent="." instance=ExtResource("14_v26te")]
+transform = Transform3D(0.995101, 0.092713, -0.0343397, -4.09901e-08, 0.347328, 0.937744, 0.0988681, -0.933149, 0.345627, -9.10097, 2.28838, 14.6988)
+
+[node name="shotgun_dropped2" parent="." instance=ExtResource("16_hwsol")]
+transform = Transform3D(0.985214, 0, 0.171327, -0.0537699, 0.949475, 0.309203, -0.162671, -0.313843, 0.935436, -9.2894, 2.39195, 15.2406)
+
+[node name="knife_dropped2" parent="." instance=ExtResource("17_opru6")]
+transform = Transform3D(0.82383, -0.542961, 0.162783, -4.18702e-08, 0.287177, 0.957878, -0.566838, -0.789128, 0.236585, -8.26493, 2.34662, 15.4802)
+
+[node name="gun_dropped2" parent="." instance=ExtResource("15_hb5cg")]
+transform = Transform3D(0.117364, 0, -0.993089, 0.910494, 0.399277, 0.107603, 0.396518, -0.91683, 0.0468608, -9.42564, 2.35388, 15.5393)
+
+[node name="Medikit2" parent="." instance=ExtResource("13_qy556")]
+transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, -7.32864, 1.92076, 15.0462)

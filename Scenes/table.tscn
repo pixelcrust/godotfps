@@ -8,7 +8,7 @@ albedo_color = Color(0.247059, 0.121569, 0.0313726, 1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vxs2s"]
 points = PackedVector3Array(0.981966, 0.795671, 0.732362, -0.915787, 5.55112e-17, -0.675471, -0.981966, 0.795671, 0.732362, 0.976802, 0.793574, -0.736426, 0.900716, 0.00653033, 0.68653, 0.915787, 5.55112e-17, -0.675471, -0.900716, 0.00653033, 0.68653, -0.976802, 0.793574, -0.736426)
 
-[node name="table" type="Node3D"]
+[node name="table" type="RigidBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_q03o8")
