@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var animation_player = $AnimationPlayer
+@onready var mesh_instance_3d = $MeshInstance3D
 @onready var sound = $AudioStreamPlayer3D
 @onready var barrel = $RayCast3D
 @onready var bullet = preload("res://Scenes/bullet_big.tscn")
@@ -25,7 +26,6 @@ func _ready():
 
 
 func _process(delta):
-	print("ads:"+str(ads))
 	if (ads == 1)&&(already== 0):
 		animation_player.play("ads")
 		
@@ -34,12 +34,12 @@ func _process(delta):
 	elif (ads == 1) && (already == 1):
 		if animation_player.is_playing()!= true:
 			player.camera.fov = zoom
-		pass
+			mesh_instance_3d.visible = false
 	elif ads == 0:
 		if already == 1:
 			animation_player.play("RESET")
+			mesh_instance_3d.visible = true
 			already = 0
-		#transform.origin = Vector3(1,-0.8,-1)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func shoot(inventory_selector):
 	if animation_player.is_playing():

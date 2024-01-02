@@ -146,7 +146,7 @@ spot_angle = 70.0
 layer = 2
 
 [node name="Crosshair" type="Sprite2D" parent="Head/Camera3D/CanvasLayer"]
-position = Vector2(590, 325)
+position = Vector2(576, 325)
 texture = ExtResource("2_v71jm")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera3D/CanvasLayer"]

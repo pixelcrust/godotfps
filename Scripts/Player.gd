@@ -172,7 +172,6 @@ func _physics_process(delta):
 
 		
 	#turn on flashlight without it in hand
-	print("inv"+str(inventory.find(4)))
 	if Input.is_action_just_pressed("key_use_flashlight"):
 		for n in inventory:
 			print(n)
@@ -200,7 +199,8 @@ func _physics_process(delta):
 		state_move = 4
 		if equipped != null:
 			equipped.ads = 1
-			display_crosshair.visible = false
+			if equipped_id != 2:
+				display_crosshair.visible = false
 			#state_move = state_before dont know where thisS
 	else:
 		set_speed(SPEED_WALK)
@@ -483,7 +483,7 @@ func drop_weapon():
 			new_dropped_gun.spare_ammo = inventory[inventory_selector].spare_ammo
 			new_dropped_gun.rigid_body.apply_impulse(-transform.basis.z *4)
 		1:
-			print("dropped gun")
+			print("dropped shotgun")
 			var new_dropped_shotgun = asset_drop_shotgun.instantiate()
 			new_dropped_shotgun.position = raycast_interaction.global_position -transform.basis.z*0.5
 			new_dropped_shotgun.transform.basis = global_transform.basis
