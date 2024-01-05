@@ -48,7 +48,7 @@ collision_mask = 4
 [node name="Timer" type="Timer" parent="base/body/arm/gun"]
 
 [node name="direction_helper" type="Node3D" parent="base/body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59332, 1.75008)
+transform = Transform3D(0.998567, 0, 0.0535211, 0, 1, 0, -0.0535211, 0, 0.998567, 0, 1.59332, 1.75008)
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="base/body" groups=["has_hp"]]
 collision_layer = 2

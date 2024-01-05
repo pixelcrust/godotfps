@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://di542aswej4gq"]
+
+[ext_resource type="Script" path="res://vomit.gd" id="1_a7x3u"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_fsvby"]
+
+[node name="vomit" type="CharacterBody3D"]
+script = ExtResource("1_a7x3u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_fsvby")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)

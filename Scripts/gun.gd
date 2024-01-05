@@ -19,7 +19,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print("ads:"+str(ads))
 	if (ads == 1)&&(already== 0):
 		animation_player.play("ads")
 		already = 1

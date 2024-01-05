@@ -40,7 +40,7 @@ func _physics_process(delta):
 	#print_debug("state:" + str(state))
 	match state:
 		0:
-			pass
+			#pass
 			timer.stop()
 			state = 2
 		1: #aiming and shooting
