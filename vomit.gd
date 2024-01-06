@@ -1,7 +1,7 @@
-extends Node3D
+extends CharacterBody3D
 
-const SPEED = 8.0
-const ACCURACY = 2
+const SPEED = 7.0
+const ACCURACY = .2
 const dmg = 1
 const time_rooted = .01
 
@@ -24,7 +24,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	#set inacuracy
-
 	abweichung_x = standard_abweichung_x
 	abweichung_y = standard_abweichung_y
 		

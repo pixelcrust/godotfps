@@ -20,7 +20,7 @@ const SPEED = 2
 
 var player = null
 
-@export var turn_speed_horizontally = 20
+@export var turn_speed_horizontally = 40
 @export var turn_speed_vertically = 59
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -38,7 +38,7 @@ func _physics_process(delta):
 	
 	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
 	
-	#print_debug("state:" + str(state))
+	print_debug("state:" + str(state))
 	match state:
 		0:	#patrol
 			velocity.x = 0
@@ -83,6 +83,12 @@ func _on_physical_bone_3d_bodypart_hit(dmg,time_rooted):
 	hp-=dmg
 	
 
+
+
+func die():
+	#print_debug("ded")
+	queue_free()
+
 func _on_attention_area_body_entered(body):
 	if body.is_in_group("group_player"):
 		if state != 2:
@@ -93,13 +99,13 @@ func _on_attention_area_body_exited(body):
 	if body.is_in_group("group_player"):
 		state = 0
 
-func die():
-	queue_free()
+func _on_attention_area_small_body_entered(body):
+	if body.is_in_group("group_player"):
+		state = 2 # Replace with function body.
 
 
-func _on_attention_area_small_area_entered(area):
-	state = 2 # Replace with function body.
 
-
-func _on_attention_area_small_area_exited(area):
-	state = 1 # Replace with function body.
+func _on_attention_area_small_body_exited(body):
+	if body.is_in_group("group_player"):
+		if state != 2:
+			state = 1 # Replace with function body.

@@ -3,15 +3,11 @@
 [ext_resource type="Script" path="res://Scenes/enemy_teletubby.gd" id="1_eh5dx"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="6_1m563"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_konw4"]
-radius = 0.308718
-height = 1.33367
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_5phud"]
-radius = 10.0
+radius = 5.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vtcpw"]
-radius = 20.0
+radius = 14.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nv86h"]
 albedo_color = Color(0.423529, 0, 0.427451, 1)
@@ -34,7 +30,7 @@ radius = 0.25
 height = 0.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17am3"]
-radius = 0.261368
+radius = 0.261367
 height = 0.522735
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rfd2"]
@@ -44,16 +40,17 @@ albedo_color = Color(1, 0.427451, 0.117647, 1)
 material = SubResource("StandardMaterial3D_1rfd2")
 size = Vector3(0.1, 0.1, 0.3)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_konw4"]
+radius = 0.308718
+height = 1.33367
+
 [node name="Node3D" type="CharacterBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 collision_layer = 4
 script = ExtResource("1_eh5dx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43775e-09, 0.952462, -0.016446)
-shape = SubResource("CapsuleShape3D_konw4")
-
 [node name="attention_area_small" type="Area3D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="attention_area_small"]
 shape = SubResource("SphereShape3D_5phud")
@@ -105,8 +102,12 @@ transform = Transform3D(1, 0, 2.22045e-16, -1.33227e-15, -4.47035e-08, 1, -6.394
 
 [node name="direction_helper" type="Node3D" parent="body"]
 
-[connection signal="area_entered" from="attention_area_small" to="." method="_on_attention_area_small_area_entered"]
-[connection signal="area_exited" from="attention_area_small" to="." method="_on_attention_area_small_area_exited"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43775e-09, 0.952462, -0.016446)
+shape = SubResource("CapsuleShape3D_konw4")
+
+[connection signal="body_entered" from="attention_area_small" to="." method="_on_attention_area_small_body_entered"]
+[connection signal="body_exited" from="attention_area_small" to="." method="_on_attention_area_small_body_exited"]
 [connection signal="body_entered" from="attention_area" to="." method="_on_attention_area_body_entered"]
 [connection signal="body_exited" from="attention_area" to="." method="_on_attention_area_body_exited"]
 [connection signal="bodypart_hit" from="body/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
