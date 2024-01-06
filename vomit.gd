@@ -2,11 +2,12 @@ extends Node3D
 
 const SPEED = 8.0
 const ACCURACY = 2
-const dmg = 10
+const dmg = 1
 const time_rooted = .01
 
 @onready var mesh = $MeshInstance3D
 @onready var raycast = $RayCast3D
+
 @onready var particles = $GPUParticles3D
 @onready var standard_abweichung_x = randf_range(-ACCURACY,ACCURACY)
 @onready var standard_abweichung_y = randf_range(-ACCURACY,ACCURACY)
@@ -27,13 +28,15 @@ func _physics_process(delta):
 	abweichung_x = standard_abweichung_x
 	abweichung_y = standard_abweichung_y
 		
-	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
+	position += transform.basis * Vector3(0+abweichung_y,0+abweichung_x,SPEED)*delta
 	if raycast.is_colliding():
 		#print("raycast collision with:" + str(raycast.get_collider()) )
 		mesh.visible = false
 		#particles.emitting = true
-		if(raycast.get_collider().is_in_group("has_hp")):
-			raycast.get_collider().hit(dmg,time_rooted)
+		var collider = raycast.get_collider()
+		if(collider.is_in_group("has_hp")):
+			collider.hit(dmg,time_rooted)
+			print_debug("collider: "+str(collider))
 		raycast.enabled = false
 		queue_free()
 

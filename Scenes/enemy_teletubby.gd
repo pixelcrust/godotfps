@@ -1,9 +1,11 @@
 extends CharacterBody3D
 
-@onready var body = $base/body
-@onready var ray_view = $base/body/head/ray_view
+@onready var ray_view = $body/head/ray_view
 @onready var direction_helper = $body/direction_helper
 @onready var head = $body/head
+@onready var snout = $body/head/snout
+@onready var raycast_snout = $body/head/raycast_snout
+
 
 
 @onready var vomit = preload("res://Scenes/vomit.tscn")
@@ -53,7 +55,7 @@ func _physics_process(delta):
 		_:
 			state = 0
 	move_and_slide()
-	print_debug(hp)
+	#print_debug(hp)
 	if hp <= 0:
 		die()
 	
@@ -73,8 +75,8 @@ func aim(delta):
 
 func shoot():
 	var new_vomit = vomit.instantiate()
-	new_vomit.position = head.global_position
-	new_vomit.transform.basis = head.global_transform.basis
+	new_vomit.position = snout.global_position + Vector3(0,0,.5)
+	new_vomit.transform.basis = snout.global_transform.basis
 	get_tree().root.get_children()[0].add_child(new_vomit);
 
 func _on_physical_bone_3d_bodypart_hit(dmg,time_rooted):

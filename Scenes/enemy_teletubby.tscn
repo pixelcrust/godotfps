@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bcglw241csva2"]
+[gd_scene load_steps=14 format=3 uid="uid://bcglw241csva2"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_teletubby.gd" id="1_eh5dx"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="6_1m563"]
@@ -22,7 +22,7 @@ radius = 0.3
 height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d0pkj"]
-radius = 0.326657
+radius = 0.300356
 height = 1.02631
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynh4y"]
@@ -34,11 +34,15 @@ radius = 0.25
 height = 0.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17am3"]
-radius = 0.288922
-height = 0.577844
+radius = 0.261368
+height = 0.522735
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rfd2"]
+albedo_color = Color(1, 0.427451, 0.117647, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qmy31"]
-size = Vector3(0.1, 0.1, 1)
+material = SubResource("StandardMaterial3D_1rfd2")
+size = Vector3(0.1, 0.1, 0.3)
 
 [node name="Node3D" type="CharacterBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -46,7 +50,7 @@ collision_layer = 4
 script = ExtResource("1_eh5dx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.952462, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43775e-09, 0.952462, -0.016446)
 shape = SubResource("CapsuleShape3D_konw4")
 
 [node name="attention_area_small" type="Area3D" parent="."]
@@ -65,6 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.668523, 0)
 mesh = SubResource("CapsuleMesh_3krvw")
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="body" groups=["has_hp"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20053e-09, 0, -0.0137324)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_1m563")
@@ -81,19 +86,22 @@ mesh = SubResource("CapsuleMesh_58qco")
 transform = Transform3D(4.12935e-14, 8.74228e-07, -20, 20, -8.74228e-07, 3.07975e-15, -8.74228e-07, -20, -8.74228e-07, 0, -0.315884, 0.136009)
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="body/head" groups=["has_hp"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512464, -0.0384326)
+transform = Transform3D(1, 0, 0, -4.44089e-16, 1, 0, -1.42109e-14, 0, 1, -2.84063e-09, 0.511381, -0.00595764)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_1m563")
 damage_multiplier = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="body/head/PhysicalBone3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500265, -0.0174097)
+transform = Transform3D(1, 0, 0, -4.44089e-16, 1, 0, -1.42109e-14, 0, 1, -9.96702e-10, -0.500645, -0.0060151)
 shape = SubResource("CapsuleShape3D_17am3")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="body/head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00945103, 0.283404)
+[node name="snout" type="MeshInstance3D" parent="body/head"]
+transform = Transform3D(1, 0, 0, -4.44089e-16, 1, 0, -1.42109e-14, 0, 1, -6.70634e-09, -0.0120077, 0.360073)
 mesh = SubResource("BoxMesh_qmy31")
+
+[node name="raycast_snout" type="RayCast3D" parent="body/head"]
+transform = Transform3D(1, 0, 2.22045e-16, -1.33227e-15, -4.47035e-08, 1, -6.39488e-14, -1, -4.47035e-08, -4.89284e-08, 0.0317907, 0.561047)
 
 [node name="direction_helper" type="Node3D" parent="body"]
 
