@@ -75,6 +75,7 @@ const icon_flashlight = preload("res://Sprites/icons/icon_flashlight.png")
 @onready var asset_sniper = preload("res://Scenes/sniper.tscn")
 @onready var asset_knife = preload("res://Scenes/knife.tscn")
 @onready var asset_flashlight = preload("res://Scenes/flashlight.tscn")
+const asset_grenade = preload("res://grenade.tscn")
 
 #preload weapons to be dropped
 @onready var asset_drop_gun = preload("res://Scenes/gun_dropped.tscn")
@@ -94,10 +95,10 @@ func _ready():
 	
 	#adda gun to inventory
 	inventory.append({
-	"item_id": 0, #pistol
-	"loaded": 7,
-	"max_loaded": 7, # See above assignment.
-	"spare_ammo": 100
+	"item_id": 5, #grenade
+	"loaded": 1,
+	"max_loaded": 1, # See above assignment.
+	"spare_ammo": 0
 	})
 	
 	inventory.append({
@@ -129,6 +130,12 @@ func _ready():
 	"loaded": 5,
 	"max_loaded": 5, 
 	"spare_ammo": 10
+	})
+	inventory.append({
+	"item_id": 0, #pistol
+	"loaded": 7,
+	"max_loaded": 7, # See above assignment.
+	"spare_ammo": 100
 	})
 	"""
 	
@@ -382,6 +389,15 @@ func equip_weapon():
 				new_flashlight.player = $"."
 				new_flashlight.range = flashlight_range
 				equipped = new_flashlight
+			5:
+				var new_grenade = asset_grenade.instantiate()
+				camera.add_child(new_grenade)
+				new_grenade.position = camera.position
+				#new_grenade.rotate_y(deg_to_rad(90))
+				new_grenade.transform.origin = Vector3(1,-0.8,-1)
+				new_grenade.animation_player.play("change weapon in")
+				new_grenade.player = $"."
+				equipped = new_grenade
 			-1: #nothing equipped
 				pass
 			_:
@@ -417,6 +433,9 @@ func equip_weapon():
 				inv_slot_1.texture = icon_knife
 			4:
 				inv_slot_1.texture = icon_flashlight
+			5:
+				pass
+				#grenade icon
 			-1: 
 				inv_slot_1.texture = null
 			_:
@@ -435,6 +454,9 @@ func equip_weapon():
 					inv_slot_2.texture = icon_knife
 				4:
 					inv_slot_2.texture = icon_flashlight
+				5:
+					pass
+					#grenade icon
 				_:
 					pass
 		else:
@@ -452,6 +474,9 @@ func equip_weapon():
 					inv_slot_3.texture = icon_knife
 				4:
 					inv_slot_3.texture = icon_flashlight
+				5:
+					pass
+					#grenade icon
 				_:
 					pass
 		else:
@@ -515,6 +540,8 @@ func drop_weapon():
 			get_tree().root.get_children()[0].add_child(new_dropped_flashlight)
 			new_dropped_flashlight.rigid_body.apply_impulse(-transform.basis.z *4)
 			node_flashlight.spot_range = 0
+		5:
+			pass #drop grenade
 		-1:
 			pass
 		_:

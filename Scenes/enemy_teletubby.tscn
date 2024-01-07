@@ -7,7 +7,7 @@
 radius = 5.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vtcpw"]
-radius = 14.0
+radius = 20.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nv86h"]
 albedo_color = Color(0.423529, 0, 0.427451, 1)
@@ -80,7 +80,8 @@ transform = Transform3D(1, 0, 0, 0, 0.999444, 0.0333296, 0, -0.0333296, 0.999444
 mesh = SubResource("CapsuleMesh_58qco")
 
 [node name="ray_view" type="RayCast3D" parent="body/head"]
-transform = Transform3D(4.12935e-14, 8.74228e-07, -20, 20, -8.74228e-07, 3.07975e-15, -8.74228e-07, -20, -8.74228e-07, 0, -0.315884, 0.136009)
+transform = Transform3D(4.61853e-14, 8.74228e-07, -20, 20, -1.07288e-06, 8.88178e-15, -1.07288e-06, -20, -8.74228e-07, 0, -0.315884, 0.136009)
+collision_mask = 2
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="body/head" groups=["has_hp"]]
 transform = Transform3D(1, 0, 0, -4.44089e-16, 1, 0, -1.42109e-14, 0, 1, -2.84063e-09, 0.511381, -0.00595764)
@@ -106,9 +107,12 @@ transform = Transform3D(1, 0, 2.22045e-16, -1.33227e-15, -4.47035e-08, 1, -6.394
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43775e-09, 0.952462, -0.016446)
 shape = SubResource("CapsuleShape3D_konw4")
 
+[node name="vomit_stream_timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="attention_area_small" to="." method="_on_attention_area_small_body_entered"]
 [connection signal="body_exited" from="attention_area_small" to="." method="_on_attention_area_small_body_exited"]
 [connection signal="body_entered" from="attention_area" to="." method="_on_attention_area_body_entered"]
 [connection signal="body_exited" from="attention_area" to="." method="_on_attention_area_body_exited"]
 [connection signal="bodypart_hit" from="body/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="bodypart_hit" from="body/head/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
+[connection signal="timeout" from="vomit_stream_timer" to="." method="_on_vomit_stream_timer_timeout"]

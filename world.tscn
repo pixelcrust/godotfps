@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/gun_dropped.tscn" id="15_hb5cg"]
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="16_hwsol"]
 [ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/knife_dropped.tscn" id="17_opru6"]
-[ext_resource type="PackedScene" uid="uid://bs48udd024l4p" path="res://tunnel.tscn" id="18_0nf06"]
+[ext_resource type="PackedScene" uid="uid://bs48udd024l4p" path="res://Scenes/tunnel.tscn" id="18_0nf06"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://d2c7wq7ay3qxj" path="res://Scenes/door_with_doorway.tscn" id="20_cfm4t"]
 [ext_resource type="PackedScene" uid="uid://dnviiuk2u24bi" path="res://Scenes/table.tscn" id="21_vy3d0"]
@@ -182,7 +182,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6618, 2.2899, 36.7686)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1396, 0.977058, 31.3644)
 
 [node name="tunnel" parent="." instance=ExtResource("18_0nf06")]
-transform = Transform3D(1, 0, 1.73205, 0, 2, 0, -1.73205, 0, 1, 16.8604, 2.97706, 18.3644)
+transform = Transform3D(1, 0, 1.73205, 0, 2, 0, -1.73205, 0, 1, 16.8604, 3.90884, 18.3644)
 
 [node name="tunnel2" parent="." instance=ExtResource("18_0nf06")]
 transform = Transform3D(0.630669, 0, 1.89796, 0.474538, 1.93648, -0.157683, -1.83768, 0.50005, 0.610638, 34.5559, 7.55735, -21.0343)
@@ -220,5 +220,5 @@ transform = Transform3D(0.117364, 0, -0.993089, 0.910494, 0.399277, 0.107603, 0.
 [node name="Medikit2" parent="." instance=ExtResource("13_qy556")]
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, -7.32864, 1.92076, 15.0462)
 
-[node name="Node3D2" parent="." instance=ExtResource("22_r1hn2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1396, 0.977058, 28.3644)
+[node name="Node3D4" parent="." instance=ExtResource("22_r1hn2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.91641, 6.22684, -14.9438)

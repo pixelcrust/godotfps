@@ -1,15 +1,18 @@
 extends CharacterBody3D
 
 @onready var ray_view = $body/head/ray_view
+
 @onready var direction_helper = $body/direction_helper
 @onready var head = $body/head
 @onready var snout = $body/head/snout
 @onready var raycast_snout = $body/head/raycast_snout
+@onready var vomit_stream_timer = $vomit_stream_timer
 
 
 
 @onready var vomit = preload("res://Scenes/vomit.tscn")
 const SPEED = 2
+const vertical_shooting_error_range = 1
 @onready var hp_start = 100
 @onready var hp = hp_start
 @onready var state = -1 
@@ -48,7 +51,12 @@ func _physics_process(delta):
 			rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
 			aim(delta)
 			velocity = transform.basis.z * delta * SPEED *70
-		2: #shoot
+		2: #aim close
+			aim(delta)
+			if ray_view.is_colliding():
+				if ray_view.get_collider().is_in_group("group_player"):
+					state = 3 #is player then state 3
+		3: #shoot
 			shoot()
 			velocity.x = 0
 			velocity.z = 0
@@ -60,20 +68,24 @@ func _physics_process(delta):
 		die()
 	
 func aim(delta):
-	#var dir_to_player = rad_to_deg(body.global_position.angle_to(player.global_position))
-	
-	
-	# aiming from the arm of the enemy to the head of the player
-	var global_pos1 = global_transform.origin
+
+
+	var global_pos1 = head.global_transform.origin
 	var global_pos2 = player.head.global_transform.origin
 
 	# Calculate the vector between the two nodes
 	var direction = abs(global_pos2 - global_pos1)
+
+	# Calculate the vertical angle (angle in the Y-axis)
+	var vertical_angle = atan2(direction.y, direction.x)
+	#print_debug(rad_to_deg(vertical_angle))
 	
-
-
+	
+	head.rotation.z = vertical_angle + deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
 
 func shoot():
+	if vomit_stream_timer.time_left == 0:
+		vomit_stream_timer.start()
 	var new_vomit = vomit.instantiate()
 	new_vomit.position = snout.global_position + Vector3(0,0,.5)
 	new_vomit.transform.basis = snout.global_transform.basis
@@ -109,3 +121,7 @@ func _on_attention_area_small_body_exited(body):
 	if body.is_in_group("group_player"):
 		if state != 2:
 			state = 1 # Replace with function body.
+
+
+func _on_vomit_stream_timer_timeout():
+	state = 2

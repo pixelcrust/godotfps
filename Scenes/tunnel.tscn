@@ -1,6 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs48udd024l4p"]
+[gd_scene load_steps=14 format=3 uid="uid://bs48udd024l4p"]
+
+[ext_resource type="Texture2D" uid="uid://cpk1xfndhq8io" path="res://textures/Bricks_02-512x512.png" id="1_cjd57"]
+[ext_resource type="ArrayMesh" uid="uid://swvgm2qg6fgx" path="res://Models/Level/RailwayTrack_Straight.obj" id="2_arbks"]
+[ext_resource type="Texture2D" uid="uid://cbu2g0e2p2461" path="res://textures/Dirt_04-512x512.png" id="3_o738w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q32y"]
+albedo_texture = ExtResource("1_cjd57")
+uv1_scale = Vector3(400, 15, 15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_445vj"]
+material = SubResource("StandardMaterial3D_1q32y")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ikk2o"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
@@ -13,6 +22,20 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hh7gg"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvne1"]
+albedo_color = Color(0.27451, 0.27451, 0.27451, 1)
+metallic = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvxt7"]
+albedo_color = Color(0.113725, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu2bl"]
+albedo_texture = ExtResource("3_o738w")
+uv1_scale = Vector3(100, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3f5yi"]
+material = SubResource("StandardMaterial3D_uu2bl")
 
 [node name="tunnel" type="StaticBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -41,10 +64,16 @@ mesh = SubResource("BoxMesh_445vj")
 transform = Transform3D(22.0001, 0, 0, 0, -1.15059e-07, -0.204313, 0, 2.63225, -8.9308e-09, 0, 1.28303, -1.33675)
 shape = SubResource("ConvexPolygonShape3D_kxqw5")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(22.0001, 0, 0, 0, -1.15059e-07, -0.204313, 0, 2.63225, -8.9308e-09, 0, -1.26557, -1.33675)
-mesh = SubResource("BoxMesh_445vj")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(22.0001, 0, 0, 0, -1.15059e-07, -0.204313, 0, 2.63225, -8.9308e-09, 0, -1.26557, -1.33675)
 shape = SubResource("ConvexPolygonShape3D_hh7gg")
+
+[node name="RailwayTrackStraight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15157, -1.07478, -1.11922)
+mesh = ExtResource("2_arbks")
+surface_material_override/0 = SubResource("StandardMaterial3D_dvne1")
+surface_material_override/1 = SubResource("StandardMaterial3D_uvxt7")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(22.0001, 0, 0, 0, -1.15059e-07, -0.204313, 0, 2.63225, -8.9308e-09, 0, -1.26557, -1.33675)
+mesh = SubResource("BoxMesh_3f5yi")

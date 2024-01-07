@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c3jhu1uukqu20"
+path="res://.godot/imported/RailwayTrack_Straight.obj-6f48cc826c2a311dcb67e63959722c71.mesh"
+
+[deps]
+
+files=["res://.godot/imported/RailwayTrack_Straight.obj-6f48cc826c2a311dcb67e63959722c71.mesh"]
+
+source_file="res://Models/Level/testprops/RailwayTrack_Straight.obj"
+dest_files=["res://.godot/imported/RailwayTrack_Straight.obj-6f48cc826c2a311dcb67e63959722c71.mesh", "res://.godot/imported/RailwayTrack_Straight.obj-6f48cc826c2a311dcb67e63959722c71.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dm2mx7bibfyww"]
 
 [ext_resource type="ArrayMesh" uid="uid://ybhcy3yvmw52" path="res://resources/Survival Pack - Sept 2020/OBJ/Knife.obj" id="1_6u313"]
-[ext_resource type="Script" path="res://knife.gd" id="1_hx75e"]
+[ext_resource type="Script" path="res://Scripts/knife.gd" id="1_hx75e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dy5pb"]
 albedo_color = Color(0.611765, 0.439216, 0.435294, 1)
