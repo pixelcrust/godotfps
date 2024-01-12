@@ -21,8 +21,8 @@ var vertical_shooting_error_range = 2
 
 var player = null
 
-@export var turn_speed_horizontally = 20
-@export var turn_speed_vertically = 59
+@export var turn_speed_horizontally = 30
+@export var turn_speed_vertically = 79
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -52,7 +52,8 @@ func _physics_process(delta):
 			velocity.x = 0
 			velocity.z = 0
 		2: #move
-			velocity = transform.basis.z * delta * SPEED *70
+			#velocity = transform.basis.z * delta * SPEED *70
+			pass
 		_:
 			state = 0
 	move_and_slide()

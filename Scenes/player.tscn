@@ -130,7 +130,6 @@ cull_mask = 1048573
 
 [node name="flashlight" type="SpotLight3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25633)
-layers = 3
 light_color = Color(1, 1, 0.545098, 1)
 light_energy = 9.0
 shadow_enabled = true

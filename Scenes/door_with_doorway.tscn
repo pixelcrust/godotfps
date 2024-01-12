@@ -3,8 +3,8 @@
 [ext_resource type="ArrayMesh" uid="uid://cmifc81wpxnc8" path="res://Models/Level/Wall_Doorway.obj" id="1_ndlvi"]
 [ext_resource type="ArrayMesh" uid="uid://dnqk4phj1pqb2" path="res://Models/Level/Door_A.obj" id="2_8nr0v"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_3yhn5"]
-[ext_resource type="Script" path="res://Scenes/door.gd" id="3_v8o8t"]
-[ext_resource type="Script" path="res://Scenes/door_collision.gd" id="5_o3axx"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="3_v8o8t"]
+[ext_resource type="Script" path="res://Scripts/door_collision.gd" id="5_o3axx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfo0t"]
 albedo_color = Color(0.643137, 0.643137, 0.643137, 1)

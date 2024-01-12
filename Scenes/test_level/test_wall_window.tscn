@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://bjhljcdcqp85g"]
+[gd_scene load_steps=3 format=3 uid="uid://dkq7ua57mcu8c"]
 
-[node name="test_wall" type="Node3D"]
+[ext_resource type="ArrayMesh" uid="uid://65gdarve01wu" path="res://addons/kaykit_prototype_bits/Assets/obj/Wall_Window_Closed.obj" id="1_cqucl"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k75df"]
+points = PackedVector3Array(1.96803, 4.03095, 0.289627, 1.96803, -0.0309505, 0.289627, 1.96803, 4.03095, -0.28169, -1.96811, 4.03095, 0.289627, 1.96803, -0.0309505, -0.28169, -1.96811, 4.03095, -0.28169, -1.96811, -0.0309505, 0.289627, -1.96811, -0.0309505, -0.28169)
+
+[node name="test_wall" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_k75df")
+
+[node name="WallWindowClosed" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0258603, 0, 0.0727501)
+mesh = ExtResource("1_cqucl")

@@ -91,9 +91,21 @@ const asset_drop_flashlight = preload("res://Scenes/flashlight_dropped.tscn")
 @onready var state_before = 0
 
 func _ready():
-	node_flashlight.spot_range = flashlight_range #sets the flashlight range in code for everywhere
-	
+	#node_flashlight.spot_range = flashlight_range #sets the flashlight range in code for everywhere
+	node_flashlight.spot_range = 0
 	#adda gun to inventory
+
+
+
+	
+	"""
+	inventory.append({
+	"item_id": 4, #flashlight
+	"loaded": 1,
+	"max_loaded": 1, 
+	"spare_ammo": 0
+	})	
+	
 	inventory.append({
 	"item_id": 5, #grenade
 	"loaded": 1,
@@ -108,17 +120,7 @@ func _ready():
 	"spare_ammo": 0
 	})
 	
-	inventory.append({
-	"item_id": 4, #flashlight
-	"loaded": 1,
-	"max_loaded": 1, 
-	"spare_ammo": 0
-	})
 	
-
-	
-	"""
-
 	inventory.append({
 	"item_id": 1, #shotgun
 	"loaded": 2,
@@ -324,7 +326,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func die():
-	pass
+	get_tree().reload_current_scene()
 	#queue_free()
 
 func _headbob(time) -> Vector3:
