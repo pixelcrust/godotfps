@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm3w8klmsqjlb"]
+[gd_scene load_steps=3 format=3 uid="uid://cm3w8klmsqjlb"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_ygcei"]
+[ext_resource type="ArrayMesh" uid="uid://brpqwmk4i7kad" path="res://Models/granate.obj" id="1_7h2un"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yp457"]
 
 [node name="Node3D" type="RigidBody3D"]
+mass = 0.2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_ygcei")
+mesh = ExtResource("1_7h2un")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_yp457")

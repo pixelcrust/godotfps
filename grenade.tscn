@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg1ans30ehh6f"]
+[gd_scene load_steps=7 format=3 uid="uid://dg1ans30ehh6f"]
 
 [ext_resource type="Script" path="res://grenade.gd" id="1_rq0ey"]
+[ext_resource type="ArrayMesh" uid="uid://brpqwmk4i7kad" path="res://Models/granate.obj" id="2_asllg"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_gjjhj"]
-radius = 0.2
-height = 1.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chiun"]
+albedo_color = Color(0.631373, 0, 0.0588235, 1)
 
 [sub_resource type="Animation" id="Animation_3xc37"]
 length = 0.001
@@ -71,8 +71,9 @@ _data = {
 script = ExtResource("1_rq0ey")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.682159, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_gjjhj")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("2_asllg")
+surface_material_override/0 = SubResource("StandardMaterial3D_chiun")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

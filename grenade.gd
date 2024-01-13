@@ -28,8 +28,9 @@ func shoot(inventory_selector):
 			var new_grenade = grenade_thrown.instantiate()
 			new_grenade.position = creation_spot.global_position
 			new_grenade.transform.basis = global_transform.basis
-			new_grenade.apply_impulse(-transform.basis.z *9)
+			
 			get_tree().root.get_children()[0].add_child(new_grenade);
+			new_grenade.apply_impulse(-transform.basis.z *9)
 
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
