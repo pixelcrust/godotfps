@@ -205,6 +205,24 @@ position = Vector2(700, 500)
 [node name="inventory_marker" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
 texture = ExtResource("4_jacde")
 
+[node name="help_text" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+offset_left = 32.0
+offset_top = 256.0
+offset_right = 288.0
+offset_bottom = 588.0
+text = "F1 Help
+
+F2 - Restart
+WASD - move
+F(hold) - interact
+R - reload
+Shift - sprint
+Ctrl - duck
+Tab - change weapon
+G - drop weapon
+J - flashlight
+"
+
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(5.73206e-15, 1.31134e-07, 3, 3, -1.31134e-07, 0, 1.31134e-07, 3, -1.31134e-07, 0, 0, -0.585909)
 collision_mask = 2

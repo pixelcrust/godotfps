@@ -12,7 +12,7 @@ extends CharacterBody3D
 const SPEED = 5
 @onready var hp_start = 100
 @onready var hp = hp_start
-var vertical_shooting_error_range = 2
+var vertical_shooting_error_range = 0
 @onready var state = -1 
 #0.. idle
 #1..aiming at player

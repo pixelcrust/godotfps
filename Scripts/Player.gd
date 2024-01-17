@@ -68,6 +68,8 @@ const icon_knife = preload("res://Sprites/icons/icon_knife.png")
 const icon_flashlight = preload("res://Sprites/icons/icon_flashlight.png")
 @onready var inventory_marker = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inventory_marker
 @onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_timer
+@onready var help_text = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/help_text
+
 
 #preload equippment? move somewhere
 @onready var asset_gun = preload("res://Scenes/gun.tscn")
@@ -218,7 +220,10 @@ func _physics_process(delta):
 			display_crosshair.visible = true
 		state_move = 0
 
-	
+	if(Input.is_action_pressed("key_help")):
+		help_text.visible = true
+	else:
+		help_text.visible = false
 		
 	if raycast_interaction.is_colliding():
 		#print_debug("raycast colliding with " +str(raycast_interaction.get_collider()))

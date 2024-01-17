@@ -239,3 +239,18 @@ transform = Transform3D(0.645937, 0, 0.76339, 0, 1, 0, -0.76339, 0, 0.645937, 14
 
 [node name="Node3D20" parent="." instance=ExtResource("15_a3kga")]
 transform = Transform3D(0.876424, 0, 0.48154, 0, 1, 0, -0.48154, 0, 0.876424, 10.6983, 6.45812, -118.419)
+
+[node name="Node3D21" parent="." instance=ExtResource("13_hkrc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1242, 8.5225, -32.3745)
+
+[node name="Node3D22" parent="." instance=ExtResource("13_hkrc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19822, 13.3428, -129.651)
+
+[node name="Node3D23" parent="." instance=ExtResource("13_hkrc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.789666, 10.4913, -130.089)
+
+[node name="Node3D24" parent="." instance=ExtResource("13_hkrc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26382, 11.8754, -126.984)
+
+[node name="Node3D25" parent="." instance=ExtResource("13_hkrc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05862, 14.0733, -127.44)
