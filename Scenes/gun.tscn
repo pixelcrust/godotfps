@@ -7,10 +7,34 @@
 
 [sub_resource type="Animation" id="Animation_6udym"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model_pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.798, 0, -0.391)]
+}
 
 [sub_resource type="Animation" id="Animation_jtqra"]
 resource_name = "ads"
 length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model_pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.798, 0, -0.391), Vector3(0.5, 0.29, -1.45)]
+}
 
 [sub_resource type="Animation" id="Animation_oomti"]
 resource_name = "change weapon in"

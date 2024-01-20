@@ -6,7 +6,7 @@ extends Node3D
 @onready var bullet = preload("res://Scenes/bullet.tscn")
 @onready var sound_shoot = preload("res://Models/Sounds/sfx_weapon_singleshot21.wav")
 @onready var player = null
-@onready var emitter_shell = $model_pistol/emitter_shell
+@onready var emitter_shell = $model_pistol/emitter_shell/GPUParticles3D
 
 const RECOIL = 5
 
