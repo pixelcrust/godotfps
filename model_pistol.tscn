@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b37cwkrg5vrjr"]
+
+[ext_resource type="PackedScene" uid="uid://cs22vskh3a1mp" path="res://Models/Item/mauser1.glb" id="1_bc262"]
+
+[node name="model_pistol" instance=ExtResource("1_bc262")]

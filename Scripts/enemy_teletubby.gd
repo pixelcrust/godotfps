@@ -41,7 +41,7 @@ func _physics_process(delta):
 	
 	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
 	
-	print_debug("state:" + str(state))
+	#print_debug("state:" + str(state))
 	match state:
 		0:	#patrol
 			velocity.x = 0

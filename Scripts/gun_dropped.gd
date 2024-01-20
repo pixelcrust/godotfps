@@ -1,7 +1,9 @@
 extends Node3D
 @onready var interaction_time = .5
 
+@onready var model_pistol = $RigidBody3D/model_pistol
 @onready var rigid_body = $RigidBody3D
+
 
 @onready var player = 0
 const item_id = 0
@@ -20,7 +22,9 @@ const max_loaded = 7
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
-
+	#print_debug(mauser_1.mauser1_Cube_001)
+	"""model_pistol.ball.visible = false
+	model_pistol.ball.set_layer_mask_value(2,false)"""
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

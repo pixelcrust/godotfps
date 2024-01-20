@@ -31,14 +31,14 @@ func _process(delta):
 			animation_player.play("RESET")
 			already = 0
 		#transform.origin = Vector3(1,-0.8,-1)
-		
+	#print_debug("ads state: " + str(ads))
+	
 func shoot(inventory_selector):
 	
 	if animation_player.is_playing():
 		pass
 	else:
 		if player.inventory[inventory_selector].loaded > 0:
-
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
 			emitter_shell.set_emitting(true)

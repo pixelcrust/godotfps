@@ -1,52 +1,36 @@
-[gd_scene load_steps=18 format=3 uid="uid://brid1ads3hnl2"]
+[gd_scene load_steps=13 format=3 uid="uid://brid1ads3hnl2"]
 
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
-[ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="2_wtbyh"]
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
+[ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://model_pistol.tscn" id="4_arr1h"]
 [ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]
 [ext_resource type="PackedScene" uid="uid://cs22vskh3a1mp" path="res://Models/Item/mauser1.glb" id="4_nvnyi"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilcsg"]
-albedo_color = Color(0.439216, 0.176471, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvr2y"]
-albedo_color = Color(0.517647, 0.517647, 0.517647, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyfmp"]
-albedo_color = Color(0.286275, 0.286275, 0.286275, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toemc"]
-albedo_color = Color(0.290196, 0.290196, 0.290196, 1)
-metallic = 0.7
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdtim"]
-albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_6udym"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/path = NodePath("mauser1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0, -1.5708, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/path = NodePath("mauser1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0.797595, 0, -0.390597)]
 }
 
 [sub_resource type="Animation" id="Animation_jtqra"]
@@ -55,77 +39,53 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/path = NodePath("mauser1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.29, -1.05)]
+"values": [Vector3(0.797595, 0, -0.390597), Vector3(0.798, 0.4, -1.39)]
 }
 
 [sub_resource type="Animation" id="Animation_oomti"]
 resource_name = "change weapon in"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, -0.785398), Vector3(0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_0jnuw"]
 resource_name = "change weapon out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.785398)]
-}
 
 [sub_resource type="Animation" id="Animation_7bcll"]
 resource_name = "reload"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/path = NodePath("mauser1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.785398, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, -1.5708, 0), Vector3(-0.049092, -1.60494, 1.21533), Vector3(0, -1.5708, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_an7xa"]
 resource_name = "shoot"
-length = 0.2
+length = 0.4
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/path = NodePath("mauser1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
+"times": PackedFloat32Array(0, 0.19, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.701378), Vector3(0, 0, 0)]
+"values": [Vector3(0, -1.5708, 0), Vector3(0.246375, -1.56916, 0.0131801), Vector3(0, -1.5708, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0rj0"]
@@ -142,17 +102,6 @@ _data = {
 transform = Transform3D(0.99863, 0, 0.052336, 0, 1, 0, -0.052336, 0, 0.99863, 0, 0, 0)
 script = ExtResource("1_wbae3")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
-visible = false
-layers = 2
-mesh = ExtResource("2_wtbyh")
-surface_material_override/0 = SubResource("StandardMaterial3D_ilcsg")
-surface_material_override/1 = SubResource("StandardMaterial3D_pvr2y")
-surface_material_override/2 = SubResource("StandardMaterial3D_gyfmp")
-surface_material_override/3 = SubResource("StandardMaterial3D_toemc")
-surface_material_override/4 = SubResource("StandardMaterial3D_fdtim")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_o0rj0")
@@ -162,8 +111,12 @@ libraries = {
 stream = ExtResource("4_ismwp")
 
 [node name="mauser1" parent="." instance=ExtResource("4_nvnyi")]
-transform = Transform3D(-1.11759e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.11759e-08, 0.408325, 0.114134, -0.3032)
+transform = Transform3D(-9.04998e-07, 0, -0.25, 0, 0.25, 0, 0.25, 0, -9.04998e-07, 0.797595, 0, -0.390597)
+visible = false
 
-[node name="emitter_shell" parent="mauser1" instance=ExtResource("3_woa2a")]
+[node name="model_pistol" parent="." instance=ExtResource("4_arr1h")]
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 0.798, 0, -0.391)
 
-[node name="RayCast3D" type="RayCast3D" parent="mauser1"]
+[node name="emitter_shell" parent="model_pistol" instance=ExtResource("3_woa2a")]
+
+[node name="RayCast3D" type="RayCast3D" parent="model_pistol"]

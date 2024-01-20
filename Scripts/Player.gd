@@ -104,7 +104,12 @@ func _ready():
 		"spare_ammo": 100
 		})
 
-	
+	inventory.append({
+		"item_id": 1, #shotgun
+		"loaded": 2,
+		"max_loaded": 2, 
+		"spare_ammo": 4
+	})
 	"""
 	inventory.append({
 	"item_id": 4, #flashlight
@@ -215,7 +220,7 @@ func _physics_process(delta):
 		state_move = 4
 		if equipped != null:
 			equipped.ads = 1
-			if equipped_id != 2:
+			if equipped_id != 2: #dont hide crossair of sniper
 				display_crosshair.visible = false
 			#state_move = state_before dont know where thisS
 	else:
@@ -301,7 +306,6 @@ func _physics_process(delta):
 		_:
 			collisionshape.scale.y = 1
 			mesh.scale.y = 1
-			pass
 	
 		
 	# Get the input direction and handle the movement/deceleration.

@@ -1,24 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlscv3sge6u5e"]
+[gd_scene load_steps=6 format=3 uid="uid://dlscv3sge6u5e"]
 
 [ext_resource type="Script" path="res://Scripts/gun_dropped.gd" id="1_e185i"]
-[ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="3_h6ckd"]
 [ext_resource type="Script" path="res://Scripts/dropped_collision.gd" id="3_uy242"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n0rn"]
-albedo_color = Color(0.439216, 0.176471, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0x4y"]
-albedo_color = Color(0.517647, 0.517647, 0.517647, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02vyu"]
-albedo_color = Color(0.286275, 0.286275, 0.286275, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjrr2"]
-albedo_color = Color(0.290196, 0.290196, 0.290196, 1)
-metallic = 0.7
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0xea"]
-albedo_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://model_pistol.tscn" id="4_pnttf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt5af"]
 size = Vector3(2.09154, 1.22244, 0.492007)
@@ -32,15 +16,6 @@ script = ExtResource("1_e185i")
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-mesh = ExtResource("3_h6ckd")
-surface_material_override/0 = SubResource("StandardMaterial3D_0n0rn")
-surface_material_override/1 = SubResource("StandardMaterial3D_h0x4y")
-surface_material_override/2 = SubResource("StandardMaterial3D_02vyu")
-surface_material_override/3 = SubResource("StandardMaterial3D_gjrr2")
-surface_material_override/4 = SubResource("StandardMaterial3D_a0xea")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.140822, 0.0645275, 0.00196371)
 shape = SubResource("BoxShape3D_dt5af")
@@ -52,3 +27,6 @@ script = ExtResource("3_uy242")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.142948, 0.0621176, 0.00952148)
 shape = SubResource("BoxShape3D_p7d2t")
+
+[node name="model_pistol" parent="RigidBody3D" instance=ExtResource("4_pnttf")]
+transform = Transform3D(-6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, 0.270613, 0, -0.192681)
