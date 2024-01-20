@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://brid1ads3hnl2"]
+[gd_scene load_steps=18 format=3 uid="uid://brid1ads3hnl2"]
 
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
 [ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="2_wtbyh"]
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
 [ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]
+[ext_resource type="PackedScene" uid="uid://cs22vskh3a1mp" path="res://Models/Item/mauser1.glb" id="4_nvnyi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilcsg"]
 albedo_color = Color(0.439216, 0.176471, 0, 1)
@@ -143,6 +144,7 @@ script = ExtResource("1_wbae3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+visible = false
 layers = 2
 mesh = ExtResource("2_wtbyh")
 surface_material_override/0 = SubResource("StandardMaterial3D_ilcsg")
@@ -151,12 +153,6 @@ surface_material_override/2 = SubResource("StandardMaterial3D_gyfmp")
 surface_material_override/3 = SubResource("StandardMaterial3D_toemc")
 surface_material_override/4 = SubResource("StandardMaterial3D_fdtim")
 
-[node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
-transform = Transform3D(-6.24449e-08, -1.42857, 0, 1.42857, -6.24449e-08, 0, 0, 0, 1.42857, 1.47234, 0.51497, 0)
-
-[node name="emitter_shell" parent="MeshInstance3D" instance=ExtResource("3_woa2a")]
-transform = Transform3D(-0.116948, 0, -0.993138, 0, 1, 0, 0.993138, 0, -0.116948, 0.814452, 0.61147, 0)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_o0rj0")
@@ -164,3 +160,10 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_ismwp")
+
+[node name="mauser1" parent="." instance=ExtResource("4_nvnyi")]
+transform = Transform3D(-1.11759e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.11759e-08, 0.408325, 0.114134, -0.3032)
+
+[node name="emitter_shell" parent="mauser1" instance=ExtResource("3_woa2a")]
+
+[node name="RayCast3D" type="RayCast3D" parent="mauser1"]

@@ -97,7 +97,12 @@ func _ready():
 	node_flashlight.spot_range = 0
 	#adda gun to inventory
 
-
+	inventory.append({
+		"item_id": 0, #pistol
+		"loaded": 7,
+		"max_loaded": 7, # See above assignment.
+		"spare_ammo": 100
+		})
 
 	
 	"""

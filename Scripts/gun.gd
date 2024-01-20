@@ -2,11 +2,11 @@ extends Node3D
 
 @onready var animation_player = $AnimationPlayer
 @onready var sound = $AudioStreamPlayer
-@onready var barrel = $MeshInstance3D/RayCast3D
+@onready var barrel = $mauser1/emitter_shell
 @onready var bullet = preload("res://Scenes/bullet.tscn")
 @onready var sound_shoot = preload("res://Models/Sounds/sfx_weapon_singleshot21.wav")
 @onready var player = null
-@onready var emitter_shell = $MeshInstance3D/emitter_shell/GPUParticles3D
+@onready var emitter_shell = $mauser1/emitter_shell/GPUParticles3D
 const RECOIL = 5
 
 @onready var ads = 0 #0.. false 1..true

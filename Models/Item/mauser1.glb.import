@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cx0qir6mkvqe4"
-path="res://.godot/imported/mauser1.glb-c92971ff829f2ffb9d2d8f962a29fc62.scn"
+uid="uid://cs22vskh3a1mp"
+path="res://.godot/imported/mauser1.glb-ede83f6def3339eb1b20da3c6ed1015f.scn"
 
 [deps]
 
-source_file="res://Models/mauser1.glb"
-dest_files=["res://.godot/imported/mauser1.glb-c92971ff829f2ffb9d2d8f962a29fc62.scn"]
+source_file="res://Models/Item/mauser1.glb"
+dest_files=["res://.godot/imported/mauser1.glb-ede83f6def3339eb1b20da3c6ed1015f.scn"]
 
 [params]
 
@@ -29,6 +29,12 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:ball": {
+"mesh_instance/layers": 2
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
