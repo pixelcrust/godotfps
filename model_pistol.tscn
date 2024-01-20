@@ -1,5 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b37cwkrg5vrjr"]
+[gd_scene load_steps=3 format=3 uid="uid://b37cwkrg5vrjr"]
 
-[ext_resource type="PackedScene" uid="uid://cs22vskh3a1mp" path="res://Models/Item/mauser1.glb" id="1_bc262"]
+[ext_resource type="ArrayMesh" uid="uid://b5p77kio2rlra" path="res://Models/Item/mauser1_Cube_001.res" id="1_3urua"]
+[ext_resource type="Script" path="res://model_pistol.gd" id="1_wqox1"]
 
-[node name="model_pistol" instance=ExtResource("1_bc262")]
+[node name="model_pistol" type="Node3D"]
+script = ExtResource("1_wqox1")
+
+[node name="ball" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.415154, 0, 0, 0, 0.405226, 0.0902494, 0, -0.0902494, 0.405226, 1.28354, 0.57708, 0.874593)
+layers = 2
+mesh = ExtResource("1_3urua")
+skeleton = NodePath("")

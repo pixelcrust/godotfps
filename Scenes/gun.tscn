@@ -1,53 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://brid1ads3hnl2"]
+[gd_scene load_steps=12 format=3 uid="uid://brid1ads3hnl2"]
 
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
 [ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://model_pistol.tscn" id="4_arr1h"]
 [ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]
-[ext_resource type="PackedScene" uid="uid://cs22vskh3a1mp" path="res://Models/Item/mauser1.glb" id="4_nvnyi"]
 
 [sub_resource type="Animation" id="Animation_6udym"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("mauser1:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -1.5708, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("mauser1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.797595, 0, -0.390597)]
-}
 
 [sub_resource type="Animation" id="Animation_jtqra"]
 resource_name = "ads"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("mauser1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.797595, 0, -0.390597), Vector3(0.798, 0.4, -1.39)]
-}
 
 [sub_resource type="Animation" id="Animation_oomti"]
 resource_name = "change weapon in"
@@ -58,35 +21,11 @@ resource_name = "change weapon out"
 
 [sub_resource type="Animation" id="Animation_7bcll"]
 resource_name = "reload"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("mauser1:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -1.5708, 0), Vector3(-0.049092, -1.60494, 1.21533), Vector3(0, -1.5708, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_an7xa"]
 resource_name = "shoot"
 length = 0.4
 step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("mauser1:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.19, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -1.5708, 0), Vector3(0.246375, -1.56916, 0.0131801), Vector3(0, -1.5708, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0rj0"]
 _data = {
@@ -109,10 +48,6 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_ismwp")
-
-[node name="mauser1" parent="." instance=ExtResource("4_nvnyi")]
-transform = Transform3D(-9.04998e-07, 0, -0.25, 0, 0.25, 0, 0.25, 0, -9.04998e-07, 0.797595, 0, -0.390597)
-visible = false
 
 [node name="model_pistol" parent="." instance=ExtResource("4_arr1h")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 0.798, 0, -0.391)

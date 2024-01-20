@@ -22,9 +22,9 @@ const max_loaded = 7
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
-	#print_debug(mauser_1.mauser1_Cube_001)
-	"""model_pistol.ball.visible = false
-	model_pistol.ball.set_layer_mask_value(2,false)"""
+	print_debug(model_pistol.mesh.get_layer_mask_value(2))
+	model_pistol.mesh.set_layer_mask_value(1,true)
+	model_pistol.mesh.set_layer_mask_value(2,false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
