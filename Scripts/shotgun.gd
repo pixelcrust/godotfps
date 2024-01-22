@@ -8,26 +8,32 @@ extends Node3D
 const RECOIL = 20
 @onready var emitter_shell = $MeshInstance3D/GPUParticles3D
 
+@onready var pos_standard = Vector3(1.2,-0.6,-0.8)
+@onready var pos_ads = Vector3(-0.03,-0.45,-0.5)
+
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	transform.origin = pos_standard
 
 func _process(delta):
-	print("ads:"+str(ads))
 	if (ads == 1)&&(already== 0):
-		animation_player.play("ads")
+		#animation_player.play("ads")
+		transform.origin = pos_ads
 		already = 1
 	elif (ads == 1) && (already == 1):
 		
 		pass
-
+		
 	elif ads == 0:
 		if already == 1:
-			animation_player.play("RESET")
+			#animation_player.play("RESET")
+			transform.origin = pos_standard
 			already = 0
+		
+	#print_debug("ads state: " + str(ads))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func shoot(inventory_selector):

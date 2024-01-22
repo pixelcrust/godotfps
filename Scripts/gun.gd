@@ -9,30 +9,34 @@ extends Node3D
 @onready var emitter_shell = $model_pistol/emitter_shell/GPUParticles3D
 
 const RECOIL = 5
+@onready var pos_standard = Vector3(1.2,-0.6,-0.8)
+@onready var pos_ads = Vector3(-0.03,-0.45,-0.5)
 
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	transform.origin = pos_standard
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (ads == 1)&&(already== 0):
-		animation_player.play("ads")
+		#animation_player.play("ads")
+		transform.origin = pos_ads
 		already = 1
 	elif (ads == 1) && (already == 1):
 		
 		pass
-		#transform.origin = Vector3(1.5,-0.8,-1)
+		
 	elif ads == 0:
 		if already == 1:
-			animation_player.play("RESET")
+			#animation_player.play("RESET")
+			transform.origin = pos_standard
 			already = 0
-		#transform.origin = Vector3(1,-0.8,-1)
-	#print_debug("ads state: " + str(ads))
+		
+	#print_debug("ads gun state: " + str(ads))
 	
 func shoot(inventory_selector):
 	
@@ -40,6 +44,7 @@ func shoot(inventory_selector):
 		pass
 	else:
 		if player.inventory[inventory_selector].loaded > 0:
+			
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
 			emitter_shell.set_emitting(true)
@@ -47,11 +52,13 @@ func shoot(inventory_selector):
 			var new_bullet = bullet.instantiate()
 			new_bullet.position = barrel.global_position
 			new_bullet.transform.basis = global_transform.basis
-			new_bullet.ads = ads
 			get_tree().root.get_children()[0].add_child(new_bullet);
+			new_bullet.ads = ads
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
+			
 			await get_tree().create_timer(0.5).timeout
+			
 		else:
 			pass
 		

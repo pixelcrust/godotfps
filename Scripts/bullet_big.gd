@@ -12,7 +12,7 @@ const time_rooted = 1
 @onready var standard_abweichung_y = randf_range(-ACCURACY,ACCURACY)
 @onready var abweichung_x = 0
 @onready var abweichung_y = 0
-@onready var ads = 0 #0.. bullet not shot from ads 1.. bullet shot from ads
+@onready var ads = 3 #0.. bullet not shot from ads 1.. bullet shot from ads
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,10 +23,12 @@ func _ready():
 	else:
 		abweichung_x = standard_abweichung_x
 		abweichung_y = standard_abweichung_y
+	#print_debug("ads bullet: "+str(ads))
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
+	#print_debug("ads bullet: "+str(ads))
 	if raycast.is_colliding():
 		#print("raycast collision with:" + str(raycast.get_collider()) )
 		mesh.visible = false

@@ -9,6 +9,9 @@ extends Node3D
 @onready var zoom = 20
 const RECOIL = 15
 
+@onready var pos_standard = Vector3(1.2,-0.6,-0.8)
+@onready var pos_ads = Vector3(-0.03,-0.45,-0.5)
+
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
 
@@ -22,13 +25,14 @@ inventory.append({
 """
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	transform.origin = pos_standard
 
 
 func _process(delta):
+	print_debug("ads sniper: "+str(ads))
 	if (ads == 1)&&(already== 0):
-		animation_player.play("ads")
-		
+		#animation_player.play("ads")
+		transform.origin = pos_ads
 		#player.camera.zoom.y = 0.2
 		already = 1
 	elif (ads == 1) && (already == 1):
@@ -37,7 +41,8 @@ func _process(delta):
 			mesh_instance_3d.visible = false
 	elif ads == 0:
 		if already == 1:
-			animation_player.play("RESET")
+			#animation_player.play("RESET")
+			transform.origin = pos_standard
 			mesh_instance_3d.visible = true
 			already = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,10 +56,11 @@ func shoot(inventory_selector):
 			var new_bullet = bullet.instantiate()
 			new_bullet.position = barrel.global_position
 			new_bullet.transform.basis = global_transform.basis
-			new_bullet.ads = ads
-			get_tree().root.get_children()[0].add_child(new_bullet);
+			get_tree().root.get_children()[0].add_child(new_bullet)
+			
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
+			new_bullet.ads = ads
 		else:
 			pass
 		
