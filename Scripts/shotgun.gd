@@ -7,6 +7,7 @@ extends Node3D
 @onready var player = null
 const RECOIL = 20
 @onready var emitter_shell = $MeshInstance3D/GPUParticles3D
+@onready var muzzleflash = $MeshInstance3D/muzzleflash/GPUParticles3D
 
 @onready var pos_standard = Vector3(1.2,-0.6,-0.8)
 @onready var pos_ads = Vector3(-0.03,-0.45,-0.5)
@@ -43,6 +44,8 @@ func shoot(inventory_selector):
 			if player.inventory[inventory_selector].loaded > 0:
 				player.inventory[inventory_selector].loaded -= 1
 				animation_player.play("shoot")
+				muzzleflash.set_emitting(true)
+				muzzleflash.restart()
 				for n in 6:
 					var new_shell = shell.instantiate()
 					new_shell.position = barrel.global_position

@@ -1,7 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://rif7qlnipanh"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tjt7c"]
-emission_shape_offset = Vector3(0, 0.1, 0)
 angle_min = -720.0
 angle_max = 672.0
 spread = 180.0
@@ -11,12 +10,17 @@ gravity = Vector3(0, 0, 0)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v4xy"]
 albedo_color = Color(1, 1, 0, 1)
 emission_enabled = true
-emission = Color(1, 1, 1, 1)
+emission = Color(1, 1, 0, 1)
 emission_energy_multiplier = 16.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_y1qm7"]
 material = SubResource("StandardMaterial3D_4v4xy")
-size = Vector3(0.03, 0.3, 0.03)
+size = Vector3(0.07, 1.6, 0.03)
 
 [node name="muzzleflash" type="Node3D"]
 

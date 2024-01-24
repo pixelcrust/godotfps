@@ -61,7 +61,7 @@ var gravity = 9.8
 @onready var inv_slot_1 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_1
 @onready var inv_slot_2 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_2
 @onready var inv_slot_3 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_3
-@onready var icon_pistol = preload("res://Sprites/icons/icon_pistol.png")
+@onready var icon_pistol = preload("res://Sprites/icons/icon_pistol_2.png")
 @onready var icon_shotgun = preload("res://Sprites/icons/icon_shotgun.png")
 @onready var icon_sniper = preload("res://Sprites/icons/icon_sniper.png")
 const icon_knife = preload("res://Sprites/icons/icon_knife.png")
@@ -103,13 +103,13 @@ func _ready():
 		"max_loaded": 7, # See above assignment.
 		"spare_ammo": 100
 		})
-
+		
 	inventory.append({
-		"item_id": 1, #shotgun
-		"loaded": 2,
-		"max_loaded": 2, 
-		"spare_ammo": 4
-	})
+			"item_id": 1, #shotgun
+			"loaded": 2,
+			"max_loaded": 2, 
+			"spare_ammo": 4
+		})
 	"""
 	inventory.append({
 	"item_id": 4, #flashlight
