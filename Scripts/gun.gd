@@ -7,6 +7,8 @@ extends Node3D
 @onready var sound_shoot = preload("res://Models/Sounds/sfx_weapon_singleshot21.wav")
 @onready var player = null
 @onready var emitter_shell = $model_pistol/emitter_shell/GPUParticles3D
+@onready var muzzleflash = $model_pistol/muzzleflash/GPUParticles3D
+
 
 const RECOIL = 5
 @onready var pos_standard = Vector3(1.2,-0.6,-0.8)
@@ -47,6 +49,8 @@ func shoot(inventory_selector):
 			
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
+			muzzleflash.set_emitting(true)
+			muzzleflash.restart()
 			emitter_shell.set_emitting(true)
 			emitter_shell.restart()
 			var new_bullet = bullet.instantiate()

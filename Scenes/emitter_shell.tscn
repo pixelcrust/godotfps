@@ -22,6 +22,7 @@ height = 0.1
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 emitting = false
 amount = 1
+lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
 randomness = 0.47

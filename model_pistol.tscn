@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b37cwkrg5vrjr"]
 
-[ext_resource type="ArrayMesh" uid="uid://b5p77kio2rlra" path="res://Models/Item/mauser1_Cube_001.res" id="1_3urua"]
+[ext_resource type="ArrayMesh" uid="uid://c8qitftid7ix5" path="res://Models/Item/mauser1_Cube_001.res" id="1_3urua"]
 [ext_resource type="Script" path="res://model_pistol.gd" id="1_wqox1"]
 
 [node name="model_pistol" type="Node3D"]

@@ -1,6 +1,8 @@
 extends MeshInstance3D
 
 @onready var animation_player = $"../../AnimationPlayer"
+@onready var door = $".."
+
 
 const HP_START = 100
 @onready var hp = HP_START
@@ -30,7 +32,7 @@ func _on_physical_bone_3d_bodypart_hit(dmg, time_rooted):
 	hp -= dmg
 
 func die():
-	queue_free()
+	door.queue_free()
 
 func get_interaction_time():
 	if state == 0:

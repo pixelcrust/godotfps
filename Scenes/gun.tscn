@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://brid1ads3hnl2"]
+[gd_scene load_steps=13 format=3 uid="uid://brid1ads3hnl2"]
 
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
-[ext_resource type="PackedScene" path="res://model_pistol.tscn" id="4_arr1h"]
+[ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://model_pistol.tscn" id="4_arr1h"]
 [ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]
+[ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://muzzleflash.tscn" id="5_orytu"]
 
 [sub_resource type="Animation" id="Animation_6udym"]
 length = 0.001
@@ -146,9 +147,13 @@ libraries = {
 stream = ExtResource("4_ismwp")
 
 [node name="model_pistol" parent="." instance=ExtResource("4_arr1h")]
-transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.300001, 0, -1.31134e-08, 0.798, 0, -0.391)
+transform = Transform3D(-1.086e-06, 0, -0.3, 0, 0.3, 0, 0.300001, 0, -1.086e-06, 0.798, 0, -0.391)
 
 [node name="emitter_shell" parent="model_pistol" instance=ExtResource("3_woa2a")]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -7.45058e-09, 0, 1, -0.230091, 2.01876, 3.29046)
 
 [node name="RayCast3D" type="RayCast3D" parent="model_pistol"]
+transform = Transform3D(6.66134e-16, 3.72529e-08, 1, 1, -4.37114e-08, 1.08959e-15, 4.37114e-08, 1, -4.47035e-08, 1.2557, 1.24867, -0.14818)
+
+[node name="muzzleflash" parent="model_pistol" instance=ExtResource("5_orytu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30845, 1.44925, -2.36758)

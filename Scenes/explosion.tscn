@@ -61,7 +61,6 @@ amount = 512
 lifetime = 4.0
 one_shot = true
 explosiveness = 1.0
-fixed_fps = 60
 visibility_aabb = AABB(-8, -8, -8, 16, 16, 16)
 trail_lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_ym6lv")
