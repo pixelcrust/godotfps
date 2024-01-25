@@ -37,10 +37,10 @@ func use():
 		"max_loaded": max_loaded, 
 		"spare_ammo": spare_ammo
 		})
-		player.inventory_selector = len(player.inventory)-1
-		if player.equipped_id != -1:
+
+		if player.get_equipped_id() != null:
 			player.equipped.queue_free()
-		player.equip_weapon()
+		player.equip_weapon(len(player.inventory)-1)
 		queue_free()
 	else:
 		player.drop_weapon()
@@ -50,9 +50,9 @@ func use():
 		"max_loaded": max_loaded, 
 		"spare_ammo": spare_ammo
 		})
-		player.inventory_selector = len(player.inventory)-1
-		if player.equipped_id != -1:
+
+		if player.get_equipped_id() != null:
 			player.equipped.queue_free()
-		player.equip_weapon()
+		player.equip_weapon(len(player.inventory)-1)
 		queue_free()
 		pass

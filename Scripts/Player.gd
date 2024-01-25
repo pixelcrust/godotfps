@@ -17,6 +17,8 @@ var t_bob = 0.0
 const FOV_BASE = 75.0
 const FOV_SPRINT_SCALE = 1.5
 
+const DEFAULT_INVENTORY_SELECTION = 0
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
@@ -47,13 +49,12 @@ var gravity = 9.8
 @onready var is_rooted = false
 @onready var is_interacting = 0
 
-@onready var equipped_id = -1 #what item in hand
 #-1.. nothing
 #0.. gun
 #1.. shotgun
 
 @onready var inventory = []
-@onready var inventory_selector = 0
+@onready var inventory_selector = null
 @onready var inventory_space = 3
 
 #inventory slots and icons
@@ -102,14 +103,14 @@ func _ready():
 		"loaded": 7,
 		"max_loaded": 7, # See above assignment.
 		"spare_ammo": 100
-		})
+	})
 		
 	inventory.append({
 			"item_id": 1, #shotgun
 			"loaded": 2,
 			"max_loaded": 2, 
 			"spare_ammo": 4
-		})
+	})
 	"""
 	inventory.append({
 	"item_id": 4, #flashlight
@@ -154,7 +155,8 @@ func _ready():
 	"""
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	equip_weapon()
+	# equip default weapon
+	equip_weapon(DEFAULT_INVENTORY_SELECTION)
 
 	
 func _unhandled_input(event):
@@ -220,7 +222,7 @@ func _physics_process(delta):
 		state_move = 4
 		if equipped != null:
 			equipped.ads = 1
-			if equipped_id != 2: #dont hide crossair of sniper
+			if get_equipped_id() != 2: #dont hide crossair of sniper
 				display_crosshair.visible = false
 			#state_move = state_before dont know where thisS
 	else:
@@ -269,31 +271,22 @@ func _physics_process(delta):
 	
 	#swap weapon
 	if Input.is_action_just_pressed("key_next_weapon"):
-		
-		if equipped != null:
-			if equipped.animation_player.is_playing():
-				pass
-			else:
-				equipped.animation_player.play("change weapon out") #this does not work
-			#wait here for animation out 
-			equipped.queue_free() 
-		inventory_selector += 1
-		equip_weapon()
+		equip_weapon(inventory_selector + 1)
 		
 	#drop weapon
-	if Input.is_action_just_pressed("key_drop_weapon") && equipped_id != -1:
+	if Input.is_action_just_pressed("key_drop_weapon") && get_equipped_id() != null:
 		drop_weapon()
 	
 	#shoot
 	if(Input.is_action_just_pressed("key_shoot")):
-		if equipped_id != -1:
+		if get_equipped_id() != null:
 			equipped.shoot(inventory_selector)
 		else:
 			pass
 	
 	#reload
 	if(Input.is_action_just_pressed("key_reload")):
-		if equipped_id != -1:
+		if get_equipped_id() != null:
 			equipped.reload(inventory_selector)
 		else:
 			pass
@@ -349,75 +342,82 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQUENCY/2)*BOB_AMPLITUDE/2
 	return pos
 
-func equip_weapon():
-	#equip weapon
-	if(inventory_selector<inventory.size()):
-		equipped_id = inventory[inventory_selector].item_id
-	else:
-		inventory_selector = 0
-	if inventory.is_empty():
-		equipped_id = -1
-	else:
-		match inventory[inventory_selector].item_id:
-			0:
-				var new_gun = asset_gun.instantiate()
-				camera.add_child(new_gun)
-				new_gun.position = camera.position
-				new_gun.rotate_y(deg_to_rad(90))
-				new_gun.transform.origin = Vector3(1,-0.8,-1)
-				new_gun.animation_player.play("change weapon in")
-				new_gun.player = $"." #get the inventory of the player
-				equipped = new_gun
-			1:
-				var new_shotgun = asset_shotgun.instantiate()
-				camera.add_child(new_shotgun)
-				new_shotgun.position = camera.position
-				new_shotgun.rotate_y(deg_to_rad(90))
-				new_shotgun.transform.origin = Vector3(1,-0.8,-1)
-				new_shotgun.animation_player.play("change weapon in")
-				new_shotgun.player = $"." #get the inventory of the player
-				equipped = new_shotgun
-			2:
-				var new_sniper = asset_sniper.instantiate()
-				camera.add_child(new_sniper)
-				new_sniper.position = camera.position
-				new_sniper.rotate_y(deg_to_rad(90))
-				new_sniper.transform.origin = Vector3(1,-0.8,-1)
-				new_sniper.animation_player.play("change weapon in")
-				new_sniper.player = $"." #get the inventory of the player
-				equipped = new_sniper
-			3:
-				var new_knife = asset_knife.instantiate()
-				camera.add_child(new_knife)
-				new_knife.position = camera.position
-				new_knife.rotate_y(deg_to_rad(90))
-				new_knife.transform.origin = Vector3(1,-0.8,-1)
-				new_knife.animation_player.play("change weapon in")
-				new_knife.player = $"."
-				equipped = new_knife
-			4:
-				var new_flashlight = asset_flashlight.instantiate()
-				camera.add_child(new_flashlight)
-				new_flashlight.position = camera.position
-				new_flashlight.rotate_y(deg_to_rad(90))
-				new_flashlight.transform.origin = Vector3(1,-0.8,-1)
-				new_flashlight.animation_player.play("change weapon in")
-				new_flashlight.player = $"."
-				new_flashlight.range = flashlight_range
-				equipped = new_flashlight
-			5:
-				var new_grenade = asset_grenade.instantiate()
-				camera.add_child(new_grenade)
-				new_grenade.position = camera.position
-				#new_grenade.rotate_y(deg_to_rad(90))
-				new_grenade.transform.origin = Vector3(1,-0.8,-1)
-				new_grenade.animation_player.play("change weapon in")
-				new_grenade.player = $"."
-				equipped = new_grenade
-			-1: #nothing equipped
-				pass
-			_:
-				equipped_id = -1
+func equip_weapon(new_inventory_selection):
+	if (new_inventory_selection >= inventory.size()):
+		# start over at the beginning of the inventory to allow to cycle through the inventory in a loop
+		new_inventory_selection = new_inventory_selection % inventory.size()
+		
+	if (new_inventory_selection == inventory_selector):
+		# selected same item as currently equipped
+		return
+	
+	if equipped != null:
+		if equipped.animation_player.is_playing():
+			pass
+		else:
+			equipped.animation_player.play("change weapon out") #this does not work
+		#wait here for animation out 
+		equipped.queue_free() 
+		
+	inventory_selector = new_inventory_selection
+
+	match inventory[inventory_selector].item_id:
+		0:
+			var new_gun = asset_gun.instantiate()
+			camera.add_child(new_gun)
+			new_gun.position = camera.position
+			new_gun.rotate_y(deg_to_rad(90))
+			new_gun.transform.origin = Vector3(1,-0.8,-1)
+			new_gun.animation_player.play("change weapon in")
+			new_gun.player = $"." #get the inventory of the player
+			equipped = new_gun
+		1:
+			var new_shotgun = asset_shotgun.instantiate()
+			camera.add_child(new_shotgun)
+			new_shotgun.position = camera.position
+			new_shotgun.rotate_y(deg_to_rad(90))
+			new_shotgun.transform.origin = Vector3(1,-0.8,-1)
+			new_shotgun.animation_player.play("change weapon in")
+			new_shotgun.player = $"." #get the inventory of the player
+			equipped = new_shotgun
+		2:
+			var new_sniper = asset_sniper.instantiate()
+			camera.add_child(new_sniper)
+			new_sniper.position = camera.position
+			new_sniper.rotate_y(deg_to_rad(90))
+			new_sniper.transform.origin = Vector3(1,-0.8,-1)
+			new_sniper.animation_player.play("change weapon in")
+			new_sniper.player = $"." #get the inventory of the player
+			equipped = new_sniper
+		3:
+			var new_knife = asset_knife.instantiate()
+			camera.add_child(new_knife)
+			new_knife.position = camera.position
+			new_knife.rotate_y(deg_to_rad(90))
+			new_knife.transform.origin = Vector3(1,-0.8,-1)
+			new_knife.animation_player.play("change weapon in")
+			new_knife.player = $"."
+			equipped = new_knife
+		4:
+			var new_flashlight = asset_flashlight.instantiate()
+			camera.add_child(new_flashlight)
+			new_flashlight.position = camera.position
+			new_flashlight.rotate_y(deg_to_rad(90))
+			new_flashlight.transform.origin = Vector3(1,-0.8,-1)
+			new_flashlight.animation_player.play("change weapon in")
+			new_flashlight.player = $"."
+			new_flashlight.range = flashlight_range
+			equipped = new_flashlight
+		5:
+			var new_grenade = asset_grenade.instantiate()
+			camera.add_child(new_grenade)
+			new_grenade.position = camera.position
+			#new_grenade.rotate_y(deg_to_rad(90))
+			new_grenade.transform.origin = Vector3(1,-0.8,-1)
+			new_grenade.animation_player.play("change weapon in")
+			new_grenade.player = $"."
+			equipped = new_grenade
+			
 	#show gui for inventory
 	display_inventory.visible = true
 	inventory_timer.connect("timeout",_inventory_gui_timeout)
@@ -509,6 +509,9 @@ func _on_bone_body_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
 	if(time_rooted > 0):
 		set_rooted(time_rooted)
+		
+func get_equipped_id():
+	return inventory[inventory_selector].item_id
 
 func drop_weapon():
 	equipped.queue_free()
@@ -563,7 +566,7 @@ func drop_weapon():
 		_:
 			pass
 	inventory.remove_at(inventory_selector)
-	equip_weapon()
+	equip_weapon(inventory_selector + 1)
 	
 func heal(heal_amount):
 	hp += heal_amount
