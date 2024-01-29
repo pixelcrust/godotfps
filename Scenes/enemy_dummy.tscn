@@ -50,7 +50,7 @@ collision_mask = 4
 [node name="direction_helper" type="Node3D" parent="base/body"]
 transform = Transform3D(0.998567, 0, 0.0535211, 0, 1, 0, -0.0535211, 0, 0.998567, 0, 1.59332, 1.75008)
 
-[node name="PhysicalBone3D" type="PhysicalBone3D" parent="base/body" groups=["has_hp"]]
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="base/body" groups=["has_blood", "has_hp"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("5_emdjp")
@@ -66,7 +66,7 @@ mesh = ExtResource("4_sl70n")
 [node name="ray_view" type="RayCast3D" parent="base/body/head"]
 transform = Transform3D(-5.21253e-15, -1.19249e-07, -10, 10, -5.06639e-07, 0, -5.06639e-07, -10, 1.19249e-07, 0, 0.40603, 0.160083)
 
-[node name="PhysicalBone3D" type="PhysicalBone3D" parent="base/body/head" groups=["has_hp"]]
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="base/body/head" groups=["has_blood", "has_hp"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.472203, -0.0397752)
 collision_layer = 2
 collision_mask = 2
