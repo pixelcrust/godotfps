@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://jqaebaxncb0k"]
+[gd_scene load_steps=9 format=3 uid="uid://jqaebaxncb0k"]
 
 [ext_resource type="Script" path="res://Scripts/bullet_big.gd" id="1_llw34"]
+[ext_resource type="PackedScene" uid="uid://dwjfspjqmal5v" path="res://blood_splatter.tscn" id="2_6idw6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxnks"]
 albedo_color = Color(0.988235, 0.886275, 0.47451, 1)
@@ -59,5 +60,7 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_rdlu4")
 draw_pass_1 = SubResource("BoxMesh_yfcpt")
+
+[node name="blood_splatter" parent="." instance=ExtResource("2_6idw6")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

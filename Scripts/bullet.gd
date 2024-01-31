@@ -38,11 +38,13 @@ func _physics_process(delta):
 	if raycast.is_colliding():
 		#print("raycast collision with:" + str(raycast.get_collider()) )
 		mesh.visible = false
-		particles.emitting = true
+		if raycast.get_collider().is_in_group("has_blood"):
+			blood_splatter.emitting = true
+		else:
+			particles.emitting = true
 		if(raycast.get_collider().is_in_group("has_hp")):
 			raycast.get_collider().hit(dmg,time_rooted)
-			if raycast.get_collider().is_in_group("has_blood"):
-				blood_splatter.emitting = true
+
 		raycast.enabled = false
 		await get_tree().create_timer(2.0).timeout
 		queue_free()

@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwjfspjqmal5v"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r5wug"]
+particle_flag_align_y = true
 direction = Vector3(0, 0, 1)
 spread = 90.0
 initial_velocity_min = 5.0
@@ -9,6 +10,8 @@ collision_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pahx"]
 albedo_color = Color(0.443137, 0.0588235, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_d0u60"]
 material = SubResource("StandardMaterial3D_0pahx")
@@ -17,9 +20,10 @@ size = Vector2(0.2, 0.6)
 [node name="blood_splatter" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 emitting = false
-amount = 16
-lifetime = 0.5
+amount = 32
+lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0

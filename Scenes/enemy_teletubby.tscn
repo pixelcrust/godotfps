@@ -65,7 +65,7 @@ shape = SubResource("SphereShape3D_vtcpw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.668523, 0)
 mesh = SubResource("CapsuleMesh_3krvw")
 
-[node name="PhysicalBone3D" type="PhysicalBone3D" parent="body" groups=["has_hp"]]
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="body" groups=["has_blood", "has_hp"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20053e-09, 0, -0.0137324)
 collision_layer = 2
 collision_mask = 2
@@ -83,7 +83,7 @@ mesh = SubResource("CapsuleMesh_58qco")
 transform = Transform3D(4.61853e-14, 8.74228e-07, -20, 20, -1.07288e-06, 8.88178e-15, -1.07288e-06, -20, -8.74228e-07, 0, -0.315884, 0.136009)
 collision_mask = 2
 
-[node name="PhysicalBone3D" type="PhysicalBone3D" parent="body/head" groups=["has_hp"]]
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="body/head" groups=["has_blood", "has_hp"]]
 transform = Transform3D(1, 0, 0, -4.44089e-16, 1, 0, -1.42109e-14, 0, 1, -2.84063e-09, 0.511381, -0.00595764)
 collision_layer = 2
 collision_mask = 2
