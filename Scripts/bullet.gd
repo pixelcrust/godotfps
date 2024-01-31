@@ -13,7 +13,7 @@ const time_rooted = .5
 @onready var abweichung_x = 0
 @onready var abweichung_y = 0
 @onready var ads = 3 #0.. bullet not shot from ads 1.. bullet shot from ads
-@onready var blood_splatter = $blood_splatter/GPUParticles3D
+@onready var blood_splatter = $blood_splatter
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,7 +39,7 @@ func _physics_process(delta):
 		#print("raycast collision with:" + str(raycast.get_collider()) )
 		mesh.visible = false
 		if raycast.get_collider().is_in_group("has_blood"):
-			blood_splatter.emitting = true
+			blood_splatter.on = true
 		else:
 			particles.emitting = true
 		if(raycast.get_collider().is_in_group("has_hp")):
