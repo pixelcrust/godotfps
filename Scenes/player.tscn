@@ -167,9 +167,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.86406, 0)
 cull_mask = 2
 
 [node name="display_ammo" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
-offset_left = 996.0
+offset_left = 32.0
 offset_top = 553.0
-offset_right = 1112.0
+offset_right = 148.0
 offset_bottom = 603.0
 placeholder_text = "L/S"
 
