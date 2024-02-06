@@ -212,10 +212,11 @@ func _physics_process(delta):
 	if (Input.is_action_pressed("key_run") && (state_move < 2)):
 		set_speed(SPEED_RUN)
 		state_move = 1
+		
 	elif(Input.is_action_pressed("key_crouch") && (state_move != 2)):
 		set_speed(SPEED_CROUCH)
 		state_move = 2
-	elif Input.is_action_pressed("key_ads"):
+	elif Input.is_action_pressed("key_ads") && (state_move != 3):
 		#state_before = state_move
 		state_move = 4
 		if equipped != null:
@@ -229,6 +230,7 @@ func _physics_process(delta):
 			equipped.ads = 0
 			display_crosshair.visible = true
 		state_move = 0
+
 
 	if(Input.is_action_pressed("key_help")):
 		help_text.visible = true

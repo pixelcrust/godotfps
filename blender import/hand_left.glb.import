@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c3o5r7k21b7k4"
-path="res://.godot/imported/hand.glb-abfe7ec1c62bfef8e32a522b1956b6a7.scn"
+uid="uid://du4dkcamy3n3h"
+path="res://.godot/imported/hand_left.glb-52224902b3f72a2b02badaf52501deb0.scn"
 
 [deps]
 
-source_file="res://Scenes/hand.glb"
-dest_files=["res://.godot/imported/hand.glb-abfe7ec1c62bfef8e32a522b1956b6a7.scn"]
+source_file="res://blender import/hand_left.glb"
+dest_files=["res://.godot/imported/hand_left.glb-52224902b3f72a2b02badaf52501deb0.scn"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b21fut2txcgit"
-path.s3tc="res://.godot/imported/hand_left_arm.png-d7189a5f8979828748470a0394e5f788.s3tc.ctex"
+uid="uid://fjae32or38wo"
+path.s3tc="res://.godot/imported/hand_Metal_17-512x512.png-f191895e2d23d4379ecfa3d6f2b6c36e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://hand_left_arm.png"
-dest_files=["res://.godot/imported/hand_left_arm.png-d7189a5f8979828748470a0394e5f788.s3tc.ctex"]
+source_file="res://blender import/hand_Metal_17-512x512.png"
+dest_files=["res://.godot/imported/hand_Metal_17-512x512.png-f191895e2d23d4379ecfa3d6f2b6c36e.s3tc.ctex"]
 
 [params]
 

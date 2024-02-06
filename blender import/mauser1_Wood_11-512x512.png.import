@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw7ij3jqjdsus"
-path.s3tc="res://.godot/imported/hand_left_Metal_17-512x512.png-045f0e03cbb79af29166c84509eeef89.s3tc.ctex"
+uid="uid://dh2tjiob4fsuh"
+path.s3tc="res://.godot/imported/mauser1_Wood_11-512x512.png-9ac7b78d0f913f6ccdd9c1cb7b83704c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://hand_left_Metal_17-512x512.png"
-dest_files=["res://.godot/imported/hand_left_Metal_17-512x512.png-045f0e03cbb79af29166c84509eeef89.s3tc.ctex"]
+source_file="res://blender import/mauser1_Wood_11-512x512.png"
+dest_files=["res://.godot/imported/mauser1_Wood_11-512x512.png-9ac7b78d0f913f6ccdd9c1cb7b83704c.s3tc.ctex"]
 
 [params]
 

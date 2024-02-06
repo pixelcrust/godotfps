@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6jvjcq0k6uej"
-path.s3tc="res://.godot/imported/hand_arm.png-b9e5fc6a30bab53135782749e2ffb446.s3tc.ctex"
+uid="uid://c7h0bwwbmsv60"
+path.s3tc="res://.godot/imported/mauser1_Metal_03-512x512.png-dc82baef3363d6d162f3bed864099896.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Scenes/hand_arm.png"
-dest_files=["res://.godot/imported/hand_arm.png-b9e5fc6a30bab53135782749e2ffb446.s3tc.ctex"]
+source_file="res://blender import/mauser1_Metal_03-512x512.png"
+dest_files=["res://.godot/imported/mauser1_Metal_03-512x512.png-dc82baef3363d6d162f3bed864099896.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://k5yjbntojijf"
-path.s3tc="res://.godot/imported/mauser1_Metal_17-512x512.png-c1b2c2e0a5c40f67b483384dc33f2fdb.s3tc.ctex"
+path.s3tc="res://.godot/imported/mauser1_Metal_17-512x512.png-8d6ffd040d9b58176e706f216e216fe4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Models/Item/mauser1_Metal_17-512x512.png"
-dest_files=["res://.godot/imported/mauser1_Metal_17-512x512.png-c1b2c2e0a5c40f67b483384dc33f2fdb.s3tc.ctex"]
+source_file="res://blender import/mauser1_Metal_17-512x512.png"
+dest_files=["res://.godot/imported/mauser1_Metal_17-512x512.png-8d6ffd040d9b58176e706f216e216fe4.s3tc.ctex"]
 
 [params]
 

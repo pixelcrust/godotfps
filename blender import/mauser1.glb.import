@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cs22vskh3a1mp"
-path="res://.godot/imported/mauser1.glb-ede83f6def3339eb1b20da3c6ed1015f.scn"
+path="res://.godot/imported/mauser1.glb-0cb7f0a952083f18068ac951cd282d42.scn"
 
 [deps]
 
-source_file="res://Models/Item/mauser1.glb"
-dest_files=["res://.godot/imported/mauser1.glb-ede83f6def3339eb1b20da3c6ed1015f.scn"]
+source_file="res://blender import/mauser1.glb"
+dest_files=["res://.godot/imported/mauser1.glb-0cb7f0a952083f18068ac951cd282d42.scn"]
 
 [params]
 

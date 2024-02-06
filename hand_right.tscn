@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://b1stvk0ojp7h6"]
 
-[ext_resource type="Texture2D" uid="uid://c6jvjcq0k6uej" path="res://Scenes/hand_arm.png" id="1_afwky"]
-[ext_resource type="Texture2D" uid="uid://fjae32or38wo" path="res://Scenes/hand_Metal_17-512x512.png" id="2_23me5"]
+[ext_resource type="Texture2D" uid="uid://c6jvjcq0k6uej" path="res://blender import/hand_arm.png" id="1_udj0l"]
+[ext_resource type="Texture2D" uid="uid://fjae32or38wo" path="res://blender import/hand_Metal_17-512x512.png" id="2_j868a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vglrq"]
 resource_name = "arm"
 cull_mode = 2
-albedo_texture = ExtResource("1_afwky")
+albedo_texture = ExtResource("1_udj0l")
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in7jh"]
 resource_name = "hand"
 cull_mode = 2
-albedo_texture = ExtResource("2_23me5")
+albedo_texture = ExtResource("2_j868a")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ce8yk"]
