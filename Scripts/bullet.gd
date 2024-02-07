@@ -33,7 +33,7 @@ func _physics_process(delta):
 	else:
 		abweichung_x = standard_abweichung_x
 		abweichung_y = standard_abweichung_y
-	print_debug("ads bullet:" +str(ads))
+	#print_debug("ads bullet:" +str(ads))
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
 	if raycast.is_colliding():
 		#print("raycast collision with:" + str(raycast.get_collider()) )

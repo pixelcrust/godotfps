@@ -69,14 +69,14 @@ func aim(delta):
 	var global_pos2 = player.head.global_transform.origin
 
 	# Calculate the vector between the two nodes
-	var direction = abs(global_pos2 - global_pos1)
+	var direction = global_pos2 - global_pos1
 
 	# Calculate the vertical angle (angle in the Y-axis)
-	var vertical_angle = atan2(direction.y, direction.x)
+	var vertical_angle = atan2(direction.y, abs(direction.x))
 	#print_debug(rad_to_deg(vertical_angle))
 	
 	
-	arm.rotation.z = vertical_angle + deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
+	arm.rotation.z = vertical_angle #+ deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
 	
 	
 	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
@@ -102,6 +102,7 @@ func _timeout():
 		timer.start()
 
 func shoot():
+	print_debug("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
 	var new_bullet = bullet.instantiate()	
 	new_bullet.position = gun.global_position
 	new_bullet.transform.basis = gun.global_transform.basis

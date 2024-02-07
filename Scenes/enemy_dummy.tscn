@@ -42,7 +42,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.679228, 0.028181, 0)
 mesh = ExtResource("5_31422")
 
 [node name="ray_gun" type="RayCast3D" parent="base/body/arm/gun"]
-transform = Transform3D(-4.37114e-08, -100, 1.77636e-14, 1, -4.37114e-06, -1.32734e-21, 2.11758e-21, 9.09495e-13, 1, 0.788636, 0.46709, 0)
+transform = Transform3D(-4.37114e-08, -100, 1.77636e-14, 1, -4.37114e-06, -1.32734e-21, 2.32934e-21, 9.09495e-13, 1, 0.788636, 0.46709, 0)
 collision_mask = 4
 
 [node name="Timer" type="Timer" parent="base/body/arm/gun"]
