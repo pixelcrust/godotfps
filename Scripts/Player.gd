@@ -97,19 +97,6 @@ func _ready():
 	node_flashlight.spot_range = 0
 	#adda gun to inventory
 
-	inventory.append({
-		"item_id": 0, #pistol
-		"loaded": 7,
-		"max_loaded": 7, # See above assignment.
-		"spare_ammo": 100
-		})
-		
-	inventory.append({
-			"item_id": 1, #shotgun
-			"loaded": 2,
-			"max_loaded": 2, 
-			"spare_ammo": 4
-		})
 	"""
 	inventory.append({
 	"item_id": 4, #flashlight
@@ -405,7 +392,7 @@ func equip_weapon():
 				new_flashlight.transform.origin = Vector3(1,-0.8,-1)
 				new_flashlight.animation_player.play("change weapon in")
 				new_flashlight.player = $"."
-				new_flashlight.range = flashlight_range
+				new_flashlight.spotlight_range = flashlight_range
 				equipped = new_flashlight
 			5:
 				var new_grenade = asset_grenade.instantiate()

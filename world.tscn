@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=28 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/gun_dropped.tscn" id="20_afjl8"]
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="21_cqm6c"]
+[ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="22_j7lok"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)
@@ -221,9 +222,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.181
 
 [node name="gun_dropped" parent="." instance=ExtResource("20_afjl8")]
 transform = Transform3D(-0.0615712, -0.998103, 0, 0.998103, -0.0615712, 0, 0, 0, 1, 39.0344, 1.84054, 28.1279)
+spare_ammo = 21
 
 [node name="shotgun_dropped" parent="." instance=ExtResource("21_cqm6c")]
-transform = Transform3D(0.99587, 0, 0.0907891, 0, 1, 0, -0.0907891, 0, 0.99587, 41.201, 5.40139, -32.3533)
+transform = Transform3D(0.682783, -0.727964, 0.0622464, 0.724958, 0.685615, 0.0660912, -0.0907891, 0, 0.99587, 43.6901, 1.11544, -48.047)
+loaded = 0
+spare_ammo = 12
 
 [node name="Node3D16" parent="." instance=ExtResource("13_hkrc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.723, 3.51842, -93.0378)
@@ -254,3 +258,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26382, 11.8754, -126.984)
 
 [node name="Node3D25" parent="." instance=ExtResource("13_hkrc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05862, 14.0733, -127.44)
+
+[node name="test_stairs4" parent="." instance=ExtResource("10_dh6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2199, 1.10901, -28.9762)
+
+[node name="test_stairs5" parent="." instance=ExtResource("10_dh6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2467, 2.5533, -29.9845)
+
+[node name="sniper_dropped2" parent="." instance=ExtResource("19_dim63")]
+transform = Transform3D(-2.62359e-09, -0.998197, 0.0600208, -4.36326e-08, 0.0600208, 0.998197, -1, 0, -4.37114e-08, 30.5167, 4.64861, -30.5929)
+
+[node name="test_wall7" parent="." instance=ExtResource("11_8ukas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0097, 5.61341, -32.6051)
+
+[node name="test_wall8" parent="." instance=ExtResource("11_8ukas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7097, 5.59156, -32.7606)
+
+[node name="Medikit" parent="." instance=ExtResource("22_j7lok")]
+transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 43.5852, 1.01999, -47.0143)

@@ -46,7 +46,6 @@ func shoot(inventory_selector):
 		pass
 	else:
 		if player.inventory[inventory_selector].loaded > 0:
-			
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
 			muzzleflash.set_emitting(true)
@@ -60,7 +59,6 @@ func shoot(inventory_selector):
 			new_bullet.ads = ads
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
-			
 			await get_tree().create_timer(0.5).timeout
 			
 		else:

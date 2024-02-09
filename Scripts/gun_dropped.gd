@@ -7,9 +7,10 @@ extends Node3D
 
 @onready var player = 0
 const item_id = 0
-@onready var loaded = 7
+@export var loaded = 7
 const max_loaded = 7
-@onready var spare_ammo = 100
+@export var spare_ammo = 10
+
 """
 	inventory.append({
 	"item_id": 0, #pistol
