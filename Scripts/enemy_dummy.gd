@@ -13,6 +13,7 @@ const SPEED = 5
 @onready var hp_start = 100
 @onready var hp = hp_start
 var vertical_shooting_error_range = 0
+var horizontal_shooting_error_range = 0
 @onready var state = -1 
 #0.. idle
 #1..aiming at player
@@ -106,7 +107,9 @@ func shoot():
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
 	var new_bullet = bullet.instantiate()	
 	new_bullet.position = gun.global_position
-	new_bullet.transform.basis = gun.global_transform.basis
+	new_bullet.transform.basis = direction_helper.global_transform.basis
+	new_bullet.rotation.y = new_bullet.rotation.y+deg_to_rad(90)+horizontal_shooting_error_range
+	new_bullet.rotation.z = new_bullet.rotation.z+deg_to_rad(90)+vertical_shooting_error_range
 	get_tree().root.get_children()[0].add_child(new_bullet);
 
 

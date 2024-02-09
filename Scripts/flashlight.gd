@@ -3,7 +3,7 @@ extends Node3D
 @onready var player = null
 @onready var animation_player = $AnimationPlayer
 @onready var on = 0
-@onready var range = 0
+@onready var spotlight_range = 0
 
 @onready var ads = 0 #0.. false 1..true
 
@@ -21,7 +21,7 @@ func shoot(inventory_selector):
 		player.node_flashlight.spot_range = 0
 		on = 1
 	else:
-		player.node_flashlight.spot_range = range
+		player.node_flashlight.spot_range = spotlight_range
 		on = 0
 
 
