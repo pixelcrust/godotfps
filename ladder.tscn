@@ -16,6 +16,7 @@ transform = Transform3D(0.22998, 0, 0, 0, 2.93972, 0, 0, 0, 1, 0, 0.985559, 0)
 mesh = SubResource("BoxMesh_84ahv")
 
 [node name="Area3D" type="Area3D" parent="." groups=["interactable"]]
+collision_mask = 4
 script = ExtResource("2_dlmut")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]

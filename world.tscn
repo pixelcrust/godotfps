@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=29 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/gun_dropped.tscn" id="20_afjl8"]
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="21_cqm6c"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="22_j7lok"]
+[ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://ladder.tscn" id="23_ntxv3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)
@@ -276,3 +277,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7097, 5.59156, -32.7606)
 
 [node name="Medikit" parent="." instance=ExtResource("22_j7lok")]
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 43.5852, 1.01999, -47.0143)
+
+[node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
+transform = Transform3D(0.62932, 0, -0.777146, 0, 1, 0, 0.777146, 0, 0.62932, 9.51186, 1.38774, 27.5488)

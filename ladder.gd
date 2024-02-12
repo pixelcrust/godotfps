@@ -1,8 +1,10 @@
 extends Node3D
 
 @onready var heal_amount = 100
-@onready var interactiontime = 3
+@onready var interactiontime = .01
 @onready var player = 0
+@onready var area_3d = $Area3D
+
 
 
 
@@ -16,4 +18,6 @@ func _process(delta):
 	pass
 
 func use():
+	#check if in area
 	player.is_on_ladder = true
+	player.interacted_with_ladder = true

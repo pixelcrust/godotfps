@@ -48,7 +48,8 @@ var gravity = 9.8
 
 @onready var is_rooted = false
 @onready var is_interacting = 0
-@onready var is_on_ladder = 0
+@onready var is_on_ladder = false
+@onready var interacted_with_ladder = false
 
 @onready var equipped_id = -1 #what item in hand
 #-1.. nothing
@@ -174,7 +175,10 @@ func _physics_process(delta):
 	else:
 		state_move = 0
 	
-	if is_on_ladder = true and
+	if is_on_ladder == true && interacted_with_ladder == true:
+		floor_max_angle = 90
+	else:
+		floor_max_angle = 45
 	
 	if inventory.is_empty() == false:
 		#display ammo
