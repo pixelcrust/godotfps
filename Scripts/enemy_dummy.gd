@@ -99,7 +99,9 @@ func aim(delta):
 		pass
 		
 func _timeout():
-	shoot()
+	if ray_view.is_colliding():
+		if ray_view.get_collider().is_in_group("group_player"):
+			shoot()
 	if state == 1:
 		timer.start()
 

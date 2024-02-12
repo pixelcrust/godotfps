@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/gun_dropped.gd" id="1_e185i"]
 [ext_resource type="Script" path="res://Scripts/dropped_collision.gd" id="3_uy242"]
-[ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://model_pistol.tscn" id="4_pnttf"]
+[ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://blender import/model_pistol.tscn" id="4_pnttf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt5af"]
 size = Vector3(2.09154, 1.22244, 0.492007)

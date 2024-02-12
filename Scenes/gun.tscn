@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
-[ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://model_pistol.tscn" id="4_arr1h"]
+[ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://blender import/model_pistol.tscn" id="4_arr1h"]
 [ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]
 [ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://muzzleflash.tscn" id="5_orytu"]
 [ext_resource type="PackedScene" uid="uid://b1stvk0ojp7h6" path="res://hand_right.tscn" id="6_w7x3i"]
