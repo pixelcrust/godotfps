@@ -29,6 +29,8 @@ var gravity = 9.8
 @onready var equipped = null
 @onready var animation_player = $AnimationPlayer
 @onready var node_flashlight = $Head/Camera3D/flashlight
+@onready var raycast_aim = $Head/Camera3D/raycast_aim
+
 
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
 @onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
@@ -96,6 +98,12 @@ func _ready():
 	#node_flashlight.spot_range = flashlight_range #sets the flashlight range in code for everywhere
 	node_flashlight.spot_range = 0
 	#adda gun to inventory
+	inventory.append({
+	"item_id": 0, #pistol
+	"loaded": 7,
+	"max_loaded": 7, # See above assignment.
+	"spare_ammo": 100
+	})
 
 	"""
 	inventory.append({
@@ -128,8 +136,8 @@ func _ready():
 	})
 	inventory.append({
 	"item_id": 2, #sniper
-	"loaded": 5,
-	"max_loaded": 5, 
+	"loaded": 1,
+	"max_loaded": 1, 
 	"spare_ammo": 10
 	})
 	inventory.append({
@@ -209,7 +217,8 @@ func _physics_process(delta):
 		if equipped != null:
 			equipped.ads = 1
 			if equipped_id != 2: #dont hide crossair of sniper
-				display_crosshair.visible = false
+				#display_crosshair.visible = false
+				pass
 			#state_move = state_before dont know where thisS
 	else:
 		set_speed(SPEED_WALK)
@@ -276,7 +285,10 @@ func _physics_process(delta):
 	#shoot
 	if(Input.is_action_just_pressed("key_shoot")):
 		if equipped_id != -1:
-			equipped.shoot(inventory_selector)
+			if raycast_aim.is_colliding():
+				equipped.shoot(inventory_selector,raycast_aim.get_collision_point())
+			else:
+				equipped.shoot(inventory_selector,null)
 		else:
 			pass
 	
@@ -329,8 +341,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 func die():
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
 	#queue_free()
+	pass
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO

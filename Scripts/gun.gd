@@ -8,11 +8,12 @@ extends Node3D
 @onready var player = null
 @onready var emitter_shell = $model_pistol/emitter_shell/GPUParticles3D
 @onready var muzzleflash = $model_pistol/muzzleflash/GPUParticles3D
+@onready var aim_helper = $aim_helper
 
 
 const RECOIL = 5
 @onready var pos_standard = Vector3(1.2,-0.6,-0.8)
-@onready var pos_ads = Vector3(-0.03,-0.45,-0.5)
+@onready var pos_ads = Vector3(0.00,-0.45,-0.5)
 
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
@@ -40,7 +41,7 @@ func _process(delta):
 		
 	#print_debug("ads gun state: " + str(ads))
 	
-func shoot(inventory_selector):
+func shoot(inventory_selector,target_on_raycast):
 	
 	if animation_player.is_playing():
 		pass
@@ -53,7 +54,12 @@ func shoot(inventory_selector):
 			emitter_shell.set_emitting(true)
 			emitter_shell.restart()
 			var new_bullet = bullet.instantiate()
-			new_bullet.position = barrel.global_position
+			if target_on_raycast != null:
+				aim_helper.look_at(target_on_raycast)
+				new_bullet.position = aim_helper.global_position
+				print("shot with aim helper")
+			else:
+				new_bullet.position = barrel.global_position
 			new_bullet.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_bullet);
 			new_bullet.ads = ads

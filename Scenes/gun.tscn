@@ -185,7 +185,7 @@ _data = {
 }
 
 [node name="gun" type="Node3D"]
-transform = Transform3D(0.997564, 0, 0.0697565, 0, 1, 0, -0.0697565, 0, 0.997564, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_wbae3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -213,3 +213,6 @@ transform = Transform3D(0.5, 9.31323e-10, 1.86265e-09, 2.79397e-09, 0.5, 2.44472
 
 [node name="hand_left" parent="." instance=ExtResource("7_npsh3")]
 transform = Transform3D(0.15, 0, 0, 0, 0.150001, 0, 0, 0, 0.15, -3.55771, 0, 3.0927)
+
+[node name="aim_helper" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2961, 0.490642, 0.0906322)

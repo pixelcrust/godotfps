@@ -1,7 +1,7 @@
 extends Node3D
 
 const SPEED = 60.0
-const ACCURACY = 3
+const ACCURACY = 6
 const dmg = 100
 const time_rooted = 1
 
@@ -19,16 +19,17 @@ const time_rooted = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#set inacuracy
+	pass
+	#print_debug("ads bullet: "+str(ads))
+		
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
 	if ads == 1:
 		abweichung_x = 0
 		abweichung_y = 0
 	else:
 		abweichung_x = standard_abweichung_x
 		abweichung_y = standard_abweichung_y
-	#print_debug("ads bullet: "+str(ads))
-		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
 	#print_debug("ads bullet: "+str(ads))
 	if raycast.is_colliding():

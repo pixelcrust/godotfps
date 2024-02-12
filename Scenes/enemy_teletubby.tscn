@@ -18,8 +18,8 @@ radius = 0.3
 height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d0pkj"]
-radius = 0.300356
-height = 1.02631
+radius = 0.382425
+height = 1.053
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynh4y"]
 albedo_color = Color(1, 0.403922, 1, 1)
@@ -29,9 +29,8 @@ material = SubResource("StandardMaterial3D_ynh4y")
 radius = 0.25
 height = 0.5
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17am3"]
-radius = 0.261367
-height = 0.522735
+[sub_resource type="SphereShape3D" id="SphereShape3D_5te2x"]
+radius = 0.285639
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rfd2"]
 albedo_color = Color(1, 0.427451, 0.117647, 1)
@@ -72,7 +71,7 @@ collision_mask = 2
 script = ExtResource("6_1m563")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="body/PhysicalBone3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015047, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0087598, 0)
 shape = SubResource("CapsuleShape3D_d0pkj")
 
 [node name="head" type="MeshInstance3D" parent="body"]
@@ -91,8 +90,8 @@ script = ExtResource("6_1m563")
 damage_multiplier = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="body/head/PhysicalBone3D"]
-transform = Transform3D(1, 0, 0, -4.44089e-16, 1, 0, -1.42109e-14, 0, 1, -9.96702e-10, -0.500645, -0.0060151)
-shape = SubResource("CapsuleShape3D_17am3")
+transform = Transform3D(1, 0, 0, -6.66134e-16, 1, 0, -2.13163e-14, 0, 1, -9.96702e-10, -0.500645, -0.00601511)
+shape = SubResource("SphereShape3D_5te2x")
 
 [node name="snout" type="MeshInstance3D" parent="body/head"]
 transform = Transform3D(1, 0, 0, -4.44089e-16, 1, 0, -1.42109e-14, 0, 1, -6.70634e-09, -0.0120077, 0.360073)
