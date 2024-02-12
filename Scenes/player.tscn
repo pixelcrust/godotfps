@@ -229,7 +229,7 @@ collision_mask = 2
 collide_with_areas = true
 
 [node name="raycast_aim" type="RayCast3D" parent="Head/Camera3D"]
-transform = Transform3D(1.91069e-15, 4.37114e-06, 1, 1, -4.37114e-06, 0, 4.37114e-08, 100, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1.91069e-16, 4.37114e-06, 0.1, 0.1, -4.37114e-06, 0, 4.37114e-09, 100, -4.37114e-09, 0, 0, 0)
 collision_mask = 3
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]
