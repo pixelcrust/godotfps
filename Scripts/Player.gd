@@ -48,6 +48,7 @@ var gravity = 9.8
 
 @onready var is_rooted = false
 @onready var is_interacting = 0
+@onready var is_on_ladder = 0
 
 @onready var equipped_id = -1 #what item in hand
 #-1.. nothing
@@ -172,6 +173,8 @@ func _physics_process(delta):
 		state_move = 3
 	else:
 		state_move = 0
+	
+	if is_on_ladder = true and
 	
 	if inventory.is_empty() == false:
 		#display ammo
