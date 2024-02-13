@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func shoot(inventory_selector):
+func shoot(inventory_selector,_target_on_raycast):
 	if on == 0:
 		player.node_flashlight.spot_range = 0
 		on = 1

@@ -50,6 +50,7 @@ var gravity = 9.8
 @onready var is_interacting = 0
 @onready var is_on_ladder = false
 @onready var interacted_with_ladder = false
+@onready var climbing_speed = 5
 
 @onready var equipped_id = -1 #what item in hand
 #-1.. nothing
@@ -169,9 +170,17 @@ func _physics_process(delta):
 	if hp <= 0:
 		die()
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() && is_on_ladder == false:
 		velocity.y -= gravity * delta
 		state_move = 3
+	elif is_on_ladder:
+		velocity.y = 0
+		if Input.is_action_just_pressed("key_forward"):
+			velocity.y += climbing_speed
+		if Input.is_action_just_pressed("key_jump"):
+			is_on_ladder = false
+		
+	 
 	else:
 		state_move = 0
 	
