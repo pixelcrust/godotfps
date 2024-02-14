@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4kjwelcqo6vf"]
+[gd_scene load_steps=6 format=3 uid="uid://c4kjwelcqo6vf"]
 
 [ext_resource type="Script" path="res://ladder.gd" id="1_b6ic4"]
 [ext_resource type="Script" path="res://climbable_area.gd" id="2_dlmut"]
@@ -8,19 +8,31 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_igw06"]
 size = Vector3(0.882568, 2.98035, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6nri6"]
+size = Vector3(0.221191, 2.95044, 1)
+
 [node name="ladder" type="Node3D"]
 script = ExtResource("1_b6ic4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(0.22998, 0, 0, 0, 2.93972, 0, 0, 0, 1, 0, 0.985559, 0)
 mesh = SubResource("BoxMesh_84ahv")
+skeleton = NodePath("../..")
 
-[node name="Area3D" type="Area3D" parent="." groups=["interactable"]]
-collision_mask = 4
+[node name="Area3D" type="Area3D" parent="StaticBody3D" groups=["interactable"]]
+collision_layer = 3
+collision_mask = 7
 script = ExtResource("2_dlmut")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.547813, 0.990173, 0)
 shape = SubResource("BoxShape3D_igw06")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065918, 0.991296, 0)
+shape = SubResource("BoxShape3D_6nri6")
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_exited"]

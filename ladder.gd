@@ -17,13 +17,24 @@ func _ready():
 func _process(delta):
 	pass
 
+func get_interaction_time():
+	return interactiontime
+	
 func use():
 	#check if in area
-	player.is_on_ladder = true
+	
+	print("interacted with ladder")
 	player.interacted_with_ladder = true
 
 
 func _on_area_3d_body_entered(body):
 	print("body entered")
-	player.is_on_ladder = true # Replace with function body.
+	if body == player:
+		player.is_on_ladder = true # Replace with function body.
+
+
+
+func _on_area_3d_body_exited(body):
+	if body == player:
+		player.is_on_ladder = false
 

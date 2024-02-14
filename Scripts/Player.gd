@@ -171,25 +171,26 @@ func _physics_process(delta):
 		die()
 		
 	# Add the gravity.
-	if not is_on_floor() && is_on_ladder == false:
+	if not is_on_floor() && interacted_with_ladder == false:
 		velocity.y -= gravity * delta
 		state_move = 3
-	elif is_on_ladder == true:
+	elif is_on_ladder == true and interacted_with_ladder == true:
 		print("is on ladder")
 		velocity.y = 0
 		if Input.is_action_just_pressed("key_forward"):
 			velocity.y += climbing_speed
 		if Input.is_action_just_pressed("key_jump"):
+			print("pressed jump on ladder")
+			interacted_with_ladder = false
 			is_on_ladder = false
-		
-	 
+			
 	else:
 		state_move = 0
 	
-	if is_on_ladder == true && interacted_with_ladder == true:
-		floor_max_angle = 90
-	else:
-		floor_max_angle = 45
+	#if is_on_ladder == true && interacted_with_ladder == true:
+		#floor_max_angle = 90
+	#else:
+		#floor_max_angle = 45
 	
 	if inventory.is_empty() == false:
 		#display ammo
@@ -218,7 +219,8 @@ func _physics_process(delta):
 					flashlight = 0
 			
 	# Handle Jump.
-	if Input.is_action_just_pressed("key_jump") and is_on_floor():
+	if Input.is_action_just_pressed("key_jump") and is_on_floor() and is_on_ladder == false:
+		print("jumped normally")
 		velocity.y = JUMP_VELOCITY
 	
 	#run
