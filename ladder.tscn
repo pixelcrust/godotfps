@@ -16,9 +16,11 @@ transform = Transform3D(0.22998, 0, 0, 0, 2.93972, 0, 0, 0, 1, 0, 0.985559, 0)
 mesh = SubResource("BoxMesh_84ahv")
 
 [node name="Area3D" type="Area3D" parent="." groups=["interactable"]]
-collision_mask = 3
+collision_mask = 4
 script = ExtResource("2_dlmut")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.547813, 0.990173, 0)
 shape = SubResource("BoxShape3D_igw06")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

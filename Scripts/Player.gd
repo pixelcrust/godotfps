@@ -169,11 +169,13 @@ func _physics_process(delta):
 	#if ded
 	if hp <= 0:
 		die()
+		
 	# Add the gravity.
 	if not is_on_floor() && is_on_ladder == false:
 		velocity.y -= gravity * delta
 		state_move = 3
-	elif is_on_ladder:
+	elif is_on_ladder == true:
+		print("is on ladder")
 		velocity.y = 0
 		if Input.is_action_just_pressed("key_forward"):
 			velocity.y += climbing_speed

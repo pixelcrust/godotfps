@@ -10,7 +10,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	player = get_tree().get_nodes_in_group("player")[0] # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,3 +21,9 @@ func use():
 	#check if in area
 	player.is_on_ladder = true
 	player.interacted_with_ladder = true
+
+
+func _on_area_3d_body_entered(body):
+	print("body entered")
+	player.is_on_ladder = true # Replace with function body.
+
