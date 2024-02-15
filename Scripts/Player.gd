@@ -171,18 +171,19 @@ func _physics_process(delta):
 		die()
 		
 	# Add the gravity.
-	if not is_on_floor() && interacted_with_ladder == false:
-		velocity.y -= gravity * delta
-		state_move = 3
-	elif is_on_ladder == true and interacted_with_ladder == true:
-		print("is on ladder")
+	print("is on ladder: "+str(is_on_ladder)+" interacted with ladder: "+str(interacted_with_ladder))
+	if not is_on_floor():
+		if is_on_ladder == false or interacted_with_ladder == false:
+			velocity.y -= gravity * delta
+			state_move = 3
+	if is_on_ladder == true and interacted_with_ladder == true:
 		velocity.y = 0
-		if Input.is_action_just_pressed("key_forward"):
+		if Input.is_action_pressed("key_jump"):
 			velocity.y += climbing_speed
-		if Input.is_action_just_pressed("key_jump"):
-			print("pressed jump on ladder")
-			interacted_with_ladder = false
-			is_on_ladder = false
+		if Input.is_action_pressed("key_crouch"):
+			velocity.y -= climbing_speed
+
+
 			
 	else:
 		state_move = 0
@@ -220,7 +221,7 @@ func _physics_process(delta):
 			
 	# Handle Jump.
 	if Input.is_action_just_pressed("key_jump") and is_on_floor():
-		if is_on_ladder == false:
+		if is_on_ladder == false or interacted_with_ladder == false:
 			print("jumped normally")
 			velocity.y = JUMP_VELOCITY
 	

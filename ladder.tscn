@@ -6,7 +6,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_84ahv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_igw06"]
-size = Vector3(0.882568, 2.98035, 1)
+size = Vector3(1.22491, 2.98035, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6nri6"]
 size = Vector3(0.221191, 2.95044, 1)
@@ -22,12 +22,13 @@ mesh = SubResource("BoxMesh_84ahv")
 skeleton = NodePath("../..")
 
 [node name="Area3D" type="Area3D" parent="StaticBody3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.348466, 0, 0)
 collision_layer = 3
 collision_mask = 7
 script = ExtResource("2_dlmut")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.547813, 0.990173, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.525016, 0.990173, 0)
 shape = SubResource("BoxShape3D_igw06")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]

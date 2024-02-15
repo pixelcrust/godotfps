@@ -24,7 +24,10 @@ func use():
 	#check if in area
 	
 	print("interacted with ladder")
-	player.interacted_with_ladder = true
+	if player.interacted_with_ladder == false:
+		player.interacted_with_ladder = true
+	else:
+		player.interacted_with_ladder = false
 
 
 func _on_area_3d_body_entered(body):
@@ -37,4 +40,5 @@ func _on_area_3d_body_entered(body):
 func _on_area_3d_body_exited(body):
 	if body == player:
 		player.is_on_ladder = false
+		player.interacted_with_ladder = false
 
