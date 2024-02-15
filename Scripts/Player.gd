@@ -51,6 +51,9 @@ var gravity = 9.8
 @onready var is_on_ladder = false
 @onready var interacted_with_ladder = false
 @onready var climbing_speed = 5
+@onready var in_air_time = 0
+@onready var fall_dmg = 0
+@onready var fall_stunned = 0
 
 @onready var equipped_id = -1 #what item in hand
 #-1.. nothing
@@ -171,11 +174,20 @@ func _physics_process(delta):
 		die()
 		
 	# Add the gravity.
-	print("is on ladder: "+str(is_on_ladder)+" interacted with ladder: "+str(interacted_with_ladder))
+	#print("is on ladder: "+str(is_on_ladder)+" interacted with ladder: "+str(interacted_with_ladder))
 	if not is_on_floor():
 		if is_on_ladder == false or interacted_with_ladder == false:
 			velocity.y -= gravity * delta
 			state_move = 3
+			in_air_time += delta
+	else:
+		if in_air_time > 0:
+			fall_dmg = floor(in_air_time)*20
+			fall_stunned = in_air_time / 5
+			_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)
+			print("fall_dmg: "+str(fall_dmg))
+			in_air_time = 0
+	print("in air time: "+str(in_air_time))
 	if is_on_ladder == true and interacted_with_ladder == true:
 		velocity.y = 0
 		if Input.is_action_pressed("key_jump"):
