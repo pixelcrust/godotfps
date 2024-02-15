@@ -219,9 +219,10 @@ func _physics_process(delta):
 					flashlight = 0
 			
 	# Handle Jump.
-	if Input.is_action_just_pressed("key_jump") and is_on_floor() and is_on_ladder == false:
-		print("jumped normally")
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("key_jump") and is_on_floor():
+		if is_on_ladder == false:
+			print("jumped normally")
+			velocity.y = JUMP_VELOCITY
 	
 	#run
 	if (Input.is_action_pressed("key_run") && (state_move < 2)):
