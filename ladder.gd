@@ -13,10 +13,14 @@ extends Node3D
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0] # Replace with function body.
 	#create tiled ladder
-	#print(str(AABB))
-	#mesh_instance_3d.queue_free()
+	mesh_instance_3d.queue_free()
 	
-	#for(n in ladder.)
+	var number_of_tiles = scale.y / 2
+	for n in number_of_tiles:
+		var new_ladder_tile = asset_ladder_tile.instantiate()
+		new_ladder_tile.position = global_position #+ Vector3(0,n*2,0)
+		new_ladder_tile.transform.basis = global_transform.basis
+		get_tree().root.get_children()[0].add_child(new_ladder_tile)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

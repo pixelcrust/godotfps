@@ -61,7 +61,7 @@ func shoot(inventory_selector,target_on_raycast):
 			else:
 				new_bullet.position = barrel.global_position
 			new_bullet.transform.basis = global_transform.basis
-			get_tree().root.get_children()[0].add_child(new_bullet);
+			get_tree().root.get_children()[0].add_child(new_bullet)
 			new_bullet.ads = ads
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
