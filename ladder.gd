@@ -13,8 +13,9 @@ extends Node3D
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0] # Replace with function body.
 	#create tiled ladder
-	mesh_instance_3d.queue_free()
-	print(str(mesh_instance_3d.size))
+	#print(str(AABB))
+	#mesh_instance_3d.queue_free()
+	
 	#for(n in ladder.)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,4 +46,5 @@ func _on_area_3d_body_exited(body):
 	if body == player:
 		player.is_on_ladder = false
 		player.interacted_with_ladder = false
+
 

@@ -1,39 +1,38 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4kjwelcqo6vf"]
 
 [ext_resource type="Script" path="res://ladder.gd" id="1_b6ic4"]
-[ext_resource type="Script" path="res://climbable_area.gd" id="2_dlmut"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_igw06"]
-size = Vector3(1.22491, 2.98035, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6nri6"]
-size = Vector3(0.221191, 2.95044, 1)
+[ext_resource type="Script" path="res://ladder_collision.gd" id="2_qislg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_84ahv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_10ljx"]
+size = Vector3(1.2312, 1.69757, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_54x3u"]
+size = Vector3(0.224121, 1.69397, 1)
 
 [node name="ladder" type="Node3D"]
 script = ExtResource("1_b6ic4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="Area3D" type="Area3D" parent="StaticBody3D" groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.348466, 0, 0)
-collision_layer = 11
-collision_mask = 7
-script = ExtResource("2_dlmut")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.525016, 0.990173, 0)
-shape = SubResource("BoxShape3D_igw06")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065918, 0.991296, 0)
-shape = SubResource("BoxShape3D_6nri6")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.22998, 0, 0, 0, 2.93972, 0, 0, 0, 1, 0, 0.985559, 0)
+transform = Transform3D(0.22998, 0, 0, 0, 1.68328, 0, 0, 0, 1, 0, 0.166512, 0)
 mesh = SubResource("BoxMesh_84ahv")
 skeleton = NodePath("../..")
 
-[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_exited"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="Area3D2" type="Area3D" parent="StaticBody3D2" groups=["interactable"]]
+collision_layer = 11
+collision_mask = 15
+script = ExtResource("2_qislg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174927, 0.159637, 0)
+shape = SubResource("BoxShape3D_10ljx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0.146667, 0)
+shape = SubResource("BoxShape3D_54x3u")
+
+[connection signal="body_entered" from="StaticBody3D2/Area3D2" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="StaticBody3D2/Area3D2" to="." method="_on_area_3d_body_exited"]

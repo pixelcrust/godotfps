@@ -183,13 +183,13 @@ func _physics_process(delta):
 	else:
 		if in_air_time > 0:
 			fall_dmg = floor(in_air_time)*20
-			fall_stunned = in_air_time
+			fall_stunned = floor(in_air_time)
 			_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)
 			print("fall_dmg: "+str(fall_dmg))
 			in_air_time = 0
 	#print("in air time: "+str(in_air_time))
 	
-	print("raycast point at: " +str(raycast_interaction.get_collider()))
+	#print("raycast point at: " +str(raycast_interaction.get_collider()))
 	
 	if is_on_ladder == true and interacted_with_ladder == true:
 		velocity.y = 0
