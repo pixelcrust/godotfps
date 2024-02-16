@@ -224,8 +224,8 @@ J - flashlight
 RMB - aim down sight"
 
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
-transform = Transform3D(5.73207e-15, 8.74228e-08, 3, 3, -8.74228e-08, -1.77877e-20, 1.31134e-07, 2, -1.31134e-07, 0, 0, 0.0541631)
-collision_mask = 2
+transform = Transform3D(5.73207e-15, 8.74228e-08, 3, 3, -8.74228e-08, -1.77877e-20, 1.31134e-07, 2, -1.31134e-07, 0, 0, 0.514353)
+collision_mask = 8
 collide_with_areas = true
 
 [node name="raycast_aim" type="RayCast3D" parent="Head/Camera3D"]

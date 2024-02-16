@@ -40,7 +40,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.111058, -0.00621845, 
 shape = SubResource("BoxShape3D_dt5af")
 
 [node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
-collision_layer = 2
+collision_layer = 10
 script = ExtResource("3_tsxco")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]

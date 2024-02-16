@@ -123,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.746222, 1.37045, -0.0328201
 shape = SubResource("BoxShape3D_0txys")
 
 [node name="Area3D" type="Area3D" parent="door" groups=["interactable"]]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 3
 script = ExtResource("5_o3axx")
 

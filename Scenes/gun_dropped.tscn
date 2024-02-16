@@ -21,7 +21,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.140822, 0.0645275, 0.
 shape = SubResource("BoxShape3D_dt5af")
 
 [node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
-collision_layer = 2
+collision_layer = 8
 script = ExtResource("3_uy242")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
