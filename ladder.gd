@@ -5,13 +5,17 @@ extends Node3D
 @onready var player = 0
 @onready var area_3d = $Area3D
 
-
+@onready var asset_ladder_tile = preload("res://ladder_tile.tscn")
+@onready var mesh_instance_3d = $MeshInstance3D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0] # Replace with function body.
-
+	#create tiled ladder
+	mesh_instance_3d.queue_free()
+	print(str(mesh_instance_3d.size))
+	#for(n in ladder.)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
