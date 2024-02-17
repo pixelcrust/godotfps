@@ -24,7 +24,7 @@ func _process(delta):
 		for n in number_of_tiles:
 			print(str(n))
 			var new_ladder_tile = asset_ladder_tile.instantiate()
-			new_ladder_tile.position = global_position + Vector3(0,-6,0)+ Vector3(-.15,n*1.69,.35)
+			new_ladder_tile.position = global_position + Vector3(-.15,(-n)*1.69+number_of_tiles/2,.35)#+ Vector3(-.15,-n*1.69,.35)
 			new_ladder_tile.rotation = rotation
 			#new_ladder_tile.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_ladder_tile)
