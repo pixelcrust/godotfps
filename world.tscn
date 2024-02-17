@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=30 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="21_cqm6c"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="22_j7lok"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://ladder.tscn" id="23_ntxv3"]
+[ext_resource type="PackedScene" uid="uid://d13ipgycehq68" path="res://ladder_tile.tscn" id="24_odnro"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)
@@ -279,4 +280,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7097, 5.59156, -32.7606)
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 43.5852, 1.01999, -47.0143)
 
 [node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
-transform = Transform3D(0.0844604, 0, -0.996427, 0, 1, 0, 0.996427, 0, 0.0844604, 13.1716, 1.48882, 31.2515)
+transform = Transform3D(0.0844604, 0, -0.996427, 0, 10, 0, 0.996427, 0, 0.0844604, 13.1716, 7.58431, 31.2515)
+
+[node name="ladder_tile" parent="." instance=ExtResource("24_odnro")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.8604, 1.52144, 30.3644)

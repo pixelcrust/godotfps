@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var heal_amount = 100
+@onready var once = 0
 @onready var interactiontime = .01
 @onready var player = 0
 @onready var area_3d = $Area3D
@@ -15,16 +15,20 @@ func _ready():
 	#create tiled ladder
 	mesh_instance_3d.queue_free()
 	
-	var number_of_tiles = scale.y / 2
-	for n in number_of_tiles:
-		var new_ladder_tile = asset_ladder_tile.instantiate()
-		new_ladder_tile.position = global_position #+ Vector3(0,n*2,0)
-		new_ladder_tile.transform.basis = global_transform.basis
-		get_tree().root.get_children()[0].add_child(new_ladder_tile)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if once == 0:
+		var number_of_tiles = floor(scale.y)
+		for n in number_of_tiles:
+			print(str(n))
+			var new_ladder_tile = asset_ladder_tile.instantiate()
+			new_ladder_tile.position = global_position + Vector3(0,-6,0)+ Vector3(-.15,n*1.69,.35)
+			new_ladder_tile.rotation = rotation
+			#new_ladder_tile.transform.basis = global_transform.basis
+			get_tree().root.get_children()[0].add_child(new_ladder_tile)
+			once = 1
 
 func get_interaction_time():
 	return interactiontime
