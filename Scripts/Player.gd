@@ -187,13 +187,14 @@ func _physics_process(delta):
 			fall_dmg = floor(in_air_time)*20
 			fall_stunned = floor(in_air_time)
 			_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)
-			print("fall_dmg: "+str(fall_dmg))
+			#print("fall_dmg: "+str(fall_dmg))
 			in_air_time = 0
 	#print("in air time: "+str(in_air_time))
 	
 	#print("raycast point at: " +str(raycast_interaction.get_collider()))
 	
 	if is_on_ladder == true and interacted_with_ladder == true:
+		in_air_time = 0
 		velocity.y = 0
 		if Input.is_action_pressed("key_jump"):
 			velocity.y += climbing_speed

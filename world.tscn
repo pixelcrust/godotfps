@@ -279,14 +279,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7097, 5.59156, -32.7606)
 [node name="Medikit" parent="." instance=ExtResource("22_j7lok")]
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 43.5852, 1.01999, -47.0143)
 
-[node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
-transform = Transform3D(0.0844604, 0, -0.996427, 0, 10, 0, 0.996427, 0, 0.0844604, 16.4338, 9.77888, 31.2515)
-
 [node name="ladder_tile" parent="." instance=ExtResource("24_odnro")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.8604, 1.52144, 30.3644)
 
+[node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 22.0733, 11.5662, 27.4441)
+
 [node name="ladder2" parent="." instance=ExtResource("23_ntxv3")]
-transform = Transform3D(1, 0, 0, 0, 4.17577, 0, 0, 0, 1, 13.5485, 7.96931, 33.4756)
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 26.3537, 8.62771, 30.3851)
 
 [node name="ladder3" parent="." instance=ExtResource("23_ntxv3")]
-transform = Transform3D(1, 0, 0, 0, 6.36608, 0, 0, 0, 1, 22.5147, 7.48232, 35.9987)
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 25.8356, 7.62525, 35.0007)

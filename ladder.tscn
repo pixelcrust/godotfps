@@ -12,6 +12,7 @@ size = Vector3(1.2312, 1.69757, 1)
 size = Vector3(0.224121, 1.69397, 1)
 
 [node name="ladder" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669361, 0)
 script = ExtResource("1_b6ic4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
