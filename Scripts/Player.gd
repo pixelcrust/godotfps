@@ -48,6 +48,7 @@ var gravity = 9.8
 
 @onready var is_rooted = false
 @onready var is_interacting = 0
+@onready var outline_meshes = []
 @onready var is_on_ladder = false
 @onready var interacted_with_ladder = false
 @onready var climbing_speed = 5
@@ -278,8 +279,13 @@ func _physics_process(delta):
 		help_text.visible = false
 		
 	if raycast_interaction.is_colliding():
-		#print_debug("raycast colliding with " +str(raycast_interaction.get_collider()))
-		pass
+		if raycast_interaction.get_collider().is_in_group("interactable"):
+			set_outline_on(raycast_interaction.get_collider())
+		if raycast_interaction.get_collider().is_in_group("interactable") == false:
+			set_outline_off()
+	else:
+		if outline_meshes.is_empty() == false:
+			set_outline_off()
 	# Start interaction
 	if Input.is_action_just_pressed("Interact")  and raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider().is_in_group("interactable"):
@@ -633,3 +639,19 @@ func set_rooted(stun_duration_sec):
 
 func _inventory_gui_timeout():
 	display_inventory.visible = false
+	
+func set_outline_on(object):
+	#loop for array thats returned
+	outline_meshes = object.get_outline_meshes()
+	for n in outline_meshes:
+		print(n)
+		n.visible = true
+	#object.get_outline_meshes().visible = true
+	#last_object_outlined = object
+	#set interactable objects outline to true
+	
+func set_outline_off():
+	for n in outline_meshes:
+		#n.visible = false
+		pass
+	outline_meshes.clear()

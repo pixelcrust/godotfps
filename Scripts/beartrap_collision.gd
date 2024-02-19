@@ -1,6 +1,9 @@
 extends Area3D
 
 @onready var object = $"../.."
+@onready var outline_mesh =  $"../MeshInstance3D"
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,7 +1,6 @@
-extends Area3D
+extends Node3D
 
-@onready var object = $"../.."
-
+@onready var outline_mesh = $Cube/MeshInstance3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,10 +10,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-func get_outline_meshes():
-	for n in object.get_outline_meshes():
-		#print(n)
-		pass
-	return(object.get_outline_meshes())
-	

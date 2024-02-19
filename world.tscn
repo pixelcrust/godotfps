@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=31 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="22_j7lok"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://d13ipgycehq68" path="res://ladder_tile.tscn" id="24_odnro"]
+[ext_resource type="PackedScene" uid="uid://dcurorsgfk0hj" path="res://outlineshader.tscn" id="25_o8ctp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)
@@ -217,7 +218,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.7059, 0.846079, -51.5219)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6232, 1.04647, 38.7796)
 
 [node name="flashlight_dropped" parent="." instance=ExtResource("18_a347d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32087, 2.12428, 38.8747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6944, 3.8664, 38.8747)
 
 [node name="sniper_dropped" parent="." instance=ExtResource("19_dim63")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.18193, 1.57923, 39.7905)
@@ -283,10 +284,17 @@ transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 43
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.8604, 1.52144, 30.3644)
 
 [node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 22.0733, 11.5662, 27.4441)
+transform = Transform3D(1, 0, 0, 0, 9, 0, 0, 0, 1, 22.0733, 11.5662, 27.4441)
 
 [node name="ladder2" parent="." instance=ExtResource("23_ntxv3")]
-transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 26.3537, 8.62771, 30.3851)
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 26.3537, 8.62771, 30.3851)
 
 [node name="ladder3" parent="." instance=ExtResource("23_ntxv3")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 25.8356, 7.62525, 35.0007)
+transform = Transform3D(1, 0, 0, 0, 7, 0, 0, 0, 1, 25.8356, 7.62525, 35.0007)
+
+[node name="outlineshader" parent="." instance=ExtResource("25_o8ctp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8604, 2.97706, 39.3644)
+visible = false
+
+[node name="Beartrap2" parent="." instance=ExtResource("17_m7s0o")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.5915, 3.12506, 40.2798)
