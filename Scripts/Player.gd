@@ -644,14 +644,14 @@ func set_outline_on(object):
 	#loop for array thats returned
 	outline_meshes = object.get_outline_meshes()
 	for n in outline_meshes:
-		print(n)
-		n.visible = true
+		n.outline_mesh.visible = true
 	#object.get_outline_meshes().visible = true
 	#last_object_outlined = object
 	#set interactable objects outline to true
 	
 func set_outline_off():
 	for n in outline_meshes:
-		#n.visible = false
-		pass
+		print(n)
+		n.outline_mesh.visible = false
 	outline_meshes.clear()
+	print("cleard array")

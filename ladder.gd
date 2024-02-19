@@ -28,8 +28,8 @@ func _process(delta):
 			var new_ladder_tile = asset_ladder_tile.instantiate()
 			new_ladder_tile.position = global_position +Vector3(0,number_of_tiles-1,0) + Vector3(-.15,-n*1.69,.35)#+ Vector3(-.15,-n*1.69,.35)
 			new_ladder_tile.rotation = rotation
-			new_ladder_tile.outline_mesh.visible = false
-			outline_meshes.append(new_ladder_tile)
+			#new_ladder_tile.outline_mesh.visible = false
+			ladder_tiles.append(new_ladder_tile)
 			#new_ladder_tile.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_ladder_tile)
 			once = 1
@@ -60,7 +60,7 @@ func _on_area_3d_body_exited(body):
 		player.interacted_with_ladder = false
 
 func get_outline_meshes():
-	for n in ladder_tiles:
-		
-		outline_meshes.append(n.outline_mesh)
-	return(outline_meshes)
+	#outline_meshes.clear()
+	#for n in ladder_tiles:
+		#outline_meshes.append(n)
+	return(ladder_tiles)

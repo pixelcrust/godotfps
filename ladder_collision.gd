@@ -13,8 +13,6 @@ func _process(delta):
 	pass
 
 func get_outline_meshes():
-	for n in object.get_outline_meshes():
-		#print(n)
-		pass
+	
 	return(object.get_outline_meshes())
 	

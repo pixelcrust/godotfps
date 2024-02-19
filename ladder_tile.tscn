@@ -67,4 +67,5 @@ mesh = SubResource("ArrayMesh_143y5")
 skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
+visible = false
 mesh = SubResource("ArrayMesh_4wxgb")
