@@ -5,6 +5,8 @@ extends Node3D
 @onready var is_active = true
 @onready var dmg = 50
 
+@onready var outline_mesh = $MeshInstance3D/MeshInstance3D
+
 @onready var interactiontime_open = 3
 @onready var interactiontime_close = .7
 const time_rooted = 2
@@ -32,3 +34,5 @@ func use():
 	else:
 		animationplayer.play("RESET")
 		is_active = true
+		
+

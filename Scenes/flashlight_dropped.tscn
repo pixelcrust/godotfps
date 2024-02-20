@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/flashlight_dropped.gd" id="1_c1obu"]
 [ext_resource type="ArrayMesh" uid="uid://ba5eg4ahx3ih6" path="res://Models/Item/Flashlight.obj" id="2_5gxvf"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://Scenes/outline_material.tres" id="3_e37jv"]
-[ext_resource type="Script" path="res://Scripts/dropped_collision.gd" id="3_tsxco"]
+[ext_resource type="Script" path="res://Scenes/flashlight_dropped_collision.gd" id="4_3l5v0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r3ku"]
 albedo_color = Color(0.47451, 0, 0.478431, 1)
@@ -59,7 +59,7 @@ shape = SubResource("BoxShape3D_dt5af")
 
 [node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
 collision_layer = 10
-script = ExtResource("3_tsxco")
+script = ExtResource("4_3l5v0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.142948, -0.00492913, -0.00818481)

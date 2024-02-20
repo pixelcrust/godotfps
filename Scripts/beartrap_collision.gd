@@ -1,7 +1,8 @@
 extends Area3D
 
 @onready var object = $"../.."
-@onready var outline_mesh =  $"../MeshInstance3D"
+
+@onready var array = []
 
 
 
@@ -13,3 +14,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func get_outline_meshes():
+	array.clear()
+	array.append(object)
+	return array

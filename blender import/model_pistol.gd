@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var mesh = $ball
+@onready var outline_mesh = $ball/MeshInstance3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

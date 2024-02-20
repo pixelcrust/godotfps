@@ -2,7 +2,7 @@ extends MeshInstance3D
 
 @onready var animation_player = $"../../AnimationPlayer"
 @onready var door = $".."
-
+@onready var outline_mesh = $MeshInstance3D
 
 const HP_START = 100
 @onready var hp = HP_START

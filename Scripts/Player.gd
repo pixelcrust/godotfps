@@ -105,15 +105,15 @@ func _ready():
 	#node_flashlight.spot_range = flashlight_range #sets the flashlight range in code for everywhere
 	node_flashlight.spot_range = 0
 	#adda gun to inventory
-	
-
-	"""
 	inventory.append({
 	"item_id": 0, #pistol
 	"loaded": 7,
 	"max_loaded": 7, # See above assignment.
 	"spare_ammo": 100
 	})
+
+	"""
+
 	
 	inventory.append({
 	"item_id": 4, #flashlight
@@ -645,13 +645,13 @@ func set_outline_on(object):
 	outline_meshes = object.get_outline_meshes()
 	for n in outline_meshes:
 		n.outline_mesh.visible = true
-	#object.get_outline_meshes().visible = true
 	#last_object_outlined = object
 	#set interactable objects outline to true
 	
 func set_outline_off():
 	for n in outline_meshes:
-		print(n)
+		#print(n)
 		n.outline_mesh.visible = false
-	outline_meshes.clear()
-	print("cleard array")
+	#outline_meshes.clear()
+	print(outline_meshes)
+	print("array end")

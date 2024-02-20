@@ -1,7 +1,7 @@
 extends Area3D
 
 @onready var object = $"../.."
-
+@onready var tiles = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +13,6 @@ func _process(delta):
 	pass
 
 func get_outline_meshes():
-	
-	return(object.get_outline_meshes())
+	tiles = object.get_outline_meshes()
+	return(tiles)
 	

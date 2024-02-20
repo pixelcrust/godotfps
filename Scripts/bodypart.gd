@@ -1,6 +1,8 @@
 extends PhysicalBone3D
 
+@onready var object = $"../door"
 
+@onready var array = []
 @export var damage_multiplier = 1
 
 signal bodypart_hit(dmg,time_rooted)
@@ -15,3 +17,8 @@ func _process(delta):
 
 func hit(dmg,time_rooted):
 	emit_signal("bodypart_hit",dmg*damage_multiplier,time_rooted)
+
+func get_outline_meshes():
+	array.clear()
+	array.append(object)
+	return array
