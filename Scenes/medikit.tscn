@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://cxooft7r2m5ar" path="res://Models/Item/FirstAidKit_Hard.obj" id="1_40n4i"]
 [ext_resource type="Script" path="res://Scripts/medikit.gd" id="1_877f1"]
-[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://Scenes/outline_material.tres" id="3_11w2j"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_11w2j"]
 [ext_resource type="Script" path="res://Scripts/medikit_collision.gd" id="3_wm7fk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3ncb"]

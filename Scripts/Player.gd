@@ -55,6 +55,8 @@ var gravity = 9.8
 @onready var in_air_time = 0
 @onready var fall_dmg = 0
 @onready var fall_stunned = 0
+@onready var in_water = false
+@onready var in_water_time = 0
 
 @onready var equipped_id = -1 #what item in hand
 #-1.. nothing
@@ -180,9 +182,12 @@ func _physics_process(delta):
 	#print("is on ladder: "+str(is_on_ladder)+" interacted with ladder: "+str(interacted_with_ladder))
 	if not is_on_floor():
 		if is_on_ladder == false or interacted_with_ladder == false:
-			velocity.y -= gravity * delta
-			state_move = 3
-			in_air_time += delta
+			if not in_water:
+				velocity.y -= gravity * delta
+				state_move = 3
+				in_air_time += delta
+			else:
+				velocity.y -= gravity / 2 * delta
 	else:
 		if in_air_time > 0:
 			fall_dmg = floor(in_air_time)*20
@@ -191,7 +196,8 @@ func _physics_process(delta):
 			#print("fall_dmg: "+str(fall_dmg))
 			in_air_time = 0
 	#print("in air time: "+str(in_air_time))
-	
+	if in_water:
+		in_air_time = 0
 	#print("raycast point at: " +str(raycast_interaction.get_collider()))
 	
 	if is_on_ladder == true and interacted_with_ladder == true:
@@ -243,7 +249,7 @@ func _physics_process(delta):
 					flashlight = 0
 			
 	# Handle Jump.
-	if Input.is_action_just_pressed("key_jump") and is_on_floor():
+	if Input.is_action_just_pressed("key_jump") and is_on_floor() or in_water:
 		if is_on_ladder == false or interacted_with_ladder == false:
 			print("jumped normally")
 			velocity.y = JUMP_VELOCITY

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ladder_tile.gd" id="1_1m7wt"]
 [ext_resource type="Texture2D" uid="uid://c1aw80vseitt6" path="res://blender import/ladder_tile_Metal_10-256x256.png" id="1_mw05a"]
-[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://Scenes/outline_material.tres" id="2_uypm5"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_uypm5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ejiy"]
 resource_name = "metal"

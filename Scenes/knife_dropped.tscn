@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/knife_dropped.gd" id="1_xjb77"]
 [ext_resource type="ArrayMesh" uid="uid://ybhcy3yvmw52" path="res://resources/Survival Pack - Sept 2020/OBJ/Knife.obj" id="3_cbs2y"]
-[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://Scenes/outline_material.tres" id="3_ew83o"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_ew83o"]
 [ext_resource type="Script" path="res://Scenes/knife_dropped_collision.gd" id="3_mmucl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jsij"]

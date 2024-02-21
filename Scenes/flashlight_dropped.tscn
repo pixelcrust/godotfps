@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/flashlight_dropped.gd" id="1_c1obu"]
 [ext_resource type="ArrayMesh" uid="uid://ba5eg4ahx3ih6" path="res://Models/Item/Flashlight.obj" id="2_5gxvf"]
-[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://Scenes/outline_material.tres" id="3_e37jv"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_e37jv"]
 [ext_resource type="Script" path="res://Scenes/flashlight_dropped_collision.gd" id="4_3l5v0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r3ku"]

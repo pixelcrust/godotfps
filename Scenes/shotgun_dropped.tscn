@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/shotgun_dropped.gd" id="1_77pfj"]
 [ext_resource type="ArrayMesh" uid="uid://bcnl4ay0xvw0" path="res://Models/Item/Shotgun_SawedOff.obj" id="2_wt8dp"]
-[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://Scenes/outline_material.tres" id="3_3dx7k"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_3dx7k"]
 [ext_resource type="Script" path="res://Scenes/shotgun_dropped_collision.gd" id="4_nem6x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w4er"]

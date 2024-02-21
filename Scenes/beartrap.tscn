@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/beartrap.gd" id="1_nnbfk"]
 [ext_resource type="ArrayMesh" uid="uid://d2d3etf5e7bip" path="res://Models/Item/BearTrap_Open.obj" id="2_oqcbj"]
 [ext_resource type="Script" path="res://Scripts/beartrap_collision.gd" id="3_muo8f"]
-[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://Scenes/outline_material.tres" id="4_h4hik"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="4_h4hik"]
 [ext_resource type="ArrayMesh" uid="uid://bpu8ejeyvl3ps" path="res://Models/Item/BearTrap_Closed.obj" id="4_tymt3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xk0m"]

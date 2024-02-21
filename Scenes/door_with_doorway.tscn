@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_3yhn5"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="3_v8o8t"]
 [ext_resource type="Script" path="res://Scripts/door_collision.gd" id="5_o3axx"]
-[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://Scenes/outline_material.tres" id="5_wmog7"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="5_wmog7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfo0t"]
 albedo_color = Color(0.643137, 0.643137, 0.643137, 1)

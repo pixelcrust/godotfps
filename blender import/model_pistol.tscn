@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://c8qitftid7ix5" path="res://blender import/mauser1_Cube_001.res" id="1_3urua"]
 [ext_resource type="Script" path="res://blender import/model_pistol.gd" id="1_wqox1"]
-[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://Scenes/outline_material.tres" id="3_76wbd"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_76wbd"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d4qh8"]
 _surfaces = [{
