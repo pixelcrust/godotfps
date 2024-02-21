@@ -187,7 +187,7 @@ func _physics_process(delta):
 				state_move = 3
 				in_air_time += delta
 			else:
-				velocity.y -= gravity / 2 * delta
+				velocity.y -= (gravity * delta)/ 3 
 	else:
 		if in_air_time > 0:
 			fall_dmg = floor(in_air_time)*20
@@ -249,7 +249,7 @@ func _physics_process(delta):
 					flashlight = 0
 			
 	# Handle Jump.
-	if Input.is_action_just_pressed("key_jump") and is_on_floor() or in_water:
+	if Input.is_action_just_pressed("key_jump") and (is_on_floor() or in_water):
 		if is_on_ladder == false or interacted_with_ladder == false:
 			print("jumped normally")
 			velocity.y = JUMP_VELOCITY
