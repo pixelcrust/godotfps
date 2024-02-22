@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8t3e1hbyggdb"]
+
+[ext_resource type="Shader" path="res://shader_underwater.gdshader" id="1_1ro6p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aohb2"]
+render_priority = 0
+shader = ExtResource("1_1ro6p")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_02qpe"]
+material = SubResource("ShaderMaterial_aohb2")
+
+[node name="shader_underwater" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_02qpe")
