@@ -16,9 +16,15 @@ func _on_area_3d_body_entered(body):
 	if body == player:
 		player.in_water = true # Replace with function body.
 		print("player entererd")
+	if body == player.bone_head:
+		player.under_water == true
+		print("head entered")
 
 
 func _on_area_3d_body_exited(body):
 	if body == player:
 		player.in_water = false
 		print("player exited")
+	if body == player.bone_head:
+		player.under_water == false
+		print("head exited")

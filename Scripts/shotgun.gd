@@ -73,7 +73,7 @@ func reload(inventory_selector):
 		if space != 0:
 			if player.inventory[inventory_selector].spare_ammo >= space:
 				player.inventory[inventory_selector].loaded += space
-				player.inventory[inventory_selector].spare_ammo -= space
+				player.inventory[inventory_selector].spare_ammo -= 2
 			else:
 				player.inventory[inventory_selector].loaded += player.inventory[inventory_selector].spare_ammo
-				player.inventory[inventory_selector].spare_ammo = 0	
+				player.inventory[inventory_selector].spare_ammo = 0

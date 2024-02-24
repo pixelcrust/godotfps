@@ -1,5 +1,5 @@
 extends Area3D
-@onready var object = $"../model_pistol"
+@onready var object = $"../.."
 
 @onready var array = []
 

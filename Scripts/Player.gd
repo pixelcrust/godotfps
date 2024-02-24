@@ -21,6 +21,8 @@ const FOV_SPRINT_SCALE = 1.5
 var gravity = 9.8
 
 @onready var head = $Head
+@onready var bone_head = $Head/bone_head
+
 @onready var camera = $Head/Camera3D
 @onready var guncamera = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D
 @onready var raycast_interaction = $Head/Camera3D/raycast_interaction
@@ -56,7 +58,11 @@ var gravity = 9.8
 @onready var fall_dmg = 0
 @onready var fall_stunned = 0
 @onready var in_water = false
-@onready var in_water_time = 0
+@onready var underwater_time = 0
+@onready var under_water = false
+@onready var shader_underwater = $Head/Camera3D/shader_underwater
+
+
 
 @onready var equipped_id = -1 #what item in hand
 #-1.. nothing
@@ -200,6 +206,13 @@ func _physics_process(delta):
 		in_air_time = 0
 	#print("raycast point at: " +str(raycast_interaction.get_collider()))
 	
+	if under_water == true:
+		underwater_time += 1
+		shader_underwater.visible = true
+	else:
+		underwater_time = 0
+		shader_underwater.visible = false
+	
 	if is_on_ladder == true and interacted_with_ladder == true:
 		in_air_time = 0
 		velocity.y = 0
@@ -284,14 +297,6 @@ func _physics_process(delta):
 	else:
 		help_text.visible = false
 		
-	if raycast_interaction.is_colliding():
-		if raycast_interaction.get_collider().is_in_group("interactable"):
-			set_outline_on(raycast_interaction.get_collider())
-		if raycast_interaction.get_collider().is_in_group("interactable") == false:
-			set_outline_off()
-	else:
-		if outline_meshes.is_empty() == false:
-			set_outline_off()
 	# Start interaction
 	if Input.is_action_just_pressed("Interact")  and raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider().is_in_group("interactable"):
@@ -320,7 +325,17 @@ func _physics_process(delta):
 		is_interacting = 0
 		display_interaction.visible = false
 
-	
+	#outline
+	if raycast_interaction.is_colliding():
+		if raycast_interaction.get_collider() != null:
+			if raycast_interaction.get_collider().is_in_group("interactable"):
+				set_outline_on(raycast_interaction.get_collider())
+			if raycast_interaction.get_collider().is_in_group("interactable") == false:
+				set_outline_off()
+	else:
+		if outline_meshes.is_empty() == false:
+			set_outline_off()
+			
 	#swap weapon
 	if Input.is_action_just_pressed("key_next_weapon"):
 		
@@ -657,7 +672,8 @@ func set_outline_on(object):
 func set_outline_off():
 	for n in outline_meshes:
 		#print(n)
-		n.outline_mesh.visible = false
+		if n != null:
+			n.outline_mesh.visible = false
 	#outline_meshes.clear()
-	print(outline_meshes)
-	print("array end")
+	#print(outline_meshes)
+	#print("array end")

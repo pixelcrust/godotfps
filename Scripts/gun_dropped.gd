@@ -3,6 +3,7 @@ extends Node3D
 
 @onready var model_pistol = $RigidBody3D/model_pistol
 @onready var rigid_body = $RigidBody3D
+@onready var outline_mesh = $RigidBody3D/model_pistol.outline_mesh
 
 
 @onready var player = 0
