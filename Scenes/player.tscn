@@ -236,7 +236,7 @@ visible = false
 collision_mask = 3
 
 [node name="shader_underwater" parent="Head/Camera3D" instance=ExtResource("5_04qer")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.613824)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.913824)
 visible = false
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]

@@ -264,7 +264,6 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("key_jump") and (is_on_floor() or in_water):
 		if is_on_ladder == false or interacted_with_ladder == false:
-			print("jumped normally")
 			velocity.y = JUMP_VELOCITY
 	
 	#run
