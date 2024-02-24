@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://brid1ads3hnl2"]
+[gd_scene load_steps=16 format=3 uid="uid://brid1ads3hnl2"]
 
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
@@ -174,10 +174,38 @@ tracks/1/keys = {
 "values": [Vector3(0.798, 0, -0.391), Vector3(0.678541, 0, -0.397261), Vector3(0.798, 0, -0.397)]
 }
 
+[sub_resource type="Animation" id="Animation_1fb6f"]
+resource_name = "animation_inspect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model_pistol:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0.638344, -0.677301, 0.553734), Vector3(-0.149427, -0.885543, -0.20503), Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("model_pistol:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.798, 0, -0.85), Vector3(0.103924, 0, -0.850004), Vector3(0.798, 0, -0.391)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0rj0"]
 _data = {
 "RESET": SubResource("Animation_6udym"),
 "ads": SubResource("Animation_jtqra"),
+"animation_inspect": SubResource("Animation_1fb6f"),
 "change weapon in": SubResource("Animation_oomti"),
 "change weapon out": SubResource("Animation_0jnuw"),
 "reload": SubResource("Animation_7bcll"),

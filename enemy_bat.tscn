@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://curwbo2aommjw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fo5n"]
+albedo_color = Color(0.635294, 0, 0.333333, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2ddx6"]
+material = SubResource("StandardMaterial3D_8fo5n")
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkxux"]
+albedo_color = Color(0.298039, 0, 0.301961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cquyb"]
+material = SubResource("StandardMaterial3D_dkxux")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n14a8"]
+albedo_color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8shha"]
+material = SubResource("StandardMaterial3D_n14a8")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kcsy7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ayy1y"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hxnwd"]
+
+[node name="enemy_bat" type="CharacterBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_2ddx6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.503554, 0, 0, 0, 0.470245, 0, 0, 0, 0.683468, 0, 0, 0.282623)
+mesh = SubResource("BoxMesh_cquyb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1.9369, 0, 0, 0, 0.623632, 0, 0, 0, 0.323068, 0, 0, 0)
+mesh = SubResource("BoxMesh_8shha")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
+shape = SubResource("SphereShape3D_kcsy7")
+
+[node name="attention_area" type="Area3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/attention_area"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("SphereShape3D_ayy1y")
+
+[node name="bone_head" type="PhysicalBone3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/bone_head"]
+shape = SubResource("SphereShape3D_hxnwd")
