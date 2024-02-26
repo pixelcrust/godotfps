@@ -63,6 +63,34 @@ tracks/3/keys = {
 resource_name = "ads"
 length = 0.5
 
+[sub_resource type="Animation" id="Animation_1fb6f"]
+resource_name = "animation_inspect"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model_pistol:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.9, 3.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0.638344, -0.677301, 0.553734), Vector3(-0.107972, -0.70261, -0.33873), Vector3(-0.149427, -0.885543, -0.20503), Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("model_pistol:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.6, 2.3, 3.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.798, 0, -0.85), Vector3(0.125825, 0, -0.850004), Vector3(0.137289, 0.529783, -0.781153), Vector3(0.148753, 0.500036, -0.712303), Vector3(0.164039, 0.375234, -1.07035), Vector3(0.798, 0, -0.391)]
+}
+
 [sub_resource type="Animation" id="Animation_oomti"]
 resource_name = "change weapon in"
 length = 0.5
@@ -172,33 +200,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.798, 0, -0.391), Vector3(0.678541, 0, -0.397261), Vector3(0.798, 0, -0.397)]
-}
-
-[sub_resource type="Animation" id="Animation_1fb6f"]
-resource_name = "animation_inspect"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("model_pistol:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -1.5708, 0), Vector3(0.638344, -0.677301, 0.553734), Vector3(-0.149427, -0.885543, -0.20503), Vector3(0, -1.5708, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("model_pistol:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.798, 0, -0.85), Vector3(0.103924, 0, -0.850004), Vector3(0.798, 0, -0.391)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0rj0"]

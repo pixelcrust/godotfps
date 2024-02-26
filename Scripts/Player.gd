@@ -289,7 +289,7 @@ func _physics_process(delta):
 			equipped.ads = 0
 			display_crosshair.visible = true
 		state_move = 0
-
+	
 
 	if(Input.is_action_pressed("key_help")):
 		help_text.visible = true
@@ -369,6 +369,12 @@ func _physics_process(delta):
 		else:
 			pass
 	
+	#inspect weapon
+	if(Input.is_action_just_pressed("key_inspect_weapon")):
+		if equipped_id != -1:
+			equipped.inspect()
+		else:
+			pass
 	#crouch
 	match state_move:
 		2:

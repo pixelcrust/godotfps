@@ -81,5 +81,10 @@ func reload(inventory_selector):
 			player.inventory[inventory_selector].loaded += reload_amount
 			player.inventory[inventory_selector].spare_ammo -= reload_amount
 
+func inspect():
+	if animation_player.is_playing():
+		pass
+	else:
+		animation_player.play("animation_inspect")
 func _on_timer_timeout():
 	pass

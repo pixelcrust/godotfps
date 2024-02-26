@@ -75,20 +75,12 @@ func aim(delta):
 	# Calculate the vertical angle (angle in the Y-axis)
 	var vertical_angle = atan2(direction.y, abs(direction.x))
 	#print_debug(rad_to_deg(vertical_angle))
-	
-
-	
 	arm.rotation.z = vertical_angle #+ deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
-	
-	
 	direction_helper.look_at(player.global_transform.origin,Vector3.UP)
-	
 	var ray_collider = ray_view.get_collider()
 	var vertical_angle_to_player = 0
 	
 	if( ray_collider != player):
-		
-		
 		rotate_y(-deg_to_rad(direction_helper.rotation.y * turn_speed_horizontally*delta))
 		#arm.rotate_z(deg_to_rad(dir_to_player) * turn_speed_horizontally*delta)
 		var ray_gun_collider = ray_gun.get_collider()
@@ -114,17 +106,12 @@ func shoot():
 	new_bullet.rotation.z = new_bullet.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
 	get_tree().root.get_children()[0].add_child(new_bullet);
 
-
 func _on_physical_bone_3d_bodypart_hit(dmg,time_rooted):
 	hp-=dmg
-	
 
 func _on_attention_area_body_entered(body):
 	if body.is_in_group("group_player"):
 		state = 1
-	
-	
-
 
 func _on_attention_area_body_exited(body):
 	if body.is_in_group("group_player"):

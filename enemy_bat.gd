@@ -1,0 +1,18 @@
+extends CharacterBody3D
+
+
+const SPEED = 5.0
+const JUMP_VELOCITY = 4.5
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+
+func _physics_process(delta):
+	# Add the gravity.
+
+	move_and_slide()
+
+
+func _on_bone_head_bodypart_hit(dmg, time_rooted):
+	pass # Replace with function body.
