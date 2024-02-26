@@ -57,4 +57,6 @@ script = ExtResource("1_gwa80")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/bone_head"]
 shape = SubResource("SphereShape3D_hxnwd")
 
+[connection signal="body_entered" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_entered"]
+[connection signal="body_exited" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_exited"]
 [connection signal="bodypart_hit" from="MeshInstance3D/bone_head" to="." method="_on_bone_head_bodypart_hit"]

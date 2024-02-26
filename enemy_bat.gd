@@ -13,6 +13,19 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func die():
+	pass
+	
+func attack():
+	pass
 
 func _on_bone_head_bodypart_hit(dmg, time_rooted):
+	pass # Replace with function body.
+
+
+func _on_attention_area_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_attention_area_body_exited(body):
 	pass # Replace with function body.
