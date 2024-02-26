@@ -150,4 +150,6 @@ script = ExtResource("5_o3axx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.774539, 1.39778, 0)
 shape = SubResource("BoxShape3D_cy2g6")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
 [connection signal="bodypart_hit" from="door/PhysicalBone3D" to="door/door" method="_on_physical_bone_3d_bodypart_hit"]

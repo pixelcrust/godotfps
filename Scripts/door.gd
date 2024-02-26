@@ -3,6 +3,9 @@ extends MeshInstance3D
 @onready var animation_player = $"../../AnimationPlayer"
 @onready var door = $".."
 @onready var outline_mesh = $MeshInstance3D
+@onready var audio_stream_player_3d = $"../../AudioStreamPlayer3D"
+@onready var sound_close = preload("res://Models/Sounds/door close 12.wav")
+@onready var sound_open = preload("res://Models/Sounds/door open 4.wav")
 
 const HP_START = 100
 @onready var hp = HP_START
@@ -17,6 +20,8 @@ const HP_START = 100
 func _ready():
 	if state == 0:
 		animation_player.play("animation_close")
+		audio_stream_player_3d.stream = sound_close
+		#audio_stream_player_3d.
 	elif state == 1:
 		animation_player.play("animation_open")
 
