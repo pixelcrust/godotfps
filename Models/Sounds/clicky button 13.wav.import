@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bicfm8n6j3b41"
+path="res://.godot/imported/clicky button 13.wav-b49ab29a31d85c960191a4c5db4f7553.sample"
+
+[deps]
+
+source_file="res://Models/Sounds/clicky button 13.wav"
+dest_files=["res://.godot/imported/clicky button 13.wav-b49ab29a31d85c960191a4c5db4f7553.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

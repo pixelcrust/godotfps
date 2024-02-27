@@ -4,7 +4,7 @@ extends Node3D
 @onready var animation_player = $AnimationPlayer
 @onready var on = 0
 @onready var spotlight_range = 0
-
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
 @onready var ads = 0 #0.. false 1..true
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +17,7 @@ func _process(delta):
 	pass
 
 func shoot(inventory_selector,_target_on_raycast):
+	audio_stream_player_3d.play(0.0)
 	if on == 0:
 		player.node_flashlight.spot_range = 0
 		on = 1

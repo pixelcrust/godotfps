@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cj1tetsawebyx"]
+[gd_scene load_steps=11 format=3 uid="uid://cj1tetsawebyx"]
 
 [ext_resource type="Script" path="res://Scripts/flashlight.gd" id="1_vk74k"]
 [ext_resource type="ArrayMesh" uid="uid://ba5eg4ahx3ih6" path="res://Models/Item/Flashlight.obj" id="1_yd1ak"]
+[ext_resource type="AudioStream" uid="uid://bicfm8n6j3b41" path="res://Models/Sounds/clicky button 13.wav" id="3_pi4vl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqaok"]
 albedo_color = Color(0.47451, 0, 0.478431, 1)
@@ -68,3 +69,6 @@ surface_material_override/3 = SubResource("StandardMaterial3D_ce60k")
 libraries = {
 "": SubResource("AnimationLibrary_ewt36")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_pi4vl")

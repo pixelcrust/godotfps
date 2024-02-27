@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=32 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -24,10 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="22_j7lok"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://d13ipgycehq68" path="res://ladder_tile.tscn" id="24_odnro"]
-[ext_resource type="PackedScene" uid="uid://dcurorsgfk0hj" path="res://outlineshader.tscn" id="25_o8ctp"]
 [ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/knife_dropped.tscn" id="26_g30ru"]
 [ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://water.tscn" id="27_c4j42"]
-[ext_resource type="PackedScene" uid="uid://c8t3e1hbyggdb" path="res://shader_underwater.tscn" id="28_paanj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)
@@ -295,10 +293,6 @@ transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 26.3537, 8.62771, 30.3851)
 [node name="ladder3" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(-0.995366, 0, 0.0961584, 0, 7, 0, -0.0961584, 0, -0.995366, 24.3128, 5.37876, 33.7034)
 
-[node name="outlineshader" parent="." instance=ExtResource("25_o8ctp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8604, 2.97706, 39.3644)
-visible = false
-
 [node name="Beartrap2" parent="." instance=ExtResource("17_m7s0o")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 21.0097, 3.12506, 37.5189)
 
@@ -322,6 +316,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6169, 5.74595, 35.6012)
 
 [node name="Water" parent="." instance=ExtResource("27_c4j42")]
 transform = Transform3D(8.14991, 0, 0, 0, 3.7, 0, 0, 0, 11.7614, 22.7713, 2.57632, 35.3644)
-
-[node name="shader_underwater" parent="." instance=ExtResource("28_paanj")]
-transform = Transform3D(-0.815249, 0, -0.57911, 0, 1, 0, 0.57911, 0, -0.815249, 15.9365, 2.80254, 35.525)
