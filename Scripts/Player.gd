@@ -32,6 +32,7 @@ var gravity = 9.8
 @onready var animation_player = $AnimationPlayer
 @onready var node_flashlight = $Head/Camera3D/flashlight
 @onready var raycast_aim = $Head/Camera3D/raycast_aim
+@onready var raycast_head_place = $Head/Camera3D/raycast_head_place
 
 
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
@@ -206,6 +207,15 @@ func _physics_process(delta):
 		in_air_time = 0
 	#print("raycast point at: " +str(raycast_interaction.get_collider()))
 	
+	if raycast_head_place.is_colliding():
+		print(raycast_head_place.get_collider())
+		if raycast_head_place.get_collider().is_in_group("liquid"):
+			under_water = true
+			print("underwater!!")
+		else:
+			under_water = false
+	else:
+		under_water = false
 	if under_water == true:
 		underwater_time += 1
 		shader_underwater.visible = true
@@ -668,6 +678,8 @@ func _inventory_gui_timeout():
 	
 func set_outline_on(object):
 	#loop for array thats returned
+	if outline_meshes != object.get_outline_meshes():
+		set_outline_off()
 	outline_meshes = object.get_outline_meshes()
 	for n in outline_meshes:
 		n.outline_mesh.visible = true
