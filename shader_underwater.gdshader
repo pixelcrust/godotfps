@@ -25,5 +25,5 @@ void fragment(){
     blurred_color /= float(sample_count);
 	
 	ALBEDO = blurred_color * tint.rgb;
-	ALPHA = 1;//tint.a;
+	ALPHA = 0.5;//tint.a;
 }

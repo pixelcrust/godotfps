@@ -240,8 +240,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 visible = false
 
 [node name="raycast_head_place" type="RayCast3D" parent="Head/Camera3D"]
-transform = Transform3D(9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -2.18557e-08, 0, 0, -0.487555)
+transform = Transform3D(9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -2.18557e-08, 0, 0, -0.0988257)
 collision_mask = 256
+hit_from_inside = true
+collide_with_areas = true
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]
 collision_layer = 2

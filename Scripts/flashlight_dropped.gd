@@ -1,8 +1,9 @@
 extends Node3D
 @onready var interaction_time = .5
+@onready var model_flashlight = $RigidBody3D/flashlight1
 
 @onready var rigid_body = $RigidBody3D
-@onready var outline_mesh = $RigidBody3D/MeshInstance3D/MeshInstance3D
+@onready var outline_mesh = $RigidBody3D/flashlight1.outline_mesh
 
 @onready var player = 0
 const item_id = 4
@@ -21,8 +22,10 @@ const max_loaded = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
-
-
+	#print_debug(model_pistol.mesh.get_layer_mask_value(2))
+	model_flashlight.mesh.set_layer_mask_value(1,true)
+	model_flashlight.mesh.set_layer_mask_value(2,false)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

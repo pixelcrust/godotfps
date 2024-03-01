@@ -208,10 +208,10 @@ func _physics_process(delta):
 	#print("raycast point at: " +str(raycast_interaction.get_collider()))
 	
 	if raycast_head_place.is_colliding():
-		print(raycast_head_place.get_collider())
+		#print(raycast_head_place.get_collider())
 		if raycast_head_place.get_collider().is_in_group("liquid"):
 			under_water = true
-			print("underwater!!")
+			#print("underwater!!")
 		else:
 			under_water = false
 	else:

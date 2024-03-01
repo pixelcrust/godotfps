@@ -70,7 +70,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ce8yk")
 
 [node name="hand" type="Node3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.741108, 0, 0, 0, 0.601265, 0, 0, 0, 1.29647, -0.26398, 0.202872, 1.38221)

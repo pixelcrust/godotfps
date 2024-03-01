@@ -1,34 +1,35 @@
-[gd_scene load_steps=11 format=3 uid="uid://cj1tetsawebyx"]
+[gd_scene load_steps=9 format=3 uid="uid://cj1tetsawebyx"]
 
 [ext_resource type="Script" path="res://Scripts/flashlight.gd" id="1_vk74k"]
-[ext_resource type="ArrayMesh" uid="uid://ba5eg4ahx3ih6" path="res://Models/Item/Flashlight.obj" id="1_yd1ak"]
+[ext_resource type="PackedScene" uid="uid://ckphhamwagojm" path="res://model_flashlight.tscn" id="3_llo81"]
 [ext_resource type="AudioStream" uid="uid://bicfm8n6j3b41" path="res://Models/Sounds/clicky button 13.wav" id="3_pi4vl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqaok"]
-albedo_color = Color(0.47451, 0, 0.478431, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7sxv"]
-albedo_color = Color(0.227451, 0.419608, 0.415686, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qoibg"]
-albedo_color = Color(1, 0.803922, 0.556863, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ce60k"]
-albedo_color = Color(0.176471, 1, 1, 1)
+[ext_resource type="PackedScene" uid="uid://b1stvk0ojp7h6" path="res://hand_right.tscn" id="4_fcyf5"]
 
 [sub_resource type="Animation" id="Animation_hfdln"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/path = NodePath("hand:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, -1.5708)]
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.988432, -0.456905, 0.374132)]
 }
 
 [sub_resource type="Animation" id="Animation_a7qei"]
@@ -37,33 +38,65 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/path = NodePath("hand:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -2.74779), Vector3(0, 0, -1.5708)]
+"values": [Vector3(-0.510852, -0.518375, 0.271973), Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0013473, -1.25817, -1.22966), Vector3(0.988432, -0.456905, 0.374132)]
+}
+
+[sub_resource type="Animation" id="Animation_g818v"]
+resource_name = "shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.988432, -0.456905, 0.374132)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(-2.17519e-08, -1.5708, -0.520859), Vector3(0, -1.5708, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewt36"]
 _data = {
 "RESET": SubResource("Animation_hfdln"),
-"change weapon in": SubResource("Animation_a7qei")
+"change weapon in": SubResource("Animation_a7qei"),
+"shoot": SubResource("Animation_g818v")
 }
 
 [node name="flashlight" type="Node3D"]
 script = ExtResource("1_vk74k")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.61999e-06, 1, 0, -1, -3.61999e-06, 0, 0, 0, 1, 0, 0, 0)
-layers = 2
-mesh = ExtResource("1_yd1ak")
-surface_material_override/0 = SubResource("StandardMaterial3D_qqaok")
-surface_material_override/1 = SubResource("StandardMaterial3D_l7sxv")
-surface_material_override/2 = SubResource("StandardMaterial3D_qoibg")
-surface_material_override/3 = SubResource("StandardMaterial3D_ce60k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -72,3 +105,9 @@ libraries = {
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_pi4vl")
+
+[node name="hand" parent="." instance=ExtResource("4_fcyf5")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 0.988432, -0.456905, 0.374132)
+
+[node name="flashlight1" parent="hand" instance=ExtResource("3_llo81")]
+transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, -0.481308, 1.25983, -0.212915)

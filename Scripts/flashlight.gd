@@ -17,13 +17,17 @@ func _process(delta):
 	pass
 
 func shoot(inventory_selector,_target_on_raycast):
-	audio_stream_player_3d.play(0.0)
-	if on == 0:
-		player.node_flashlight.spot_range = 0
-		on = 1
+	if animation_player.is_playing():
+		pass
 	else:
-		player.node_flashlight.spot_range = spotlight_range
-		on = 0
+		animation_player.play("shoot")
+		audio_stream_player_3d.play(0.0)
+		if on == 0:
+			player.node_flashlight.spot_range = 0
+			on = 1
+		else:
+			player.node_flashlight.spot_range = spotlight_range
+			on = 0
 
 
 func reload(inventory_selector):
