@@ -224,6 +224,18 @@ G - drop weapon
 J - flashlight
 RMB - aim down sight"
 
+[node name="display_conversation" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+visible = false
+offset_left = 200.0
+offset_top = 350.0
+offset_right = 1000.0
+offset_bottom = 606.0
+placeholder_text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+wrap_mode = 1
+
+[node name="conversation_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_conversation"]
+wait_time = 2.0
+
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(5.73208e-15, 1.31134e-07, 3, 3, -1.31134e-07, -1.92556e-20, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0.514353)
 visible = false

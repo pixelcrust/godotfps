@@ -88,6 +88,11 @@ const icon_flashlight = preload("res://Sprites/icons/icon_flashlight.png")
 @onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_timer
 @onready var help_text = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/help_text
 
+#text bubble variables
+@onready var display_conversation = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_conversation
+@onready var display_conversation_text = ""
+@onready var conversation_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_conversation/conversation_timer
+
 
 #preload equippment? move somewhere
 @onready var asset_gun = preload("res://Scenes/gun.tscn")
@@ -437,6 +442,13 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQUENCY/2)*BOB_AMPLITUDE/2
 	return pos
 
+
+func start_conversation():
+	conversation_timer.start()
+	conversation_timer.connect("timeout",_conversation_timeout)
+	display_conversation.visible = true
+	
+	
 func equip_weapon():
 	#equip weapon
 	if(inventory_selector<inventory.size()):
@@ -675,6 +687,9 @@ func set_rooted(stun_duration_sec):
 
 func _inventory_gui_timeout():
 	display_inventory.visible = false
+	
+func _conversation_timeout():
+	display_conversation.visible = false
 	
 func set_outline_on(object):
 	#loop for array thats returned
