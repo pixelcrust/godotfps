@@ -110,4 +110,4 @@ stream = ExtResource("3_pi4vl")
 transform = Transform3D(-9.04998e-07, 0, -0.25, 0, 0.25, 0, 0.25, 0, -9.04998e-07, 0.988432, -0.456905, 0.374132)
 
 [node name="flashlight1" parent="hand" instance=ExtResource("3_llo81")]
-transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, -0.481308, 1.25983, -0.212915)
+transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, -0.676449, 1.25983, -0.212914)
