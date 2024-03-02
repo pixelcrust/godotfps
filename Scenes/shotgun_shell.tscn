@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/shotgun_shell.gd" id="1_uy22w"]
 [ext_resource type="AudioStream" uid="uid://d3mn5xmo276dc" path="res://Models/Sounds/20 Gauge Single Isolated.wav" id="2_a0lku"]
-[ext_resource type="PackedScene" uid="uid://dwjfspjqmal5v" path="res://blood_splatter.tscn" id="3_y40jr"]
+[ext_resource type="PackedScene" uid="uid://dwjfspjqmal5v" path="res://Scenes/blood_splatter.tscn" id="3_y40jr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxnks"]
 albedo_color = Color(0.988235, 0, 0.47451, 1)

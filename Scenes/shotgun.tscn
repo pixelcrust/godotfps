@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/shotgun.gd" id="1_06i30"]
 [ext_resource type="ArrayMesh" uid="uid://bcnl4ay0xvw0" path="res://Models/Item/Shotgun_SawedOff.obj" id="2_dbqqk"]
-[ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://muzzleflash.tscn" id="3_0tlxk"]
+[ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://Scenes/muzzleflash.tscn" id="3_0tlxk"]
 [ext_resource type="AudioStream" uid="uid://d3mn5xmo276dc" path="res://Models/Sounds/20 Gauge Single Isolated.wav" id="3_84dn5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uot6y"]

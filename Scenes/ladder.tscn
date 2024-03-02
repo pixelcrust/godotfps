@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4kjwelcqo6vf"]
 
-[ext_resource type="Script" path="res://ladder.gd" id="1_b6ic4"]
-[ext_resource type="Script" path="res://ladder_collision.gd" id="2_qislg"]
+[ext_resource type="Script" path="res://Scripts/ladder.gd" id="1_b6ic4"]
+[ext_resource type="Script" path="res://Scripts/ladder_collision.gd" id="2_qislg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_84ahv"]
 

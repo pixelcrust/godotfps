@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ckphhamwagojm"]
 
-[ext_resource type="Script" path="res://model_flashlight.gd" id="1_8uv5o"]
+[ext_resource type="Script" path="res://blender import/model_flashlight.gd" id="1_8uv5o"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_uhkt6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb0ep"]

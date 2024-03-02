@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
 [ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://blender import/model_pistol.tscn" id="4_arr1h"]
 [ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]
-[ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://muzzleflash.tscn" id="5_orytu"]
-[ext_resource type="PackedScene" uid="uid://b1stvk0ojp7h6" path="res://hand_right.tscn" id="6_w7x3i"]
+[ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://Scenes/muzzleflash.tscn" id="5_orytu"]
+[ext_resource type="PackedScene" uid="uid://b1stvk0ojp7h6" path="res://blender import/hand_right.tscn" id="6_w7x3i"]
 [ext_resource type="PackedScene" uid="uid://cfv4bbuwv6xi7" path="res://blender import/hand_left.tscn" id="7_npsh3"]
 
 [sub_resource type="Animation" id="Animation_6udym"]

@@ -22,11 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/gun_dropped.tscn" id="20_afjl8"]
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="21_cqm6c"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="22_j7lok"]
-[ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://ladder.tscn" id="23_ntxv3"]
-[ext_resource type="PackedScene" uid="uid://d13ipgycehq68" path="res://ladder_tile.tscn" id="24_odnro"]
+[ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
+[ext_resource type="PackedScene" uid="uid://d13ipgycehq68" path="res://Scenes/ladder_tile.tscn" id="24_odnro"]
 [ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/knife_dropped.tscn" id="26_g30ru"]
-[ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://note.tscn" id="27_28sf7"]
-[ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://water.tscn" id="27_c4j42"]
+[ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
+[ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_c4j42"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)

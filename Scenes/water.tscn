@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2csfac4jugp2"]
 
-[ext_resource type="Script" path="res://water.gd" id="1_kvjo7"]
+[ext_resource type="Script" path="res://Scripts/water.gd" id="1_kvjo7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_us7j0"]
 

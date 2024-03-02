@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cxhi1vghrxjws"]
 
-[ext_resource type="Script" path="res://note_collision.gd" id="1_2co5r"]
-[ext_resource type="Script" path="res://note.gd" id="1_tw6hd"]
+[ext_resource type="Script" path="res://Scripts/note_collision.gd" id="1_2co5r"]
+[ext_resource type="Script" path="res://Scripts/note.gd" id="1_tw6hd"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_42s0r"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0kmdq"]

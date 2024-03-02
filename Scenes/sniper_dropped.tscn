@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/sniper_dropped.gd" id="1_eyl1h"]
 [ext_resource type="ArrayMesh" uid="uid://cnyge50dpdd3d" path="res://Models/Item/SniperRifle_1.obj" id="2_5rq2b"]
-[ext_resource type="Script" path="res://Scenes/sniper_dropped_collision.gd" id="3_itfqa"]
+[ext_resource type="Script" path="res://Scripts/sniper_dropped_collision.gd" id="3_itfqa"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_vk2eb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayjbo"]
