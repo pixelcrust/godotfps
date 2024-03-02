@@ -5,7 +5,7 @@ extends Node3D
 @onready var player = 0
 @onready var area_3d = $Area3D
 
-@onready var asset_ladder_tile = preload("res://ladder_tile.tscn")
+@onready var asset_ladder_tile = preload("res://Scenes/ladder_tile.tscn")
 @onready var mesh_instance_3d = $MeshInstance3D
 @onready var outline_meshes = []
 @onready var ladder_tiles = []

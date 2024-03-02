@@ -262,7 +262,8 @@ func _physics_process(delta):
 	display_hp.clear()
 	display_hp.insert_text_at_caret(str(hp))
 	
-
+	if Input.is_action_just_pressed("key_escape"):
+		_conversation_timeout()
 		
 	#turn on flashlight without it in hand
 	if Input.is_action_just_pressed("key_use_flashlight"):
