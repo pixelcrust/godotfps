@@ -125,9 +125,18 @@ func _ready():
 	#node_flashlight.spot_range = flashlight_range #sets the flashlight range in code for everywhere
 	node_flashlight.spot_range = 0
 	#adda gun to inventory
-
-	
-
+	inventory.append({
+		"item_id": 5, #grenade
+		"loaded": 1,
+		"max_loaded": 1, # See above assignment.
+		"spare_ammo": 0
+	})
+	inventory.append({
+		"item_id": 3, #knife
+		"loaded": 1,
+		"max_loaded": 1, 
+		"spare_ammo": 0
+	})
 	"""
 	inventory.append({
 	"item_id": 0, #pistol
