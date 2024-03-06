@@ -33,6 +33,8 @@ var gravity = 9.8
 @onready var node_flashlight = $Head/Camera3D/flashlight
 @onready var raycast_aim = $Head/Camera3D/raycast_aim
 @onready var raycast_head_place = $Head/Camera3D/raycast_head_place
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+
 
 
 @onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
@@ -109,10 +111,14 @@ const asset_grenade = preload("res://grenade.tscn")
 const asset_drop_knife = preload("res://Scenes/knife_dropped.tscn")
 const asset_drop_flashlight = preload("res://Scenes/flashlight_dropped.tscn")
 
+#sound assets
+const sound_flashlight_click = preload("res://Sounds/clicky button 13.wav")
+
+
 @onready var hp_start = 150
 @onready var hp = hp_start
 @onready var flashlight = 0 #0.. off
-@onready var flashlight_range = 100
+@onready var flashlight_range = 200
 @onready var state_before = 0
 
 func _ready():
@@ -239,16 +245,8 @@ func _physics_process(delta):
 		if raycast_interaction.is_colliding() == false:
 			interacted_with_ladder = false
 		
-
-
-			
 	else:
 		state_move = 0
-	
-	#if is_on_ladder == true && interacted_with_ladder == true:
-		#floor_max_angle = 90
-	#else:
-		#floor_max_angle = 45
 	
 	if inventory.is_empty() == false:
 		#display ammo
@@ -270,6 +268,8 @@ func _physics_process(delta):
 		for n in inventory:
 			print(n)
 			if(n.item_id == 4): #should only be able if  in invenotry
+				audio_stream_player_3d.stream = sound_flashlight_click
+				audio_stream_player_3d.play(0.0)
 				if flashlight == 0:
 					node_flashlight.spot_range = 0
 					flashlight = 1
@@ -505,6 +505,7 @@ func equip_weapon():
 				new_flashlight.animation_player.play("change weapon in")
 				new_flashlight.player = $"."
 				new_flashlight.spotlight_range = flashlight_range
+				new_flashlight.on = flashlight
 				equipped = new_flashlight
 			5:
 				var new_grenade = asset_grenade.instantiate()

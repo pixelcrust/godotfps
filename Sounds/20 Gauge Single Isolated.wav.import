@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d3mn5xmo276dc"
-path="res://.godot/imported/20 Gauge Single Isolated.wav-b0b92a54016da5dba62c7788e629a63c.sample"
+path="res://.godot/imported/20 Gauge Single Isolated.wav-86c3189b51febdab106611eea6cc4696.sample"
 
 [deps]
 
-source_file="res://Models/Sounds/20 Gauge Single Isolated.wav"
-dest_files=["res://.godot/imported/20 Gauge Single Isolated.wav-b0b92a54016da5dba62c7788e629a63c.sample"]
+source_file="res://Sounds/20 Gauge Single Isolated.wav"
+dest_files=["res://.godot/imported/20 Gauge Single Isolated.wav-86c3189b51febdab106611eea6cc4696.sample"]
 
 [params]
 

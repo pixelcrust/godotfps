@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bicfm8n6j3b41"
-path="res://.godot/imported/clicky button 13.wav-b49ab29a31d85c960191a4c5db4f7553.sample"
+path="res://.godot/imported/clicky button 13.wav-09eba243ba2974feedfc8461bd204993.sample"
 
 [deps]
 
-source_file="res://Models/Sounds/clicky button 13.wav"
-dest_files=["res://.godot/imported/clicky button 13.wav-b49ab29a31d85c960191a4c5db4f7553.sample"]
+source_file="res://Sounds/clicky button 13.wav"
+dest_files=["res://.godot/imported/clicky button 13.wav-09eba243ba2974feedfc8461bd204993.sample"]
 
 [params]
 

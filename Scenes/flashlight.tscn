@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/flashlight.gd" id="1_vk74k"]
 [ext_resource type="PackedScene" uid="uid://ckphhamwagojm" path="res://blender import/model_flashlight.tscn" id="3_llo81"]
-[ext_resource type="AudioStream" uid="uid://bicfm8n6j3b41" path="res://Models/Sounds/clicky button 13.wav" id="3_pi4vl"]
+[ext_resource type="AudioStream" path="res://Models/Sounds/clicky button 13.wav" id="3_pi4vl"]
 [ext_resource type="PackedScene" uid="uid://b1stvk0ojp7h6" path="res://blender import/hand_right.tscn" id="4_fcyf5"]
 
 [sub_resource type="Animation" id="Animation_hfdln"]
