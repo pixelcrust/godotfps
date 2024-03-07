@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cj1tetsawebyx"]
+[gd_scene load_steps=8 format=3 uid="uid://cj1tetsawebyx"]
 
 [ext_resource type="Script" path="res://Scripts/flashlight.gd" id="1_vk74k"]
 [ext_resource type="PackedScene" uid="uid://ckphhamwagojm" path="res://blender import/model_flashlight.tscn" id="3_llo81"]
-[ext_resource type="AudioStream" path="res://Models/Sounds/clicky button 13.wav" id="3_pi4vl"]
 [ext_resource type="PackedScene" uid="uid://b1stvk0ojp7h6" path="res://blender import/hand_right.tscn" id="4_fcyf5"]
 
 [sub_resource type="Animation" id="Animation_hfdln"]
@@ -104,7 +103,6 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_pi4vl")
 
 [node name="hand" parent="." instance=ExtResource("4_fcyf5")]
 transform = Transform3D(-9.04998e-07, 0, -0.25, 0, 0.25, 0, 0.25, 0, -9.04998e-07, 0.988432, -0.456905, 0.374132)

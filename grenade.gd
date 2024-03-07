@@ -30,8 +30,13 @@ func shoot(inventory_selector,target_on_raycast):
 			new_grenade.transform.basis = global_transform.basis
 			
 			get_tree().root.get_children()[0].add_child(new_grenade);
-			new_grenade.apply_impulse(-transform.basis.z *9)
-			print(-transform.basis.zxs)
+			var direction = null
+			if(target_on_raycast!= null):
+				direction = target_on_raycast - position
+			else:
+				direction = position
+			new_grenade.apply_impulse(direction)
+			print(direction)
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
 			await get_tree().create_timer(0.5).timeout
