@@ -5,15 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://ctk8y3gtl1yj7" path="res://Scenes/explosion.tscn" id="3_1svfd"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yp457"]
+height = 1.01453
+radius = 0.213978
 
 [node name="Node3D" type="RigidBody3D"]
 script = ExtResource("1_dtv2s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = ExtResource("1_7h2un")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.552266, 0)
 shape = SubResource("CylinderShape3D_yp457")
 
 [node name="Timer" type="Timer" parent="."]

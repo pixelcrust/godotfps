@@ -102,7 +102,7 @@ const icon_flashlight = preload("res://Sprites/icons/icon_flashlight.png")
 @onready var asset_sniper = preload("res://Scenes/sniper.tscn")
 @onready var asset_knife = preload("res://Scenes/knife.tscn")
 @onready var asset_flashlight = preload("res://Scenes/flashlight.tscn")
-const asset_grenade = preload("res://grenade.tscn")
+const asset_grenade = preload("res://Scenes/grenade.tscn")
 
 #preload weapons to be dropped
 @onready var asset_drop_gun = preload("res://Scenes/gun_dropped.tscn")
@@ -110,6 +110,7 @@ const asset_grenade = preload("res://grenade.tscn")
 @onready var  asset_drop_sniper = preload("res://Scenes/sniper_dropped.tscn")
 const asset_drop_knife = preload("res://Scenes/knife_dropped.tscn")
 const asset_drop_flashlight = preload("res://Scenes/flashlight_dropped.tscn")
+const asset_drop_grenade = preload("res://Scenes/grenade_dropped.tscn")
 
 #sound assets
 const sound_flashlight_click = preload("res://Sounds/clicky button 13.wav")
@@ -668,7 +669,12 @@ func drop_weapon():
 			new_dropped_flashlight.rigid_body.apply_impulse(-transform.basis.z *4)
 			node_flashlight.spot_range = 0
 		5:
-			pass #drop grenade
+			print("dropped grenade")
+			var new_dropped_grenade = asset_drop_grenade.instantiate()
+			new_dropped_grenade.position = raycast_interaction.global_position -transform.basis.z*0.5
+			new_dropped_grenade.transform.basis = global_transform.basis
+			get_tree().root.get_children()[0].add_child(new_dropped_grenade)
+			new_dropped_grenade.rigid_body.apply_impulse(-transform.basis.z *4)
 		-1:
 			pass
 		_:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dg1ans30ehh6f"]
 
-[ext_resource type="Script" path="res://grenade.gd" id="1_rq0ey"]
-[ext_resource type="ArrayMesh" uid="uid://brpqwmk4i7kad" path="res://Models/granate.obj" id="2_asllg"]
+[ext_resource type="Script" path="res://grenade.gd" id="1_tk6fo"]
+[ext_resource type="ArrayMesh" uid="uid://brpqwmk4i7kad" path="res://Models/granate.obj" id="2_72o7v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chiun"]
 albedo_color = Color(0.631373, 0, 0.0588235, 1)
@@ -68,11 +68,11 @@ _data = {
 }
 
 [node name="Grenade" type="Node3D"]
-script = ExtResource("1_rq0ey")
+script = ExtResource("1_tk6fo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = ExtResource("2_asllg")
+mesh = ExtResource("2_72o7v")
 surface_material_override/0 = SubResource("StandardMaterial3D_chiun")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
