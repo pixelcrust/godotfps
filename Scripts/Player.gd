@@ -383,7 +383,7 @@ func _physics_process(delta):
 			if raycast_aim.is_colliding():
 				equipped.shoot(inventory_selector,raycast_aim.get_collision_point())
 			else:
-				equipped.shoot(inventory_selector,null)
+				equipped.shoot(inventory_selector,position+Vector3(0,0,-10))
 		else:
 			pass
 	

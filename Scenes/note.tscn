@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxhi1vghrxjws"]
+[gd_scene load_steps=9 format=3 uid="uid://cxhi1vghrxjws"]
 
 [ext_resource type="Script" path="res://Scripts/note_collision.gd" id="1_2co5r"]
 [ext_resource type="Script" path="res://Scripts/note.gd" id="1_tw6hd"]
+[ext_resource type="Texture2D" uid="uid://dbn62c8bnmx2k" path="res://textures/nopte_texture.png" id="2_jptj4"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_42s0r"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ow2v5"]
+albedo_texture = ExtResource("2_jptj4")
+uv1_scale = Vector3(3, 1, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_0kmdq"]
+material = SubResource("StandardMaterial3D_ow2v5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eptbu"]
 size = Vector3(2.08426, 0.168213, 2.0271)

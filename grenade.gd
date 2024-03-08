@@ -32,9 +32,9 @@ func shoot(inventory_selector,target_on_raycast):
 			get_tree().root.get_children()[0].add_child(new_grenade);
 			var direction = null
 			if(target_on_raycast!= null):
-				direction = target_on_raycast - position
+				direction = abs(target_on_raycast - position)
 			else:
-				direction = position
+				direction = position + Vector3(0,0,-10)
 			new_grenade.apply_impulse(direction)
 			print(direction)
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
