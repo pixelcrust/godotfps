@@ -31,3 +31,4 @@ func _process(delta):
 
 func _signal_explosion():
 	idle = false # Replace with function body.
+

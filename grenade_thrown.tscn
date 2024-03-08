@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm3w8klmsqjlb"]
+[gd_scene load_steps=5 format=3 uid="uid://cm3w8klmsqjlb"]
 
 [ext_resource type="ArrayMesh" uid="uid://brpqwmk4i7kad" path="res://Models/granate.obj" id="1_7h2un"]
 [ext_resource type="Script" path="res://grenade_thrown.gd" id="1_dtv2s"]
+[ext_resource type="PackedScene" uid="uid://ctk8y3gtl1yj7" path="res://Scenes/explosion.tscn" id="3_1svfd"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yp457"]
 
@@ -14,3 +15,11 @@ mesh = ExtResource("1_7h2un")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_yp457")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="explosion" parent="." instance=ExtResource("3_1svfd")]
+
+[connection signal="signal_explosion" from="." to="explosion" method="_signal_explosion"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
