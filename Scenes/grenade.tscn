@@ -67,7 +67,7 @@ _data = {
 "shoot": SubResource("Animation_gudao")
 }
 
-[node name="Grenade" type="Node3D"]
+[node name="Grenade" type="Node3D" groups=["consumeable"]]
 script = ExtResource("1_tk6fo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

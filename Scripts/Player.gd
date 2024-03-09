@@ -290,7 +290,10 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("key_jump") and (is_on_floor() or in_water):
 		if is_on_ladder == false or interacted_with_ladder == false:
-			velocity.y = JUMP_VELOCITY
+			if in_water:
+				velocity.y = JUMP_VELOCITY/4
+			else:
+				velocity.y = JUMP_VELOCITY
 	
 	#run
 	if (Input.is_action_pressed("key_run") && (state_move < 2)):
@@ -385,6 +388,12 @@ func _physics_process(delta):
 				equipped.shoot(inventory_selector,raycast_aim.get_collision_point())
 			else:
 				equipped.shoot(inventory_selector,position+Vector3(0,0,-10))
+			
+			if (inventory[inventory_selector].loaded == 0 and inventory[inventory_selector].spare_ammo == 0 and equipped.is_in_group("consumeable")):
+				print("consumeable empty")
+				equipped.queue_free()
+				inventory.remove_at(inventory_selector)
+				equip_weapon()
 		else:
 			pass
 	
@@ -674,6 +683,8 @@ func drop_weapon():
 			new_dropped_grenade.position = raycast_interaction.global_position -transform.basis.z*0.5
 			new_dropped_grenade.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_dropped_grenade)
+			new_dropped_grenade.loaded = inventory[inventory_selector].loaded
+			new_dropped_grenade.spare_ammo = inventory[inventory_selector].spare_ammo
 			new_dropped_grenade.rigid_body.apply_impulse(-transform.basis.z *4)
 		-1:
 			pass
