@@ -1,28 +1,27 @@
 [gd_scene load_steps=5 format=3 uid="uid://cm3w8klmsqjlb"]
 
-[ext_resource type="ArrayMesh" uid="uid://brpqwmk4i7kad" path="res://Models/granate.obj" id="1_7h2un"]
 [ext_resource type="Script" path="res://grenade_thrown.gd" id="1_dtv2s"]
 [ext_resource type="PackedScene" uid="uid://ctk8y3gtl1yj7" path="res://Scenes/explosion.tscn" id="3_1svfd"]
+[ext_resource type="PackedScene" uid="uid://ndkw41r64lu4" path="res://Scenes/model_pipebomb.tscn" id="3_7lbrq"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yp457"]
-height = 1.01453
-radius = 0.213978
+height = 0.812023
+radius = 0.11441
 
 [node name="Node3D" type="RigidBody3D"]
 script = ExtResource("1_dtv2s")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = ExtResource("1_7h2un")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.552266, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.496217, 0)
 shape = SubResource("CylinderShape3D_yp457")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 
 [node name="explosion" parent="." instance=ExtResource("3_1svfd")]
+
+[node name="pipebomb" parent="." instance=ExtResource("3_7lbrq")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.209706, 0)
 
 [connection signal="signal_explosion" from="." to="explosion" method="_signal_explosion"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
