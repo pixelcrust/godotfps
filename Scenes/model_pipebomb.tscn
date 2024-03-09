@@ -155,6 +155,7 @@ script = ExtResource("1_2axe2")
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.139206, 0, 0, 0, 0.139206, 0, 0, 0, 0.139206, 0, 2.43235, 0.822785)
+layers = 2
 mesh = SubResource("ArrayMesh_qj3dl")
 skeleton = NodePath("")
 
