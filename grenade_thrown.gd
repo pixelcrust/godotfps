@@ -3,12 +3,14 @@ extends RigidBody3D
 @onready var once = 0
 @onready var throwing_multiplier = 12
 @onready var timer = $Timer
+@onready var model_pipebomb = $pipebomb
+
 
 signal signal_explosion()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	model_pipebomb.mesh.set_layer_mask_value(1,true)
+	model_pipebomb.mesh.set_layer_mask_value(2,false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

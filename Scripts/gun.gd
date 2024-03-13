@@ -6,14 +6,14 @@ extends Node3D
 @onready var bullet = preload("res://Scenes/bullet.tscn")
 @onready var sound_shoot = preload("res://Sounds/sfx_weapon_singleshot21.wav")
 @onready var player = null
-@onready var emitter_shell = $model_pistol/emitter_shell/GPUParticles3D
-@onready var muzzleflash = $model_pistol/muzzleflash/GPUParticles3D
+@onready var emitter_shell = $hand/model_pistol/emitter_shell/GPUParticles3D
+@onready var muzzleflash = $hand/model_pistol/muzzleflash/GPUParticles3D
 @onready var aim_helper = $aim_helper
 
 
 const RECOIL = 5
-@onready var pos_standard = Vector3(1.2,-0.6,-0.8)
-@onready var pos_ads = Vector3(0.00,-0.45,-0.5)
+@onready var pos_standard = Vector3(1.2,-0.6,-0.6)
+@onready var pos_ads = Vector3(0.00,-0.45,-0.3)
 
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0

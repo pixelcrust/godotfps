@@ -4,6 +4,8 @@ extends Node3D
 @onready var player = null
 @onready var ads = 0
 @onready var creation_spot = $creation_spot
+@onready var model_pipebomb = $hand_right/model_pipebomb
+
 const grenade_thrown = preload("res://grenade_thrown.tscn")
 const RECOIL = -1
 
@@ -23,12 +25,13 @@ func shoot(inventory_selector,target_on_raycast):
 	else:
 		if player.inventory[inventory_selector].loaded > 0:
 
-			player.inventory[inventory_selector].loaded -= 1
+
 			animation_player.play("shoot")
+			await get_tree().create_timer(.5).timeout
 			var new_grenade = grenade_thrown.instantiate()
 			new_grenade.position = creation_spot.global_position
 			new_grenade.transform.basis = global_transform.basis
-			
+			model_pipebomb.visible = false
 			get_tree().root.get_children()[0].add_child(new_grenade);
 			var direction = null
 			"""if(target_on_raycast!= null):
@@ -39,7 +42,8 @@ func shoot(inventory_selector,target_on_raycast):
 			print(direction)"""
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
-			await get_tree().create_timer(0.5).timeout
+			
+			player.inventory[inventory_selector].loaded -= 1
 		else:
 			pass
 		

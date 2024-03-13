@@ -9,6 +9,7 @@ height = 0.812023
 radius = 0.11441
 
 [node name="Node3D" type="RigidBody3D"]
+mass = 0.5
 script = ExtResource("1_dtv2s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

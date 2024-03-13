@@ -1,91 +1,19 @@
 [gd_scene load_steps=8 format=3 uid="uid://cj1tetsawebyx"]
 
 [ext_resource type="Script" path="res://Scripts/flashlight.gd" id="1_vk74k"]
+[ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="3_12yjs"]
 [ext_resource type="PackedScene" uid="uid://ckphhamwagojm" path="res://blender import/model_flashlight.tscn" id="3_llo81"]
-[ext_resource type="PackedScene" uid="uid://b1stvk0ojp7h6" path="res://blender import/hand_right.tscn" id="4_fcyf5"]
 
 [sub_resource type="Animation" id="Animation_hfdln"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hand:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -1.5708, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("hand:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.988432, -0.456905, 0.374132)]
-}
 
 [sub_resource type="Animation" id="Animation_a7qei"]
 resource_name = "change weapon in"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hand:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.510852, -0.518375, 0.271973), Vector3(0, -1.5708, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("hand:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.0013473, -1.25817, -1.22966), Vector3(0.988432, -0.456905, 0.374132)]
-}
 
 [sub_resource type="Animation" id="Animation_g818v"]
 resource_name = "shoot"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.988432, -0.456905, 0.374132)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("hand:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -1.5708, 0), Vector3(-2.17519e-08, -1.5708, -0.520859), Vector3(0, -1.5708, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewt36"]
 _data = {
@@ -104,8 +32,8 @@ libraries = {
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
-[node name="hand" parent="." instance=ExtResource("4_fcyf5")]
-transform = Transform3D(-9.04998e-07, 0, -0.25, 0, 0.25, 0, 0.25, 0, -9.04998e-07, 0.988432, -0.456905, 0.374132)
+[node name="hand_right" parent="." instance=ExtResource("3_12yjs")]
+transform = Transform3D(-5.46392e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, -5.46392e-09, -0.652147, 0.072, 0.170562)
 
-[node name="flashlight1" parent="hand" instance=ExtResource("3_llo81")]
-transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, -0.676449, 1.25983, -0.212914)
+[node name="flashlight1" parent="hand_right" instance=ExtResource("3_llo81")]
+transform = Transform3D(-0.8, 0, 2.69572e-06, 0, 0.8, 0, -2.69572e-06, 0, -0.8, -1.51733, 1.19898, -6.72327)

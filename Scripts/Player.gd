@@ -133,11 +133,18 @@ func _ready():
 		"spare_ammo": 0
 	})
 	inventory.append({
-		"item_id": 3, #knife
+		"item_id": 4, #flashlight
 		"loaded": 1,
 		"max_loaded": 1, 
 		"spare_ammo": 0
+	})	
+	inventory.append({
+		"item_id": 0, #pistol
+		"loaded": 7,
+		"max_loaded": 7, # See above assignment.
+		"spare_ammo": 100
 	})
+	
 	"""
 	inventory.append({
 	"item_id": 0, #pistol
@@ -372,7 +379,8 @@ func _physics_process(delta):
 				pass
 			else:
 				equipped.animation_player.play("change weapon out") #this does not work
-			#wait here for animation out 
+			#wait here for animation out
+			await get_tree().create_timer(.5).timeout 
 			equipped.queue_free() 
 		inventory_selector += 1
 		equip_weapon()
