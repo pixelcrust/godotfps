@@ -2,32 +2,34 @@ extends Node3D
 
 @onready var animation_player = $AnimationPlayer
 @onready var sound = $AudioStreamPlayer
-@onready var barrel = $model_pistol/RayCast3D
+@onready var barrel = $Node3D/hand/model_pistol/RayCast3D
 @onready var bullet = preload("res://Scenes/bullet.tscn")
 @onready var sound_shoot = preload("res://Sounds/sfx_weapon_singleshot21.wav")
 @onready var player = null
-@onready var emitter_shell = $hand/model_pistol/emitter_shell/GPUParticles3D
-@onready var muzzleflash = $hand/model_pistol/muzzleflash/GPUParticles3D
+@onready var emitter_shell = $Node3D/hand/model_pistol/emitter_shell
+@onready var muzzleflash = $Node3D/hand/model_pistol/muzzleflash
 @onready var aim_helper = $aim_helper
+@onready var hands = $Node3D
+
 
 
 const RECOIL = 5
-@onready var pos_standard = Vector3(1.2,-0.6,-0.6)
-@onready var pos_ads = Vector3(0.00,-0.45,-0.3)
+@onready var pos_standard = Vector3(-0.50,-0.10,0.40)
+@onready var pos_ads = Vector3(-0.90,0.30,-0.95)
 
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	transform.origin = pos_standard
+	hands.transform.origin = pos_standard
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (ads == 1)&&(already== 0):
 		#animation_player.play("ads")
-		transform.origin = pos_ads
+		hands.transform.origin = pos_ads
 		already = 1
 	elif (ads == 1) && (already == 1):
 		
@@ -36,7 +38,7 @@ func _process(delta):
 	elif ads == 0:
 		if already == 1:
 			#animation_player.play("RESET")
-			transform.origin = pos_standard
+			hands.transform.origin = pos_standard
 			already = 0
 		
 	#print_debug("ads gun state: " + str(ads))

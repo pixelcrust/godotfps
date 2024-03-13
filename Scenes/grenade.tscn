@@ -127,7 +127,7 @@ libraries = {
 transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
 
 [node name="hand_left" parent="." instance=ExtResource("4_tbov2")]
-transform = Transform3D(0.0288454, 0, -0.121626, 0, 0.125, 0, 0.121626, 0, 0.0288454, -1.18358, 0, 0.597087)
+transform = Transform3D(0.0288459, 0, -0.121626, 0, 0.125, 0, 0.121626, 0, 0.0288459, -1.18358, 0, 0.597087)
 
 [node name="hand_right" parent="." instance=ExtResource("2_e5efc")]
 transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.0234612, 0.072225, 0.584678)
