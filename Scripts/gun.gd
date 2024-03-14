@@ -8,14 +8,14 @@ extends Node3D
 @onready var player = null
 @onready var emitter_shell = $Node3D/hand/model_pistol/emitter_shell/GPUParticles3D
 @onready var muzzleflash = $Node3D/hand/model_pistol/muzzleflash/GPUParticles3D
-@onready var aim_helper = $aim_helper
+@onready var aim_helper = $Node3D/hand/model_pistol/aim_helper
 @onready var hands = $Node3D
 
 
 
 const RECOIL = 5
 @onready var pos_standard = Vector3(-0.50,-0.10,0.40)
-@onready var pos_ads = Vector3(-0.90,0.30,-0.95)
+@onready var pos_ads = Vector3(-0.70,0.30,-1.17)
 
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
