@@ -6,8 +6,8 @@ extends Node3D
 @onready var bullet = preload("res://Scenes/bullet.tscn")
 @onready var sound_shoot = preload("res://Sounds/sfx_weapon_singleshot21.wav")
 @onready var player = null
-@onready var emitter_shell = $Node3D/hand/model_pistol/emitter_shell
-@onready var muzzleflash = $Node3D/hand/model_pistol/muzzleflash
+@onready var emitter_shell = $Node3D/hand/model_pistol/emitter_shell/GPUParticles3D
+@onready var muzzleflash = $Node3D/hand/model_pistol/muzzleflash/GPUParticles3D
 @onready var aim_helper = $aim_helper
 @onready var hands = $Node3D
 
