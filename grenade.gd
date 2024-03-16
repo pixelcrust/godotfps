@@ -5,13 +5,16 @@ extends Node3D
 @onready var ads = 0
 @onready var creation_spot = $creation_spot
 @onready var model_pipebomb = $Node3D/hand_right/model_pipebomb
+@onready var hands = $Node3D
+
+@onready var pos_standard = Vector3(-0.70,-0.10,0.60)
 
 const grenade_thrown = preload("res://Scenes/grenade_thrown.tscn")
 const RECOIL = -5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	hands.transform.origin = pos_standard
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

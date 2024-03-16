@@ -1,7 +1,7 @@
 extends Node3D
 
 const SPEED = 160.0
-const ACCURACY = 2
+const ACCURACY = 0
 const dmg = 50
 const time_rooted = .5
 
@@ -33,7 +33,7 @@ func _physics_process(delta):
 	else:
 		abweichung_x = standard_abweichung_x
 		abweichung_y = standard_abweichung_y
-	#print_debug("ads bullet:" +str(ads))
+	#print_debug("abweichung_x,abweichung_y:" +str(abweichung_x)+"/"+str(abweichung_y))
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
 	if raycast.is_colliding():
 		#print("raycast collision with:" + str(raycast.get_collider()) )

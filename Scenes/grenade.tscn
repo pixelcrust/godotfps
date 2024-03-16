@@ -22,50 +22,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/hand_left:position")
+tracks/1/path = NodePath("Node3D/hand_right:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.18358, 0, 0.597087), Vector3(-1.18358, 0, 0.597087), Vector3(-1.18358, 0, 0.597087)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Node3D/hand_right:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.0234612, 0.072225, 0.584678), Vector3(-0.0234612, 0.072225, 0.830234), Vector3(-0.0234612, 0.072225, 0.584678)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Node3D/hand_right:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.878285, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Node3D:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -1.5708, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_0dofl"]
@@ -81,59 +45,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -1.57462, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/hand_left:position")
+tracks/1/path = NodePath("Node3D/hand_left:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.79931, 0.399981, -1.04762)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Node3D/hand_left:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -2.20172, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Node3D:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_yvaoj"]
-resource_name = "change weapon in"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/hand_right:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.0890224, -0.0419418, 1.12977), Vector3(0, -1.57429, 0)]
+"values": [Vector3(0, -1.5708, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_tcqhy"]
@@ -149,7 +73,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, -1.57462, 0), Vector3(-1.01162, -0.450114, 0.388756)]
+"values": [Vector3(0, 0, 0), Vector3(-1.01229, 1.5708, 0.389208)]
 }
 
 [sub_resource type="Animation" id="Animation_7sqd6"]
@@ -165,7 +89,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.7, 2.3, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -1.57429, 0), Vector3(0.437502, -0.677276, -0.978315), Vector3(0.529111, -0.921657, 0.936408), Vector3(0, -1.57429, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.438078, 0.663225, -0.97913), Vector3(0.528835, 0.907571, 0.937242), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_b5d6u"]
@@ -173,44 +97,48 @@ resource_name = "reload"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/hand_left:position")
+tracks/0/path = NodePath("Node3D/hand_left:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.79931, 0.399981, -1.04762), Vector3(-0.197395, -0.00098744, -0.769009), Vector3(-1.79931, 0.399981, -1.04762)]
+"values": [Vector3(0, -2.20172, 0), Vector3(0.544146, -0.755462, -1.18181), Vector3(0, -2.20172, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/hand_left:rotation")
+tracks/1/path = NodePath("Node3D/hand_right:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -2.20172, 0), Vector3(0.544146, -2.00255, -1.18181), Vector3(0, -2.20172, 0)]
+"values": [Vector3(0, -1.57462, 0), Vector3(0.00174533, 0.314159, 0.55676), Vector3(0, 0, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Node3D/hand_right:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+
+[sub_resource type="Animation" id="Animation_0bj7f"]
+resource_name = "change weapon in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/hand_right:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, -1.57462, 0), Vector3(0.002018, -1.26088, 0.555936), Vector3(0, -1.57462, 0)]
+"values": [Vector3(-0.969829, 1.5294, 0.0341529), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5rkwu"]
 _data = {
 "RESET": SubResource("Animation_0dofl"),
-"change weapon in": SubResource("Animation_yvaoj"),
+"change weapon in": SubResource("Animation_0bj7f"),
 "change weapon out": SubResource("Animation_tcqhy"),
 "inspect": SubResource("Animation_7sqd6"),
 "reload": SubResource("Animation_b5d6u"),
@@ -231,12 +159,13 @@ libraries = {
 transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
 
 [node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0.875151)
 
 [node name="hand_left" parent="Node3D" instance=ExtResource("4_tbov2")]
-transform = Transform3D(-0.0737363, 0, -0.100935, 0, 0.125, 0, 0.100935, 0, -0.0737363, -1.79931, 0.399981, -1.04762)
+transform = Transform3D(-5.46392e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, -5.46392e-09, -1.799, 0, 0.153)
 
 [node name="hand_right" parent="Node3D" instance=ExtResource("2_e5efc")]
-transform = Transform3D(-0.000477959, 0, -0.124999, 0, 0.125, 0, 0.124999, 0, -0.000477959, -0.0234612, 0.072225, 0.584678)
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.622449, 0.072225, 0.110981)
 
 [node name="model_pipebomb" parent="Node3D/hand_right" instance=ExtResource("2_oi57i")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.729226, 9.53674e-07, -6.73586)

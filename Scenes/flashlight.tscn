@@ -9,6 +9,18 @@
 [sub_resource type="Animation" id="Animation_g818v"]
 resource_name = "shoot"
 length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/hand_right:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.57462, 0), Vector3(-0.00134377, -1.57438, -0.359099), Vector3(0.00117396, -1.57444, 0.312063), Vector3(0, -1.57429, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_bbwek"]
 resource_name = "RESET"
