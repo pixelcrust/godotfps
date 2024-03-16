@@ -27,10 +27,10 @@ stream = ExtResource("4_ismwp")
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="hand_left" parent="Node3D" instance=ExtResource("7_v8lcg")]
-transform = Transform3D(-0.073736, 0, -0.100935, 0, 0.125, 0, 0.100935, 0, -0.073736, -1.79931, 0.399981, -1.04762)
+transform = Transform3D(-0.073736, 0, -0.100935, 0, 0.125, 0, 0.100935, 0, -0.073736, -1.498, 0.4, -1.841)
 
 [node name="hand_right" parent="Node3D" instance=ExtResource("6_58lm0")]
-transform = Transform3D(-0.000477959, 0, -0.124999, 0, 0.125, 0, 0.124999, 0, -0.000477959, -0.242, -0.05, 0.237)
+transform = Transform3D(-5.46392e-09, -0.00218155, -0.124981, 0, 0.124981, -0.00218155, 0.125, -9.53586e-11, -5.46309e-09, -0.242, -0.05, 0.237)
 
 [node name="model_pistol" parent="Node3D/hand_right" instance=ExtResource("4_arr1h")]
 transform = Transform3D(2.40002, 0, 0, 0, 2.4, 0, 0, 0, 2.40002, -3.64628, 0.484098, -11.1714)
