@@ -108,6 +108,7 @@ script = ExtResource("1_sfosh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12679, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_gmr4f")
 
 [node name="bone_body" type="PhysicalBone3D" parent="MeshInstance3D" groups=["group_player", "has_blood", "has_hp"]]

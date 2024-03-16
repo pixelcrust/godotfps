@@ -4,10 +4,10 @@ extends Node3D
 @onready var player = null
 @onready var ads = 0
 @onready var creation_spot = $creation_spot
-@onready var model_pipebomb = $hand_right/model_pipebomb
+@onready var model_pipebomb = $Node3D/hand_right/model_pipebomb
 
-const grenade_thrown = preload("res://grenade_thrown.tscn")
-const RECOIL = -1
+const grenade_thrown = preload("res://Scenes/grenade_thrown.tscn")
+const RECOIL = -5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,9 +51,13 @@ func reload(inventory_selector):
 	if animation_player.is_playing():
 		pass
 	else:
-		pass
-		#animation_player.play("reload") add easter egg
+		animation_player.play("reload")
 		
-
+		
+func inspect():
+	if animation_player.is_playing():
+		pass
+	else:
+		animation_player.play("inspect")
 func _on_timer_timeout():
 	pass

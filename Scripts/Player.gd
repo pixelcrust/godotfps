@@ -382,7 +382,7 @@ func _physics_process(delta):
 			else:
 				equipped.animation_player.play("change weapon out") #this does not work
 			#wait here for animation out
-			await get_tree().create_timer(.5).timeout 
+			await get_tree().create_timer(.6).timeout 
 			equipped.queue_free() 
 		inventory_selector += 1
 		equip_weapon()
@@ -540,7 +540,7 @@ func equip_weapon():
 				var new_grenade = asset_grenade.instantiate()
 				camera.add_child(new_grenade)
 				new_grenade.position = camera.position
-				#new_grenade.rotate_y(deg_to_rad(90))
+				new_grenade.rotate_y(deg_to_rad(90))
 				new_grenade.transform.origin = Vector3(1,-0.8,-1)
 				new_grenade.animation_player.play("change weapon in")
 				new_grenade.player = $"."

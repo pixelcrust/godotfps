@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	if(once == 0):
 		timer.start()
-		apply_impulse(-transform.basis.z *throwing_multiplier)
+		apply_impulse(transform.basis.x *throwing_multiplier)
 		once = 1
 
 

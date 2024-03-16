@@ -2,19 +2,19 @@ extends Node3D
 
 @onready var animation_player = $AnimationPlayer
 @onready var sound = $AudioStreamPlayer
-@onready var barrel = $Node3D/hand/model_pistol/RayCast3D
+@onready var barrel = $Node3D/hand_right/model_pistol/RayCast3D
 @onready var bullet = preload("res://Scenes/bullet.tscn")
 @onready var sound_shoot = preload("res://Sounds/sfx_weapon_singleshot21.wav")
 @onready var player = null
-@onready var emitter_shell = $Node3D/hand/model_pistol/emitter_shell/GPUParticles3D
-@onready var muzzleflash = $Node3D/hand/model_pistol/muzzleflash/GPUParticles3D
-@onready var aim_helper = $Node3D/hand/model_pistol/aim_helper
+@onready var emitter_shell = $Node3D/hand_right/model_pistol/emitter_shell/GPUParticles3D
+@onready var muzzleflash = $Node3D/hand_right/model_pistol/muzzleflash/GPUParticles3D
+@onready var aim_helper = $Node3D/hand_right/model_pistol/aim_helper
 @onready var hands = $Node3D
 
 
 
 const RECOIL = 5
-@onready var pos_standard = Vector3(-0.50,-0.10,0.40)
+@onready var pos_standard = Vector3(-0.20,-0.10,0.40)
 @onready var pos_ads = Vector3(-0.70,0.30,-1.17)
 
 @onready var ads = 0 #0.. false 1..true
@@ -87,6 +87,6 @@ func inspect():
 	if animation_player.is_playing():
 		pass
 	else:
-		animation_player.play("animation_inspect")
+		animation_player.play("inspect")
 func _on_timer_timeout():
 	pass

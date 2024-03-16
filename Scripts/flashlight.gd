@@ -6,10 +6,13 @@ extends Node3D
 @onready var spotlight_range = 0
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 @onready var ads = 0 #0.. false 1..true
+@onready var pos_standard = Vector3(-0.70,-0.10,0.40)
+@onready var hand_right = $Node3D/hand_right
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	hand_right.transform.origin = pos_standard
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,6 +32,15 @@ func shoot(inventory_selector,_target_on_raycast):
 			player.node_flashlight.spot_range = spotlight_range
 			on = 0
 
-
+func inspect():
+	if animation_player.is_playing():
+		pass
+	else:
+		animation_player.play("inspect")
+		
 func reload(inventory_selector):
-	pass
+	if animation_player.is_playing():
+		pass
+	else:
+		animation_player.play("reload")
+		
