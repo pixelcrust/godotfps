@@ -16,6 +16,8 @@ extends Node3D
 const RECOIL = 5
 @onready var pos_standard = Vector3(-0.20,-0.10,0.40)
 @onready var pos_ads = Vector3(-0.70,0.30,-1.17)
+@onready var rotation_standard = Vector3(0,0,0)
+@onready var rotation_ads = Vector3(0,0,0)
 
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
@@ -23,6 +25,7 @@ const RECOIL = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hands.transform.origin = pos_standard
+	hands.rotation = rotation_standard
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,6 +33,7 @@ func _process(delta):
 	if (ads == 1)&&(already== 0):
 		#animation_player.play("ads")
 		hands.transform.origin = pos_ads
+		hands.rotation = rotation_ads
 		already = 1
 	elif (ads == 1) && (already == 1):
 		
@@ -39,6 +43,7 @@ func _process(delta):
 		if already == 1:
 			#animation_player.play("RESET")
 			hands.transform.origin = pos_standard
+			hands.rotation = rotation_standard
 			already = 0
 		
 	#print_debug("ads gun state: " + str(ads))

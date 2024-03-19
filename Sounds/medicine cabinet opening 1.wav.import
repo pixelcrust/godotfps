@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3mj7kk6x4puy"
+path="res://.godot/imported/medicine cabinet opening 1.wav-6e5e66209ea1272a64f8b4892ad6f84d.sample"
+
+[deps]
+
+source_file="res://Sounds/medicine cabinet opening 1.wav"
+dest_files=["res://.godot/imported/medicine cabinet opening 1.wav-6e5e66209ea1272a64f8b4892ad6f84d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

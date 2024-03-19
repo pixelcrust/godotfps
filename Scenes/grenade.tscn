@@ -5,33 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ndkw41r64lu4" path="res://Scenes/model_pipebomb.tscn" id="2_oi57i"]
 [ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="4_tbov2"]
 
-[sub_resource type="Animation" id="Animation_gudao"]
-resource_name = "shoot"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/hand_left:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -1.33793, 0), Vector3(0.212619, -0.390683, -0.775097), Vector3(0, -1.33793, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/hand_right:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.878285, 0, 0), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_0dofl"]
 resource_name = "RESET"
 length = 0.001
@@ -58,6 +31,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0bj7f"]
+resource_name = "change weapon in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/hand_right:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.969829, 1.5294, 0.0341529), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_tcqhy"]
@@ -119,20 +108,31 @@ tracks/1/keys = {
 "values": [Vector3(0, -1.57462, 0), Vector3(0.00174533, 0.314159, 0.55676), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_0bj7f"]
-resource_name = "change weapon in"
-length = 0.5
+[sub_resource type="Animation" id="Animation_gudao"]
+resource_name = "shoot"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/hand_right:rotation")
+tracks/0/path = NodePath("Node3D/hand_left:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.969829, 1.5294, 0.0341529), Vector3(0, 0, 0)]
+"values": [Vector3(0, -1.33793, 0), Vector3(0.212619, -0.390683, -0.775097), Vector3(0, -1.33793, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/hand_right:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.878285, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5rkwu"]
@@ -162,7 +162,7 @@ transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.3
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0.875151)
 
 [node name="hand_left" parent="Node3D" instance=ExtResource("4_tbov2")]
-transform = Transform3D(-5.46392e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, -5.46392e-09, -1.799, 0, 0.153)
+transform = Transform3D(-4.52499e-07, 0, -0.125, 0, 0.125, 0, 0.125, 0, -4.52499e-07, -1.799, 0, 0.153)
 
 [node name="hand_right" parent="Node3D" instance=ExtResource("2_e5efc")]
 transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.622449, 0.072225, 0.110981)

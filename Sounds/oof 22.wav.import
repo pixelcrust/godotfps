@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2hgwubj35l8h"
+path="res://.godot/imported/oof 22.wav-1e4d89e929932f894146ad33b80ea6a0.sample"
+
+[deps]
+
+source_file="res://Sounds/oof 22.wav"
+dest_files=["res://.godot/imported/oof 22.wav-1e4d89e929932f894146ad33b80ea6a0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

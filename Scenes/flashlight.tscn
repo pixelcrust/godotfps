@@ -1,26 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj1tetsawebyx"]
+[gd_scene load_steps=14 format=3 uid="uid://cj1tetsawebyx"]
 
 [ext_resource type="Script" path="res://Scripts/flashlight.gd" id="1_vk74k"]
 [ext_resource type="AnimationLibrary" uid="uid://chxpkr5swac2n" path="res://item_animations.res" id="2_h0o1t"]
 [ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="3_12yjs"]
+[ext_resource type="AudioStream" uid="uid://bicfm8n6j3b41" path="res://Sounds/clicky button 13.wav" id="3_fj3db"]
 [ext_resource type="PackedScene" uid="uid://ckphhamwagojm" path="res://blender import/model_flashlight.tscn" id="3_llo81"]
 [ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="5_ctahe"]
-
-[sub_resource type="Animation" id="Animation_g818v"]
-resource_name = "shoot"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/hand_right:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -1.57462, 0), Vector3(-0.00134377, -1.57438, -0.359099), Vector3(0.00117396, -1.57444, 0.312063), Vector3(0, -1.57429, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_bbwek"]
 resource_name = "RESET"
@@ -78,22 +63,6 @@ tracks/0/keys = {
 "values": [Vector3(0.0890224, -0.0419418, 1.12977), Vector3(0, -1.57429, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_sry1f"]
-resource_name = "inspect"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/hand_right:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 2.3, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -1.57429, 0), Vector3(0.437502, -0.677276, -0.978315), Vector3(0.529111, -0.921657, 0.936408), Vector3(0, -1.57429, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_djt2w"]
 resource_name = "change weapon out"
 length = 0.5
@@ -108,6 +77,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -1.57462, 0), Vector3(-1.01162, -0.450114, 0.388756)]
+}
+
+[sub_resource type="Animation" id="Animation_sry1f"]
+resource_name = "inspect"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/hand_right:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 2.3, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.57429, 0), Vector3(0.437502, -0.677276, -0.978315), Vector3(0.529111, -0.921657, 0.936408), Vector3(0, -1.57429, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_jq6cs"]
@@ -149,6 +134,22 @@ tracks/2/keys = {
 "values": [Vector3(0, -1.57462, 0), Vector3(0.002018, -1.26088, 0.555936), Vector3(0, -1.57462, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_g818v"]
+resource_name = "shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/hand_right:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.57462, 0), Vector3(-0.00134377, -1.57438, -0.359099), Vector3(0.00117396, -1.57444, 0.312063), Vector3(0, -1.57429, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewt36"]
 _data = {
 "RESET": SubResource("Animation_bbwek"),
@@ -169,6 +170,7 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_fj3db")
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -179,4 +181,4 @@ transform = Transform3D(-0.000573551, 0, -0.149999, 0, 0.15, 0, 0.149999, 0, -0.
 transform = Transform3D(-0.7, 0, 2.4422e-06, 0, 0.7, 0, -2.4422e-06, 0, -0.7, -1.53192, 2.04375, -7.37871)
 
 [node name="hand_left" parent="Node3D" instance=ExtResource("5_ctahe")]
-transform = Transform3D(-0.0737364, 0, -0.100935, 0, 0.125, 0, 0.100935, 0, -0.0737364, -1.79931, 0.399981, -1.04762)
+transform = Transform3D(-0.0737362, 0, -0.100935, 0, 0.125, 0, 0.100935, 0, -0.0737362, -1.79931, 0.399981, -1.04762)

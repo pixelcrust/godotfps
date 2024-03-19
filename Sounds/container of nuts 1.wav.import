@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bi4y7rr5gckda"
+path="res://.godot/imported/container of nuts 1.wav-39332c573ec2ea6d37b89dc736eccab2.sample"
+
+[deps]
+
+source_file="res://Sounds/container of nuts 1.wav"
+dest_files=["res://.godot/imported/container of nuts 1.wav-39332c573ec2ea6d37b89dc736eccab2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
