@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=34 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/knife_dropped.tscn" id="26_g30ru"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
 [ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_c4j42"]
+[ext_resource type="PackedScene" uid="uid://dj1r66vn40rp2" path="res://Scenes/lava.tscn" id="28_co6hw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)
@@ -320,3 +321,6 @@ transform = Transform3D(8.14991, 0, 0, 0, 3.7, 0, 0, 0, 11.7614, 22.7713, 2.5763
 
 [node name="note" parent="." instance=ExtResource("27_28sf7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6127, 0.846079, 40.6857)
+
+[node name="lava" parent="." instance=ExtResource("28_co6hw")]
+transform = Transform3D(6.6, 0, 0, 0, 1.97176, 0, 0, 0, 2.73501, 15.8604, 1.82222, 44.3644)
