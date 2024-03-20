@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cj1tetsawebyx"]
+[gd_scene load_steps=13 format=3 uid="uid://cj1tetsawebyx"]
 
 [ext_resource type="Script" path="res://Scripts/flashlight.gd" id="1_vk74k"]
-[ext_resource type="AnimationLibrary" uid="uid://chxpkr5swac2n" path="res://item_animations.res" id="2_h0o1t"]
 [ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="3_12yjs"]
 [ext_resource type="AudioStream" uid="uid://bicfm8n6j3b41" path="res://Sounds/clicky button 13.wav" id="3_fj3db"]
 [ext_resource type="PackedScene" uid="uid://ckphhamwagojm" path="res://blender import/model_flashlight.tscn" id="3_llo81"]
@@ -165,8 +164,7 @@ script = ExtResource("1_vk74k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ewt36"),
-"item_animations": ExtResource("2_h0o1t")
+"": SubResource("AnimationLibrary_ewt36")
 }
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
@@ -181,4 +179,4 @@ transform = Transform3D(-0.000573551, 0, -0.149999, 0, 0.15, 0, 0.149999, 0, -0.
 transform = Transform3D(-0.7, 0, 2.4422e-06, 0, 0.7, 0, -2.4422e-06, 0, -0.7, -1.53192, 2.04375, -7.37871)
 
 [node name="hand_left" parent="Node3D" instance=ExtResource("5_ctahe")]
-transform = Transform3D(-0.0737362, 0, -0.100935, 0, 0.125, 0, 0.100935, 0, -0.0737362, -1.79931, 0.399981, -1.04762)
+transform = Transform3D(-0.0737361, 0, -0.100935, 0, 0.125, 0, 0.100935, 0, -0.0737361, -1.79931, 0.399981, -1.04762)

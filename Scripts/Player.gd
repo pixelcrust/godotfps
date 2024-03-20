@@ -382,7 +382,7 @@ func _physics_process(delta):
 			else:
 				equipped.animation_player.play("change weapon out") #this does not work
 			#wait here for animation out
-			await get_tree().create_timer(.49).timeout 
+			await get_tree().create_timer(.51).timeout 
 			equipped.queue_free() 
 		inventory_selector += 1
 		equip_weapon()

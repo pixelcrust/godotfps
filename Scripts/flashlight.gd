@@ -8,16 +8,18 @@ extends Node3D
 @onready var ads = 0 #0.. false 1..true
 @onready var pos_standard = Vector3(-0.70,-0.10,0.40)
 @onready var hand_right = $Node3D/hand_right
-
+@onready var once = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hand_right.transform.origin = pos_standard
-
+	visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if once == true:
+		visible = true
+		once = false
 
 func shoot(inventory_selector,_target_on_raycast):
 	if animation_player.is_playing():

@@ -11,15 +11,18 @@ extends Node3D
 
 const grenade_thrown = preload("res://Scenes/grenade_thrown.tscn")
 const RECOIL = -5
+@onready var once = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hands.transform.origin = pos_standard
-
+	visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if once == true:
+		visible = true
+		once = false
 
 func shoot(inventory_selector,target_on_raycast):
 	
