@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://ndkw41r64lu4"]
 
-[ext_resource type="Script" path="res://Scenes/model_pipebomb.gd" id="1_2axe2"]
+[ext_resource type="Script" path="res://model_pipebomb.gd" id="1_2axe2"]
 [ext_resource type="Texture2D" uid="uid://dn3cd8w2ucdew" path="res://blender import/pipebomb_Metal_18-256x256.png" id="1_hd0nj"]
 [ext_resource type="Texture2D" uid="uid://dpq8vew5bk0bh" path="res://blender import/pipebomb_Metal_05-256x256.png" id="2_rbchn"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_ypp0n"]
