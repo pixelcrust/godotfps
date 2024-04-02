@@ -1,6 +1,7 @@
 extends RayCast3D
 
-@onready var beam_mesh = $MeshInstance3D
+@onready var beam_mesh = $laser
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
