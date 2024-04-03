@@ -42,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.13687e-13, 1, 0, -0.00277205, 0)
 mesh = SubResource("CylinderMesh_ib2vb")
 
 [node name="aim_helper" type="Node3D" parent="gun/barrel"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, -0.902517)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0.493284)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.313344, 0, 0, 0, 0.669138, 0, 0, 0, 0.436208, 0, 0, 0)
