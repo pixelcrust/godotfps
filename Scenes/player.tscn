@@ -168,46 +168,48 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.86406, 0)
 cull_mask = 2
 
-[node name="display_ammo" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+[node name="CanvasGroup" type="CanvasGroup" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+
+[node name="display_ammo" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
 offset_left = 32.0
 offset_top = 553.0
 offset_right = 148.0
 offset_bottom = 603.0
 placeholder_text = "L/S"
 
-[node name="display_hp" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+[node name="display_hp" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 120.0
 offset_bottom = 80.0
 placeholder_text = "HP"
 
-[node name="display_interaction" type="ProgressBar" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+[node name="display_interaction" type="ProgressBar" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
 offset_left = 490.0
 offset_top = 400.0
 offset_right = 690.0
 offset_bottom = 440.0
 show_percentage = false
 
-[node name="display_inventory" type="Container" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+[node name="display_inventory" type="Container" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="inv_1" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
+[node name="inv_1" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
 position = Vector2(400, 500)
 
-[node name="inv_2" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
+[node name="inv_2" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
 position = Vector2(550, 500)
 
-[node name="inv_3" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
+[node name="inv_3" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
 position = Vector2(700, 500)
 
-[node name="inv_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
+[node name="inv_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
 
-[node name="inventory_marker" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory"]
+[node name="inventory_marker" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
 texture = ExtResource("4_jacde")
 
-[node name="help_text" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+[node name="help_text" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
 offset_left = 32.0
 offset_top = 256.0
 offset_right = 288.0
@@ -225,7 +227,7 @@ G - drop weapon
 J - flashlight
 RMB - aim down sight"
 
-[node name="display_conversation" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+[node name="display_conversation" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
 visible = false
 offset_left = 200.0
 offset_top = 350.0
@@ -236,7 +238,7 @@ theme_override_constants/outline_size = 1
 placeholder_text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 wrap_mode = 1
 
-[node name="conversation_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_conversation"]
+[node name="conversation_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_conversation"]
 wait_time = 2.0
 
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]

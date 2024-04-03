@@ -46,7 +46,7 @@ func _process(delta):
 					going_left = false
 			else:
 				current_angle -= delta
-				if current_angle <= -angle:
+				if current_angle <= 0:
 					going_left = true
 			gun.rotate_y(current_angle)
 			#if spott player
@@ -70,16 +70,17 @@ func _process(delta):
 			await get_tree().create_timer(3).timeout
 			shoot()
 			await get_tree().create_timer(.3).timeout
-			shoot()
-			await get_tree().create_timer(.3).timeout
-			shoot()
-			await get_tree().create_timer(.3).timeout
+			if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
+				state = 3
 		3: #wait until moving back
 			await get_tree().create_timer(1).timeout
 			
 			state = 4
 		4: #move back to starting position
 			transform.origin = start_pos
+			gun.rotation.x = 0
+			gun.rotation.y = 0
+			state = 0
 		_:
 			pass
 			
@@ -95,7 +96,7 @@ func aim(delta):
 	# Calculate the vertical angle (angle in the Y-axis)
 	var vertical_angle = atan2(direction.y, abs(direction.x))
 	#print_debug(rad_to_deg(vertical_angle))
-	gun.rotation.x = -vertical_angle #+ deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
+	gun.rotation.x = clamp(-vertical_angle,-30,30) #+ deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
 	aim_helper.look_at(player.global_transform.origin,Vector3.UP)
 	var ray_collider = ray_cast_3d.get_collider()
 	var vertical_angle_to_player = 0
@@ -112,9 +113,9 @@ func aim(delta):
 		
 func shoot():
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
-	var new_bullet = bullet.instantiate()	
-	new_bullet.position = gun.global_position
-	new_bullet.transform.basis = aim_helper.global_transform.basis
+	var new_bullet = bullet.instantiate()
+	new_bullet.position = aim_helper.global_position
+	new_bullet.transform.basis = gun.global_transform.basis
 	new_bullet.rotation.y = new_bullet.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)
 	new_bullet.rotation.z = new_bullet.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
 	get_tree().root.get_children()[0].add_child(new_bullet);

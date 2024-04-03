@@ -38,9 +38,11 @@ var gravity = 9.8
 
 
 
-@onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_ammo
-@onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_hp
-@onready var display_interaction = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_interaction
+@onready var canvas_layer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup
+
+@onready var display_ammo = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_ammo
+@onready var display_hp = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_hp
+@onready var display_interaction = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_interaction
 @onready var display_crosshair = $Head/Camera3D/CanvasLayer/Crosshair
 
 
@@ -78,23 +80,23 @@ var gravity = 9.8
 @onready var inventory_space = 3
 
 #inventory slots and icons
-@onready var display_inventory = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory
-@onready var inv_slot_1 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_1
-@onready var inv_slot_2 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_2
-@onready var inv_slot_3 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_3
+@onready var display_inventory = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory
+@onready var inv_slot_1 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_1
+@onready var inv_slot_2 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_2
+@onready var inv_slot_3 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_3
 @onready var icon_pistol = preload("res://Sprites/icons/icon_pistol_2.png")
 @onready var icon_shotgun = preload("res://Sprites/icons/icon_shotgun.png")
 @onready var icon_sniper = preload("res://Sprites/icons/icon_sniper.png")
 const icon_knife = preload("res://Sprites/icons/icon_knife.png")
 const icon_flashlight = preload("res://Sprites/icons/icon_flashlight.png")
-@onready var inventory_marker = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inventory_marker
-@onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_inventory/inv_timer
-@onready var help_text = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/help_text
+@onready var inventory_marker = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inventory_marker
+@onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_timer
+@onready var help_text = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/help_text
 
 #text bubble variables
-@onready var display_conversation = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_conversation
+@onready var display_conversation = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_conversation
 @onready var display_conversation_text = ""
-@onready var conversation_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/display_conversation/conversation_timer
+@onready var conversation_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_conversation/conversation_timer
 
 
 #preload equippment? move somewhere
@@ -280,6 +282,13 @@ func _physics_process(delta):
 	display_hp.clear()
 	display_hp.insert_text_at_caret(str(hp))
 	
+	if Input.is_action_just_pressed("key_hide_ui"):
+		if canvas_layer.visible == true:
+			canvas_layer.visible = false
+			
+		else:
+			canvas_layer.visible = true
+			
 	if Input.is_action_just_pressed("key_escape"):
 		_conversation_timeout()
 		
