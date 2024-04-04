@@ -9,6 +9,7 @@ extends Node3D
 var horizontal_shooting_error_range = 0
 var vertical_shooting_error_range = 0
 var player = null
+var turn_speed_scouting = 20
 var turn_speed_horizontally = 30
 var direction = 0
 
@@ -24,36 +25,41 @@ var direction = 0
 @onready var time_between_bullets = 10
 @export var angle = 50
 @onready var start_pos = transform.origin
+var current_angle = 0
 
 # Called when the node enters the scene tree for the first time.
-
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var going_left = false
-	var current_angle = 0
+	var going_left = true
+	
 
 	var target = ray_cast_3d.get_collision_point()
 	
-	print("state: "+ str(state))
+	#print("state: "+ str(state))
 	match state:
 		0:
+			print("current_angle: "+str(current_angle)+ "angle: "+str(angle))
+			print("going left: "+str(going_left))
 			if going_left:
-				current_angle += delta
+				current_angle += delta*turn_speed_scouting
 				if current_angle >= angle:
 					going_left = false
 			else:
-				current_angle -= delta
+				current_angle -= delta*turn_speed_scouting
 				if current_angle <= 0:
 					going_left = true
-			gun.rotate_y(current_angle)
+			gun.rotation.y=(deg_to_rad(current_angle))
+			if current_angle >= 360:
+				current_angle = 0
 			#if spott player
 			if ray_cast_3d.is_colliding():
 				if ray_cast_3d.get_collider().is_in_group("has_blood"):
-					state = 1
+					#state = 1
+					pass
 		1:#state follow player
 			#return to state 0
 			aim_helper.look_at(target)
