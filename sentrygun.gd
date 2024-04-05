@@ -63,8 +63,8 @@ func _process(delta):
 			#if spott player
 			if ray_cast_3d.is_colliding():
 				if ray_cast_3d.get_collider().is_in_group("has_blood"):
-					state = 1
-					#pass
+					#state = 1
+					pass
 		1:#state follow player
 			#return to state 0
 			aim_helper.look_at(target)

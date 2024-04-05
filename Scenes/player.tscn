@@ -249,7 +249,6 @@ collide_with_areas = true
 
 [node name="raycast_aim" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(1.91069e-16, 4.37114e-06, 0.1, 0.1, -4.37114e-06, 0, 4.37114e-09, 100, -4.37114e-09, 0, 0, 0)
-visible = false
 collision_mask = 3
 
 [node name="shader_underwater" parent="Head/Camera3D" instance=ExtResource("5_04qer")]

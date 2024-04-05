@@ -12,7 +12,6 @@ extends Node3D
 @onready var hands = $Node3D
 
 
-
 const RECOIL = 5
 @onready var pos_standard = Vector3(-0.20,-0.10,0.40)
 @onready var pos_ads = Vector3(-0.70,0.30,-1.17)
@@ -54,7 +53,6 @@ func _process(delta):
 	#print_debug("ads gun state: " + str(ads))
 	
 func shoot(inventory_selector,target_on_raycast):
-	
 	if animation_player.is_playing():
 		pass
 	else:
@@ -67,12 +65,16 @@ func shoot(inventory_selector,target_on_raycast):
 			emitter_shell.restart()
 			var new_bullet = bullet.instantiate()
 			if target_on_raycast != null:
-				aim_helper.look_at(target_on_raycast)
+				aim_helper.look_at(target_on_raycast,Vector3.UP)
+				
 				new_bullet.position = aim_helper.global_position
+				new_bullet.transform.basis = aim_helper.global_transform.basis
+				new_bullet.rotate_y(deg_to_rad(90))
 				print("shot with aim helper")
 			else:
 				new_bullet.position = barrel.global_position
-			new_bullet.transform.basis = global_transform.basis
+				new_bullet.transform.basis = global_transform.basis
+				print("shot without aim helper")
 			get_tree().root.get_children()[0].add_child(new_bullet)
 			new_bullet.ads = ads
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)

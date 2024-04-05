@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 160.0
+const SPEED = 10#160.0
 const ACCURACY = 0
 const dmg = 50
 const time_rooted = .5
@@ -38,12 +38,13 @@ func _physics_process(delta):
 	if raycast.is_colliding():
 		#print("raycast collision with:" + str(raycast.get_collider()) )
 		mesh.visible = false
-		if raycast.get_collider().is_in_group("has_blood"):
-			blood_splatter.on = true
-		else:
-			particles.emitting = true
-		if(raycast.get_collider().is_in_group("has_hp")):
-			raycast.get_collider().hit(dmg,time_rooted)
+		if(raycast.get_collider()!= null):
+			if raycast.get_collider().is_in_group("has_blood"):
+				blood_splatter.on = true
+			else:
+				particles.emitting = true
+			if(raycast.get_collider().is_in_group("has_hp")):
+				raycast.get_collider().hit(dmg,time_rooted)
 
 		raycast.enabled = false
 		await get_tree().create_timer(2.0).timeout
