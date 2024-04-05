@@ -404,11 +404,7 @@ func _physics_process(delta):
 	#shoot
 	if(Input.is_action_just_pressed("key_shoot")):
 		if equipped_id != -1:
-			if raycast_aim.is_colliding():
-				equipped.shoot(inventory_selector,raycast_aim.get_collision_point())
-			else:
-				equipped.shoot(inventory_selector,position+Vector3(0,0,-10))
-			
+			equipped.shoot(inventory_selector,raycast_head_place.global_position)
 			if (inventory[inventory_selector].loaded == 0 and inventory[inventory_selector].spare_ammo == 0 and equipped.is_in_group("consumeable")):
 				print("consumeable empty")
 				equipped.queue_free()

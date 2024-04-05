@@ -24,7 +24,7 @@ func _process(delta):
 		visible = true
 		once = false
 
-func shoot(inventory_selector,target_on_raycast):
+func shoot(inventory_selector,player_eyes_position):
 	
 	if animation_player.is_playing():
 		pass

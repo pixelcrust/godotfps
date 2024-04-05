@@ -18,7 +18,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func shoot(inventory_selector,target_on_raycast):
+func shoot(inventory_selector,player_eyes_position):
 	if animation_player.is_playing():
 		pass
 		

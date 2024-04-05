@@ -43,9 +43,3 @@ transform = Transform3D(7.63278e-16, 3.79514e-08, 1, 1, -4.37114e-08, 1.08959e-1
 
 [node name="muzzleflash" parent="Node3D/hand_right/model_pistol" instance=ExtResource("5_orytu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30845, 1.44925, -2.36758)
-
-[node name="aim_helper" type="Node3D" parent="Node3D/hand_right/model_pistol"]
-transform = Transform3D(-0.999846, -0.0174524, -8.74141e-08, -0.0174507, 0.99975, -0.0139622, 0.000243761, -0.01396, -0.999901, 1.30368, 1.20134, -2.50091)
-
-[node name="RayCast3D" type="RayCast3D" parent="Node3D/hand_right/model_pistol/aim_helper"]
-transform = Transform3D(-1.86265e-09, 4.37132e-08, -1, 1, -4.37854e-08, 0, -4.37068e-08, -1, -4.37163e-08, 8.34465e-07, -4.79221e-05, 0.0137367)

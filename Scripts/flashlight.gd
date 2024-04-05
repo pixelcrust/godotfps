@@ -16,12 +16,12 @@ func _ready():
 	visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if once == true:
 		visible = true
 		once = false
 
-func shoot(inventory_selector,_target_on_raycast):
+func shoot(_inventory_selector,_player_eyes_position):
 	if animation_player.is_playing():
 		pass
 	else:
@@ -40,7 +40,7 @@ func inspect():
 	else:
 		animation_player.play("inspect")
 		
-func reload(inventory_selector):
+func reload(_inventory_selector):
 	if animation_player.is_playing():
 		pass
 	else:

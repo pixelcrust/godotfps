@@ -52,7 +52,7 @@ func _process(delta):
 			mesh_instance_3d.visible = true
 			already = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func shoot(inventory_selector,target_on_raycast):
+func shoot(inventory_selector,player_eyes_position):
 	if animation_player.is_playing():
 		pass
 	else:
@@ -60,13 +60,8 @@ func shoot(inventory_selector,target_on_raycast):
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
 			var new_bullet = bullet.instantiate()
+			new_bullet.position = player_eyes_position
 			new_bullet.transform.basis = global_transform.basis
-			if target_on_raycast != null:
-				aim_helper.look_at(target_on_raycast)
-				new_bullet.position = aim_helper.global_position
-				print("shot with aim helper")
-			else:
-				new_bullet.position = barrel.global_position
 			get_tree().root.get_children()[0].add_child(new_bullet)
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))

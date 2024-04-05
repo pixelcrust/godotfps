@@ -39,7 +39,7 @@ func _process(delta):
 	#print_debug("ads state: " + str(ads))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func shoot(inventory_selector,target_on_raycast):
+func shoot(inventory_selector,player_eyes_position):
 		if animation_player.is_playing():
 			pass
 		else:		
@@ -50,14 +50,9 @@ func shoot(inventory_selector,target_on_raycast):
 				muzzleflash.restart()
 				for n in 6:
 					var new_shell = shell.instantiate()
-					new_shell.transform.basis = global_transform.basis
 					new_shell.ads = ads
-					if target_on_raycast != null:
-						aim_helper.look_at(target_on_raycast)
-						new_shell.position = aim_helper.global_position
-						print("shot with aim helper")
-					else:
-						new_shell.position = barrel.global_position
+					new_shell.position = player_eyes_position
+					new_shell.transform.basis = global_transform.basis
 					get_tree().root.get_children()[0].add_child(new_shell);
 				var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 				player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))

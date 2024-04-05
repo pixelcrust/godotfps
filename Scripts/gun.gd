@@ -52,7 +52,7 @@ func _process(delta):
 		
 	#print_debug("ads gun state: " + str(ads))
 	
-func shoot(inventory_selector,target_on_raycast):
+func shoot(inventory_selector,player_eyes_position):
 	if animation_player.is_playing():
 		pass
 	else:
@@ -64,7 +64,7 @@ func shoot(inventory_selector,target_on_raycast):
 			emitter_shell.set_emitting(true)
 			emitter_shell.restart()
 			var new_bullet = bullet.instantiate()
-			if target_on_raycast != null:
+			"""if target_on_raycast != null:
 				aim_helper.look_at(target_on_raycast,Vector3.UP)
 				
 				new_bullet.position = aim_helper.global_position
@@ -74,7 +74,12 @@ func shoot(inventory_selector,target_on_raycast):
 			else:
 				new_bullet.position = barrel.global_position
 				new_bullet.transform.basis = global_transform.basis
-				print("shot without aim helper")
+				print("shot without aim helper")"""
+			
+			new_bullet.position = player_eyes_position
+			new_bullet.transform.basis = global_transform.basis
+			
+			#new_bullet.rotate_y(deg_to_rad(90))
 			get_tree().root.get_children()[0].add_child(new_bullet)
 			new_bullet.ads = ads
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
