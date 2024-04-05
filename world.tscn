@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=32 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -23,11 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="21_cqm6c"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="22_j7lok"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
-[ext_resource type="PackedScene" uid="uid://d13ipgycehq68" path="res://Scenes/ladder_tile.tscn" id="24_odnro"]
 [ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/knife_dropped.tscn" id="26_g30ru"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
-[ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_c4j42"]
-[ext_resource type="PackedScene" uid="uid://dj1r66vn40rp2" path="res://Scenes/lava.tscn" id="28_co6hw"]
 [ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://sentrygun.tscn" id="29_6n3hy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
@@ -284,9 +281,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7097, 5.59156, -32.7606)
 [node name="Medikit" parent="." instance=ExtResource("22_j7lok")]
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 43.5852, 1.01999, -47.0143)
 
-[node name="ladder_tile" parent="." instance=ExtResource("24_odnro")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.8604, 1.52144, 30.3644)
-
 [node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(1, 0, 0, 0, 9, 0, 0, 0, 1, 22.0733, 11.5662, 27.4441)
 
@@ -299,32 +293,17 @@ transform = Transform3D(-0.995366, 0, 0.0961584, 0, 7, 0, -0.0961584, 0, -0.9953
 [node name="Beartrap2" parent="." instance=ExtResource("17_m7s0o")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 21.0097, 3.12506, 37.5189)
 
-[node name="gun_dropped2" parent="." instance=ExtResource("20_afjl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1656, 2.10924, 43.5622)
-
 [node name="knife_dropped" parent="." instance=ExtResource("26_g30ru")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.4322, 2.21679, 45.5815)
 
 [node name="Medikit2" parent="." instance=ExtResource("22_j7lok")]
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 20.4833, 2.23451, 43.4654)
 
-[node name="shotgun_dropped2" parent="." instance=ExtResource("21_cqm6c")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.8578, 1.7585, 40.5295)
-
-[node name="sniper_dropped3" parent="." instance=ExtResource("19_dim63")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.8363, 1.75161, 45.5933)
-
 [node name="Node3D26" parent="." instance=ExtResource("13_hkrc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6169, 5.74595, 35.6012)
 
-[node name="Water" parent="." instance=ExtResource("27_c4j42")]
-transform = Transform3D(8.14991, 0, 0, 0, 3.7, 0, 0, 0, 11.7614, 22.7713, 2.57632, 35.3644)
-
 [node name="note" parent="." instance=ExtResource("27_28sf7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6127, 0.846079, 40.6857)
-
-[node name="lava" parent="." instance=ExtResource("28_co6hw")]
-transform = Transform3D(6.6, 0, 0, 0, 1.97176, 0, 0, 0, 2.73501, 15.8604, 1.82222, 44.3644)
 
 [node name="sentrygun" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(0.766515, 0, -0.642226, 0, 1, 0, 0.642226, 0, 0.766515, 17.5304, 1.50613, 33.4515)
