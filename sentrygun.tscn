@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d6vrirhkna1a"]
+[gd_scene load_steps=11 format=3 uid="uid://d6vrirhkna1a"]
 
 [ext_resource type="Script" path="res://sentrygun.gd" id="1_61r0p"]
 [ext_resource type="Script" path="res://laser.gd" id="1_fwny5"]
+[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_kb1s8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wrrps"]
 
@@ -18,6 +19,11 @@ material = SubResource("StandardMaterial3D_3s7sy")
 top_radius = 0.02
 bottom_radius = 0.02
 height = 0.001
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yu1oo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ee3ax"]
+size = Vector3(0.427734, 0.475098, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_7cl2f"]
 
@@ -44,6 +50,20 @@ mesh = SubResource("CylinderMesh_ib2vb")
 [node name="aim_helper" type="Node3D" parent="gun/barrel"]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0.493284)
 
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="gun" groups=["has_hp"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_kb1s8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gun/PhysicalBone3D"]
+shape = SubResource("BoxShape3D_yu1oo")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="gun/PhysicalBone3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286133, -0.262451, 0.835489)
+shape = SubResource("BoxShape3D_ee3ax")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.313344, 0, 0, 0, 0.669138, 0, 0, 0, 0.436208, 0, 0, 0)
 mesh = SubResource("CylinderMesh_7cl2f")
+
+[connection signal="bodypart_hit" from="gun/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]

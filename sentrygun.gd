@@ -12,6 +12,8 @@ var player = null
 var turn_speed_scouting = 20
 var turn_speed_horizontally = 30
 var direction = 0
+var hp_start = 100
+var hp = hp_start
 
 @onready var state = 0
 """0 move left right
@@ -23,9 +25,10 @@ var direction = 0
 
 @onready var time_aiming = 120
 @onready var time_between_bullets = 10
-@export var angle = 50
+@export var angle_range = 50
 @onready var start_pos = transform.origin
 var current_angle = 0
+var going_left = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,20 +37,22 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var going_left = true
-	
+
+	if hp <= 0:
+		die()
 
 	var target = ray_cast_3d.get_collision_point()
 	
 	#print("state: "+ str(state))
 	match state:
 		0:
-			print("current_angle: "+str(current_angle)+ "angle: "+str(angle))
-			print("going left: "+str(going_left))
-			if going_left:
+			#print("current_angle: "+str(current_angle)+ " angle_range: "+str(angle_range))
+			#print("going left: "+str(going_left))
+			if going_left == true:
 				current_angle += delta*turn_speed_scouting
-				if current_angle >= angle:
+				if current_angle >= angle_range:
 					going_left = false
+					#print("current angle bigger!!!!!!!!!!!!!!!!")
 			else:
 				current_angle -= delta*turn_speed_scouting
 				if current_angle <= 0:
@@ -58,8 +63,8 @@ func _process(delta):
 			#if spott player
 			if ray_cast_3d.is_colliding():
 				if ray_cast_3d.get_collider().is_in_group("has_blood"):
-					#state = 1
-					pass
+					state = 1
+					#pass
 		1:#state follow player
 			#return to state 0
 			aim_helper.look_at(target)
@@ -72,6 +77,7 @@ func _process(delta):
 				if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
 					state = 3
 				else:
+					await get_tree().create_timer(1).timeout
 					state = 2
 		2:	#shoot
 			shoot()
@@ -79,8 +85,9 @@ func _process(delta):
 			#if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
 			state = 3
 		3: #wait until moving back
-			await get_tree().create_timer(1).timeout
+			
 			if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
+				await get_tree().create_timer(1).timeout
 				state = 4
 			else:
 				await get_tree().create_timer(3).timeout
@@ -129,3 +136,11 @@ func shoot():
 	new_bullet.rotation.y = new_bullet.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)
 	new_bullet.rotation.z = new_bullet.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
 	get_tree().root.get_children()[0].add_child(new_bullet);
+
+
+func _on_physical_bone_3d_bodypart_hit(dmg, time_rooted):
+	hp -= dmg
+	print("hp left: "+str(hp))
+
+func die():
+	queue_free()
