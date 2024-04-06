@@ -63,8 +63,8 @@ func _process(delta):
 			#if spott player
 			if ray_cast_3d.is_colliding():
 				if ray_cast_3d.get_collider().is_in_group("has_blood"):
-					#state = 1
-					pass
+					state = 1
+					#pass
 		1:#state follow player
 			#return to state 0
 			aim_helper.look_at(target)
@@ -72,13 +72,16 @@ func _process(delta):
 			#rotation.z = aim_helper.rotation.z
 			#rotation.y = aim_helper.rotation.y
 			if ray_cast_3d.is_colliding() == false:
-				state = 3
+				#state = 3
+				pass
 			else:
 				if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
-					state = 3
+					#state = 3
+					pass
 				else:
-					await get_tree().create_timer(1).timeout
-					state = 2
+					pass
+					#await get_tree().create_timer(1).timeout
+					#state = 2
 		2:	#shoot
 			shoot()
 			
@@ -117,9 +120,11 @@ func aim(delta):
 	var ray_collider = ray_cast_3d.get_collider()
 	var vertical_angle_to_player = 0
 	
+	
+	
 	if( ray_collider != player):
 		rotate_y(-deg_to_rad(aim_helper.rotation.y * turn_speed_horizontally*delta))
-		#arm.rotate_z(deg_to_rad(dir_to_player) * turn_speed_horizontally*delta)
+		##arm.rotate_z(deg_to_rad(dir_to_player) * turn_speed_horizontally*delta)
 		var ray_gun_collider = ray_cast_3d.get_collider()
 		
 	else:
