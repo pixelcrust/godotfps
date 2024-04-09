@@ -72,16 +72,16 @@ func _process(delta):
 			#rotation.z = aim_helper.rotation.z
 			#rotation.y = aim_helper.rotation.y
 			if ray_cast_3d.is_colliding() == false:
-				#state = 3
-				pass
+				state = 3
+				#pass
 			else:
 				if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
-					#state = 3
-					pass
+					state = 3
+					#pass
 				else:
-					pass
-					#await get_tree().create_timer(1).timeout
-					#state = 2
+					#pass
+					await get_tree().create_timer(1).timeout
+					state = 2
 		2:	#shoot
 			shoot()
 			
@@ -115,7 +115,7 @@ func aim(delta):
 	# Calculate the vertical angle (angle in the Y-axis)
 	var vertical_angle = atan2(direction.y, abs(direction.x))
 	#print_debug(rad_to_deg(vertical_angle))
-	gun.rotation.x = clamp(-vertical_angle,-30,30) #+ deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
+	"""gun.rotation.x = clamp(-vertical_angle,-30,30) #+ deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))"""
 	aim_helper.look_at(player.global_transform.origin,Vector3.UP)
 	var ray_collider = ray_cast_3d.get_collider()
 	var vertical_angle_to_player = 0
