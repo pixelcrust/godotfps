@@ -52,7 +52,7 @@ shadow_bias = 0.5
 environment = SubResource("Environment_kl5jl")
 
 [node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("3_leven")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7616, 0.733472, 41.8059)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08182, 13.9782, 22.3192)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, -1.31134e-07, 0, -4.37114e-08, -3, -1, -4.37114e-08, 5.73206e-15, 2.73411, 14.9843, -134.968)
@@ -67,9 +67,9 @@ size = Vector3(1, 103.869, 9.86759)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 3, 0, -1, -1.31134e-07, 29.7435, 14.953, -40.0556)
+transform = Transform3D(4.77017, 0.371744, 9.47261e-08, 0, -2.25708e-08, 3.01012, 4.94811, -0.358375, -9.13195e-08, 23.4192, 7.07491, 4.84588)
 use_collision = true
-size = Vector3(1, 103.869, 9.86759)
+size = Vector3(1, 103.869, 4.62119)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
@@ -85,13 +85,13 @@ size = Vector3(1, 103.869, 9.86759)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -1.31134e-07, 0, -4.37114e-08, 3, -1, 4.37114e-08, 5.73206e-15, 3.27135, 15.3085, 48.9182)
+transform = Transform3D(-0.729022, -0.683979, 0.0793674, 0.215905, -0.193103, 2.87139, -0.649547, 0.70348, 0.865352, 3.27135, 15.3085, 31.4157)
 use_collision = true
 size = Vector3(1, 103.869, 9.86759)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.546701, -0.837328, -1.09802e-07, -1.70615e-15, -4.37114e-08, 3, -0.837328, 0.546701, 7.16911e-08, -10.6596, 15.1384, 36.1499)
+transform = Transform3D(-0.546701, -0.837328, -1.09802e-07, -1.70615e-15, -4.37114e-08, 3, -0.837328, 0.546701, 7.16911e-08, -10.6596, 15.1384, -37.7849)
 use_collision = true
 size = Vector3(1, 103.869, 9.86759)
 material = SubResource("StandardMaterial3D_ld07o")
@@ -103,7 +103,7 @@ size = Vector3(100, 1, 200)
 material = SubResource("StandardMaterial3D_1yvm4")
 
 [node name="house" parent="." instance=ExtResource("20_2tsel")]
-transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 5.17598, 1.09647, 38.9463)
+transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 5.17598, 14.3135, 22.756)
 
 [node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(1, 0, 0, 0, 9, 0, 0, 0, 1, 22.0733, 11.5662, 27.4441)
