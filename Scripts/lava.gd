@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var player = 0
 @onready var time_rooted = 0
-@onready var dmg = 1
+@onready var dmg = 2
 @onready var collision_shape = $Area3D/CollisionShape3D
 @onready var area_3d_2 = $Area3D2
 @onready var player_burning = false
