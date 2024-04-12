@@ -131,7 +131,7 @@ transform = Transform3D(-0.995366, 0, 0.0961584, 0, 7, 0, -0.0961584, 0, -0.9953
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6127, 0.846079, 40.6857)
 
 [node name="sentrygun" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(0.766515, 0, -0.642226, 0, 1, 0, 0.642226, 0, 0.766515, 17.5304, 1.50613, 33.4515)
+transform = Transform3D(0.766515, 0, -0.642226, 0, 1, 0, 0.642226, 0, 0.766515, 25.5393, 15.2238, -0.975687)
 
 [node name="Water" parent="." instance=ExtResource("27_nijyp")]
 transform = Transform3D(44.8765, 0, 0, 0, 5.54374, 0, 0, 0, 38.5678, 3.37353, 9.62938, -2.02181)

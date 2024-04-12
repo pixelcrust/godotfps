@@ -44,6 +44,7 @@ func _physics_process(delta):
 			else:
 				particles.emitting = true
 			if(raycast.get_collider().is_in_group("has_hp")):
+				print("hit has_hp")
 				raycast.get_collider().hit(dmg,time_rooted)
 
 		raycast.enabled = false
