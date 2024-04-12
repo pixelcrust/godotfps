@@ -137,16 +137,16 @@ func _ready():
 	})
 	
 	inventory.append({
-		"item_id": 5, #grenade
+		"item_id": 1, #grenade
 		"loaded": 1,
-		"max_loaded": 1, # See above assignment.
-		"spare_ammo": 0
+		"max_loaded": 2, # See above assignment.
+		"spare_ammo": 20
 	})
 	inventory.append({
-		"item_id": 4, #flashlight
+		"item_id": 2, #flashlight
 		"loaded": 1,
 		"max_loaded": 1, 
-		"spare_ammo": 0
+		"spare_ammo": 10
 	})	
 
 	
