@@ -18,8 +18,6 @@ var horizontal_shooting_error_range = deg_to_rad(2)
 #0.. idle
 #1..aiming at player
 
-
-
 var player = null
 
 @export var turn_speed_horizontally = 30
@@ -31,7 +29,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	
 	player = get_tree().get_nodes_in_group("player")[0]
-	
 	
 func _physics_process(delta):
 	# Add the gravity.

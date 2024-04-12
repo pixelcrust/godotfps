@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 60.0
+const SPEED = 200.0
 const ACCURACY = 6
 const dmg = 100
 const time_rooted = 1

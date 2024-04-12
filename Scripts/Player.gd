@@ -310,7 +310,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("key_jump") and (is_on_floor() or in_water):
 		if is_on_ladder == false or interacted_with_ladder == false:
 			if in_water:
-				velocity.y = JUMP_VELOCITY/4
+				velocity.y = JUMP_VELOCITY/2
 			else:
 				velocity.y = JUMP_VELOCITY
 	
