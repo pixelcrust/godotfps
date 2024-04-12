@@ -116,7 +116,7 @@ size = Vector3(100, 1, 200)
 material = SubResource("StandardMaterial3D_1yvm4")
 
 [node name="house" parent="." instance=ExtResource("20_2tsel")]
-transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 5.17598, 14.3135, 22.756)
+transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 3.69666, 14.3135, 20.6546)
 
 [node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(0.0252696, 0, -0.999681, 0, 5.30652, 0, 0.999681, 0, 0.0252696, 27.214, 13.2513, -35.4024)
