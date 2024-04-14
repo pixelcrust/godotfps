@@ -257,6 +257,8 @@ func _physics_process(delta):
 		shader_underwater.visible = false
 	
 	if is_on_ladder == true and interacted_with_ladder == true:
+		if(equipped != null):
+			equipped.queue_free()
 		in_air_time = 0
 		velocity.y = 0
 		if Input.is_action_pressed("key_jump"):
@@ -268,6 +270,8 @@ func _physics_process(delta):
 			interacted_with_ladder = false
 		
 	else:
+		if(equipped == null):
+			equip_weapon()
 		state_move = 0
 	
 	if inventory.is_empty() == false:

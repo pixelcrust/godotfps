@@ -15,12 +15,13 @@ refraction_enabled = true
 material = SubResource("StandardMaterial3D_k00ix")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xr17b"]
-size = Vector3(1, 1, 0.207184)
+size = Vector3(1, 1, 0.12162)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_64qbl"]
-size = Vector3(1, 1, 0.0594482)
+size = Vector3(1, 1, 0.173676)
 
-[node name="glass" type="Node3D"]
+[node name="glass" type="StaticBody3D"]
+collision_layer = 4
 script = ExtResource("1_suv4c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -28,7 +29,7 @@ transform = Transform3D(1.00454, 0, 0, 0, 1.00454, 0, 0, 0, 0.056121, 0, 0, 0)
 mesh = SubResource("BoxMesh_tpqmk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.000869751)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00406267)
 shape = SubResource("BoxShape3D_xr17b")
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="." groups=["has_hp"]]
@@ -37,7 +38,7 @@ collision_mask = 2
 script = ExtResource("2_mfesd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalBone3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00238037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00636292)
 shape = SubResource("BoxShape3D_64qbl")
 
 [connection signal="bodypart_hit" from="PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
