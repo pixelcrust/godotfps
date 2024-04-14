@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=19 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player.tscn" id="3_leven"]
+[ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/glass.tscn" id="10_obugd"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
@@ -122,7 +123,7 @@ transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 
 transform = Transform3D(0.0252696, 0, -0.999681, 0, 5.30652, 0, 0.999681, 0, 0.0252696, 27.214, 13.2513, -35.4024)
 
 [node name="ladder2" parent="." instance=ExtResource("23_ntxv3")]
-transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 26.3537, 8.62771, 30.3851)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 3.9, 0, -1, 0, -4.37114e-08, 31.4733, 14.5831, -46.3514)
 
 [node name="ladder3" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(-0.995366, 0, 0.0961584, 0, 7, 0, -0.0961584, 0, -0.995366, 17.7196, 5.37876, 39.8708)
@@ -137,7 +138,7 @@ transform = Transform3D(0.766515, 0, -0.642226, 0, 1, 0, 0.642226, 0, 0.766515, 
 transform = Transform3D(44.8765, 0, 0, 0, 5.54374, 0, 0, 0, 38.5678, 3.37353, 9.62938, -2.02181)
 
 [node name="lava" parent="." instance=ExtResource("28_0cw5c")]
-transform = Transform3D(70.3071, 0, -17.6162, 0, 6.53162, 0, 11.1808, 0, 110.774, 12.7686, 8.16757, -90.4567)
+transform = Transform3D(70.3071, 0, -17.6162, 0, 10.4827, 0, 11.1808, 0, 110.774, 12.7889, 5.2084, -90.408)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5895, 7.92214, 0)
@@ -157,6 +158,12 @@ use_collision = true
 size = Vector3(10.796, 19.897, 11.7417)
 material = SubResource("StandardMaterial3D_ycdsb")
 
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGBox3D13"]
+transform = Transform3D(-0.999996, 0, -0.00268784, 0, 1, 0, 0.00268784, 0, -0.999996, -9.70358, -18.2867, 15.699)
+use_collision = true
+size = Vector3(10.796, 19.897, 11.7417)
+material = SubResource("StandardMaterial3D_ycdsb")
+
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(0.00134392, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00134392, 20.3164, 15.936, -40.8637)
 use_collision = true
@@ -168,3 +175,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2288, 11.2434, -20.6309)
 use_collision = true
 size = Vector3(10, 5, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
+
+[node name="glass" parent="." instance=ExtResource("10_obugd")]
+transform = Transform3D(2.72144, 0, 0, 0, 2.57502, 0, 0, 0, 1, 9.2633, 14.991, 13.9503)
