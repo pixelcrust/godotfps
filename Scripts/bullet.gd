@@ -14,6 +14,7 @@ const time_rooted = .5
 @onready var abweichung_y = 0
 @onready var ads = 3 #0.. bullet not shot from ads 1.. bullet shot from ads
 @onready var blood_splatter = $blood_splatter
+var visibility_cooldown = 5
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,7 +50,9 @@ func _physics_process(delta):
 		raycast.enabled = false
 		await get_tree().create_timer(2.0).timeout
 		queue_free()
-	
+	visibility_cooldown -= 1
+	if visibility_cooldown <= 0:
+		mesh.visible = true
 
 
 func _on_timer_timeout():
