@@ -8,7 +8,7 @@ radius = 0.1
 height = 0.3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bd7tb"]
-radius = 0.2
+radius = 0.241817
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_v1xo4")
