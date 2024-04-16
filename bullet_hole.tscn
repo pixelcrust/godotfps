@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ayj8i4chwmi"]
+
+[ext_resource type="Texture2D" uid="uid://c57wy784smj3s" path="res://Sprites/bullet_hole.png" id="1_rlhsr"]
+
+[node name="bullet_hole" type="Node3D"]
+
+[node name="Decal" type="Decal" parent="."]
+texture_albedo = ExtResource("1_rlhsr")

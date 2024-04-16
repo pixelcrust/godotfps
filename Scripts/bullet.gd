@@ -15,6 +15,7 @@ const time_rooted = .5
 @onready var ads = 3 #0.. bullet not shot from ads 1.. bullet shot from ads
 @onready var blood_splatter = $blood_splatter
 var visibility_cooldown = 5
+@onready var bullet_hole = preload("res://bullet_hole.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -44,6 +45,12 @@ func _physics_process(delta):
 				blood_splatter.on = true
 			else:
 				particles.emitting = true
+				
+				#create bullet hole
+				var new_bullet_hole = bullet_hole.instantiate()
+				new_bullet_hole.position = raycast.get_collision_point()
+				raycast.get_collider().add_child(new_bullet_hole)
+				
 			if(raycast.get_collider().is_in_group("has_hp")):
 				print("hit has_hp")
 				raycast.get_collider().hit(dmg,time_rooted)
