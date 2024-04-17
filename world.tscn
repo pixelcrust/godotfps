@@ -202,7 +202,7 @@ size = Vector3(10, 5, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="glass" parent="." instance=ExtResource("10_obugd")]
-transform = Transform3D(6.55068, 0.00693678, -1.22184, -0.0302293, 2.57501, 0.000766591, -6.31551, -0.00513024, -1.26735, 9.2633, 14.991, 10.8705)
+transform = Transform3D(4.37218, 0.00312711, 1.54388, -0.0302293, 2.57501, 0.000766592, 7.98004, 0.00804111, -0.845867, 14.8852, 14.991, 10.8705)
 
 [node name="bullet_hole" parent="." instance=ExtResource("11_hfhru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1419, 14.496, 12.9688)

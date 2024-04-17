@@ -12,7 +12,7 @@ extends Node3D
 @onready var hands = $Node3D
 
 
-const RECOIL = 5
+const RECOIL = 0#5
 @onready var pos_standard = Vector3(-0.20,-0.10,0.40)
 @onready var pos_ads = Vector3(-0.70,0.30,-1.17)
 #@onready var pos_change_in = Vector3(-1.0,0,0)
