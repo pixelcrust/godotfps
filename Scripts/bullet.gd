@@ -49,10 +49,13 @@ func _physics_process(delta):
 				#create bullet hole
 				var collision_normal = raycast.get_collision_normal()
 				var new_bullet_hole = bullet_hole.instantiate()
-				new_bullet_hole.global_transform.origin = raycast.get_collision_point()
+				new_bullet_hole.global_transform.origin = raycast.get_collision_point()#- Vector3(-1,-1,0)
 				#raycast.get_collider().add_child(new_bullet_hole)
 				print(str(raycast.get_collider()))
 				get_tree().root.get_children()[0].add_child(new_bullet_hole)
+				#if collision_normal == Vector3.DOWN:
+					#new_bullet_hole.rotation_degrees.x = 90
+				#elif collision_normal != Vector3.UP:
 				new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
 					
 				
