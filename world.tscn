@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=20 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player.tscn" id="3_leven"]
 [ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/glass.tscn" id="10_obugd"]
+[ext_resource type="PackedScene" uid="uid://3ayj8i4chwmi" path="res://bullet_hole.tscn" id="11_hfhru"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
@@ -202,3 +203,6 @@ material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="glass" parent="." instance=ExtResource("10_obugd")]
 transform = Transform3D(6.55068, 0.00693678, -1.22184, -0.0302293, 2.57501, 0.000766591, -6.31551, -0.00513024, -1.26735, 9.2633, 14.991, 10.8705)
+
+[node name="bullet_hole" parent="." instance=ExtResource("11_hfhru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.033, 14.0301, 12.52)

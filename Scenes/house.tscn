@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://bkpg6r2mr5lrj" path="res://textures/Wood_06-512x512.png" id="2_pqh74"]
 [ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/light.tscn" id="2_tc66t"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67vnw"]
+albedo_color = Color(0.839216, 0.839216, 0.839216, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f8fc2"]
 albedo_texture = ExtResource("1_rrwta")
 uv1_scale = Vector3(8, 8, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67vnw"]
-albedo_color = Color(0.839216, 0.839216, 0.839216, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkuj5"]
 albedo_texture = ExtResource("1_rrwta")
@@ -36,17 +36,17 @@ albedo_color = Color(0.909804, 0.909804, 0.909804, 1)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00388, 2.01248, -5.19564)
+use_collision = true
+size = Vector3(6, 4.2, 0.25)
+material = SubResource("StandardMaterial3D_67vnw")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -5)
 use_collision = true
 size = Vector3(6, 4.2, 0.25)
 material = SubResource("StandardMaterial3D_f8fc2")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00387621, 0.0124822, -0.195644)
-use_collision = true
-size = Vector3(6, 4.2, 0.25)
-material = SubResource("StandardMaterial3D_67vnw")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
