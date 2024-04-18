@@ -34,9 +34,8 @@ emission_energy_multiplier = 8.0
 material = SubResource("StandardMaterial3D_pxac7")
 size = Vector3(0.04, 0.04, 0.04)
 
-[node name="bullet_big" type="CharacterBody3D"]
+[node name="bullet_big" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235021, 0)
-collision_mask = 3
 script = ExtResource("1_llw34")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

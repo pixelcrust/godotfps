@@ -5,10 +5,9 @@ extends Node3D
 @onready var barrel = $MeshInstance3D/RayCast3D
 @onready var shell = preload("res://Scenes/shotgun_shell.tscn")
 @onready var player = null
-const RECOIL = 20
+const RECOIL = 0#20
 @onready var emitter_shell = $MeshInstance3D/GPUParticles3D
 @onready var muzzleflash = $MeshInstance3D/muzzleflash/GPUParticles3D
-@onready var aim_helper = $aim_helper
 
 
 @onready var pos_standard = Vector3(1.2,-0.6,-0.8)

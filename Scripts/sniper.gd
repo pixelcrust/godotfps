@@ -7,8 +7,8 @@ extends Node3D
 @onready var bullet = preload("res://Scenes/bullet_big.tscn")
 @onready var player = null
 @onready var zoom = 20
-const RECOIL = 10#15
-@onready var aim_helper = $aim_helper
+const RECOIL = 0#10#15
+
 
 
 @onready var pos_standard = Vector3(1.2,-0.6,-0.8)

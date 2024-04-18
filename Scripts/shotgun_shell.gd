@@ -1,7 +1,7 @@
 extends Node3D
 
 const SPEED = 80.0
-const ACCURACY = 0.35
+const ACCURACY = 0#0.35
 const dmg = 10
 const time_rooted = .1
 
@@ -13,7 +13,7 @@ const time_rooted = .1
 @onready var sound = $AudioStreamPlayer3D
 @onready var ads = 0
 @onready var blood_splatter = $blood_splatter
-
+var bullet_hole = preload("res://bullet_hole.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +31,16 @@ func _physics_process(delta):
 			blood_splatter.on = true
 		else:
 			particles.emitting = true
+			#create bullet hole
+			var collision_normal = raycast.get_collision_normal()
+			var new_bullet_hole = bullet_hole.instantiate()
+			new_bullet_hole.global_transform.origin = raycast.get_collision_point()#- Vector3(-1,-1,0)
+			#raycast.get_collider().add_child(new_bullet_hole)
+			get_tree().root.get_children()[0].add_child(new_bullet_hole)
+			#if collision_normal == Vector3.DOWN:
+			#new_bullet_hole.rotation_degrees.x = 90
+			#elif collision_normal != Vector3.UP:
+			new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
 		if(raycast.get_collider().is_in_group("has_hp")):
 			raycast.get_collider().hit(dmg,time_rooted)
 		raycast.enabled = false
