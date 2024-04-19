@@ -214,3 +214,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.6577
 
 [node name="shotgun_dropped" parent="." instance=ExtResource("13_yj2m1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.51668, 14.2635, 23.4052)
+
+[node name="note2" parent="." instance=ExtResource("27_28sf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8713, 8.42214, 0.172333)
+title = "Really?"
+text = "Domi"

@@ -34,6 +34,8 @@ var gravity = 9.8
 @onready var node_flashlight = $Head/Camera3D/flashlight
 @onready var raycast_aim = $Head/Camera3D/raycast_aim
 @onready var raycast_head_place = $Head/Camera3D/raycast_head_place
+@onready var bullet_spawn = $Head/Camera3D/bullet_spawn
+
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 
 
@@ -408,7 +410,8 @@ func _physics_process(delta):
 	#shoot
 	if(Input.is_action_just_pressed("key_shoot")):
 		if equipped_id != -1:
-			equipped.shoot(inventory_selector,raycast_head_place.global_position)
+			print("player_head_place: "+ str(bullet_spawn.global_position))
+			equipped.shoot(inventory_selector,bullet_spawn.global_position,true)
 			if (inventory[inventory_selector].loaded == 0 and inventory[inventory_selector].spare_ammo == 0 and equipped.is_in_group("consumeable")):
 				print("consumeable empty")
 				equipped.queue_free()

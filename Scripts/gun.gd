@@ -52,7 +52,7 @@ func _process(delta):
 		
 	#print_debug("ads gun state: " + str(ads))
 	
-func shoot(inventory_selector,player_eyes_position):
+func shoot(inventory_selector,player_eyes_position,player_shot):
 	if animation_player.is_playing():
 		pass
 	else:
@@ -78,10 +78,9 @@ func shoot(inventory_selector,player_eyes_position):
 			
 			new_bullet.position = player_eyes_position
 			new_bullet.transform.basis = global_transform.basis
-			
-			#new_bullet.rotate_y(deg_to_rad(90))
 			get_tree().root.get_children()[0].add_child(new_bullet)
 			new_bullet.ads = ads
+			new_bullet.player_shot = player_shot
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
 			await get_tree().create_timer(0.5).timeout

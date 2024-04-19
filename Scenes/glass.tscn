@@ -21,7 +21,6 @@ size = Vector3(1, 1, 0.12162)
 size = Vector3(1, 1, 0.173676)
 
 [node name="glass" type="StaticBody3D"]
-collision_layer = 4
 script = ExtResource("1_suv4c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

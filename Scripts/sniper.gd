@@ -52,7 +52,7 @@ func _process(delta):
 			mesh_instance_3d.visible = true
 			already = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func shoot(inventory_selector,player_eyes_position):
+func shoot(inventory_selector,player_eyes_position,player_shot):
 	if animation_player.is_playing():
 		pass
 	else:

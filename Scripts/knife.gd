@@ -18,7 +18,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func shoot(inventory_selector,player_eyes_position):
+func shoot(inventory_selector,player_eyes_position,player_shot):
 	if animation_player.is_playing():
 		pass
 		

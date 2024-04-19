@@ -62,8 +62,9 @@ func _process(delta):
 				current_angle = 0
 			#if spott player
 			if ray_cast_3d.is_colliding():
-				if ray_cast_3d.get_collider().is_in_group("has_blood"):
-					state = 1
+				if ray_cast_3d.get_collider() != null:
+					if ray_cast_3d.get_collider().is_in_group("has_blood"):
+						state = 1
 					#pass
 		1:#state follow player
 			#return to state 0
@@ -90,8 +91,9 @@ func _process(delta):
 		3: #wait until moving back
 			
 			if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
-				await get_tree().create_timer(1).timeout
-				state = 4
+				if ray_cast_3d.get_collider() != null:
+					await get_tree().create_timer(1).timeout
+					state = 4
 			else:
 				await get_tree().create_timer(3).timeout
 				state = 2

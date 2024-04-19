@@ -19,6 +19,8 @@ subdivide_depth = 32
 orientation = 0
 
 [node name="shader_underwater" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = SubResource("PlaneMesh_02qpe")

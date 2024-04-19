@@ -102,7 +102,6 @@ _data = {
 }
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0040685, 0)
 collision_layer = 4
 script = ExtResource("1_sfosh")
 
@@ -243,7 +242,6 @@ wait_time = 2.0
 
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(5.73208e-15, 1.31134e-07, 3, 3, -1.31134e-07, -1.92556e-20, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0.514353)
-visible = false
 collision_mask = 8
 collide_with_areas = true
 
@@ -252,14 +250,17 @@ transform = Transform3D(1.91069e-16, 4.37114e-06, 0.1, 0.1, -4.37114e-06, 0, 4.3
 collision_mask = 3
 
 [node name="shader_underwater" parent="Head/Camera3D" instance=ExtResource("5_04qer")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.913824)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.5)
 visible = false
 
 [node name="raycast_head_place" type="RayCast3D" parent="Head/Camera3D"]
-transform = Transform3D(9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -2.18557e-08, 0, 0, 0)
+transform = Transform3D(9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 1.05879e-22, 2.18557e-08, 0.5, -2.18557e-08, 0, 0, 0)
 collision_mask = 256
 hit_from_inside = true
 collide_with_areas = true
+
+[node name="bullet_spawn" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]
 collision_layer = 2
