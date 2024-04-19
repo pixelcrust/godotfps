@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 50#60.0
+const SPEED = 40#60.0
 const ACCURACY = 0#5
 const dmg = 50
 const time_rooted = .5
@@ -14,7 +14,7 @@ const time_rooted = .5
 @onready var abweichung_y = 0
 @onready var ads = 3 #0.. bullet not shot from ads 1.. bullet shot from ads
 @onready var blood_splatter = $blood_splatter
-var visibility_cooldown = .5
+var visibility_cooldown = 1
 @onready var bullet_hole = preload("res://bullet_hole.tscn")
 @onready var player_shot = false
 
@@ -66,6 +66,7 @@ func _physics_process(delta):
 				if(raycast.get_collider().is_in_group("has_hp")):
 					print("hit has_hp")
 					raycast.get_collider().hit(dmg,time_rooted)
+			visibility_cooldown = 2
 			raycast.enabled = false
 			await get_tree().create_timer(2.0).timeout
 			queue_free()
