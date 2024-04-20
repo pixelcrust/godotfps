@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 40#60.0
+const SPEED = 60.0
 const ACCURACY = 0#5
 const dmg = 50
 const time_rooted = .5
@@ -17,7 +17,8 @@ const time_rooted = .5
 var visibility_cooldown = 1
 @onready var bullet_hole = preload("res://bullet_hole.tscn")
 @onready var player_shot = false
-
+var pos_before = Vector3(0,0,0)
+var victim = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,8 +41,12 @@ func _physics_process(delta):
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
 	visibility_cooldown -= delta
 	if raycast.is_colliding():
+		victim = raycast.get_collider()
+	
+	#execute when target found
+	if(victim != null):
 		#print("raycast collision with:" + str(raycast.get_collider()) )
-		if((player_shot == true) && (raycast.get_collider().is_in_group("group_player") == true)):
+		if((player_shot == true) && (victim.is_in_group("group_player") == true)):
 			pass
 		else:
 			mesh.visible = false
