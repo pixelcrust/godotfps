@@ -224,7 +224,7 @@ func _physics_process(delta):
 	#print("is on ladder: "+str(is_on_ladder)+" interacted with ladder: "+str(interacted_with_ladder))
 	if not is_on_floor():
 		if is_on_ladder == false or interacted_with_ladder == false:
-			if not in_water:
+			if not under_water:
 				velocity.y -= gravity * delta
 				state_move = 3
 				in_air_time += delta

@@ -63,7 +63,7 @@ func shoot(inventory_selector,player_eyes_position,player_shot):
 			muzzleflash.restart()
 			emitter_shell.set_emitting(true)
 			emitter_shell.restart()
-			var new_bullet = bullet.instantiate()
+			
 			"""if target_on_raycast != null:
 				aim_helper.look_at(target_on_raycast,Vector3.UP)
 				
@@ -76,11 +76,16 @@ func shoot(inventory_selector,player_eyes_position,player_shot):
 				new_bullet.transform.basis = global_transform.basis
 				print("shot without aim helper")"""
 			
+			var new_bullet = bullet.instantiate()
 			new_bullet.position = player_eyes_position
 			new_bullet.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_bullet)
+			
+			#set bullet variables
 			new_bullet.ads = ads
 			new_bullet.player_shot = player_shot
+			
+			#recoil to the camera
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
 			await get_tree().create_timer(0.5).timeout
