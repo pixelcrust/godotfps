@@ -52,7 +52,7 @@ func _process(delta):
 		
 	#print_debug("ads gun state: " + str(ads))
 	
-func shoot(inventory_selector,player_eyes_position,player_shot):
+func shoot(inventory_selector,player_eyes,player_shot,collision_point):
 	if animation_player.is_playing():
 		pass
 	else:
@@ -77,8 +77,11 @@ func shoot(inventory_selector,player_eyes_position,player_shot):
 				print("shot without aim helper")"""
 			
 			var new_bullet = bullet.instantiate()
-			new_bullet.position = player_eyes_position
+			new_bullet.position = player_eyes.global_position
 			new_bullet.transform.basis = global_transform.basis
+			#new_bullet.transform.basis = player_eyes.global_transform.basis
+			#new_bullet.rotate_y(deg_to_rad(90))
+			#new_bullet.target = collision_point
 			get_tree().root.get_children()[0].add_child(new_bullet)
 			
 			#set bullet variables

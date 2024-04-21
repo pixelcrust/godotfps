@@ -19,6 +19,8 @@ var visibility_cooldown = 1
 @onready var player_shot = false
 var pos_before = Vector3(0,0,0)
 var victim = null
+var target = Vector3(0,0,0)
+var once = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,6 +32,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	"""if once == 0:
+		look_at(target)
+		rotate_y(deg_to_rad(90))
+		once = 1"""
 	#set inacuracy
 	if ads == 1:
 		abweichung_x = 0

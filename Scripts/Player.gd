@@ -411,7 +411,11 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("key_shoot")):
 		if equipped_id != -1:
 			print("player_head_place: "+ str(bullet_spawn.global_position))
-			equipped.shoot(inventory_selector,bullet_spawn.global_position,true)
+			var victim = null
+			if raycast_aim.is_colliding() == true:
+				victim = raycast_aim.get_collision_point()
+				bullet_spawn.look_at(victim)
+			equipped.shoot(inventory_selector,bullet_spawn,true,victim)
 			if (inventory[inventory_selector].loaded == 0 and inventory[inventory_selector].spare_ammo == 0 and equipped.is_in_group("consumeable")):
 				print("consumeable empty")
 				equipped.queue_free()

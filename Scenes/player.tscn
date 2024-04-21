@@ -242,6 +242,7 @@ wait_time = 2.0
 
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(5.73208e-15, 1.31134e-07, 3, 3, -1.31134e-07, -1.92556e-20, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0.514353)
+visible = false
 collision_mask = 8
 collide_with_areas = true
 
@@ -255,6 +256,7 @@ visible = false
 
 [node name="raycast_head_place" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 1.05879e-22, 2.18557e-08, 0.5, -2.18557e-08, 0, 0, 0)
+visible = false
 collision_mask = 256
 hit_from_inside = true
 collide_with_areas = true
