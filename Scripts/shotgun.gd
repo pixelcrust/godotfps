@@ -38,7 +38,7 @@ func _process(delta):
 	#print_debug("ads state: " + str(ads))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func shoot(inventory_selector,player_eyes_position,player_shot):
+func shoot(inventory_selector,player_eyes_position,player_shot,collision_point):
 		if animation_player.is_playing():
 			pass
 		else:		
