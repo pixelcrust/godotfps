@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2csfac4jugp2"]
+[gd_scene load_steps=10 format=3 uid="uid://d2csfac4jugp2"]
 
 [ext_resource type="Script" path="res://Scripts/water.gd" id="1_kvjo7"]
+[ext_resource type="PackedScene" uid="uid://crpd1ra254rh8" path="res://water_splash.tscn" id="2_e13oy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_us7j0"]
 
@@ -79,7 +80,7 @@ void fragment() {
 	float ref_amount = 1.0 - albedo.a * albedo_tex.a;
 	EMISSION += textureLod(screen_texture,ref_ofs,ROUGHNESS * 8.0).rgb * ref_amount * EXPOSURE;
 	ALBEDO *= 1.0 - ref_amount;
-	ALPHA = 1.0;
+	ALPHA = 0.5;
 }
 "
 
@@ -123,9 +124,11 @@ material = SubResource("ShaderMaterial_asa0l")
 [node name="Water" type="Node3D"]
 script = ExtResource("1_kvjo7")
 
+[node name="water_splash" parent="." instance=ExtResource("2_e13oy")]
+
 [node name="Area3D" type="Area3D" parent="." groups=["liquid"]]
 collision_layer = 263
-collision_mask = 6
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_us7j0")
@@ -135,4 +138,3 @@ mesh = SubResource("BoxMesh_l1iw8")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
-[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]

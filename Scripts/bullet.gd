@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 1#60.0
+const SPEED = 60.0
 const ACCURACY = 0#5
 const dmg = 50
 const time_rooted = .5
@@ -65,7 +65,7 @@ func _physics_process(delta):
 					#create bullet hole
 					var collision_normal = raycast.get_collision_normal()
 					var new_bullet_hole = bullet_hole.instantiate()
-					new_bullet_hole.global_transform.origin = raycast.get_collision_point()#- Vector3(-1,-1,0)
+					new_bullet_hole.global_transform.origin = raycast.get_collision_point()# - Vector3(0,0,0)
 					#raycast.get_collider().add_child(new_bullet_hole)
 					get_tree().root.get_children()[0].add_child(new_bullet_hole)
 					#if collision_normal == Vector3.DOWN:

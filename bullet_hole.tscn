@@ -1,13 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://3ayj8i4chwmi"]
 
-[ext_resource type="Texture2D" uid="uid://c57wy784smj3s" path="res://Sprites/bullet_hole.png" id="1_rlhsr"]
+[ext_resource type="Texture2D" uid="uid://k785cewjkh8i" path="res://Sprites/bullet_hole2.png" id="1_nxffp"]
 
 [node name="bullet_hole" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 
 [node name="Decal" type="Decal" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-size = Vector3(0.1, 1, 0.1)
-texture_albedo = ExtResource("1_rlhsr")
-upper_fade = 1e-05
-lower_fade = 1e-05
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+size = Vector3(0.1, 2, 0.1)
+texture_albedo = ExtResource("1_nxffp")

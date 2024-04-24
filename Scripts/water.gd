@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var player = 0
+@onready var water_splash = $water_splash
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,16 +14,16 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
-	
+	water_splash.global_position = body.global_position
+	water_splash.emitter.restart()
+	water_splash.emitter.emitting = true
 	if body == player:
 		player.in_water = true 
 	#print(player.bone_head)
+	
 	
 
 
 func _on_area_3d_body_exited(body):
 	if body == player:
 		player.in_water = false
-
-func _on_area_3d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	pass
