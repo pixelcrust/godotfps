@@ -69,7 +69,7 @@ func _process(delta):
 					get_tree().root.get_children()[0].add_child(new_bullet_hole)
 					new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
 				if(raycast.get_collider().is_in_group("has_hp")):
-					print("hit has_hp")
+					#print("hit has_hp")
 					raycast.get_collider().hit(dmg,time_rooted)
 			visibility_cooldown = 2
 			raycast.set_enabled(false)

@@ -85,7 +85,9 @@ func _process(delta):
 					await get_tree().create_timer(1).timeout
 					state = 2
 		2:	#shoot
-			shoot(1)
+			if once == 1:
+				shoot(1)
+				once = 0
 			await get_tree().create_timer(3).timeout
 			#if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
 			state = 3
@@ -97,6 +99,7 @@ func _process(delta):
 					state = 4
 			else:
 				await get_tree().create_timer(3).timeout
+				once = 1
 				state = 2
 		4: #move back to starting position
 			transform.origin = start_pos
