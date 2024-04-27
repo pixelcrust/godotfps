@@ -78,8 +78,8 @@ mesh = ExtResource("2_oqcbj")
 surface_material_override/0 = SubResource("StandardMaterial3D_8xk0m")
 
 [node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
-collision_mask = 2
+transform = Transform3D(15, 0, 0, 0, -1, 2.26494e-06, 0, -1.50996e-07, -15, 0, 0.322708, 0)
+collision_mask = 3
 
 [node name="Area3D" type="Area3D" parent="MeshInstance3D" groups=["interactable"]]
 collision_layer = 8
