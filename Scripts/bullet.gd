@@ -31,7 +31,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _process(delta):
 	"""if once == 0:
 		look_at(target)
 		rotate_y(deg_to_rad(90))
@@ -66,19 +66,14 @@ func _physics_process(delta):
 					var collision_normal = raycast.get_collision_normal()
 					var new_bullet_hole = bullet_hole.instantiate()
 					new_bullet_hole.global_transform.origin = raycast.get_collision_point()# - Vector3(0,0,0)
-					#raycast.get_collider().add_child(new_bullet_hole)
 					get_tree().root.get_children()[0].add_child(new_bullet_hole)
-					#if collision_normal == Vector3.DOWN:
-						#new_bullet_hole.rotation_degrees.x = 90
-					#elif collision_normal != Vector3.UP:
 					new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
-						
-					
 				if(raycast.get_collider().is_in_group("has_hp")):
 					print("hit has_hp")
 					raycast.get_collider().hit(dmg,time_rooted)
 			visibility_cooldown = 2
-			raycast.enabled = false
+			raycast.set_enabled(false)
+			victim = null
 			await get_tree().create_timer(2.0).timeout
 			queue_free()
 	elif visibility_cooldown <= 0:

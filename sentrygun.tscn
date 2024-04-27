@@ -52,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.13687e-13, 1, 0, -0.00277205, 0)
 mesh = SubResource("CylinderMesh_ib2vb")
 
 [node name="aim_helper" type="Node3D" parent="gun/barrel"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0.493284)
+transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 1, 0, 0, 0.993635)
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="gun" groups=["has_hp"]]
 collision_layer = 2

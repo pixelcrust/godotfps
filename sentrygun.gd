@@ -29,6 +29,7 @@ var hp = hp_start
 @onready var start_pos = transform.origin
 var current_angle = 0
 var going_left = true
+var once = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -84,8 +85,8 @@ func _process(delta):
 					await get_tree().create_timer(1).timeout
 					state = 2
 		2:	#shoot
-			shoot()
-			
+			shoot(1)
+			await get_tree().create_timer(3).timeout
 			#if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
 			state = 3
 		3: #wait until moving back
@@ -134,15 +135,16 @@ func aim(delta):
 		#print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
 		pass
 		
-func shoot():
+func shoot(number_bullets):
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
 	#await get_tree().create_timer(3).timeout
-	var new_bullet = bullet.instantiate()
-	new_bullet.position = aim_helper.global_position
-	new_bullet.transform.basis = aim_helper.global_transform.basis
-	new_bullet.rotation.y = new_bullet.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)
-	new_bullet.rotation.z = new_bullet.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
-	get_tree().root.get_children()[0].add_child(new_bullet);
+	for i in number_bullets:
+		var new_bullet = bullet.instantiate()
+		new_bullet.position = aim_helper.global_position
+		new_bullet.transform.basis = aim_helper.global_transform.basis
+		new_bullet.rotation.y = new_bullet.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)
+		new_bullet.rotation.z = new_bullet.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+		get_tree().root.get_children()[0].add_child(new_bullet);
 
 
 func _on_physical_bone_3d_bodypart_hit(dmg, time_rooted):
