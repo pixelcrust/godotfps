@@ -5,6 +5,8 @@ extends Node3D
 @onready var laser = $gun/barrel/RayCast3D/laser
 @onready var aim_helper = $gun/barrel/aim_helper
 @onready var bullet = preload("res://Scenes/bullet.tscn")
+@onready var timer_shooting = $Timer
+var cd_bullet = 50
 
 var horizontal_shooting_error_range = 0
 var vertical_shooting_error_range = 0
@@ -29,7 +31,7 @@ var hp = hp_start
 @onready var start_pos = transform.origin
 var current_angle = 0
 var going_left = true
-var once = 1
+var is_shooting = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -82,24 +84,23 @@ func _process(delta):
 					#pass
 				else:
 					#pass
-					await get_tree().create_timer(1).timeout
+					#await get_tree().create_timer(1).timeout
 					state = 2
 		2:	#shoot
-			if once == 1:
-				shoot(1)
-				once = 0
-			await get_tree().create_timer(3).timeout
+			if is_shooting == false:
+				shoot(3)
+				is_shooting = true
+			#await get_tree().create_timer(3).timeout
 			#if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
 			state = 3
 		3: #wait until moving back
 			
 			if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
 				if ray_cast_3d.get_collider() != null:
-					await get_tree().create_timer(1).timeout
+					#await get_tree().create_timer(1).timeout
 					state = 4
 			else:
-				await get_tree().create_timer(3).timeout
-				once = 1
+				#await get_tree().create_timer(3).timeout
 				state = 2
 		4: #move back to starting position
 			transform.origin = start_pos
@@ -141,6 +142,7 @@ func aim(delta):
 func shoot(number_bullets):
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
 	#await get_tree().create_timer(3).timeout
+	timer_shooting.start()
 	for i in number_bullets:
 		var new_bullet = bullet.instantiate()
 		new_bullet.position = aim_helper.global_position
@@ -156,3 +158,7 @@ func _on_physical_bone_3d_bodypart_hit(dmg, time_rooted):
 
 func die():
 	queue_free()
+
+
+func _on_timer_timeout():
+	is_shooting = false

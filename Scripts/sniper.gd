@@ -52,7 +52,7 @@ func _process(delta):
 			mesh_instance_3d.visible = true
 			already = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func shoot(inventory_selector,player_eyes_position,player_shot,collision_point):
+func shoot(inventory_selector,player_eyes,player_shot,collision_point):
 	if animation_player.is_playing():
 		pass
 	else:
@@ -60,7 +60,7 @@ func shoot(inventory_selector,player_eyes_position,player_shot,collision_point):
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
 			var new_bullet = bullet.instantiate()
-			new_bullet.position = player_eyes_position
+			new_bullet.position = player_eyes.global_position
 			new_bullet.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_bullet)
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
