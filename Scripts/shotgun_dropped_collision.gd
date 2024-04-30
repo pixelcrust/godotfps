@@ -1,6 +1,6 @@
 extends Area3D
 @onready var object = $"../.."
-
+@onready var model = $"../shotgun"
 @onready var array = []
 
 
@@ -15,6 +15,5 @@ func _process(delta):
 	pass
 
 func get_outline_meshes():
-	array.clear()
-	array.append(object)
+	array.append(model)
 	return array

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k785cewjkh8i"
-path.s3tc="res://.godot/imported/bullet_hole2.png-e274b92c0d5615ae3d5b9832a353d196.s3tc.ctex"
+uid="uid://8njfphnitr7y"
+path.s3tc="res://.godot/imported/shotgun_Metal_17-256x256.png-2399436f57538012e0e3d99cc4a88a16.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "ee18809248a03345678114324fc17300"
+}
 
 [deps]
 
-source_file="res://Sprites/bullet_hole2.png"
-dest_files=["res://.godot/imported/bullet_hole2.png-e274b92c0d5615ae3d5b9832a353d196.s3tc.ctex"]
+source_file="res://resources/Ultimate Nature Pack - Jun 2019-20230622T063216Z-001/Ultimate Nature Pack - Jun 2019/FBX/shotgun_Metal_17-256x256.png"
+dest_files=["res://.godot/imported/shotgun_Metal_17-256x256.png-2399436f57538012e0e3d99cc4a88a16.s3tc.ctex"]
 
 [params]
 

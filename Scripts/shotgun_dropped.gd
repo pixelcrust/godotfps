@@ -2,6 +2,8 @@ extends Node3D
 @onready var interaction_time = .5
 @onready var rigid_body = $RigidBody3D
 @onready var outline_mesh = $RigidBody3D/MeshInstance3D/MeshInstance3D
+@onready var shotgun = $RigidBody3D/shotgun
+
 
 @onready var player = 0
 const item_id = 1
@@ -20,7 +22,10 @@ const max_loaded = 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
-
+	shotgun.mesh1.set_layer_mask_value(1,true)
+	shotgun.mesh1.set_layer_mask_value(2,false)
+	shotgun.mesh2.set_layer_mask_value(1,true)
+	shotgun.mesh2.set_layer_mask_value(2,false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
