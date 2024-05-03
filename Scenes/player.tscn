@@ -262,6 +262,7 @@ hit_from_inside = true
 collide_with_areas = true
 
 [node name="bullet_spawn" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 2.11758e-22, 1, 0, 0, 1.481e-28, 1, 0, 0, 0)
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]
 collision_layer = 2

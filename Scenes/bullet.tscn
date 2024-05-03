@@ -38,6 +38,7 @@ material = SubResource("StandardMaterial3D_pxac7")
 size = Vector3(0.04, 0.04, 0.04)
 
 [node name="bullet" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12283, 0, 0)
 script = ExtResource("1_1urrn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -45,7 +46,7 @@ transform = Transform3D(-4.37114e-09, 0.5, -4.37114e-09, 0, -2.18557e-08, -0.1, 
 mesh = SubResource("CylinderMesh_ylqc2")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.327833, 0, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.108022, 0, 0)
 collision_mask = 3
 hit_from_inside = true
 

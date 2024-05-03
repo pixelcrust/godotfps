@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 60.0
+var SPEED = 60.0
 const ACCURACY = 0#5
 const dmg = 50
 const time_rooted = .5
@@ -21,12 +21,13 @@ var pos_before = Vector3(0,0,0)
 var victim = null
 var target = Vector3(0,0,0)
 var once = 0
-
+var position_bullet_before = Vector3(0,0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	$AudioStreamPlayer3D.play(0.0)
 	#pass  #Replace with function body.
+	position_bullet_before = global_position
 	
 
 
@@ -36,6 +37,9 @@ func _process(delta):
 		look_at(target)
 		rotate_y(deg_to_rad(90))
 		once = 1"""
+		
+	
+	
 	#set inacuracy
 	if ads == 1:
 		abweichung_x = 0
@@ -46,17 +50,37 @@ func _process(delta):
 	#print_debug("abweichung_x,abweichung_y:" +str(abweichung_x)+"/"+str(abweichung_y))
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
 	visibility_cooldown -= delta
+	
 	if raycast.is_colliding():
 		victim = raycast.get_collider()
 	
 	
+	
+	
+	"""var MIN_RAYCAST_DISTANCE = 0.05
+	if SPEED > MIN_RAYCAST_DISTANCE:
+		raycast.target_position.z = -SPEED
+		raycast.transform.origin.z = SPEED
+	else:
+		raycast.target_position.z = -MIN_RAYCAST_DISTANCE
+		raycast.transform.origin.z = MIN_RAYCAST_DISTANCE
+	
+	raycast.transform.origin = position_bullet_before
+	raycast.target_position = global_position	
+		
+		"""
+	
+	
+	
+	raycast.force_raycast_update()
 	#execute when target found
 	if(victim != null):
-		#print("raycast collision with:" + str(raycast.get_collider()) )
+		SPEED = 0
+		print("raycast collision with:" + str(victim) )
 		if((player_shot == true) && (victim.is_in_group("group_player") == true)):
 			pass
 		else:
-			mesh.visible = false
+			#mesh.visible = false
 			if(raycast.get_collider()!= null):
 				if raycast.get_collider().is_in_group("has_blood"):
 					blood_splatter.on = true
@@ -79,7 +103,8 @@ func _process(delta):
 			queue_free()
 	elif visibility_cooldown <= 0:
 		mesh.visible = true
-
+	#print("pos before: "+str(position_bullet_before)+"pos_now: "+str(global_position))
+	position_bullet_before = global_position
 
 func _on_timer_timeout():
 	queue_free()
