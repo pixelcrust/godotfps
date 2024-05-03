@@ -520,7 +520,7 @@ func equip_weapon():
 				camera.add_child(new_shotgun)
 				new_shotgun.position = camera.position
 				new_shotgun.rotate_y(deg_to_rad(90))
-				new_shotgun.transform.origin = Vector3(1,-0.8,-1)
+				new_shotgun.transform.origin = Vector3(0.4,-0.6,-1.4)
 				new_shotgun.animation_player.play("change weapon in")
 				new_shotgun.player = $"." #get the inventory of the player
 				equipped = new_shotgun

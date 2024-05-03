@@ -1,6 +1,8 @@
 extends Node3D
 
 @onready var animation_player = $AnimationPlayer
+@onready var shotgun = $shotgun
+
 #@onready var sound = $AnimationPlayer
 @onready var barrel = $shotgun/RayCast3D
 @onready var shell = preload("res://Scenes/shotgun_shell.tscn")
@@ -10,8 +12,8 @@ const RECOIL = 0#20
 @onready var muzzleflash = $shotgun/muzzleflash/GPUParticles3D
 
 
-@onready var pos_standard = Vector3(1.2,-0.6,-0.8)
-@onready var pos_ads = Vector3(-0.03,-0.45,-0.5)
+@onready var pos_standard = Vector3(0.4,-0.6,-1.4)
+@onready var pos_ads = Vector3(-0.1,-0.3,-0.9)
 
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
@@ -66,13 +68,19 @@ func reload(inventory_selector):
 		pass
 	else:
 		animation_player.play("reload")
-		emitter_shell.set_emitting(true)
-		emitter_shell.restart()
+
 		var space = player.inventory[inventory_selector].max_loaded-player.inventory[inventory_selector].loaded
 		if space != 0:
+			emitter_shell.set_emitting(true)
+			emitter_shell.restart()
 			if player.inventory[inventory_selector].spare_ammo >= space:
 				player.inventory[inventory_selector].loaded += space
 				player.inventory[inventory_selector].spare_ammo -= 2
 			else:
 				player.inventory[inventory_selector].loaded += player.inventory[inventory_selector].spare_ammo
 				player.inventory[inventory_selector].spare_ammo = 0
+func inspect():
+	if animation_player.is_playing():
+		pass
+	else:
+		animation_player.play("inspect")
