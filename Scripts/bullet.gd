@@ -49,6 +49,7 @@ func _process(delta):
 	if raycast.is_colliding():
 		victim = raycast.get_collider()
 	
+	
 	#execute when target found
 	if(victim != null):
 		#print("raycast collision with:" + str(raycast.get_collider()) )
