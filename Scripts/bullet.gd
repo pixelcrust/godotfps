@@ -1,6 +1,6 @@
 extends Node3D
 
-var SPEED = 60.0
+var SPEED = 160.0
 const ACCURACY = 0#5
 const dmg = 50
 const time_rooted = .5
@@ -65,11 +65,11 @@ func _process(delta):
 		raycast.target_position.z = -MIN_RAYCAST_DISTANCE
 		raycast.transform.origin.z = MIN_RAYCAST_DISTANCE
 	
-	raycast.transform.origin = position_bullet_before
-	raycast.target_position = global_position	
+		
 		
 		"""
-	
+	raycast.transform.origin = position_bullet_before
+	raycast.target_position = global_position
 	
 	
 	raycast.force_raycast_update()
