@@ -111,16 +111,19 @@ visible = false
 mesh = SubResource("CapsuleMesh_gmr4f")
 
 [node name="bone_body" type="PhysicalBone3D" parent="MeshInstance3D" groups=["group_player", "has_blood", "has_hp"]]
+visible = false
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_wfych")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/bone_body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20769, 0.0131297)
+visible = false
 shape = SubResource("CapsuleShape3D_uqqjj")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.127, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_42ps6")
 
 [node name="Head" type="Node3D" parent="."]
@@ -128,6 +131,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58754, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 cull_mask = 1048573
+size = 0.5
+far = 100.0
 
 [node name="flashlight" type="SpotLight3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25633)
@@ -265,6 +270,7 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 2.11758e-22, 1, 0, 0, 1.481e-28, 1, 0, 0, 0)
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]
+visible = false
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_wfych")
@@ -272,6 +278,7 @@ damage_multiplier = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/bone_head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0157435)
+visible = false
 shape = SubResource("SphereShape3D_3bbqp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

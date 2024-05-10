@@ -49,6 +49,7 @@ mesh = SubResource("CylinderMesh_ylqc2")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.108022, 0, 0)
 collision_mask = 3
 hit_from_inside = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0

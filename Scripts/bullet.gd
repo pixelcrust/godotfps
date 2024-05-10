@@ -68,11 +68,13 @@ func _process(delta):
 		
 		
 		"""
-	raycast.transform.origin = position_bullet_before
-	raycast.target_position = global_position
+	#raycast.transform.origin = position_bullet_before
+	#raycast.target_position = global_position
+	raycast.set_position(position_bullet_before)
+	raycast.set_cast_to(global_position)
 	
 	
-	raycast.force_raycast_update()
+	#raycast.force_raycast_update()
 	#execute when target found
 	if(victim != null):
 		SPEED = 0
