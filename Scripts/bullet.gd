@@ -1,6 +1,6 @@
 extends Node3D
 
-var SPEED = 160.0
+var SPEED = 1#60.0
 const ACCURACY = 0#5
 const dmg = 50
 const time_rooted = .5
@@ -70,19 +70,21 @@ func _process(delta):
 		"""
 	#raycast.transform.origin = position_bullet_before
 	#raycast.target_position = global_position
-	raycast.set_position(position_bullet_before)
-	raycast.set_cast_to(global_position)
-	
-	
+	#raycast.set_position(position_bullet_before)
+	raycast.scale.y = 10
 	#raycast.force_raycast_update()
+	
 	#execute when target found
 	if(victim != null):
-		SPEED = 0
+		
+		
 		print("raycast collision with:" + str(victim) )
 		if((player_shot == true) && (victim.is_in_group("group_player") == true)):
 			pass
 		else:
 			#mesh.visible = false
+			SPEED = 0
+			global_position = raycast.get_collision_point()
 			if(raycast.get_collider()!= null):
 				if raycast.get_collider().is_in_group("has_blood"):
 					blood_splatter.on = true
