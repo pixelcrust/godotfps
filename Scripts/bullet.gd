@@ -21,7 +21,7 @@ var pos_before = Vector3(0,0,0)
 var victim = null
 var target = Vector3(0,0,0)
 var once = 0
-var position_bullet_before = Vector3(0,0,0)
+@onready var position_bullet_before = global_position
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -51,9 +51,6 @@ func _process(delta):
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
 	visibility_cooldown -= delta
 	
-	if raycast.is_colliding():
-		victim = raycast.get_collider()
-	
 	
 	
 	
@@ -71,8 +68,27 @@ func _process(delta):
 	#raycast.transform.origin = position_bullet_before
 	#raycast.target_position = global_position
 	#raycast.set_position(position_bullet_before)
-	raycast.scale.y = 10
-	#raycast.force_raycast_update()
+	"""var from = position_bullet_before + Vector3(-10,0,0)
+	var to = global_position
+	var space = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.collide_with_areas = true
+	#raycast.scale.y = 10
+	var ray_query = PhysicsRayQueryParameters3D.new()
+	ray_query.from = from
+	ray_query.to = to
+	ray_query.collide_with_areas = true
+	var raycast_result = space.intersect_ray(ray_query)
+	print(str(raycast_result))"""
+	raycast.global_position = position_bullet_before
+	raycast.target_position = position_bullet_before + Vector3(0,10,0)#global_position
+	
+	
+	if raycast.is_colliding():
+		victim = raycast.get_collider()
+	
+	
+	raycast.force_raycast_update()
 	
 	#execute when target found
 	if(victim != null):

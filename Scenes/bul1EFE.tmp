@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwftv3k1yo0ik"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_1urrn"]
+[ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="2_5oqdg"]
+[ext_resource type="PackedScene" uid="uid://dwjfspjqmal5v" path="res://Scenes/blood_splatter.tscn" id="3_ohx42"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxnks"]
+albedo_color = Color(0.988235, 0.886275, 0.47451, 1)
+emission_enabled = true
+emission = Color(0.886275, 0.886275, 0.164706, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ylqc2"]
+material = SubResource("StandardMaterial3D_jxnks")
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63dkg"]
+albedo_color = Color(0.784314, 0.698039, 0.2, 1)
+emission_enabled = true
+emission = Color(0.933333, 0.937255, 0.513726, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rdlu4"]
+direction = Vector3(-1, 0, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxac7"]
+albedo_color = Color(0.811765, 0.741176, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_yfcpt"]
+material = SubResource("StandardMaterial3D_pxac7")
+size = Vector3(0.04, 0.04, 0.04)
+
+[node name="bullet" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12283, 0, 0)
+script = ExtResource("1_1urrn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0.5, -4.37114e-09, 0, -2.18557e-08, -0.1, -0.1, -2.18557e-08, 1.91069e-16, 0, 0, 0)
+mesh = SubResource("CylinderMesh_ylqc2")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.108022, 0, 0)
+collision_mask = 3
+hit_from_inside = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.491574, 0, 0)
+material_override = SubResource("StandardMaterial3D_63dkg")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_rdlu4")
+draw_pass_1 = SubResource("BoxMesh_yfcpt")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_5oqdg")
+
+[node name="blood_splatter" parent="." instance=ExtResource("3_ohx42")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
