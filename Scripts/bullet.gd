@@ -33,13 +33,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	"""if once == 0:
-		look_at(target)
-		rotate_y(deg_to_rad(90))
-		once = 1"""
-		
-	
-	
 	#set inacuracy
 	if ads == 1:
 		abweichung_x = 0
@@ -61,35 +54,35 @@ func _process(delta):
 		victim = raycast.get_collider()
 	
 	
-	raycast.force_raycast_update()
+	#raycast.force_raycast_update()
 	
 	#execute when target found
 	if(victim != null):
-		print("raycast collision with:" + str(victim) )
+		#print("raycast collision with:" + str(victim) )
 		if((player_shot == true) && (victim.is_in_group("group_player") == true)):
 			pass
 		else:
 			#mesh.visible = false
 			SPEED = 0
 			global_position = raycast.get_collision_point()
-			if(victim!= null):
-				if victim.is_in_group("has_blood"):
-					blood_splatter.on = true
-				else:
-					particles.emitting = true
-					
-					#create bullet hole
-					var collision_normal = raycast.get_collision_normal()
-					var new_bullet_hole = bullet_hole.instantiate()
-					new_bullet_hole.global_transform.origin = raycast.get_collision_point()# - Vector3(0,0,0)
-					get_tree().root.get_children()[0].add_child(new_bullet_hole)
-					new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
-				if(victim.is_in_group("has_hp")):
-					#print("hit has_hp")
-					victim.hit(dmg,time_rooted)
-			visibility_cooldown = 2
-			raycast.set_enabled(false)
+			if victim.is_in_group("has_blood"):
+				blood_splatter.on = true
+			else:
+				particles.emitting = true
+			
+				#create bullet hole
+				var collision_normal = raycast.get_collision_normal()
+				var new_bullet_hole = bullet_hole.instantiate()
+				new_bullet_hole.global_transform.origin = raycast.get_collision_point()# - Vector3(0,0,0)
+				get_tree().root.get_children()[0].add_child(new_bullet_hole)
+				new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
+			if(victim.is_in_group("has_hp")):
+				#print("hit has_hp")
+				victim.hit(dmg,time_rooted)
 			victim = null
+			raycast.set_enabled(false)
+			print("raycast disabled")
+			visibility_cooldown = 2
 			await get_tree().create_timer(2.0).timeout
 			queue_free()
 	elif visibility_cooldown <= 0:
