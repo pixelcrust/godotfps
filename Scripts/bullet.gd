@@ -1,6 +1,6 @@
 extends Node3D
 
-var SPEED = 1#60.0
+var SPEED = 160.0
 const ACCURACY = 0#5
 const dmg = 50
 const time_rooted = .5
@@ -48,7 +48,8 @@ func _process(delta):
 		abweichung_x = standard_abweichung_x
 		abweichung_y = standard_abweichung_y
 	#print_debug("abweichung_x,abweichung_y:" +str(abweichung_x)+"/"+str(abweichung_y))
-	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
+	if Input.is_action_just_pressed("debug_bullet_move"):
+		position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
 	visibility_cooldown -= delta
 	
 	
@@ -81,7 +82,7 @@ func _process(delta):
 	var raycast_result = space.intersect_ray(ray_query)
 	print(str(raycast_result))"""
 	raycast.global_position = position_bullet_before
-	raycast.target_position = position_bullet_before + Vector3(0,10,0)#global_position
+	#raycast.target_position += Vector3(1,1,1)#mesh.global_position
 	
 	
 	if raycast.is_colliding():
