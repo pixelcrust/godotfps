@@ -15,15 +15,21 @@ const time_rooted = .1
 @onready var blood_splatter = $blood_splatter
 var bullet_hole = preload("res://Scenes/bullet_hole.tscn")
 @onready var player_shot = false
+@onready var position_bullet_before = global_position
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	sound.play(0.0)
+	position_bullet_before = global_position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	position_bullet_before = position
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
+	
+	raycast.global_position = position_bullet_before
+	raycast.target_position.y = -1.5
 	if raycast.is_colliding():
 		if((player_shot == true) && (raycast.get_collider().is_in_group("group_player") == true)):
 			pass

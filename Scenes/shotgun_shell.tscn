@@ -36,7 +36,6 @@ material = SubResource("StandardMaterial3D_pxac7")
 size = Vector3(0.04, 0.04, 0.04)
 
 [node name="shell" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235021, 0)
 script = ExtResource("1_uy22w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -53,7 +52,7 @@ one_shot = true
 autostart = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12746, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.503227, 0, 0)
 material_override = SubResource("StandardMaterial3D_63dkg")
 emitting = false
 one_shot = true
@@ -65,5 +64,6 @@ draw_pass_1 = SubResource("BoxMesh_yfcpt")
 stream = ExtResource("2_a0lku")
 
 [node name="blood_splatter" parent="." instance=ExtResource("3_y40jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501457, 0, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

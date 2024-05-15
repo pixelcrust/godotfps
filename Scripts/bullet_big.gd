@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 80.0
+const SPEED = 320.0
 const ACCURACY = 0#6
 const dmg = 100
 const time_rooted = 1
@@ -16,11 +16,11 @@ const time_rooted = 1
 @onready var blood_splatter = $blood_splatter
 var bullet_hole = preload("res://Scenes/bullet_hole.tscn")
 @onready var player_shot = false
-
+@onready var position_bullet_before = global_position
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#set inacuracy
-	pass
+	position_bullet_before = global_position
 	#print_debug("ads bullet: "+str(ads))
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,7 +31,11 @@ func _physics_process(delta):
 	else:
 		abweichung_x = standard_abweichung_x
 		abweichung_y = standard_abweichung_y
+	position_bullet_before = position
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
+	
+	raycast.global_position = position_bullet_before
+	raycast.target_position.y = -6
 	#print_debug("ads bullet: "+str(ads))
 	if raycast.is_colliding():
 		#print("raycast collision with:" + str(raycast.get_collider()) )
