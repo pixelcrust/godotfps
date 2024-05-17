@@ -14,8 +14,9 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#timer.wait_time = cooldown
+	timer.wait_time = cooldown
 	timer.start()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,14 +24,15 @@ func _process(delta):
 	pass
 
 func _on_timer_timeout():
+	print("timeout")
 	play_random_sound()
 	
 func play_random_sound():
-	randomize()
-	var my_random_number = rng.randf_range(-10.0, 10.0)
+	#randomize()
+	#var my_random_number = rng.randf_range(-10.0, 10.0)
+	
 	audio_stream_player_3d.stream = sound_meow_1
-	audio_stream_player_3d.start(0.0)
-
+	audio_stream_player_3d.play(0.0)
 
 func change_position():
 	pass
