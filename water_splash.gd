@@ -8,5 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	await get_tree().create_timer(15.0).timeout
-	queue_free()
+	pass

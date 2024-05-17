@@ -28,11 +28,30 @@ func _on_timer_timeout():
 	play_random_sound()
 	
 func play_random_sound():
-	#randomize()
-	#var my_random_number = rng.randf_range(-10.0, 10.0)
+	randomize()
+	var case = randi_range(0,3)
+	match case:
+		0:
+			audio_stream_player_3d.stream = sound_meow_1
+			audio_stream_player_3d.play(0.0)
+		1:
+			audio_stream_player_3d.stream = sound_meow_2
+			audio_stream_player_3d.play(0.0)
+		2:
+			audio_stream_player_3d.stream = sound_meow_3
+			audio_stream_player_3d.play(0.0)
+		3:
+			audio_stream_player_3d.stream = sound_leaves_rustle
+			audio_stream_player_3d.play(0.0)
+		_:
+			pass
 	
-	audio_stream_player_3d.stream = sound_meow_1
-	audio_stream_player_3d.play(0.0)
-
+	timer.wait_time = cooldown
+	timer.start()
+	change_position()
+	
 func change_position():
-	pass
+	var random_x = randi_range(-100,100)
+	var random_y = randi_range(-100,100)
+	var random_z = randi_range(-100,100)
+	position = Vector3(random_x,random_y,random_z)

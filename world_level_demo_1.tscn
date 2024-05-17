@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bmakxarqke4nv"]
+[gd_scene load_steps=35 format=3 uid="uid://bmakxarqke4nv"]
 
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player.tscn" id="1_d0cmc"]
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="2_v6xxd"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://sentrygun.tscn" id="26_8gxvq"]
 [ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_0sgn3"]
 [ext_resource type="PackedScene" uid="uid://dj1r66vn40rp2" path="res://Scenes/lava.tscn" id="28_in6v5"]
+[ext_resource type="PackedScene" uid="uid://c23leivbmxdlf" path="res://Scenes/environmental_noise.tscn" id="29_wmw8e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q60k4"]
 sky_top_color = Color(0.266667, 0.376471, 0.929412, 1)
@@ -315,3 +316,6 @@ transform = Transform3D(5.4, 0, 0, 0, 2.3, 0, 0, 0, 2.8, 22.8604, 1.97706, 35.36
 
 [node name="lava" parent="." instance=ExtResource("28_in6v5")]
 transform = Transform3D(25.1, 0, 0, 0, 1, 0, 0, 0, 2.2, 15.8604, 0.977058, 43.3644)
+
+[node name="environmental_noise" parent="." instance=ExtResource("29_wmw8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.26896, 0.846077, 12.9476)
