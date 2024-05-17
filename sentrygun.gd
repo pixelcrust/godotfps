@@ -5,6 +5,12 @@ extends Node3D
 @onready var laser = $gun/barrel/RayCast3D/laser
 @onready var aim_helper = $gun/barrel/aim_helper
 @onready var bullet = preload("res://Scenes/bullet.tscn")
+
+#sound
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+@onready var sound_shoot = preload("res://Sounds/gun.wav")
+
+
 @onready var timer_shooting = $Timer
 var cd_bullet = 50
 
