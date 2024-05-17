@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://drxhc3mdr1r5t"
-path="res://.godot/imported/scream 14.wav-0265323d2272b7400bb6d3c38a724021.sample"
+uid="uid://c4s2c3awrjg1c"
+path="res://.godot/imported/velcro 1.wav-c23adb2e31aaa142b65d2b7cde1df12b.sample"
 
 [deps]
 
-source_file="res://scream 14.wav"
-dest_files=["res://.godot/imported/scream 14.wav-0265323d2272b7400bb6d3c38a724021.sample"]
+source_file="res://Sounds/unused/velcro 1.wav"
+dest_files=["res://.godot/imported/velcro 1.wav-c23adb2e31aaa142b65d2b7cde1df12b.sample"]
 
 [params]
 

@@ -11,11 +11,15 @@ const sound_meow_3 = preload("res://Sounds/meow 3.wav")
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-
 func _on_timer_timeout():
 	pass # Replace with function body.
+
+func play_random_sound():
+	pass
+
+func change_position():
+	pass

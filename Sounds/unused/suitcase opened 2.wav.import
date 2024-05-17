@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c6hqkoxhsj4ac"
-path="res://.godot/imported/suitcase opened 2.wav-2e72a43d7494edf8daa5b18f8460cb82.sample"
+path="res://.godot/imported/suitcase opened 2.wav-5877d47dcb8111b70a6cb32bf68b5d14.sample"
 
 [deps]
 
-source_file="res://suitcase opened 2.wav"
-dest_files=["res://.godot/imported/suitcase opened 2.wav-2e72a43d7494edf8daa5b18f8460cb82.sample"]
+source_file="res://Sounds/unused/suitcase opened 2.wav"
+dest_files=["res://.godot/imported/suitcase opened 2.wav-5877d47dcb8111b70a6cb32bf68b5d14.sample"]
 
 [params]
 

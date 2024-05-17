@@ -24,3 +24,5 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_qf1eg")
 draw_pass_1 = SubResource("BoxMesh_dfh8v")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
