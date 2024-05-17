@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://brid1ads3hnl2"]
+[gd_scene load_steps=9 format=3 uid="uid://brid1ads3hnl2"]
 
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
 [ext_resource type="AnimationLibrary" uid="uid://chxpkr5swac2n" path="res://item_animations.res" id="2_ldnwe"]
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/emitter_shell.tscn" id="3_woa2a"]
 [ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://blender import/model_pistol.tscn" id="4_arr1h"]
-[ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="4_ismwp"]
 [ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://Scenes/muzzleflash.tscn" id="5_orytu"]
 [ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="6_58lm0"]
 [ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="7_v8lcg"]
@@ -19,10 +18,6 @@ libraries = {
 "": ExtResource("2_ldnwe"),
 "item_animations": SubResource("AnimationLibrary_x3asn")
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(-0.998987, 0, -0.0449968, 0, 1, 0, 0.0449968, 0, -0.998987, 0, 0, 0)
-stream = ExtResource("4_ismwp")
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -43,3 +38,5 @@ transform = Transform3D(7.63278e-16, 3.79514e-08, 1, 1, -4.37114e-08, 1.08959e-1
 
 [node name="muzzleflash" parent="Node3D/hand_right/model_pistol" instance=ExtResource("5_orytu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30845, 1.44925, -2.36758)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c23leivbmxdlf"]
+
+[ext_resource type="Script" path="res://environmental_noise.gd" id="1_d4gl4"]
+
+[node name="environmental_noise" type="Node3D"]
+script = ExtResource("1_d4gl4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

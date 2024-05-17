@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://crd2ihif0dvp5"
-path="res://.godot/imported/knife 7.wav-2e19e2675d48f7ff4ed59ca1d4605904.sample"
+uid="uid://crfne40vfvcsv"
+path="res://.godot/imported/cleaver 7.wav-c9dd32615d23d24748e833965c633c54.sample"
 
 [deps]
 
-source_file="res://Sounds/knife 7.wav"
-dest_files=["res://.godot/imported/knife 7.wav-2e19e2675d48f7ff4ed59ca1d4605904.sample"]
+source_file="res://Sounds/unused/cleaver 7.wav"
+dest_files=["res://.godot/imported/cleaver 7.wav-c9dd32615d23d24748e833965c633c54.sample"]
 
 [params]
 

@@ -1,10 +1,15 @@
 extends Node3D
 
 @onready var animation_player = $AnimationPlayer
-@onready var sound = $AudioStreamPlayer
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
 @onready var barrel = $Node3D/hand_right/model_pistol/RayCast3D
 @onready var bullet = preload("res://Scenes/bullet.tscn")
-@onready var sound_shoot = preload("res://Sounds/sfx_weapon_singleshot21.wav")
+
+#sounds
+@onready var sound_shoot = preload("res://Sounds/gun.wav")
+@onready var sound_empty = preload("res://Sounds/gun fired no bullets 3.wav")
+@onready var sound_reloading = preload("res://Sounds/gun movement 27.wav")
+
 @onready var player = null
 @onready var emitter_shell = $Node3D/hand_right/model_pistol/emitter_shell/GPUParticles3D
 @onready var muzzleflash = $Node3D/hand_right/model_pistol/muzzleflash/GPUParticles3D
@@ -59,6 +64,8 @@ func shoot(inventory_selector,player_eyes,player_shot,collision_point):
 		if player.inventory[inventory_selector].loaded > 0:
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
+			audio_stream_player_3d.stream = sound_shoot
+			audio_stream_player_3d.play(0.0)
 			muzzleflash.set_emitting(true)
 			muzzleflash.restart()
 			emitter_shell.set_emitting(true)
@@ -94,12 +101,16 @@ func shoot(inventory_selector,player_eyes,player_shot,collision_point):
 			await get_tree().create_timer(0.5).timeout
 			
 		else:
-			pass
+			audio_stream_player_3d.stream = sound_empty
+			audio_stream_player_3d.play(0.0)
+			animation_player.play("shoot_empty")
 		
 func reload(inventory_selector):
 	if animation_player.is_playing():
 		pass
 	else:
+		audio_stream_player_3d.stream = sound_reloading
+		audio_stream_player_3d.play(0.0)
 		animation_player.play("reload")
 		var space = player.inventory[inventory_selector].max_loaded-player.inventory[inventory_selector].loaded
 		if space != 0:

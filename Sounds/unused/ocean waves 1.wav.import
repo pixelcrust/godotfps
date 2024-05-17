@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://daxqyk7ik3xd8"
-path="res://.godot/imported/ocean waves 1.wav-35d11a5a9bec34ae85297e7a3639e1ec.sample"
+path="res://.godot/imported/ocean waves 1.wav-5ce276a79b0516b7dcf1f269b73ec3cb.sample"
 
 [deps]
 
-source_file="res://Sounds/ocean waves 1.wav"
-dest_files=["res://.godot/imported/ocean waves 1.wav-35d11a5a9bec34ae85297e7a3639e1ec.sample"]
+source_file="res://Sounds/unused/ocean waves 1.wav"
+dest_files=["res://.godot/imported/ocean waves 1.wav-5ce276a79b0516b7dcf1f269b73ec3cb.sample"]
 
 [params]
 

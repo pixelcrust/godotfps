@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b3mj7kk6x4puy"
-path="res://.godot/imported/medicine cabinet opening 1.wav-6e5e66209ea1272a64f8b4892ad6f84d.sample"
+path="res://.godot/imported/medicine cabinet opening 1.wav-6918cc586ed7d807dfde74da5a6ac613.sample"
 
 [deps]
 
-source_file="res://Sounds/medicine cabinet opening 1.wav"
-dest_files=["res://.godot/imported/medicine cabinet opening 1.wav-6e5e66209ea1272a64f8b4892ad6f84d.sample"]
+source_file="res://Sounds/unused/medicine cabinet opening 1.wav"
+dest_files=["res://.godot/imported/medicine cabinet opening 1.wav-6918cc586ed7d807dfde74da5a6ac613.sample"]
 
 [params]
 

@@ -119,6 +119,12 @@ const asset_drop_grenade = preload("res://Scenes/grenade_dropped.tscn")
 
 #sound assets
 const sound_flashlight_click = preload("res://Sounds/clicky button 13.wav")
+const sound_land = preload("res://Sounds/land in dirt 1.wav")
+const sound_footstep_dirt_1 = preload("res://Sounds/footstep dirt 1.wav")
+const sound_footstep_dirt_2 = preload("res://Sounds/footstep dirt 2.wav")
+const sound_footstep_dirt_3 = preload("res://Sounds/footstep dirt 3.wav")
+const sound_footstep_dirt_4 = preload("res://Sounds/footstep dirt 4.wav")
+const sound_hurt_1 = preload("res://Sounds/oof 22.wav")
 
 
 @onready var hp_start = 150
@@ -232,9 +238,12 @@ func _physics_process(delta):
 				velocity.y -= (gravity * delta)/ 3 
 	else:
 		if in_air_time > 0:
+			audio_stream_player_3d.stream = sound_land
+			audio_stream_player_3d.play(0.0)
 			fall_dmg = floor(in_air_time)*20
 			fall_stunned = floor(in_air_time)
-			_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)
+			if fall_dmg >= 1:
+				_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)
 			#print("fall_dmg: "+str(fall_dmg))
 			in_air_time = 0
 	#print("in air time: "+str(in_air_time))
@@ -650,11 +659,15 @@ func equip_weapon():
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
+	audio_stream_player_3d.stream = sound_hurt_1
+	audio_stream_player_3d.play(0.0)
 	if(time_rooted > 0):
 		set_rooted(time_rooted)
 
 func _on_bone_body_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
+	audio_stream_player_3d.stream = sound_hurt_1
+	audio_stream_player_3d.play(0.0)
 	if(time_rooted > 0):
 		set_rooted(time_rooted)
 

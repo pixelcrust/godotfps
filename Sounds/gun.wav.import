@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://crfne40vfvcsv"
-path="res://.godot/imported/cleaver 7.wav-e00f7b29ed7bd55edf20401367cfa766.sample"
+uid="uid://chy8hsl0w22pe"
+path="res://.godot/imported/gun.wav-9f48f9eeadd15c4535d1e1422bdf2e0a.sample"
 
 [deps]
 
-source_file="res://Sounds/cleaver 7.wav"
-dest_files=["res://.godot/imported/cleaver 7.wav-e00f7b29ed7bd55edf20401367cfa766.sample"]
+source_file="res://Sounds/gun.wav"
+dest_files=["res://.godot/imported/gun.wav-9f48f9eeadd15c4535d1e1422bdf2e0a.sample"]
 
 [params]
 

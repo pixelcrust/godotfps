@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b0xmya528e20b"
-path="res://.godot/imported/dagger unsheath 8.wav-0aced25e9ab159e4458dbffecb9cccdc.sample"
+path="res://.godot/imported/dagger unsheath 8.wav-feeda89e54f7daa8f09ee154c77a89e6.sample"
 
 [deps]
 
-source_file="res://Sounds/dagger unsheath 8.wav"
-dest_files=["res://.godot/imported/dagger unsheath 8.wav-0aced25e9ab159e4458dbffecb9cccdc.sample"]
+source_file="res://Sounds/unused/dagger unsheath 8.wav"
+dest_files=["res://.godot/imported/dagger unsheath 8.wav-feeda89e54f7daa8f09ee154c77a89e6.sample"]
 
 [params]
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwftv3k1yo0ik"]
+[gd_scene load_steps=9 format=3 uid="uid://dwftv3k1yo0ik"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_1urrn"]
-[ext_resource type="AudioStream" uid="uid://chy8hsl0w22pe" path="res://gun.wav" id="2_5oqdg"]
 [ext_resource type="PackedScene" uid="uid://dwjfspjqmal5v" path="res://Scenes/blood_splatter.tscn" id="3_ohx42"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxnks"]
@@ -64,9 +63,6 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_rdlu4")
 draw_pass_1 = SubResource("BoxMesh_yfcpt")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_5oqdg")
 
 [node name="blood_splatter" parent="." instance=ExtResource("3_ohx42")]
 
