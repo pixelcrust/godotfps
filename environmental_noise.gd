@@ -24,7 +24,7 @@ func _process(delta):
 	pass
 
 func _on_timer_timeout():
-	print("timeout")
+	print("timeout environmental noise")
 	play_random_sound()
 	
 func play_random_sound():

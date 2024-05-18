@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1abpix2tact"]
+
+[ext_resource type="Script" path="res://water_splash.gd" id="1_714rf"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qf1eg"]
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_min = 0.1
+initial_velocity_max = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cee3h"]
+albedo_color = Color(0.956863, 0.776471, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.945098, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dfh8v"]
+material = SubResource("StandardMaterial3D_cee3h")
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="lava_splash" type="Node3D"]
+script = ExtResource("1_714rf")
+
+[node name="emitter" type="GPUParticles3D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_qf1eg")
+draw_pass_1 = SubResource("BoxMesh_dfh8v")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
