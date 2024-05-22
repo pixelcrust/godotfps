@@ -11,7 +11,7 @@ func _ready():
 	save_data.append(player.inventory)
 	save_data.append(player.hp)
 	file = FileAccess.open("C:/Users/save-/OneDrive/Dokumente/GameDev/fps-save.txt",FileAccess.READ)
-	file.close()
+	#file.close()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,10 +22,19 @@ func get_interaction_time():
 	return interactiontime
 	
 func use():
+	player.start_conversation()
+	player.display_conversation.insert_text_at_caret("Game saved")
+	
+	#change global variables
+	Global.player_health = player.hp
+	Global.player_inventory = player.inventory
+	Global.player_position = player.position
+	
+	#write variables into file
 	save_data.append(Time.get_date_dict_from_system)
-	save_data.append(player.inventory)
-	save_data.append(player.hp)
-	save_data.append(position + Vector3(0,0,-2))
+	save_data.append(Global.player_inventory)
+	save_data.append(Global.player_health)
+	save_data.append(Global.player_position)
 	file = FileAccess.open("C:/Users/save-/OneDrive/Dokumente/GameDev/fps-save.txt",FileAccess.WRITE)
 	file.store_string(str(save_data))
 	file.close()

@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 run/flush_stdout_on_print.debug=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://autoloader.gd"
+
 [display]
 
 window/stretch/mode="viewport"

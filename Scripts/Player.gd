@@ -137,6 +137,12 @@ func _ready():
 	#node_flashlight.spot_range = flashlight_range #sets the flashlight range in code for everywhere
 	node_flashlight.spot_range = 0
 	#adda gun to inventory
+	
+	#set respawn variables
+	Global.player_health = hp
+	Global.player_inventory = inventory
+	Global.player_position = position
+	
 	inventory.append({
 		"item_id": 0, #pistol
 		"loaded": 7,
@@ -488,6 +494,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 func die():
+	position = Global.player_position
+	hp = Global.player_health
+	
 	#get_tree().reload_current_scene()
 	#queue_free()
 	pass
