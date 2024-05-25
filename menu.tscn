@@ -44,4 +44,7 @@ scale = Vector2(1.34654, 1.71099)
 text = "Exit
 "
 
+[connection signal="pressed" from="button_new_game" to="." method="_on_button_new_game_pressed"]
+[connection signal="pressed" from="button_continue" to="." method="_on_button_continue_pressed"]
+[connection signal="pressed" from="button_options" to="." method="_on_button_options_pressed"]
 [connection signal="pressed" from="button_exit" to="." method="_on_button_exit_pressed"]
