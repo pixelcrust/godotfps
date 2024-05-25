@@ -57,6 +57,7 @@ func shoot(inventory_selector,player_eyes,player_shot,collision_point):
 				for n in 6:
 					var new_shell = shell.instantiate()
 					new_shell.ads = ads
+					new_shell.player_shot = player_shot
 					new_shell.position = player_eyes.global_position
 					new_shell.transform.basis = global_transform.basis
 					get_tree().root.get_children()[0].add_child(new_shell);

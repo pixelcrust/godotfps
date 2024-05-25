@@ -5,6 +5,7 @@ const ACCURACY = 0#0.6
 const dmg = 10
 const time_rooted = .1
 
+var victim = null
 @onready var mesh = $MeshInstance3D
 @onready var raycast = $RayCast3D
 @onready var particles = $GPUParticles3D
@@ -30,7 +31,11 @@ func _physics_process(delta):
 	
 	raycast.global_position = position_bullet_before
 	raycast.target_position.y = -1.5
+	
 	if raycast.is_colliding():
+		victim = raycast.get_collider()
+		
+	if(victim != null):
 		if((player_shot == true) && (raycast.get_collider().is_in_group("group_player") == true)):
 			pass
 		else:

@@ -66,6 +66,7 @@ func shoot(inventory_selector,player_eyes,player_shot,collision_point):
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
 			new_bullet.ads = ads
+			new_bullet.player_shot = player_shot
 		else:
 			pass
 		
