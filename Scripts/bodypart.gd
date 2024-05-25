@@ -17,6 +17,7 @@ func _process(delta):
 
 func hit(dmg,time_rooted):
 	emit_signal("bodypart_hit",dmg*damage_multiplier,time_rooted)
+	print("hit for "+str(dmg))
 
 func get_outline_meshes():
 	array.clear()

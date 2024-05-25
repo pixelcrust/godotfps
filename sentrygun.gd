@@ -94,7 +94,7 @@ func _process(delta):
 					state = 2
 		2:	#shoot
 			if is_shooting == false:
-				shoot(3)
+				shoot(1)
 				is_shooting = true
 			#await get_tree().create_timer(3).timeout
 			#if ray_cast_3d.get_collider().is_in_group("has_blood") == false:

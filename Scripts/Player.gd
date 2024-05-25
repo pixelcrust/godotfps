@@ -142,6 +142,7 @@ func _ready():
 	Global.player_health = hp
 	Global.player_inventory = inventory
 	Global.player_position = position
+	Global.player_rotation = rotation
 	
 	inventory.append({
 		"item_id": 0, #pistol
@@ -496,6 +497,8 @@ func _physics_process(delta):
 func die():
 	position = Global.player_position
 	hp = Global.player_health
+	rotation = Global.player_rotation
+	camera.rotation = Global.player_camera_rotation
 	
 	#get_tree().reload_current_scene()
 	#queue_free()
