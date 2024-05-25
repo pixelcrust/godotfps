@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://csvtuuyysg1v4"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_xalge"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xalge")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 1153.0
+offset_bottom = 266.0
+text = "Val Scheissengian"
+
+[node name="button_new_game" type="Button" parent="."]
+offset_left = 487.0
+offset_top = 278.0
+offset_right = 580.0
+offset_bottom = 309.0
+scale = Vector2(1.34654, 1.71099)
+text = "New Game"
+
+[node name="button_continue" type="Button" parent="."]
+offset_left = 483.0
+offset_top = 348.0
+offset_right = 576.0
+offset_bottom = 379.0
+scale = Vector2(1.34654, 1.71099)
+text = "Continue"
+
+[node name="button_options" type="Button" parent="."]
+offset_left = 485.0
+offset_top = 412.0
+offset_right = 578.0
+offset_bottom = 443.0
+scale = Vector2(1.34654, 1.71099)
+text = "Options
+"
+
+[node name="button_exit" type="Button" parent="."]
+offset_left = 485.0
+offset_top = 481.0
+offset_right = 578.0
+offset_bottom = 512.0
+scale = Vector2(1.34654, 1.71099)
+text = "Exit
+"
+
+[connection signal="pressed" from="button_exit" to="." method="_on_button_exit_pressed"]
