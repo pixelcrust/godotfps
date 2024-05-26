@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://l5mqaerv5qrg"]
+
+[ext_resource type="Script" path="res://option.gd" id="1_x835i"]
+
+[node name="option" type="Node2D"]
+script = ExtResource("1_x835i")
+
+[node name="button_back" type="Button" parent="."]
+offset_left = 1063.0
+offset_top = 583.0
+offset_right = 1108.0
+offset_bottom = 614.0
+text = "back"
+
+[connection signal="pressed" from="button_back" to="." method="_on_button_back_pressed"]

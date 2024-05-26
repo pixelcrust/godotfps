@@ -30,4 +30,4 @@ func _on_button_continue_pressed():
 
 
 func _on_button_options_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://option.tscn")
