@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://cmifc81wpxnc8" path="res://Models/Level/Wall_Doorway.obj" id="1_ndlvi"]
 [ext_resource type="ArrayMesh" uid="uid://dnqk4phj1pqb2" path="res://Models/Level/Door_A.obj" id="2_8nr0v"]
-[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_3yhn5"]
+[ext_resource type="Script" path="res://Scenes/door_collision.gd" id="2_y1684"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="3_v8o8t"]
 [ext_resource type="Script" path="res://Scripts/door_collision.gd" id="5_o3axx"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="5_wmog7"]
@@ -122,7 +122,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.785491, 0, 0)
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="door" groups=["has_hp"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00842828, 0, 0)
 collision_layer = 2
-script = ExtResource("3_3yhn5")
+script = ExtResource("2_y1684")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="door/PhysicalBone3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843576, 1.37045, -0.0328201)
