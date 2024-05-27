@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://l5mqaerv5qrg"]
+[gd_scene load_steps=3 format=3 uid="uid://l5mqaerv5qrg"]
 
 [ext_resource type="Script" path="res://option.gd" id="1_x835i"]
+[ext_resource type="Texture2D" uid="uid://pcxb6j4ke87u" path="res://Sprites/foto.png" id="2_gd4q0"]
 
 [node name="option" type="Node2D"]
 script = ExtResource("1_x835i")
@@ -11,5 +12,10 @@ offset_top = 583.0
 offset_right = 1108.0
 offset_bottom = 614.0
 text = "back"
+
+[node name="Foto" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(145, 555)
+texture = ExtResource("2_gd4q0")
 
 [connection signal="pressed" from="button_back" to="." method="_on_button_back_pressed"]

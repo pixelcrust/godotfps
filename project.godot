@@ -23,6 +23,7 @@ Global="*res://autoloader.gd"
 [display]
 
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://crosshair.png"
 
 [filesystem]
 
