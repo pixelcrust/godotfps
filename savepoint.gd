@@ -10,7 +10,7 @@ func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 	save_data.append(player.inventory)
 	save_data.append(player.hp)
-	file = FileAccess.open("C:/Users/save-/OneDrive/Dokumente/GameDev/fps-save.txt",FileAccess.READ)
+	file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
 	#file.close()
 
 
@@ -40,7 +40,7 @@ func use():
 	save_data.append(Global.player_position)
 	save_data.append(Global.player_rotation)
 	save_data.append(Global.player_camera_rotation)
-	file = FileAccess.open("C:/Users/save-/OneDrive/Dokumente/GameDev/fps-save.txt",FileAccess.WRITE)
+	file = FileAccess.open("user://fps-save.txt",FileAccess.WRITE)
 	file.store_pascal_string(str(save_data))
 	file.close()
 	print(save_data)

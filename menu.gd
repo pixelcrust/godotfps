@@ -25,7 +25,7 @@ func _on_button_new_game_pressed():
 
 func _on_button_continue_pressed():
 	#read from file
-	file = FileAccess.open("C:/Users/save-/OneDrive/Dokumente/GameDev/fps-save.txt",FileAccess.READ)
+	file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
 	#file.
 
 
