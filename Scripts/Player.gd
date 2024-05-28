@@ -7,7 +7,7 @@ const SPEED_RUN = 6.0
 const JUMP_VELOCITY = 4.5
 const SPEED_ADS = 0.5
 
-const SENSITIVITY = 0.001
+var SENSITIVITY = Global.player_sensitivity
 
 #head bob
 const BOB_FREQUENCY = 2.0

@@ -18,4 +18,21 @@ z_index = -1
 position = Vector2(145, 555)
 texture = ExtResource("2_gd4q0")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 42.0
+offset_top = 53.0
+offset_right = 82.0
+offset_bottom = 93.0
+scale = Vector2(17.4882, 14.0865)
+mouse_filter = 2
+color = Color(0.564706, 0.564706, 0.564706, 0.513726)
+
+[node name="HSlider" type="HScrollBar" parent="."]
+offset_left = 82.0
+offset_top = 88.0
+offset_right = 90.0
+offset_bottom = 104.0
+step = 1.0
+custom_step = 1.0
+
 [connection signal="pressed" from="button_back" to="." method="_on_button_back_pressed"]

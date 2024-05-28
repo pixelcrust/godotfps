@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var back = $back
+@onready var sensitivity_slider = $HSlider
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

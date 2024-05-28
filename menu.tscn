@@ -49,9 +49,20 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_n48ku")
 
 [node name="Foto" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -2
 position = Vector2(1006, 566)
 texture = ExtResource("3_jaa3t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+z_as_relative = false
+offset_left = 492.0
+offset_top = 288.0
+offset_right = 532.0
+offset_bottom = 328.0
+scale = Vector2(3.6, 6.56)
+mouse_filter = 2
+color = Color(0.564706, 0.564706, 0.564706, 0.513726)
 
 [connection signal="pressed" from="button_new_game" to="." method="_on_button_new_game_pressed"]
 [connection signal="pressed" from="button_continue" to="." method="_on_button_continue_pressed"]

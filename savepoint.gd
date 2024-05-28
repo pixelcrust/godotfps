@@ -41,6 +41,8 @@ func use():
 	save_data.append(Global.player_rotation)
 	save_data.append(Global.player_camera_rotation)
 	file = FileAccess.open("user://fps-save.txt",FileAccess.WRITE)
+	var inhalt = JSON.parse_string(str(save_data))
+	print(inhalt)
 	file.store_pascal_string(str(save_data))
 	file.close()
 	print(save_data)

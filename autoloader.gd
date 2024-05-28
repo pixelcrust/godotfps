@@ -6,3 +6,5 @@ var player_inventory = []
 var player_rotation = Vector3(0,0,0)
 var player_camera_rotation = Vector3(0,0,0)
 
+var player_sensitivity = 0.001
+
