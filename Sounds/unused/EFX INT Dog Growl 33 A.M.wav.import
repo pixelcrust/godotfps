@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnb01mau5srxu"
+path="res://.godot/imported/EFX INT Dog Growl 33 A.M.wav-6da54d56056b4a0b488f81e99a26d992.sample"
+
+[deps]
+
+source_file="res://Sounds/unused/EFX INT Dog Growl 33 A.M.wav"
+dest_files=["res://.godot/imported/EFX INT Dog Growl 33 A.M.wav-6da54d56056b4a0b488f81e99a26d992.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
