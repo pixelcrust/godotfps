@@ -247,7 +247,7 @@ func _physics_process(delta):
 		if in_air_time > 0:
 			audio_stream_player_3d.stream = sound_land
 			audio_stream_player_3d.play(0.0)
-			fall_dmg = floor(in_air_time)*20
+			fall_dmg = floor(in_air_time)*10
 			fall_stunned = floor(in_air_time)
 			if fall_dmg >= 1:
 				_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)
