@@ -5,6 +5,7 @@ extends Node3D
 @onready var laser = $gun/barrel/RayCast3D/laser
 @onready var aim_helper = $gun/barrel/aim_helper
 @onready var bullet = preload("res://Scenes/bullet.tscn")
+@onready var muzzleflash = $gun/barrel/muzzleflash/GPUParticles3D
 
 #sound
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
@@ -98,7 +99,7 @@ func _process(delta):
 				is_shooting = true
 			#await get_tree().create_timer(3).timeout
 			#if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
-			state = 3
+			state = 1
 		3: #wait until moving back
 			
 			if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
@@ -149,6 +150,8 @@ func shoot(number_bullets):
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
 	#await get_tree().create_timer(3).timeout
 	timer_shooting.start()
+	muzzleflash.set_emitting(true)
+	muzzleflash.restart()
 	for i in number_bullets:
 		var new_bullet = bullet.instantiate()
 		new_bullet.position = aim_helper.global_position

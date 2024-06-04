@@ -14,7 +14,7 @@ const time_rooted = .5
 @onready var abweichung_y = 0
 @onready var ads = 3 #0.. bullet not shot from ads 1.. bullet shot from ads
 @onready var blood_splatter = $blood_splatter
-var visibility_cooldown = 1
+var visibility_cooldown = .015
 @onready var bullet_hole = preload("res://Scenes/bullet_hole.tscn")
 @onready var player_shot = false
 var pos_before = Vector3(0,0,0)
@@ -60,7 +60,7 @@ func _process(delta):
 		if((player_shot == true) && (victim.is_in_group("group_player") == true)):
 			pass
 		else:
-			#mesh.visible = false
+			mesh.visible = false
 			SPEED = 0
 			global_position = raycast.get_collision_point()
 			if victim.is_in_group("has_blood"):

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://d6vrirhkna1a"]
+[gd_scene load_steps=13 format=3 uid="uid://d6vrirhkna1a"]
 
 [ext_resource type="Script" path="res://sentrygun.gd" id="1_61r0p"]
 [ext_resource type="Script" path="res://laser.gd" id="1_fwny5"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_kb1s8"]
+[ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://Scenes/muzzleflash.tscn" id="3_kwkni"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wrrps"]
 
@@ -54,6 +55,9 @@ mesh = SubResource("CylinderMesh_ib2vb")
 [node name="aim_helper" type="Node3D" parent="gun/barrel"]
 transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 1, 0, 0, 0.993635)
 
+[node name="muzzleflash" parent="gun/barrel" instance=ExtResource("3_kwkni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.535001)
+
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="gun" groups=["has_hp"]]
 collision_layer = 2
 collision_mask = 2
@@ -75,6 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00904846, 0.00823009, 0.373
 shape = SubResource("BoxShape3D_4idj3")
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 

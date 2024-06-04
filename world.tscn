@@ -41,13 +41,13 @@ uv1_scale = Vector3(10, 1, 1)
 albedo_texture = ExtResource("3_46517")
 uv1_scale = Vector3(10, 10, 10)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycdsb"]
+albedo_color = Color(0.458405, 0.458405, 0.458405, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3flw7"]
 albedo_color = Color(0.411765, 0.498039, 0.411765, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s83hw"]
-albedo_color = Color(0.458405, 0.458405, 0.458405, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycdsb"]
 albedo_color = Color(0.458405, 0.458405, 0.458405, 1)
 
 [node name="World" type="Node3D"]
@@ -119,11 +119,20 @@ use_collision = true
 size = Vector3(100, 1, 200)
 material = SubResource("StandardMaterial3D_1yvm4")
 
+[node name="CSGBox3D19" type="CSGBox3D" parent="."]
+transform = Transform3D(0.0012568, -0.354274, -0.93514, -3, -4.3914e-08, -0.00403176, 0.000475994, 0.935141, -0.354274, 1.45471, 7.90387, -47.3977)
+use_collision = true
+size = Vector3(4.79986, 5, 30)
+material = SubResource("StandardMaterial3D_ycdsb")
+
 [node name="house" parent="." instance=ExtResource("20_2tsel")]
 transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 3.69666, 14.3135, 20.6546)
 
 [node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(0.0252696, 0, -0.999681, 0, 5.30652, 0, 0.999681, 0, 0.0252696, 27.214, 13.2513, -35.4024)
+
+[node name="savepoint2" parent="." instance=ExtResource("16_ehatj")]
+transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 29.692, 18.7657, -41.3005)
 
 [node name="ladder2" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3.9, 0, -1, 0, -4.37114e-08, 31.4733, 14.5831, -46.6022)
@@ -226,3 +235,9 @@ text = "Press f to hold on ladder"
 
 [node name="savepoint" parent="." instance=ExtResource("16_ehatj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10731, 14.2635, 21.3984)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.174331, -0.0410376, -0.997675, -2.99493, 0.00240713, 0.0544828, 5.51121e-05, 0.999155, -0.0411082, 10.8874, 6.79721, -49.676)
+use_collision = true
+size = Vector3(4.79986, 2.27722, 30)
+material = SubResource("StandardMaterial3D_ycdsb")
