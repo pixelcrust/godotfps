@@ -5,6 +5,7 @@ extends StaticBody3D
 @onready var player = 0
 @onready var save_data = []
 var file = null
+var json = JSON.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
@@ -41,8 +42,8 @@ func use():
 	save_data.append(Global.player_rotation)
 	save_data.append(Global.player_camera_rotation)
 	file = FileAccess.open("user://fps-save.txt",FileAccess.WRITE)
-	var inhalt = JSON.parse_string(str(save_data))
+	var inhalt = json.stringify(save_data)
 	print(inhalt)
-	file.store_pascal_string(str(save_data))
+	file.store_string(inhalt)
 	file.close()
-	print(save_data)
+	#print(save_data)
