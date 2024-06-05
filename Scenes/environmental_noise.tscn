@@ -17,6 +17,7 @@ script = ExtResource("1_d4gl4")
 one_shot = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 16
 mesh = SubResource("BoxMesh_yec1i")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

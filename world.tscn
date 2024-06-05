@@ -1,11 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=24 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player.tscn" id="3_leven"]
 [ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/glass.tscn" id="10_obugd"]
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="13_yj2m1"]
+[ext_resource type="PackedScene" uid="uid://cg3fivuhti38p" path="res://fabric.tscn" id="14_eyleo"]
 [ext_resource type="PackedScene" uid="uid://c23leivbmxdlf" path="res://Scenes/environmental_noise.tscn" id="15_43oaq"]
+[ext_resource type="PackedScene" uid="uid://dnviiuk2u24bi" path="res://Scenes/table.tscn" id="15_bm8wm"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://savepoint.tscn" id="16_ehatj"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
@@ -234,10 +236,21 @@ title = "Climb ladders"
 text = "Press f to hold on ladder"
 
 [node name="savepoint" parent="." instance=ExtResource("16_ehatj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10731, 14.2635, 21.3984)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16979, 14.2635, 19.3908)
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.174331, -0.0410376, -0.997675, -2.99493, 0.00240713, 0.0544828, 5.51121e-05, 0.999155, -0.0411082, 10.8874, 6.79721, -49.676)
 use_collision = true
 size = Vector3(4.79986, 2.27722, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51024, 23.6186, -16.7639)
+size = Vector3(48.3289, 12.0837, 10.5274)
+shape = 0
+
+[node name="Node3D" parent="." instance=ExtResource("14_eyleo")]
+transform = Transform3D(0.984965, 0, 0.172754, 0, 1, 0, -0.172754, 0, 0.984965, 1.21505, 15.4099, 21.1076)
+
+[node name="table" parent="." instance=ExtResource("15_bm8wm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22246, 14.2635, 21.5184)
