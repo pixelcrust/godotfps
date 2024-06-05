@@ -10,7 +10,7 @@ var json = JSON.new()
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 	file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
-	#file.close()
+	file.close()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +21,10 @@ func get_interaction_time():
 	return interactiontime
 	
 func use():
+	save()
+	load_save()
+	
+func save():
 	player.start_conversation()
 	player.display_conversation.clear()
 	player.display_conversation.insert_text_at_caret("Game saved")
@@ -44,7 +48,14 @@ func use():
 		
 	file = FileAccess.open("user://fps-save.txt",FileAccess.WRITE)
 	var inhalt = json.stringify(save_data)
-	print(inhalt)
+
 	file.store_string(inhalt)
 	file.close()
 	#print(save_data)
+
+func load_save():
+	file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
+	var inhalt = file.get_as_text()
+	inhalt = json.get_parsed_text()
+	print(inhalt)
+	file.close()
