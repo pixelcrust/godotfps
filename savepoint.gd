@@ -9,8 +9,6 @@ var json = JSON.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
-	save_data.append(player.inventory)
-	save_data.append(player.hp)
 	file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
 	#file.close()
 
@@ -35,12 +33,15 @@ func use():
 	Global.player_camera_rotation = player.camera.rotation
 	
 	#write variables into file
-	save_data.append(Time.get_date_dict_from_system)
-	save_data.append(Global.player_inventory)
-	save_data.append(Global.player_health)
-	save_data.append(Global.player_position)
-	save_data.append(Global.player_rotation)
-	save_data.append(Global.player_camera_rotation)
+	save_data.append({
+		"time" : Time.get_date_dict_from_system,
+		"player_inventory" : Global.player_inventory,
+		"player_health" : Global.player_health,
+		"player_position" : Global.player_position,
+		"player_rotation" : Global.player_rotation,
+		"player_camera_rotation" : Global.player_camera_rotation
+		})
+		
 	file = FileAccess.open("user://fps-save.txt",FileAccess.WRITE)
 	var inhalt = json.stringify(save_data)
 	print(inhalt)

@@ -32,7 +32,7 @@ tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.015
-volumetric_fog_albedo = Color(0.356863, 0.282353, 0.380392, 1)
+volumetric_fog_albedo = Color(1, 0.611765, 0.666667, 1)
 volumetric_fog_detail_spread = 5.09824
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ld07o"]
@@ -244,9 +244,14 @@ use_collision = true
 size = Vector3(4.79986, 2.27722, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
 
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1775, 21.1222, -20.8048)
+size = Vector3(25.1029, 12.0837, 10.5274)
+shape = 0
+
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51024, 23.6186, -16.7639)
-size = Vector3(48.3289, 12.0837, 10.5274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47631, 23.6186, -16.7639)
+size = Vector3(18.318, 12.0837, 10.5274)
 shape = 0
 
 [node name="Node3D" parent="." instance=ExtResource("14_eyleo")]
