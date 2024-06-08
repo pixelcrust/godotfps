@@ -146,7 +146,7 @@ transform = Transform3D(-0.104112, 0, -0.994566, 0, 7.74731, 0, 0.994566, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6127, 0.846079, 40.6857)
 
 [node name="sentrygun" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(0.617585, 0, -0.786504, 0, 1, 0, 0.786504, 0, 0.617585, 33.4654, 14.6549, -6.59913)
+transform = Transform3D(-0.878233, 0, 0.478232, 0, 1, 0, -0.478232, 0, -0.878233, 16.2798, 14.5823, 10.7332)
 
 [node name="Water" parent="." instance=ExtResource("27_nijyp")]
 transform = Transform3D(44.8765, 0, 0, 0, 5.54374, 0, 0, 0, 38.5678, 3.37353, 9.62938, -2.02181)
@@ -259,3 +259,25 @@ transform = Transform3D(0.984965, 0, 0.172754, 0, 1, 0, -0.172754, 0, 0.984965, 
 
 [node name="table" parent="." instance=ExtResource("15_bm8wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22246, 14.2635, 21.5184)
+
+[node name="sentrygun2" parent="." instance=ExtResource("29_6n3hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8874, 14.3641, -27.379)
+
+[node name="sentrygun3" parent="." instance=ExtResource("29_6n3hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3736, 16.287, -97.4754)
+
+[node name="FogVolume4" type="FogVolume" parent="."]
+transform = Transform3D(-0.532596, 0, -0.84637, 0, 1, 0, 0.84637, 0, -0.532596, -6.09766, 32.7065, -107.723)
+size = Vector3(70.6913, 31.6193, 19.1977)
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7013, 16.3532, -145.074)
+size = Vector3(70.6913, 31.6193, 19.1977)
+
+[node name="sentrygun4" parent="." instance=ExtResource("29_6n3hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6419, 16.3532, -97.2715)
+
+[node name="note4" parent="." instance=ExtResource("27_28sf7")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 20.0918, 28.5818, -114.558)
+title = "Demo end"
+text = "Thank you for playing"
