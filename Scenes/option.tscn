@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://l5mqaerv5qrg"]
 
-[ext_resource type="Script" path="res://option.gd" id="1_x835i"]
+[ext_resource type="Script" path="res://Scripts/option.gd" id="1_x835i"]
 [ext_resource type="Texture2D" uid="uid://pcxb6j4ke87u" path="res://Sprites/foto.png" id="2_gd4q0"]
 
 [node name="option" type="Node2D"]

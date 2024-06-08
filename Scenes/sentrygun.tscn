@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://d6vrirhkna1a"]
 
-[ext_resource type="Script" path="res://sentrygun.gd" id="1_61r0p"]
+[ext_resource type="Script" path="res://Scripts/sentrygun.gd" id="1_61r0p"]
 [ext_resource type="Script" path="res://laser.gd" id="1_fwny5"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_kb1s8"]
 [ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://Scenes/muzzleflash.tscn" id="3_kwkni"]

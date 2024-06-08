@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://cg3fivuhti38p" path="res://fabric.tscn" id="14_eyleo"]
 [ext_resource type="PackedScene" uid="uid://c23leivbmxdlf" path="res://Scenes/environmental_noise.tscn" id="15_43oaq"]
 [ext_resource type="PackedScene" uid="uid://dnviiuk2u24bi" path="res://Scenes/table.tscn" id="15_bm8wm"]
-[ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://savepoint.tscn" id="16_ehatj"]
+[ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/savepoint.tscn" id="16_ehatj"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
 [ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_nijyp"]
 [ext_resource type="PackedScene" uid="uid://dj1r66vn40rp2" path="res://Scenes/lava.tscn" id="28_0cw5c"]
-[ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://sentrygun.tscn" id="29_6n3hy"]
+[ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://Scenes/sentrygun.tscn" id="29_6n3hy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 

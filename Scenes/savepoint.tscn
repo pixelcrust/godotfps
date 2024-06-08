@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7adh0474y74v"]
 
-[ext_resource type="Script" path="res://savepoint.gd" id="1_cv2fn"]
+[ext_resource type="Script" path="res://Scripts/savepoint.gd" id="1_cv2fn"]
 [ext_resource type="PackedScene" uid="uid://brt5ue7i6sm3y" path="res://table_filled.tscn" id="2_63a2y"]
-[ext_resource type="Script" path="res://savepoint_collision.gd" id="3_fvoor"]
+[ext_resource type="Script" path="res://Scripts/savepoint_collision.gd" id="3_fvoor"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_akho3"]
 size = Vector3(4.04224, 2.83838, 3.13659)
