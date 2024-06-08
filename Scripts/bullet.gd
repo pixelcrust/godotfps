@@ -73,7 +73,12 @@ func _process(delta):
 				var new_bullet_hole = bullet_hole.instantiate()
 				new_bullet_hole.global_transform.origin = raycast.get_collision_point()# - Vector3(0,0,0)
 				get_tree().root.get_children()[0].add_child(new_bullet_hole)
-				new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
+				if collision_normal == Vector3.DOWN:
+					new_bullet_hole.rotation_degrees.x = 90
+				elif collision_normal == Vector3.UP:
+					new_bullet_hole.rotation_degrees.x = -90
+				else:
+					new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
 			if(victim.is_in_group("has_hp")):
 				#print("hit has_hp")
 				victim.hit(dmg,time_rooted)

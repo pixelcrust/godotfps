@@ -55,8 +55,13 @@ func _physics_process(delta):
 				get_tree().root.get_children()[0].add_child(new_bullet_hole)
 				#if collision_normal == Vector3.DOWN:
 				#new_bullet_hole.rotation_degrees.x = 90
-				#elif collision_normal != Vector3.UP:
-				new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
+				#elif collision_normal != Vector3.UP:				
+				if collision_normal == Vector3.DOWN:
+					new_bullet_hole.rotation_degrees.x = 90
+				elif collision_normal == Vector3.UP:
+					new_bullet_hole.rotation_degrees.x = -90
+				else:
+					new_bullet_hole.look_at(raycast.get_collision_point() - collision_normal, Vector3(0,1,0))
 			if(raycast.get_collider().is_in_group("has_hp")):
 				raycast.get_collider().hit(dmg,time_rooted)
 			raycast.enabled = false

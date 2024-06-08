@@ -1,13 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://d6vrirhkna1a"]
+[gd_scene load_steps=14 format=3 uid="uid://d6vrirhkna1a"]
 
 [ext_resource type="Script" path="res://sentrygun.gd" id="1_61r0p"]
 [ext_resource type="Script" path="res://laser.gd" id="1_fwny5"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_kb1s8"]
 [ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://Scenes/muzzleflash.tscn" id="3_kwkni"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_wrrps"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oj7x"]
+albedo_color = Color(0.303233, 0.303233, 0.303233, 1)
+metallic = 0.44
+roughness = 0.9
 
-[sub_resource type="BoxMesh" id="BoxMesh_wtw3a"]
+[sub_resource type="BoxMesh" id="BoxMesh_wrrps"]
+material = SubResource("StandardMaterial3D_0oj7x")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oo2j3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3s7sy"]
 transparency = 1
@@ -40,11 +46,11 @@ transform = Transform3D(0.514957, 0, 0, 0, 0.433582, 0, 0, 0, 1, 0, 0.472139, 0)
 mesh = SubResource("BoxMesh_wrrps")
 
 [node name="barrel" type="MeshInstance3D" parent="gun"]
-transform = Transform3D(0.423876, 0, 0, 0, 0.476535, 0, 0, 0, 1, -0.293106, -0.288665, 0.822986)
-mesh = SubResource("BoxMesh_wtw3a")
+transform = Transform3D(0.275977, 0, 0, 0, -2.083e-08, -0.259838, 0, 0.476535, -1.13579e-08, -0.293106, -0.288665, 0.822986)
+mesh = SubResource("CylinderMesh_oo2j3")
 
 [node name="RayCast3D" type="RayCast3D" parent="gun/barrel"]
-transform = Transform3D(4.581, 0, 0, 0, -4.37114e-06, 4.84, 0, -100, -2.11563e-07, 0.227035, 0.123502, 0.635181)
+transform = Transform3D(4.581, 0, 0, 0, -100, 4.23126e-07, 0, -8.74227e-06, -4.84, 0.142604, 1.07674, -0.00678492)
 collision_mask = 11
 script = ExtResource("1_fwny5")
 
@@ -71,8 +77,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286133, -0.262451, 0.83548
 shape = SubResource("BoxShape3D_ee3ax")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.313344, 0, 0, 0, 0.669138, 0, 0, 0, 0.436208, 0, 0, 0)
+transform = Transform3D(0.0984808, -0.0868241, 0, 0.0173648, 0.492404, 0, 0, 0, 0.1, 0.14436, -0.140895, 0)
 mesh = SubResource("CylinderMesh_7cl2f")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0569836, 0.0502387, -0.0815593, 0.0173648, 0.492404, -2.74226e-10, 0.0803202, -0.0708131, -0.0578627, -0.0708166, -0.132665, 0.179434)
+mesh = SubResource("CylinderMesh_7cl2f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0948391, 0.0836134, 0.0269424, 0.0173648, 0.492404, -2.36726e-10, -0.0265331, 0.0233925, -0.0963021, -0.191345, -0.132665, -0.0353884)
+mesh = SubResource("CylinderMesh_7cl2f")
+skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00904846, 0.00823009, 0.373325)
