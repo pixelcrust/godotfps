@@ -57,10 +57,10 @@ func shoot(inventory_selector,player_eyes,player_shot,collision_point):
 				for n in 6:
 					var new_shell = shell.instantiate()
 					new_shell.ads = ads
-					new_shell.player_shot = player_shot
-					new_shell.position = player_eyes.global_position
+					new_shell.position = player_eyes.global_position #+ Vector3(.5,0,0)
 					new_shell.transform.basis = global_transform.basis
-					get_tree().root.get_children()[0].add_child(new_shell);
+					get_tree().root.get_children()[0].add_child(new_shell)
+					new_shell.player_shot = player_shot
 				var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 				player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
 
@@ -72,8 +72,9 @@ func reload(inventory_selector):
 
 		var space = player.inventory[inventory_selector].max_loaded-player.inventory[inventory_selector].loaded
 		if space != 0:
-			emitter_shell.set_emitting(true)
-			emitter_shell.restart()
+			if player.inventory[inventory_selector].spare_ammo != 0 and player.inventory[inventory_selector].loaded != 0:
+				emitter_shell.set_emitting(true)
+				emitter_shell.restart()
 			if player.inventory[inventory_selector].spare_ammo >= space:
 				player.inventory[inventory_selector].loaded += space
 				player.inventory[inventory_selector].spare_ammo -= 2

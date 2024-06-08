@@ -26,6 +26,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	
+	#if Input.is_action_just_pressed("debug_bullet_move"):
 	position_bullet_before = position
 	position += transform.basis * Vector3(SPEED,0+abweichung_y,0+abweichung_x)*delta
 	
@@ -36,7 +38,7 @@ func _physics_process(delta):
 		victim = raycast.get_collider()
 		
 	if(victim != null):
-		if((player_shot == true) && (raycast.get_collider().is_in_group("group_player") == true)):
+		if((player_shot == true) && (victim.is_in_group("group_player") == true)):
 			pass
 		else:
 			print("raycast collision with:" + str(raycast.get_collider()) )
