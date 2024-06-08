@@ -32,14 +32,14 @@ height = 0.001
 [sub_resource type="BoxShape3D" id="BoxShape3D_ee3ax"]
 size = Vector3(0.427734, 0.475098, 1)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_jb2ux"]
-height = 2.68641
-radius = 0.87929
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_7cl2f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4idj3"]
 size = Vector3(0.492584, 1.14917, 1.60619)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jb2ux"]
+height = 1.52905
+radius = 0.942404
 
 [node name="sentrygun" type="CharacterBody3D"]
 collision_layer = 4
@@ -80,10 +80,6 @@ shape = SubResource("BoxShape3D_yu1oo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286133, -0.262451, 0.835489)
 shape = SubResource("BoxShape3D_ee3ax")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gun"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.829559, 0.258521)
-shape = SubResource("CylinderShape3D_jb2ux")
-
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0984808, -0.0868241, 0, 0.0173648, 0.492404, 0, 0, 0, 0.1, 0.14436, -0.140895, 0)
 mesh = SubResource("CylinderMesh_7cl2f")
@@ -106,6 +102,10 @@ shape = SubResource("BoxShape3D_4idj3")
 one_shot = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112457, 0.455057)
+shape = SubResource("CylinderShape3D_jb2ux")
 
 [connection signal="bodypart_hit" from="gun/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
