@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@onready var outline_mesh = $MeshInstance3D2
+@onready var outline_mesh = $table_medium_Decorated.outline_mesh
 @onready var interactiontime = .1
 @onready var player = 0
 @onready var save_data = []
