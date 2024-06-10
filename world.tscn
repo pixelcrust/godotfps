@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=25 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cg3fivuhti38p" path="res://fabric.tscn" id="14_eyleo"]
 [ext_resource type="PackedScene" uid="uid://c23leivbmxdlf" path="res://Scenes/environmental_noise.tscn" id="15_43oaq"]
 [ext_resource type="PackedScene" uid="uid://dnviiuk2u24bi" path="res://Scenes/table.tscn" id="15_bm8wm"]
+[ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/light.tscn" id="16_5sepv"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/savepoint.tscn" id="16_ehatj"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
@@ -134,7 +135,7 @@ transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 
 transform = Transform3D(0.0252696, 0, -0.999681, 0, 5.30652, 0, 0.999681, 0, 0.0252696, 27.214, 13.2513, -35.4024)
 
 [node name="savepoint2" parent="." instance=ExtResource("16_ehatj")]
-transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 29.692, 18.7657, -41.3005)
+transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 33.8692, 18.3611, -41.3005)
 
 [node name="ladder2" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3.9, 0, -1, 0, -4.37114e-08, 31.4733, 14.5831, -46.6022)
@@ -281,3 +282,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6419, 16.3532, -97.2715)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 20.0918, 28.5818, -114.558)
 title = "Demo end"
 text = "Thank you for playing"
+
+[node name="Node3D2" parent="." instance=ExtResource("16_5sepv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8401, 16.3856, -35.3289)
+
+[node name="Node3D3" parent="." instance=ExtResource("16_5sepv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4515, 19.9045, -91.4303)
