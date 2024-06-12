@@ -7,7 +7,7 @@ extends Node3D
 @onready var barrel = $shotgun/RayCast3D
 @onready var shell = preload("res://Scenes/shotgun_shell.tscn")
 @onready var player = null
-const RECOIL = 0#20
+const RECOIL = 2#20
 @onready var emitter_shell = $shotgun/GPUParticles3D
 @onready var muzzleflash = $shotgun/muzzleflash/GPUParticles3D
 
