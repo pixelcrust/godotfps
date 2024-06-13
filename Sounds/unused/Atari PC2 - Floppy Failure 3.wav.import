@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://l3abym4fp2kx"
+path="res://.godot/imported/Atari PC2 - Floppy Failure 3.wav-83302ca99e579edd040a28aef8de90c9.sample"
+
+[deps]
+
+source_file="res://Sounds/unused/Atari PC2 - Floppy Failure 3.wav"
+dest_files=["res://.godot/imported/Atari PC2 - Floppy Failure 3.wav-83302ca99e579edd040a28aef8de90c9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

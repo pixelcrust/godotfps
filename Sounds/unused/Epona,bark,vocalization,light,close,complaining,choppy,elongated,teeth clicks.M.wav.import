@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ox5rymnrl5nn"
+path="res://.godot/imported/Epona,bark,vocalization,light,close,complaining,choppy,elongated,teeth clicks.M.wav-09d726cae6ec12a5b32612dedf63e951.sample"
+
+[deps]
+
+source_file="res://Sounds/unused/Epona,bark,vocalization,light,close,complaining,choppy,elongated,teeth clicks.M.wav"
+dest_files=["res://.godot/imported/Epona,bark,vocalization,light,close,complaining,choppy,elongated,teeth clicks.M.wav-09d726cae6ec12a5b32612dedf63e951.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

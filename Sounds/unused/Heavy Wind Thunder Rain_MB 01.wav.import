@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cry1ewo1hl3jt"
+path="res://.godot/imported/Heavy Wind Thunder Rain_MB 01.wav-a6f13a1aedb8d5b9cb021688acadacc9.sample"
+
+[deps]
+
+source_file="res://Sounds/unused/Heavy Wind Thunder Rain_MB 01.wav"
+dest_files=["res://.godot/imported/Heavy Wind Thunder Rain_MB 01.wav-a6f13a1aedb8d5b9cb021688acadacc9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

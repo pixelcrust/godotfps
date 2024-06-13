@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmwwy7fcrlxs6"
+path="res://.godot/imported/Rain Thunder So Far_MB 06.wav-a95958b5b358437b0033fd345907e5c4.sample"
+
+[deps]
+
+source_file="res://Sounds/unused/Rain Thunder So Far_MB 06.wav"
+dest_files=["res://.godot/imported/Rain Thunder So Far_MB 06.wav-a95958b5b358437b0033fd345907e5c4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

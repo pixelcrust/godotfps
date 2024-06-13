@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y6qw4grbkorg"
+path="res://.godot/imported/Epona,growling,gutteral,turning toward,exhale.M.wav-6d2e446619edad4eb36c03675de6a8e0.sample"
+
+[deps]
+
+source_file="res://Sounds/unused/Epona,growling,gutteral,turning toward,exhale.M.wav"
+dest_files=["res://.godot/imported/Epona,growling,gutteral,turning toward,exhale.M.wav-6d2e446619edad4eb36c03675de6a8e0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
