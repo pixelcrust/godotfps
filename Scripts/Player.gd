@@ -91,6 +91,7 @@ var gravity = 9.8
 @onready var icon_sniper = preload("res://Sprites/icons/icon_sniper.png")
 const icon_knife = preload("res://Sprites/icons/icon_knife.png")
 const icon_flashlight = preload("res://Sprites/icons/icon_flashlight.png")
+const icon_grenade = preload("res://Sprites/icons/icon_grenade.png")
 @onready var inventory_marker = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inventory_marker
 @onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_timer
 @onready var help_text = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/help_text
@@ -621,7 +622,7 @@ func equip_weapon():
 			4:
 				inv_slot_1.texture = icon_flashlight
 			5:
-				pass
+				inv_slot_1.texture = icon_grenade
 				#grenade icon
 			-1: 
 				inv_slot_1.texture = null
@@ -642,8 +643,7 @@ func equip_weapon():
 				4:
 					inv_slot_2.texture = icon_flashlight
 				5:
-					pass
-					#grenade icon
+					inv_slot_2.texture = icon_grenade
 				_:
 					pass
 		else:
@@ -662,8 +662,7 @@ func equip_weapon():
 				4:
 					inv_slot_3.texture = icon_flashlight
 				5:
-					pass
-					#grenade icon
+					inv_slot_3.texture = icon_grenade
 				_:
 					pass
 		else:
