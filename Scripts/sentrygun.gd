@@ -101,14 +101,14 @@ func _process(delta):
 			#if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
 			state = 1
 		3: #wait until moving back
-			
-			if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
-				if ray_cast_3d.get_collider() != null:
-					#await get_tree().create_timer(1).timeout
-					state = 4
-			else:
-				#await get_tree().create_timer(3).timeout
-				state = 2
+			if ray_cast_3d.get_collider() != null:
+				if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
+					if ray_cast_3d.get_collider() != null:
+						#await get_tree().create_timer(1).timeout
+						state = 4
+				else:
+					#await get_tree().create_timer(3).timeout
+					state = 2
 		4: #move back to starting position
 			transform.origin = start_pos
 			gun.rotation.x = 0
