@@ -2,7 +2,7 @@ extends Node3D
 var hp_start = 1
 var hp = hp_start
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
-@onready var sound_glass_break = preload("res://Sounds/Glass_Break_BeerBottle_702T_Fienup_002.wav")
+@onready var sound_glass_break = preload("res://Sounds/EFX EXT Shattered Glass Impact 10 A.wav")
 var once = 1
 @onready var collision_shape_3d = $CollisionShape3D
 @onready var mesh_instance_3d = $MeshInstance3D

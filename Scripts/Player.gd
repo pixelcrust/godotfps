@@ -126,6 +126,7 @@ const sound_footstep_dirt_2 = preload("res://Sounds/footstep dirt 2.wav")
 const sound_footstep_dirt_3 = preload("res://Sounds/footstep dirt 3.wav")
 const sound_footstep_dirt_4 = preload("res://Sounds/footstep dirt 4.wav")
 const sound_hurt_1 = preload("res://Sounds/oof 22.wav")
+const sound_land_hurt = preload("res://Sounds/Bone Cracking 18.wav")
 
 
 @onready var hp_start = 150
@@ -252,6 +253,7 @@ func _physics_process(delta):
 				fall_stunned = floor(in_air_time)
 				if fall_dmg >= 1:
 					_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)
+					audio_stream_player_3d.stream = sound_land_hurt
 			#print("fall_dmg: "+str(fall_dmg))
 			audio_stream_player_3d.stream = sound_land
 			audio_stream_player_3d.play(0.0)

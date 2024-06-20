@@ -10,6 +10,7 @@ extends Node3D
 #sound
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 @onready var sound_shoot = preload("res://Sounds/gun.wav")
+const sound_searching = preload("res://Sounds/Atari PC2 - Floppy Failure 3.wav")
 
 
 @onready var timer_shooting = $Timer
@@ -58,6 +59,8 @@ func _process(delta):
 		0:
 			#print("current_angle: "+str(current_angle)+ " angle_range: "+str(angle_range))
 			#print("going left: "+str(going_left))
+			audio_stream_player_3d.stream = sound_searching
+			audio_stream_player_3d.play(0.0)
 			if going_left == true:
 				current_angle += delta*turn_speed_scouting
 				if current_angle >= angle_range:
@@ -153,6 +156,8 @@ func shoot(number_bullets):
 	muzzleflash.set_emitting(true)
 	muzzleflash.restart()
 	for i in number_bullets:
+		audio_stream_player_3d.stream = sound_shoot
+		audio_stream_player_3d.play(0.0)
 		var new_bullet = bullet.instantiate()
 		new_bullet.position = aim_helper.global_position
 		new_bullet.transform.basis = aim_helper.global_transform.basis

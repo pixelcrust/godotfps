@@ -161,6 +161,5 @@ skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder"]
 visible = false
-layers = 2
 mesh = SubResource("ArrayMesh_bwcy5")
 surface_material_override/0 = ExtResource("3_ypp0n")
