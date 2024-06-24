@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=27 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/light.tscn" id="16_5sepv"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/savepoint.tscn" id="16_ehatj"]
 [ext_resource type="PackedScene" uid="uid://bqlro6hhkahua" path="res://Scenes/grenade_dropped.tscn" id="17_7tgvk"]
+[ext_resource type="PackedScene" uid="uid://s4dq7nvumsix" path="res://Scenes/beer_bottle_litter.tscn" id="18_dk4he"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
@@ -130,7 +131,7 @@ size = Vector3(4.79986, 5, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="house" parent="." instance=ExtResource("20_2tsel")]
-transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 3.69666, 14.3135, 20.6546)
+transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 3.75199, 14.2639, 20.7009)
 
 [node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(0.0252696, 0, -0.999681, 0, 5.30652, 0, 0.999681, 0, 0.0252696, 27.214, 13.2513, -35.4024)
@@ -307,3 +308,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9666, 18.436, -39.2121)
 
 [node name="grenade_dropped4" parent="." instance=ExtResource("17_7tgvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.1816, 18.436, -38.9191)
+
+[node name="beer_bottle_litter" parent="." instance=ExtResource("18_dk4he")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.85196, 14.3603, 18.6808)

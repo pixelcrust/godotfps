@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://s4dq7nvumsix"]
+
+[ext_resource type="Script" path="res://beer_bottle_litter.gd" id="1_tlmcb"]
+[ext_resource type="PackedScene" uid="uid://dglfh6cv7qej1" path="res://blender import/beer_bottle.tscn" id="2_ybaj2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kxv6t"]
+size = Vector3(0.980469, 0.403931, 0.833984)
+
+[node name="beer_bottle_litter" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_tlmcb")
+
+[node name="beer_bottle" parent="." instance=ExtResource("2_ybaj2")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0398436, 0, 0.494888)
+
+[node name="beer_bottle2" parent="." instance=ExtResource("2_ybaj2")]
+transform = Transform3D(0.05, 0.0866025, -3.78552e-09, 0, -4.37114e-09, -0.1, -0.0866025, 0.05, -2.18557e-09, 0.613579, 0, -0.100625)
+
+[node name="beer_bottle5" parent="." instance=ExtResource("2_ybaj2")]
+transform = Transform3D(-4.37114e-09, -0.1, 0, -4.37114e-09, 1.91069e-16, -0.1, 0.1, -4.37114e-09, -4.37114e-09, 0.320308, 0, -0.0837625)
+
+[node name="beer_bottle7" parent="." instance=ExtResource("2_ybaj2")]
+transform = Transform3D(-4.37114e-09, 0.1, -4.37114e-09, 0, -4.37114e-09, -0.1, -0.1, -4.37114e-09, 1.91069e-16, 0.490111, 0, 0.354209)
+
+[node name="beer_bottle3" parent="." instance=ExtResource("2_ybaj2")]
+transform = Transform3D(0.0866025, 0.05, -2.18557e-09, 0, -4.37114e-09, -0.1, -0.05, 0.0866025, -3.78552e-09, 0.0641295, 0, 0.102329)
+
+[node name="beer_bottle4" parent="." instance=ExtResource("2_ybaj2")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.266306, 0, 0.205779)
+
+[node name="beer_bottle6" parent="." instance=ExtResource("2_ybaj2")]
+transform = Transform3D(-0.1, -8.74228e-09, 3.82137e-16, 0, -4.37114e-09, -0.1, 8.74228e-09, -0.1, 4.37114e-09, 0.248195, 0, 0.494888)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.340418, 0.0963129, 0.174805)
+shape = SubResource("BoxShape3D_kxv6t")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
