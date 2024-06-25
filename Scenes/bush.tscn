@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://pri0gtr8s1qj"]
+
+[ext_resource type="PackedScene" uid="uid://d2jst8docbj6x" path="res://blender import/plant_model.tscn" id="1_ffn0v"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="plant" parent="." instance=ExtResource("1_ffn0v")]
+
+[node name="plant2" parent="." instance=ExtResource("1_ffn0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="plant3" parent="." instance=ExtResource("1_ffn0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="plant4" parent="." instance=ExtResource("1_ffn0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="plant5" parent="." instance=ExtResource("1_ffn0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)

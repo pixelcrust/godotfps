@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=28 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player.tscn" id="3_leven"]
+[ext_resource type="PackedScene" uid="uid://pri0gtr8s1qj" path="res://Scenes/bush.tscn" id="5_flgaq"]
 [ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/glass.tscn" id="10_obugd"]
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="13_yj2m1"]
 [ext_resource type="PackedScene" uid="uid://cg3fivuhti38p" path="res://fabric.tscn" id="14_eyleo"]
@@ -132,6 +133,9 @@ material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="house" parent="." instance=ExtResource("20_2tsel")]
 transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 3.75199, 14.2639, 20.7009)
+
+[node name="Node3D2" parent="house" instance=ExtResource("5_flgaq")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -0.646366, -0.00188541, -10.5368)
 
 [node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(0.0252696, 0, -0.999681, 0, 5.30652, 0, 0.999681, 0, 0.0252696, 27.214, 13.2513, -35.4024)
@@ -311,3 +315,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.1816, 18.436, -38.9191)
 
 [node name="beer_bottle_litter" parent="." instance=ExtResource("18_dk4he")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.85196, 14.3603, 18.6808)
+
+[node name="Node3D4" parent="." instance=ExtResource("5_flgaq")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 10.3155, 14.2132, 16.6309)
