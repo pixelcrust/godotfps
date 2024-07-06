@@ -231,6 +231,10 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("restart")):
 		get_tree(). reload_current_scene()
 		
+	#start from checkpoint
+	if(Input.is_action_just_pressed("key_restart_check_point")):
+		hp = 0
+		
 	#if ded
 	if hp <= 0:
 		die()
@@ -247,16 +251,16 @@ func _physics_process(delta):
 				velocity.y -= (gravity * delta)/ 3 
 	else:
 		if in_air_time > 0:
-			
-			if in_air_time > 60:
-				fall_dmg = floor(in_air_time)*10
-				fall_stunned = floor(in_air_time)
+			if in_air_time > 1:
+				fall_dmg = floor(in_air_time)*20
+				fall_stunned = floor(in_air_time)/10
 				if fall_dmg >= 1:
 					_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)
 					audio_stream_player_3d.stream = sound_land_hurt
+					audio_stream_player_3d.play(0.0)
 			#print("fall_dmg: "+str(fall_dmg))
-			audio_stream_player_3d.stream = sound_land
-			audio_stream_player_3d.play(0.0)
+			#audio_stream_player_3d.stream = sound_land
+			#audio_stream_player_3d.play(0.0)
 			in_air_time = 0
 	#print("in air time: "+str(in_air_time))
 	if in_water:
@@ -516,9 +520,10 @@ func _headbob(time) -> Vector3:
 	return pos
 
 
-func start_conversation():
+func start_conversation(wait_time):
 	conversation_timer.start()
 	conversation_timer.connect("timeout",_conversation_timeout)
+	conversation_timer.wait_time = wait_time
 	display_conversation.visible = true
 	
 	

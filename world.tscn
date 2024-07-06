@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=27 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -6,13 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://pri0gtr8s1qj" path="res://Scenes/bush.tscn" id="5_flgaq"]
 [ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/glass.tscn" id="10_obugd"]
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="13_yj2m1"]
-[ext_resource type="PackedScene" uid="uid://cg3fivuhti38p" path="res://fabric.tscn" id="14_eyleo"]
 [ext_resource type="PackedScene" uid="uid://c23leivbmxdlf" path="res://Scenes/environmental_noise.tscn" id="15_43oaq"]
 [ext_resource type="PackedScene" uid="uid://dnviiuk2u24bi" path="res://Scenes/table.tscn" id="15_bm8wm"]
 [ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/light.tscn" id="16_5sepv"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/savepoint.tscn" id="16_ehatj"]
 [ext_resource type="PackedScene" uid="uid://bqlro6hhkahua" path="res://Scenes/grenade_dropped.tscn" id="17_7tgvk"]
-[ext_resource type="PackedScene" uid="uid://s4dq7nvumsix" path="res://Scenes/beer_bottle_litter.tscn" id="18_dk4he"]
+[ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="18_20ky0"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
@@ -141,7 +140,7 @@ transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -0.646366, -0.00188541, -10.5
 transform = Transform3D(0.0252696, 0, -0.999681, 0, 5.30652, 0, 0.999681, 0, 0.0252696, 27.214, 13.2513, -35.4024)
 
 [node name="savepoint2" parent="." instance=ExtResource("16_ehatj")]
-transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 33.8692, 18.3611, -41.3005)
+transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 32.9007, 13.7472, -34.3714)
 
 [node name="ladder2" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3.9, 0, -1, 0, -4.37114e-08, 31.4733, 14.5831, -46.6022)
@@ -153,13 +152,13 @@ transform = Transform3D(-0.104112, 0, -0.994566, 0, 7.74731, 0, 0.994566, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6127, 0.846079, 40.6857)
 
 [node name="sentrygun" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(-0.878233, 0, 0.478232, 0, 1, 0, -0.478232, 0, -0.878233, 16.2798, 14.5823, 10.7332)
+transform = Transform3D(-0.878233, 0, 0.478232, 0, 1, 0, -0.478232, 0, -0.878233, 23.7887, 14.5823, -0.147597)
 
 [node name="Water" parent="." instance=ExtResource("27_nijyp")]
 transform = Transform3D(44.8765, 0, 0, 0, 5.54374, 0, 0, 0, 38.5678, 3.37353, 9.62938, -2.02181)
 
 [node name="lava" parent="." instance=ExtResource("28_0cw5c")]
-transform = Transform3D(70.3071, 0, -17.6162, 0, 10.4827, 0, 11.1808, 0, 110.774, 12.7889, 5.2084, -90.408)
+transform = Transform3D(66.2899, 0, -11.7288, 0, 10.4827, 0, 10.542, 0, 73.7529, 12.7889, 5.2084, -78.6841)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5895, 7.92214, 0)
@@ -223,8 +222,8 @@ material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="note2" parent="." instance=ExtResource("27_28sf7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8713, 8.42214, 0.172333)
-title = "Really?"
-text = "Domi"
+title = "Dolomiten:"
+text = "The search for Cursed water in Val Straniero?"
 
 [node name="environmental_noise" parent="." instance=ExtResource("15_43oaq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42784, 16.8945, 26.255)
@@ -242,9 +241,6 @@ transform = Transform3D(1.52831, 0, 0, 0, -4.37114e-08, -1.74892, 0, 1, -7.64476
 title = "Climb ladders"
 text = "Press f to hold on ladder"
 
-[node name="savepoint" parent="." instance=ExtResource("16_ehatj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16979, 14.2635, 19.3908)
-
 [node name="CSGBox3D20" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.174331, -0.0410376, -0.997675, -2.99493, 0.00240713, 0.0544828, 5.51121e-05, 0.999155, -0.0411082, 10.8874, 6.79721, -49.676)
 use_collision = true
@@ -261,24 +257,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47631, 23.6186, -16.7639)
 size = Vector3(18.318, 12.0837, 10.5274)
 shape = 0
 
-[node name="Node3D" parent="." instance=ExtResource("14_eyleo")]
-transform = Transform3D(0.984965, 0, 0.172754, 0, 1, 0, -0.172754, 0, 0.984965, 1.21505, 15.4099, 21.1076)
-
 [node name="table" parent="." instance=ExtResource("15_bm8wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22246, 14.2635, 21.5184)
 
 [node name="sentrygun2" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8874, 14.3641, -27.379)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8874, 14.3641, -29.64)
 
 [node name="sentrygun3" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3736, 16.287, -97.4754)
 
 [node name="FogVolume4" type="FogVolume" parent="."]
-transform = Transform3D(-0.532596, 0, -0.84637, 0, 1, 0, 0.84637, 0, -0.532596, -6.09766, 32.7065, -107.723)
+transform = Transform3D(-0.532596, 0, -0.84637, 0, 1, 0, 0.84637, 0, -0.532596, -9.31725, 32.7065, -99.821)
 size = Vector3(70.6913, 31.6193, 19.1977)
 
 [node name="FogVolume3" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7013, 16.3532, -145.074)
+transform = Transform3D(0.33992, 0, -0.940454, 0, 1, 0, 0.940454, 0, 0.33992, 39.744, 19.953, -136.861)
 size = Vector3(70.6913, 31.6193, 19.1977)
 
 [node name="sentrygun4" parent="." instance=ExtResource("29_6n3hy")]
@@ -288,6 +281,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6419, 16.3532, -97.2715)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 20.0918, 28.5818, -114.558)
 title = "Demo end"
 text = "Thank you for playing"
+cooldown_time = 1
 
 [node name="Node3D2" parent="." instance=ExtResource("16_5sepv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8401, 16.3856, -35.3289)
@@ -296,25 +290,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8401, 16.3856, -35.3289)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4515, 19.9045, -91.4303)
 
 [node name="sentrygun5" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(-0.0350739, 0, 0.999385, 0, 1, 0, -0.999385, 0, -0.0350739, 16.6803, 19.1823, -39.8141)
+transform = Transform3D(-0.0350739, 0, 0.999385, 0, 1, 0, -0.999385, 0, -0.0350739, 16.6803, 18.98, -39.8141)
 
 [node name="sentrygun6" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(-0.0133339, 0, 0.999911, 0, 1, 0, -0.999911, 0, -0.0133339, 7.91447, 14.6467, -49.6417)
 
-[node name="grenade_dropped" parent="." instance=ExtResource("17_7tgvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7637, 18.436, -38.9133)
-
 [node name="grenade_dropped2" parent="." instance=ExtResource("17_7tgvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7445, 18.436, -39.3861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0783, 18.436, -40.954)
 
 [node name="grenade_dropped3" parent="." instance=ExtResource("17_7tgvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9666, 18.436, -39.2121)
-
-[node name="grenade_dropped4" parent="." instance=ExtResource("17_7tgvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.1816, 18.436, -38.9191)
-
-[node name="beer_bottle_litter" parent="." instance=ExtResource("18_dk4he")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.85196, 14.3603, 18.6808)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9203, 18.436, -41.9398)
 
 [node name="Node3D4" parent="." instance=ExtResource("5_flgaq")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 10.3155, 14.2132, 16.6309)
+
+[node name="note5" parent="." instance=ExtResource("27_28sf7")]
+transform = Transform3D(0.107597, 0, -1.52017, 0, 1.09055, 0, 1.56781, 0, 0.104328, 1.7069, 15.0584, 21.7426)
+title = "Dolomiten"
+text = "Edgelord billionaire E. Tusk is buying Val Straniero. Mountains will be made flat and people replaced by robots."
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="."]
+transform = Transform3D(0.0750331, -0.112612, -0.593683, 0.599959, 0.289828, 0.0377131, 0.130202, -0.000737312, 0.134417, 22.624, 18.1961, -125.707)
+use_collision = true
+size = Vector3(1, 74.2914, 13.5793)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="."]
+transform = Transform3D(0.153794, -0.0328101, -0.0323, 0.580335, 0.326777, 0.261007, -0.257525, 0.000539996, 0.588033, 24.5984, 17.61, -123.07)
+use_collision = true
+size = Vector3(1, 59.811, 13.5793)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.511959, 0.039929, 0.873437, -0.156712, 0.0159954, -2.74986, -0.202181, -0.113506, -0.0802575, 19.4083, 17.8098, -124.317)
+use_collision = true
+size = Vector3(1, 103.869, 7.56848)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="savepoint" parent="." instance=ExtResource("16_ehatj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2394, 28.586, -115.349)
+
+[node name="Medikit" parent="." instance=ExtResource("18_20ky0")]
+transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 18.7746, 28.586, -116.922)

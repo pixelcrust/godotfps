@@ -25,7 +25,7 @@ func use():
 	load_save()
 	
 func save():
-	player.start_conversation()
+	player.start_conversation(1)
 	player.display_conversation.clear()
 	player.display_conversation.insert_text_at_caret("Game saved")
 	

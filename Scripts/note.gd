@@ -5,6 +5,7 @@ extends Node3D
 @onready var player = 0
 @export var title = "Gablo:"
 @export var text = "Guat, ba dir?"
+@export var cooldown_time = 5
 
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
@@ -16,7 +17,7 @@ func get_interaction_time():
 	return interaction_time
 
 func use():
-	player.start_conversation()
+	player.start_conversation(cooldown_time)
 	player.display_conversation.clear()
 	player.display_conversation.insert_text_at_caret(title)
 	player.display_conversation.insert_text_at_caret("\n \n")
