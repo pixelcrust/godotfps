@@ -16,9 +16,8 @@ func _ready():
 func _process(delta):
 	plane.rotation.x += SPEED_MOVEMENT*direction_movement*delta
 	plane_2.rotation.x += SPEED_MOVEMENT*direction_movement*delta
-	print(str(rad_to_deg(plane.rotation.x)))
-	if abs(plane.rotation.x) >= DISTANCE_MOVEMENT:
-		direction_movement *= -1
-		plane.rotation.x = DISTANCE_MOVEMENT-1
-	else:
-		pass
+	#print(str(rad_to_deg(plane.rotation.x)))
+	if rad_to_deg(plane.rotation.x) >= DISTANCE_MOVEMENT:
+		direction_movement = -1
+	elif rad_to_deg(plane.rotation.x) <= -DISTANCE_MOVEMENT:
+		direction_movement = 1
