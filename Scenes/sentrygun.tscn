@@ -50,12 +50,12 @@ transform = Transform3D(0.275977, 0, 0, 0, -2.083e-08, -0.259838, 0, 0.476535, -
 mesh = SubResource("CylinderMesh_oo2j3")
 
 [node name="RayCast3D" type="RayCast3D" parent="gun/barrel"]
-transform = Transform3D(4.581, 0, 0, 0, -100, 4.23126e-07, 0, -8.74227e-06, -4.84, 0.142604, 1.07674, -0.00678492)
+transform = Transform3D(4.581, 0, 0, 0, -100, 4.23126e-07, 0, -8.74228e-06, -4.84, 0.143, 1.077, 0)
 collision_mask = 11
 script = ExtResource("1_fwny5")
 
 [node name="laser" type="MeshInstance3D" parent="gun/barrel/RayCast3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.13687e-13, 1, 0, -0.00277205, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.13687e-13, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_ib2vb")
 
 [node name="aim_helper" type="Node3D" parent="gun/barrel"]
