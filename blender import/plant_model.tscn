@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2jst8docbj6x"]
+[gd_scene load_steps=6 format=3 uid="uid://d2jst8docbj6x"]
 
 [ext_resource type="Texture2D" uid="uid://bulyghtlmpq75" path="res://blender import/plant_texture_plant.png" id="1_h8ll5"]
+[ext_resource type="Script" path="res://blender import/plant_model_movement.gd" id="1_obltx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gygpn"]
 resource_name = "plant"
@@ -41,6 +42,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bogrt")
 
 [node name="plant" type="Node3D"]
+script = ExtResource("1_obltx")
 
 [node name="Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.82137e-16, -8.74228e-09, -0.2, -0.2, -8.74228e-09, 0, -8.74228e-09, 0.2, -8.74228e-09, 0, 0, 0)

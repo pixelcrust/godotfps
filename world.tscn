@@ -130,11 +130,11 @@ use_collision = true
 size = Vector3(4.79986, 5, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
 
+[node name="Node3D5" parent="." instance=ExtResource("5_flgaq")]
+transform = Transform3D(0.451734, 0, -0.892153, 0, 3, 0, 0.892153, 0, 0.451734, 12.8604, 14.262, 15.3644)
+
 [node name="house" parent="." instance=ExtResource("20_2tsel")]
 transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 3.75199, 14.2639, 20.7009)
-
-[node name="Node3D2" parent="house" instance=ExtResource("5_flgaq")]
-transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -0.646366, -0.00188541, -10.5368)
 
 [node name="ladder" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(0.0252696, 0, -0.999681, 0, 5.30652, 0, 0.999681, 0, 0.0252696, 27.214, 13.2513, -35.4024)
