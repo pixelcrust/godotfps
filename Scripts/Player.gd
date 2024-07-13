@@ -251,8 +251,8 @@ func _physics_process(delta):
 				velocity.y -= (gravity * delta)/ 3 
 	else:
 		if in_air_time > 0:
-			if in_air_time > 1:
-				fall_dmg = floor(in_air_time)*20
+			if in_air_time > 2:
+				fall_dmg = floor(in_air_time)*10
 				fall_stunned = floor(in_air_time)/10
 				if fall_dmg >= 1:
 					_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)
