@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yv8hvdja561g"
+path="res://.godot/imported/Sigla Tagesschau - Rai Südtirol (2010-2014) (2).mp3-14e7befba3dfea551c794e505d537c83.mp3str"
+
+[deps]
+
+source_file="res://Sounds/unused/Sigla Tagesschau - Rai Südtirol (2010-2014) (2).mp3"
+dest_files=["res://.godot/imported/Sigla Tagesschau - Rai Südtirol (2010-2014) (2).mp3-14e7befba3dfea551c794e505d537c83.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

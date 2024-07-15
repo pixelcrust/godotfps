@@ -130,6 +130,9 @@ use_collision = true
 size = Vector3(4.79986, 5, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
 
+[node name="Node3D6" parent="." instance=ExtResource("5_flgaq")]
+transform = Transform3D(-0.591873, 0, -0.806032, 0, 4.61037, 0, 0.806032, 0, -0.591873, 9.87358, 14.4146, 12.1441)
+
 [node name="Node3D5" parent="." instance=ExtResource("5_flgaq")]
 transform = Transform3D(0.451734, 0, -0.892153, 0, 3, 0, 0.892153, 0, 0.451734, 12.8604, 14.262, 15.3644)
 

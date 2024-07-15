@@ -1,9 +1,11 @@
 extends StaticBody3D
 
-@onready var outline_mesh = $table_medium_Decorated.outline_mesh
+@onready var outline_mesh = $tv.outline_mesh
 @onready var interactiontime = .1
 @onready var player = 0
 @onready var save_data = []
+
+@onready var sound_tagesschau = preload("res://Sounds/unused/Sigla Tagesschau - Rai Südtirol (2010-2014) (2).mp3")
 var file = null
 var json = JSON.new()
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +23,8 @@ func get_interaction_time():
 	return interactiontime
 	
 func use():
+	$AudioStreamPlayer3D.stream = sound_tagesschau
+	$AudioStreamPlayer3D.play(0.0)
 	save()
 	load_save()
 	
