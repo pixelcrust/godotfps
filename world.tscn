@@ -195,7 +195,7 @@ size = Vector3(10.796, 19.897, 23.4973)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999934, 0, 0.010751, 0.00253039, 0.971908, -0.235347, -0.010449, 0.235363, 0.971843, 33.9638, 2.47143, -80.3102)
+transform = Transform3D(0.999934, 0, 0.010751, 0.00253039, 0.971908, -0.235347, -0.010449, 0.235363, 0.971843, 33.9638, 2.93427, -80.3102)
 use_collision = true
 size = Vector3(10.796, 19.897, 23.4973)
 material = SubResource("StandardMaterial3D_ycdsb")
@@ -294,10 +294,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8401, 16.3856, -35.3289)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4515, 19.9045, -91.4303)
 
 [node name="sentrygun5" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(-0.0350739, 0, 0.999385, 0, 1, 0, -0.999385, 0, -0.0350739, 16.6803, 18.98, -39.8141)
+transform = Transform3D(0.139726, 0, 0.99019, 0, 1, 0, -0.99019, 0, 0.139726, 11.3384, 18.98, -43.1555)
 
 [node name="sentrygun6" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(-0.0133339, 0, 0.999911, 0, 1, 0, -0.999911, 0, -0.0133339, 7.91447, 14.6467, -49.6417)
+transform = Transform3D(0.0944558, 0, 0.995529, 0, 1, 0, -0.995529, 0, 0.0944558, 7.91447, 14.6467, -49.6417)
 
 [node name="grenade_dropped2" parent="." instance=ExtResource("17_7tgvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0783, 18.436, -40.954)
@@ -332,7 +332,7 @@ size = Vector3(1, 103.869, 9.24225)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="savepoint" parent="." instance=ExtResource("16_ehatj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2394, 28.586, -115.349)
+transform = Transform3D(-0.867774, 0, -0.496959, 0, 1, 0, 0.496959, 0, -0.867774, 23.2394, 28.5298, -115.349)
 
 [node name="Medikit" parent="." instance=ExtResource("18_20ky0")]
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 18.7746, 28.586, -116.922)
@@ -386,3 +386,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1591, 12.5116, -190.573)
 transform = Transform3D(1, 0, 0, 0, 0.655084, -0.755556, 0, 0.755556, 0.655084, 20.8818, 2.39387, -175.669)
 spot_range = 24.3566
 spot_angle = 17.3642
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.999965, 0, -0.00806333, 0, 1, 0, 0.00806333, 0, -0.999965, 14.6025, 6.70045, -66.0865)
+use_collision = true
+size = Vector3(3.02737, 9.34401, 3.19124)
+material = SubResource("StandardMaterial3D_ycdsb")
+
+[node name="sentrygun7" parent="." instance=ExtResource("29_6n3hy")]
+transform = Transform3D(0.313379, 0, 0.949628, 0, 1, 0, -0.949628, 0, 0.313379, 13.7628, 11.8197, -65.145)
