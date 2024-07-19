@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfiru246dbjax"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_7g72f"]
+size = Vector3(5, 17, 5)
+
+[node name="church" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.59374, 0)
+size = Vector3(5, 20, 5)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074295, 28.0322, -0.00357246)
+mesh = SubResource("PrismMesh_7g72f")

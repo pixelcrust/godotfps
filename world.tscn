@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=28 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/savepoint.tscn" id="16_ehatj"]
 [ext_resource type="PackedScene" uid="uid://bqlro6hhkahua" path="res://Scenes/grenade_dropped.tscn" id="17_7tgvk"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="18_20ky0"]
+[ext_resource type="PackedScene" uid="uid://bfiru246dbjax" path="res://chruch.tscn" id="19_te7ij"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
@@ -119,9 +120,9 @@ size = Vector3(1, 103.869, 9.86759)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="Floor" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494306, -47.0958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09802, 0.494306, -73.3357)
 use_collision = true
-size = Vector3(100, 1, 200)
+size = Vector3(100, 1, 252.781)
 material = SubResource("StandardMaterial3D_1yvm4")
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="."]
@@ -275,7 +276,7 @@ size = Vector3(70.6913, 31.6193, 19.1977)
 
 [node name="FogVolume3" type="FogVolume" parent="."]
 transform = Transform3D(0.33992, 0, -0.940454, 0, 1, 0, 0.940454, 0, 0.33992, 39.744, 19.953, -136.861)
-size = Vector3(70.6913, 31.6193, 19.1977)
+size = Vector3(38.7447, 31.6193, 19.1977)
 
 [node name="sentrygun4" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6419, 16.3532, -97.2715)
@@ -313,21 +314,21 @@ title = "Dolomiten"
 text = "Edgelord billionaire E. Tusk is buying Val Straniero. Mountains will be made flat and people replaced by robots."
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="."]
-transform = Transform3D(0.0750331, -0.112612, -0.593683, 0.599959, 0.289828, 0.0377131, 0.130202, -0.000737312, 0.134417, 22.624, 18.1961, -125.707)
+transform = Transform3D(0.152861, 0.0203924, -0.467367, 0.542064, 0.309507, 0.261312, 0.255605, -0.0217157, -0.291948, 22.624, 18.1961, -127.046)
 use_collision = true
 size = Vector3(1, 74.2914, 13.5793)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="."]
-transform = Transform3D(0.153794, -0.0328101, -0.0323, 0.580335, 0.326777, 0.261007, -0.257525, 0.000539996, 0.588033, 24.5984, 17.61, -123.07)
+transform = Transform3D(0.247162, 0.0213906, 0.0110748, 0.547131, 0.327723, 0.262765, -0.257525, 0.000539994, 0.588033, 24.7972, 20.7995, -122.153)
 use_collision = true
-size = Vector3(1, 59.811, 13.5793)
+size = Vector3(1, 76.7883, 16.6814)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.511959, 0.039929, 0.873437, -0.156712, 0.0159954, -2.74986, -0.202181, -0.113506, -0.0802575, 19.4083, 17.8098, -124.317)
+transform = Transform3D(-0.511959, 0.039929, 0.873437, -0.156712, 0.0159954, -2.74986, -0.202181, -0.113506, -0.0802575, 18.6773, 20.1111, -124.25)
 use_collision = true
-size = Vector3(1, 103.869, 7.56848)
+size = Vector3(1, 103.869, 9.24225)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="savepoint" parent="." instance=ExtResource("16_ehatj")]
@@ -335,3 +336,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2394, 28.586, -115.349)
 
 [node name="Medikit" parent="." instance=ExtResource("18_20ky0")]
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 18.7746, 28.586, -116.922)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="."]
+transform = Transform3D(0.222393, 0.974626, 0.00551388, -0.00665734, 0.00320014, -3.35565, -0.975744, 0.222116, 0.0241529, 7.35059, 0.564132, -118.825)
+use_collision = true
+size = Vector3(1, 103.869, 7.59166)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.998888, -0.0612451, 0.0216238, -0.00665734, 0.00320014, -3.35565, 0.0612944, -0.997738, -0.0120904, 18.6259, 4.21858, -108.123)
+use_collision = true
+size = Vector3(1, 76.808, 3.19162)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.998888, -0.0612451, 0.0216238, -0.00665734, 0.00320014, -3.35565, 0.0612944, -0.997738, -0.0120904, 25.8232, 3.49519, -108.251)
+use_collision = true
+size = Vector3(1, 77.0462, 2.55832)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.142488, -0.00516165, -3.32151, 0.988696, 0.0611111, -0.477939, 0.0612944, -0.997738, -0.0120904, 20.3646, 10.2368, -139.467)
+use_collision = true
+size = Vector3(1, 31.1124, 2.78854)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="Water2" parent="." instance=ExtResource("27_nijyp")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 22.3301, 0.324478, -117.717)
+
+[node name="Node3D" parent="." instance=ExtResource("16_5sepv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2492, 3.45846, -124.061)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="."]
+transform = Transform3D(0.222393, 0.974626, 0.00551389, -0.154997, 0.0369481, -3.31293, -0.963378, 0.219045, 0.534287, 37.414, 12.218, -111.993)
+use_collision = true
+size = Vector3(1, 24.8317, 14.8476)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.49651, 0.860923, 0.36938, -0.154997, 0.0369481, -3.31293, -0.855005, -0.506644, 0.386072, 6.73832, 12.218, -111.993)
+use_collision = true
+size = Vector3(1, 24.8317, 14.8476)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="church" parent="." instance=ExtResource("19_te7ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1591, 12.5116, -190.573)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.655084, -0.755556, 0, 0.755556, 0.655084, 20.8818, 2.39387, -175.669)
+spot_range = 24.3566
+spot_angle = 17.3642
