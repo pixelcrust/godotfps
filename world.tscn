@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=30 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bfiru246dbjax" path="res://chruch.tscn" id="19_te7ij"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://s4dq7nvumsix" path="res://Scenes/beer_bottle_litter.tscn" id="20_82bg5"]
+[ext_resource type="PackedScene" uid="uid://bwwptgjr6pw5b" path="res://Scenes/ammo_pistol.tscn" id="21_yenb5"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
 [ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_nijyp"]
@@ -276,8 +277,8 @@ transform = Transform3D(-0.532596, 0, -0.84637, 0, 1, 0, 0.84637, 0, -0.532596, 
 size = Vector3(70.6913, 31.6193, 19.1977)
 
 [node name="FogVolume3" type="FogVolume" parent="."]
-transform = Transform3D(0.33992, 0, -0.940454, 0, 1, 0, 0.940454, 0, 0.33992, 39.744, 19.953, -136.861)
-size = Vector3(38.7447, 31.6193, 19.1977)
+transform = Transform3D(0.33992, 0, -0.940454, 0, 1, 0, 0.940454, 0, 0.33992, 36.0859, 15.2239, -136.861)
+size = Vector3(38.7447, 10.3428, 19.1977)
 
 [node name="sentrygun4" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6419, 16.3532, -97.2715)
@@ -381,10 +382,10 @@ size = Vector3(1, 24.8317, 14.8476)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="church" parent="." instance=ExtResource("19_te7ij")]
-transform = Transform3D(-0.55297, 0, -0.833201, 0, 1, 0, 0.833201, 0, -0.55297, 21.1591, 12.5116, -190.573)
+transform = Transform3D(-0.829652, 0, -0.558281, 0, 1, 0, 0.558281, 0, -0.829652, 21.1591, 12.5116, -190.573)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.655084, -0.755556, 0, 0.755556, 0.655084, 20.8818, 2.39387, -175.669)
+transform = Transform3D(1, 0, 0, 0, 0.655084, -0.755556, 0, 0.755556, 0.655084, 20.8818, 2.39387, -162.908)
 spot_range = 58.0232
 spot_angle = 17.3642
 
@@ -414,3 +415,6 @@ transform = Transform3D(-0.495832, -0.868312, 0.00172833, -0.00665734, 0.0032001
 use_collision = true
 size = Vector3(30.4219, 77.0462, 3.47337)
 material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="ammo_pistol" parent="." instance=ExtResource("21_yenb5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38427, 14.3891, 18.6445)
