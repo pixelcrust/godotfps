@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=29 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/medikit.tscn" id="18_20ky0"]
 [ext_resource type="PackedScene" uid="uid://bfiru246dbjax" path="res://chruch.tscn" id="19_te7ij"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
+[ext_resource type="PackedScene" uid="uid://s4dq7nvumsix" path="res://Scenes/beer_bottle_litter.tscn" id="20_82bg5"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
 [ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_nijyp"]
@@ -132,7 +133,7 @@ size = Vector3(4.79986, 5, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="Node3D6" parent="." instance=ExtResource("5_flgaq")]
-transform = Transform3D(-0.591873, 0, -0.806032, 0, 4.61037, 0, 0.806032, 0, -0.591873, 9.87358, 14.4146, 12.1441)
+transform = Transform3D(-0.591873, 0, -0.806032, 0, 4.61037, 0, 0.806032, 0, -0.591873, 12.2447, 10.4541, -4.66188)
 
 [node name="Node3D5" parent="." instance=ExtResource("5_flgaq")]
 transform = Transform3D(0.451734, 0, -0.892153, 0, 3, 0, 0.892153, 0, 0.451734, 12.8604, 14.262, 15.3644)
@@ -156,7 +157,7 @@ transform = Transform3D(-0.104112, 0, -0.994566, 0, 7.74731, 0, 0.994566, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6127, 0.846079, 40.6857)
 
 [node name="sentrygun" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(-0.878233, 0, 0.478232, 0, 1, 0, -0.478232, 0, -0.878233, 23.7887, 14.5823, -0.147597)
+transform = Transform3D(-0.878233, 0, 0.478232, 0, 1, 0, -0.478232, 0, -0.878233, 28.4936, 14.5823, -4.97628)
 
 [node name="Water" parent="." instance=ExtResource("27_nijyp")]
 transform = Transform3D(44.8765, 0, 0, 0, 5.54374, 0, 0, 0, 38.5678, 3.37353, 9.62938, -2.02181)
@@ -265,7 +266,7 @@ shape = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22246, 14.2635, 21.5184)
 
 [node name="sentrygun2" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8874, 14.3641, -29.64)
+transform = Transform3D(0.984665, 0, -0.174456, 0, 1, 0, 0.174456, 0, 0.984665, 30.8874, 14.3641, -29.64)
 
 [node name="sentrygun3" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3736, 16.287, -97.4754)
@@ -314,9 +315,9 @@ title = "Dolomiten"
 text = "Edgelord billionaire E. Tusk is buying Val Straniero. Mountains will be made flat and people replaced by robots."
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="."]
-transform = Transform3D(0.152861, 0.0203924, -0.467367, 0.542064, 0.309507, 0.261312, 0.255605, -0.0217157, -0.291948, 22.624, 18.1961, -127.046)
+transform = Transform3D(0.152861, 0.0203924, -0.467367, 0.542064, 0.309507, 0.261312, 0.255605, -0.0217157, -0.291948, 22.5883, 17.6537, -127.008)
 use_collision = true
-size = Vector3(1, 74.2914, 13.5793)
+size = Vector3(1, 70.7864, 13.5793)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="."]
@@ -362,10 +363,10 @@ size = Vector3(1, 31.1124, 2.78854)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="Water2" parent="." instance=ExtResource("27_nijyp")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 22.3301, 0.324478, -117.717)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 22.3301, -0.631071, -119.466)
 
 [node name="Node3D" parent="." instance=ExtResource("16_5sepv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2492, 3.45846, -124.061)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2492, 5.08599, -124.061)
 
 [node name="CSGBox3D28" type="CSGBox3D" parent="."]
 transform = Transform3D(0.222393, 0.974626, 0.00551389, -0.154997, 0.0369481, -3.31293, -0.963378, 0.219045, 0.534287, 37.414, 12.218, -111.993)
@@ -380,11 +381,11 @@ size = Vector3(1, 24.8317, 14.8476)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="church" parent="." instance=ExtResource("19_te7ij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1591, 12.5116, -190.573)
+transform = Transform3D(-0.55297, 0, -0.833201, 0, 1, 0, 0.833201, 0, -0.55297, 21.1591, 12.5116, -190.573)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.655084, -0.755556, 0, 0.755556, 0.655084, 20.8818, 2.39387, -175.669)
-spot_range = 24.3566
+spot_range = 58.0232
 spot_angle = 17.3642
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="."]
@@ -395,3 +396,21 @@ material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="sentrygun7" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(0.313379, 0, 0.949628, 0, 1, 0, -0.949628, 0, 0.313379, 13.7628, 11.8197, -65.145)
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.0579148, -0.997942, -0.00943341, -0.00665734, 0.00320014, -3.35565, 0.99909, -0.057827, -0.022908, 22.29, 0.496964, -123.475)
+use_collision = true
+size = Vector3(0.641113, 13.2891, 1.70445)
+material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="beer_bottle_litter" parent="." instance=ExtResource("20_82bg5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.1847, 1.03429, -125.543)
+
+[node name="beer_bottle_litter2" parent="." instance=ExtResource("20_82bg5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 20.1148, 1.03429, -125.543)
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.495832, -0.868312, 0.00172833, -0.00665734, 0.00320014, -3.35565, 0.869301, -0.495244, -0.024714, 17.0993, 6.28962, -197.754)
+use_collision = true
+size = Vector3(30.4219, 77.0462, 3.47337)
+material = SubResource("StandardMaterial3D_ld07o")

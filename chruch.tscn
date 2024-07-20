@@ -1,14 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfiru246dbjax"]
+[gd_scene load_steps=7 format=3 uid="uid://bfiru246dbjax"]
+
+[ext_resource type="Texture2D" uid="uid://cpk1xfndhq8io" path="res://textures/Bricks_02-512x512.png" id="1_vydq3"]
+[ext_resource type="Texture2D" uid="uid://bkpg6r2mr5lrj" path="res://textures/Wood_06-512x512.png" id="2_oqlne"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bnhm"]
+albedo_texture = ExtResource("1_vydq3")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa2cr"]
+albedo_texture = ExtResource("2_oqlne")
+uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="PrismMesh" id="PrismMesh_7g72f"]
+material = SubResource("StandardMaterial3D_pa2cr")
 size = Vector3(5, 17, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp4ae"]
+albedo_texture = ExtResource("1_vydq3")
+uv1_scale = Vector3(5, 5, 5)
 
 [node name="church" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.59374, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0842752, 9.59374, 0)
 size = Vector3(5, 20, 5)
+material = SubResource("StandardMaterial3D_1bnhm")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074295, 28.0322, -0.00357246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0742418, 28.0435, -0.0112262)
+mesh = SubResource("PrismMesh_7g72f")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.993807, 0, 0, 0, 0.993807, 0, 0, 0, 0.993807, -1.00263, 4.79224, 17.053)
+size = Vector3(12.7164, 10.5845, 29.5186)
+material = SubResource("StandardMaterial3D_qp4ae")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(3.28347, 0, 0, 0, 0.322944, 0, 0, 0, 6.23833, -0.791594, 12.8094, 17.7063)
 mesh = SubResource("PrismMesh_7g72f")
