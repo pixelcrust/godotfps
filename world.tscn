@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=31 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/house.tscn" id="20_2tsel"]
 [ext_resource type="PackedScene" uid="uid://s4dq7nvumsix" path="res://Scenes/beer_bottle_litter.tscn" id="20_82bg5"]
 [ext_resource type="PackedScene" uid="uid://bwwptgjr6pw5b" path="res://Scenes/ammo_pistol.tscn" id="21_yenb5"]
+[ext_resource type="PackedScene" uid="uid://cqbg8j44khcj6" path="res://Scenes/ammo_shotgun.tscn" id="22_ia1i2"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
 [ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_nijyp"]
@@ -418,3 +419,6 @@ material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="ammo_pistol" parent="." instance=ExtResource("21_yenb5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38427, 14.3891, 18.6445)
+
+[node name="ammo_pistol2" parent="." instance=ExtResource("22_ia1i2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73088, 14.3417, 17.6105)

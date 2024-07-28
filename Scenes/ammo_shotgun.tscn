@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://ammo_pistol_collision.gd" id="3_hf0em"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dubnp"]
-albedo_color = Color(0.400025, 0.399758, 0, 1)
+albedo_color = Color(0.4, 0.0313726, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6sgb1"]
 material = SubResource("StandardMaterial3D_dubnp")

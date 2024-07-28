@@ -3,7 +3,7 @@ extends Node3D
 @onready var outline_mesh = $MeshInstance3D/MeshInstance3D
 @onready var interaction_time = .01
 var player = 0
-@export var number_bullets = 10
+@export var number_bullets = 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,7 +22,7 @@ func use():
 	#for iteration in iterable_object:
 	for n in player.inventory:
 		#print(str(n.item_id))
-		if n.item_id == 0:
+		if n.item_id == 1:
 			n.spare_ammo += number_bullets
 			queue_free()
 	#else dont pick up
