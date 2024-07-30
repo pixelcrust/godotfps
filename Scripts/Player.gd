@@ -602,7 +602,6 @@ func equip_weapon():
 	display_inventory.visible = true
 	inventory_timer.connect("timeout",_inventory_gui_timeout)
 	inventory_timer.start()
-	inventory_marker.visible = true
 	match inventory_selector:
 		0:
 			inventory_marker.global_position.x = inv_slot_1.global_position.x
@@ -618,6 +617,7 @@ func equip_weapon():
 			inventory_marker.global_position.y = 0
 	
 	if inventory.is_empty() == false:
+		inventory_marker.visible = true
 		match inventory[0].item_id:
 			0:
 				inv_slot_1.texture = icon_pistol
@@ -677,6 +677,7 @@ func equip_weapon():
 			inv_slot_3.texture = null
 	else:
 		inv_slot_1.texture = null
+		inventory_marker.visible = false
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
