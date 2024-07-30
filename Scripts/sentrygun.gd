@@ -14,12 +14,12 @@ const sound_searching = preload("res://Sounds/Atari PC2 - Floppy Failure 3.wav")
 
 
 @onready var timer_shooting = $Timer
-var cd_bullet = 50
+var cd_bullet = 25
 
 var horizontal_shooting_error_range = 0
 var vertical_shooting_error_range = 0
 var player = null
-var turn_speed_scouting = 20
+var turn_speed_scouting = 30
 var turn_speed_horizontally = 30
 var direction = 0
 var hp_start = 100

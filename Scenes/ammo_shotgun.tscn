@@ -28,7 +28,7 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_n3ht8"]
 size = Vector3(0.376221, 0.303833, 0.473145)
 
-[node name="ammo_pistol" type="Node3D"]
+[node name="ammo_shotgun" type="Node3D"]
 script = ExtResource("1_earx6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

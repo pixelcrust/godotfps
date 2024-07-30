@@ -21,7 +21,7 @@ func _process(_delta):
 		visible = true
 		once = false
 
-func shoot(_inventory_selector,_player_eyes_position,player_shot):
+func shoot(inventory_selector,player_eyes,player_shot,collision_point):
 	if animation_player.is_playing():
 		pass
 	else:
