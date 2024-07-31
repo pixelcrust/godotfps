@@ -47,3 +47,5 @@ shape = SubResource("BoxShape3D_eptbu")
 visible = false
 mesh = SubResource("ArrayMesh_4vx57")
 surface_material_override/0 = ExtResource("3_42s0r")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

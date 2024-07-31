@@ -96,6 +96,7 @@ const icon_grenade = preload("res://Sprites/icons/icon_grenade.png")
 @onready var inventory_marker = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inventory_marker
 @onready var inventory_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_timer
 @onready var help_text = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/help_text
+var inventory_before = null
 
 #text bubble variables
 @onready var display_conversation = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_conversation
@@ -128,7 +129,7 @@ const sound_footstep_dirt_3 = preload("res://Sounds/footstep dirt 3.wav")
 const sound_footstep_dirt_4 = preload("res://Sounds/footstep dirt 4.wav")
 const sound_hurt_1 = preload("res://Sounds/oof 22.wav")
 const sound_land_hurt = preload("res://Sounds/Bone Cracking 18.wav")
-
+const SOUND_ITEM_PICKUP = preload("res://Sounds/velcro 1.wav")
 
 @onready var hp_start = 150
 @onready var hp = hp_start
@@ -216,7 +217,7 @@ func _ready():
 	"spare_ammo": 100
 	})
 	"""
-	
+	inventory_before = inventory.duplicate(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	equip_weapon()
 
@@ -616,6 +617,11 @@ func equip_weapon():
 			inventory_marker.global_position.x = 0
 			inventory_marker.global_position.y = 0
 	
+	if inventory_before != inventory:
+		audio_stream_player_3d.stream = SOUND_ITEM_PICKUP
+		audio_stream_player_3d.play(0.0)
+		inventory_before = inventory.duplicate(true)
+		
 	if inventory.is_empty() == false:
 		inventory_marker.visible = true
 		match inventory[0].item_id:
@@ -695,8 +701,8 @@ func _on_bone_body_bodypart_hit(dmg,time_rooted):
 
 func drop_weapon():
 	equipped.queue_free()
-	match inventory[inventory_selector].item_id:
 
+	match inventory[inventory_selector].item_id:
 		0:
 			print("dropped gun")
 			var new_dropped_gun = asset_drop_gun.instantiate()
@@ -752,6 +758,7 @@ func drop_weapon():
 			pass
 		_:
 			pass
+	inventory_before.remove_at(inventory_selector)
 	inventory.remove_at(inventory_selector)
 	equip_weapon()
 	

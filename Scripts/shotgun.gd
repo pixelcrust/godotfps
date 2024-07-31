@@ -11,6 +11,8 @@ const RECOIL = 2#20
 @onready var emitter_shell = $shotgun/GPUParticles3D
 @onready var muzzleflash = $shotgun/muzzleflash/GPUParticles3D
 
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+@onready var sound_shoot_empty = null
 
 @onready var pos_standard = Vector3(0.4,-0.6,-1.4)
 @onready var pos_ads = Vector3(-0.1,-0.3,-0.9)

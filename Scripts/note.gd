@@ -7,6 +7,9 @@ extends Node3D
 @export var text = "Guat, ba dir?"
 @export var cooldown_time = 5
 
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+const SOUND_USE = preload("res://Sounds/paper handled 1.wav")
+
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 
@@ -22,4 +25,7 @@ func use():
 	player.display_conversation.insert_text_at_caret(title)
 	player.display_conversation.insert_text_at_caret("\n \n")
 	player.display_conversation.insert_text_at_caret(text)
+	
+	audio_stream_player_3d.stream = SOUND_USE
+	audio_stream_player_3d.play(0.0)
 	print("used it")
