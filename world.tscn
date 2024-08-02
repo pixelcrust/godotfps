@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=35 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://pri0gtr8s1qj" path="res://Scenes/bush.tscn" id="5_flgaq"]
 [ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/glass.tscn" id="10_obugd"]
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="13_yj2m1"]
-[ext_resource type="PackedScene" uid="uid://c23leivbmxdlf" path="res://Scenes/environmental_noise.tscn" id="15_43oaq"]
 [ext_resource type="PackedScene" uid="uid://dnviiuk2u24bi" path="res://Scenes/table.tscn" id="15_bm8wm"]
 [ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/light.tscn" id="16_5sepv"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/savepoint.tscn" id="16_ehatj"]
@@ -237,10 +236,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8713, 8.42214, 0.172333)
 title = "Dolomiten:"
 text = "The search for Cursed water in Val Straniero?"
 
-[node name="environmental_noise" parent="." instance=ExtResource("15_43oaq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42784, 16.8945, 26.255)
-visible = false
-
 [node name="glass" parent="." instance=ExtResource("10_obugd")]
 transform = Transform3D(6.30711, 0, 4.89289, 0, 2.73, 0, 6.30711, 0, -4.89289, 28.0565, 15.3985, -1.7181)
 
@@ -461,13 +456,13 @@ material = SubResource("StandardMaterial3D_ld07o")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.2656, 0.994306, -133.359)
 
 [node name="dark_moon" parent="." instance=ExtResource("26_1g0h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8392, -8.60316, -225.228)
-
-[node name="dark_moon_trigger" parent="." instance=ExtResource("27_28jf4")]
-transform = Transform3D(4.93786, 0, 0, 0, 2.08781, 0, 0, 0, 1, 19.7435, 2.43668, -134.746)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8392, -14.7898, -225.228)
 
 [node name="CSGBox3D38" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.996176, 0.0130419, -0.318815, 0.0949588, -0.0096579, -3.34045, -0.0139162, -0.999489, 0.028118, 26.2668, 19.872, -122.382)
 use_collision = true
 size = Vector3(0.641113, 10.0959, 8.32094)
 material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="dark_moon_trigger" parent="." instance=ExtResource("27_28jf4")]
+transform = Transform3D(3.35674, 0, 0, 0, 1.63517, 0, 0, 0, 1, 19.5052, 2.31891, -136.551)

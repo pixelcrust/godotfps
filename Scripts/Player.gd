@@ -529,7 +529,6 @@ func start_conversation(wait_time):
 	conversation_timer.wait_time = wait_time
 	display_conversation.visible = true
 	
-	
 func equip_weapon():
 	#equip weapon
 	if(inventory_selector<inventory.size()):

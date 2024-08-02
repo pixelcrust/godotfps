@@ -1,16 +1,19 @@
 extends Node3D
 
 const SPEED = 10
-var rise = false
+var risen = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print($".")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if rise == true:
-		position += transform.basis * Vector3(0,0,SPEED)*delta
+	
+	if risen == true:
+		print("its rising")
+		position += transform.basis * Vector3(0,SPEED,0)*delta
 
-func _rise():
-	rise = true
+func rise():
+	print("risen: "+str(risen))
+	risen = true
