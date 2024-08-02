@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1w4m3gw31ol8"]
+
+[ext_resource type="Script" path="res://dark_moon_trigger.gd" id="1_c1cg5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x0dby"]
+
+[node name="dark_moon_trigger" type="Node3D"]
+script = ExtResource("1_c1cg5")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_x0dby")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

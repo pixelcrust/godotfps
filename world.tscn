@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=36 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/ladder.tscn" id="23_ntxv3"]
 [ext_resource type="PackedScene" uid="uid://cvihmp2ma48n5" path="res://Scenes/beartrap.tscn" id="25_5tjsh"]
 [ext_resource type="PackedScene" uid="uid://digdc0wdsetba" path="res://Scenes/flashlight_dropped.tscn" id="25_lw226"]
+[ext_resource type="PackedScene" uid="uid://br0g07qsnk8xt" path="res://dark_moon.tscn" id="26_1g0h0"]
+[ext_resource type="PackedScene" uid="uid://b1w4m3gw31ol8" path="res://dark_moon_trigger.tscn" id="27_28jf4"]
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
 [ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_nijyp"]
 [ext_resource type="PackedScene" uid="uid://dj1r66vn40rp2" path="res://Scenes/lava.tscn" id="28_0cw5c"]
@@ -319,12 +321,6 @@ transform = Transform3D(0.107597, 0, -1.52017, 0, 1.09055, 0, 1.56781, 0, 0.1043
 title = "Dolomiten"
 text = "Edgelord billionaire E. Tusk is buying Val Straniero. Mountains will be made flat and people replaced by robots."
 
-[node name="CSGBox3D23" type="CSGBox3D" parent="."]
-transform = Transform3D(0.247162, 0.0213906, 0.0110748, 0.547131, 0.327723, 0.262765, -0.257525, 0.000539994, 0.588033, 24.7972, 20.7995, -122.153)
-use_collision = true
-size = Vector3(1, 76.7883, 16.6814)
-material = SubResource("StandardMaterial3D_ld07o")
-
 [node name="CSGBox3D21" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.511959, 0.039929, 0.873437, -0.156712, 0.0159954, -2.74986, -0.202181, -0.113506, -0.0802575, 18.6773, 20.1111, -124.25)
 use_collision = true
@@ -456,10 +452,22 @@ material = SubResource("StandardMaterial3D_ld07o")
 transform = Transform3D(1, 0, 0, 0, 0.239533, -0.970888, 0, 0.970888, 0.239533, 13.0122, 16.3788, -99.4813)
 
 [node name="CSGBox3D37" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.0579148, -0.997942, -0.00943341, 0.146457, -0.00569531, -3.31956, 0.988319, -0.0576348, 0.491366, 21.9028, 18.0147, -126.207)
+transform = Transform3D(-0.0579148, -0.997942, -0.00943341, 0.246462, -0.011542, -3.25216, 0.968236, -0.0567538, 0.827265, 21.9028, 18.0147, -126.207)
 use_collision = true
 size = Vector3(0.641113, 10.0959, 6.17741)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="Beartrap" parent="." instance=ExtResource("25_5tjsh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.2656, 0.994306, -133.359)
+
+[node name="dark_moon" parent="." instance=ExtResource("26_1g0h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8392, -8.60316, -225.228)
+
+[node name="dark_moon_trigger" parent="." instance=ExtResource("27_28jf4")]
+transform = Transform3D(4.93786, 0, 0, 0, 2.08781, 0, 0, 0, 1, 19.7435, 2.43668, -134.746)
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.996176, 0.0130419, -0.318815, 0.0949588, -0.0096579, -3.34045, -0.0139162, -0.999489, 0.028118, 26.2668, 19.872, -122.382)
+use_collision = true
+size = Vector3(0.641113, 10.0959, 8.32094)
+material = SubResource("StandardMaterial3D_ld07o")
