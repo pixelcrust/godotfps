@@ -6,12 +6,12 @@
 albedo_color = Color(1, 0.215686, 0.470588, 1)
 emission_enabled = true
 emission = Color(0.272456, 0.11921, 0.332872, 1)
-emission_energy_multiplier = 5.0
+emission_energy_multiplier = 16.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_p2v8i"]
 material = SubResource("StandardMaterial3D_amoan")
-radius = 40.0
-height = 80.0
+radius = 80.0
+height = 160.0
 
 [node name="dark_moon" type="Node3D" groups=["dark_moon"]]
 script = ExtResource("1_ng7v8")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://x24x5ae2r01o"
+path="res://.godot/imported/MAFX002 Jeans metal zipper - fast zips.wav-be45f6cf8a3dc091ba9239e4e20e8d35.sample"
+
+[deps]
+
+source_file="res://Sounds/unused/MAFX002 Jeans metal zipper - fast zips.wav"
+dest_files=["res://.godot/imported/MAFX002 Jeans metal zipper - fast zips.wav-be45f6cf8a3dc091ba9239e4e20e8d35.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

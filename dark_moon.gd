@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 5
+const SPEED = 10
 var risen = false
 var height = 50
 # Called when the node enters the scene tree for the first time.

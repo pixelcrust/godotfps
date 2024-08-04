@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhealhbsctejp"
+path="res://.godot/imported/Shell Load_Round Eject.wav-11553916c6a991aef28e69d81272d041.sample"
+
+[deps]
+
+source_file="res://Sounds/unused/Shell Load_Round Eject.wav"
+dest_files=["res://.godot/imported/Shell Load_Round Eject.wav-11553916c6a991aef28e69d81272d041.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
