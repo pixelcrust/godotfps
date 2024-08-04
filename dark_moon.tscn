@@ -12,9 +12,12 @@ emission_energy_multiplier = 16.0
 material = SubResource("StandardMaterial3D_amoan")
 radius = 80.0
 height = 160.0
+rings = 64
 
 [node name="dark_moon" type="Node3D" groups=["dark_moon"]]
 script = ExtResource("1_ng7v8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_p2v8i")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

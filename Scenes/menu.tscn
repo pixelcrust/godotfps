@@ -64,6 +64,8 @@ scale = Vector2(3.6, 6.56)
 mouse_filter = 2
 color = Color(0.564706, 0.564706, 0.564706, 0.513726)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
 [connection signal="pressed" from="button_new_game" to="." method="_on_button_new_game_pressed"]
 [connection signal="pressed" from="button_continue" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="button_options" to="." method="_on_button_options_pressed"]

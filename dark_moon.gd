@@ -1,4 +1,6 @@
 extends Node3D
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+const SOUND_DRONE = preload("res://Sounds/Atmosphere_Drone_001.wav")
 
 const SPEED = 10
 var risen = false
@@ -20,5 +22,7 @@ func _process(delta):
 			#explosion
 
 func rise():
+	audio_stream_player_3d.stream = SOUND_DRONE
+	audio_stream_player_3d.play(0.0)
 	print("risen: "+str(risen))
 	risen = true

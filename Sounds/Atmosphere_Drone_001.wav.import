@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://mlsqr6w8xtmw"
-path="res://.godot/imported/Atmosphere_Drone_001.wav-aba5472f0b8c879813422f2ad61c7977.sample"
+path="res://.godot/imported/Atmosphere_Drone_001.wav-5bccfe12d67c0bf2bb6057a906639bd6.sample"
 
 [deps]
 
-source_file="res://Sounds/unused/Atmosphere_Drone_001.wav"
-dest_files=["res://.godot/imported/Atmosphere_Drone_001.wav-aba5472f0b8c879813422f2ad61c7977.sample"]
+source_file="res://Sounds/Atmosphere_Drone_001.wav"
+dest_files=["res://.godot/imported/Atmosphere_Drone_001.wav-5bccfe12d67c0bf2bb6057a906639bd6.sample"]
 
 [params]
 
