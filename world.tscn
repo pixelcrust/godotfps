@@ -456,7 +456,7 @@ material = SubResource("StandardMaterial3D_ld07o")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.2656, 0.994306, -133.359)
 
 [node name="dark_moon" parent="." instance=ExtResource("26_1g0h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8392, -14.7898, -225.228)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9686, -14, -264.066)
 
 [node name="CSGBox3D38" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.996176, 0.0130419, -0.318815, 0.0949588, -0.0096579, -3.34045, -0.0139162, -0.999489, 0.028118, 26.2668, 19.872, -122.382)

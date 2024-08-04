@@ -10,8 +10,8 @@ emission_energy_multiplier = 5.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_p2v8i"]
 material = SubResource("StandardMaterial3D_amoan")
-radius = 20.0
-height = 40.0
+radius = 40.0
+height = 80.0
 
 [node name="dark_moon" type="Node3D" groups=["dark_moon"]]
 script = ExtResource("1_ng7v8")
