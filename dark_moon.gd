@@ -4,7 +4,7 @@ const SOUND_DRONE = preload("res://Sounds/Atmosphere_Drone_001.wav")
 
 const SPEED = 10
 var risen = false
-var height = 50
+var height = 25
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print($".")

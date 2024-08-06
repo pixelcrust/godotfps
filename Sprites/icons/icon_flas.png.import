@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsa3ley1a2uxk"
-path="res://.godot/imported/icon_flashlight.png-340c45afe905e46bec549e1677fafa61.ctex"
+uid="uid://sdty7b4bnfab"
+path="res://.godot/imported/icon_flas.png-d3dc4dd02aa8c9fc74641ee260ac4cc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/icons/icon_flashlight.png"
-dest_files=["res://.godot/imported/icon_flashlight.png-340c45afe905e46bec549e1677fafa61.ctex"]
+source_file="res://Sprites/icons/icon_flas.png"
+dest_files=["res://.godot/imported/icon_flas.png-d3dc4dd02aa8c9fc74641ee260ac4cc2.ctex"]
 
 [params]
 
