@@ -163,7 +163,7 @@ transform = Transform3D(-0.104112, 0, -0.994566, 0, 7.74731, 0, 0.994566, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6127, 0.846079, 40.6857)
 
 [node name="sentrygun" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(-0.987619, 0, 0.156866, 0, 1, 0, -0.156866, 0, -0.987619, 31.0572, 14.5823, -4.97628)
+transform = Transform3D(-0.999835, 0, -0.0180973, 0, 1, 0, 0.0180973, 0, -0.999835, 31.0572, 14.5823, -4.97628)
 
 [node name="Water" parent="." instance=ExtResource("27_nijyp")]
 transform = Transform3D(44.8765, 0, 0, 0, 5.54374, 0, 0, 0, 38.5678, 3.37353, 9.62938, -2.02181)
@@ -271,7 +271,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22246, 14.2635, 21.5184)
 transform = Transform3D(0.984665, 0, -0.174456, 0, 1, 0, 0.174456, 0, 0.984665, 30.8874, 14.3641, -29.64)
 
 [node name="sentrygun3" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3736, 16.287, -97.4754)
+transform = Transform3D(0.939913, 0, -0.341413, 0, 1, 0, 0.341413, 0, 0.939913, 31.3736, 16.287, -97.4754)
 
 [node name="FogVolume4" type="FogVolume" parent="."]
 transform = Transform3D(-0.532596, 0, -0.84637, 0, 1, 0, 0.84637, 0, -0.532596, -9.31725, 32.7065, -99.821)
@@ -282,7 +282,7 @@ transform = Transform3D(0.33992, 0, -0.940454, 0, 1, 0, 0.940454, 0, 0.33992, 36
 size = Vector3(38.7447, 10.3428, 19.1977)
 
 [node name="sentrygun4" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6419, 16.3532, -97.2715)
+transform = Transform3D(0.97276, 0, -0.231816, 0, 1, 0, 0.231816, 0, 0.97276, 33.6419, 16.3532, -97.2715)
 
 [node name="note4" parent="." instance=ExtResource("27_28sf7")]
 transform = Transform3D(1.6666, 0, -1.10565, 0, 2, 0, 1.10565, 0, 1.6666, 22.6804, 28.5818, -118.804)
@@ -297,7 +297,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8401, 16.3856, -35.3289)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4515, 19.9045, -91.4303)
 
 [node name="sentrygun5" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(0.139726, 0, 0.99019, 0, 1, 0, -0.99019, 0, 0.139726, 11.3384, 18.98, -43.1555)
+transform = Transform3D(0.217291, 0, 0.976107, 0, 1, 0, -0.976107, 0, 0.217291, 11.3384, 18.98, -43.1555)
 
 [node name="sentrygun6" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(0.0944558, 0, 0.995529, 0, 1, 0, -0.995529, 0, 0.0944558, 7.91447, 14.6467, -49.6417)
@@ -385,7 +385,7 @@ size = Vector3(3.02737, 9.34401, 3.19124)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="sentrygun7" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(0.313379, 0, 0.949628, 0, 1, 0, -0.949628, 0, 0.313379, 13.7628, 11.8197, -65.145)
+transform = Transform3D(0.592463, 0, 0.805598, 0, 1, 0, -0.805598, 0, 0.592463, 13.7628, 11.8197, -65.145)
 
 [node name="CSGBox3D31" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.0579148, -0.997942, -0.00943341, -0.00665734, 0.00320014, -3.35565, 0.99909, -0.057827, -0.022908, 22.29, 0.496964, -123.475)
