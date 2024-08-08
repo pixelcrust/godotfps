@@ -347,9 +347,9 @@ size = Vector3(1, 77.0462, 2.55832)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D27" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.142488, -0.00516165, -3.32151, 0.988696, 0.0611111, -0.477939, 0.0612944, -0.997738, -0.0120904, 20.3589, 10.3044, -140.57)
+transform = Transform3D(-0.142488, -0.00516165, -3.32151, 0.988696, 0.0611111, -0.477939, 0.0612944, -0.997738, -0.0120904, 20.3809, 10.0444, -136.326)
 use_collision = true
-size = Vector3(1, 28.9009, 2.78854)
+size = Vector3(1, 20.3927, 2.78854)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="Water2" parent="." instance=ExtResource("27_nijyp")]
@@ -466,3 +466,9 @@ material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="dark_moon_trigger" parent="." instance=ExtResource("27_28jf4")]
 transform = Transform3D(3.35674, 0, 0, 0, 1.63517, 0, 0, 0, 1, 19.5052, 2.31891, -136.551)
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.275069, -0.961121, -0.00419366, -0.00665734, 0.00320014, -3.35565, 0.962222, -0.274733, -0.0244168, 16.2019, 3.46611, -149.932)
+use_collision = true
+size = Vector3(1, 30.2437, 2.55832)
+material = SubResource("StandardMaterial3D_ld07o")
