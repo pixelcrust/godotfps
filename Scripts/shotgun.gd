@@ -12,6 +12,7 @@ const RECOIL = 2#20
 @onready var muzzleflash = $shotgun/muzzleflash/GPUParticles3D
 
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
+const SOUND_RELOAD = preload("res://Sounds/Shell Load_Round Eject.wav")
 @onready var sound_shoot_empty = null
 
 @onready var pos_standard = Vector3(0.4,-0.6,-1.4)
@@ -80,9 +81,13 @@ func reload(inventory_selector):
 			if player.inventory[inventory_selector].spare_ammo >= space:
 				player.inventory[inventory_selector].loaded += space
 				player.inventory[inventory_selector].spare_ammo -= 2
+				audio_stream_player_3d.stream = SOUND_RELOAD
+				audio_stream_player_3d.play(2.7)
 			else:
 				player.inventory[inventory_selector].loaded += player.inventory[inventory_selector].spare_ammo
 				player.inventory[inventory_selector].spare_ammo = 0
+				audio_stream_player_3d.stream = SOUND_RELOAD
+				audio_stream_player_3d.play(2.7)
 func inspect():
 	if animation_player.is_playing():
 		pass

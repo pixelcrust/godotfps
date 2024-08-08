@@ -5,7 +5,7 @@ extends StaticBody3D
 @onready var player = 0
 @onready var save_data = []
 
-@onready var sound_tagesschau = preload("res://Sounds/unused/Sigla Tagesschau - Rai Südtirol (2010-2014) (2).mp3")
+@onready var sound_tagesschau = preload("res://Sounds/Sigla Tagesschau - Rai Südtirol (2010-2014) (2).mp3")
 var file = null
 var json = JSON.new()
 # Called when the node enters the scene tree for the first time.

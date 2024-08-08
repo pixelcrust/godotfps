@@ -63,7 +63,7 @@ var gravity = 9.8
 @onready var interacted_with_ladder = false
 @onready var climbing_speed = 5
 @onready var in_air_time = 0
-@onready var in_air_time_till_dmg = 1.5
+@onready var in_air_time_till_dmg = 1.2
 @onready var fall_dmg = 0
 @onready var fall_stunned = 0
 @onready var in_water = false
@@ -254,7 +254,7 @@ func _physics_process(delta):
 	else:
 		if in_air_time > 0:
 			if in_air_time > in_air_time_till_dmg:
-				fall_dmg = floor(in_air_time)*10
+				fall_dmg = floor(in_air_time)*20
 				fall_stunned = floor(in_air_time)/10
 				if fall_dmg >= 1:
 					_on_bone_body_bodypart_hit(fall_dmg,fall_stunned)

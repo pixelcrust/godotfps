@@ -68,3 +68,5 @@ script = ExtResource("3_wm7fk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 2.22267e-13, 0, -2.22267e-13, 0.3, 0.00761719, -0.0102905, 0.00685771)
 shape = SubResource("BoxShape3D_n5vck")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

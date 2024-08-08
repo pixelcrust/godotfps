@@ -139,7 +139,7 @@ size = Vector3(4.79986, 5, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="Node3D6" parent="." instance=ExtResource("5_flgaq")]
-transform = Transform3D(-0.591873, 0, -0.806032, 0, 4.61037, 0, 0.806032, 0, -0.591873, 12.2447, 10.4541, -4.66188)
+transform = Transform3D(-0.591873, 0, -0.806032, 0, 2, 0, 0.806032, 0, -0.591873, 16.2501, 8.50291, 1.8053)
 
 [node name="Node3D5" parent="." instance=ExtResource("5_flgaq")]
 transform = Transform3D(0.451734, 0, -0.892153, 0, 3, 0, 0.892153, 0, 0.451734, 12.8604, 14.262, 15.3644)
@@ -154,7 +154,7 @@ transform = Transform3D(0.0252696, 0, -0.999681, 0, 5.30652, 0, 0.999681, 0, 0.0
 transform = Transform3D(0.451734, 0, -0.892153, 0, 1, 0, 0.892153, 0, 0.451734, 32.9007, 13.7472, -34.3714)
 
 [node name="ladder2" parent="." instance=ExtResource("23_ntxv3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 3.9, 0, -1, 0, -4.37114e-08, 31.4733, 14.5831, -46.6022)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 4.46758, 0, -1, 0, -4.37114e-08, 31.4733, 14.0455, -46.6022)
 
 [node name="ladder3" parent="." instance=ExtResource("23_ntxv3")]
 transform = Transform3D(-0.104112, 0, -0.994566, 0, 7.74731, 0, 0.994566, 0, -0.104112, 17.7196, 20.8557, -91.4721)
@@ -163,7 +163,7 @@ transform = Transform3D(-0.104112, 0, -0.994566, 0, 7.74731, 0, 0.994566, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6127, 0.846079, 40.6857)
 
 [node name="sentrygun" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(-0.999835, 0, -0.0180973, 0, 1, 0, 0.0180973, 0, -0.999835, 31.0572, 14.5823, -4.97628)
+transform = Transform3D(-0.865474, 0, 0.500952, 0, 1, 0, -0.500952, 0, -0.865474, 24.8976, 14.5823, 2.21861)
 
 [node name="Water" parent="." instance=ExtResource("27_nijyp")]
 transform = Transform3D(44.8765, 0, 0, 0, 5.54374, 0, 0, 0, 38.5678, 3.37353, 9.62938, -2.02181)
@@ -178,9 +178,9 @@ size = Vector3(50, 1, 50)
 material = SubResource("StandardMaterial3D_3flw7")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(0.66378, -0.211431, -0.717421, 0.303501, 0.952831, 0, 0.683582, -0.217738, 0.696639, 16.1733, 10.1583, -6.00006)
+transform = Transform3D(0.66378, -0.211431, -0.717421, 0.303501, 0.952831, 0, 0.683582, -0.217738, 0.696639, 7.78925, 10.4277, 3.41366)
 use_collision = true
-size = Vector3(16.0322, 4.33142, 10.6885)
+size = Vector3(16.0322, 2.41147, 7.23439)
 material = SubResource("StandardMaterial3D_s83hw")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="."]
@@ -196,9 +196,9 @@ size = Vector3(7.77446, 9.34401, 10.7198)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.0662383, 0, 0.997788, 0, 1, 0, -0.997788, 0, -0.0662383, 27.2658, 5.74944, -93.1845)
+transform = Transform3D(-0.0662383, 0, 0.997788, 0, 1, 0, -0.997788, 0, -0.0662383, 26.8422, 5.74944, -101.576)
 use_collision = true
-size = Vector3(10.796, 19.897, 23.4973)
+size = Vector3(27.5985, 19.897, 23.231)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="."]
@@ -232,12 +232,12 @@ size = Vector3(10, 5, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="note2" parent="." instance=ExtResource("27_28sf7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8713, 8.42214, 0.172333)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3775, 8.42214, 2.83999)
 title = "Dolomiten:"
 text = "The search for Cursed water in Val Straniero?"
 
 [node name="glass" parent="." instance=ExtResource("10_obugd")]
-transform = Transform3D(6.30711, 0, 4.89289, 0, 2.73, 0, 6.30711, 0, -4.89289, 28.0565, 15.3985, -1.7181)
+transform = Transform3D(6.30711, 0, 4.89289, 0, 2.73, 0, 6.30711, 0, -4.89289, 21.3629, 15.3985, 4.86027)
 
 [node name="shotgun_dropped" parent="." instance=ExtResource("13_yj2m1")]
 transform = Transform3D(0.407151, 0.907095, 0.106802, 0.912313, -0.409493, 4.56013e-08, 0.0437347, 0.0974369, -0.99428, 33.8117, 14.3164, -7.25815)
@@ -271,18 +271,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22246, 14.2635, 21.5184)
 transform = Transform3D(0.984665, 0, -0.174456, 0, 1, 0, 0.174456, 0, 0.984665, 30.8874, 14.3641, -29.64)
 
 [node name="sentrygun3" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(0.939913, 0, -0.341413, 0, 1, 0, 0.341413, 0, 0.939913, 31.3736, 16.287, -97.4754)
+transform = Transform3D(0.939913, 0, -0.341413, 0, 1, 0, 0.341413, 0, 0.939913, 31.3736, 16.287, -112.843)
 
 [node name="FogVolume4" type="FogVolume" parent="."]
-transform = Transform3D(-0.532596, 0, -0.84637, 0, 1, 0, 0.84637, 0, -0.532596, -9.31725, 32.7065, -99.821)
-size = Vector3(70.6913, 31.6193, 19.1977)
-
-[node name="FogVolume3" type="FogVolume" parent="."]
-transform = Transform3D(0.33992, 0, -0.940454, 0, 1, 0, 0.940454, 0, 0.33992, 36.0859, 15.2239, -136.861)
-size = Vector3(38.7447, 10.3428, 19.1977)
+transform = Transform3D(-0.532596, 0, -0.84637, 0, 1, 0, 0.84637, 0, -0.532596, -9.31725, 19.1563, -81.8874)
+size = Vector3(70.6913, 15.7881, 19.1977)
 
 [node name="sentrygun4" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(0.97276, 0, -0.231816, 0, 1, 0, 0.231816, 0, 0.97276, 33.6419, 16.3532, -97.2715)
+transform = Transform3D(0.97276, 0, -0.231816, 0, 1, 0, 0.231816, 0, 0.97276, 33.6419, 16.3532, -111.866)
 
 [node name="note4" parent="." instance=ExtResource("27_28sf7")]
 transform = Transform3D(1.6666, 0, -1.10565, 0, 2, 0, 1.10565, 0, 1.6666, 22.6804, 28.5818, -118.804)
@@ -306,7 +302,7 @@ transform = Transform3D(0.0944558, 0, 0.995529, 0, 1, 0, -0.995529, 0, 0.0944558
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0783, 18.436, -40.954)
 
 [node name="grenade_dropped3" parent="." instance=ExtResource("17_7tgvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9203, 18.436, -41.9398)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76875, 15.4901, -47.4247)
 
 [node name="Node3D4" parent="." instance=ExtResource("5_flgaq")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 10.3155, 14.2132, 16.6309)
@@ -335,15 +331,15 @@ size = Vector3(1, 103.869, 7.59166)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D25" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.998888, -0.0612451, 0.0216238, -0.00665734, 0.00320014, -3.35565, 0.0612944, -0.997738, -0.0120904, 18.6259, 4.21858, -108.123)
+transform = Transform3D(-0.998888, -0.0612451, 0.0216238, -0.00665734, 0.00320014, -3.35565, 0.0612944, -0.997738, -0.0120904, 18.2607, 4.23766, -114.072)
 use_collision = true
-size = Vector3(1, 76.808, 3.19162)
+size = Vector3(1, 88.7332, 3.19162)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.998888, -0.0612451, 0.0216238, -0.00665734, 0.00320014, -3.35565, 0.0612944, -0.997738, -0.0120904, 25.8232, 3.49519, -108.251)
+transform = Transform3D(-0.998888, -0.0612451, 0.0216238, -0.00665734, 0.00320014, -3.35565, 0.0612944, -0.997738, -0.0120904, 25.6523, 3.50412, -111.035)
 use_collision = true
-size = Vector3(1, 77.0462, 2.55832)
+size = Vector3(1, 82.6271, 2.55832)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="CSGBox3D27" type="CSGBox3D" parent="."]
@@ -353,7 +349,7 @@ size = Vector3(1, 20.3927, 2.78854)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="Water2" parent="." instance=ExtResource("27_nijyp")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 22.3301, -0.631071, -119.466)
+transform = Transform3D(8.57509, 0, 0, 0, 8, 0, 0, 0, 8, 22.3301, -0.631071, -119.84)
 
 [node name="Node3D" parent="." instance=ExtResource("16_5sepv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2492, 5.08599, -124.061)
@@ -388,16 +384,16 @@ material = SubResource("StandardMaterial3D_ycdsb")
 transform = Transform3D(0.592463, 0, 0.805598, 0, 1, 0, -0.805598, 0, 0.592463, 13.7628, 11.8197, -65.145)
 
 [node name="CSGBox3D31" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.0579148, -0.997942, -0.00943341, -0.00665734, 0.00320014, -3.35565, 0.99909, -0.057827, -0.022908, 22.29, 0.496964, -123.475)
+transform = Transform3D(-0.0579148, -0.997942, -0.00943341, -0.00665734, 0.00320014, -3.35565, 0.99909, -0.057827, -0.022908, 22.29, 0.496964, -124.062)
 use_collision = true
 size = Vector3(0.641113, 13.2891, 1.70445)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="beer_bottle_litter" parent="." instance=ExtResource("20_82bg5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.1847, 1.03429, -125.543)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.1847, 1.03429, -126.157)
 
 [node name="beer_bottle_litter2" parent="." instance=ExtResource("20_82bg5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 20.1148, 1.03429, -125.543)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.3934, 1.03429, -126.183)
 
 [node name="CSGBox3D32" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.495832, -0.868312, 0.00172833, -0.00665734, 0.00320014, -3.35565, 0.869301, -0.495244, -0.024714, 17.0993, 6.28962, -197.754)
@@ -414,7 +410,7 @@ material = SubResource("StandardMaterial3D_ld07o")
 [node name="gun_dropped" parent="." instance=ExtResource("22_tjl7f")]
 transform = Transform3D(0.167337, -0.9859, 0, 0.9859, 0.167337, 0, 0, 0, 1, 1.77819, 15.4097, 21.2384)
 loaded = 0
-spare_ammo = 1
+spare_ammo = 0
 
 [node name="ammo_pistol" parent="." instance=ExtResource("21_yenb5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8879, 14.2146, 17.2881)
@@ -426,7 +422,7 @@ size = Vector3(1, 10.4133, 4.73977)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="ammo_shotgun" parent="." instance=ExtResource("22_ia1i2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6936, 8.5888, 3.30797)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6936, 8.5888, 3.14813)
 
 [node name="CSGBox3D35" type="CSGBox3D" parent="."]
 transform = Transform3D(1.54603, 0.584593, -2.80004e-08, -1.79852e-15, -1.19674e-07, -3, -0.337908, 2.67468, -1.2811e-07, 14.0298, 10.5819, -94.3229)
@@ -468,7 +464,52 @@ material = SubResource("StandardMaterial3D_ld07o")
 transform = Transform3D(3.35674, 0, 0, 0, 1.63517, 0, 0, 0, 1, 19.5052, 2.31891, -136.551)
 
 [node name="CSGBox3D39" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.275069, -0.961121, -0.00419366, -0.00665734, 0.00320014, -3.35565, 0.962222, -0.274733, -0.0244168, 16.2019, 3.46611, -149.932)
+transform = Transform3D(-0.275069, -0.961121, -0.00419366, -0.00665734, 0.00320014, -3.35565, 0.962222, -0.274733, -0.0244168, 16.2002, 2.12125, -154.733)
 use_collision = true
-size = Vector3(1, 30.2437, 2.55832)
+size = Vector3(1, 30.2437, 1.75677)
 material = SubResource("StandardMaterial3D_ld07o")
+
+[node name="note6" parent="." instance=ExtResource("27_28sf7")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 17.8315, 2.14203, -152.585)
+title = "Thank you!"
+text = "Thank you for taking your time and playing the demo, please give me some feedback on what you liked and what you didnt. What you didnt understand and what you think this game should become"
+cooldown_time = 10
+
+[node name="ammo_pistol2" parent="." instance=ExtResource("21_yenb5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.899734, 15.1841, 21.2149)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999934, 0, 0.010751, 0.00253039, 0.971908, -0.235347, -0.010449, 0.235363, 0.971843, 14.2589, 1.46151, -68.8361)
+use_collision = true
+size = Vector3(4.48833, 19.8107, 11.2703)
+material = SubResource("StandardMaterial3D_ycdsb")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.976903, 0.0526809, 0.207048, 0.00253039, 0.971908, -0.235347, -0.21363, -0.229391, -0.949592, 13.8437, 0.661687, -63.0508)
+use_collision = true
+size = Vector3(4.48833, 19.8107, 8.36316)
+material = SubResource("StandardMaterial3D_ycdsb")
+
+[node name="bush" parent="." instance=ExtResource("5_flgaq")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 23.9431, 15.9177, -90.7905)
+
+[node name="bush2" parent="." instance=ExtResource("5_flgaq")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 24.4131, 16.0006, -88.793)
+
+[node name="note7" parent="." instance=ExtResource("27_28sf7")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 25.6564, 16.8937, -92.4012)
+title = "Note from E. Tusk:"
+text = "Move further into the valley, we need to make it tourist ready until next week!"
+cooldown_time = 10
+
+[node name="CSGBox3D40" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999935, -0.00174523, 0.0104717, 0.00174531, 0.999999, 0, -0.0104717, 1.82767e-05, 0.999936, 0.718654, 28.9855, -47.5231)
+use_collision = true
+size = Vector3(13.0274, 5.62821, 11.2703)
+material = SubResource("StandardMaterial3D_ycdsb")
+
+[node name="CSGBox3D41" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999935, -0.00174523, 0.0104717, 0.00673058, 0.867035, -0.498199, -0.00820985, 0.498246, 0.86699, 0.718654, 26.8661, -46.6798)
+use_collision = true
+size = Vector3(13.0274, 5.62821, 11.2703)
+material = SubResource("StandardMaterial3D_ycdsb")

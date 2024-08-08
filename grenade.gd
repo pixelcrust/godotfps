@@ -6,6 +6,8 @@ extends Node3D
 @onready var creation_spot = $creation_spot
 @onready var model_pipebomb = $Node3D/hand_right/model_pipebomb
 @onready var hands = $Node3D
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+const SOUND_THROW = preload("res://Sounds/stab 7.wav")
 
 @onready var pos_standard = Vector3(-0.70,-0.10,0.60)
 
@@ -30,10 +32,11 @@ func shoot(inventory_selector,player_eyes_position,player_shot,collision_point):
 		pass
 	else:
 		if player.inventory[inventory_selector].loaded > 0:
-
-
+			
 			animation_player.play("shoot")
 			await get_tree().create_timer(.5).timeout
+			audio_stream_player_3d.stream = SOUND_THROW
+			audio_stream_player_3d.play(0.0)
 			var new_grenade = grenade_thrown.instantiate()
 			new_grenade.position = creation_spot.global_position
 			new_grenade.transform.basis = global_transform.basis
