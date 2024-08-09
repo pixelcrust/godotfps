@@ -249,7 +249,7 @@ title = "Climb ladders"
 text = "Press f to hold on ladder"
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.174331, -0.0410376, -0.997675, -2.99493, 0.00240713, 0.0544828, 5.51121e-05, 0.999155, -0.0411082, 10.8874, 6.79721, -49.676)
+transform = Transform3D(-0.174331, -0.0410376, -0.997675, -2.99493, 0.00240713, 0.0544828, 5.51121e-05, 0.999155, -0.0411082, 10.8874, 6.84173, -49.676)
 use_collision = true
 size = Vector3(4.79986, 2.27722, 30)
 material = SubResource("StandardMaterial3D_ycdsb")
