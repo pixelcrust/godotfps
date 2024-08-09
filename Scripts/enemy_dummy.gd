@@ -96,7 +96,7 @@ func _timeout():
 
 func shoot():
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
-	var new_bullet = bullet.instantiate()	
+	var new_bullet = bullet.instantiate()
 	new_bullet.position = gun.global_position
 	new_bullet.transform.basis = direction_helper.global_transform.basis
 	new_bullet.rotation.y = new_bullet.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)

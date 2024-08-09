@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=38 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -25,7 +25,10 @@
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/note.tscn" id="27_28sf7"]
 [ext_resource type="PackedScene" uid="uid://d2csfac4jugp2" path="res://Scenes/water.tscn" id="27_nijyp"]
 [ext_resource type="PackedScene" uid="uid://dj1r66vn40rp2" path="res://Scenes/lava.tscn" id="28_0cw5c"]
+[ext_resource type="PackedScene" uid="uid://dhunj16wsng6n" path="res://Scenes/propane_tank.tscn" id="28_pqj3g"]
 [ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://Scenes/sentrygun.tscn" id="29_6n3hy"]
+[ext_resource type="PackedScene" uid="uid://c7akcggds32mw" path="res://Scenes/tree.tscn" id="29_k5y12"]
+[ext_resource type="PackedScene" uid="uid://bs48udd024l4p" path="res://Scenes/tunnel.tscn" id="30_tn08x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -283,9 +286,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4515, 19.9045, -91.4303)
 [node name="sentrygun5" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(0.217291, 0, 0.976107, 0, 1, 0, -0.976107, 0, 0.217291, 11.3384, 18.98, -43.1555)
 
-[node name="sentrygun6" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(0.0944558, 0, 0.995529, 0, 1, 0, -0.995529, 0, 0.0944558, 7.91447, 14.6467, -49.6417)
-
 [node name="grenade_dropped2" parent="." instance=ExtResource("17_7tgvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0783, 18.436, -40.954)
 
@@ -298,7 +298,7 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 10.3155, 14.2132, 16.6309)
 [node name="note5" parent="." instance=ExtResource("27_28sf7")]
 transform = Transform3D(0.107597, 0, -1.52017, 0, 1.09055, 0, 1.56781, 0, 0.104328, 1.7069, 15.0584, 21.7426)
 title = "Dolomiten"
-text = "Edgelord billionaire E. Tusk is buying Val Straniero. Mountains will be made flat and people replaced by robots."
+text = "Edgelord billionaire E. Tusk is buying Val Straniero. Suspense on what will change for inhabitants"
 cooldown_time = 10
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="."]
@@ -370,7 +370,7 @@ size = Vector3(3.02737, 9.34401, 3.19124)
 material = SubResource("StandardMaterial3D_ycdsb")
 
 [node name="sentrygun7" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(0.592463, 0, 0.805598, 0, 1, 0, -0.805598, 0, 0.592463, 13.7628, 11.8197, -65.145)
+transform = Transform3D(0.592463, 0, 0.805598, 0, 1, 0, -0.805598, 0, 0.592463, 13.7628, 11.879, -65.145)
 
 [node name="CSGBox3D31" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.0579148, -0.997942, -0.00943341, -0.00665734, 0.00320014, -3.35565, 0.99909, -0.057827, -0.022908, 22.29, 0.496964, -124.062)
@@ -405,9 +405,9 @@ spare_ammo = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8879, 14.2146, 17.2881)
 
 [node name="CSGBox3D34" type="CSGBox3D" parent="."]
-transform = Transform3D(1.33245, 1.47707, -7.07476e-08, -1.39514e-15, -1.19674e-07, -3, -0.85378, 2.30519, -1.10413e-07, 23.362, 12.5809, -27.2755)
+transform = Transform3D(1.33245, 1.47707, -7.07476e-08, -1.39514e-15, -1.19674e-07, -3, -0.85378, 2.30519, -1.10413e-07, 22.866, 12.5809, -28.0496)
 use_collision = true
-size = Vector3(1, 10.4133, 4.73977)
+size = Vector3(1, 9.74168, 4.73977)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="ammo_shotgun" parent="." instance=ExtResource("22_ia1i2")]
@@ -514,3 +514,30 @@ transform = Transform3D(-0.988969, 0.0606479, 0.13512, 0.0600894, 0.998159, -0.0
 use_collision = true
 size = Vector3(23.3503, 9.34401, 5.05123)
 material = SubResource("StandardMaterial3D_ycdsb")
+
+[node name="propane_tank" parent="." instance=ExtResource("28_pqj3g")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 32.4204, 16.4528, -111.868)
+
+[node name="ammo_shotgun2" parent="." instance=ExtResource("22_ia1i2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2617, 13.85, -19.1266)
+
+[node name="Node3D9" parent="." instance=ExtResource("29_k5y12")]
+transform = Transform3D(-1.9342, 0, 0.508799, 0, 2, 0, -0.508799, 0, -1.9342, 26.3226, 13.7434, -16.0659)
+
+[node name="note8" parent="." instance=ExtResource("27_28sf7")]
+transform = Transform3D(0.732298, 0.66231, -0.158382, -0.020058, -0.2115, -0.977172, -0.680688, 0.718759, -0.141596, 23.2744, 15.0891, 8.86188)
+title = "Tusk:"
+text = "No Only workers of the great company are allowed past this point"
+cooldown_time = 7
+
+[node name="lightbulb2" parent="." instance=ExtResource("16_5sepv")]
+transform = Transform3D(0.81815, -0.575005, 0, 0.538591, 0.766338, 0.350207, -0.201371, -0.286522, 0.936672, 22.3464, 16.5, 9.85597)
+
+[node name="tunnel" parent="." instance=ExtResource("30_tn08x")]
+transform = Transform3D(0.200619, 0, 1.98991, 0, 2, 0, -1.98991, 0, 0.200619, 6.08231, 28.9855, -47.3977)
+
+[node name="sentrygun6" parent="." instance=ExtResource("29_6n3hy")]
+transform = Transform3D(0.365267, 0, 0.930903, 0, 1, 0, -0.930903, 0, 0.365267, 3.83086, 14.8932, -52.3178)
+
+[node name="sentrygun8" parent="." instance=ExtResource("29_6n3hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6324, 12.4753, -75.3464)
