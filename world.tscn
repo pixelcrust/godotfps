@@ -541,3 +541,15 @@ transform = Transform3D(0.365267, 0, 0.930903, 0, 1, 0, -0.930903, 0, 0.365267, 
 
 [node name="sentrygun8" parent="." instance=ExtResource("29_6n3hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6324, 12.4753, -75.3464)
+
+[node name="Node3D7" parent="." instance=ExtResource("29_k5y12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.5801, 28.586, -96.9432)
+
+[node name="Node3D8" parent="." instance=ExtResource("29_k5y12")]
+transform = Transform3D(0.363647, 0, -1.96666, 0, 2, 0, 1.96666, 0, 0.363647, 24.1518, 28.586, -108.08)
+
+[node name="Node3D10" parent="." instance=ExtResource("29_k5y12")]
+transform = Transform3D(-1.73695, 0, 0.991463, 0, 2, 0, -0.991463, 0, -1.73695, 15.9741, 28.586, -107.942)
+
+[node name="lightbulb3" parent="." instance=ExtResource("16_5sepv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7638, 28.586, -97.5397)
