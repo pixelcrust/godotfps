@@ -63,7 +63,7 @@ var gravity = 9.8
 @onready var interacted_with_ladder = false
 @onready var climbing_speed = 5
 @onready var in_air_time = 0
-@onready var in_air_time_till_dmg = 1.2
+@onready var in_air_time_till_dmg = 1.4
 @onready var fall_dmg = 0
 @onready var fall_stunned = 0
 @onready var in_water = false
@@ -524,6 +524,7 @@ func _headbob(time) -> Vector3:
 
 
 func start_conversation(wait_time):
+	print(str(wait_time))
 	conversation_timer.start()
 	conversation_timer.connect("timeout",_conversation_timeout)
 	conversation_timer.wait_time = wait_time

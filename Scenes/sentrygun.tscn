@@ -56,6 +56,7 @@ script = ExtResource("1_fwny5")
 
 [node name="laser" type="MeshInstance3D" parent="gun/barrel/RayCast3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.13687e-13, 1, 0, 0, 0)
+visible = false
 mesh = SubResource("CylinderMesh_ib2vb")
 
 [node name="aim_helper" type="Node3D" parent="gun/barrel"]

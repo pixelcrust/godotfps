@@ -2,7 +2,7 @@ extends RigidBody3D
 
 @onready var once = 0
 @onready var once2 = 0
-@onready var throwing_multiplier = 12
+@onready var throwing_multiplier = 9#12
 @onready var timer = $Timer
 @onready var model_pipebomb = $pipebomb
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
