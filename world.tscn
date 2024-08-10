@@ -245,14 +245,9 @@ transform = Transform3D(1.52831, 0, 0, 0, -4.37114e-08, -1.74892, 0, 1, -7.64476
 title = "Climb ladders"
 text = "Press f to hold on ladder"
 
-[node name="FogVolume2" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1775, 21.1222, -20.8048)
-size = Vector3(25.1029, 12.0837, 10.5274)
-shape = 0
-
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47631, 23.6186, -16.7639)
-size = Vector3(18.318, 12.0837, 10.5274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47631, 20.901, -16.7639)
+size = Vector3(18.318, 12.0837, 16.7379)
 shape = 0
 
 [node name="table" parent="." instance=ExtResource("15_bm8wm")]
@@ -297,7 +292,7 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 10.3155, 14.2132, 16.6309)
 
 [node name="note5" parent="." instance=ExtResource("27_28sf7")]
 transform = Transform3D(0.107597, 0, -1.52017, 0, 1.09055, 0, 1.56781, 0, 0.104328, 1.7069, 15.0584, 21.7426)
-title = "Dolomiten"
+title = "Dolomiten:"
 text = "Edgelord billionaire E. Tusk is buying Val Straniero. Suspense on what will change for inhabitants"
 cooldown_time = 10
 
@@ -379,10 +374,10 @@ size = Vector3(0.641113, 13.2891, 1.70445)
 material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="beer_bottle_litter" parent="." instance=ExtResource("20_82bg5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.1847, 1.03429, -126.157)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 21.9283, 1.03429, -126.993)
 
 [node name="beer_bottle_litter2" parent="." instance=ExtResource("20_82bg5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.3934, 1.03429, -126.183)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.1198, 1.03429, -126.874)
 
 [node name="CSGBox3D32" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.495832, -0.868312, 0.00172833, -0.00665734, 0.00320014, -3.35565, 0.869301, -0.495244, -0.024714, 17.0993, 6.28962, -197.754)

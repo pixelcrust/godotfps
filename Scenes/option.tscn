@@ -29,4 +29,17 @@ color = Color(0.564706, 0.564706, 0.564706, 0.513726)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
+[node name="button_fullscreen" type="CheckButton" parent="."]
+offset_left = 235.0
+offset_top = 128.0
+offset_right = 279.0
+offset_bottom = 152.0
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 98.0
+offset_top = 124.0
+offset_right = 217.0
+offset_bottom = 159.0
+text = "Fullscreen"
+
 [connection signal="pressed" from="button_back" to="." method="_on_button_back_pressed"]
