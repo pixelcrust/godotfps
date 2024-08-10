@@ -163,6 +163,7 @@ func shoot(number_bullets):
 		new_bullet.transform.basis = aim_helper.global_transform.basis
 		new_bullet.rotation.y = new_bullet.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)
 		new_bullet.rotation.z = new_bullet.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+		new_bullet.ads = 1
 		get_tree().root.get_children()[0].add_child(new_bullet);
 
 

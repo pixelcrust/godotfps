@@ -527,7 +527,7 @@ transform = Transform3D(-1.9342, 0, 0.508799, 0, 2, 0, -0.508799, 0, -1.9342, 26
 [node name="note8" parent="." instance=ExtResource("27_28sf7")]
 transform = Transform3D(0.732298, 0.66231, -0.158382, -0.020058, -0.2115, -0.977172, -0.680688, 0.718759, -0.141596, 23.2744, 15.0891, 8.86188)
 title = "Tusk:"
-text = "No Only workers of the great company are allowed past this point"
+text = "Only workers of the great company are allowed past this point"
 cooldown_time = 7
 
 [node name="lightbulb2" parent="." instance=ExtResource("16_5sepv")]
@@ -540,7 +540,7 @@ transform = Transform3D(0.200619, 0, 1.98991, 0, 2, 0, -1.98991, 0, 0.200619, 6.
 transform = Transform3D(0.365267, 0, 0.930903, 0, 1, 0, -0.930903, 0, 0.365267, 3.83086, 14.8932, -52.3178)
 
 [node name="sentrygun8" parent="." instance=ExtResource("29_6n3hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6324, 12.4753, -75.3464)
+transform = Transform3D(0.908902, 0, -0.417011, 0, 1, 0, 0.417011, 0, 0.908902, 32.6324, 12.4753, -75.3464)
 
 [node name="Node3D7" parent="." instance=ExtResource("29_k5y12")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.5801, 28.586, -96.9432)
@@ -553,3 +553,9 @@ transform = Transform3D(-1.73695, 0, 0.991463, 0, 2, 0, -0.991463, 0, -1.73695, 
 
 [node name="lightbulb3" parent="." instance=ExtResource("16_5sepv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7638, 28.586, -97.5397)
+
+[node name="lightbulb4" parent="." instance=ExtResource("16_5sepv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.9125, 19.3554, -113.463)
+
+[node name="lightbulb5" parent="." instance=ExtResource("16_5sepv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83665, 28.3805, -63.6118)
