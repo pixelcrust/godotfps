@@ -52,7 +52,16 @@ func shoot(inventory_selector,player_eyes_position,player_shot,collision_point):
 			var goal_rotation = player.camera.rotation.x + deg_to_rad(RECOIL)
 			player.camera.rotation.x = clamp(goal_rotation,deg_to_rad(-90),deg_to_rad(90))
 			
+			await get_tree().create_timer(.5).timeout
+			
 			player.inventory[inventory_selector].loaded -= 1
+			
+			if (player.inventory[inventory_selector].loaded == 0 and player.inventory[inventory_selector].spare_ammo == 0 and player.equipped.is_in_group("consumeable")):
+				print("consumeable empty")
+				player.equipped.queue_free()
+				player.inventory_before.remove_at(inventory_selector)
+				player.inventory.remove_at(inventory_selector)
+				player.equip_weapon()
 		else:
 			pass
 		
