@@ -60,4 +60,3 @@ func use():
 		player.equip_weapon()
 		queue_free()
 		pass
-

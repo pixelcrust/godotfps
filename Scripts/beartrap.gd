@@ -35,4 +35,3 @@ func use():
 		animationplayer.play("RESET")
 		is_active = true
 		
-
