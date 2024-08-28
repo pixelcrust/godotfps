@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dces3e55616v5"]
+[gd_scene load_steps=16 format=3 uid="uid://dces3e55616v5"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_sfosh"]
 [ext_resource type="Texture2D" uid="uid://dqlynnw5748ta" path="res://crosshair.png" id="2_v71jm"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="2_wfych"]
 [ext_resource type="Texture2D" uid="uid://d03pvpgtacada" path="res://Sprites/icons/marker_icon.png" id="4_jacde"]
+[ext_resource type="Script" path="res://Scenes/ui.gd" id="4_jnmva"]
 [ext_resource type="PackedScene" uid="uid://c8t3e1hbyggdb" path="res://shader_underwater.tscn" id="5_04qer"]
+[ext_resource type="Texture2D" uid="uid://s8xdfalmmcfd" path="res://Sprites/heart_icon.png" id="6_r3w6o"]
+[ext_resource type="Texture2D" uid="uid://dqjibcsf605dr" path="res://Sprites/pistol_bullet_icon.png" id="7_6se36"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gmr4f"]
 
@@ -173,6 +176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58874, 0)
 cull_mask = 2
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+script = ExtResource("4_jnmva")
 
 [node name="display_ammo" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
 offset_left = 32.0
@@ -214,6 +218,7 @@ position = Vector2(700, 500)
 texture = ExtResource("4_jacde")
 
 [node name="help_text" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+visible = false
 offset_left = 32.0
 offset_top = 256.0
 offset_right = 288.0
@@ -244,6 +249,14 @@ wrap_mode = 1
 
 [node name="conversation_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_conversation"]
 wait_time = 2.0
+
+[node name="icon_heart" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+position = Vector2(100, 55)
+texture = ExtResource("6_r3w6o")
+
+[node name="icon_ammo" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+position = Vector2(100, 570)
+texture = ExtResource("7_6se36")
 
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(5.73208e-15, 1.31134e-07, 3, 3, -1.31134e-07, -1.92556e-20, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0.514353)

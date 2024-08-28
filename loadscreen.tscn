@@ -6,7 +6,7 @@
 script = ExtResource("1_xujf2")
 
 [node name="TextureProgressBar" type="ProgressBar" parent="."]
-offset_left = 315.0
-offset_top = 277.0
-offset_right = 611.0
-offset_bottom = 337.0
+offset_left = 440.0
+offset_top = 291.0
+offset_right = 736.0
+offset_bottom = 351.0
