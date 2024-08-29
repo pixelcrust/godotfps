@@ -5,6 +5,10 @@ extends CanvasGroup
 
 @onready var player: CharacterBody3D = $"../../../../../../.."
 
+var icon_bullet_pistol = preload("res://Sprites/pistol_bullet_icon.png")
+var icon_shell = preload("res://Sprites/shotgun_shell_icon.png")
+var icon_explosion = preload("res://Sprites/explosion_icon.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	icon_ammo.visible = false
@@ -24,10 +28,14 @@ func ammo_shake():
 func ammo_choose():
 	match player.equipped_id:
 		0:
-			icon_ammo.texture =
+			icon_ammo.visible = true
+			icon_ammo.texture = icon_bullet_pistol
 		1:
-			pass
-		2:
-			pass
+			icon_ammo.visible = true
+			icon_ammo.texture = icon_shell
+		5:
+			icon_ammo.visible = true
+			icon_ammo.texture = icon_explosion
 		_:
-			pass
+			icon_ammo.visible = false
+			icon_ammo.texture = null

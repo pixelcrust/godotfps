@@ -98,6 +98,10 @@ const icon_grenade = preload("res://Sprites/icons/icon_grenade.png")
 @onready var help_text = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/help_text
 var inventory_before = null
 
+#gui
+@onready var canvas_group: CanvasGroup = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup
+
+
 #text bubble variables
 @onready var display_conversation = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_conversation
 @onready var display_conversation_text = ""
@@ -429,7 +433,7 @@ func _physics_process(delta):
 			equipped.queue_free() 
 		inventory_selector += 1
 		equip_weapon()
-		
+		print("waepon equipped: "+str(equipped_id))
 	#drop weapon
 	if Input.is_action_just_pressed("key_drop_weapon") && equipped_id != -1:
 		drop_weapon()
@@ -534,8 +538,12 @@ func equip_weapon():
 	#equip weapon
 	if(inventory_selector<inventory.size()):
 		equipped_id = inventory[inventory_selector].item_id
-	else:
+		print("item_id: "+str(inventory.front().item_id))
+	elif inventory.is_empty() == false:
+		
 		inventory_selector = 0
+		equipped_id = inventory[inventory_selector].item_id
+		
 	if inventory.is_empty():
 		equipped_id = -1
 	else:
@@ -685,6 +693,7 @@ func equip_weapon():
 	else:
 		inv_slot_1.texture = null
 		inventory_marker.visible = false
+	canvas_group.ammo_choose()
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):
 	hp -= dmg
