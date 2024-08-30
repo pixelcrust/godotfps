@@ -5,9 +5,12 @@ extends CanvasGroup
 
 @onready var player: CharacterBody3D = $"../../../../../../.."
 
+
 var icon_bullet_pistol = preload("res://Sprites/pistol_bullet_icon.png")
 var icon_shell = preload("res://Sprites/shotgun_shell_icon.png")
 var icon_explosion = preload("res://Sprites/explosion_icon.png")
+var max_angle_rotation = 30
+var rotation_duration = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,3 +42,7 @@ func ammo_choose():
 		_:
 			icon_ammo.visible = false
 			icon_ammo.texture = null
+
+
+func _on_gui_wiggle_timer_timeout() -> void:
+	pass # Replace with function body.

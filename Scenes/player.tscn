@@ -258,6 +258,10 @@ texture = ExtResource("6_r3w6o")
 position = Vector2(100, 570)
 texture = ExtResource("7_6se36")
 
+[node name="gui_wiggle_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+wait_time = 5.0
+one_shot = true
+
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(5.73208e-15, 1.31134e-07, 3, 3, -1.31134e-07, -1.92556e-20, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0.514353)
 visible = false
@@ -303,4 +307,5 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.52839, 0)
 
 [connection signal="bodypart_hit" from="MeshInstance3D/bone_body" to="." method="_on_bone_body_bodypart_hit"]
+[connection signal="timeout" from="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/gui_wiggle_timer" to="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" method="_on_gui_wiggle_timer_timeout"]
 [connection signal="bodypart_hit" from="Head/bone_head" to="." method="_on_bone_head_bodypart_hit"]
