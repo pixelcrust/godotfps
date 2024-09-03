@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://wiwbep52mmak"]
+
+[ext_resource type="Script" path="res://npc_interact_collision.gd" id="1_8b4aq"]
+[ext_resource type="Script" path="res://test_npc.gd" id="1_8dfbc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5ojr2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gb5fq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dg8ui"]
+
+[node name="test_npc" type="CharacterBody3D"]
+script = ExtResource("1_8dfbc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_5ojr2")
+
+[node name="Area3D" type="Area3D" parent="." groups=["interactable"]]
+collision_layer = 10
+script = ExtResource("1_8b4aq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_gb5fq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_dg8ui")
