@@ -4,29 +4,76 @@ extends CanvasGroup
 @onready var icon_heart: Sprite2D = $icon_heart
 
 @onready var player: CharacterBody3D = $"../../../../../../.."
+@onready var gui_wiggle_timer: Timer = $gui_wiggle_timer
 
 
 var icon_bullet_pistol = preload("res://Sprites/pistol_bullet_icon.png")
 var icon_shell = preload("res://Sprites/shotgun_shell_icon.png")
 var icon_explosion = preload("res://Sprites/explosion_icon.png")
-var max_angle_rotation = 30
-var rotation_duration = 500
+var max_angle_rotation = 25
+var shaking = 2 #0starting 1shaking 2not shaking
+var going_right = true
+var rotation_duration = .7
+var shake_speed = 5
+
+var pump = 2 #0pumping little 1 pumping
+var pump_speed = .3
+var pump_size = .3
+var growing = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	gui_wiggle_timer.wait_time = rotation_duration
 	icon_ammo.visible = false
 	ammo_choose()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if shaking != 2:
+		ammo_shake(delta)
+	if pump != 2:
+		heart_pump(delta)
+	else:
+		icon_heart.scale = Vector2(1,1)
 
-func heart_shake():
-	pass
-	
-func ammo_shake():
-	pass
+func heart_pump(delta):
+	print("heart_pump")
+	if pump == 0:
+		if growing == 1:
+			icon_heart.scale += Vector2(pump_speed*delta,pump_speed*delta)
+			if icon_heart.scale.x >= 1+ (pump_size/2):
+				growing = 0
+		else:
+			icon_heart.scale -= Vector2(pump_speed*delta,pump_speed*delta)
+			if icon_heart.scale.x <= 1- (pump_size/2):
+				growing = 1
+	if pump == 1:
+		if growing == 1:
+			icon_heart.scale += Vector2(pump_speed*2*delta,pump_speed*delta)
+			if icon_heart.scale.x >= 1+ pump_size:
+				growing = 0
+		else:
+			icon_heart.scale -= Vector2(pump_speed*2*delta,pump_speed*delta)
+			if icon_heart.scale.x <= 1- pump_size:
+				growing = 1
+func ammo_shake(delta):
+	print("wiggle_timer: "+str(gui_wiggle_timer.time_left))
+	print("rotation: "+str(rad_to_deg(icon_ammo.rotation)))
+		
+	if shaking == 0:
+		gui_wiggle_timer.start()
+		shaking = 1
+	elif shaking == 1:
+		if going_right == true:
+			icon_ammo.rotation += shake_speed*delta
+			if icon_ammo.rotation >= deg_to_rad(max_angle_rotation):
+				going_right = false
+		else:
+			icon_ammo.rotation -= shake_speed*delta
+			if icon_ammo.rotation <= deg_to_rad(-max_angle_rotation):
+				going_right = true
+	else:
+		pass
 	
 func ammo_choose():
 	match player.equipped_id:
@@ -42,7 +89,8 @@ func ammo_choose():
 		_:
 			icon_ammo.visible = false
 			icon_ammo.texture = null
-
-
+			
 func _on_gui_wiggle_timer_timeout() -> void:
-	pass # Replace with function body.
+	icon_ammo.rotation = 0
+	shaking = 2
+	

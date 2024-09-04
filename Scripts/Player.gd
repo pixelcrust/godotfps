@@ -244,7 +244,15 @@ func _physics_process(delta):
 	#if ded
 	if hp <= 0:
 		die()
-		
+	
+	#heart pump
+	if hp <= 20:
+		canvas_group.pump = 1
+	elif hp <= 50:
+		canvas_group.pump = 0
+	else:
+		canvas_group.pump = 2
+	
 	# Add the gravity.
 	#print("is on ladder: "+str(is_on_ladder)+" interacted with ladder: "+str(interacted_with_ladder))
 	if not is_on_floor():
@@ -378,6 +386,7 @@ func _physics_process(delta):
 
 	if(Input.is_action_pressed("key_help")):
 		help_text.visible = true
+		#hp -= 30
 	else:
 		help_text.visible = false
 		

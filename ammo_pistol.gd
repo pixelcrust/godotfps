@@ -20,6 +20,7 @@ func get_interaction_time():
 func use():
 	#check if gun is in inventory
 	#for iteration in iterable_object:
+	player.canvas_group.shaking = 0
 	for n in player.inventory:
 		#print(str(n.item_id))
 		if n.item_id == 0:
