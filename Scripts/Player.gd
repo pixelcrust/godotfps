@@ -619,7 +619,8 @@ func equip_weapon():
 				equipped_id = -1
 	#show gui for inventory
 	display_inventory.visible = true
-	inventory_timer.connect("timeout",_inventory_gui_timeout)
+	if inventory_timer.is_connected("timeout",_inventory_gui_timeout) != false:
+		inventory_timer.connect("timeout",_inventory_gui_timeout)
 	inventory_timer.start()
 	match inventory_selector:
 		0:
