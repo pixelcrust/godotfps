@@ -6,8 +6,10 @@ var player = 0
 @export var text = "Guat, ba dir?"
 @export var cooldown_time = 5
 
+@onready var outline_mesh = $MeshInstance3D/MeshInstance3D
+
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
-@export var SOUND_VOICEOVER = null
+@export var SOUND_VOICEOVER = preload("res://Sounds/WhatsApp Audio 2024-09-05 at 14.38.16.wav")
 
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
