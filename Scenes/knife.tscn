@@ -1,84 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://dm2mx7bibfyww"]
+[gd_scene load_steps=11 format=3 uid="uid://dm2mx7bibfyww"]
 
-[ext_resource type="ArrayMesh" uid="uid://ybhcy3yvmw52" path="res://resources/Survival Pack - Sept 2020/OBJ/Knife.obj" id="1_6u313"]
 [ext_resource type="Script" path="res://Scripts/knife.gd" id="1_hx75e"]
+[ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="2_abqvg"]
+[ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="3_2agxd"]
 [ext_resource type="PackedScene" uid="uid://dwjfspjqmal5v" path="res://Scenes/blood_splatter.tscn" id="3_mnbv3"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dy5pb"]
-albedo_color = Color(0.611765, 0.439216, 0.435294, 1)
-metallic = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilulc"]
-albedo_color = Color(0.745098, 0.458824, 0.615686, 1)
-metallic = 0.8
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qvq6"]
-albedo_color = Color(0.431373, 0.172549, 0.0588235, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqx51"]
-albedo_color = Color(0.156863, 0.156863, 0.156863, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kgh7q"]
+[ext_resource type="PackedScene" uid="uid://des4x83h8mrc7" path="res://blender import/knife_kitchen.tscn" id="4_eoeun"]
 
 [sub_resource type="Animation" id="Animation_8y2jy"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.208842, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 1.5708)]
-}
 
 [sub_resource type="Animation" id="Animation_hqr8d"]
 resource_name = "change weapon in"
 length = 0.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-1.08179, -1.68594, 1.5708), Vector3(-0.540895, -3.10874, 1.5708)]
-}
 
 [sub_resource type="Animation" id="Animation_3nbol"]
 resource_name = "shoot"
 length = 0.6
 step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.208842, 0, 0), Vector3(0.481106, 0, 0), Vector3(0, 0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eg7wy"]
 _data = {
@@ -87,26 +25,29 @@ _data = {
 "shoot": SubResource("Animation_3nbol")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgh7q"]
+
 [node name="Knife" type="Node3D"]
 script = ExtResource("1_hx75e")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.61999e-06, 1, 2.53518e-06, 1, -3.61999e-06, 0, 9.17733e-12, 2.53518e-06, -1, -0.208842, 0, 0)
-layers = 2
-mesh = ExtResource("1_6u313")
-surface_material_override/0 = SubResource("StandardMaterial3D_dy5pb")
-surface_material_override/1 = SubResource("StandardMaterial3D_ilulc")
-surface_material_override/2 = SubResource("StandardMaterial3D_0qvq6")
-surface_material_override/3 = SubResource("StandardMaterial3D_lqx51")
-
-[node name="ShapeCast3D" type="ShapeCast3D" parent="MeshInstance3D"]
-transform = Transform3D(2, 4.65324e-17, 0, 4.65324e-17, 2, 0, 0, 0, 2, 8.74214e-06, 2.41496, 6.12237e-06)
-shape = SubResource("BoxShape3D_kgh7q")
-collision_mask = 2
-
-[node name="blood_splatter" parent="MeshInstance3D" instance=ExtResource("3_mnbv3")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_eg7wy")
 }
+
+[node name="hand_left" parent="." instance=ExtResource("2_abqvg")]
+transform = Transform3D(1.49061e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, 1.49061e-09, 0, 0, -0.4)
+
+[node name="hand_right" parent="." instance=ExtResource("3_2agxd")]
+transform = Transform3D(1.49061e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, 1.49061e-09, 0, 0, 0.4)
+
+[node name="knife_kitchen" parent="hand_right" instance=ExtResource("4_eoeun")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1.03484, -1.18287, -6.2937)
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="hand_right/knife_kitchen"]
+transform = Transform3D(1.20255e-10, 3.32196e-05, -13.3333, 4.76837e-05, 13.3333, 3.32196e-05, 13.3333, -4.76837e-05, 1.45207e-12, -7.72506e-07, 17.6711, -0.103438)
+shape = SubResource("BoxShape3D_kgh7q")
+collision_mask = 2
+
+[node name="blood_splatter" parent="hand_right/knife_kitchen" instance=ExtResource("3_mnbv3")]
+transform = Transform3D(6.01273e-11, 1.66098e-05, -6.66667, 2.38419e-05, 6.66667, 1.66098e-05, 6.66667, -2.38419e-05, 7.26037e-13, -6.86854e-08, 1.57134, -0.103439)

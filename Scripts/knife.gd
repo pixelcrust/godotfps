@@ -8,11 +8,14 @@ const time_rooted = 1
 @onready var blood_splatter = $MeshInstance3D/blood_splatter
 
 @onready var ads = 0 #0.. false 1..true
+@onready var pos_standard = Vector3(-0.20,-0.10,0.40)
+@onready var hand_right: Node3D = $hand_right
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
-
+	hand_right.transform.origin = pos_standard
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
