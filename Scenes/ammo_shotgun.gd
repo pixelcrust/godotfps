@@ -20,11 +20,12 @@ func get_interaction_time():
 func use():
 	#check if gun is in inventory
 	#for iteration in iterable_object:
-	player.canvas_group.shaking = 0
+
 	for n in player.inventory:
 		#print(str(n.item_id))
 		if n.item_id == 1:
 			n.spare_ammo += number_bullets
+			player.canvas_group.shaking = 0
 			queue_free()
 	#else dont pick up
 	

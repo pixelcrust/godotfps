@@ -1,9 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=15 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player.tscn" id="3_leven"]
 [ext_resource type="PackedScene" uid="uid://wiwbep52mmak" path="res://test_npc.tscn" id="4_18fb1"]
+[ext_resource type="PackedScene" uid="uid://bwwptgjr6pw5b" path="res://Scenes/ammo_pistol.tscn" id="5_bgw2h"]
+[ext_resource type="PackedScene" uid="uid://cqbg8j44khcj6" path="res://Scenes/ammo_shotgun.tscn" id="6_47dp2"]
+[ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/knife_dropped.tscn" id="7_kjjlq"]
+[ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="8_hh40k"]
+[ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/gun_dropped.tscn" id="9_40gwg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -103,3 +108,18 @@ material = SubResource("StandardMaterial3D_1yvm4")
 
 [node name="test_npc" parent="." instance=ExtResource("4_18fb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4118, 15.5131, 15.4585)
+
+[node name="ammo_pistol" parent="." instance=ExtResource("5_bgw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98657, 14.3789, 19.5512)
+
+[node name="ammo_shotgun" parent="." instance=ExtResource("6_47dp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97925, 14.3919, 19.8885)
+
+[node name="knife_dropped" parent="." instance=ExtResource("7_kjjlq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.18982, 14.2629, 21.0659)
+
+[node name="shotgun_dropped" parent="." instance=ExtResource("8_hh40k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.14127, 14.1757, 21.4975)
+
+[node name="gun_dropped" parent="." instance=ExtResource("9_40gwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14412, 14.3678, 20.1452)
