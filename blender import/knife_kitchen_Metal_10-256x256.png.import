@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b1x41i3tyeafq"
+path.s3tc="res://.godot/imported/knife_kitchen_Metal_10-256x256.png-69dd2b93da10ba9a15a257bc05146c55.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "3d756a19ded1fbf119d013a236e91d90"
+}
+
+[deps]
+
+source_file="res://blender import/knife_kitchen_Metal_10-256x256.png"
+dest_files=["res://.godot/imported/knife_kitchen_Metal_10-256x256.png-69dd2b93da10ba9a15a257bc05146c55.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -2,7 +2,7 @@ extends Node3D
 @onready var interaction_time = .5
 
 @onready var rigid_body = $RigidBody3D
-@onready var outline_mesh = $RigidBody3D/MeshInstance3D/MeshInstance3D
+@onready var outline_mesh = $RigidBody3D/knife_kitchen.outline_mesh
 
 
 @onready var player = 0
@@ -22,6 +22,8 @@ const max_loaded = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
+	$RigidBody3D/knife_kitchen/Cube.set_layer_mask_value(1,true)
+	$RigidBody3D/knife_kitchen/Cube.set_layer_mask_value(2,false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
