@@ -8,14 +8,16 @@ const time_rooted = 1
 @onready var blood_splatter = $MeshInstance3D/blood_splatter
 
 @onready var ads = 0 #0.. false 1..true
-@onready var pos_standard = Vector3(-0.20,-0.10,0.40)
+@onready var pos_standard = Vector3(-0.40,-0.10,0.40)
 @onready var hand_right: Node3D = $hand_right
+@onready var hand_left: Node3D = $hand_left
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 	hand_right.transform.origin = pos_standard
+	hand_left.transform.origin = Vector3(-0.40,-0.10,-2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -26,7 +28,6 @@ func shoot(inventory_selector,player_eyes_position,player_shot):
 		pass
 		
 	else:		
-		await get_tree().create_timer(0.5).timeout
 		if shapecast.is_colliding():
 			print("raycast collision knife with:" + str(shapecast.get_collider(0)) )
 			if shapecast.get_collider(0).is_in_group("group_player") != true:
