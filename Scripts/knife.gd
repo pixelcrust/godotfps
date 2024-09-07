@@ -3,9 +3,9 @@ extends Node3D
 const dmg = 30
 const time_rooted = 1
 @onready var player = null
-@onready var shapecast = $MeshInstance3D/ShapeCast3D
 @onready var animation_player = $AnimationPlayer
 @onready var blood_splatter = $MeshInstance3D/blood_splatter
+@onready var shapecast: ShapeCast3D = $hand_right/knife_kitchen/ShapeCast3D
 
 @onready var ads = 0 #0.. false 1..true
 @onready var pos_standard = Vector3(-0.40,-0.10,0.40)
@@ -23,11 +23,11 @@ func _ready():
 func _process(delta):
 	pass
 
-func shoot(inventory_selector,player_eyes_position,player_shot):
+func shoot(inventory_selector,player_eyes_position,player_shot,victim):
 	if animation_player.is_playing():
 		pass
 		
-	else:		
+	else:
 		if shapecast.is_colliding():
 			print("raycast collision knife with:" + str(shapecast.get_collider(0)) )
 			if shapecast.get_collider(0).is_in_group("group_player") != true:

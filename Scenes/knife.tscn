@@ -9,6 +9,54 @@
 
 [sub_resource type="Animation" id="Animation_8y2jy"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_right:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand_left:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand_right/knife_kitchen:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.705131, 3.72026e-08, -1.36883e-08)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand_right/knife_kitchen/ShapeCast3D:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_hqr8d"]
 resource_name = "change weapon in"
@@ -18,6 +66,54 @@ length = 0.7
 resource_name = "shoot"
 length = 0.6
 step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_right:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -2.71496, 1.5708), Vector3(0, -1.97027, 1.5708), Vector3(0, -2.49851, 1.5708), Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand_left:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -0.528486, 0), Vector3(0, -1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand_right/knife_kitchen:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.705131, 3.72026e-08, -1.36883e-08), Vector3(0, 0, 0), Vector3(-0.705131, 3.72026e-08, -1.36883e-08), Vector3(-0.282052, 1.4881e-08, -5.4753e-09), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand_right/knife_kitchen/ShapeCast3D:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eg7wy"]
 _data = {
@@ -38,13 +134,13 @@ libraries = {
 }
 
 [node name="hand_left" parent="." instance=ExtResource("2_abqvg")]
-transform = Transform3D(1.49061e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, 1.49061e-09, 0, 0, -0.4)
+transform = Transform3D(-5.46392e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, -5.46392e-09, 0, 0, -0.4)
 
 [node name="hand_right" parent="." instance=ExtResource("3_2agxd")]
-transform = Transform3D(1.49061e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, 1.49061e-09, 0, 0, 0.4)
+transform = Transform3D(-5.46392e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, -5.46392e-09, 0, 0, 0.4)
 
 [node name="knife_kitchen" parent="hand_right" instance=ExtResource("4_eoeun")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1.03484, -1.18287, -6.2937)
+transform = Transform3D(1.2, -1.25088e-08, 3.3997e-08, -1.25088e-08, 0.913832, 0.77776, -3.3997e-08, -0.77776, 0.913832, -1.03484, -1.18287, -6.2937)
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="hand_right/knife_kitchen"]
 transform = Transform3D(1.20255e-10, 3.32196e-05, -13.3333, 4.76837e-05, 13.3333, 3.32196e-05, 13.3333, -4.76837e-05, 1.45207e-12, -7.72506e-07, 17.6711, -0.103438)
