@@ -6,7 +6,6 @@ extends CanvasGroup
 @onready var player: CharacterBody3D = $"../../../../../../.."
 @onready var gui_wiggle_timer: Timer = $gui_wiggle_timer
 
-
 var icon_bullet_pistol = preload("res://Sprites/pistol_bullet_icon.png")
 var icon_shell = preload("res://Sprites/shotgun_shell_icon.png")
 var icon_explosion = preload("res://Sprites/explosion_icon.png")
@@ -16,7 +15,12 @@ var going_right = true
 var rotation_duration = .7
 var shake_speed = 5
 
-var pump = 2 #0pumping little 1 pumping
+var pump_speed_fast = 2
+var pump_speed_medium = 1
+var pump_speed_slow = .5
+var pump_size_fast = 2
+var pump_size_medium = 1
+var pump_size_slow = .5
 var pump_speed = .3
 var pump_size = .3
 var growing = 1
@@ -31,31 +35,31 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if shaking != 2:
 		ammo_shake(delta)
-	if pump != 2:
-		heart_pump(delta)
-	else:
-		icon_heart.scale = Vector2(1,1)
+	
+	heart_pump(delta)
+
 
 func heart_pump(delta):
-	print("heart_pump")
-	if pump == 0:
-		if growing == 1:
-			icon_heart.scale += Vector2(pump_speed*delta,pump_speed*delta)
-			if icon_heart.scale.x >= 1+ (pump_size/2):
-				growing = 0
-		else:
-			icon_heart.scale -= Vector2(pump_speed*delta,pump_speed*delta)
-			if icon_heart.scale.x <= 1- (pump_size/2):
-				growing = 1
-	if pump == 1:
-		if growing == 1:
-			icon_heart.scale += Vector2(pump_speed*2*delta,pump_speed*delta)
-			if icon_heart.scale.x >= 1+ pump_size:
-				growing = 0
-		else:
-			icon_heart.scale -= Vector2(pump_speed*2*delta,pump_speed*delta)
-			if icon_heart.scale.x <= 1- pump_size:
-				growing = 1
+		#heart pump
+	if player.hp <= 20:
+		pump_speed = pump_speed_fast
+		pump_size = pump_size_fast
+	elif player.hp <= 50:
+		pump_speed = pump_speed_medium
+		pump_size = pump_size_medium
+	else:
+		pump_speed = pump_speed_slow
+		pump_size = pump_size_slow
+	
+	if growing == 1:
+		icon_heart.scale += Vector2(pump_speed*delta,pump_speed*delta)
+		if icon_heart.scale.x >= 1+ (pump_size):
+			growing = 0
+	else:
+		icon_heart.scale -= Vector2(pump_speed*delta,pump_speed*delta)
+		if icon_heart.scale.x <= 1- (pump_size):
+			growing = 1
+
 func ammo_shake(delta):
 	print("wiggle_timer: "+str(gui_wiggle_timer.time_left))
 	print("rotation: "+str(rad_to_deg(icon_ammo.rotation)))

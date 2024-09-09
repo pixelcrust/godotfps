@@ -134,13 +134,13 @@ libraries = {
 }
 
 [node name="hand_left" parent="." instance=ExtResource("2_abqvg")]
-transform = Transform3D(-5.46392e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, -5.46392e-09, 0, 0, -0.4)
+transform = Transform3D(-4.52499e-07, 0, -0.125, 0, 0.125, 0, 0.125, 0, -4.52499e-07, 0, 0, -0.4)
 
 [node name="hand_right" parent="." instance=ExtResource("3_2agxd")]
-transform = Transform3D(-5.46392e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, -5.46392e-09, 0, 0, 0.4)
+transform = Transform3D(-4.52499e-07, 0, -0.125, 0, 0.125, 0, 0.125, 0, -4.52499e-07, 0, 0, 0.4)
 
 [node name="knife_kitchen" parent="hand_right" instance=ExtResource("4_eoeun")]
-transform = Transform3D(1.2, -1.25088e-08, 3.3997e-08, -1.25088e-08, 0.913832, 0.77776, -3.3997e-08, -0.77776, 0.913832, -1.03484, -1.18287, -6.2937)
+transform = Transform3D(1.2, -1.25087e-08, 3.39969e-08, -1.25088e-08, 0.913832, 0.77776, -3.39969e-08, -0.77776, 0.913832, -1.03484, -1.18287, -6.2937)
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="hand_right/knife_kitchen"]
 transform = Transform3D(1.20255e-10, 3.32196e-05, -13.3333, 4.76837e-05, 13.3333, 3.32196e-05, 13.3333, -4.76837e-05, 1.45207e-12, -7.72506e-07, 17.6711, -0.103438)
