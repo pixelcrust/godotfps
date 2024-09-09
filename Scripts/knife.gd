@@ -46,3 +46,6 @@ func _on_timer_timeout():
 
 func reload(inventory_selector):
 	pass
+
+func inspect():
+	pass
