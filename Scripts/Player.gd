@@ -378,7 +378,7 @@ func _physics_process(delta):
 
 	if(Input.is_action_pressed("key_help")):
 		help_text.visible = true
-		#hp -= 30
+		hp -= 1
 	else:
 		help_text.visible = false
 		

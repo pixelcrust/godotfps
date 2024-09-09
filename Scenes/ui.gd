@@ -15,14 +15,14 @@ var going_right = true
 var rotation_duration = .7
 var shake_speed = 5
 
-var pump_speed_fast = 2
+var pump_speed_fast = 3
 var pump_speed_medium = 1
-var pump_speed_slow = .5
-var pump_size_fast = 2
-var pump_size_medium = 1
-var pump_size_slow = .5
-var pump_speed = .3
-var pump_size = .3
+var pump_speed_slow = .2
+var pump_size_fast = .3
+var pump_size_medium = .15
+var pump_size_slow = .1
+var pump_speed = 0
+var pump_size = 0
 var growing = 1
 
 # Called when the node enters the scene tree for the first time.
