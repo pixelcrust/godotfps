@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bwwptgjr6pw5b"]
+[gd_scene load_steps=8 format=4 uid="uid://bwwptgjr6pw5b"]
 
 [ext_resource type="Script" path="res://ammo_pistol.gd" id="1_msdad"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_6wid5"]
@@ -21,23 +21,32 @@ _surfaces = [{
 "vertex_data": PackedByteArray("frhUvkqFIT7Y9YM+frhUPkqFIT7Y9YO+frhUPkqFIT7Y9YM+frhUvkqFIT7Y9YO+frhUvkqFIb7Y9YM+frhUPkqFIb7Y9YO+frhUPkqFIb7Y9YM+frhUvkqFIb7Y9YO+frhUPkqFIT7Y9YM+frhUvkqFIT7Y9YO+frhUPkqFIT7Y9YO+frhUvkqFIT7Y9YM+frhUPkqFIb7Y9YM+frhUvkqFIb7Y9YO+frhUPkqFIb7Y9YO+frhUvkqFIb7Y9YM+frhUPkqFIT7Y9YM+frhUvkqFIb7Y9YM+frhUvkqFIT7Y9YM+frhUPkqFIb7Y9YM+frhUPkqFIT7Y9YO+frhUvkqFIb7Y9YO+frhUvkqFIT7Y9YO+frhUPkqFIb7Y9YO+/3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3a2fu"]
+size = Vector3(0.298676, 0.199371, 0.404022)
+
 [node name="ammo_pistol" type="Node3D"]
 script = ExtResource("1_msdad")
 
-[node name="Area3D" type="Area3D" parent="." groups=["interactable"]]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
 collision_layer = 10
 script = ExtResource("2_tcirj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0057373, 0.0258179, -0.0100098)
 shape = SubResource("BoxShape3D_n3ht8")
 
-[node name="ammo_pistol" parent="." instance=ExtResource("3_sxxhu")]
+[node name="ammo_pistol" parent="RigidBody3D" instance=ExtResource("3_sxxhu")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ammo_pistol"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/ammo_pistol"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 mesh = SubResource("ArrayMesh_ifuu6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_6wid5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689512, 0.000350952, 0.000991821)
+shape = SubResource("BoxShape3D_3a2fu")
