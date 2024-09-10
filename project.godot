@@ -29,6 +29,10 @@ mouse_cursor/custom_image="res://crosshair.png"
 
 import/fbx/enabled=false
 
+[gui]
+
+theme/custom_font="res://HomeVideoBold-R90Dv.ttf"
+
 [input]
 
 key_jump={
