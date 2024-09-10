@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=17 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/shotgun_dropped.tscn" id="8_hh40k"]
 [ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/gun_dropped.tscn" id="9_40gwg"]
 [ext_resource type="PackedScene" uid="uid://cvihmp2ma48n5" path="res://Scenes/beartrap.tscn" id="10_mumg2"]
+[ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://Scenes/sentrygun.tscn" id="11_8two8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -139,3 +140,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98657, 14.3789, 18.5666)
 
 [node name="ammo_pistol3" parent="." instance=ExtResource("5_bgw2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98657, 14.3789, 17.1112)
+
+[node name="sentrygun" parent="." instance=ExtResource("11_8two8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79253, 14.6259, 15.8358)
