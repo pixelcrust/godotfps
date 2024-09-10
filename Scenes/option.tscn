@@ -12,6 +12,7 @@ offset_top = 583.0
 offset_right = 1108.0
 offset_bottom = 614.0
 text = "back"
+flat = true
 
 [node name="Foto" type="Sprite2D" parent="."]
 z_index = -1
@@ -35,11 +36,11 @@ offset_top = 128.0
 offset_right = 279.0
 offset_bottom = 152.0
 
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 98.0
-offset_top = 124.0
-offset_right = 217.0
-offset_bottom = 159.0
+[node name="TextEdit" type="RichTextLabel" parent="."]
+offset_left = 112.0
+offset_top = 131.0
+offset_right = 231.0
+offset_bottom = 166.0
 text = "Fullscreen"
 
 [connection signal="pressed" from="button_back" to="." method="_on_button_back_pressed"]

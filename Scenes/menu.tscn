@@ -19,6 +19,7 @@ offset_bottom = 312.0
 scale = Vector2(1.34654, 1.71099)
 size_flags_horizontal = 4
 text = "New Game"
+flat = true
 
 [node name="button_continue" type="Button" parent="."]
 offset_left = 509.0
@@ -29,6 +30,7 @@ scale = Vector2(1.34654, 1.71099)
 size_flags_horizontal = 4
 text = "Continue
 "
+flat = true
 
 [node name="button_options" type="Button" parent="."]
 offset_left = 508.0
@@ -39,6 +41,7 @@ scale = Vector2(1.36234, 1.68309)
 size_flags_horizontal = 4
 text = "Options
 "
+flat = true
 
 [node name="button_exit" type="Button" parent="."]
 offset_left = 506.0
@@ -48,6 +51,7 @@ offset_bottom = 514.0
 scale = Vector2(1.34654, 1.71099)
 size_flags_horizontal = 4
 text = "Exit"
+flat = true
 
 [node name="Foto" type="Sprite2D" parent="."]
 z_index = -2
