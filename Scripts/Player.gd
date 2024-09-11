@@ -80,7 +80,7 @@ var gravity = 9.8
 
 @onready var inventory = []
 @onready var inventory_selector = 0
-@onready var inventory_space = 3
+@onready var inventory_space = 10
 
 #inventory slots and icons
 @onready var display_inventory = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory
