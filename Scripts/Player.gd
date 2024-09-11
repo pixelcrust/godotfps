@@ -320,6 +320,8 @@ func _physics_process(delta):
 			equip_weapon()
 		state_move = 0
 	
+	check_if_inventory_changed()
+	
 	if inventory.is_empty() == false:
 		#display ammo
 		display_ammo.visible = true
@@ -618,6 +620,7 @@ func equip_weapon():
 			_:
 				equipped_id = -1
 				
+				
 	#show gui for inventory
 	display_inventory.visible = true
 	if inventory_timer.is_connected("timeout",_inventory_gui_timeout) != false:
@@ -625,29 +628,9 @@ func equip_weapon():
 	inventory_timer.start()
 	print(str(inventory_timer.time_left))
 	
-	#if inventory changes, play pick up sound
-	if inventory_before != inventory:
-		audio_stream_player_3d.stream = SOUND_ITEM_PICKUP
-		audio_stream_player_3d.play(0.0)
-		inventory_before = inventory.duplicate(true)
-	
-	#display textures in inventory
-	var inventory_previous = 0
-	var inventory_next = 0
-	if inventory_selector == 0:
-		inventory_previous = inventory.size()-1
-		inventory_next = inventory_selector+1
-	elif inventory_selector == inventory.size()-1:
-		inventory_previous = inventory_selector-1
-		inventory_next = 0
-	else:
-		inventory_previous = inventory_selector-1
-		inventory_next = inventory_selector+1
-	
-	
-	inv_previous.texture = inventory[inventory_previous].icon
-	inv_selected.texture = inventory[inventory_selector].icon
-	inv_next.texture = inventory[inventory_next].icon
+
+	check_if_inventory_changed()
+	update_inventory_ui()
 	
 
 	"""
@@ -808,6 +791,7 @@ func drop_weapon():
 	inventory.remove_at(inventory_selector)
 	equip_weapon()
 	
+
 func heal(heal_amount):
 	hp += heal_amount
 	
@@ -827,9 +811,46 @@ func set_rooted(stun_duration_sec):
 	await get_tree().create_timer(stun_duration_sec).timeout
 	
 	is_rooted = false
+func update_inventory_ui():
+	#display textures in inventory
+	var inventory_previous = 0
+	var inventory_next = 0
+	if inventory.size() <= 1:
+		inventory_previous = inventory_selector
+		inventory_next = inventory_selector
+	else:
+		if inventory_selector == 0:
+			inventory_previous = inventory.size()-1
+			inventory_next = inventory_selector+1
+		elif inventory_selector == inventory.size()-1:
+			inventory_previous = inventory_selector-1
+			inventory_next = 0
+		else:
+			inventory_previous = inventory_selector-1
+			inventory_next = inventory_selector+1
+	
+	if inventory.size() != 0:
+		inv_previous.texture = inventory[inventory_previous].icon
+		inv_selected.texture = inventory[inventory_selector].icon
+		inv_next.texture = inventory[inventory_next].icon
+	else:
+		inv_previous.texture = null
+		inv_selected.texture = null
+		inv_next.texture = null
+		
+		
+func check_if_inventory_changed():
+	#if inventory changes, play pick up sound
+	if inventory_before != inventory:
+		update_inventory_ui()
+		audio_stream_player_3d.stream = SOUND_ITEM_PICKUP
+		audio_stream_player_3d.play(0.0)
+		inventory_before = inventory.duplicate(true)
+		
 
 func _inventory_gui_timeout():
 	display_inventory.visible = false
+	inventory_timer.disconnect("timeout",_inventory_gui_timeout)
 	
 func _conversation_timeout():
 	display_conversation.visible = false

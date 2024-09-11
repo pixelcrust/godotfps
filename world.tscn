@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=19 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="1_pb7b5"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="3_46517"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cvihmp2ma48n5" path="res://Scenes/beartrap.tscn" id="10_mumg2"]
 [ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://Scenes/sentrygun.tscn" id="11_8two8"]
 [ext_resource type="PackedScene" uid="uid://digdc0wdsetba" path="res://Scenes/flashlight_dropped.tscn" id="12_dvbmf"]
+[ext_resource type="PackedScene" uid="uid://bqlro6hhkahua" path="res://Scenes/grenade_dropped.tscn" id="13_waugr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -147,3 +148,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79253, 14.6259, 15.8358)
 
 [node name="flashlight_dropped" parent="." instance=ExtResource("12_dvbmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36799, 14.3127, 21.1875)
+
+[node name="grenade_dropped" parent="." instance=ExtResource("13_waugr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7267, 14.0301, 21.3782)

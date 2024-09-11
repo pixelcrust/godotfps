@@ -200,6 +200,7 @@ offset_bottom = 440.0
 show_percentage = false
 
 [node name="display_inventory" type="Container" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
