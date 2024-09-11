@@ -251,10 +251,12 @@ wrap_mode = 1
 wait_time = 2.0
 
 [node name="icon_heart" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+texture_filter = 1
 position = Vector2(100, 55)
 texture = ExtResource("6_r3w6o")
 
 [node name="icon_ammo" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+texture_filter = 1
 position = Vector2(100, 570)
 texture = ExtResource("7_6se36")
 

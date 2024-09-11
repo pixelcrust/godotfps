@@ -745,14 +745,14 @@ func drop_weapon():
 		3:
 			print("dropped knife")
 			var new_dropped_knife = asset_drop_knife.instantiate()
-			new_dropped_knife.position = raycast_interaction.global_position -transform.basis.z*0.5
+			new_dropped_knife.position = raycast_interaction.global_position -transform.basis.z*1.5
 			new_dropped_knife.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_dropped_knife)
 			new_dropped_knife.rigid_body.apply_impulse(-transform.basis.z *4)
 		4:
 			print("dropped flashlight")
 			var new_dropped_flashlight = asset_drop_flashlight.instantiate()
-			new_dropped_flashlight.position = raycast_interaction.global_position -transform.basis.z*0.5
+			new_dropped_flashlight.position = raycast_interaction.global_position -transform.basis.z*1.5
 			new_dropped_flashlight.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_dropped_flashlight)
 			new_dropped_flashlight.rigid_body.apply_impulse(-transform.basis.z *4)
@@ -760,7 +760,7 @@ func drop_weapon():
 		5:
 			print("dropped grenade")
 			var new_dropped_grenade = asset_drop_grenade.instantiate()
-			new_dropped_grenade.position = raycast_interaction.global_position -transform.basis.z*0.5
+			new_dropped_grenade.position = raycast_interaction.global_position -transform.basis.z*1.5
 			new_dropped_grenade.transform.basis = global_transform.basis
 			get_tree().root.get_children()[0].add_child(new_dropped_grenade)
 			new_dropped_grenade.loaded = inventory[inventory_selector].loaded
