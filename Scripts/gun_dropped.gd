@@ -17,7 +17,8 @@ const max_loaded = 7
 	"item_id": 0, #pistol
 	"loaded": 7,
 	"max_loaded": 7, # See above assignment.
-	"spare_ammo": 100
+	"spare_ammo": 100,
+	"icon": preload("res://Sprites/icons/icon_pistol_2.png")
 	})
 	"""
 
@@ -41,12 +42,13 @@ func use():
 		"item_id": item_id, 
 		"loaded": loaded,
 		"max_loaded": max_loaded, 
-		"spare_ammo": spare_ammo
+		"spare_ammo": spare_ammo,
+		"icon": preload("res://Sprites/icons/icon_pistol_2.png")
 		})
-		player.inventory_selector = len(player.inventory)-1
+		"""player.inventory_selector = len(player.inventory)-1
 		if player.equipped_id != -1:
 			player.equipped.queue_free()
-		player.equip_weapon()
+		player.equip_weapon()"""
 		queue_free()
 	else:
 		player.drop_weapon()
@@ -54,11 +56,11 @@ func use():
 		"item_id": item_id, 
 		"loaded": loaded,
 		"max_loaded": max_loaded, 
-		"spare_ammo": spare_ammo
+		"spare_ammo": spare_ammo,
+		"icon": preload("res://Sprites/icons/icon_pistol_2.png")
 		})
-		player.inventory_selector = len(player.inventory)-1
+		"""player.inventory_selector = len(player.inventory)-1
 		if player.equipped_id != -1:
 			player.equipped.queue_free()
-		player.equip_weapon()
+		player.equip_weapon()"""
 		queue_free()
-		pass

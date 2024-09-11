@@ -39,12 +39,13 @@ func use():
 		"item_id": item_id, 
 		"loaded": loaded,
 		"max_loaded": max_loaded, 
-		"spare_ammo": spare_ammo
+		"spare_ammo": spare_ammo,
+		"icon": preload("res://Sprites/icons/icon_knife.png")
 		})
-		player.inventory_selector = len(player.inventory)-1
-		if player.equipped_id != -1:
-			player.equipped.queue_free()
-		player.equip_weapon()
+		#player.inventory_selector = len(player.inventory)-1
+		#if player.equipped_id != -1:
+			#player.equipped.queue_free()
+		#player.equip_weapon()
 		queue_free()
 	else:
 		player.drop_weapon()
@@ -52,11 +53,11 @@ func use():
 		"item_id": item_id, 
 		"loaded": loaded,
 		"max_loaded": max_loaded, 
-		"spare_ammo": spare_ammo
+		"spare_ammo": spare_ammo,
+		"icon": preload("res://Sprites/icons/icon_knife.png")
 		})
-		player.inventory_selector = len(player.inventory)-1
-		if player.equipped_id != -1:
-			player.equipped.queue_free()
-		player.equip_weapon()
+		#player.inventory_selector = len(player.inventory)-1
+		#if player.equipped_id != -1:
+			#player.equipped.queue_free()
+		#player.equip_weapon()
 		queue_free()
-		pass

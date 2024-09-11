@@ -14,7 +14,8 @@ const max_loaded = 1
 	"item_id": 2, #sniper
 	"loaded": 5,
 	"max_loaded": 5, 
-	"spare_ammo": 10
+	"spare_ammo": 10,
+	"icon": preload("res://Sprites/icons/icon_sniper.png")
 	})
 	"""
 
@@ -36,12 +37,13 @@ func use():
 		"item_id": item_id, #sniper
 		"loaded": loaded,
 		"max_loaded": max_loaded, 
-		"spare_ammo": spare_ammo
+		"spare_ammo": spare_ammo,
+		"icon": preload("res://Sprites/icons/icon_sniper.png")
 		})
-		player.inventory_selector = len(player.inventory)-1
+		"""player.inventory_selector = len(player.inventory)-1
 		if player.equipped_id != -1:
 			player.equipped.queue_free()
-		player.equip_weapon()
+		player.equip_weapon()"""
 		queue_free()
 	else:
 		player.drop_weapon()
@@ -49,10 +51,11 @@ func use():
 		"item_id": item_id, 
 		"loaded": loaded,
 		"max_loaded": max_loaded, 
-		"spare_ammo": spare_ammo
+		"spare_ammo": spare_ammo,
+		"icon": preload("res://Sprites/icons/icon_sniper.png")
 		})
-		player.inventory_selector = len(player.inventory)-1
+		"""player.inventory_selector = len(player.inventory)-1
 		if player.equipped_id != -1:
 			player.equipped.queue_free()
-		player.equip_weapon()
+		player.equip_weapon()"""
 		queue_free()

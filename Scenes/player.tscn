@@ -203,18 +203,26 @@ show_percentage = false
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="inv_1" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
-position = Vector2(400, 500)
+[node name="inv_previous" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+modulate = Color(1, 1, 1, 0.392157)
+texture_filter = 1
+position = Vector2(450, 600)
+scale = Vector2(0.8, 0.8)
 
-[node name="inv_2" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
-position = Vector2(550, 500)
+[node name="inv_selected" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+texture_filter = 1
+position = Vector2(550, 580)
 
-[node name="inv_3" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
-position = Vector2(700, 500)
+[node name="inv_next" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+modulate = Color(1, 1, 1, 0.392157)
+texture_filter = 1
+position = Vector2(650, 600)
+scale = Vector2(0.8, 0.8)
 
 [node name="inv_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
 
 [node name="inventory_marker" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+visible = false
 texture = ExtResource("4_jacde")
 
 [node name="help_text" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]

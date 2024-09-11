@@ -15,7 +15,8 @@ const max_loaded = 1
 	"item_id": 3, #knife
 	"loaded": 1,
 	"max_loaded": 1, # See above assignment.
-	"spare_ammo": 0
+	"spare_ammo": 0,
+	"icon": preload("res://Sprites/icons/icon_flashlight.png")
 	})
 	"""
 
@@ -39,12 +40,14 @@ func use():
 		"item_id": item_id, 
 		"loaded": loaded,
 		"max_loaded": max_loaded, 
-		"spare_ammo": spare_ammo
+		"spare_ammo": spare_ammo,
+		"icon": preload("res://Sprites/icons/icon_flashlight.png")
 		})
+		"""
 		player.inventory_selector = len(player.inventory)-1
 		if player.equipped_id != -1:
 			player.equipped.queue_free()
-		player.equip_weapon()
+		player.equip_weapon()"""
 		queue_free()
 	else:
 		player.drop_weapon()
@@ -52,11 +55,12 @@ func use():
 		"item_id": item_id, 
 		"loaded": loaded,
 		"max_loaded": max_loaded, 
-		"spare_ammo": spare_ammo
+		"spare_ammo": spare_ammo,
+		"icon": preload("res://Sprites/icons/icon_flashlight.png")
 		})
+		"""
 		player.inventory_selector = len(player.inventory)-1
 		if player.equipped_id != -1:
 			player.equipped.queue_free()
-		player.equip_weapon()
+		player.equip_weapon()"""
 		queue_free()
-		pass

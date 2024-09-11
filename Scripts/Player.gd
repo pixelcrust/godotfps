@@ -84,9 +84,10 @@ var gravity = 9.8
 
 #inventory slots and icons
 @onready var display_inventory = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory
-@onready var inv_slot_1 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_1
-@onready var inv_slot_2 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_2
-@onready var inv_slot_3 = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_3
+@onready var inv_previous: Sprite2D = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_previous
+@onready var inv_selected: Sprite2D = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_selected
+@onready var inv_next: Sprite2D = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_next
+
 @onready var icon_pistol = preload("res://Sprites/icons/icon_pistol_2.png")
 @onready var icon_shotgun = preload("res://Sprites/icons/icon_shotgun.png")
 @onready var icon_sniper = preload("res://Sprites/icons/icon_sniper.png")
@@ -151,25 +152,37 @@ func _ready():
 	Global.player_inventory = inventory
 	Global.player_position = position
 	Global.player_rotation = rotation
+	inventory.append({
+		"item_id": 0, #pistol
+		"loaded": 7,
+		"max_loaded": 7, # See above assignment.
+		"spare_ammo": 100,
+		"icon": preload("res://Sprites/icons/icon_pistol_2.png")
+	})
+	
+
 	"""
 	inventory.append({
 		"item_id": 0, #pistol
 		"loaded": 7,
 		"max_loaded": 7, # See above assignment.
-		"spare_ammo": 100
+		"spare_ammo": 100,
+		"icon": "res://Sprites/icons/icon_pistol_2.png"
 	})
 	
 	inventory.append({
 		"item_id": 1, #grenade
 		"loaded": 1,
 		"max_loaded": 2, # See above assignment.
-		"spare_ammo": 20
+		"spare_ammo": 20,
+		"icon": "res://Sprites/icons/icon_grenade.png"
 	})
 	inventory.append({
 		"item_id": 2, #flashlight
 		"loaded": 1,
 		"max_loaded": 1, 
-		"spare_ammo": 10
+		"spare_ammo": 10,
+		"icon": "res://Sprites/icons/icon_flashlight.png"
 	})	
 
 	
@@ -448,12 +461,7 @@ func _physics_process(delta):
 				victim = raycast_aim.get_collision_point()
 				#bullet_spawn.look_at(victim)
 			equipped.shoot(inventory_selector,bullet_spawn,true,victim)
-			"""if (inventory[inventory_selector].loaded == 0 and inventory[inventory_selector].spare_ammo == 0 and equipped.is_in_group("consumeable")):
-				print("consumeable empty")
-				equipped.queue_free()
-				inventory_before.remove_at(inventory_selector)
-				inventory.remove_at(inventory_selector)
-				equip_weapon()"""
+
 		else:
 			pass
 	
@@ -609,11 +617,40 @@ func equip_weapon():
 				pass
 			_:
 				equipped_id = -1
+				
 	#show gui for inventory
 	display_inventory.visible = true
 	if inventory_timer.is_connected("timeout",_inventory_gui_timeout) != false:
 		inventory_timer.connect("timeout",_inventory_gui_timeout)
 	inventory_timer.start()
+	print(str(inventory_timer.time_left))
+	
+	#if inventory changes, play pick up sound
+	if inventory_before != inventory:
+		audio_stream_player_3d.stream = SOUND_ITEM_PICKUP
+		audio_stream_player_3d.play(0.0)
+		inventory_before = inventory.duplicate(true)
+	
+	#display textures in inventory
+	var inventory_previous = 0
+	var inventory_next = 0
+	if inventory_selector == 0:
+		inventory_previous = inventory.size()-1
+		inventory_next = inventory_selector+1
+	elif inventory_selector == inventory.size()-1:
+		inventory_previous = inventory_selector-1
+		inventory_next = 0
+	else:
+		inventory_previous = inventory_selector-1
+		inventory_next = inventory_selector+1
+	
+	
+	inv_previous.texture = inventory[inventory_previous].icon
+	inv_selected.texture = inventory[inventory_selector].icon
+	inv_next.texture = inventory[inventory_next].icon
+	
+
+	"""
 	match inventory_selector:
 		0:
 			inventory_marker.global_position.x = inv_slot_1.global_position.x
@@ -628,11 +665,7 @@ func equip_weapon():
 			inventory_marker.global_position.x = 0
 			inventory_marker.global_position.y = 0
 	
-	if inventory_before != inventory:
-		audio_stream_player_3d.stream = SOUND_ITEM_PICKUP
-		audio_stream_player_3d.play(0.0)
-		inventory_before = inventory.duplicate(true)
-		
+
 	if inventory.is_empty() == false:
 		inventory_marker.visible = true
 		match inventory[0].item_id:
@@ -695,6 +728,7 @@ func equip_weapon():
 	else:
 		inv_slot_1.texture = null
 		inventory_marker.visible = false
+	"""
 	canvas_group.ammo_choose()
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):
