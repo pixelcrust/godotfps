@@ -389,7 +389,6 @@ func _physics_process(delta):
 			equipped.ads = 0
 			display_crosshair.visible = true
 		state_move = 0
-	
 
 	if(Input.is_action_pressed("key_help")):
 		help_text.visible = true
@@ -436,9 +435,12 @@ func _physics_process(delta):
 		if outline_meshes.is_empty() == false:
 			set_outline_off()
 			
+	print(str(inventory_timer.time_left))
 	#swap weapon
 	if Input.is_action_just_pressed("key_next_weapon"):
-		
+		#show gui for inventory
+		inventory_ui_timer_start()
+
 		if equipped != null:
 			if equipped.animation_player.is_playing():
 				pass
@@ -489,7 +491,7 @@ func _physics_process(delta):
 			collisionshape.scale.y = 1
 			mesh.scale.y = 1
 	
-		
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("key_left", "key_right", "key_forward", "key_backward")
@@ -620,98 +622,8 @@ func equip_weapon():
 			_:
 				equipped_id = -1
 				
-				
-	#show gui for inventory
-	display_inventory.visible = true
-	if inventory_timer.is_connected("timeout",_inventory_gui_timeout) != false:
-		inventory_timer.connect("timeout",_inventory_gui_timeout)
-	inventory_timer.start()
-	print(str(inventory_timer.time_left))
-	
-
 	check_if_inventory_changed()
 	update_inventory_ui()
-	
-
-	"""
-	match inventory_selector:
-		0:
-			inventory_marker.global_position.x = inv_slot_1.global_position.x
-			inventory_marker.global_position.y = inv_slot_1.global_position.y
-		1:
-			inventory_marker.global_position.x = inv_slot_2.global_position.x
-			inventory_marker.global_position.y = inv_slot_2.global_position.y
-		2:
-			inventory_marker.global_position.x = inv_slot_3.global_position.x
-			inventory_marker.global_position.y = inv_slot_3.global_position.y
-		_:
-			inventory_marker.global_position.x = 0
-			inventory_marker.global_position.y = 0
-	
-
-	if inventory.is_empty() == false:
-		inventory_marker.visible = true
-		match inventory[0].item_id:
-			0:
-				inv_slot_1.texture = icon_pistol
-			1:
-				inv_slot_1.texture = icon_shotgun
-			2:
-				inv_slot_1.texture = icon_sniper
-			3:
-				inv_slot_1.texture = icon_knife
-			4:
-				inv_slot_1.texture = icon_flashlight
-			5:
-				inv_slot_1.texture = icon_grenade
-				#grenade icon
-			-1: 
-				inv_slot_1.texture = null
-			_:
-				pass
-
-				
-		if len(inventory) >1:
-			match inventory[1].item_id:
-				0:
-					inv_slot_2.texture = icon_pistol
-				1:
-					inv_slot_2.texture = icon_shotgun
-				2:
-					inv_slot_2.texture = icon_sniper
-				3:
-					inv_slot_2.texture = icon_knife
-				4:
-					inv_slot_2.texture = icon_flashlight
-				5:
-					inv_slot_2.texture = icon_grenade
-				_:
-					pass
-		else:
-			inv_slot_2.texture = null
-			
-		if len(inventory) >2:
-			match inventory[2].item_id:
-				0:
-					inv_slot_3.texture = icon_pistol
-				1:
-					inv_slot_3.texture = icon_shotgun
-				2:
-					inv_slot_3.texture = icon_sniper
-				3:
-					inv_slot_3.texture = icon_knife
-				4:
-					inv_slot_3.texture = icon_flashlight
-				5:
-					inv_slot_3.texture = icon_grenade
-				_:
-					pass
-		else:
-			inv_slot_3.texture = null
-	else:
-		inv_slot_1.texture = null
-		inventory_marker.visible = false
-	"""
 	canvas_group.ammo_choose()
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):
@@ -811,6 +723,11 @@ func set_rooted(stun_duration_sec):
 	await get_tree().create_timer(stun_duration_sec).timeout
 	
 	is_rooted = false
+	
+func inventory_ui_timer_start():
+		display_inventory.visible = true
+		inventory_timer.start()
+		
 func update_inventory_ui():
 	#display textures in inventory
 	var inventory_previous = 0
@@ -841,16 +758,14 @@ func update_inventory_ui():
 		
 func check_if_inventory_changed():
 	#if inventory changes, play pick up sound
-	if inventory_before != inventory:
+	if inventory_before.size() != inventory.size():
 		update_inventory_ui()
 		audio_stream_player_3d.stream = SOUND_ITEM_PICKUP
 		audio_stream_player_3d.play(0.0)
 		inventory_before = inventory.duplicate(true)
 		
-
-func _inventory_gui_timeout():
+func _on_inv_timer_timeout() -> void:
 	display_inventory.visible = false
-	inventory_timer.disconnect("timeout",_inventory_gui_timeout)
 	
 func _conversation_timeout():
 	display_conversation.visible = false

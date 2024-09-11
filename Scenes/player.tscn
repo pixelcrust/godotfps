@@ -221,6 +221,7 @@ position = Vector2(650, 600)
 scale = Vector2(0.8, 0.8)
 
 [node name="inv_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+one_shot = true
 
 [node name="inventory_marker" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
 visible = false
@@ -318,5 +319,6 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.52839, 0)
 
 [connection signal="bodypart_hit" from="MeshInstance3D/bone_body" to="." method="_on_bone_body_bodypart_hit"]
+[connection signal="timeout" from="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory/inv_timer" to="." method="_on_inv_timer_timeout"]
 [connection signal="timeout" from="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/gui_wiggle_timer" to="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" method="_on_gui_wiggle_timer_timeout"]
 [connection signal="bodypart_hit" from="Head/bone_head" to="." method="_on_bone_head_bodypart_hit"]
