@@ -55,7 +55,7 @@ shadow_bias = 0.5
 environment = SubResource("Environment_kl5jl")
 
 [node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("3_leven")]
-transform = Transform3D(0.421447, 0, 0.906853, 0, 1, 0, -0.906853, 0, 0.421447, 6.08182, 14.1838, 22.3192)
+transform = Transform3D(0.689873, 0, -0.723931, 0, 1, 0, 0.723931, 0, 0.689873, 6.08182, 14.1838, 22.3192)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="."]
 transform = Transform3D(1.57079, -0.332754, 1.59381e-08, -4.1889e-23, -1.19674e-07, -3, 0.19234, 2.71752, -1.30162e-07, 46.4148, 16.7773, -132.804)
@@ -112,7 +112,7 @@ size = Vector3(100, 1, 252.781)
 material = SubResource("StandardMaterial3D_1yvm4")
 
 [node name="test_npc" parent="." instance=ExtResource("4_18fb1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4118, 15.5131, 15.4585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0501, 15.5131, 8.65633)
 
 [node name="ammo_pistol" parent="." instance=ExtResource("5_bgw2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98657, 14.3789, 19.5512)
@@ -145,7 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98657, 14.3789, 18.5666)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98657, 14.3789, 17.1112)
 
 [node name="sentrygun" parent="." instance=ExtResource("11_8two8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5158, 14.6259, 2.64415)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74673, 14.6259, 12.4345)
 
 [node name="flashlight_dropped" parent="." instance=ExtResource("12_dvbmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36799, 14.3127, 21.1875)

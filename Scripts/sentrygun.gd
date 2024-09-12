@@ -25,10 +25,10 @@ var direction = 0
 var hp_start = 100
 var hp = hp_start
 
-@onready var state = 0
-"""0 move left right
+@onready var state = 2
+"""0 idle
 	1 aim directly
-	2 shoot
+	2 shoot at player
 	3 wait to move back if not again collision
 	4 move back to start
 	"""
@@ -51,7 +51,15 @@ func _process(delta):
 
 	if hp <= 0:
 		die()
-
+		
+	match state:
+		0:
+			pass
+		1:
+			pass
+		2: #shoot at player
+			shoot(1)
+"""
 	var target = player.global_position#ray_cast_3d.get_collision_point()
 	
 	#print("state: "+ str(state))
@@ -119,8 +127,9 @@ func _process(delta):
 			state = 0
 		_:
 			pass
-			
+			"""
 func aim(delta):
+	"""
 	#uses the player not the collision with raycast
 	# aiming from the arm of the enemy to the head of the player
 	var global_pos1 = gun.global_transform.origin
@@ -132,7 +141,7 @@ func aim(delta):
 	# Calculate the vertical angle (angle in the Y-axis)
 	var vertical_angle = atan2(direction.y, abs(direction.x))
 	#print_debug(rad_to_deg(vertical_angle))
-	"""gun.rotation.x = clamp(-vertical_angle,-30,30) #+ deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))"""
+	#gun.rotation.x = clamp(-vertical_angle,-30,30) #+ deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
 	aim_helper.look_at(player.global_transform.origin,Vector3.UP)
 	var ray_collider = ray_cast_3d.get_collider()
 	var vertical_angle_to_player = 0
@@ -148,10 +157,25 @@ func aim(delta):
 		#timer.start()
 		#print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
 		pass
-		
+		"""
 func shoot(number_bullets):
+	
+	timer_shooting.start()
+	muzzleflash.set_emitting(true)
+	muzzleflash.restart()
+	audio_stream_player_3d.stream = sound_shoot
+	audio_stream_player_3d.play(0.0)
+	var new_bullet = bullet.instantiate()
+	new_bullet.position = aim_helper.global_position + Vector3(0,0,0)
+	new_bullet.transform.basis = gun.global_transform.basis
+	new_bullet.ads = 1
+	new_bullet.rotation.y = aim_helper.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(180)
+	new_bullet.rotation.z = aim_helper.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)+deg_to_rad(180)
+	get_tree().root.get_children()[0].add_child(new_bullet)
+	
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
 	#await get_tree().create_timer(3).timeout
+	"""
 	timer_shooting.start()
 	muzzleflash.set_emitting(true)
 	muzzleflash.restart()
@@ -164,7 +188,7 @@ func shoot(number_bullets):
 		new_bullet.rotation.y = new_bullet.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)
 		new_bullet.rotation.z = new_bullet.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
 		new_bullet.ads = 1
-		get_tree().root.get_children()[0].add_child(new_bullet);
+		get_tree().root.get_children()[0].add_child(new_bullet);"""
 
 
 func _on_physical_bone_3d_bodypart_hit(dmg, time_rooted):
