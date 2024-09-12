@@ -60,7 +60,7 @@ visible = false
 mesh = SubResource("CylinderMesh_ib2vb")
 
 [node name="aim_helper" type="Node3D" parent="gun/barrel"]
-transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 7.10543e-15, 1, 0, 0.957194, 0.140862)
+transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 7.10543e-15, 1, 0, 1.21426, 0.140862)
 
 [node name="muzzleflash" parent="gun/barrel" instance=ExtResource("3_kwkni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.535001)

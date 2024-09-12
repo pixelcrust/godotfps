@@ -52,7 +52,7 @@ func _process(delta):
 	if hp <= 0:
 		die()
 
-	var target = ray_cast_3d.get_collision_point()
+	var target = player.global_position#ray_cast_3d.get_collision_point()
 	
 	#print("state: "+ str(state))
 	match state:
