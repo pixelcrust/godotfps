@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7adh0474y74v"]
+
+[ext_resource type="Script" path="res://Scripts/savepoint.gd" id="1_cv2fn"]
+[ext_resource type="PackedScene" uid="uid://dk1lxtibsts3c" path="res://blender import/tv.tscn" id="2_2bd0k"]
+[ext_resource type="Script" path="res://Scripts/savepoint_collision.gd" id="3_fvoor"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_akho3"]
+size = Vector3(1.616, 1.87708, 1.48381)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yfam6"]
+size = Vector3(1.34026, 1.35286, 1.37862)
+
+[node name="savepoint" type="StaticBody3D"]
+script = ExtResource("1_cv2fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.303108, 0.519269, 0.00163195)
+shape = SubResource("BoxShape3D_akho3")
+
+[node name="tv" parent="." instance=ExtResource("2_2bd0k")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.481991, 0)
+
+[node name="Area3D" type="Area3D" parent="." groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.687574, 0)
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("3_fvoor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.293354, -0.153311, -0.0212148)
+shape = SubResource("BoxShape3D_yfam6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

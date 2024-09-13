@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="fps"
-run/main_scene="res://Scenes/menu.tscn"
+run/main_scene="res://Scenes/menues/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/flush_stdout_on_print.debug=false
 config/icon="res://icon.svg"
@@ -31,7 +31,7 @@ import/fbx/enabled=false
 
 [gui]
 
-theme/custom_font="res://HomeVideoBold-R90Dv.ttf"
+theme/custom_font="res://fonts/HomeVideoBold-R90Dv.ttf"
 
 [input]
 

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqo7g88uvwsta"]
+
+[ext_resource type="Script" path="res://Scripts/light.gd" id="1_v1xo4"]
+[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="2_tc7iw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vjt6m"]
+radius = 0.1
+height = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bd7tb"]
+radius = 0.241817
+
+[node name="lightbulb" type="Node3D"]
+script = ExtResource("1_v1xo4")
+
+[node name="SpotLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0770845, 0.997025, 0, -0.997025, 0.0770845, 0, -0.232025, -0.0179389)
+light_color = Color(0.988235, 0.984314, 0.505882, 1)
+light_energy = 10.0
+light_volumetric_fog_energy = 0.0
+omni_range = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.297863, 0)
+mesh = SubResource("SphereMesh_vjt6m")
+
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="." groups=["has_hp"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_tc7iw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalBone3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.287284, 0.00585809)
+shape = SubResource("SphereShape3D_bd7tb")
+
+[connection signal="bodypart_hit" from="PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]

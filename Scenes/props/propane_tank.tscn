@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhunj16wsng6n"]
+
+[ext_resource type="Script" path="res://Scripts/propane_tank.gd" id="1_dkd06"]
+[ext_resource type="ArrayMesh" uid="uid://bv3v80qvoron5" path="res://Models/Item/PropaneTank.obj" id="1_t0cj5"]
+[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_dckxd"]
+[ext_resource type="PackedScene" uid="uid://ctk8y3gtl1yj7" path="res://Scenes/bullets/explosion.tscn" id="3_jeavc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5hn4"]
+albedo_color = Color(0.478431, 0.478431, 0.478431, 1)
+metallic = 0.44
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh45f"]
+albedo_color = Color(0.909804, 0.188235, 0.0941176, 1)
+metallic = 0.39
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcehn"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_anae4"]
+albedo_color = Color(0.733333, 0.203922, 0.121569, 1)
+metallic = 0.94
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1edai"]
+radius = 1.07069
+height = 2.84607
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_moxfh"]
+radius = 1.08493
+height = 2.9936
+
+[node name="propane_tank" type="Node3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+script = ExtResource("1_dkd06")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = ExtResource("1_t0cj5")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_s5hn4")
+surface_material_override/1 = SubResource("StandardMaterial3D_hh45f")
+surface_material_override/2 = SubResource("StandardMaterial3D_mcehn")
+surface_material_override/3 = SubResource("StandardMaterial3D_anae4")
+
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="RigidBody3D/MeshInstance3D" groups=["has_hp"]]
+collision_layer = 2
+script = ExtResource("3_dckxd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D/PhysicalBone3D"]
+shape = SubResource("CapsuleShape3D_1edai")
+
+[node name="explosion" parent="RigidBody3D" instance=ExtResource("3_jeavc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_moxfh")
+
+[connection signal="signal_explosion" from="." to="RigidBody3D/explosion" method="_signal_explosion"]
+[connection signal="bodypart_hit" from="RigidBody3D/MeshInstance3D/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
