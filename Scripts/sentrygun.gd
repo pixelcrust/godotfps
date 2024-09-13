@@ -4,7 +4,7 @@ extends Node3D
 @onready var ray_cast_3d = $gun/barrel/RayCast3D
 @onready var laser = $gun/barrel/RayCast3D/laser
 @onready var aim_helper = $gun/barrel/aim_helper
-@onready var bullet = preload("res://Scenes/bullet.tscn")
+@onready var bullet = preload("res://Scenes/bullets/bullet.tscn")
 @onready var muzzleflash = $gun/barrel/muzzleflash/GPUParticles3D
 
 #sound

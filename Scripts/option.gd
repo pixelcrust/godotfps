@@ -25,4 +25,4 @@ func _on_button_back_pressed():
 	audio_stream_player_2d.stream = SOUND_CLICK
 	audio_stream_player_2d.play(0.6)
 	await get_tree().create_timer(.2).timeout
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/menues/menu.tscn")

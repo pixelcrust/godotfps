@@ -4,7 +4,7 @@ extends Node3D
 @onready var mesh_instance_3d = $MeshInstance3D
 @onready var sound = $AudioStreamPlayer3D
 @onready var barrel = $RayCast3D
-@onready var bullet = preload("res://Scenes/bullet_big.tscn")
+@onready var bullet = preload("res://Scenes/bullets/bullet_big.tscn")
 @onready var player = null
 @onready var zoom = 20
 const RECOIL = 0#10#15

@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dj1r66vn40rp2"]
 
 [ext_resource type="Script" path="res://Scripts/lava.gd" id="1_37c4s"]
-[ext_resource type="PackedScene" uid="uid://d1abpix2tact" path="res://lava_splash.tscn" id="2_3hync"]
+[ext_resource type="PackedScene" uid="uid://d1abpix2tact" path="res://Scenes/effects/lava_splash.tscn" id="2_3hync"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_us7j0"]
 

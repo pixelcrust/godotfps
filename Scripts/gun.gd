@@ -3,7 +3,7 @@ extends Node3D
 @onready var animation_player = $AnimationPlayer
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 @onready var barrel = $Node3D/hand_right/model_pistol/RayCast3D
-@onready var bullet = preload("res://Scenes/bullet.tscn")
+@onready var bullet = preload("res://Scenes/bullets/bullet.tscn")
 
 #sounds
 @onready var sound_shoot = preload("res://Sounds/gun.wav")
@@ -13,7 +13,6 @@ extends Node3D
 @onready var player = null
 @onready var emitter_shell = $Node3D/hand_right/model_pistol/emitter_shell/GPUParticles3D
 @onready var muzzleflash = $Node3D/hand_right/model_pistol/muzzleflash/GPUParticles3D
-@onready var aim_helper = $Node3D/hand_right/model_pistol/aim_helper
 @onready var hands = $Node3D
 
 

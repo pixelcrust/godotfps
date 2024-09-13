@@ -10,7 +10,7 @@ extends CharacterBody3D
 
 
 
-@onready var vomit = preload("res://Scenes/vomit.tscn")
+@onready var vomit = preload("res://Scenes/effects/vomit.tscn")
 const SPEED = 2
 const vertical_shooting_error_range = 1
 @onready var hp_start = 100

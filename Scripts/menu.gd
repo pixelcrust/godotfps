@@ -29,7 +29,7 @@ func _on_button_new_game_pressed():
 	audio_stream_player_2d.stream = SOUND_CLICK
 	audio_stream_player_2d.play(0.06)
 	await get_tree().create_timer(.2).timeout
-	get_tree().change_scene_to_file("res://loadscreen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/menues/loadscreen.tscn")
 
 
 func _on_button_continue_pressed():
@@ -44,4 +44,4 @@ func _on_button_options_pressed():
 	audio_stream_player_2d.stream = SOUND_CLICK
 	audio_stream_player_2d.play(0.06)
 	await get_tree().create_timer(.2).timeout
-	get_tree().change_scene_to_file("res://Scenes/option.tscn")
+	get_tree().change_scene_to_file("res://Scenes/menues/option.tscn")

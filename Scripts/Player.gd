@@ -110,20 +110,20 @@ var inventory_before = null
 
 
 #preload equippment? move somewhere
-@onready var asset_gun = preload("res://Scenes/gun.tscn")
-@onready var asset_shotgun = preload("res://Scenes/shotgun.tscn")
-@onready var asset_sniper = preload("res://Scenes/sniper.tscn")
-@onready var asset_knife = preload("res://Scenes/knife.tscn")
-@onready var asset_flashlight = preload("res://Scenes/flashlight.tscn")
-const asset_grenade = preload("res://Scenes/grenade.tscn")
+@onready var asset_gun = preload("res://Scenes/player_parts/gun.tscn")
+@onready var asset_shotgun = preload("res://Scenes/player_parts/shotgun.tscn")
+@onready var asset_sniper = preload("res://Scenes/player_parts/sniper.tscn")
+@onready var asset_knife = preload("res://Scenes/player_parts/knife.tscn")
+@onready var asset_flashlight = preload("res://Scenes/player_parts/flashlight.tscn")
+const asset_grenade = preload("res://Scenes/player_parts/grenade.tscn")
 
 #preload weapons to be dropped
-@onready var asset_drop_gun = preload("res://Scenes/gun_dropped.tscn")
-@onready var  asset_drop_shotgun = preload("res://Scenes/shotgun_dropped.tscn")
-@onready var  asset_drop_sniper = preload("res://Scenes/sniper_dropped.tscn")
-const asset_drop_knife = preload("res://Scenes/knife_dropped.tscn")
-const asset_drop_flashlight = preload("res://Scenes/flashlight_dropped.tscn")
-const asset_drop_grenade = preload("res://Scenes/grenade_dropped.tscn")
+@onready var asset_drop_gun = preload("res://Scenes/pickups/gun_dropped.tscn")
+@onready var  asset_drop_shotgun = preload("res://Scenes/pickups/shotgun_dropped.tscn")
+@onready var  asset_drop_sniper = preload("res://Scenes/pickups/sniper_dropped.tscn")
+const asset_drop_knife = preload("res://Scenes/pickups/knife_dropped.tscn")
+const asset_drop_flashlight = preload("res://Scenes/pickups/flashlight_dropped.tscn")
+const asset_drop_grenade = preload("res://Scenes/pickups/grenade_dropped.tscn")
 
 #sound assets
 const sound_flashlight_click = preload("res://Sounds/clicky button 13.wav")

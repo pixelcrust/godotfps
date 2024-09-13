@@ -39,6 +39,12 @@ func get_interaction_time():
 
 func use():
 	if len(player.inventory) < player.inventory_space:
+		"""for n in player.inventory:
+		#print(str(n.item_id))
+			if n.item_id == 1:
+				n.spare_ammo += number_bullets
+				player.canvas_group.shaking = 0
+				queue_free()"""
 		player.inventory.append({
 		"item_id": item_id, 
 		"loaded": loaded,

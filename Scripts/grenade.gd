@@ -11,7 +11,7 @@ const SOUND_THROW = preload("res://Sounds/stab 7.wav")
 
 @onready var pos_standard = Vector3(-0.70,-0.10,0.60)
 
-const grenade_thrown = preload("res://Scenes/grenade_thrown.tscn")
+const grenade_thrown = preload("res://Scenes/bullets/grenade_thrown.tscn")
 const RECOIL = -5
 @onready var once = true
 

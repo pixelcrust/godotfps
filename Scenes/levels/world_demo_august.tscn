@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/effects/light.tscn" id="15_p1h0c"]
 [ext_resource type="PackedScene" uid="uid://bqlro6hhkahua" path="res://Scenes/pickups/grenade_dropped.tscn" id="16_el60x"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/interactables/medikit.tscn" id="17_vq5at"]
-[ext_resource type="PackedScene" uid="uid://bfiru246dbjax" path="res://chruch.tscn" id="18_hr4sm"]
+[ext_resource type="PackedScene" uid="uid://bfiru246dbjax" path="res://Scenes/levels/chruch.tscn" id="18_hr4sm"]
 [ext_resource type="PackedScene" uid="uid://s4dq7nvumsix" path="res://Scenes/props/beer_bottle_litter.tscn" id="19_lng3v"]
 [ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/pickups/gun_dropped.tscn" id="20_5gukg"]
 [ext_resource type="PackedScene" uid="uid://bwwptgjr6pw5b" path="res://Scenes/pickups/ammo_pistol.tscn" id="21_fhykx"]

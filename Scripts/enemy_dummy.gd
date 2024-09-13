@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var body = $base/body
 @onready var arm = $base/body/arm
-@onready var bullet = preload("res://Scenes/bullet.tscn")
+@onready var bullet = preload("res://Scenes/bullets/bullet.tscn")
 @onready var ray_gun = $base/body/arm/gun/ray_gun
 @onready var gun = $base/body/arm/gun
 @onready var timer = $base/body/arm/gun/Timer

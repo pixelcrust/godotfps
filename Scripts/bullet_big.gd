@@ -14,7 +14,7 @@ const time_rooted = 1
 @onready var abweichung_y = 0
 @onready var ads = 3 #0.. bullet not shot from ads 1.. bullet shot from ads
 @onready var blood_splatter = $blood_splatter
-var bullet_hole = preload("res://Scenes/bullet_hole.tscn")
+var bullet_hole = preload("res://Scenes/effects/bullet_hole.tscn")
 @onready var player_shot = false
 @onready var position_bullet_before = global_position
 # Called when the node enters the scene tree for the first time.

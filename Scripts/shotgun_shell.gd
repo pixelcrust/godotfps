@@ -14,7 +14,7 @@ var victim = null
 @onready var sound = $AudioStreamPlayer3D
 @onready var ads = 0
 @onready var blood_splatter = $blood_splatter
-var bullet_hole = preload("res://Scenes/bullet_hole.tscn")
+var bullet_hole = preload("res://Scenes/effects/bullet_hole.tscn")
 @onready var player_shot = false
 @onready var position_bullet_before = global_position
 # Called when the node enters the scene tree for the first time.

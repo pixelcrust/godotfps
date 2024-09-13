@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://curwbo2aommjw"]
 
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="1_gwa80"]
-[ext_resource type="Script" path="res://enemy_bat.gd" id="1_puk8l"]
+[ext_resource type="Script" path="res://Scripts/enemy_bat.gd" id="1_puk8l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fo5n"]
 albedo_color = Color(0.635294, 0, 0.333333, 1)
