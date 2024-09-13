@@ -524,14 +524,18 @@ func _physics_process(delta):
 	move_and_slide()
 
 func die():
+	if animation_player.is_playing():
+		pass
+	else:
+		animation_player.play("die")
+	await get_tree().create_timer(3).timeout
 	position = Global.player_position
 	hp = Global.player_health
 	rotation = Global.player_rotation
 	camera.rotation = Global.player_camera_rotation
-	
+	animation_player.play("RESET")
 	#get_tree().reload_current_scene()
 	#queue_free()
-	pass
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
