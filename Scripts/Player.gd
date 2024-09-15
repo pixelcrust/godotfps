@@ -521,7 +521,35 @@ func _physics_process(delta):
 		var target_fov = FOV_BASE +FOV_SPRINT_SCALE * velocity_clamped
 		camera.fov = lerp(camera.fov,target_fov, delta*8.0)
 	
+	
+	_push_away_rigid_bodies()
 	move_and_slide()
+
+# Call this function directly before move_and_slide() on your CharacterBody3D script
+func _push_away_rigid_bodies():
+	for i in get_slide_collision_count():
+		var c := get_slide_collision(i)
+		if c.get_collider() is RigidBody3D:
+			var push_dir = -c.get_normal()
+			# How much velocity the object needs to increase to match player velocity in the push direction
+			var velocity_diff_in_push_dir = self.velocity.dot(push_dir) - c.get_collider().linear_velocity.dot(push_dir)
+			# Only count velocity towards push dir, away from character
+			velocity_diff_in_push_dir = max(0., velocity_diff_in_push_dir)
+			# Objects with more mass than us should be harder to push. But doesn't really make sense to push faster than we are going
+			const MY_APPROX_MASS_KG = 80.0
+			var mass_ratio = min(1., MY_APPROX_MASS_KG / c.get_collider().mass)
+			# Optional add: Don't push object at all if it's 4x heavier or more
+			if mass_ratio < 0.25:
+				continue
+			# Don't push object from above/below
+			push_dir.y = 0
+			# 5.0 is a magic number, adjust to your needs
+			var push_force = mass_ratio * 1
+			var impulse = push_dir * velocity_diff_in_push_dir * push_force
+			impulse.y = 0
+			var imp_position = c.get_position() - c.get_collider().global_position
+			imp_position.y = 0
+			c.get_collider().apply_impulse(impulse, imp_position)
 
 func die():
 	if animation_player.is_playing():

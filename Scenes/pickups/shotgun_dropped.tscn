@@ -15,6 +15,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 script = ExtResource("1_77pfj")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 0.5
 
 [node name="shotgun" parent="RigidBody3D" instance=ExtResource("2_tycnl")]
 transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 0.33839, 0.115378, -0.0361976)

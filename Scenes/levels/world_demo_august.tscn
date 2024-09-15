@@ -79,7 +79,7 @@ shadow_bias = 0.5
 environment = SubResource("Environment_kl5jl")
 
 [node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("1_2xvfl")]
-transform = Transform3D(0.421447, 0, 0.906853, 0, 1, 0, -0.906853, 0, 0.421447, 6.08182, 14.1838, 22.3192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08182, 14.1838, 22.3192)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="."]
 transform = Transform3D(1.57079, -0.332754, 1.59381e-08, -4.1889e-23, -1.19674e-07, -3, 0.19234, 2.71752, -1.30162e-07, 46.4148, 16.7773, -132.804)
