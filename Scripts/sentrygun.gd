@@ -159,7 +159,7 @@ func aim(delta):
 		pass
 		"""
 func shoot(number_bullets):
-	
+	"""
 	timer_shooting.start()
 	muzzleflash.set_emitting(true)
 	muzzleflash.restart()
@@ -172,7 +172,7 @@ func shoot(number_bullets):
 	new_bullet.rotation.y = aim_helper.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(180)
 	new_bullet.rotation.z = aim_helper.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)+deg_to_rad(180)
 	get_tree().root.get_children()[0].add_child(new_bullet)
-	
+	"""
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
 	#await get_tree().create_timer(3).timeout
 	"""

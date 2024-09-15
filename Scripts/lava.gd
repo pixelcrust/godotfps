@@ -4,7 +4,7 @@ extends Node3D
 @onready var time_rooted = 0
 @onready var dmg = 2
 @onready var collision_shape = $Area3D/CollisionShape3D
-@onready var area_3d_2 = $Area3D2
+#@onready var area_3d_2 = $Area3D2
 @onready var player_burning = false
 @onready var lava_splash = $lava_splash
 
@@ -41,4 +41,3 @@ func _on_area_3d_body_exited(body):
 	if body == player:
 		player.in_water = false
 		player_burning = false
-

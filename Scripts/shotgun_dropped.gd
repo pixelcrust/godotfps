@@ -1,7 +1,7 @@
 extends Node3D
 @onready var interaction_time = .5
 @onready var rigid_body = $RigidBody3D
-@onready var outline_mesh = $RigidBody3D/MeshInstance3D/MeshInstance3D
+#@onready var outline_mesh = $RigidBody3D/MeshInstance3D/MeshInstance3D
 @onready var shotgun = $RigidBody3D/shotgun
 
 
