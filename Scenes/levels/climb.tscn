@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dsrmvlxk5q1ll"]
+
+[node name="Climb" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70856, 0, 0.837803)
+use_collision = true
+size = Vector3(4.41711, 1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70856, 0.605469, -0.38663)
+use_collision = true
+size = Vector3(4.41711, 2.21094, 1.396)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04085, 1.19376, -0.38663)
+use_collision = true
+size = Vector3(1.97125, 3.38751, 1.396)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60825, 3.5347, -1.62714)
+use_collision = true
+size = Vector3(13.0689, 8.0694, 1)

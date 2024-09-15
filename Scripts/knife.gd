@@ -12,18 +12,22 @@ const time_rooted = 1
 @onready var hand_right: Node3D = $hand_right
 @onready var hand_left: Node3D = $hand_left
 @export var once = 0
-
+var once_visible = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hand_right.transform.origin = pos_standard
 	hand_left.transform.origin = Vector3(-0.40,-0.10,-2)
 	shapecast.transform.origin = Vector3(0,.8,-1)
+	visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if once_visible == true:
+		visible = true
+		once_visible = false
 
 func shoot(inventory_selector,player_eyes_position,player_shot,victim):
+	
 	shapecast.set_exclude_parent_body(true)
 	if animation_player.is_playing():
 		pass
