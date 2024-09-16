@@ -14,6 +14,7 @@ size = Vector3(1.38274, 1.2585, 1.27063)
 script = ExtResource("1_c1obu")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 128
 mass = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]

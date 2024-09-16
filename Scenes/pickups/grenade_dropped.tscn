@@ -16,6 +16,7 @@ radius = 0.108674
 script = ExtResource("1_70j3j")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 128
 mass = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]

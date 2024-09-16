@@ -35,3 +35,5 @@ func use():
 		animationplayer.play("RESET")
 		is_active = true
 		
+func hit(damage,time_rooted):
+	pass

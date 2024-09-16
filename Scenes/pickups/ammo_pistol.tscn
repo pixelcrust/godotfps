@@ -28,6 +28,7 @@ size = Vector3(0.298676, 0.199371, 0.404022)
 script = ExtResource("1_msdad")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 128
 mass = 0.5
 
 [node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]

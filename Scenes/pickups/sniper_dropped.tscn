@@ -45,6 +45,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 script = ExtResource("1_eyl1h")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 128
 mass = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
