@@ -51,7 +51,8 @@ func _process(delta):
 
 	if hp <= 0:
 		die()
-		
+	
+	aim_helper.look_at(player.head.global_position,Vector3(0, 1, 0))
 	match state:
 		0:
 			pass
@@ -59,6 +60,7 @@ func _process(delta):
 			pass
 		2: #shoot at player
 			shoot(1)
+			pass
 """
 	var target = player.global_position#ray_cast_3d.get_collision_point()
 	
@@ -159,20 +161,21 @@ func aim(delta):
 		pass
 		"""
 func shoot(number_bullets):
-	"""
+	await get_tree().create_timer(1).timeout
 	timer_shooting.start()
 	muzzleflash.set_emitting(true)
 	muzzleflash.restart()
 	audio_stream_player_3d.stream = sound_shoot
 	audio_stream_player_3d.play(0.0)
 	var new_bullet = bullet.instantiate()
-	new_bullet.position = aim_helper.global_position + Vector3(0,0,0)
+	new_bullet.position = aim_helper.global_position + Vector3(0,0,1)
 	new_bullet.transform.basis = gun.global_transform.basis
 	new_bullet.ads = 1
 	new_bullet.rotation.y = aim_helper.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(180)
 	new_bullet.rotation.z = aim_helper.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)+deg_to_rad(180)
 	get_tree().root.get_children()[0].add_child(new_bullet)
-	"""
+
+	
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
 	#await get_tree().create_timer(3).timeout
 	"""
