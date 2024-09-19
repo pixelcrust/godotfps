@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=25 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_xgeo0"]
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="2_std4d"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/effects/light.tscn" id="16_rhmfo"]
 [ext_resource type="PackedScene" uid="uid://bmyy4qbcwa1tt" path="res://Scenes/interactables/box_rigid.tscn" id="17_54gw2"]
 [ext_resource type="PackedScene" uid="uid://d2c7wq7ay3qxj" path="res://Scenes/interactables/door_with_doorway.tscn" id="18_4h24x"]
+[ext_resource type="PackedScene" uid="uid://cr6ja57rxo2pm" path="res://Scenes/enemies/enemy_dummy.tscn" id="19_wx06m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -171,3 +172,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.412355, 15.8949, 11.3003)
 
 [node name="door_with_doorway" parent="." instance=ExtResource("18_4h24x")]
 transform = Transform3D(0.864801, 0, 0.502115, 0, 1, 0, -0.502115, 0, 0.864801, -2.23007, 14.0301, 8.18415)
+
+[node name="Node3D" parent="." instance=ExtResource("19_wx06m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4393, 14.0301, 11.6434)
