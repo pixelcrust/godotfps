@@ -52,7 +52,11 @@ func _process(delta):
 	if hp <= 0:
 		die()
 	
-	aim_helper.look_at(player.head.global_position,Vector3(0, 1, 0))
+	aim_helper.look_at(Vector3(player.global_position.x, player.global_position.y,player.global_position.z),Vector3.UP)
+	gun.rotation.z = aim_helper.rotation.z 
+	gun.rotation.x = aim_helper.rotation.x
+	gun.rotation.y = aim_helper.rotation.y
+	
 	match state:
 		0:
 			pass
@@ -169,10 +173,11 @@ func shoot(number_bullets):
 	audio_stream_player_3d.play(0.0)
 	var new_bullet = bullet.instantiate()
 	new_bullet.position = aim_helper.global_position + Vector3(0,0,1)
-	new_bullet.transform.basis = gun.global_transform.basis
+	new_bullet.transform.basis = aim_helper.global_transform.basis
 	new_bullet.ads = 1
-	new_bullet.rotation.y = aim_helper.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(180)
-	new_bullet.rotation.z = aim_helper.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)+deg_to_rad(180)
+	new_bullet.rotation.y = aim_helper.rotation.y+deg_to_rad(-90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)
+	new_bullet.rotation.z = aim_helper.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+	new_bullet.rotation.x = aim_helper.rotation.x
 	get_tree().root.get_children()[0].add_child(new_bullet)
 
 	

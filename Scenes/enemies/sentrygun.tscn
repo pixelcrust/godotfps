@@ -62,9 +62,10 @@ visible = false
 mesh = SubResource("CylinderMesh_ib2vb")
 
 [node name="aim_helper" type="Node3D" parent="gun/barrel"]
-transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 7.10543e-15, 1, 0, 1.4903, 0.140862)
+transform = Transform3D(0.999998, 0, 0, 0, -0.999998, 8.74228e-08, 0, -8.74226e-08, -1, 0, 1.4903, 0.140862)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gun/barrel/aim_helper"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.77636e-15, 0, 7.10543e-15, 1, 0, 0.760623, 0)
 mesh = SubResource("CylinderMesh_kanql")
 
 [node name="muzzleflash" parent="gun/barrel" instance=ExtResource("3_kwkni")]
