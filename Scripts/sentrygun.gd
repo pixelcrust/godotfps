@@ -63,7 +63,7 @@ func _process(delta):
 		1:
 			pass
 		2: #shoot at player
-			shoot(1)
+			#shoot(1)
 			pass
 """
 	var target = player.global_position#ray_cast_3d.get_collision_point()
@@ -161,33 +161,6 @@ func aim(delta):
 		#print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
 		pass
 	"""
-	#uses the player not the collision with raycast
-	# aiming from the arm of the enemy to the head of the player
-	var global_pos1 = gun.global_transform.origin
-	var global_pos2 = player.head.global_transform.origin
-
-	# Calculate the vector between the two nodes
-	direction = global_pos2 - global_pos1
-	
-	# Calculate the vertical angle (angle in the Y-axis)
-	var vertical_angle = atan2(direction.y, abs(direction.x))
-	#print_debug(rad_to_deg(vertical_angle))
-	#gun.rotation.x = clamp(-vertical_angle,-30,30) #+ deg_to_rad(randi_range(-vertical_shooting_error_range,vertical_shooting_error_range))
-	aim_helper.look_at(player.global_transform.origin,Vector3.UP)
-	var ray_collider = ray_cast_3d.get_collider()
-	var vertical_angle_to_player = 0
-	
-	
-	
-	if( ray_collider != player):
-		rotate_y(-deg_to_rad(aim_helper.rotation.y * turn_speed_horizontally*delta))
-		##arm.rotate_z(deg_to_rad(dir_to_player) * turn_speed_horizontally*delta)
-		var ray_gun_collider = ray_cast_3d.get_collider()
-		
-	else:
-		#timer.start()
-		#print("raycastcollider:"+str(ray_view.get_collider())+".... player:"+str(player))
-		pass
 		"""
 func shoot(number_bullets):
 	await get_tree().create_timer(1).timeout
@@ -197,11 +170,11 @@ func shoot(number_bullets):
 	audio_stream_player_3d.stream = sound_shoot
 	audio_stream_player_3d.play(0.0)
 	var new_bullet = bullet.instantiate()
-	new_bullet.position = aim_helper.global_position + Vector3(0,0,1)
-	new_bullet.transform.basis = aim_helper.global_transform.basis
+	new_bullet.position = gun.global_position + Vector3(0,0,-1)
+	new_bullet.transform.basis = gun.global_transform.basis
 	new_bullet.ads = 1
-	new_bullet.rotation.y = aim_helper.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)
-	new_bullet.rotation.z = aim_helper.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+	new_bullet.rotation.y = gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
+	new_bullet.rotation.z = gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
 	get_tree().root.get_children()[0].add_child(new_bullet)
 
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
