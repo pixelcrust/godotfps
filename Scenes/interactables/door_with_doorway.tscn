@@ -117,9 +117,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3803, 1.40464, -0.00703132)
 shape = SubResource("BoxShape3D_rbu5r")
 
 [node name="door" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.785491, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.785491, 0, -0.0590339)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
+gravity_scale = 0.0
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="door" groups=["has_hp"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00842828, 0, 0)
