@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://dsrmvlxk5q1ll" path="res://Scenes/levels/climb.tscn" id="15_jxron"]
 [ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/effects/light.tscn" id="16_rhmfo"]
 [ext_resource type="PackedScene" uid="uid://bmyy4qbcwa1tt" path="res://Scenes/interactables/box_rigid.tscn" id="17_54gw2"]
-[ext_resource type="PackedScene" uid="uid://d2c7wq7ay3qxj" path="res://Scenes/interactables/door_with_doorway.tscn" id="18_4h24x"]
 [ext_resource type="PackedScene" uid="uid://cr6ja57rxo2pm" path="res://Scenes/enemies/enemy_dummy.tscn" id="19_wx06m"]
 [ext_resource type="PackedScene" uid="uid://diwvcawbv4ac6" path="res://Scenes/levels/level_boxpush.tscn" id="20_jq0c6"]
+[ext_resource type="PackedScene" uid="uid://f7x582prlfmn" path="res://Scenes/interactables/door.tscn" id="20_rou3x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -168,9 +168,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67044, 14.5239, 8.70232)
 [node name="lightbulb" parent="." instance=ExtResource("16_rhmfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29275, 18.5827, 7.85764)
 
-[node name="door_with_doorway" parent="." instance=ExtResource("18_4h24x")]
-transform = Transform3D(0.864801, 0, 0.502115, 0, 1, 0, -0.502115, 0, 0.864801, -2.23007, 14.0301, 8.18415)
-
 [node name="Node3D" parent="." instance=ExtResource("19_wx06m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5753, 14.0301, -4.98774)
 
@@ -179,3 +176,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6976, 15.9855, 13.1542)
 
 [node name="level_boxpush" parent="." instance=ExtResource("20_jq0c6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32796, 15.5083, -2.07519)
+
+[node name="Door" parent="." instance=ExtResource("20_rou3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80832, 15.0112, 10.6687)

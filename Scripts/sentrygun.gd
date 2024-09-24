@@ -152,8 +152,8 @@ func shoot(number_bullets):
 	new_bullet.ads = 1
 	
 	
-	new_bullet.rotation.y = gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
-	new_bullet.rotation.z = gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+	new_bullet.rotation.y = calculate_y_angle(gun.global_position,player.head.global_position)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
+	new_bullet.rotation.z = calculate_z_angle(gun.global_position,player.head.global_position)#gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
 	get_tree().root.get_children()[0].add_child(new_bullet)
 
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
@@ -184,7 +184,7 @@ func calculate_z_angle(position_from,position_to):
 	
 func calculate_y_angle(position_from,position_to):
 	var direction = position_to - position_from
-	var horizontal_angle = direction.angle()
+	var horizontal_angle = atan2(direction.z, abs(direction.x))
 	return horizontal_angle
 	
 func _on_physical_bone_3d_bodypart_hit(dmg, time_rooted):

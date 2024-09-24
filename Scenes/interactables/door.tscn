@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://f7x582prlfmn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lenwv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7wdn"]
+size = Vector3(0.1, 2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n3wr0"]
+size = Vector3(0.1, 2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xe6ae"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ldw2c"]
+size = Vector3(1, 2, 0.1)
+
+[node name="Door" type="Node3D"]
+
+[node name="frame" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_lenwv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.554334, 0, 0)
+shape = SubResource("BoxShape3D_y7wdn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.558688, 0, 0)
+mesh = SubResource("BoxMesh_n3wr0")
+
+[node name="physics_door" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door"]
+mesh = SubResource("BoxMesh_xe6ae")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door"]
+shape = SubResource("BoxShape3D_ldw2c")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+node_a = NodePath("../frame")
+node_b = NodePath("../physics_door")
