@@ -178,4 +178,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6976, 15.9855, 13.1542)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32796, 15.5083, -2.07519)
 
 [node name="Door" parent="." instance=ExtResource("20_rou3x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80832, 15.0112, 10.6687)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68571, 15.5537, 10.5415)

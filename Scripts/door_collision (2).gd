@@ -1,6 +1,6 @@
 extends PhysicalBone3D
 
-@onready var object = $"../door"
+@onready var object = $".."
 
 @onready var array = []
 @export var damage_multiplier = 1

@@ -1,18 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://f7x582prlfmn"]
+[gd_scene load_steps=13 format=4 uid="uid://f7x582prlfmn"]
+
+[ext_resource type="Script" path="res://Scenes/interactables/physics_door.gd" id="1_faxgv"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_1kyok"]
+[ext_resource type="Script" path="res://Scripts/door_collision (2).gd" id="2_rr4s8"]
+[ext_resource type="Script" path="res://Scripts/door_collision.gd" id="3_q2j5c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lenwv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7wdn"]
-size = Vector3(0.1, 2, 0.1)
+size = Vector3(0.1, 3, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_n3wr0"]
-size = Vector3(0.1, 2, 0.1)
+size = Vector3(0.1, 3, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xe6ae"]
-size = Vector3(1, 2, 0.1)
+size = Vector3(2, 3, 0.1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ab8y"]
+_surfaces = [{
+"aabb": AABB(-1.02887, -1.52887, -0.0788675, 2.05773, 3.05773, 0.157735),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("7rGDv+6xwz9KhaE97rGDP+6xwz9KhaG97rGDP+6xwz9KhaE97rGDv+6xwz9KhaG97rGDv+6xw79KhaE97rGDP+6xw79KhaG97rGDP+6xw79KhaE97rGDv+6xw79KhaG97rGDP+6xwz9KhaE97rGDv+6xwz9KhaG97rGDP+6xwz9KhaG97rGDv+6xwz9KhaE97rGDP+6xw79KhaE97rGDv+6xw79KhaG97rGDP+6xw79KhaG97rGDv+6xw79KhaE97rGDP+6xwz9KhaE97rGDv+6xw79KhaE97rGDv+6xwz9KhaE97rGDP+6xw79KhaE97rGDP+6xwz9KhaG97rGDv+6xw79KhaG97rGDv+6xwz9KhaG97rGDP+6xw79KhaG9/3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldw2c"]
-size = Vector3(1, 2, 0.1)
+size = Vector3(2, 3, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lofsl"]
+size = Vector3(2, 3, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hiws0"]
+size = Vector3(2.2, 3.2, 0.2)
 
 [node name="Door" type="Node3D"]
 
@@ -20,21 +44,54 @@ size = Vector3(1, 2, 0.1)
 physics_material_override = SubResource("PhysicsMaterial_lenwv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frame"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.554334, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809151, 0, 0)
 shape = SubResource("BoxShape3D_y7wdn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="frame"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.558688, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809015, 0, 0)
 mesh = SubResource("BoxMesh_n3wr0")
 
 [node name="physics_door" type="RigidBody3D" parent="."]
+script = ExtResource("1_faxgv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250922, 0, 0)
 mesh = SubResource("BoxMesh_xe6ae")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door/MeshInstance3D"]
+visible = false
+mesh = SubResource("ArrayMesh_6ab8y")
+surface_material_override/0 = ExtResource("2_1kyok")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.243889, 0, 0)
 shape = SubResource("BoxShape3D_ldw2c")
 
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="physics_door" groups=["has_hp"]]
+collision_layer = 2
+script = ExtResource("2_rr4s8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door/PhysicalBone3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248935, 0, 0)
+shape = SubResource("BoxShape3D_lofsl")
+
+[node name="Area3D" type="Area3D" parent="physics_door" groups=["interactable"]]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("3_q2j5c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20983, 0.0605233, 0)
+shape = SubResource("BoxShape3D_hiws0")
+
 [node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(0.0123043, -0.999924, 0, -4.37081e-08, -5.37838e-10, 1, -0.999924, -0.0123043, -4.37114e-08, -0.751022, 0, 0)
 node_a = NodePath("../frame")
 node_b = NodePath("../physics_door")
+angular_limit/enable = true
+angular_limit/upper = 0.0
+angular_limit/lower = -1.91986
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[connection signal="bodypart_hit" from="physics_door/PhysicalBone3D" to="physics_door" method="_on_physical_bone_3d_bodypart_hit"]

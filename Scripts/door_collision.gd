@@ -1,6 +1,6 @@
 extends Area3D
 
-@onready var object = $"../door"
+@onready var object = $".."
 @onready var array = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
