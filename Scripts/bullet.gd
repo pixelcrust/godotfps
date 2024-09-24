@@ -84,7 +84,7 @@ func _process(delta):
 				victim.hit(dmg,time_rooted)
 			victim = null
 			raycast.set_enabled(false)
-			print("raycast disabled")
+			#print("raycast disabled")
 			visibility_cooldown = 2
 			await get_tree().create_timer(2.0).timeout
 			queue_free()
