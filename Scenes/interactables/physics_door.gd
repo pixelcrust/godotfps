@@ -20,7 +20,7 @@ const HP_START = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	lock_rotation = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,16 +39,18 @@ func die():
 func use():
 	if closed == true:
 		if not locked or blocked:
-			hinge_joint_3d.set_param(hinge_joint_3d.motor/enable,1)
+			lock_rotation = false
 			#hinge_joint_3d.set_param(12,lower_angle)
 			#hinge_joint_3d.set_param(11,abs(lower_angle))
 			audio_stream_player_3d.stream = sound_open
 			audio_stream_player_3d.play(0.0)
 			closed = false
-			print("upperlimit: "+str(hinge_joint_3d.get_param(HingeJoint3D.PARAM_LIMIT_UPPER)))
+			
 	else:
-		hinge_joint_3d.FLAG_ENABLE_MOTOR
-		audio_stream_player_3d.stream = sound_close
-		audio_stream_player_3d.play(0.0)
-		closed = true
-		print("door closed")
+		if rotation.y <= 2 && rotation.y >= -2:
+			rotation.y = 0
+			lock_rotation = true #only when closed
+			audio_stream_player_3d.stream = sound_close
+			audio_stream_player_3d.play(0.0)
+			closed = true
+			print("door closed")

@@ -63,11 +63,12 @@ texture = ExtResource("3_jaa3t")
 [node name="ColorRect2" type="ColorRect" parent="."]
 z_index = -1
 z_as_relative = false
-offset_left = 141.0
-offset_top = 69.0
-offset_right = 372.0
-offset_bottom = 95.0
-scale = Vector2(3.6, 6.56)
+offset_left = -20.0
+offset_top = -17.0
+offset_right = 211.0
+offset_bottom = 8.99999
+rotation = 0.124355
+scale = Vector2(12.5355, 6.56)
 mouse_filter = 2
 color = Color(0.564706, 0.564706, 0.564706, 0.854902)
 

@@ -54,9 +54,6 @@ mesh = SubResource("BoxMesh_n3wr0")
 [node name="physics_door" type="RigidBody3D" parent="."]
 mass = 30.0
 script = ExtResource("1_faxgv")
-closed = null
-locked = null
-blocked = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250922, 0, 0)
