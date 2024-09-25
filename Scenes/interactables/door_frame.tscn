@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://spjmvk33hv28"]
+
+[ext_resource type="PackedScene" uid="uid://f7x582prlfmn" path="res://Scenes/interactables/door.tscn" id="1_21kdf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3s4lk"]
+size = Vector3(4.1, 1, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_32dna"]
+size = Vector3(1, 3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18fme"]
+size = Vector3(1, 3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vh1xj"]
+size = Vector3(4.1, 1, 0.3)
+
+[node name="door_frame" type="Node3D"]
+
+[node name="Door" parent="." instance=ExtResource("1_21kdf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.202033, 2.00452, 0)
+mesh = SubResource("BoxMesh_3s4lk")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75676, 0, 0)
+mesh = SubResource("BoxMesh_32dna")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36873, 0, 0)
+mesh = SubResource("BoxMesh_32dna")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75676, 0, 0)
+shape = SubResource("BoxShape3D_18fme")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.202033, 2.00452, 0)
+shape = SubResource("BoxShape3D_vh1xj")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36873, 0, 0)
+shape = SubResource("BoxShape3D_18fme")

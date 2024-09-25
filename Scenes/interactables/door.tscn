@@ -1,20 +1,30 @@
-[gd_scene load_steps=13 format=4 uid="uid://f7x582prlfmn"]
+[gd_scene load_steps=20 format=4 uid="uid://f7x582prlfmn"]
 
 [ext_resource type="Script" path="res://Scenes/interactables/physics_door.gd" id="1_faxgv"]
+[ext_resource type="Texture2D" uid="uid://bkpg6r2mr5lrj" path="res://textures/Wood_06-512x512.png" id="1_wamce"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_1kyok"]
 [ext_resource type="Script" path="res://Scripts/door_collision (2).gd" id="2_rr4s8"]
+[ext_resource type="Texture2D" uid="uid://bgh7cu6h1fxnb" path="res://textures/Wood_04-256x256.png" id="3_o6klp"]
 [ext_resource type="Script" path="res://Scripts/door_collision.gd" id="3_q2j5c"]
+[ext_resource type="Texture2D" uid="uid://kon5eq1uoy3c" path="res://textures/Metal_02-256x256.png" id="5_uue00"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lenwv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7wdn"]
 size = Vector3(0.1, 3, 0.1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wd2wd"]
+albedo_texture = ExtResource("1_wamce")
+
 [sub_resource type="BoxMesh" id="BoxMesh_n3wr0"]
+material = SubResource("StandardMaterial3D_wd2wd")
 size = Vector3(0.1, 3, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xe6ae"]
 size = Vector3(2, 3, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xd8n5"]
+albedo_texture = ExtResource("3_o6klp")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6ab8y"]
 _surfaces = [{
@@ -28,6 +38,13 @@ _surfaces = [{
 "vertex_count": 24,
 "vertex_data": PackedByteArray("7rGDv+6xwz9KhaE97rGDP+6xwz9KhaG97rGDP+6xwz9KhaE97rGDv+6xwz9KhaG97rGDv+6xw79KhaE97rGDP+6xw79KhaG97rGDP+6xw79KhaE97rGDv+6xw79KhaG97rGDP+6xwz9KhaE97rGDv+6xwz9KhaG97rGDP+6xwz9KhaG97rGDv+6xwz9KhaE97rGDP+6xw79KhaE97rGDv+6xw79KhaG97rGDP+6xw79KhaG97rGDv+6xw79KhaE97rGDP+6xwz9KhaE97rGDv+6xw79KhaE97rGDv+6xwz9KhaE97rGDP+6xw79KhaE97rGDP+6xwz9KhaG97rGDv+6xw79KhaG97rGDv+6xwz9KhaG97rGDP+6xw79KhaG9/3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
 }]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxxyd"]
+albedo_texture = ExtResource("5_uue00")
+
+[sub_resource type="BoxMesh" id="BoxMesh_undlv"]
+material = SubResource("StandardMaterial3D_xxxyd")
+size = Vector3(0.3, 0.1, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldw2c"]
 size = Vector3(2, 3, 0.1)
@@ -52,17 +69,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809015, 0, 0)
 mesh = SubResource("BoxMesh_n3wr0")
 
 [node name="physics_door" type="RigidBody3D" parent="."]
-mass = 30.0
+mass = 50.0
 script = ExtResource("1_faxgv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250922, 0, 0)
 mesh = SubResource("BoxMesh_xe6ae")
+surface_material_override/0 = SubResource("StandardMaterial3D_xd8n5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door/MeshInstance3D"]
 visible = false
 mesh = SubResource("ArrayMesh_6ab8y")
 surface_material_override/0 = ExtResource("2_1kyok")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="physics_door/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.655089, -0.386465, -0.00333813)
+mesh = SubResource("BoxMesh_undlv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.243889, 0, 0)
