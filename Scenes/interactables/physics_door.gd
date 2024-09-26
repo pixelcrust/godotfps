@@ -26,7 +26,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print("rotation.y = "+str(deg_to_rad(rotation.y)))
+	#print("rotation.y = "+str(deg_to_rad(rotation.y)))
 	if rotation.y <= deg_to_rad(2) && rotation.y >= deg_to_rad(-2) && just_used == false:
 			if rotation.y != 0:
 				audio_stream_player_3d.stream = sound_close
