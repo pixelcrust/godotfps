@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://wiwbep52mmak"]
+[gd_scene load_steps=9 format=4 uid="uid://wiwbep52mmak"]
 
 [ext_resource type="Script" path="res://npc_interact_collision.gd" id="1_8b4aq"]
 [ext_resource type="Script" path="res://test_npc.gd" id="1_8dfbc"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_8nfo7"]
+[ext_resource type="PackedScene" uid="uid://cna8u7s4jfp60" path="res://blender import/human.tscn" id="4_p3npe"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5ojr2"]
 
@@ -26,8 +27,11 @@ _surfaces = [{
 
 [node name="test_npc" type="CharacterBody3D"]
 script = ExtResource("1_8dfbc")
+title = "Guy:"
+text = "Well you better get there before they do!"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_5ojr2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
@@ -45,3 +49,6 @@ shape = SubResource("CapsuleShape3D_gb5fq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_dg8ui")
+
+[node name="human" parent="." instance=ExtResource("4_p3npe")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0.590919, 0)

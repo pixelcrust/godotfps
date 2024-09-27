@@ -117,7 +117,7 @@ size = Vector3(100, 1, 252.781)
 material = SubResource("StandardMaterial3D_1yvm4")
 
 [node name="test_npc" parent="." instance=ExtResource("4_new6m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0501, 15.5131, 8.65633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0501, 14.96, 8.65633)
 
 [node name="ammo_pistol" parent="." instance=ExtResource("5_epydo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98657, 14.3789, 19.5512)
@@ -190,3 +190,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42926, 14.6452, 9.22995)
 
 [node name="loot_kiste2" parent="." instance=ExtResource("19_shj8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5342, 14.6547, 11.496)
+
+[node name="lightbulb2" parent="." instance=ExtResource("16_rhmfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.161, 16.9684, 11.5387)
