@@ -3,7 +3,6 @@ extends Node3D
 @onready var gun = $gun
 @onready var ray_cast_3d = $gun/barrel/RayCast3D
 @onready var laser = $gun/barrel/RayCast3D/laser
-@onready var aim_helper = $gun/barrel/aim_helper
 @onready var bullet = preload("res://Scenes/bullets/bullet.tscn")
 @onready var muzzleflash = $gun/barrel/muzzleflash/GPUParticles3D
 
@@ -144,7 +143,7 @@ func shoot(number_bullets):
 	audio_stream_player_3d.stream = sound_shoot
 	audio_stream_player_3d.play(0.0)
 	var new_bullet = bullet.instantiate()
-	new_bullet.position = gun.global_position + Vector3(0,0,-1)
+	new_bullet.position = ray_cast_3d.global_position #+ Vector3(0,0,-1)
 	new_bullet.transform.basis = gun.global_transform.basis
 	new_bullet.ads = 1
 	

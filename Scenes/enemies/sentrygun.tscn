@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d6vrirhkna1a"]
+[gd_scene load_steps=14 format=3 uid="uid://d6vrirhkna1a"]
 
 [ext_resource type="Script" path="res://Scripts/sentrygun.gd" id="1_61r0p"]
 [ext_resource type="Script" path="res://laser.gd" id="1_fwny5"]
@@ -26,8 +26,6 @@ material = SubResource("StandardMaterial3D_3s7sy")
 top_radius = 0.02
 bottom_radius = 0.02
 height = 0.001
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_kanql"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yu1oo"]
 
@@ -60,14 +58,6 @@ script = ExtResource("1_fwny5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.13687e-13, 1, 0, 0, 0)
 visible = false
 mesh = SubResource("CylinderMesh_ib2vb")
-
-[node name="aim_helper" type="Node3D" parent="gun/barrel"]
-transform = Transform3D(0.999998, 0, 0, 0, -0.999998, 8.74228e-08, 0, -8.74226e-08, -1, 0, 1.4903, 0.140862)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="gun/barrel/aim_helper"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.77636e-15, 0, 7.10543e-15, 1, 0, 0.760623, 0)
-visible = false
-mesh = SubResource("CylinderMesh_kanql")
 
 [node name="muzzleflash" parent="gun/barrel" instance=ExtResource("3_kwkni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 7.10543e-15, 1, 0, 1.20301, 0.535001)
