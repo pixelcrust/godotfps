@@ -7,6 +7,7 @@ extends RigidBody3D
 @onready var sound_close = preload("res://Sounds/door close 14.wav")
 @onready var sound_open = preload("res://Sounds/door open 7.wav")
 @onready var hinge_joint_3d: HingeJoint3D = $"../HingeJoint3D"
+@onready var lock: Node3D = $lock
 
 
 @onready var interactiontime = .1
@@ -15,6 +16,7 @@ const HP_START = 100
 
 var just_used = false
 @onready var lower_angle = -110
+
 @export var closed = true
 @export var locked = false
 @export var blocked = false
@@ -22,7 +24,8 @@ var just_used = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	lock_rotation = true
-
+	if locked == false:
+		lock.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -67,3 +70,7 @@ func use():
 			audio_stream_player_3d.play(0.0)
 			closed = true
 			print("door closed")"""
+
+
+func _on_lock_unlock_door() -> void:
+	locked = false

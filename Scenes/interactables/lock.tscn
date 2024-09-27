@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpfvsdqgqvsn8"]
+
+[ext_resource type="Script" path="res://lock.gd" id="1_camom"]
+[ext_resource type="Texture2D" uid="uid://kon5eq1uoy3c" path="res://textures/Metal_02-256x256.png" id="2_g0hyn"]
+[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_3e2s7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf7g4"]
+albedo_color = Color(0.431373, 0.431373, 0.447059, 1)
+albedo_texture = ExtResource("2_g0hyn")
+
+[sub_resource type="BoxMesh" id="BoxMesh_s7mwc"]
+material = SubResource("StandardMaterial3D_mf7g4")
+size = Vector3(0.4, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrh4a"]
+size = Vector3(0.5, 0.2, 0.2)
+
+[node name="lock" type="Node3D"]
+script = ExtResource("1_camom")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_s7mwc")
+skeleton = NodePath("")
+
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="." groups=["has_hp"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_3e2s7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalBone3D"]
+shape = SubResource("BoxShape3D_hrh4a")
+
+[connection signal="bodypart_hit" from="PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]

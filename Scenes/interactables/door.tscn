@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://f7x582prlfmn"]
+[gd_scene load_steps=21 format=4 uid="uid://f7x582prlfmn"]
 
 [ext_resource type="Script" path="res://Scenes/interactables/physics_door.gd" id="1_faxgv"]
 [ext_resource type="Texture2D" uid="uid://bkpg6r2mr5lrj" path="res://textures/Wood_06-512x512.png" id="1_wamce"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bgh7cu6h1fxnb" path="res://textures/Wood_04-256x256.png" id="3_o6klp"]
 [ext_resource type="Script" path="res://Scripts/door_collision.gd" id="3_q2j5c"]
 [ext_resource type="Texture2D" uid="uid://kon5eq1uoy3c" path="res://textures/Metal_02-256x256.png" id="5_uue00"]
+[ext_resource type="PackedScene" uid="uid://dpfvsdqgqvsn8" path="res://Scenes/interactables/lock.tscn" id="8_ipa00"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lenwv"]
 
@@ -71,6 +72,7 @@ mesh = SubResource("BoxMesh_n3wr0")
 [node name="physics_door" type="RigidBody3D" parent="."]
 mass = 50.0
 script = ExtResource("1_faxgv")
+locked = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250922, 0, 0)
@@ -107,6 +109,9 @@ script = ExtResource("3_q2j5c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20983, 0.0605233, 0)
 shape = SubResource("BoxShape3D_hiws0")
 
+[node name="lock" parent="physics_door" instance=ExtResource("8_ipa00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10349, 0.721286, 0.0555805)
+
 [node name="HingeJoint3D" type="HingeJoint3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.751022, 0, 0)
 node_a = NodePath("../frame")
@@ -119,3 +124,4 @@ motor/target_velocity = 0.0
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="bodypart_hit" from="physics_door/PhysicalBone3D" to="physics_door" method="_on_physical_bone_3d_bodypart_hit"]
+[connection signal="unlock_door" from="physics_door/lock" to="physics_door" method="_on_lock_unlock_door"]
