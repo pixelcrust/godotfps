@@ -29,6 +29,7 @@ _surfaces = [{
 script = ExtResource("1_8dfbc")
 title = "Guy:"
 text = "Well you better get there before they do!"
+cooldown_time = 30
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
