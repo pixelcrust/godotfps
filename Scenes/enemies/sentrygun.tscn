@@ -124,8 +124,9 @@ transform = Transform3D(-0.0948391, 0.0836134, 0.0269424, 0.0173648, 0.492404, -
 mesh = SubResource("CylinderMesh_7cl2f")
 skeleton = NodePath("../Area3D/CollisionShape3D")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="between_shots" type="Timer" parent="."]
 one_shot = true
+autostart = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
@@ -142,4 +143,4 @@ shape = SubResource("BoxShape3D_4idj3")
 
 [connection signal="bodypart_hit" from="gun/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="bodypart_hit" from="gun/MeshInstance3D/MeshInstance3D/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="between_shots" to="." method="_on_timer_timeout"]

@@ -11,8 +11,8 @@ extends Node3D
 @onready var sound_shoot = preload("res://Sounds/gun.wav")
 const sound_searching = preload("res://Sounds/Atari PC2 - Floppy Failure 3.wav")
 
+@onready var between_shots: Timer = $between_shots
 
-@onready var timer_shooting = $Timer
 var cd_bullet = 25
 
 var horizontal_shooting_error_range = 0
@@ -51,6 +51,7 @@ func _process(delta):
 	if hp <= 0:
 		die()
 
+	print(str(between_shots.time_left))
 	aim(delta)
 	match state:
 		0:
@@ -58,7 +59,9 @@ func _process(delta):
 		1:
 			pass
 		2: #shoot at player
-			shoot(1)
+			#if between_shots.paused == true:
+				#between_shots.start()
+
 			pass
 """
 	var target = player.global_position#ray_cast_3d.get_collision_point()
@@ -137,7 +140,6 @@ func aim(delta):
 
 func shoot(number_bullets):
 
-	timer_shooting.start()
 	muzzleflash.set_emitting(true)
 	muzzleflash.restart()
 	audio_stream_player_3d.stream = sound_shoot
@@ -151,21 +153,7 @@ func shoot(number_bullets):
 	get_tree().root.get_children()[0].add_child(new_bullet)
 
 	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
-	#await get_tree().create_timer(3).timeout
-	"""
-	timer_shooting.start()
-	muzzleflash.set_emitting(true)
-	muzzleflash.restart()
-	for i in number_bullets:
-		audio_stream_player_3d.stream = sound_shoot
-		audio_stream_player_3d.play(0.0)
-		var new_bullet = bullet.instantiate()
-		new_bullet.position = aim_helper.global_position
-		new_bullet.transform.basis = aim_helper.global_transform.basis
-		new_bullet.rotation.y = new_bullet.rotation.y+deg_to_rad(90)+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)
-		new_bullet.rotation.z = new_bullet.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
-		new_bullet.ads = 1
-		get_tree().root.get_children()[0].add_child(new_bullet);"""
+
 
 func calculate_z_angle(position_from,position_to):
 
@@ -190,4 +178,4 @@ func die():
 
 
 func _on_timer_timeout():
-	is_shooting = false
+	shoot(1)

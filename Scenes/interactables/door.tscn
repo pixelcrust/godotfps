@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=4 uid="uid://f7x582prlfmn"]
 
-[ext_resource type="Script" path="res://Scenes/interactables/physics_door.gd" id="1_faxgv"]
+[ext_resource type="Script" path="res://Scripts/physics_door.gd" id="1_faxgv"]
 [ext_resource type="Texture2D" uid="uid://bkpg6r2mr5lrj" path="res://textures/Wood_06-512x512.png" id="1_wamce"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_1kyok"]
 [ext_resource type="Script" path="res://Scripts/door_collision (2).gd" id="2_rr4s8"]
