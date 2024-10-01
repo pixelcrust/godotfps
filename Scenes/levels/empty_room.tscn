@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg73wau81ffml"]
+
+[ext_resource type="Texture2D" uid="uid://c4kto1gxkyqhj" path="res://textures/Tile_18-256x256.png" id="1_yslcx"]
+[ext_resource type="Texture2D" uid="uid://cpk1xfndhq8io" path="res://textures/Bricks_02-512x512.png" id="2_bbypk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_060jr"]
+albedo_texture = ExtResource("1_yslcx")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a53uy"]
+albedo_texture = ExtResource("2_bbypk")
+uv1_scale = Vector3(10, 10, 10)
+
+[node name="empty_room" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+use_collision = true
+size = Vector3(20, 0.5, 20)
+material = SubResource("StandardMaterial3D_060jr")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+size = Vector3(20, 10, 0.5)
+material = SubResource("StandardMaterial3D_a53uy")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+size = Vector3(20, 10, 0.5)
+material = SubResource("StandardMaterial3D_a53uy")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, 0)
+size = Vector3(20, 10, 0.5)
+material = SubResource("StandardMaterial3D_a53uy")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, 0)
+size = Vector3(20, 10, 0.5)
+material = SubResource("StandardMaterial3D_a53uy")
