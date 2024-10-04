@@ -102,15 +102,22 @@ func calculate_z_angle(position_from,position_to):
 
 	# Calculate the vector between the two nodes
 	var direction = position_to - position_from
+	var direction1 = position_to - position_from + Vector3(1,0,0)
+	var direction2 = position_to - position_from + Vector3(-1,0,0)
 	
 	# Calculate the vertical angle (angle in the Y-axis)
 	var vertical_angle = -atan2(direction.y, abs(direction.x))
-	return vertical_angle
+	var vertical_angle1 = -atan2(direction1.z, direction1.x)
+	var vertical_angle2 = -atan2(direction2.z, direction2.x)
+	var vertical_angle_durchschnitt = (vertical_angle+vertical_angle1+vertical_angle2)/3
+	return vertical_angle_durchschnitt
 	
 func calculate_y_angle(position_from,position_to):
 	var direction = position_to - position_from
 	var horizontal_angle = -atan2(direction.z, direction.x)
 	return horizontal_angle
+	
+	
 	
 func _on_physical_bone_3d_bodypart_hit(dmg, time_rooted):
 	hp -= dmg
