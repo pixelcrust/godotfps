@@ -126,7 +126,6 @@ skeleton = NodePath("../Area3D/CollisionShape3D")
 
 [node name="between_shots" type="Timer" parent="."]
 one_shot = true
-autostart = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 

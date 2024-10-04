@@ -12,15 +12,16 @@ extends Node3D
 const sound_searching = preload("res://Sounds/Atari PC2 - Floppy Failure 3.wav")
 
 @onready var between_shots: Timer = $between_shots
-
-var cd_bullet = 25
+@export var time_between_bullets = 1
 
 var horizontal_shooting_error_range = 0
 var vertical_shooting_error_range = 0
 var player = null
-@export var turn_speed_scouting = 60
+
+
 var turn_speed_horizontally = 30
 var direction = 0
+
 var hp_start = 100
 var hp = hp_start
 
@@ -32,13 +33,14 @@ var hp = hp_start
 	4 move back to start
 	"""
 
-@onready var time_aiming = 120
-@onready var time_between_bullets = 10
-@export var angle_range = 50
+
 @onready var start_pos = transform.origin
 var current_angle = 0
 var going_left = true
 var is_shooting = false
+
+var on_player = false #if raycast hits player
+var already_shot = false #for the cooldown between shots
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,7 +53,14 @@ func _process(delta):
 	if hp <= 0:
 		die()
 
-	print(str(between_shots.time_left))
+	if ray_cast_3d.is_colliding():
+		
+		var victim = ray_cast_3d.get_collider()
+		if  victim.is_in_group("group_player") == true:
+			on_player = true
+		else:
+			on_player = false
+			
 	aim(delta)
 	match state:
 		0:
@@ -59,100 +68,34 @@ func _process(delta):
 		1:
 			pass
 		2: #shoot at player
-			#if between_shots.paused == true:
-				#between_shots.start()
-
+			if on_player == true:
+				shoot()
 			pass
-"""
-	var target = player.global_position#ray_cast_3d.get_collision_point()
 	
-	#print("state: "+ str(state))
-	match state:
-		0:
-			#print("current_angle: "+str(current_angle)+ " angle_range: "+str(angle_range))
-			#print("going left: "+str(going_left))
-			audio_stream_player_3d.stream = sound_searching
-			audio_stream_player_3d.play(0.0)
-			if going_left == true:
-				current_angle += delta*turn_speed_scouting
-				if current_angle >= angle_range:
-					going_left = false
-					#print("current angle bigger!!!!!!!!!!!!!!!!")
-			else:
-				current_angle -= delta*turn_speed_scouting
-				if current_angle <= 0:
-					going_left = true
-			gun.rotation.y=(deg_to_rad(current_angle))
-			if current_angle >= 360:
-				current_angle = 0
-			#if spott player
-			if ray_cast_3d.is_colliding():
-				if ray_cast_3d.get_collider() != null:
-					if ray_cast_3d.get_collider().is_in_group("has_blood"):
-						state = 1
-					#pass
-		1:#state follow player
-			#return to state 0
-			aim_helper.look_at(target)
-			aim(delta)
-			#rotation.z = aim_helper.rotation.z
-			#rotation.y = aim_helper.rotation.y
-			if ray_cast_3d.is_colliding() == false:
-				state = 3
-				#pass
-			else:
-				if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
-					state = 3
-					#pass
-				else:
-					#pass
-					#await get_tree().create_timer(1).timeout
-					state = 2
-		2:	#shoot
-			if is_shooting == false:
-				shoot(1)
-				is_shooting = true
-			#await get_tree().create_timer(3).timeout
-			#if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
-			state = 1
-		3: #wait until moving back
-			if ray_cast_3d.get_collider() != null:
-				if ray_cast_3d.get_collider().is_in_group("has_blood") == false:
-					if ray_cast_3d.get_collider() != null:
-						#await get_tree().create_timer(1).timeout
-						state = 4
-				else:
-					#await get_tree().create_timer(3).timeout
-					state = 2
-		4: #move back to starting position
-			transform.origin = start_pos
-			gun.rotation.x = 0
-			gun.rotation.y = 0
-			state = 0
-		_:
-			pass
-			"""
+
 func aim(delta):
 	
 	gun.rotation.x = calculate_z_angle(gun.global_position,player.head.global_position) 
 	gun.rotation.y = calculate_y_angle(gun.global_position,player.head.global_position)+deg_to_rad(90)
 	print(str(rad_to_deg(gun.rotation.y)))
 
-func shoot(number_bullets):
+func shoot():
 
-	muzzleflash.set_emitting(true)
-	muzzleflash.restart()
-	audio_stream_player_3d.stream = sound_shoot
-	audio_stream_player_3d.play(0.0)
-	var new_bullet = bullet.instantiate()
-	new_bullet.position = ray_cast_3d.global_position #+ Vector3(0,0,-1)
-	new_bullet.transform.basis = gun.global_transform.basis
-	new_bullet.ads = 1
-	new_bullet.rotation.y = calculate_y_angle(gun.global_position,player.head.global_position)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
-	new_bullet.rotation.z = calculate_z_angle(gun.global_position,player.head.global_position)# +deg_to_rad(180)#gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
-	get_tree().root.get_children()[0].add_child(new_bullet)
-
-	#print("arm rotation.z: "+str(rad_to_deg(arm.rotation.z))+"body_rotation: "+str(rad_to_deg(rotation.y)))
+	if already_shot == false:
+		between_shots.wait_time = time_between_bullets
+		between_shots.start() 
+		muzzleflash.set_emitting(true)
+		muzzleflash.restart()
+		audio_stream_player_3d.stream = sound_shoot
+		audio_stream_player_3d.play(0.0)
+		var new_bullet = bullet.instantiate()
+		new_bullet.position = ray_cast_3d.global_position #+ Vector3(0,0,-1)
+		new_bullet.transform.basis = gun.global_transform.basis
+		new_bullet.ads = 1
+		new_bullet.rotation.y = calculate_y_angle(gun.global_position,player.head.global_position)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
+		new_bullet.rotation.z = calculate_z_angle(gun.global_position,player.head.global_position)# +deg_to_rad(180)#gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+		get_tree().root.get_children()[0].add_child(new_bullet)
+		already_shot = true
 
 
 func calculate_z_angle(position_from,position_to):
@@ -178,4 +121,4 @@ func die():
 
 
 func _on_timer_timeout():
-	shoot(1)
+	already_shot = false
