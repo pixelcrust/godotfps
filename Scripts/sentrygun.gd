@@ -102,15 +102,27 @@ func calculate_z_angle(position_from,position_to):
 
 	# Calculate the vector between the two nodes
 	var direction = position_to - position_from
-	var direction1 = position_to - position_from + Vector3(1,0,0)
-	var direction2 = position_to - position_from + Vector3(-1,0,0)
-	
 	# Calculate the vertical angle (angle in the Y-axis)
-	var vertical_angle = -atan2(direction.y, abs(direction.x))
+	#var vertical_angle = atan2(abs(direction.y), abs(direction.x))
+	var vertical_angle = 0
+	if direction.x >= deg_to_rad(180):
+		vertical_angle = direction.y + deg_to_rad(90)
+	else:
+		vertical_angle = direction.y + deg_to_rad(90)
+	"""
+	var direction1 = position_to - position_from + Vector3(1,1,1)
+	var direction2 = position_to - position_from + Vector3(-1,-1,-1)
 	var vertical_angle1 = -atan2(direction1.z, direction1.x)
 	var vertical_angle2 = -atan2(direction2.z, direction2.x)
 	var vertical_angle_durchschnitt = (vertical_angle+vertical_angle1+vertical_angle2)/3
-	return vertical_angle_durchschnitt
+	
+	
+	
+	print("angle1: "+str(rad_to_deg(vertical_angle1)))
+	print("angle2: "+str(rad_to_deg(vertical_angle2)))"""
+	print("angle: "+str(rad_to_deg(vertical_angle)))
+	return vertical_angle
+	
 	
 func calculate_y_angle(position_from,position_to):
 	var direction = position_to - position_from
