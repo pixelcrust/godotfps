@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dni44o75ls2ma"]
+
+[ext_resource type="Shader" path="res://Scenes/player_parts/shader_grain.gdshader" id="1_qoxpc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1fve"]
+shader = ExtResource("1_qoxpc")
+shader_parameter/grain_amount = 0.05
+shader_parameter/grain_size = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7ois0"]
+material = SubResource("ShaderMaterial_h1fve")
+
+[node name="ShaderGrain" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 3
+mesh = SubResource("PlaneMesh_7ois0")

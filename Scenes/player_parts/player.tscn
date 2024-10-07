@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dces3e55616v5"]
+[gd_scene load_steps=18 format=3 uid="uid://dces3e55616v5"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_sfosh"]
 [ext_resource type="Texture2D" uid="uid://dqlynnw5748ta" path="res://crosshair.png" id="2_v71jm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8t3e1hbyggdb" path="res://shader_underwater.tscn" id="5_04qer"]
 [ext_resource type="Texture2D" uid="uid://s8xdfalmmcfd" path="res://Sprites/heart_icon.png" id="6_r3w6o"]
 [ext_resource type="Texture2D" uid="uid://dqjibcsf605dr" path="res://Sprites/pistol_bullet_icon.png" id="7_6se36"]
+[ext_resource type="PackedScene" uid="uid://dni44o75ls2ma" path="res://Scenes/player_parts/shader_grain.tscn" id="9_51n5i"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gmr4f"]
 
@@ -347,6 +348,9 @@ collide_with_areas = true
 
 [node name="bullet_spawn" type="Node3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 2.11758e-22, 1, 0, 0, 1.481e-28, 1, 0, 0, 0)
+
+[node name="ShaderGrain" parent="Head/Camera3D" instance=ExtResource("9_51n5i")]
+transform = Transform3D(1.76217, 0, 0, 0, -4.37114e-08, 1.29967, 0, -1, -5.68103e-08, 0, 0, -0.949448)
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]
 visible = false
