@@ -4,11 +4,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h1fve"]
 shader = ExtResource("1_qoxpc")
-shader_parameter/grain_amount = 0.05
-shader_parameter/grain_size = 1.0
+shader_parameter/pixel = 1.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ois0"]
 material = SubResource("ShaderMaterial_h1fve")
+flip_faces = true
 
 [node name="ShaderGrain" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

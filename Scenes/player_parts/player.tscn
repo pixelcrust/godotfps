@@ -350,7 +350,7 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 2.11758e-22, 1, 0, 0, 1.481e-28, 1, 0, 0, 0)
 
 [node name="ShaderGrain" parent="Head/Camera3D" instance=ExtResource("9_51n5i")]
-transform = Transform3D(1.76217, 0, 0, 0, -4.37114e-08, 1.29967, 0, -1, -5.68103e-08, 0, 0, -0.949448)
+transform = Transform3D(1.76217, 0, 0, 0, -4.37114e-08, -1.29967, 0, 1, -5.68104e-08, 0, 0, -0.949448)
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]
 visible = false
