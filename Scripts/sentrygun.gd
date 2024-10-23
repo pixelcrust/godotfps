@@ -93,7 +93,7 @@ func shoot():
 		new_bullet.transform.basis = gun.global_transform.basis
 		new_bullet.ads = 1
 		new_bullet.rotation = direction
-		new_bullet.rotation.y = calculate_y_angle(gun.global_position,player.head.global_position)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
+		new_bullet.rotation.y = calculate_y_angle(gun.global_position,player.head.global_position)+deg_to_rad(90)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
 		new_bullet.rotation.z = calculate_z_angle(gun.global_position,player.head.global_position)# +deg_to_rad(180)#gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
 		get_tree().root.get_children()[0].add_child(new_bullet)
 		already_shot = true
@@ -104,7 +104,7 @@ func calculate_z_angle(position_from,position_to):
 	# Calculate the vector between the two nodes
 	direction = position_to - position_from
 	# Calculate the vertical angle (angle in the Y-axis)
-	var vertical_angle = atan2(abs(direction.y), abs(direction.x))
+	var vertical_angle = abs(atan2(direction.y,direction.x))
 	#var vertical_angle = 0
 	"""
 	if direction.x >= deg_to_rad(180):
