@@ -69,9 +69,9 @@ func _process(delta):
 			pass
 		2: #shoot at player
 			#shoot()
-			if on_player != true:
-				shoot()
-			pass
+			if on_player == true:
+				#shoot()
+				pass
 	
 
 func aim(delta):
@@ -94,10 +94,10 @@ func shoot():
 		new_bullet.position = ray_cast_3d.global_position #+ Vector3(0,0,-1)
 		new_bullet.transform.basis = gun.global_transform.basis
 		new_bullet.ads = 1
-		new_bullet.rotation = aim_helper.rotation#direction
-		new_bullet.rotation.y += deg_to_rad(90)
+		new_bullet.rotation.y = aim_helper.rotation.y#direction
+		
 		#new_bullet.rotation.y = aim_helper.rotation.y + deg_to_rad(90)#calculate_y_angle(gun.global_position,player.head.global_position)+deg_to_rad(90)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
-		#new_bullet.rotation.z = calculate_z_angle(gun.global_position,player.head.global_position)# +deg_to_rad(180)#gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+		new_bullet.rotation.z = calculate_z_angle(gun.global_position,player.head.global_position)# +deg_to_rad(180)#gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
 		get_tree().root.get_children()[0].add_child(new_bullet)
 		already_shot = true
 
@@ -107,7 +107,7 @@ func calculate_z_angle(position_from,position_to):
 	# Calculate the vector between the two nodes
 	direction = position_to - position_from
 	# Calculate the vertical angle (angle in the Y-axis)
-	var vertical_angle = atan2(direction.y,abs(direction.x))
+	var vertical_angle = -atan2(direction.y,abs(direction.x))
 	#var vertical_angle = 0
 	"""
 	if direction.x >= deg_to_rad(180):

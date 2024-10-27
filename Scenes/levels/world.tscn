@@ -197,3 +197,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.161, 16.9684, 11.5387)
 
 [node name="sentrygun" parent="." instance=ExtResource("20_0enl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35005, 18.4113, -2.21796)
+
+[node name="sentrygun2" parent="." instance=ExtResource("20_0enl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.975909, 14.6871, 7.78388)
