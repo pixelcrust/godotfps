@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6jvjcq0k6uej"
+uid="uid://b8tiv8cuuqs3h"
 path.s3tc="res://.godot/imported/hand_arm.png-c4225e57c59b0e621bc9132bca44e3fa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

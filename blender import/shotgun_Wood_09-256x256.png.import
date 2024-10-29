@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doxqfhk4a3vhw"
+uid="uid://cit436p122msu"
 path.s3tc="res://.godot/imported/shotgun_Wood_09-256x256.png-f27764a2d9609300517a457b0ae28baf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "11c5d3c61cd31357ef6dbc1e228e821d"
 }
 
 [deps]

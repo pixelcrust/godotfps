@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn3cd8w2ucdew"
+uid="uid://co3o83sa53ekn"
 path.s3tc="res://.godot/imported/pipebomb_Metal_18-256x256.png-8f6c636779e5455502ff00670d3e6f95.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

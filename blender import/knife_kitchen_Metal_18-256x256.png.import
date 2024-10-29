@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfcdp2wkq2x1w"
+uid="uid://bv1okgptnk2hf"
 path.s3tc="res://.godot/imported/knife_kitchen_Metal_18-256x256.png-3c5a2813e77dc19f123ae0981251efc7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "69bee4e479fd9c36fc7ed19eddb1cbfd"
 }
 
 [deps]

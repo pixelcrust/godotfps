@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnrh37016sj4i"
+uid="uid://co0cg2qgn15yw"
 path.s3tc="res://.godot/imported/shotgun_Metal_17-256x256.png-47750b429b7ac119b7c479a82d59a272.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "ee18809248a03345678114324fc17300"
 }
 
 [deps]

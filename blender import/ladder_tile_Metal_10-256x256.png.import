@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1aw80vseitt6"
+uid="uid://b4dxq3qe3rp2u"
 path.s3tc="res://.godot/imported/ladder_tile_Metal_10-256x256.png-4536077579502af477a644c045530a35.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
