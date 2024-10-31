@@ -4,7 +4,15 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h1fve"]
 shader = ExtResource("1_qoxpc")
-shader_parameter/pixel = 1.0
+shader_parameter/aspect = 1.0
+shader_parameter/distortion = 1.0
+shader_parameter/radius = 1.07
+shader_parameter/alpha = 1.0
+shader_parameter/crop = 0.943
+shader_parameter/crop_color = Color(0, 0, 0, 1)
+shader_parameter/crop_feathering = 0.1
+shader_parameter/channel_offset = 0.005
+shader_parameter/noise_strength = 5.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ois0"]
 material = SubResource("ShaderMaterial_h1fve")

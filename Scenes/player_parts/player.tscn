@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dces3e55616v5"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_sfosh"]
-[ext_resource type="Texture2D" uid="uid://dqlynnw5748ta" path="res://crosshair.png" id="2_v71jm"]
+[ext_resource type="Texture2D" uid="uid://dqh17dgu3uht4" path="res://crosshair.png" id="2_v71jm"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="2_wfych"]
 [ext_resource type="Texture2D" uid="uid://d03pvpgtacada" path="res://Sprites/icons/marker_icon.png" id="4_jacde"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="4_jnmva"]
@@ -350,7 +350,7 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 2.11758e-22, 1, 0, 0, 1.481e-28, 1, 0, 0, 0)
 
 [node name="ShaderGrain" parent="Head/Camera3D" instance=ExtResource("9_51n5i")]
-transform = Transform3D(1.76217, 0, 0, 0, -4.37114e-08, -1.29967, 0, 1, -5.68104e-08, 0, 0, -0.949448)
+transform = Transform3D(1.76217, 0, 0, 0, -4.37114e-08, 1.29967, 0, -1, -5.68104e-08, 0, 0, -0.949448)
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]
 visible = false

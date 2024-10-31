@@ -79,7 +79,7 @@ visible = false
 mesh = SubResource("CylinderMesh_ib2vb")
 
 [node name="muzzleflash" parent="gun/barrel" instance=ExtResource("3_kwkni")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 7.10543e-15, 1, 0, 1.20301, 0.535001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.42109e-14, 1, 0, 1.45125, 0.535001)
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="gun" groups=["has_hp"]]
 collision_layer = 2

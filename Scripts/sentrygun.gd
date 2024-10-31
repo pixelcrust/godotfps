@@ -46,10 +46,9 @@ var already_shot = false #for the cooldown between shots
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	aim_helper.look_at(player.global_position)
+	aim_helper.look_at(player.head.global_position)
 	if hp <= 0:
 		die()
 
@@ -69,14 +68,13 @@ func _process(delta):
 			pass
 		2: #shoot at player
 			#shoot()
-			if on_player == true:
+			if on_player != true:
 				#shoot()
 				pass
-	
 
 func aim(delta):
 	
-	gun.rotation.x = calculate_z_angle(gun.global_position,player.head.global_position) 
+	gun.rotation.x = -aim_helper.rotation.x
 	gun.rotation.y = calculate_y_angle(gun.global_position,player.head.global_position)+deg_to_rad(90)
 	print(str(rad_to_deg(gun.rotation.y)))
 
@@ -91,13 +89,14 @@ func shoot():
 		audio_stream_player_3d.play(0.0)
 		var new_bullet = bullet.instantiate()
 		
-		new_bullet.position = ray_cast_3d.global_position #+ Vector3(0,0,-1)
+		new_bullet.position = muzzleflash.global_position #+ Vector3(0,0,-1)
 		new_bullet.transform.basis = gun.global_transform.basis
 		new_bullet.ads = 1
-		new_bullet.rotation.y = aim_helper.rotation.y#direction
 		
-		#new_bullet.rotation.y = aim_helper.rotation.y + deg_to_rad(90)#calculate_y_angle(gun.global_position,player.head.global_position)+deg_to_rad(90)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
-		new_bullet.rotation.z = calculate_z_angle(gun.global_position,player.head.global_position)# +deg_to_rad(180)#gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+		new_bullet.rotation.z = -aim_helper.rotation.x
+		new_bullet.rotation.y = aim_helper.rotation.y + deg_to_rad(90)#calculate_y_angle(gun.global_position,player.head.global_position)+deg_to_rad(90)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
+		#new_bullet.rotation.z = calculate_z_angle(gun.global_position,player.head.global_position)# +deg_to_rad(180)#gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+		
 		get_tree().root.get_children()[0].add_child(new_bullet)
 		already_shot = true
 
@@ -109,22 +108,6 @@ func calculate_z_angle(position_from,position_to):
 	# Calculate the vertical angle (angle in the Y-axis)
 	var vertical_angle = -atan2(direction.y,abs(direction.x))
 	#var vertical_angle = 0
-	"""
-	if direction.x >= deg_to_rad(180):
-		vertical_angle = direction.y 
-	elif direction.x <= deg_to_rad(180):
-		vertical_angle = direction.y + deg_to_rad(180)
-	
-	var direction1 = position_to - position_from + Vector3(1,1,1)
-	var direction2 = position_to - position_from + Vector3(-1,-1,-1)
-	var vertical_angle1 = -atan2(direction1.z, direction1.x)
-	var vertical_angle2 = -atan2(direction2.z, direction2.x)
-	var vertical_angle_durchschnitt = (vertical_angle+vertical_angle1+vertical_angle2)/3
-	
-	
-	
-	print("angle1: "+str(rad_to_deg(vertical_angle1)))
-	print("angle2: "+str(rad_to_deg(vertical_angle2)))"""
 	print("angle: "+str(rad_to_deg(vertical_angle)))
 	return vertical_angle
 	
@@ -133,8 +116,6 @@ func calculate_y_angle(position_from,position_to):
 	var direction = position_to - position_from
 	var horizontal_angle = -atan2(direction.z, direction.x)
 	return horizontal_angle
-	
-	
 	
 func _on_physical_bone_3d_bodypart_hit(dmg, time_rooted):
 	hp -= dmg
