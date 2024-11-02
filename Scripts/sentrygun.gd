@@ -67,10 +67,8 @@ func _process(delta):
 		1:
 			pass
 		2: #shoot at player
-			#shoot()
 			if on_player != true:
-				#shoot()
-				pass
+				shoot()
 
 func aim(delta):
 	
@@ -93,8 +91,8 @@ func shoot():
 		new_bullet.transform.basis = gun.global_transform.basis
 		new_bullet.ads = 1
 		
-		new_bullet.rotation.z = -aim_helper.rotation.x
-		new_bullet.rotation.y = aim_helper.rotation.y + deg_to_rad(90)#calculate_y_angle(gun.global_position,player.head.global_position)+deg_to_rad(90)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
+		new_bullet.rotation.z = aim_helper.rotation.x + randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
+		new_bullet.rotation.y = aim_helper.rotation.y + deg_to_rad(90) + randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)#calculate_y_angle(gun.global_position,player.head.global_position)+deg_to_rad(90)#gun.global_position.direction_to(player.head.global_position).y#gun.rotation.y+randi_range(-horizontal_shooting_error_range,horizontal_shooting_error_range)+deg_to_rad(90)+deg_to_rad(180)
 		#new_bullet.rotation.z = calculate_z_angle(gun.global_position,player.head.global_position)# +deg_to_rad(180)#gun.global_position.direction_to(player.head.global_position).z#gun.rotation.z+randi_range(-vertical_shooting_error_range,vertical_shooting_error_range)
 		
 		get_tree().root.get_children()[0].add_child(new_bullet)
@@ -107,7 +105,6 @@ func calculate_z_angle(position_from,position_to):
 	direction = position_to - position_from
 	# Calculate the vertical angle (angle in the Y-axis)
 	var vertical_angle = -atan2(direction.y,abs(direction.x))
-	#var vertical_angle = 0
 	print("angle: "+str(rad_to_deg(vertical_angle)))
 	return vertical_angle
 	
@@ -123,7 +120,6 @@ func _on_physical_bone_3d_bodypart_hit(dmg, time_rooted):
 
 func die():
 	queue_free()
-
 
 func _on_timer_timeout():
 	already_shot = false
