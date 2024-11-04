@@ -1,13 +1,16 @@
 extends Node3D
 
+@onready var gpu_particles_3d: GPUParticles3D = $sniper_rifle/GPUParticles3D
+@onready var sniper_rifle: Node3D = $"."
+
 @onready var animation_player = $AnimationPlayer
 @onready var mesh_instance_3d = $MeshInstance3D
 @onready var sound = $AudioStreamPlayer3D
-@onready var barrel = $RayCast3D
+@onready var barrel = $sniper_rifle/RayCast3D
 @onready var bullet = preload("res://Scenes/bullets/bullet_big.tscn")
 @onready var player = null
 @onready var zoom = 20
-const RECOIL = 0#10#15
+const RECOIL = 10#15
 
 
 
@@ -43,13 +46,13 @@ func _process(delta):
 	elif (ads == 1) && (already == 1):
 		if animation_player.is_playing()!= true:
 			player.camera.fov = zoom
-			mesh_instance_3d.visible = false
+			sniper_rifle.visible = false
 	elif ads == 0:
 		if already == 1:
 			#animation_player.play("RESET")
 			transform.origin = pos_standard
 			#rotation.y = deg_to_rad(90)
-			mesh_instance_3d.visible = true
+			sniper_rifle.visible = true
 			already = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func shoot(inventory_selector,player_eyes,player_shot,collision_point):

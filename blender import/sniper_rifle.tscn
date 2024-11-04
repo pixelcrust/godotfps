@@ -429,51 +429,61 @@ script = ExtResource("1_ns45f")
 
 [node name="stock" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.117501, 0, 0, 0, 0.280865, 0, 0, 0, 0.554578, 0, -0.185579, 1.77739)
+layers = 2
 mesh = SubResource("ArrayMesh_j5eg2")
 skeleton = NodePath("")
 
 [node name="lauf" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0775675, 0, 0, 0, 0, -0.0775675, 0, 1.54535, 0, 0, 0.195248, -0.680365)
+layers = 2
 mesh = SubResource("ArrayMesh_l5ni6")
 skeleton = NodePath("")
 
 [node name="trigger" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0258501, 0, 0, 0, 0.0509528, 0, 0, 0, 0.0292174, 0, -0.152321, 0.644953)
+layers = 2
 mesh = SubResource("ArrayMesh_8glkm")
 skeleton = NodePath("")
 
 [node name="kimme" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0152915, 0, 0, 0, 0.0285012, 0, 0, 0, 0.0781056, 0, 0.282522, -2.14388)
+layers = 2
 mesh = SubResource("ArrayMesh_y5m32")
 skeleton = NodePath("")
 
 [node name="korn" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0459453, 0, 0, 0, 0.0459453, 0, 0, 0, 0.0459453, 0, 0.264754, 0.818838)
+layers = 2
 mesh = SubResource("ArrayMesh_pq865")
 skeleton = NodePath("")
 
 [node name="stopsel" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.100637, 0, 0, 0, 0.100637, 0, 0, 0, 0.100637, -0.00157948, 0.194546, 0.860855)
+layers = 2
 mesh = SubResource("ArrayMesh_gb6k5")
 skeleton = NodePath("")
 
 [node name="lader" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.101868, 0.00256345, -0.00803823, -0.0405855, 0.00961127, -2.0833e-10, 0.071583, 0.00180135, 0.011439, 0.160995, 0.202778, 0.619295)
+layers = 2
 mesh = SubResource("ArrayMesh_5q3mn")
 skeleton = NodePath("")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0928476, 0, 0, 0, 0.0928476, 0, 0, 0, 0.0431407, 0, 0.294752, 0.41928)
+layers = 2
 mesh = SubResource("ArrayMesh_e1ohk")
 skeleton = NodePath("")
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0928476, 0, 0, 0, 0.0928476, 0, 0, 0, 0.0431407, 0, 0.294752, 0.000939071)
+layers = 2
 mesh = SubResource("ArrayMesh_knqwp")
 skeleton = NodePath("")
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.128037, 0, 0, 0, 0, 0.128037, 0, -0.128037, 0, 0, 0.436687, -0.221633)
+layers = 2
 mesh = SubResource("ArrayMesh_2tn1a")
 skeleton = NodePath("")
 

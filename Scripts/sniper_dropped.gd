@@ -1,6 +1,7 @@
 extends Node3D
 @onready var interaction_time = .5
 @onready var outline_mesh = $RigidBody3D/sniper_rifle.outline_mesh
+@onready var sniper: Node3D = $RigidBody3D/sniper_rifle
 
 @onready var rigid_body = $RigidBody3D
 
@@ -22,6 +23,26 @@ const max_loaded = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
+	sniper.stock.set_layer_mask_value(1,true)
+	sniper.stock.set_layer_mask_value(2,false)
+	sniper.lauf.set_layer_mask_value(1,true)
+	sniper.lauf.set_layer_mask_value(2,false)
+	sniper.trigger.set_layer_mask_value(1,true)
+	sniper.trigger.set_layer_mask_value(2,false)
+	sniper.kimme.set_layer_mask_value(1,true)
+	sniper.kimme.set_layer_mask_value(2,false)
+	sniper.korn.set_layer_mask_value(1,true)
+	sniper.korn.set_layer_mask_value(2,false)
+	sniper.stopsel.set_layer_mask_value(1,true)
+	sniper.stopsel.set_layer_mask_value(2,false)
+	sniper.lader.set_layer_mask_value(1,true)
+	sniper.lader.set_layer_mask_value(2,false)
+	sniper.cube.set_layer_mask_value(1,true)
+	sniper.cube.set_layer_mask_value(2,false)
+	sniper.cube_001.set_layer_mask_value(1,true)
+	sniper.cube_001.set_layer_mask_value(2,false)
+	sniper.cylinder.set_layer_mask_value(1,true)
+	sniper.cylinder.set_layer_mask_value(2,false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
