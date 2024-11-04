@@ -16,10 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/effects/light.tscn" id="16_rhmfo"]
 [ext_resource type="PackedScene" uid="uid://bmyy4qbcwa1tt" path="res://Scenes/interactables/box_rigid.tscn" id="17_54gw2"]
 [ext_resource type="PackedScene" uid="uid://d3mlec141cgxu" path="res://Scenes/interactables/loot_kiste.tscn" id="19_shj8p"]
-[ext_resource type="PackedScene" uid="uid://cr6ja57rxo2pm" path="res://Scenes/enemies/enemy_dummy.tscn" id="19_wx06m"]
 [ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://Scenes/enemies/sentrygun.tscn" id="20_0enl4"]
 [ext_resource type="PackedScene" uid="uid://diwvcawbv4ac6" path="res://Scenes/levels/level_boxpush.tscn" id="20_jq0c6"]
 [ext_resource type="PackedScene" uid="uid://spjmvk33hv28" path="res://Scenes/interactables/door_frame.tscn" id="20_pll1g"]
+[ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/pickups/sniper_dropped.tscn" id="21_qlcp3"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/interactables/ladder.tscn" id="22_wwwui"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
@@ -163,9 +163,6 @@ transform = Transform3D(0.663417, 0, 0.74825, 0, 1, 0, -0.74825, 0, 0.663417, 14
 [node name="lightbulb" parent="." instance=ExtResource("16_rhmfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30103, 17.5708, 12.5696)
 
-[node name="Node3D" parent="." instance=ExtResource("19_wx06m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5753, 14.0301, -4.98774)
-
 [node name="BoxRigid" parent="." instance=ExtResource("17_54gw2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6976, 15.9855, 13.1542)
 
@@ -207,3 +204,6 @@ transform = Transform3D(-0.669131, 0, -0.743145, 0, 3.23773, 0, 0.743145, 0, -0.
 
 [node name="ladder2" parent="." instance=ExtResource("22_wwwui")]
 transform = Transform3D(-0.729434, 0, 0.684051, 0, 4.13895, 0, -0.684051, 0, -0.729434, 9.79079, 20.9845, 4.9847)
+
+[node name="sniper_dropped" parent="." instance=ExtResource("21_qlcp3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.48402, 14.668, 13.4532)

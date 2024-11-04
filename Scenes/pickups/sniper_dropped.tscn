@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://8rghxxu8rxow"]
+[gd_scene load_steps=14 format=4 uid="uid://8rghxxu8rxow"]
 
 [ext_resource type="Script" path="res://Scripts/sniper_dropped.gd" id="1_eyl1h"]
 [ext_resource type="ArrayMesh" uid="uid://cnyge50dpdd3d" path="res://Models/Item/SniperRifle_1.obj" id="2_5rq2b"]
+[ext_resource type="PackedScene" uid="uid://c7rc70xl3qd48" path="res://blender import/sniper_rifle.tscn" id="3_a2s6w"]
 [ext_resource type="Script" path="res://Scripts/sniper_dropped_collision.gd" id="3_itfqa"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_vk2eb"]
 
@@ -50,6 +51,7 @@ mass = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 0, 0)
+visible = false
 mesh = ExtResource("2_5rq2b")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ayjbo")
@@ -73,3 +75,6 @@ script = ExtResource("3_itfqa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0124655, -0.0132147, 0)
 shape = SubResource("BoxShape3D_p7d2t")
+
+[node name="sniper_rifle" parent="RigidBody3D" instance=ExtResource("3_a2s6w")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -0.0149121, -0.0403867, -0.0431139)
