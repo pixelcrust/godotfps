@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bh1w06vv0gtlt"]
+[gd_scene load_steps=15 format=3 uid="uid://bh1w06vv0gtlt"]
 
 [ext_resource type="Script" path="res://Scripts/sniper.gd" id="1_j4xil"]
 [ext_resource type="AudioStream" uid="uid://copwiuwo0h64x" path="res://Sounds/sfx_weapon_singleshot21.wav" id="3_f65nv"]
@@ -20,6 +20,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("3_f65nv")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sniper_rifle:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sniper_rifle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_8nf8i"]
 resource_name = "ads"
@@ -27,7 +51,31 @@ length = 0.5
 
 [sub_resource type="Animation" id="Animation_fw30d"]
 resource_name = "change weapon in"
-length = 0.9
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sniper_rifle:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.515524, -0.0172323, 0.00849598), Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sniper_rifle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.769758, -0.781139, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_huc8x"]
 resource_name = "reload"
@@ -49,11 +97,40 @@ tracks/0/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_60jgp"]
+resource_name = "change weapon out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sniper_rifle:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(-0.785991, 0.000493917, -0.000349459)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sniper_rifle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.877155, -1.71073, -0.81746)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0rj0"]
 _data = {
 "RESET": SubResource("Animation_6udym"),
 "ads": SubResource("Animation_8nf8i"),
 "change weapon in": SubResource("Animation_fw30d"),
+"change weapon out": SubResource("Animation_60jgp"),
 "reload": SubResource("Animation_huc8x"),
 "shoot": SubResource("Animation_an7xa")
 }
@@ -77,7 +154,7 @@ stream = ExtResource("3_f65nv")
 volume_db = 12.19
 
 [node name="sniper_rifle" parent="." instance=ExtResource("4_5fg4d")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.417957, 0, -0.0121815)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="hand_left" parent="sniper_rifle" instance=ExtResource("5_icnt6")]
 transform = Transform3D(0.00308745, -0.109278, -0.0606123, 0.124838, -5.46392e-09, 0.00635897, -0.00555916, -0.0606909, 0.109136, -0.42204, -0.150318, 0.518114)

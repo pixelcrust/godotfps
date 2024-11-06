@@ -21,7 +21,7 @@ const RECOIL = 10#15
 
 @onready var ads = 0 #0.. false 1..true
 @onready var already = 0
-
+var once = true
 """
 inventory.append({
 "item_id": 2, #sniper
@@ -34,8 +34,12 @@ inventory.append({
 func _ready():
 	transform.origin = pos_standard
 	#rotation.y = deg_to_rad(90)-rotation_hipfire_y
+	visible = false
 
 func _process(delta):
+	if once == true:
+		visible = true
+		once = false
 	print_debug("ads sniper: "+str(ads))
 	if (ads == 1)&&(already== 0):
 		#animation_player.play("ads")
