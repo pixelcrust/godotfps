@@ -28,7 +28,7 @@ var turn_speed_horizontally = 30
 var hp_start = 100
 var hp = hp_start
 
-@onready var state = 2
+@onready var state = 1
 """0 idle
 	1 aim directly
 	2 shoot at player
@@ -44,6 +44,7 @@ var is_shooting = false
 
 var on_player = false #if raycast hits player
 var already_shot = false #for the cooldown between shots
+var already_started_timer = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -65,11 +66,11 @@ func _process(delta):
 			
 	aim(delta)
 	match state:
-		0:
-			pass
+
 		1:
-			
-			state = 2
+			if already_started_timer == false:
+				timer_wait_till_attack.start()
+				already_started_timer = true
 		2: #shoot at player
 			if on_player == true:
 				shoot()
@@ -129,3 +130,8 @@ func die():
 
 func _on_timer_timeout():
 	already_shot = false
+
+
+func _on_timer_wait_till_attack_timeout() -> void:
+	already_started_timer = false
+	state = 2
