@@ -143,6 +143,8 @@ shape = SubResource("BoxShape3D_4idj3")
 [node name="aim_helper" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39786, 0)
 
+[node name="timer_wait_till_attack" type="Timer" parent="."]
+
 [connection signal="bodypart_hit" from="gun/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="bodypart_hit" from="gun/MeshInstance3D/MeshInstance3D/PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="timeout" from="between_shots" to="." method="_on_timer_timeout"]

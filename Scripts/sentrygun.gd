@@ -13,6 +13,9 @@ extends Node3D
 const sound_searching = preload("res://Sounds/Atari PC2 - Floppy Failure 3.wav")
 
 @onready var between_shots: Timer = $between_shots
+@onready var timer_wait_till_attack: Timer = $timer_wait_till_attack
+
+
 @export var time_between_bullets = 1
 
 var horizontal_shooting_error_range = 0
@@ -65,10 +68,13 @@ func _process(delta):
 		0:
 			pass
 		1:
-			pass
+			
+			state = 2
 		2: #shoot at player
-			if on_player != true:
+			if on_player == true:
 				shoot()
+			else:
+				state = 1
 
 func aim(delta):
 	
