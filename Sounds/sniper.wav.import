@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b0s2wm7cpci8v"
-path="res://.godot/imported/Hand Gun 6.wav-245fccd59752503df315d65b22a18c7c.sample"
+path="res://.godot/imported/sniper.wav-dfc6272159522433b4703e97ffe90de1.sample"
 
 [deps]
 
-source_file="res://Sounds/unused/Hand Gun 6.wav"
-dest_files=["res://.godot/imported/Hand Gun 6.wav-245fccd59752503df315d65b22a18c7c.sample"]
+source_file="res://Sounds/sniper.wav"
+dest_files=["res://.godot/imported/sniper.wav-dfc6272159522433b4703e97ffe90de1.sample"]
 
 [params]
 

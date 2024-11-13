@@ -12,7 +12,7 @@ extends Node3D
 @onready var zoom = 20
 const RECOIL = 10#15
 
-
+@onready var sound_shoot = preload("res://Sounds/sniper.wav")
 
 @onready var pos_standard = Vector3(1.2,-0.6,-0.8)
 @onready var pos_ads = Vector3(0.3,-0.45,-0.5)
@@ -66,6 +66,8 @@ func shoot(inventory_selector,player_eyes,player_shot,collision_point):
 		if player.inventory[inventory_selector].loaded > 0:
 			player.inventory[inventory_selector].loaded -= 1
 			animation_player.play("shoot")
+			sound.stream = sound_shoot
+			sound.play(0.0)
 			var new_bullet = bullet.instantiate()
 			new_bullet.position = player_eyes.global_position
 			new_bullet.transform.basis = global_transform.basis
