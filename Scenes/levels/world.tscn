@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c74mm55pbgil4"]
+[gd_scene load_steps=28 format=3 uid="uid://c74mm55pbgil4"]
 
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_xgeo0"]
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="2_std4d"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://diwvcawbv4ac6" path="res://Scenes/levels/level_boxpush.tscn" id="20_jq0c6"]
 [ext_resource type="PackedScene" uid="uid://spjmvk33hv28" path="res://Scenes/interactables/door_frame.tscn" id="20_pll1g"]
 [ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/pickups/sniper_dropped.tscn" id="21_qlcp3"]
+[ext_resource type="PackedScene" uid="uid://cecbp3mkbmocs" path="res://Scenes/pickups/ammo_sniper.tscn" id="22_oph7d"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/interactables/ladder.tscn" id="22_wwwui"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
@@ -207,3 +208,9 @@ transform = Transform3D(-0.729434, 0, 0.684051, 0, 4.13895, 0, -0.684051, 0, -0.
 
 [node name="sniper_dropped" parent="." instance=ExtResource("21_qlcp3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.48402, 14.668, 13.4532)
+
+[node name="ammo_pistol4" parent="." instance=ExtResource("22_oph7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7768, 14.4162, 14.1227)
+
+[node name="ammo_pistol5" parent="." instance=ExtResource("22_oph7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.58815, 14.4839, 13.7651)

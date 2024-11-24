@@ -9,6 +9,7 @@ extends CanvasGroup
 var icon_bullet_pistol = preload("res://Sprites/pistol_bullet_icon.png")
 var icon_shell = preload("res://Sprites/shotgun_shell_icon.png")
 var icon_explosion = preload("res://Sprites/explosion_icon.png")
+var icon_bullet_sniper = preload("res://Sprites/sniper_bullet_icon.png")
 var max_angle_rotation = 25
 var shaking = 2 #0starting 1shaking 2not shaking
 var going_right = true
@@ -87,6 +88,9 @@ func ammo_choose():
 		1:
 			icon_ammo.visible = true
 			icon_ammo.texture = icon_shell
+		2:
+			icon_ammo.visible = true
+			icon_ammo.texture = icon_bullet_sniper
 		5:
 			icon_ammo.visible = true
 			icon_ammo.texture = icon_explosion
