@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="4_3ytbg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n3ht8"]
-size = Vector3(0.376221, 0.303833, 0.473145)
+size = Vector3(0.376221, 0.330627, 0.473145)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ifuu6"]
 _surfaces = [{
@@ -36,11 +36,11 @@ collision_layer = 10
 script = ExtResource("2_dx2le")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0057373, 0.0258179, -0.0100098)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0057373, 0.0124207, -0.0100098)
 shape = SubResource("BoxShape3D_n3ht8")
 
 [node name="ammo_pistol" parent="RigidBody3D" instance=ExtResource("3_rkobo")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.7, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/ammo_pistol"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -50,5 +50,5 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4_3ytbg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689512, 0.000350952, 0.000991821)
+transform = Transform3D(1, 0, 0, 0, 1.4, 0, 0, 0, 1, -0.00689512, 0.000350952, 0.000991821)
 shape = SubResource("BoxShape3D_3a2fu")

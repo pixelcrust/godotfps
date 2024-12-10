@@ -1,12 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cr6ja57rxo2pm"]
+[gd_scene load_steps=11 format=3 uid="uid://cr6ja57rxo2pm"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_dummy.gd" id="1_agd2i"]
-[ext_resource type="ArrayMesh" uid="uid://ctm774idm6dni" path="res://addons/kaykit_prototype_bits/Assets/obj/Dummy_Base.obj" id="1_f5bav"]
-[ext_resource type="ArrayMesh" uid="uid://bl8tkvfj84v7c" path="res://addons/kaykit_prototype_bits/Assets/obj/Dummy_Base_Dummy_Body.obj" id="2_r6n3q"]
 [ext_resource type="ArrayMesh" uid="uid://dqi27w4c6il8o" path="res://Models/Npc/dummy_head.obj" id="4_sl70n"]
 [ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="5_31422"]
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="5_emdjp"]
 [ext_resource type="ArrayMesh" uid="uid://b41oturvqyo8" path="res://Models/Npc/dummy_arm_right.obj" id="6_fvfbj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rnlvl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d0pkj"]
 radius = 0.358898
@@ -27,14 +27,14 @@ collision_layer = 4
 script = ExtResource("1_agd2i")
 
 [node name="base" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_f5bav")
 
 [node name="body" type="MeshInstance3D" parent="base"]
-mesh = ExtResource("2_r6n3q")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_rnlvl")
 skeleton = NodePath("../..")
 
 [node name="arm" type="MeshInstance3D" parent="base/body"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.372895, 1.03686, -0.0186033)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.372895, 0.213812, -0.0186033)
 mesh = ExtResource("6_fvfbj")
 
 [node name="gun" type="MeshInstance3D" parent="base/body/arm"]
@@ -60,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.751204, 0)
 shape = SubResource("CapsuleShape3D_d0pkj")
 
 [node name="head" type="MeshInstance3D" parent="base/body"]
-transform = Transform3D(1, 0, 0, 0, 0.999444, 0.0333296, 0, -0.0333296, 0.999444, 0, 1.15633, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999444, 0.0333296, 0, -0.0333296, 0.999444, 0, 0.733389, 0)
 mesh = ExtResource("4_sl70n")
 
 [node name="ray_view" type="RayCast3D" parent="base/body/head"]
