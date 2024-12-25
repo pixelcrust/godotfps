@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdx3otmsl20vl"]
+[gd_scene load_steps=29 format=3 uid="uid://bdx3otmsl20vl"]
 
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_bct1t"]
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="2_4v34l"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/interactables/ladder.tscn" id="20_e3olj"]
 [ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/pickups/sniper_dropped.tscn" id="21_7w62w"]
 [ext_resource type="PackedScene" uid="uid://cecbp3mkbmocs" path="res://Scenes/pickups/ammo_sniper.tscn" id="22_mdrkl"]
+[ext_resource type="PackedScene" uid="uid://curwbo2aommjw" path="res://Scenes/enemies/enemy_bat.tscn" id="23_emrtu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -214,3 +215,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7768, 14.4162, 14.1227)
 
 [node name="ammo_pistol5" parent="." instance=ExtResource("22_mdrkl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.58815, 14.4839, 13.7651)
+
+[node name="enemy_bat" parent="." instance=ExtResource("23_emrtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.43206, 16.4392, 11.8043)

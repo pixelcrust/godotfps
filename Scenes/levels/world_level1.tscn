@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bcrs2ug1qnc7k"]
+[gd_scene load_steps=27 format=3 uid="uid://bcrs2ug1qnc7k"]
 
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_us4rh"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="2_g1c6e"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cjunlnpml1r6h" path="res://Scenes/test_level/gate.tscn" id="7_5bpfs"]
 [ext_resource type="PackedScene" uid="uid://dfwco3wxtra00" path="res://Scenes/test_level/test_stairs.tscn" id="8_omgpi"]
 [ext_resource type="PackedScene" uid="uid://d3srmqybd7g8v" path="res://Scenes/test_level/test_palett.tscn" id="9_d6uky"]
-[ext_resource type="PackedScene" uid="uid://dkq7ua57mcu8c" path="res://Scenes/test_level/test_wall_window.tscn" id="10_7kk1n"]
 [ext_resource type="PackedScene" uid="uid://cvihmp2ma48n5" path="res://Scenes/interactables/beartrap.tscn" id="11_mnwn4"]
 [ext_resource type="PackedScene" uid="uid://dhunj16wsng6n" path="res://Scenes/props/propane_tank.tscn" id="12_0lgx3"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/interactables/medikit.tscn" id="13_lag78"]
@@ -18,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/pickups/shotgun_dropped.tscn" id="16_nsdci"]
 [ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/pickups/knife_dropped.tscn" id="17_p2g6t"]
 [ext_resource type="PackedScene" uid="uid://bs48udd024l4p" path="res://Scenes/props/tunnel.tscn" id="18_ve8o2"]
-[ext_resource type="PackedScene" uid="uid://d2c7wq7ay3qxj" path="res://Scenes/interactables/door_with_doorway.tscn" id="19_iyp7c"]
 [ext_resource type="PackedScene" uid="uid://b1s6ge6wvnf47" path="res://Scenes/props/house.tscn" id="20_mhtvt"]
 [ext_resource type="PackedScene" uid="uid://dnviiuk2u24bi" path="res://Scenes/props/table.tscn" id="21_ii166"]
 [ext_resource type="PackedScene" uid="uid://bcglw241csva2" path="res://Scenes/enemies/enemy_teletubby.tscn" id="22_26ytx"]
@@ -148,15 +146,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118587, 0.720545, -4.0056)
 [node name="test_palett2" parent="NavigationRegion3D/test_palett/test_palett/test_palett2/test_palett2" instance=ExtResource("9_d6uky")]
 transform = Transform3D(0.971772, -0.235922, 0, 0.235922, 0.971772, 0, 0, 0, 1, 0.501884, -0.689533, -8.60822)
 
-[node name="test_wall" parent="NavigationRegion3D" instance=ExtResource("10_7kk1n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6274, 0.846079, 18.1278)
-
-[node name="test_wall" parent="NavigationRegion3D/test_wall" instance=ExtResource("10_7kk1n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2461, 0.0273198, -1.22501)
-
-[node name="test_wall" parent="NavigationRegion3D/test_wall/test_wall" instance=ExtResource("10_7kk1n")]
-transform = Transform3D(-0.0656295, 0, 0.997844, 0, 1, 0, -0.997844, 0, -0.0656295, -2.42813, -0.00250828, -2.94403)
-
 [node name="Beartrap" parent="NavigationRegion3D" instance=ExtResource("11_mnwn4")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.4957, 0.971957, 27.3195)
 
@@ -195,9 +184,6 @@ material = SubResource("StandardMaterial3D_ld07o")
 
 [node name="Beartrap" parent="." instance=ExtResource("11_mnwn4")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.9702, 4.84728, 22.3304)
-
-[node name="door_with_doorway" parent="." instance=ExtResource("19_iyp7c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.7262, 0.846079, 32.1004)
 
 [node name="Node3D" parent="." instance=ExtResource("20_mhtvt")]
 transform = Transform3D(-0.999499, 0, -0.0316375, 0, 1, 0, 0.0316375, 0, -0.999499, -7.13956, 0.977058, 17.3644)

@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1s6ge6wvnf47"]
+[gd_scene load_steps=12 format=3 uid="uid://b1s6ge6wvnf47"]
 
-[ext_resource type="PackedScene" uid="uid://d2c7wq7ay3qxj" path="res://Scenes/interactables/door_with_doorway.tscn" id="1_iswca"]
 [ext_resource type="Texture2D" uid="uid://b3yxh2j5rnb0d" path="res://textures/Tile_02-512x512.png" id="1_rrwta"]
 [ext_resource type="Texture2D" uid="uid://bkpg6r2mr5lrj" path="res://textures/Wood_06-512x512.png" id="2_pqh74"]
 [ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/effects/light.tscn" id="2_tc66t"]
@@ -76,9 +75,6 @@ material = SubResource("StandardMaterial3D_syu5u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 use_collision = true
 size = Vector3(11, 0.1, 10)
-
-[node name="door_with_doorway" parent="." instance=ExtResource("1_iswca")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9871, 0, -4.70329)
 
 [node name="Node3D" parent="." instance=ExtResource("2_tc66t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46324, 3.39772, -1.12742)
