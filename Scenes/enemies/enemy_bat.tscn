@@ -22,11 +22,12 @@ albedo_color = Color(0.117647, 0.117647, 0.117647, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_8shha"]
 material = SubResource("StandardMaterial3D_n14a8")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_kcsy7"]
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_ayy1y"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hxnwd"]
+radius = 0.590031
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kcsy7"]
 
 [node name="enemy_bat" type="CharacterBody3D"]
 script = ExtResource("1_puk8l")
@@ -42,9 +43,6 @@ mesh = SubResource("BoxMesh_cquyb")
 transform = Transform3D(1.9369, 0, 0, 0, 0.623632, 0, 0, 0, 0.323068, 0, 0, 0)
 mesh = SubResource("BoxMesh_8shha")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
-shape = SubResource("SphereShape3D_kcsy7")
-
 [node name="attention_area" type="Area3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/attention_area"]
@@ -56,6 +54,14 @@ script = ExtResource("1_gwa80")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/bone_head"]
 shape = SubResource("SphereShape3D_hxnwd")
+
+[node name="view_line" type="RayCast3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-07, 1, 0, -10, -4.37114e-08, 0, 0, 0)
+
+[node name="aim_helper" type="Node3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_kcsy7")
 
 [connection signal="body_entered" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_entered"]
 [connection signal="body_exited" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_exited"]
