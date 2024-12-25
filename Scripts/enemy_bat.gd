@@ -18,6 +18,7 @@ func _ready() -> void:
 func _physics_process(delta):
 	# Add the gravity.
 	aim()
+	check_player_on_raycast()
 	if hp <= 0:
 		die()
 	aim_helper.look_at(player.head.global_position)
@@ -37,6 +38,7 @@ func check_player_on_raycast():
 	
 	if view_line.is_colliding() == true:
 		if view_line.get_collider() == player:
+			print("player on raycast")
 			return true
 	return false
 	

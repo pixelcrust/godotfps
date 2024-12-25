@@ -57,6 +57,7 @@ shape = SubResource("SphereShape3D_hxnwd")
 
 [node name="view_line" type="RayCast3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-07, 1, 0, -10, -4.37114e-08, 0, 0, 0)
+collision_mask = 7
 
 [node name="aim_helper" type="Node3D" parent="."]
 
