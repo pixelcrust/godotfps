@@ -9,7 +9,7 @@ var progress = []
 func _ready() -> void:
 	match whats_next_scene:
 		1: 
-			next_scene = "res://Scenes/levels/world.tscn"
+			next_scene = "res://Scenes/levels/world_test2.tscn"
 		_:
 			pass
 			
