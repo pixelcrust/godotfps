@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var outline_mesh = $RigidBody3D/ammo_pistol/MeshInstance3D
+@onready var outline_mesh = $RigidBody3D/ammo_sniper/MeshInstance3D
 @onready var interaction_time = .01
 var player = 0
 @export var number_bullets = 5
