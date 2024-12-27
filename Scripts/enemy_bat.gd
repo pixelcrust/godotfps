@@ -10,6 +10,14 @@ var speed_charge = 70
 var speed_turn = 5
 var player = null
 
+var rotationx = 0
+var rotationy = 0
+var state = 1
+#0.. idle
+#1..check if player visible
+#2..turning towards player
+#3..charging
+
 func _ready() -> void:
 	player = get_tree().get_nodes_in_group("player")[0]
 	
@@ -17,17 +25,34 @@ func _ready() -> void:
 	
 func _physics_process(delta):
 	# Add the gravity.
-	aim()
 	check_player_on_raycast()
 	if hp <= 0:
 		die()
 	aim_helper.look_at(player.head.global_position)
 	#move_and_slide()
+	match state:
+		0:
+			pass
+		1:
+			
+			aim()
+			state = 2
+		2:
+			turn_towards_player()
+			if check_player_on_raycast():
+				state = 3
+			else:
+				state = 4
+		_:
+			pass
 
 func aim():
-	bat.rotation.x = -aim_helper.rotation.x
-	bat.rotation.y = aim_helper.rotation.y+deg_to_rad(180)
-	
+	rotationx = -aim_helper.rotation.x
+	rotationy = aim_helper.rotation.y+deg_to_rad(180)
+
+func turn_towards_player():
+	rotation.x = rotationx
+	rotation.y = rotationy
 func die():
 	queue_free()
 	
@@ -41,6 +66,7 @@ func check_player_on_raycast():
 			print("player on raycast")
 			return true
 	return false
+	print("player not on raycast")
 	
 
 func _on_bone_head_bodypart_hit(dmg, time_rooted):

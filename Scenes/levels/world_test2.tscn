@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bdx3otmsl20vl"]
+[gd_scene load_steps=28 format=3 uid="uid://bdx3otmsl20vl"]
 
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_bct1t"]
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="2_4v34l"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://diwvcawbv4ac6" path="res://Scenes/levels/level_boxpush.tscn" id="16_jk8hg"]
 [ext_resource type="PackedScene" uid="uid://spjmvk33hv28" path="res://Scenes/interactables/door_frame.tscn" id="17_7ekdd"]
 [ext_resource type="PackedScene" uid="uid://d3mlec141cgxu" path="res://Scenes/interactables/loot_kiste.tscn" id="18_sh3e1"]
-[ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://Scenes/enemies/sentrygun.tscn" id="19_5lfbp"]
 [ext_resource type="PackedScene" uid="uid://c4kjwelcqo6vf" path="res://Scenes/interactables/ladder.tscn" id="20_e3olj"]
 [ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/pickups/sniper_dropped.tscn" id="21_7w62w"]
 [ext_resource type="PackedScene" uid="uid://cecbp3mkbmocs" path="res://Scenes/pickups/ammo_sniper.tscn" id="22_mdrkl"]
@@ -195,12 +194,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5342, 14.6547, 11.496)
 [node name="lightbulb2" parent="." instance=ExtResource("14_bdwqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.161, 16.9684, 11.5387)
 
-[node name="sentrygun" parent="." instance=ExtResource("19_5lfbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35005, 18.4113, -2.21796)
-
-[node name="sentrygun2" parent="." instance=ExtResource("19_5lfbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.975909, 14.6871, 7.78388)
-
 [node name="ladder" parent="." instance=ExtResource("20_e3olj")]
 transform = Transform3D(-0.669131, 0, -0.743145, 0, 3.23773, 0, 0.743145, 0, -0.669131, 6.71903, 16.1199, 6.29461)
 
@@ -217,4 +210,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7768, 14.4162, 14.1227)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.58815, 14.4839, 13.7651)
 
 [node name="enemy_bat" parent="." instance=ExtResource("23_emrtu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.43206, 16.4392, 11.8043)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.19527, 17.4844, 11.8043)
+motion_mode = 1

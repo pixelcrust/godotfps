@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bcrs2ug1qnc7k"]
+[gd_scene load_steps=26 format=3 uid="uid://bcrs2ug1qnc7k"]
 
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_us4rh"]
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="2_g1c6e"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://csmo3ugeusx1s" path="res://Scenes/enemies/fish.tscn" id="6_gy8y7"]
 [ext_resource type="PackedScene" uid="uid://cjunlnpml1r6h" path="res://Scenes/test_level/gate.tscn" id="7_5bpfs"]
 [ext_resource type="PackedScene" uid="uid://dfwco3wxtra00" path="res://Scenes/test_level/test_stairs.tscn" id="8_omgpi"]
-[ext_resource type="PackedScene" uid="uid://d3srmqybd7g8v" path="res://Scenes/test_level/test_palett.tscn" id="9_d6uky"]
 [ext_resource type="PackedScene" uid="uid://cvihmp2ma48n5" path="res://Scenes/interactables/beartrap.tscn" id="11_mnwn4"]
 [ext_resource type="PackedScene" uid="uid://dhunj16wsng6n" path="res://Scenes/props/propane_tank.tscn" id="12_0lgx3"]
 [ext_resource type="PackedScene" uid="uid://dms1akyc4a36y" path="res://Scenes/interactables/medikit.tscn" id="13_lag78"]
@@ -127,24 +126,6 @@ transform = Transform3D(0.695901, 0, -0.718139, 0, 1, 0, 0.718139, 0, 0.695901, 
 
 [node name="test_stairs2" parent="NavigationRegion3D/test_stairs/test_stairs2" instance=ExtResource("8_omgpi")]
 transform = Transform3D(-0.948746, -0.313685, -0.0385498, 0.0601416, -0.0594458, -0.996419, 0.31027, -0.947664, 0.0752644, 8.0007, 1.80869, 12.6199)
-
-[node name="test_palett" parent="NavigationRegion3D" instance=ExtResource("9_d6uky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5608, 0.84608, 20.0505)
-
-[node name="test_palett" parent="NavigationRegion3D/test_palett" instance=ExtResource("9_d6uky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.74, 0.0413519, -12.4028)
-
-[node name="test_palett" parent="NavigationRegion3D/test_palett/test_palett" instance=ExtResource("9_d6uky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0253372, 1.56506, -0.0491896)
-
-[node name="test_palett2" parent="NavigationRegion3D/test_palett/test_palett" instance=ExtResource("9_d6uky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.504959, 2.32259, -4.40496)
-
-[node name="test_palett2" parent="NavigationRegion3D/test_palett/test_palett/test_palett2" instance=ExtResource("9_d6uky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118587, 0.720545, -4.0056)
-
-[node name="test_palett2" parent="NavigationRegion3D/test_palett/test_palett/test_palett2/test_palett2" instance=ExtResource("9_d6uky")]
-transform = Transform3D(0.971772, -0.235922, 0, 0.235922, 0.971772, 0, 0, 0, 1, 0.501884, -0.689533, -8.60822)
 
 [node name="Beartrap" parent="NavigationRegion3D" instance=ExtResource("11_mnwn4")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.4957, 0.971957, 27.3195)
