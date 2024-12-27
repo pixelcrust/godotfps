@@ -20,7 +20,8 @@ var state = 1
 
 func _ready() -> void:
 	player = get_tree().get_nodes_in_group("player")[0]
-	
+	velocity.x = 0
+	velocity = Vector3(0,0,0)
 
 	
 func _physics_process(delta):
@@ -32,9 +33,8 @@ func _physics_process(delta):
 	#move_and_slide()
 	match state:
 		0:
-			pass
+			velocity.x = 0
 		1:
-			
 			aim()
 			state = 2
 		2:
@@ -43,8 +43,12 @@ func _physics_process(delta):
 				state = 3
 			else:
 				state = 4
+		3:
+			velocity.x = speed_charge * delta
+			state = 0
 		_:
 			pass
+	move_and_slide()
 
 func aim():
 	rotationx = -aim_helper.rotation.x
@@ -68,11 +72,8 @@ func check_player_on_raycast():
 	return false
 	print("player not on raycast")
 	
-
 func _on_bone_head_bodypart_hit(dmg, time_rooted):
 	hp -= dmg
-	
-
 
 func _on_attention_area_body_entered(body):
 	pass # Replace with function body.

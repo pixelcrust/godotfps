@@ -30,6 +30,7 @@ radius = 0.590031
 [sub_resource type="SphereShape3D" id="SphereShape3D_kcsy7"]
 
 [node name="enemy_bat" type="CharacterBody3D"]
+motion_mode = 1
 script = ExtResource("1_puk8l")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
