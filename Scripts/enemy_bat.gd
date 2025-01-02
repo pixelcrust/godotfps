@@ -26,6 +26,7 @@ func _ready() -> void:
 	
 func _physics_process(delta):
 	# Add the gravity.
+	print(str(velocity.x)+" x"+str(velocity.y)+" y"+str(velocity.z)+"z")
 	check_player_on_raycast()
 	if hp <= 0:
 		die()
