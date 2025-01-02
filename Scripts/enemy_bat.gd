@@ -10,6 +10,7 @@ var speed_charge = 70
 var speed_turn = 5
 var player = null
 
+var move_direction = Vector3(0,0,0)
 var rotationx = 0
 var rotationy = 0
 var state = 1
@@ -20,8 +21,7 @@ var state = 1
 
 func _ready() -> void:
 	player = get_tree().get_nodes_in_group("player")[0]
-	velocity.x = 0
-	velocity = Vector3(0,0,0)
+
 
 	
 func _physics_process(delta):
@@ -34,7 +34,7 @@ func _physics_process(delta):
 	#move_and_slide()
 	match state:
 		0:
-			velocity.x = 0
+			move_direction = Vector3(0,0,0)
 		1:
 			aim()
 			state = 2
@@ -45,11 +45,11 @@ func _physics_process(delta):
 			else:
 				state = 4
 		3:
-			velocity.x = speed_charge * delta
+			move_direction = Vector3(0,0,speed_charge*delta)
 			state = 0
 		_:
 			pass
-	move_and_slide()
+	move_and_collide(move_direction)
 
 func aim():
 	rotationx = -aim_helper.rotation.x
