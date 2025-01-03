@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
 @onready var aim_helper: Node3D = $aim_helper
-@onready var bat: MeshInstance3D = $MeshInstance3D
 @onready var view_line: RayCast3D = $MeshInstance3D/view_line
 
 var hp = 100
@@ -10,7 +9,7 @@ var speed_charge = 70
 var speed_turn = 5
 var player = null
 
-var move_direction = Vector3(0,0,0)
+@onready var move_direction: Vector3 = Vector3(0.0,0.0,0.0)
 var rotationx = 0
 var rotationy = 0
 var state = 0
@@ -21,12 +20,10 @@ var state = 0
 
 func _ready() -> void:
 	player = get_tree().get_nodes_in_group("player")[0]
-
-
 	
 func _physics_process(delta):
 	# Add the gravity.
-	print(str(velocity.x)+" x"+str(velocity.y)+" y"+str(velocity.z)+"z; state: "+str(state))
+	print(str(velocity.x)+"x "+str(velocity.y)+" y "+str(velocity.z)+"z; state: "+str(state))
 	check_player_on_raycast()
 	if hp <= 0:
 		die()
@@ -35,6 +32,7 @@ func _physics_process(delta):
 	match state:
 		0:
 			move_direction = Vector3(0.0,0.0,0.0)
+			#pass
 		1:
 			aim()
 			state = 2
@@ -49,7 +47,9 @@ func _physics_process(delta):
 			state = 0
 		_:
 			pass
-	move_and_collide(move_direction)
+	#move_and_collide(move_direction)
+	velocity = move_direction
+	move_and_slide()
 
 func aim():
 	rotationx = -aim_helper.rotation.x
@@ -58,6 +58,7 @@ func aim():
 func turn_towards_player():
 	rotation.x = rotationx
 	rotation.y = rotationy
+	
 func die():
 	queue_free()
 	

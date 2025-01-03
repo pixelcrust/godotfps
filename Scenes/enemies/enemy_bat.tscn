@@ -51,6 +51,8 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("SphereShape3D_ayy1y")
 
 [node name="bone_head" type="PhysicalBone3D" parent="MeshInstance3D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_gwa80")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/bone_head"]
