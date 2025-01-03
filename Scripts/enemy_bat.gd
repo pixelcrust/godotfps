@@ -13,7 +13,7 @@ var player = null
 var move_direction = Vector3(0,0,0)
 var rotationx = 0
 var rotationy = 0
-var state = 1
+var state = 0
 #0.. idle
 #1..check if player visible
 #2..turning towards player
@@ -26,7 +26,7 @@ func _ready() -> void:
 	
 func _physics_process(delta):
 	# Add the gravity.
-	print(str(velocity.x)+" x"+str(velocity.y)+" y"+str(velocity.z)+"z")
+	print(str(velocity.x)+" x"+str(velocity.y)+" y"+str(velocity.z)+"z; state: "+str(state))
 	check_player_on_raycast()
 	if hp <= 0:
 		die()
@@ -34,7 +34,7 @@ func _physics_process(delta):
 	#move_and_slide()
 	match state:
 		0:
-			move_direction = Vector3(0,0,0)
+			move_direction = Vector3(0.0,0.0,0.0)
 		1:
 			aim()
 			state = 2
