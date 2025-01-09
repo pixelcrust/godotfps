@@ -12,7 +12,7 @@ var player = null
 @onready var move_direction: Vector3 = Vector3(0.0,0.0,0.0)
 var rotationx = 0
 var rotationy = 0
-var state = 0
+var state = 3
 #0.. idle
 #1..check if player visible
 #2..turning towards player
@@ -28,7 +28,7 @@ func _physics_process(delta):
 	if hp <= 0:
 		die()
 	aim_helper.look_at(player.head.global_position)
-	#move_and_slide()
+	
 	match state:
 		0:
 			move_direction = Vector3(0.0,0.0,0.0)
@@ -43,8 +43,10 @@ func _physics_process(delta):
 			else:
 				state = 4
 		3:
+			
 			move_direction = Vector3(0,0,speed_charge*delta)
-			state = 0
+			#check if close to player
+			
 		_:
 			pass
 	#move_and_collide(move_direction)
