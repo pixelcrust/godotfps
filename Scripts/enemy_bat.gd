@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var aim_helper: Node3D = $aim_helper
 @onready var view_line: RayCast3D = $MeshInstance3D/view_line
+@onready var timer_wait_until_charge: Timer = $timer_wait_until_charge
 
 var hp = 100
 var speed_fly = 10
@@ -12,7 +13,7 @@ var player = null
 @onready var move_direction: Vector3 = Vector3(0.0,0.0,0.0)
 var rotationx = 0
 var rotationy = 0
-var state = 3
+var state = 1
 #0.. idle
 #1..check if player visible
 #2..turning towards player
@@ -39,9 +40,8 @@ func _physics_process(delta):
 		2:
 			turn_towards_player()
 			if check_player_on_raycast():
-				state = 3
-			else:
-				state = 4
+				timer_wait_until_charge.start()
+			
 		3:
 			
 			move_direction = Vector3(0,0,speed_charge*delta)
@@ -85,3 +85,7 @@ func _on_attention_area_body_entered(body):
 
 func _on_attention_area_body_exited(body):
 	pass # Replace with function body.
+
+
+func _on_timer_wait_until_charge_timeout() -> void:
+	state = 3

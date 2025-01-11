@@ -67,6 +67,11 @@ collision_mask = 7
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_kcsy7")
 
+[node name="timer_wait_until_charge" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="body_entered" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_entered"]
 [connection signal="body_exited" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_exited"]
 [connection signal="bodypart_hit" from="MeshInstance3D/bone_head" to="." method="_on_bone_head_bodypart_hit"]
+[connection signal="timeout" from="timer_wait_until_charge" to="." method="_on_timer_wait_until_charge_timeout"]
