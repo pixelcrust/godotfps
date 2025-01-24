@@ -50,7 +50,7 @@ func _physics_process(delta):
 		_:
 			pass
 	#move_and_collide(move_direction)
-	velocity.z = speed_charge*delta 
+	velocity = global_transform.basis.z.normalized() * speed_charge * delta
 	#velocity = move_direction
 	move_and_slide()
 
