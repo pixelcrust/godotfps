@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://curwbo2aommjw"]
+[gd_scene load_steps=13 format=3 uid="uid://curwbo2aommjw"]
 
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="1_gwa80"]
 [ext_resource type="Script" path="res://Scripts/enemy_bat.gd" id="1_puk8l"]
@@ -26,6 +26,8 @@ material = SubResource("StandardMaterial3D_n14a8")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hxnwd"]
 radius = 0.590031
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7jh7b"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kcsy7"]
 
@@ -62,6 +64,12 @@ shape = SubResource("SphereShape3D_hxnwd")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-07, 1, 0, -10, -4.37114e-08, 0, 0, 0)
 collision_mask = 7
 
+[node name="explosion_area" type="Area3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/explosion_area"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("SphereShape3D_7jh7b")
+
 [node name="aim_helper" type="Node3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -74,4 +82,6 @@ one_shot = true
 [connection signal="body_entered" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_entered"]
 [connection signal="body_exited" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_exited"]
 [connection signal="bodypart_hit" from="MeshInstance3D/bone_head" to="." method="_on_bone_head_bodypart_hit"]
+[connection signal="body_entered" from="MeshInstance3D/explosion_area" to="." method="_on_explosion_area_body_entered"]
+[connection signal="body_exited" from="MeshInstance3D/explosion_area" to="." method="_on_explosion_area_body_exited"]
 [connection signal="timeout" from="timer_wait_until_charge" to="." method="_on_timer_wait_until_charge_timeout"]

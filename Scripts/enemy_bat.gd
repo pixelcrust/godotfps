@@ -3,12 +3,14 @@ extends CharacterBody3D
 @onready var aim_helper: Node3D = $aim_helper
 @onready var view_line: RayCast3D = $MeshInstance3D/view_line
 @onready var timer_wait_until_charge: Timer = $timer_wait_until_charge
+@onready var explosion_area: Area3D = $MeshInstance3D/explosion_area
 
 var hp = 100
 var speed_fly = 10
 var speed_charge = 70
 var speed_turn = 5
 var player = null
+var player_near = false
 
 @onready var move_direction: Vector3 = Vector3(0.0,0.0,0.0)
 var rotationx = 0
@@ -32,7 +34,7 @@ func _physics_process(delta):
 	
 	match state:
 		0:
-			move_direction = Vector3(0.0,0.0,0.0)
+			velocity = Vector3(0.0,0.0,0.0)
 			#pass
 		1:
 			aim()
@@ -44,13 +46,18 @@ func _physics_process(delta):
 			
 		3:
 			
-			move_direction = Vector3(0,0,speed_charge*delta)
+			velocity = global_transform.basis.z.normalized() * speed_charge * delta
 			#check if close to player
+			if player_near == true:
+				state = 4
+		4:
+			#explosion
 			
+			pass
 		_:
 			pass
 	#move_and_collide(move_direction)
-	velocity = global_transform.basis.z.normalized() * speed_charge * delta
+	#velocity = global_transform.basis.z.normalized() * speed_charge * delta
 	#velocity = move_direction
 	move_and_slide()
 
@@ -90,3 +97,11 @@ func _on_attention_area_body_exited(body):
 
 func _on_timer_wait_until_charge_timeout() -> void:
 	state = 3
+
+
+func _on_explosion_area_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_explosion_area_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.
