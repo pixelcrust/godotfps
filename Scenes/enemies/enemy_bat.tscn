@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://curwbo2aommjw"]
+[gd_scene load_steps=14 format=3 uid="uid://curwbo2aommjw"]
 
 [ext_resource type="Script" path="res://Scripts/bodypart.gd" id="1_gwa80"]
 [ext_resource type="Script" path="res://Scripts/enemy_bat.gd" id="1_puk8l"]
+[ext_resource type="PackedScene" uid="uid://ctk8y3gtl1yj7" path="res://Scenes/bullets/explosion.tscn" id="3_41w0q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fo5n"]
 albedo_color = Color(0.635294, 0, 0.333333, 1)
@@ -78,6 +79,8 @@ shape = SubResource("SphereShape3D_kcsy7")
 [node name="timer_wait_until_charge" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="explosion" parent="." instance=ExtResource("3_41w0q")]
 
 [connection signal="body_entered" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_entered"]
 [connection signal="body_exited" from="MeshInstance3D/attention_area" to="." method="_on_attention_area_body_exited"]

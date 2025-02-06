@@ -4,6 +4,8 @@ extends CharacterBody3D
 @onready var view_line: RayCast3D = $MeshInstance3D/view_line
 @onready var timer_wait_until_charge: Timer = $timer_wait_until_charge
 @onready var explosion_area: Area3D = $MeshInstance3D/explosion_area
+@onready var explosion: Node3D = $explosion
+
 
 var hp = 100
 var speed_fly = 10
@@ -52,8 +54,7 @@ func _physics_process(delta):
 				state = 4
 		4:
 			#explosion
-			
-			pass
+			explosion._signal_explosion()
 		_:
 			pass
 	#move_and_collide(move_direction)
