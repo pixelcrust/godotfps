@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://wiwbep52mmak"]
 
-[ext_resource type="Script" path="res://npc_interact_collision.gd" id="1_8b4aq"]
-[ext_resource type="Script" path="res://test_npc.gd" id="1_8dfbc"]
+[ext_resource type="Script" uid="uid://co163h5fjdx7h" path="res://npc_interact_collision.gd" id="1_8b4aq"]
+[ext_resource type="Script" uid="uid://xoetw1y5f7o1" path="res://test_npc.gd" id="1_8dfbc"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_8nfo7"]
 [ext_resource type="PackedScene" uid="uid://cna8u7s4jfp60" path="res://blender import/human.tscn" id="4_p3npe"]
 

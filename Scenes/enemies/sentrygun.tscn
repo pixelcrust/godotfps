@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=3 uid="uid://d6vrirhkna1a"]
 
-[ext_resource type="Script" path="res://Scripts/sentrygun.gd" id="1_61r0p"]
-[ext_resource type="Script" path="res://laser.gd" id="1_fwny5"]
-[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_kb1s8"]
+[ext_resource type="Script" uid="uid://bvjn7mrlmba6o" path="res://Scripts/sentrygun.gd" id="1_61r0p"]
+[ext_resource type="Script" uid="uid://cndp7dwwuo6yy" path="res://laser.gd" id="1_fwny5"]
+[ext_resource type="Script" uid="uid://08s1mj86nylu" path="res://Scripts/bodypart.gd" id="3_kb1s8"]
 [ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://Scenes/effects/muzzleflash.tscn" id="3_kwkni"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oj7x"]

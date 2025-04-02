@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdx3otmsl20vl"]
+[gd_scene load_steps=29 format=3 uid="uid://bdx3otmsl20vl"]
 
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_bct1t"]
 [ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="2_4v34l"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/pickups/sniper_dropped.tscn" id="21_7w62w"]
 [ext_resource type="PackedScene" uid="uid://cecbp3mkbmocs" path="res://Scenes/pickups/ammo_sniper.tscn" id="22_mdrkl"]
 [ext_resource type="PackedScene" uid="uid://curwbo2aommjw" path="res://Scenes/enemies/enemy_bat.tscn" id="23_emrtu"]
+[ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://Scenes/enemies/sentrygun.tscn" id="23_s1h87"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -217,3 +218,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.27254, 15.8923, 11.8043)
 
 [node name="enemy_bat3" parent="." instance=ExtResource("23_emrtu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43664, 15.8923, 11.8043)
+
+[node name="sentrygun" parent="." instance=ExtResource("23_s1h87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.48595, 14.6721, -0.793366)
+
+[node name="sentrygun2" parent="." instance=ExtResource("23_s1h87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37034, 18.4871, -2.42185)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=39 format=4 uid="uid://c7rc70xl3qd48"]
 
 [ext_resource type="Texture2D" uid="uid://bbqk1munjo4gd" path="res://blender import/sniper_rifle_Wood_12-256x256.png" id="1_hvq21"]
-[ext_resource type="Script" path="res://blender import/sniper_rifle.gd" id="1_ns45f"]
+[ext_resource type="Script" uid="uid://bxg4iywhvgglc" path="res://blender import/sniper_rifle.gd" id="1_ns45f"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_t1yw3"]
 [ext_resource type="Texture2D" uid="uid://bker4mqxo6mnr" path="res://blender import/sniper_rifle_Metal_20-256x256.png" id="3_f2av5"]
-[ext_resource type="Texture2D" uid="uid://bllufyu06ucym" path="res://blender import/sniper_rifle_Metal_19-256x256.png" id="4_8tma5"]
+[ext_resource type="Texture2D" uid="uid://dt4xqwlogvgov" path="res://blender import/sniper_rifle_Metal_19-256x256.png" id="4_8tma5"]
 [ext_resource type="Texture2D" uid="uid://ymebvltwkhbr" path="res://blender import/sniper_rifle_Cloth_18-256x256.png" id="5_x0yxj"]
 [ext_resource type="Texture2D" uid="uid://dsej4vel03tnv" path="res://blender import/sniper_rifle_Cloth_17-256x256.png" id="6_jl0et"]
 

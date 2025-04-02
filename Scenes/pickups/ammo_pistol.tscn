@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://bwwptgjr6pw5b"]
 
-[ext_resource type="Script" path="res://Scripts/ammo_pistol.gd" id="1_msdad"]
+[ext_resource type="Script" uid="uid://c02mhi46asfq" path="res://Scripts/ammo_pistol.gd" id="1_msdad"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_6wid5"]
-[ext_resource type="Script" path="res://Scripts/ammo_pistol_collision.gd" id="2_tcirj"]
+[ext_resource type="Script" uid="uid://btsw7myn52cbj" path="res://Scripts/ammo_pistol_collision.gd" id="2_tcirj"]
 [ext_resource type="PackedScene" uid="uid://bhvscsqyueywd" path="res://blender import/ammo_pistol.tscn" id="3_sxxhu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n3ht8"]

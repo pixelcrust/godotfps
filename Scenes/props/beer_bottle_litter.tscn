@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://s4dq7nvumsix"]
 
-[ext_resource type="Script" path="res://Scripts/beer_bottle_litter.gd" id="1_tlmcb"]
+[ext_resource type="Script" uid="uid://cmdaumcjrjcry" path="res://Scripts/beer_bottle_litter.gd" id="1_tlmcb"]
 [ext_resource type="PackedScene" uid="uid://dglfh6cv7qej1" path="res://blender import/beer_bottle.tscn" id="2_ybaj2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kxv6t"]

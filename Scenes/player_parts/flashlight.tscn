@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cj1tetsawebyx"]
 
-[ext_resource type="Script" path="res://Scripts/flashlight.gd" id="1_vk74k"]
+[ext_resource type="Script" uid="uid://dpsb6a4i54sk3" path="res://Scripts/flashlight.gd" id="1_vk74k"]
 [ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="3_12yjs"]
 [ext_resource type="AudioStream" uid="uid://bicfm8n6j3b41" path="res://Sounds/clicky button 13.wav" id="3_fj3db"]
 [ext_resource type="PackedScene" uid="uid://ckphhamwagojm" path="res://blender import/model_flashlight.tscn" id="3_llo81"]
@@ -151,12 +151,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewt36"]
 _data = {
-"RESET": SubResource("Animation_bbwek"),
-"change weapon in": SubResource("Animation_yekxi"),
-"change weapon out": SubResource("Animation_djt2w"),
-"inspect": SubResource("Animation_sry1f"),
-"reload": SubResource("Animation_jq6cs"),
-"shoot": SubResource("Animation_g818v")
+&"RESET": SubResource("Animation_bbwek"),
+&"change weapon in": SubResource("Animation_yekxi"),
+&"change weapon out": SubResource("Animation_djt2w"),
+&"inspect": SubResource("Animation_sry1f"),
+&"reload": SubResource("Animation_jq6cs"),
+&"shoot": SubResource("Animation_g818v")
 }
 
 [node name="flashlight" type="Node3D"]

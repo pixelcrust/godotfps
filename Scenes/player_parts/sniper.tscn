@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bh1w06vv0gtlt"]
 
-[ext_resource type="Script" path="res://Scripts/sniper.gd" id="1_j4xil"]
+[ext_resource type="Script" uid="uid://bsnovwxftw28" path="res://Scripts/sniper.gd" id="1_j4xil"]
 [ext_resource type="AudioStream" uid="uid://copwiuwo0h64x" path="res://Sounds/sfx_weapon_singleshot21.wav" id="3_f65nv"]
 [ext_resource type="PackedScene" uid="uid://c7rc70xl3qd48" path="res://blender import/sniper_rifle.tscn" id="4_5fg4d"]
 [ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="5_icnt6"]
@@ -212,12 +212,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0rj0"]
 _data = {
-"RESET": SubResource("Animation_6udym"),
-"ads": SubResource("Animation_8nf8i"),
-"change weapon in": SubResource("Animation_fw30d"),
-"change weapon out": SubResource("Animation_60jgp"),
-"reload": SubResource("Animation_huc8x"),
-"shoot": SubResource("Animation_an7xa")
+&"RESET": SubResource("Animation_6udym"),
+&"ads": SubResource("Animation_8nf8i"),
+&"change weapon in": SubResource("Animation_fw30d"),
+&"change weapon out": SubResource("Animation_60jgp"),
+&"reload": SubResource("Animation_huc8x"),
+&"shoot": SubResource("Animation_an7xa")
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qnx7b"]

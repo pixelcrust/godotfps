@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dg1ans30ehh6f"]
 
-[ext_resource type="Script" path="res://Scripts/grenade.gd" id="1_tk6fo"]
+[ext_resource type="Script" uid="uid://0bb2oqsgives" path="res://Scripts/grenade.gd" id="1_tk6fo"]
 [ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="2_e5efc"]
 [ext_resource type="PackedScene" uid="uid://ndkw41r64lu4" path="res://blender import/model_pipebomb.tscn" id="2_oi57i"]
 [ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="4_tbov2"]
@@ -137,12 +137,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5rkwu"]
 _data = {
-"RESET": SubResource("Animation_0dofl"),
-"change weapon in": SubResource("Animation_0bj7f"),
-"change weapon out": SubResource("Animation_tcqhy"),
-"inspect": SubResource("Animation_7sqd6"),
-"reload": SubResource("Animation_b5d6u"),
-"shoot": SubResource("Animation_gudao")
+&"RESET": SubResource("Animation_0dofl"),
+&"change weapon in": SubResource("Animation_0bj7f"),
+&"change weapon out": SubResource("Animation_tcqhy"),
+&"inspect": SubResource("Animation_7sqd6"),
+&"reload": SubResource("Animation_b5d6u"),
+&"shoot": SubResource("Animation_gudao")
 }
 
 [node name="Grenade" type="Node3D" groups=["consumeable"]]

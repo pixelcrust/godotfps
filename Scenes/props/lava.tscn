@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dj1r66vn40rp2"]
 
-[ext_resource type="Script" path="res://Scripts/lava.gd" id="1_37c4s"]
+[ext_resource type="Script" uid="uid://b3dkvgdgkrhf3" path="res://Scripts/lava.gd" id="1_37c4s"]
 [ext_resource type="PackedScene" uid="uid://d1abpix2tact" path="res://Scenes/effects/lava_splash.tscn" id="2_3hync"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_us7j0"]
@@ -111,21 +111,21 @@ shader = SubResource("Shader_xd1hf")
 shader_parameter/albedo = Color(0.870588, 0.0941176, 0, 0.513726)
 shader_parameter/point_size = 1.0
 shader_parameter/roughness = 0.5
-shader_parameter/metallic_texture_channel = null
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
 shader_parameter/emission = Color(0.619608, 0, 0, 1)
 shader_parameter/emission_energy = 1.0
+shader_parameter/texture_refraction = SubResource("NoiseTexture2D_ff5eh")
 shader_parameter/refraction = 0.05
-shader_parameter/refraction_texture_channel = null
+shader_parameter/refraction_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_dbp3a")
 shader_parameter/normal_scale = 1.0
 shader_parameter/uv1_blend_sharpness = 1.0
 shader_parameter/uv1_scale = Vector3(0.1, 0.1, 0.1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/texture_refraction = SubResource("NoiseTexture2D_ff5eh")
-shader_parameter/texture_normal = SubResource("NoiseTexture2D_dbp3a")
 
 [sub_resource type="BoxMesh" id="BoxMesh_l1iw8"]
 material = SubResource("ShaderMaterial_o62f6")

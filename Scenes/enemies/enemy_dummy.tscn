@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://cr6ja57rxo2pm"]
 
-[ext_resource type="Script" path="res://Scripts/enemy_dummy.gd" id="1_agd2i"]
+[ext_resource type="Script" uid="uid://h3rqqxddxykv" path="res://Scripts/enemy_dummy.gd" id="1_agd2i"]
 [ext_resource type="ArrayMesh" uid="uid://dqi27w4c6il8o" path="res://Models/Npc/dummy_head.obj" id="4_sl70n"]
 [ext_resource type="ArrayMesh" uid="uid://bvusfqurfcyjm" path="res://Models/Item/Pistol_1.obj" id="5_31422"]
-[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="5_emdjp"]
+[ext_resource type="Script" uid="uid://08s1mj86nylu" path="res://Scripts/bodypart.gd" id="5_emdjp"]
 [ext_resource type="ArrayMesh" uid="uid://b41oturvqyo8" path="res://Models/Npc/dummy_arm_right.obj" id="6_fvfbj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rnlvl"]

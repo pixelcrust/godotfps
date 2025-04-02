@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://digdc0wdsetba"]
 
-[ext_resource type="Script" path="res://Scripts/flashlight_dropped.gd" id="1_c1obu"]
-[ext_resource type="Script" path="res://Scripts/flashlight_dropped_collision.gd" id="4_3l5v0"]
+[ext_resource type="Script" uid="uid://dfyrcshsb2kgq" path="res://Scripts/flashlight_dropped.gd" id="1_c1obu"]
+[ext_resource type="Script" uid="uid://g52ur0j5lc21" path="res://Scripts/flashlight_dropped_collision.gd" id="4_3l5v0"]
 [ext_resource type="PackedScene" uid="uid://ckphhamwagojm" path="res://blender import/model_flashlight.tscn" id="5_ud35u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt5af"]

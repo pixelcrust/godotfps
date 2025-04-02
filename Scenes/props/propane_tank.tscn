@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dhunj16wsng6n"]
 
-[ext_resource type="Script" path="res://Scripts/propane_tank.gd" id="1_dkd06"]
+[ext_resource type="Script" uid="uid://b68dkeoqb4gum" path="res://Scripts/propane_tank.gd" id="1_dkd06"]
 [ext_resource type="ArrayMesh" uid="uid://bv3v80qvoron5" path="res://Models/Item/PropaneTank.obj" id="1_t0cj5"]
-[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_dckxd"]
+[ext_resource type="Script" uid="uid://08s1mj86nylu" path="res://Scripts/bodypart.gd" id="3_dckxd"]
 [ext_resource type="PackedScene" uid="uid://ctk8y3gtl1yj7" path="res://Scenes/bullets/explosion.tscn" id="3_jeavc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5hn4"]

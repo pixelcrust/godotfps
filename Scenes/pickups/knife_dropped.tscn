@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://doj4krciulmc7"]
 
-[ext_resource type="Script" path="res://Scripts/knife_dropped.gd" id="1_xjb77"]
+[ext_resource type="Script" uid="uid://cwd0da7sc4wqn" path="res://Scripts/knife_dropped.gd" id="1_xjb77"]
 [ext_resource type="PackedScene" uid="uid://des4x83h8mrc7" path="res://blender import/knife_kitchen.tscn" id="3_jrp2t"]
-[ext_resource type="Script" path="res://Scripts/knife_dropped_collision.gd" id="3_mmucl"]
+[ext_resource type="Script" uid="uid://dxxjguffjplnv" path="res://Scripts/knife_dropped_collision.gd" id="3_mmucl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt5af"]
 size = Vector3(1.6831, 0.419624, 0.182633)

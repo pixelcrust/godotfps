@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwjfspjqmal5v"]
 
-[ext_resource type="Script" path="res://Scripts/blood_splatter.gd" id="1_g3fk5"]
+[ext_resource type="Script" uid="uid://ciedrhu0d2a1b" path="res://Scripts/blood_splatter.gd" id="1_g3fk5"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r5wug"]
 particle_flag_align_y = true

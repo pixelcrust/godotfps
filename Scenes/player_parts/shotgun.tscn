@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://w0e52nyh2nv7"]
 
-[ext_resource type="Script" path="res://Scripts/shotgun.gd" id="1_06i30"]
+[ext_resource type="Script" uid="uid://crnudmsvglnun" path="res://Scripts/shotgun.gd" id="1_06i30"]
 [ext_resource type="PackedScene" uid="uid://rif7qlnipanh" path="res://Scenes/effects/muzzleflash.tscn" id="3_0tlxk"]
 [ext_resource type="AudioStream" uid="uid://d3mn5xmo276dc" path="res://Sounds/20 Gauge Single Isolated.wav" id="3_84dn5"]
 [ext_resource type="PackedScene" uid="uid://hy588alos3mj" path="res://blender import/model_shotgun.tscn" id="3_rvsvt"]
@@ -261,12 +261,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e28n3"]
 _data = {
-"RESET": SubResource("Animation_lg80a"),
-"change weapon in": SubResource("Animation_5po1k"),
-"change weapon out": SubResource("Animation_hbm15"),
-"inspect": SubResource("Animation_55q0k"),
-"reload": SubResource("Animation_ahp4c"),
-"shoot": SubResource("Animation_sv8wm")
+&"RESET": SubResource("Animation_lg80a"),
+&"change weapon in": SubResource("Animation_5po1k"),
+&"change weapon out": SubResource("Animation_hbm15"),
+&"inspect": SubResource("Animation_55q0k"),
+&"reload": SubResource("Animation_ahp4c"),
+&"shoot": SubResource("Animation_sv8wm")
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_16qme"]

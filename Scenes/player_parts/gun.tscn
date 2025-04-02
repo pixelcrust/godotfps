@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://brid1ads3hnl2"]
 
-[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_wbae3"]
+[ext_resource type="Script" uid="uid://cu5qmu0csxsux" path="res://Scripts/gun.gd" id="1_wbae3"]
 [ext_resource type="AnimationLibrary" uid="uid://chxpkr5swac2n" path="res://item_animations.res" id="2_ldnwe"]
 [ext_resource type="PackedScene" uid="uid://chsas1jluft0x" path="res://Scenes/effects/emitter_shell.tscn" id="3_woa2a"]
 [ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://blender import/model_pistol.tscn" id="4_arr1h"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d2csfac4jugp2"]
 
-[ext_resource type="Script" path="res://Scripts/water.gd" id="1_kvjo7"]
+[ext_resource type="Script" uid="uid://bv3tso6kbkg08" path="res://Scripts/water.gd" id="1_kvjo7"]
 [ext_resource type="PackedScene" uid="uid://crpd1ra254rh8" path="res://Scenes/effects/water_splash.tscn" id="2_e13oy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_us7j0"]
@@ -104,19 +104,19 @@ shader = SubResource("Shader_a18io")
 shader_parameter/albedo = Color(0.392157, 1, 1, 0.152941)
 shader_parameter/point_size = 1.0
 shader_parameter/roughness = 0.0
-shader_parameter/metallic_texture_channel = null
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
+shader_parameter/texture_refraction = SubResource("NoiseTexture2D_jhv5m")
 shader_parameter/refraction = 16.0
-shader_parameter/refraction_texture_channel = null
+shader_parameter/refraction_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_xs8bt")
 shader_parameter/normal_scale = 1.0
 shader_parameter/uv1_blend_sharpness = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/texture_refraction = SubResource("NoiseTexture2D_jhv5m")
-shader_parameter/texture_normal = SubResource("NoiseTexture2D_xs8bt")
 
 [sub_resource type="BoxMesh" id="BoxMesh_l1iw8"]
 material = SubResource("ShaderMaterial_asa0l")

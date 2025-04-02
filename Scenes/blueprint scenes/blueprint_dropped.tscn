@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://7alpfeb2tgee"]
 
-[ext_resource type="Script" path="res://Scripts/flashlight_dropped.gd" id="1_huwnd"]
+[ext_resource type="Script" uid="uid://dfyrcshsb2kgq" path="res://Scripts/flashlight_dropped.gd" id="1_huwnd"]
 [ext_resource type="ArrayMesh" uid="uid://ba5eg4ahx3ih6" path="res://Models/Item/Flashlight.obj" id="2_t3nwy"]
-[ext_resource type="Script" path="res://Scripts/dropped_collision.gd" id="3_ipa1x"]
+[ext_resource type="Script" uid="uid://b25ivuvudqe7b" path="res://Scripts/dropped_collision.gd" id="3_ipa1x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r3ku"]
 albedo_color = Color(0.47451, 0, 0.478431, 1)

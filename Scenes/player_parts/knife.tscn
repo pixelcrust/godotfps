@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dm2mx7bibfyww"]
 
-[ext_resource type="Script" path="res://Scripts/knife.gd" id="1_hx75e"]
+[ext_resource type="Script" uid="uid://cmk711xfdw5sv" path="res://Scripts/knife.gd" id="1_hx75e"]
 [ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="2_abqvg"]
 [ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="3_2agxd"]
 [ext_resource type="PackedScene" uid="uid://dwjfspjqmal5v" path="res://Scenes/effects/blood_splatter.tscn" id="3_mnbv3"]
@@ -207,11 +207,11 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eg7wy"]
 _data = {
-"RESET": SubResource("Animation_8y2jy"),
-"change weapon in": SubResource("Animation_hqr8d"),
-"change weapon out": SubResource("Animation_lnen8"),
-"inspect": SubResource("Animation_8lydo"),
-"shoot": SubResource("Animation_3nbol")
+&"RESET": SubResource("Animation_8y2jy"),
+&"change weapon in": SubResource("Animation_hqr8d"),
+&"change weapon out": SubResource("Animation_lnen8"),
+&"inspect": SubResource("Animation_8lydo"),
+&"shoot": SubResource("Animation_3nbol")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_72ylg"]

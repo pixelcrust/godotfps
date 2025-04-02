@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://des4x83h8mrc7"]
 
-[ext_resource type="Texture2D" uid="uid://bfcdp2wkq2x1w" path="res://blender import/knife_kitchen_Metal_18-256x256.png" id="1_lugvj"]
-[ext_resource type="Script" path="res://blender import/knife_kitchen.gd" id="1_yp0gl"]
+[ext_resource type="Texture2D" uid="uid://bv1okgptnk2hf" path="res://blender import/knife_kitchen_Metal_18-256x256.png" id="1_lugvj"]
+[ext_resource type="Script" uid="uid://cxbxrkkifajv5" path="res://blender import/knife_kitchen.gd" id="1_yp0gl"]
 [ext_resource type="Texture2D" uid="uid://b1x41i3tyeafq" path="res://blender import/knife_kitchen_Metal_10-256x256.png" id="2_ldlvo"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_fn1lw"]
 

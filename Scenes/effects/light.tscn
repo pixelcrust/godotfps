@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqo7g88uvwsta"]
 
-[ext_resource type="Script" path="res://Scripts/light.gd" id="1_v1xo4"]
-[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="2_tc7iw"]
+[ext_resource type="Script" uid="uid://ygp4aphh54mw" path="res://Scripts/light.gd" id="1_v1xo4"]
+[ext_resource type="Script" uid="uid://08s1mj86nylu" path="res://Scripts/bodypart.gd" id="2_tc7iw"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_vjt6m"]
 radius = 0.1

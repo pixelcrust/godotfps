@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=4 uid="uid://d3mlec141cgxu"]
 
-[ext_resource type="Script" path="res://loot_kiste.gd" id="1_a0ba0"]
+[ext_resource type="Script" uid="uid://corfyd8ewu1bc" path="res://loot_kiste.gd" id="1_a0ba0"]
 [ext_resource type="Texture2D" uid="uid://b7dkswy0hk84f" path="res://textures/Box_22-256x256.png" id="2_5mryu"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_mu53s"]
-[ext_resource type="Script" path="res://lootkiste_collision.gd" id="3_5db1q"]
+[ext_resource type="Script" uid="uid://iqq03cpt36q1" path="res://lootkiste_collision.gd" id="3_5db1q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf8b7"]
 albedo_texture = ExtResource("2_5mryu")

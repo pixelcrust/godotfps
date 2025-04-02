@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsgui4alu17f2"]
 
-[ext_resource type="Script" path="res://nightchanger.gd" id="1_na8rt"]
+[ext_resource type="Script" uid="uid://xh2ot25poabb" path="res://nightchanger.gd" id="1_na8rt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ardik"]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dpfvsdqgqvsn8"]
 
-[ext_resource type="Script" path="res://lock.gd" id="1_camom"]
+[ext_resource type="Script" uid="uid://fgou303gc5w5" path="res://lock.gd" id="1_camom"]
 [ext_resource type="Texture2D" uid="uid://kon5eq1uoy3c" path="res://textures/Metal_02-256x256.png" id="2_g0hyn"]
-[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_3e2s7"]
+[ext_resource type="Script" uid="uid://08s1mj86nylu" path="res://Scripts/bodypart.gd" id="3_3e2s7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf7g4"]
 albedo_color = Color(0.431373, 0.431373, 0.447059, 1)

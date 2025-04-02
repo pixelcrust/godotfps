@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dlst0rgesxcjk"]
 
-[ext_resource type="Script" path="res://Scripts/shotgun_dropped.gd" id="1_77pfj"]
+[ext_resource type="Script" uid="uid://b1kay8rwp60em" path="res://Scripts/shotgun_dropped.gd" id="1_77pfj"]
 [ext_resource type="PackedScene" uid="uid://hy588alos3mj" path="res://blender import/model_shotgun.tscn" id="2_tycnl"]
-[ext_resource type="Script" path="res://Scripts/shotgun_dropped_collision.gd" id="4_nem6x"]
+[ext_resource type="Script" uid="uid://buc8e0f64l6nc" path="res://Scripts/shotgun_dropped_collision.gd" id="4_nem6x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt5af"]
 size = Vector3(4.51149, 0.761155, 0.492007)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://csvtuuyysg1v4"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_xalge"]
+[ext_resource type="Script" uid="uid://csqbw7o56mi4q" path="res://Scripts/menu.gd" id="1_xalge"]
 [ext_resource type="FontFile" uid="uid://usboj2qfimhe" path="res://fonts/OperationNapalm-nRBWO.ttf" id="3_0hmya"]
 [ext_resource type="Texture2D" uid="uid://pcxb6j4ke87u" path="res://Sprites/foto.png" id="3_jaa3t"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://pri0gtr8s1qj"]
 
 [ext_resource type="PackedScene" uid="uid://d2jst8docbj6x" path="res://blender import/plant_model.tscn" id="1_ffn0v"]
-[ext_resource type="Script" path="res://Scripts/bush.gd" id="1_natcg"]
+[ext_resource type="Script" uid="uid://chhec5paklhrl" path="res://Scripts/bush.gd" id="1_natcg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4mdaw"]
 

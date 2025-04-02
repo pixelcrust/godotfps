@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://jqaebaxncb0k"]
 
-[ext_resource type="Script" path="res://Scripts/bullet_big.gd" id="1_llw34"]
+[ext_resource type="Script" uid="uid://be4tm2kj3a2q4" path="res://Scripts/bullet_big.gd" id="1_llw34"]
 [ext_resource type="PackedScene" uid="uid://dwjfspjqmal5v" path="res://Scenes/effects/blood_splatter.tscn" id="2_6idw6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxnks"]

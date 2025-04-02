@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c23leivbmxdlf"]
 
-[ext_resource type="Script" path="res://environmental_noise.gd" id="1_d4gl4"]
+[ext_resource type="Script" uid="uid://i8acggnsfdd8" path="res://environmental_noise.gd" id="1_d4gl4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vohhe"]
 albedo_color = Color(1, 0, 0, 1)

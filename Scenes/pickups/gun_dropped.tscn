@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dlscv3sge6u5e"]
 
-[ext_resource type="Script" path="res://Scripts/gun_dropped.gd" id="1_e185i"]
-[ext_resource type="Script" path="res://Scripts/dropped_collision.gd" id="3_uy242"]
+[ext_resource type="Script" uid="uid://duw88hv7hqwoh" path="res://Scripts/gun_dropped.gd" id="1_e185i"]
+[ext_resource type="Script" uid="uid://b25ivuvudqe7b" path="res://Scripts/dropped_collision.gd" id="3_uy242"]
 [ext_resource type="PackedScene" uid="uid://b37cwkrg5vrjr" path="res://blender import/model_pistol.tscn" id="4_pnttf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt5af"]

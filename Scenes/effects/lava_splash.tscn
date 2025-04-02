@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1abpix2tact"]
 
-[ext_resource type="Script" path="res://water_splash.gd" id="1_714rf"]
+[ext_resource type="Script" uid="uid://jsavil6kym7i" path="res://water_splash.gd" id="1_714rf"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qf1eg"]
 direction = Vector3(0, 1, 0)

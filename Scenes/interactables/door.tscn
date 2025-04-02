@@ -1,11 +1,11 @@
 [gd_scene load_steps=21 format=4 uid="uid://f7x582prlfmn"]
 
-[ext_resource type="Script" path="res://Scripts/physics_door.gd" id="1_faxgv"]
+[ext_resource type="Script" uid="uid://brbnaxkh8fkr" path="res://Scripts/physics_door.gd" id="1_faxgv"]
 [ext_resource type="Texture2D" uid="uid://bkpg6r2mr5lrj" path="res://textures/Wood_06-512x512.png" id="1_wamce"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_1kyok"]
-[ext_resource type="Script" path="res://Scripts/door_collision (2).gd" id="2_rr4s8"]
+[ext_resource type="Script" uid="uid://cnbcds3nqmpcx" path="res://Scripts/door_collision (2).gd" id="2_rr4s8"]
 [ext_resource type="Texture2D" uid="uid://bgh7cu6h1fxnb" path="res://textures/Wood_04-256x256.png" id="3_o6klp"]
-[ext_resource type="Script" path="res://Scripts/door_collision.gd" id="3_q2j5c"]
+[ext_resource type="Script" uid="uid://cjb70pwapf0db" path="res://Scripts/door_collision.gd" id="3_q2j5c"]
 [ext_resource type="Texture2D" uid="uid://kon5eq1uoy3c" path="res://textures/Metal_02-256x256.png" id="5_uue00"]
 [ext_resource type="PackedScene" uid="uid://dpfvsdqgqvsn8" path="res://Scenes/interactables/lock.tscn" id="8_ipa00"]
 

@@ -1,8 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://csmo3ugeusx1s"]
 
-[ext_resource type="Script" path="res://Scripts/fish.gd" id="1_xcftq"]
-[ext_resource type="ArrayMesh" uid="uid://bjgu2ncjpalui" path="res://Models/Npc/Anglerfish.obj" id="2_6ua5i"]
-[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="3_dmf8u"]
+[ext_resource type="Script" uid="uid://dd1qr4qfhdppa" path="res://Scripts/fish.gd" id="1_xcftq"]
+[ext_resource type="Script" uid="uid://08s1mj86nylu" path="res://Scripts/bodypart.gd" id="3_dmf8u"]
+
+[sub_resource type="Resource" id="Resource_fmu8c"]
+metadata/__load_path__ = "res://Models/Npc/Anglerfish.obj"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkdoh"]
 albedo_color = Color(0.513726, 0.356863, 1, 1)
@@ -45,7 +47,7 @@ script = ExtResource("1_xcftq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 2.53518e-06, 0, 1, 0, -2.53518e-06, 0, -1, 0, 0, 0)
-mesh = ExtResource("2_6ua5i")
+mesh = SubResource("Resource_fmu8c")
 surface_material_override/0 = SubResource("StandardMaterial3D_nkdoh")
 surface_material_override/1 = SubResource("StandardMaterial3D_viwyp")
 surface_material_override/2 = SubResource("StandardMaterial3D_vrdbf")

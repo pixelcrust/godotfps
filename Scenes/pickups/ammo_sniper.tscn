@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://cecbp3mkbmocs"]
 
-[ext_resource type="Script" path="res://Scripts/ammo_sniper.gd" id="1_fqjus"]
-[ext_resource type="Script" path="res://Scripts/ammo_pistol_collision.gd" id="2_dx2le"]
+[ext_resource type="Script" uid="uid://v0tdo3toccap" path="res://Scripts/ammo_sniper.gd" id="1_fqjus"]
+[ext_resource type="Script" uid="uid://btsw7myn52cbj" path="res://Scripts/ammo_pistol_collision.gd" id="2_dx2le"]
 [ext_resource type="PackedScene" uid="uid://csrtcf7r3ppo1" path="res://blender import/ammo_sniper.tscn" id="3_xwv4n"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="4_3ytbg"]
 

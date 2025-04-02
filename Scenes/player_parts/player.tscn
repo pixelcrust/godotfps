@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://dces3e55616v5"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_sfosh"]
+[ext_resource type="Script" uid="uid://w2n85caanycv" path="res://Scripts/Player.gd" id="1_sfosh"]
 [ext_resource type="Texture2D" uid="uid://dqh17dgu3uht4" path="res://crosshair.png" id="2_v71jm"]
-[ext_resource type="Script" path="res://Scripts/bodypart.gd" id="2_wfych"]
+[ext_resource type="Script" uid="uid://08s1mj86nylu" path="res://Scripts/bodypart.gd" id="2_wfych"]
 [ext_resource type="Texture2D" uid="uid://d03pvpgtacada" path="res://Sprites/icons/marker_icon.png" id="4_jacde"]
-[ext_resource type="Script" path="res://Scripts/ui.gd" id="4_jnmva"]
+[ext_resource type="Script" uid="uid://bjxekxh184o53" path="res://Scripts/ui.gd" id="4_jnmva"]
 [ext_resource type="PackedScene" uid="uid://c8t3e1hbyggdb" path="res://shader_underwater.tscn" id="5_04qer"]
 [ext_resource type="Texture2D" uid="uid://s8xdfalmmcfd" path="res://Sprites/heart_icon.png" id="6_r3w6o"]
 [ext_resource type="Texture2D" uid="uid://dqjibcsf605dr" path="res://Sprites/pistol_bullet_icon.png" id="7_6se36"]
@@ -153,9 +153,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j2af8"]
 _data = {
-"RESET": SubResource("Animation_p3ofd"),
-"die": SubResource("Animation_a48sd"),
-"duck": SubResource("Animation_vdel4")
+&"RESET": SubResource("Animation_p3ofd"),
+&"die": SubResource("Animation_a48sd"),
+&"duck": SubResource("Animation_vdel4")
 }
 
 [node name="CharacterBody3D" type="CharacterBody3D"]

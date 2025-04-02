@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3srmqybd7g8v"]
 
-[ext_resource type="ArrayMesh" uid="uid://tbef5j2sq4x1" path="res://addons/kaykit_prototype_bits/Assets/obj/Pallet_Small_Decorated_A.obj" id="1_6y70c"]
+[sub_resource type="Resource" id="Resource_xbxlf"]
+metadata/__load_path__ = "res://addons/kaykit_prototype_bits/Assets/obj/Pallet_Small_Decorated_A.obj"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7wyp8"]
 size = Vector3(1.89661, 1.45816, 1.90317)
@@ -8,7 +9,7 @@ size = Vector3(1.89661, 1.45816, 1.90317)
 [node name="test_palett" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_6y70c")
+mesh = SubResource("Resource_xbxlf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.745526, 0)
