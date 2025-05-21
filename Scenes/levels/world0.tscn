@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdsw4wgvb12by"]
+
+[ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_xtwpa"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
+
+[sub_resource type="Sky" id="Sky_m1s6g"]
+sky_material = SubResource("ProceduralSkyMaterial_7nxjc")
+
+[sub_resource type="Environment" id="Environment_kl5jl"]
+background_mode = 2
+background_color = Color(0.458824, 0.458824, 0.458824, 1)
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_m1s6g")
+ambient_light_color = Color(0.886275, 0, 0, 1)
+ambient_light_sky_contribution = 0.5
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.015
+volumetric_fog_albedo = Color(1, 0.611765, 0.666667, 1)
+volumetric_fog_detail_spread = 5.09824
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139556, 0.0229417, -0.36441)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.848388, -0.458453, 0.264686, 8.6873e-08, 0.499998, 0.866027, -0.529375, 0.734727, -0.424192, -12.2423, 80.9664, 0.407165)
+light_energy = 0.5
+shadow_enabled = true
+shadow_bias = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kl5jl")
+
+[node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("1_xtwpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87267, 13.0273, 18.328)
