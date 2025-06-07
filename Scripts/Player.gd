@@ -143,6 +143,10 @@ const SOUND_ITEM_PICKUP = preload("res://Sounds/velcro 1.wav")
 @onready var flashlight = 0 #0.. off
 @onready var flashlight_range = 200
 @onready var state_before = 0
+var tilt_input :float = 0
+var rotation_input : float = 0
+var mouse_rotation: Vector3 = Vector3(0,0,0)
+
 
 func _ready():
 	#node_flashlight.spot_range = flashlight_range #sets the flashlight range in code for everywhere
@@ -243,10 +247,23 @@ func _ready():
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x*SENSITIVITY)
+		"""rotate_y(-event.relative.x*SENSITIVITY)
 		camera.rotate_x(-event.relative.y*SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x,deg_to_rad(-89),deg_to_rad(90))
-		
+		camera.rotation.x = clamp(camera.rotation.x,deg_to_rad(-89),deg_to_rad(90))"""
+		rotation_input = -event.relative.x
+		tilt_input = -event.relative.y
+	
+func _update_camera(delta):
+	mouse_rotation.x += tilt_input * delta *SENSITIVITY
+	mouse_rotation.x = clamp(mouse_rotation.x,deg_to_rad(-89),deg_to_rad(90))
+	mouse_rotation.y +=  rotation_input * delta*SENSITIVITY
+	
+	camera.transform.basis = Basis.from_euler(mouse_rotation)
+	camera.rotation.z = 0.0
+	
+	rotation_input = 0.0
+	tilt_input = 0.0
+	
 func _physics_process(delta):
 	#restart scene
 	if(Input.is_action_just_pressed("restart")):
@@ -260,6 +277,7 @@ func _physics_process(delta):
 	if hp <= 0:
 		die()
 	
+	_update_camera(delta)
 	# Add the gravity.
 	#print("is on ladder: "+str(is_on_ladder)+" interacted with ladder: "+str(interacted_with_ladder))
 	if not is_on_floor():
@@ -397,7 +415,7 @@ func _physics_process(delta):
 		shader_grain.visible = true
 	else:
 		help_text.visible = false
-		shader_grain.visible = false
+		#shader_grain.visible = false
 		
 	# Start interaction
 	if Input.is_action_just_pressed("Interact")  and raycast_interaction.is_colliding():

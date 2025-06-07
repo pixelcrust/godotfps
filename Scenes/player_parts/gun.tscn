@@ -15,8 +15,8 @@ script = ExtResource("1_wbae3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": ExtResource("2_ldnwe"),
-"item_animations": SubResource("AnimationLibrary_x3asn")
+&"": ExtResource("2_ldnwe"),
+&"item_animations": SubResource("AnimationLibrary_x3asn")
 }
 
 [node name="Node3D" type="Node3D" parent="."]
