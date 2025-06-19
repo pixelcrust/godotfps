@@ -258,7 +258,7 @@ func _update_camera(delta):
 	mouse_rotation.x = clamp(mouse_rotation.x,deg_to_rad(-89),deg_to_rad(90))
 	mouse_rotation.y +=  rotation_input * delta*SENSITIVITY
 	
-	camera.transform.basis = Basis.from_euler(mouse_rotation)
+	transform.basis = Basis.from_euler(mouse_rotation)
 	camera.rotation.z = 0.0
 	
 	rotation_input = 0.0
