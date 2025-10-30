@@ -12,14 +12,11 @@ func _ready() -> void:
 			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"#"res://Scenes/levels/world_test2.tscn"#"res://Scenes/levels/world_demo_august.tscn"#
 		_:
 			pass
-			
 	ResourceLoader.load_threaded_request(next_scene) # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 
-	
 	var loaded = ResourceLoader.load_threaded_get_status(next_scene,progress)
 	texture_progress_bar.value = floor(progress[0]*100)
 	if  loaded == 3:
