@@ -4,14 +4,14 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xssoj"]
 
-[sub_resource type="Sky" id="Sky_iwg2u"]
+[sub_resource type="Sky" id="Sky_wyes4"]
 sky_material = SubResource("ProceduralSkyMaterial_xssoj")
 
 [sub_resource type="Environment" id="Environment_hujh4"]
 background_mode = 2
 background_color = Color(0.458824, 0.458824, 0.458824, 1)
 background_energy_multiplier = 0.1
-sky = SubResource("Sky_iwg2u")
+sky = SubResource("Sky_wyes4")
 ambient_light_color = Color(0.886275, 0, 0, 1)
 ambient_light_sky_contribution = 0.5
 tonemap_mode = 2

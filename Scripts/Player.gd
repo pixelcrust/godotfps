@@ -23,8 +23,6 @@ var gravity = 9.8
 @onready var head = $Head
 @onready var bone_head = $Head/bone_head
 @onready var bone_body = $MeshInstance3D/bone_body
-@onready var shader_grain: Node3D = $Head/Camera3D/ShaderGrain
-
 
 @onready var camera = $Head/Camera3D
 @onready var guncamera = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D

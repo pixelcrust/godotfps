@@ -1,17 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk82t18tmo58u"]
+[gd_scene load_steps=5 format=3 uid="uid://doqxb55jrx43m"]
 
-[ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_3xtgl"]
+[ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_7bco5"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2t4jr"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1b00h"]
 
-[sub_resource type="Sky" id="Sky_s1vb6"]
-sky_material = SubResource("ProceduralSkyMaterial_2t4jr")
+[sub_resource type="Sky" id="Sky_1xclh"]
+sky_material = SubResource("ProceduralSkyMaterial_1b00h")
 
-[sub_resource type="Environment" id="Environment_lua45"]
+[sub_resource type="Environment" id="Environment_u658d"]
 background_mode = 2
 background_color = Color(0.458824, 0.458824, 0.458824, 1)
 background_energy_multiplier = 0.1
-sky = SubResource("Sky_s1vb6")
+sky = SubResource("Sky_1xclh")
 ambient_light_color = Color(0.886275, 0, 0, 1)
 ambient_light_sky_contribution = 0.5
 tonemap_mode = 2
@@ -30,9 +30,9 @@ shadow_enabled = true
 shadow_bias = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lua45")
+environment = SubResource("Environment_u658d")
 
-[node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("1_3xtgl")]
+[node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("1_7bco5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1041, 3.44005, 0.796161)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
