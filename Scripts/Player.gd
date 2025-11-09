@@ -410,7 +410,6 @@ func _physics_process(delta):
 
 	if(Input.is_action_pressed("key_help")):
 		help_text.visible = true
-		shader_grain.visible = true
 	else:
 		help_text.visible = false
 		#shader_grain.visible = false

@@ -36,6 +36,11 @@ environment = SubResource("Environment_hujh4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1041, 3.44005, 0.796161)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0815, 0, -0.682373)
+transform = Transform3D(0.9416058, -0.3367173, 0, 0.3367173, 0.9416058, 0, 0, 0, 1, 11.0815, 8.770172, -0.682373)
+use_collision = true
+size = Vector3(56.0809, 1, 11.3647)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.06078, 0, 0)
 use_collision = true
 size = Vector3(56.0809, 1, 11.3647)
