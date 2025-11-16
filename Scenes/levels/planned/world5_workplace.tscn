@@ -21,7 +21,7 @@ volumetric_fog_density = 0.015
 volumetric_fog_albedo = Color(1, 0.611765, 0.666667, 1)
 volumetric_fog_detail_spread = 5.09824
 
-[node name="World4Blacksmith" type="Node3D"]
+[node name="World5Workplace" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.848388, -0.458453, 0.264686, 8.6873e-08, 0.499998, 0.866027, -0.529375, 0.734727, -0.424192, -12.2423, 80.9664, 0.407165)
@@ -36,6 +36,41 @@ environment = SubResource("Environment_u658d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1041, 3.44005, 0.796161)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0815, 0, -0.682373)
+transform = Transform3D(1, 0, 0, 0, 0.99924606, -0.038823817, 0, 0.038823817, 0.99924606, 11.0815, 0, -21.585234)
 use_collision = true
-size = Vector3(56.0809, 1, 11.3647)
+size = Vector3(56.0809, 1, 65.98052)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.196324, 5.188242, -12.638496)
+use_collision = true
+size = Vector3(1, 10, 22.670902)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.318184, 5.188242, -12.322639)
+use_collision = true
+size = Vector3(1, 10, 23.302616)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.234562, 5.188242, -23.49095)
+use_collision = true
+size = Vector3(1, 10, 28.580936)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 27.427082, 5.188242, -1.2024621)
+use_collision = true
+size = Vector3(1, 10, 12.683808)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.788673, 9.826626, -20.48249)
+use_collision = true
+size = Vector3(34.062157, 1, 42.8528)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9996929, -0.024781138, 0, 0.024781138, 0.9996929, 39.220146, 2.5769138, -14.656488)
+use_collision = true
+size = Vector3(1, 4.7773438, 48.928436)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.47463, 5.188242, -1.2024621)
+use_collision = true
+size = Vector3(1, 10, 12.683808)
