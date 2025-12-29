@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbmvj1manfy28"]
+[gd_scene load_steps=6 format=3 uid="uid://bbmvj1manfy28"]
 
 [ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_4yeaw"]
+[ext_resource type="PackedScene" uid="uid://bmyy4qbcwa1tt" path="res://Scenes/interactables/box_rigid.tscn" id="2_syqa8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4yeaw"]
 
@@ -67,12 +68,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67619, 2.80535, -4.503)
 use_collision = true
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="."]
-transform = Transform3D(0.992416, 0.122926, 0, -0.122926, 0.992416, 0, 0, 0, 1, 6.64752, -1.36252, 7.22008)
+transform = Transform3D(0.99578434, 0.09172756, 0, -0.09172756, 0.99578434, 0, 0, 0, 1, 6.64752, -1.134973, 7.22008)
 use_collision = true
 size = Vector3(23.295, 1, 4.43408)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.992332, -0.123601, -1.50996e-07, -0.123601, 0.992332, -8.78241e-16, 1.49838e-07, 1.86633e-08, -1, 6.64752, -4.19346, 11.4348)
+transform = Transform3D(-0.9881472, -0.09361573, -0.12166161, -0.09431635, 0.9955424, 4.447874e-09, 0.12111929, 0.011474684, -0.99257165, 6.64752, -3.293736, 12.130565)
 use_collision = true
 size = Vector3(23.295, 1, 4.43408)
 
@@ -87,3 +88,21 @@ transform = Transform3D(-0.848388, -0.458453, 0.264686, 8.6873e-08, 0.499998, 0.
 light_energy = 0.5
 shadow_enabled = true
 shadow_bias = 0.5
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(0.9914312, 0, 0.13063002, 0, 1, 0, -0.13063002, 0, 0.9914312, 5.919033, 0.9790063, -11.125534)
+use_collision = true
+size = Vector3(27.75122, 1, 10)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(0.96996546, 0, 0.24324259, 0, 1, 0, -0.24324259, 0, 0.96996546, 9.286225, 1.88412, -7.7951994)
+use_collision = true
+size = Vector3(9.5829, 4.76825, 3.1656497)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="."]
+transform = Transform3D(0.96996546, 0, 0.24324259, 0, 1, 0, -0.24324259, 0, 0.96996546, 21.228632, 1.88412, -11.620061)
+use_collision = true
+size = Vector3(9.5829, 4.76825, 3.1656497)
+
+[node name="BoxRigid" parent="." instance=ExtResource("2_syqa8")]
+transform = Transform3D(0.95953053, 0, 0.28160468, 0, 1, 0, -0.28160468, 0, 0.95953053, 13.000235, 5.6579185, -8.17012)

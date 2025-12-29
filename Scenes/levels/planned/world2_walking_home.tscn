@@ -33,14 +33,44 @@ shadow_bias = 0.5
 environment = SubResource("Environment_hujh4")
 
 [node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("1_wyes4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1041, 3.44005, 0.796161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.546036, 12.858373, -3.5260189)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.9416058, -0.3367173, 0, 0.3367173, 0.9416058, 0, 0, 0, 1, 11.0815, 8.770172, -0.682373)
+transform = Transform3D(0.9761258, -0.21720634, 0, 0.21720634, 0.9761258, 0, 0, 0, 1, 11.0815, 5.035096, -1.0951042)
+use_collision = true
+size = Vector3(56.0809, 1, 12.190163)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.06078, 0, -1.1862707)
+use_collision = true
+size = Vector3(56.0809, 1, 12.365944)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.9993131, 0.029687025, -0.022179786, -0.011515966, -0.32010913, -0.9473107, -0.035222776, 0.94691557, -0.31954736, 10.4853115, 10.509196, 6.1965637)
+use_collision = true
+size = Vector3(56.0809, 1, 24.970325)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.99736965, -0.07245506, 0.002001956, 0.07028051, 0.95994145, -0.27124414, 0.017731242, 0.27067128, 0.9625087, 20.621677, 13.382264, -19.416948)
+use_collision = true
+size = Vector3(39.89592, 1, 27.23362)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.9844787, -0.1755042, 0, 0.1755042, 0.9844787, 0, 0, 0, 1, 9.532364, 5.401629, -16.31105)
+use_collision = true
+size = Vector3(85.26974, 9.926758, 19.03196)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.04238, 11.176014, -0.6856489)
 use_collision = true
 size = Vector3(56.0809, 1, 11.3647)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.06078, 0, 0)
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.85049, 0.52599126, 0, -0.52599126, 0.85049, -40.06078, 3.7698998, 9.558658)
 use_collision = true
-size = Vector3(56.0809, 1, 11.3647)
+size = Vector3(56.0809, 1, 15.430042)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.99994516, 0.005508065, -0.008906145, 0, 0.85049, 0.52599126, 0.010471781, 0.5259624, -0.85044336, -40.06078, 3.7698998, -14.251546)
+use_collision = true
+size = Vector3(56.0809, 1, 15.430042)
