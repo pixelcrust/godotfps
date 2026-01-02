@@ -24,36 +24,37 @@ volumetric_fog_detail_spread = 5.09824
 
 [node name="World1Baustelle" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="boden_container" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.533563, -1.0083978, 0)
 use_collision = true
 size = Vector3(10, 1, 10)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.794345, 0.884706, 3.34651)
+[node name="CSGBox3D2" type="CSGBox3D" parent="boden_container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.794345, 0.8295522, 3.34651)
 use_collision = true
 size = Vector3(8, 0.680957, 0.1)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="CSGBox3D3" type="CSGBox3D" parent="boden_container"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48785, 1.28839, 1.04617)
 use_collision = true
 size = Vector3(5.02429, 3.57678, 4.49951)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+[node name="CSGBox3D4" type="CSGBox3D" parent="boden_container"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79329, 1.28394, -3.37608)
 use_collision = true
 size = Vector3(2.33447, 3.56787, 4.34204)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+[node name="CSGBox3D5" type="CSGBox3D" parent="boden_container"]
 transform = Transform3D(0.867305, 0.497776, 0, -0.497776, 0.867305, 0, 0, 0, 1, -1.76548, 0.183334, -2.74809)
 use_collision = true
 size = Vector3(4.40259, 3.1416, 3.08606)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+[node name="CSGBox3D6" type="CSGBox3D" parent="boden_container"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94102, 1.0708, -2.74492)
 use_collision = true
 size = Vector3(2.11572, 3.1416, 3.07971)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+[node name="CSGBox3D7" type="CSGBox3D" parent="boden_container"]
 transform = Transform3D(0.622651, 0, -0.782499, 0, 1, 0, 0.782499, 0, 0.622651, 1.41189, 3.14833, -1.20786)
 use_collision = true
 size = Vector3(1, 0.1, 5.17525)
@@ -64,18 +65,8 @@ use_collision = true
 size = Vector3(12.7554, 4.76825, 0.851807)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67619, 2.80535, -4.503)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.323811, -4.1946497, 5.497)
 use_collision = true
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="."]
-transform = Transform3D(0.99578434, 0.09172756, 0, -0.09172756, 0.99578434, 0, 0, 0, 1, 6.64752, -1.134973, 7.22008)
-use_collision = true
-size = Vector3(23.295, 1, 4.43408)
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.9881472, -0.09361573, -0.12166161, -0.09431635, 0.9955424, 4.447874e-09, 0.12111929, 0.011474684, -0.99257165, 6.64752, -3.293736, 12.130565)
-use_collision = true
-size = Vector3(23.295, 1, 4.43408)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_4yeaw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74498, -4.78023, 11.1655)
@@ -100,9 +91,31 @@ use_collision = true
 size = Vector3(9.5829, 4.76825, 3.1656497)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="."]
-transform = Transform3D(0.96996546, 0, 0.24324259, 0, 1, 0, -0.24324259, 0, 0.96996546, 21.228632, 1.88412, -11.620061)
+transform = Transform3D(0.96996546, 0, 0.24324259, 0, 1, 0, -0.24324259, 0, 0.96996546, 26.89571, 1.88412, -13.04122)
 use_collision = true
-size = Vector3(9.5829, 4.76825, 3.1656497)
+size = Vector3(21.268013, 4.76825, 3.1656497)
 
 [node name="BoxRigid" parent="." instance=ExtResource("2_syqa8")]
 transform = Transform3D(0.95953053, 0, 0.28160468, 0, 1, 0, -0.28160468, 0, 0.95953053, 13.000235, 5.6579185, -8.17012)
+
+[node name="streets" type="Node3D" parent="."]
+transform = Transform3D(0.99578434, 0.09172756, 0, -0.09172756, 0.99578434, 0, 0, 0, 1, 6.64752, -2.2131906, 7.22008)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="streets"]
+use_collision = true
+size = Vector3(23.295, 1, 4.43408)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="streets"]
+transform = Transform3D(-0.97532976, -0.1845397, -0.12114868, -0.18455902, 0.98275805, -0.011159714, 0.12111929, 0.011474684, -0.99257165, 0.19801807, -2.1496615, 4.910485)
+use_collision = true
+size = Vector3(23.295, 1, 4.43408)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="streets"]
+transform = Transform3D(0.6554113, -0.16322099, 0.7374244, 0.16846451, 0.98336434, 0.0679285, -0.73624444, 0.07970875, 0.67200494, 15.774153, 5.1304164, -11.362694)
+use_collision = true
+size = Vector3(23.295, 1, 4.43408)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="."]
+transform = Transform3D(0.99636185, -0.08522568, 0, 0.08522568, 0.99636185, 0, 0, 0, 1, 6.64752, -0.29610634, 3.8622565)
+use_collision = true
+size = Vector3(23.295, 1, 4.43408)
