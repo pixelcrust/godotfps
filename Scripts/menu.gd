@@ -9,10 +9,15 @@ var file = null
 
 @onready var SOUND_CLICK = preload("res://Sounds/button_on_off_064.wav")
 
+
+var audio_player = preload("res://music_player.tscn")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-	
+	#pass # Replace with function body.
+	var new_audio_player = audio_player.instantiate()
+	get_tree().root.get_children()[0].add_child(new_audio_player)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

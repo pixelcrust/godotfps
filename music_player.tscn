@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://1vqr27d3t35c"]
+[gd_scene format=3 uid="uid://1vqr27d3t35c"]
 
 [ext_resource type="Script" uid="uid://dr62yrs0cw0ga" path="res://music_player.gd" id="1_fvyft"]
+[ext_resource type="AudioStream" uid="uid://cqxpl3h484feu" path="res://Sounds/music/krainer-waltz-traditional-austrian-and-slovenian-music-3358.mp3" id="2_rjark"]
+[ext_resource type="AudioStream" uid="uid://bjmxkoo05k008" path="res://Sounds/music/herr-mannelig-epic-and-mystic-nordic-music-swedish-ballad-1949.mp3" id="3_u8ia0"]
+[ext_resource type="AudioStream" uid="uid://dmk522dmp6fpy" path="res://Sounds/music/bella-ciao-rise-of-legend-dance-house-version-background-vlog-music-186473.mp3" id="4_a2ugy"]
 
-[node name="MusicPlayer" type="Node2D"]
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_nqnhx"]
+stream_count = 3
+stream_0 = ExtResource("2_rjark")
+stream_1 = ExtResource("3_u8ia0")
+stream_2 = ExtResource("4_a2ugy")
+
+[node name="MusicPlayer" type="Node2D" unique_id=1358460510]
 script = ExtResource("1_fvyft")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=570832211]
+stream = SubResource("AudioStreamPlaylist_nqnhx")
+autoplay = true
