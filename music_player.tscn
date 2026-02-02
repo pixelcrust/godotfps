@@ -1,19 +1,25 @@
 [gd_scene format=3 uid="uid://1vqr27d3t35c"]
 
 [ext_resource type="Script" uid="uid://dr62yrs0cw0ga" path="res://music_player.gd" id="1_fvyft"]
-[ext_resource type="AudioStream" uid="uid://cqxpl3h484feu" path="res://Sounds/music/krainer-waltz-traditional-austrian-and-slovenian-music-3358.mp3" id="2_rjark"]
+[ext_resource type="AudioStream" uid="uid://bu2j24yset00p" path="res://Sounds/music/bella-ciao-italian-partisan-folk-song-from-the-late-19th-century-3052.mp3" id="2_rjark"]
+[ext_resource type="AudioStream" uid="uid://drbwcjkf7em8b" path="res://Sounds/music/casatschok-ukrainian-cossack-dance-4920.mp3" id="3_a2ugy"]
 [ext_resource type="AudioStream" uid="uid://bjmxkoo05k008" path="res://Sounds/music/herr-mannelig-epic-and-mystic-nordic-music-swedish-ballad-1949.mp3" id="3_u8ia0"]
-[ext_resource type="AudioStream" uid="uid://dmk522dmp6fpy" path="res://Sounds/music/bella-ciao-rise-of-legend-dance-house-version-background-vlog-music-186473.mp3" id="4_a2ugy"]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_nqnhx"]
-stream_count = 3
-stream_0 = ExtResource("2_rjark")
-stream_1 = ExtResource("3_u8ia0")
-stream_2 = ExtResource("4_a2ugy")
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_nqnhx"]
+clip_count = 3
+clip_0/name = &"Bella Ciao Italian Partisan Folk Song From The Late 19 Th Century 3052"
+clip_0/stream = ExtResource("2_rjark")
+clip_0/auto_advance = 0
+clip_1/name = &"Casatschok Ukrainian Cossack Dance 4920"
+clip_1/stream = ExtResource("3_a2ugy")
+clip_1/auto_advance = 0
+clip_2/name = &"Herr Mannelig Epic And Mystic Nordic Music Swedish Ballad 1949"
+clip_2/stream = ExtResource("3_u8ia0")
+clip_2/auto_advance = 0
 
 [node name="MusicPlayer" type="Node2D" unique_id=1358460510]
 script = ExtResource("1_fvyft")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=570832211]
-stream = SubResource("AudioStreamPlaylist_nqnhx")
+stream = SubResource("AudioStreamInteractive_nqnhx")
 autoplay = true
