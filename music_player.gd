@@ -9,8 +9,8 @@ var volume : int = 50
 
 
 func _process(delta: float) -> void:
-	#if(Input.is_action_just_pressed("key_music_next")):
-		#audio_stream_player.
+	if(Input.is_action_just_pressed("key_music_next")):
+		audio_stream_player.
 		
 	if(Input.is_action_just_pressed("key_music_pause")):
 		if(audio_stream_player.stream_paused == true):

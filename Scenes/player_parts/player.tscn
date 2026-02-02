@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dces3e55616v5"]
+[gd_scene format=3 uid="uid://dces3e55616v5"]
 
 [ext_resource type="Script" uid="uid://w2n85caanycv" path="res://Scripts/Player.gd" id="1_sfosh"]
 [ext_resource type="Texture2D" uid="uid://dqh17dgu3uht4" path="res://crosshair.png" id="2_v71jm"]
@@ -157,37 +157,37 @@ _data = {
 &"duck": SubResource("Animation_vdel4")
 }
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=897663180]
 collision_layer = 4
 script = ExtResource("1_sfosh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=269666991]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.17, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_gmr4f")
 
-[node name="bone_body" type="PhysicalBone3D" parent="MeshInstance3D" groups=["group_player", "has_blood", "has_hp"]]
+[node name="bone_body" type="PhysicalBone3D" parent="MeshInstance3D" unique_id=1807151210 groups=["group_player", "has_blood", "has_hp"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_wfych")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/bone_body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/bone_body" unique_id=770720710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20769, 0.0131297)
 shape = SubResource("CapsuleShape3D_uqqjj")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1538542422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.127, 0)
 shape = SubResource("CapsuleShape3D_42ps6")
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=1669397976]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58754, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1888094256]
 cull_mask = 1048573
 size = 0.5
 far = 100.0
 
-[node name="flashlight" type="SpotLight3D" parent="Head/Camera3D"]
+[node name="flashlight" type="SpotLight3D" parent="Head/Camera3D" unique_id=512150366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25633)
 light_color = Color(1, 1, 0.545098, 1)
 light_energy = 16.0
@@ -195,19 +195,19 @@ shadow_enabled = true
 spot_range = 10.0
 spot_angle = 30.0
 
-[node name="basiclight" type="SpotLight3D" parent="Head/Camera3D"]
+[node name="basiclight" type="SpotLight3D" parent="Head/Camera3D" unique_id=354474004]
 light_energy = 0.5
 spot_range = 2.0
 spot_angle = 70.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=412641004]
 layer = 2
 
-[node name="Crosshair" type="Sprite2D" parent="Head/Camera3D/CanvasLayer"]
+[node name="Crosshair" type="Sprite2D" parent="Head/Camera3D/CanvasLayer" unique_id=516622588]
 position = Vector2(576, 325)
 texture = ExtResource("2_v71jm")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera3D/CanvasLayer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera3D/CanvasLayer" unique_id=1415758501]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -215,69 +215,69 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="Head/Camera3D/CanvasLayer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Head/Camera3D/CanvasLayer/SubViewportContainer" unique_id=1896142494]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport" unique_id=603734048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58874, 0)
 cull_mask = 2
 
-[node name="CanvasGroup" type="CanvasGroup" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+[node name="CanvasGroup" type="CanvasGroup" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=2118722748]
 script = ExtResource("4_jnmva")
 
-[node name="display_ammo" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+[node name="display_ammo" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=1961532751]
 offset_left = 32.0
 offset_top = 553.0
 offset_right = 148.0
 offset_bottom = 603.0
 placeholder_text = "L/S"
 
-[node name="display_hp" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+[node name="display_hp" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=1183784779]
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 120.0
 offset_bottom = 80.0
 placeholder_text = "HP"
 
-[node name="display_interaction" type="ProgressBar" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+[node name="display_interaction" type="ProgressBar" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=484530611]
 offset_left = 490.0
 offset_top = 400.0
 offset_right = 690.0
 offset_bottom = 440.0
 show_percentage = false
 
-[node name="display_inventory" type="Container" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+[node name="display_inventory" type="Container" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=1310944676]
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="inv_previous" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+[node name="inv_previous" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory" unique_id=1829262134]
 modulate = Color(1, 1, 1, 0.392157)
 texture_filter = 1
 position = Vector2(450, 600)
 scale = Vector2(0.8, 0.8)
 
-[node name="inv_selected" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+[node name="inv_selected" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory" unique_id=1558802624]
 texture_filter = 1
 position = Vector2(550, 580)
 
-[node name="inv_next" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+[node name="inv_next" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory" unique_id=1765513428]
 modulate = Color(1, 1, 1, 0.392157)
 texture_filter = 1
 position = Vector2(650, 600)
 scale = Vector2(0.8, 0.8)
 
-[node name="inv_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+[node name="inv_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory" unique_id=526249708]
 one_shot = true
 
-[node name="inventory_marker" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory"]
+[node name="inventory_marker" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_inventory" unique_id=120252983]
 visible = false
 texture = ExtResource("4_jacde")
 
-[node name="help_text" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+[node name="help_text" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=1133968628]
 visible = false
 offset_left = 32.0
 offset_top = 256.0
@@ -296,7 +296,7 @@ G - drop weapon
 J - flashlight
 RMB - aim down sight"
 
-[node name="display_conversation" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+[node name="display_conversation" type="TextEdit" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=1108765199]
 visible = false
 offset_left = 200.0
 offset_top = 350.0
@@ -307,69 +307,67 @@ theme_override_constants/line_spacing = 5
 placeholder_text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 wrap_mode = 1
 
-[node name="conversation_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_conversation"]
+[node name="conversation_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_conversation" unique_id=1776231179]
 wait_time = 2.0
 
-[node name="icon_heart" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+[node name="icon_heart" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=814854353]
 texture_filter = 1
 position = Vector2(100, 55)
 texture = ExtResource("6_r3w6o")
 
-[node name="icon_ammo" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+[node name="icon_ammo" type="Sprite2D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=806706847]
 texture_filter = 1
 position = Vector2(100, 570)
 texture = ExtResource("7_6se36")
 
-[node name="gui_wiggle_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup"]
+[node name="gui_wiggle_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=1867896037]
 wait_time = 5.0
 one_shot = true
 
-[node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D"]
+[node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D" unique_id=1772290878]
 transform = Transform3D(5.73208e-15, 1.31134e-07, 3, 3, -1.31134e-07, -1.92556e-20, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0.514353)
 visible = false
 collision_mask = 8
 collide_with_areas = true
 
-[node name="raycast_aim" type="RayCast3D" parent="Head/Camera3D"]
+[node name="raycast_aim" type="RayCast3D" parent="Head/Camera3D" unique_id=983899715]
 transform = Transform3D(1.91069e-16, 4.37114e-06, 0.1, 0.1, -4.37114e-06, 0, 4.37114e-09, 100, -4.37114e-09, 0, 0, 0)
 collision_mask = 3
 
-[node name="shader_underwater" parent="Head/Camera3D" instance=ExtResource("5_04qer")]
+[node name="shader_underwater" parent="Head/Camera3D" unique_id=1741787020 instance=ExtResource("5_04qer")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.5)
 visible = false
 
-[node name="raycast_head_place" type="RayCast3D" parent="Head/Camera3D"]
+[node name="raycast_head_place" type="RayCast3D" parent="Head/Camera3D" unique_id=1600366073]
 transform = Transform3D(9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 1.05879e-22, 2.18557e-08, 0.5, -2.18557e-08, 0, 0, 0)
 visible = false
 collision_mask = 256
 hit_from_inside = true
 collide_with_areas = true
 
-[node name="bullet_spawn" type="Node3D" parent="Head/Camera3D"]
+[node name="bullet_spawn" type="Node3D" parent="Head/Camera3D" unique_id=375845328]
 transform = Transform3D(1, 0, 0, 2.11758e-22, 1, 0, 0, 1.481e-28, 1, 0, 0, 0)
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Head/Camera3D"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Head/Camera3D" unique_id=1952300475]
 update_mode = 1
 size = Vector3(100, 100, 100)
 
-[node name="bone_head" type="PhysicalBone3D" parent="Head" groups=["group_player", "has_blood", "has_hp"]]
+[node name="bone_head" type="PhysicalBone3D" parent="Head" unique_id=579305981 groups=["group_player", "has_blood", "has_hp"]]
 visible = false
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_wfych")
 damage_multiplier = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/bone_head"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/bone_head" unique_id=565215013]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0157435)
 visible = false
 shape = SubResource("SphereShape3D_3bbqp")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_j2af8")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1848093713]
+libraries/ = SubResource("AnimationLibrary_j2af8")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=378639104]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.52839, 0)
 
 [connection signal="bodypart_hit" from="MeshInstance3D/bone_body" to="." method="_on_bone_body_bodypart_hit"]
