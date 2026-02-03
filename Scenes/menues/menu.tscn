@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://csvtuuyysg1v4"]
+[gd_scene format=3 uid="uid://csvtuuyysg1v4"]
 
 [ext_resource type="Script" uid="uid://csqbw7o56mi4q" path="res://Scripts/menu.gd" id="1_xalge"]
 [ext_resource type="FontFile" uid="uid://usboj2qfimhe" path="res://fonts/OperationNapalm-nRBWO.ttf" id="3_0hmya"]
@@ -8,10 +8,10 @@
 font = ExtResource("3_0hmya")
 font_size = 96
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=775725920]
 script = ExtResource("1_xalge")
 
-[node name="button_new_game" type="Button" parent="."]
+[node name="button_new_game" type="Button" parent="." unique_id=900009194]
 offset_left = 505.0
 offset_top = 272.0
 offset_right = 598.0
@@ -21,7 +21,7 @@ size_flags_horizontal = 4
 text = "New Game"
 flat = true
 
-[node name="button_continue" type="Button" parent="."]
+[node name="button_continue" type="Button" parent="." unique_id=2058120742]
 offset_left = 509.0
 offset_top = 343.0
 offset_right = 602.0
@@ -32,7 +32,7 @@ text = "Continue
 "
 flat = true
 
-[node name="button_options" type="Button" parent="."]
+[node name="button_options" type="Button" parent="." unique_id=1351352979]
 offset_left = 508.0
 offset_top = 408.0
 offset_right = 601.0
@@ -43,7 +43,7 @@ text = "Options
 "
 flat = true
 
-[node name="button_exit" type="Button" parent="."]
+[node name="button_exit" type="Button" parent="." unique_id=2060897934]
 offset_left = 506.0
 offset_top = 474.0
 offset_right = 599.0
@@ -53,14 +53,14 @@ size_flags_horizontal = 4
 text = "Exit"
 flat = true
 
-[node name="Foto" type="Sprite2D" parent="."]
+[node name="Foto" type="Sprite2D" parent="." unique_id=1848876148]
 z_index = -2
 position = Vector2(1006, 566)
 texture = ExtResource("3_jaa3t")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2132449972]
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=373573653]
 z_index = -1
 z_as_relative = false
 offset_left = -20.0
@@ -72,7 +72,7 @@ scale = Vector2(12.5355, 6.56)
 mouse_filter = 2
 color = Color(0.564706, 0.564706, 0.564706, 0.854902)
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=905602309]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

@@ -6,11 +6,13 @@
 
 [node name="LevelChange" type="Node3D" unique_id=1416941732]
 script = ExtResource("1_dcso3")
-transit_to = null
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1062050708]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2079461406]
 shape = SubResource("BoxShape3D_vll0a")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]

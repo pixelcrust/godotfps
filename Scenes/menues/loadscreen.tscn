@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm4ovyfoc3s6o"]
+[gd_scene format=3 uid="uid://bm4ovyfoc3s6o"]
 
-[ext_resource type="Script" uid="uid://pjm60ibwuhqi" path="res://node_2d.gd" id="1_xujf2"]
+[ext_resource type="Script" uid="uid://pjm60ibwuhqi" path="res://Scripts/loadingscreen.gd" id="1_xujf2"]
 
-[node name="loadscreen" type="Node2D"]
+[node name="loadscreen" type="Node2D" unique_id=1432300668]
 script = ExtResource("1_xujf2")
 
-[node name="TextureProgressBar" type="ProgressBar" parent="."]
+[node name="TextureProgressBar" type="ProgressBar" parent="." unique_id=771884331]
 offset_left = 440.0
 offset_top = 291.0
 offset_right = 736.0

@@ -1,15 +1,20 @@
 extends Node2D
 @onready var texture_progress_bar: ProgressBar = $TextureProgressBar
 
-var whats_next_scene = 1
 var next_scene = null
 var next_scene_object = null
 var progress = []
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	match whats_next_scene:
-		1: 
-			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"#"res://Scenes/levels/world_test2.tscn"#"res://Scenes/levels/world_demo_august.tscn"#
+	match Global.next_level:
+		"Home": 
+			next_scene = "res://Scenes/levels/planned/world3_home.tscn"
+		"Workplace":
+			next_scene = "res://Scenes/levels/planned/world5_workplace.tscn"
+		"Bahnhof":
+			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"
+		"WalkingHome":
+			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
 		_:
 			pass
 	ResourceLoader.load_threaded_request(next_scene) # Replace with function body.
