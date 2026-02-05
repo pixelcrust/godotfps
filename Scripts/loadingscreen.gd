@@ -6,6 +6,7 @@ var next_scene_object = null
 var progress = []
 
 func _ready() -> void:
+	print(Global.next_level)
 	match Global.next_level:
 		"Home": 
 			next_scene = "res://Scenes/levels/planned/world3_home.tscn"
@@ -16,7 +17,7 @@ func _ready() -> void:
 		"WalkingHome":
 			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
 		_:
-			pass
+			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"
 	ResourceLoader.load_threaded_request(next_scene) # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

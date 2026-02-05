@@ -157,7 +157,7 @@ _data = {
 &"duck": SubResource("Animation_vdel4")
 }
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=897663180]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=897663180 groups=["player_root"]]
 collision_layer = 4
 script = ExtResource("1_sfosh")
 

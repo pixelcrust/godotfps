@@ -4,18 +4,70 @@
 [ext_resource type="AudioStream" uid="uid://bu2j24yset00p" path="res://Sounds/music/bella-ciao-italian-partisan-folk-song-from-the-late-19th-century-3052.mp3" id="2_rjark"]
 [ext_resource type="AudioStream" uid="uid://drbwcjkf7em8b" path="res://Sounds/music/casatschok-ukrainian-cossack-dance-4920.mp3" id="3_a2ugy"]
 [ext_resource type="AudioStream" uid="uid://bjmxkoo05k008" path="res://Sounds/music/herr-mannelig-epic-and-mystic-nordic-music-swedish-ballad-1949.mp3" id="3_u8ia0"]
+[ext_resource type="AudioStream" uid="uid://ucq5ujjdxs08" path="res://Sounds/music/o-christmas-tree-o-tannenbaum-piano-christmas-carol-1792.mp3" id="4_ugdlo"]
+[ext_resource type="AudioStream" uid="uid://cpin5towutkke" path="res://Sounds/music/old-country-joy-loop-201614.mp3" id="5_b3pcy"]
+[ext_resource type="AudioStream" uid="uid://bho2o4i6jgvh2" path="res://Sounds/music/ruck-zuck-volksmusik-eigenkomposition-112932.mp3" id="6_0jgpm"]
+[ext_resource type="AudioStream" uid="uid://cmyyhho4nk2ly" path="res://Sounds/music/silent-night-stille-nacht-heilige-nacht-piano-carol-1791.mp3" id="7_hvfjo"]
+[ext_resource type="AudioStream" uid="uid://c04jjlatcb7x8" path="res://Sounds/music/the-wild-rover-traditional-irish-folk-music-7434.mp3" id="8_y7jev"]
+[ext_resource type="AudioStream" uid="uid://ckl87ole26qxh" path="res://Sounds/music/zither-polka-alpenmusik-music-from-the-alps-1394.mp3" id="9_5oa1o"]
+[ext_resource type="AudioStream" uid="uid://ilg3h4y4cfcl" path="res://Sounds/music/am-stram-gram-punk-instrumental-201260.mp3" id="11_whcyh"]
+[ext_resource type="AudioStream" uid="uid://dmu5jk6fs0qb" path="res://Sounds/music/banjo-in-love-201564.mp3" id="12_jaoyq"]
+[ext_resource type="AudioStream" uid="uid://dmk522dmp6fpy" path="res://Sounds/music/bella-ciao-rise-of-legend-dance-house-version-background-vlog-music-186473.mp3" id="13_15d85"]
+[ext_resource type="AudioStream" uid="uid://dd5hyel8ch6qy" path="res://Sounds/music/country-fun-131833.mp3" id="14_5kp84"]
+[ext_resource type="AudioStream" uid="uid://3oevuhg8opgh" path="res://Sounds/music/die-gedanken-sind-frei-thoughts-are-free-piano-german-folk-song-173029.mp3" id="15_lt5s6"]
+[ext_resource type="AudioStream" uid="uid://cqxpl3h484feu" path="res://Sounds/music/krainer-waltz-traditional-austrian-and-slovenian-music-3358.mp3" id="16_d8j6f"]
+[ext_resource type="AudioStream" uid="uid://c1nshps1kqxk0" path="res://Sounds/music/la-menteuse-garage-punk-instrumental-201261.mp3" id="17_lj740"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_nqnhx"]
-clip_count = 3
-clip_0/name = &"Bella Ciao Italian Partisan Folk Song From The Late 19 Th Century 3052"
-clip_0/stream = ExtResource("2_rjark")
+clip_count = 16
+clip_0/name = &"Herr Mannelig Epic And Mystic Nordic Music Swedish Ballad 1949"
+clip_0/stream = ExtResource("3_u8ia0")
 clip_0/auto_advance = 0
-clip_1/name = &"Casatschok Ukrainian Cossack Dance 4920"
-clip_1/stream = ExtResource("3_a2ugy")
+clip_1/name = &"Bella Ciao Italian Partisan Folk Song From The Late 19 Th Century 3052"
+clip_1/stream = ExtResource("2_rjark")
 clip_1/auto_advance = 0
-clip_2/name = &"Herr Mannelig Epic And Mystic Nordic Music Swedish Ballad 1949"
-clip_2/stream = ExtResource("3_u8ia0")
+clip_2/name = &"Casatschok Ukrainian Cossack Dance 4920"
+clip_2/stream = ExtResource("3_a2ugy")
 clip_2/auto_advance = 0
+clip_3/name = &"Am Stram Gram Punk Instrumental 201260"
+clip_3/stream = ExtResource("11_whcyh")
+clip_3/auto_advance = 0
+clip_4/name = &"Banjo In Love 201564"
+clip_4/stream = ExtResource("12_jaoyq")
+clip_4/auto_advance = 0
+clip_5/name = &"Bella Ciao Rise Of Legend Dance House Version Background Vlog Music 186473"
+clip_5/stream = ExtResource("13_15d85")
+clip_5/auto_advance = 0
+clip_6/name = &"Country Fun 131833"
+clip_6/stream = ExtResource("14_5kp84")
+clip_6/auto_advance = 0
+clip_7/name = &"Die Gedanken Sind Frei Thoughts Are Free Piano German Folk Song 173029"
+clip_7/stream = ExtResource("15_lt5s6")
+clip_7/auto_advance = 0
+clip_8/name = &"Krainer Waltz Traditional Austrian And Slovenian Music 3358"
+clip_8/stream = ExtResource("16_d8j6f")
+clip_8/auto_advance = 0
+clip_9/name = &"La Menteuse Garage Punk Instrumental 201261"
+clip_9/stream = ExtResource("17_lj740")
+clip_9/auto_advance = 0
+clip_10/name = &"O Christmas Tree O Tannenbaum Piano Christmas Carol 1792"
+clip_10/stream = ExtResource("4_ugdlo")
+clip_10/auto_advance = 0
+clip_11/name = &"Old Country Joy Loop 201614"
+clip_11/stream = ExtResource("5_b3pcy")
+clip_11/auto_advance = 0
+clip_12/name = &"Ruck Zuck Volksmusik Eigenkomposition 112932"
+clip_12/stream = ExtResource("6_0jgpm")
+clip_12/auto_advance = 0
+clip_13/name = &"Silent Night Stille Nacht Heilige Nacht Piano Carol 1791"
+clip_13/stream = ExtResource("7_hvfjo")
+clip_13/auto_advance = 0
+clip_14/name = &"The Wild Rover Traditional Irish Folk Music 7434"
+clip_14/stream = ExtResource("8_y7jev")
+clip_14/auto_advance = 0
+clip_15/name = &"Zither Polka Alpenmusik Music From The Alps 1394"
+clip_15/stream = ExtResource("9_5oa1o")
+clip_15/auto_advance = 0
 
 [node name="MusicPlayer" type="Node2D" unique_id=1358460510]
 script = ExtResource("1_fvyft")
