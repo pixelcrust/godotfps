@@ -8,16 +8,16 @@ var progress = []
 func _ready() -> void:
 	print(Global.next_level)
 	match Global.next_level:
-		"Home": 
+		"0": 
 			next_scene = "res://Scenes/levels/planned/world3_home.tscn"
-		"Workplace":
+		"1":
 			next_scene = "res://Scenes/levels/planned/world5_workplace.tscn"
-		"Bahnhof":
+		"2":
 			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"
-		"WalkingHome":
+		"3":
 			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
 		_:
-			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"
+			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
 	ResourceLoader.load_threaded_request(next_scene) # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
