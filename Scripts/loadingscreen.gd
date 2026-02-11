@@ -17,7 +17,7 @@ func _ready() -> void:
 		"3":
 			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
 		_:
-			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
+			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"
 	ResourceLoader.load_threaded_request(next_scene) # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

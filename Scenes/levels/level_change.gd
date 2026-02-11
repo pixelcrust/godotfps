@@ -2,6 +2,7 @@ extends Node3D
 
 enum levels {Home,Workplace,Bahnhof,WalkingHome}
 @export var transit_to : levels
+@export var use_spawn_nr : int = 0
 
 func _on_area_3d_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.is_in_group("player_root"):

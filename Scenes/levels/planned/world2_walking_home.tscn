@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsf0ouhqr45to"]
 
-[ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_wyes4"]
+[ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="2_iwg2u"]
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="2_xssoj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xssoj"]
@@ -32,9 +32,6 @@ shadow_bias = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=263002875]
 environment = SubResource("Environment_hujh4")
-
-[node name="CharacterBody3D" parent="." unique_id=1309160736 groups=["player"] instance=ExtResource("1_wyes4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.600876, 12.858373, -3.5260189)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1169088760]
 transform = Transform3D(0.9761258, -0.21720634, 0, 0.21720634, 0.9761258, 0, 0, 0, 1, 11.0815, 5.035096, -1.0951042)
@@ -77,5 +74,9 @@ use_collision = true
 size = Vector3(56.0809, 1, 15.430042)
 
 [node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("2_xssoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 6.43013, 92.74352, 12.268215, 1.168541)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 6.43013, 91.974915, 12.268215, 1.168541)
 transit_to = 2
+use_spawn_nr = 1
+
+[node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_iwg2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.59243, 14.466528, -0.41444063)
