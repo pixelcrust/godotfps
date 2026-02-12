@@ -79,4 +79,4 @@ transit_to = 2
 use_spawn_nr = 1
 
 [node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_iwg2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.59243, 14.466528, -0.41444063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.59243, 16.471682, -0.41444063)

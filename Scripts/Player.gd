@@ -152,10 +152,10 @@ func _ready():
 	#adda gun to inventory
 	
 	#set respawn variables
-	Global.player_health = hp
-	Global.player_inventory = inventory
-	Global.player_position = position
-	Global.player_rotation = rotation
+	#Global.player_health = hp
+	#Global.player_inventory = inventory
+	#Global.player_position = position
+	#Global.player_rotation = rotation
 	inventory.append({
 		"item_id": 0, #pistol
 		"loaded": 7,
