@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="2_sj1hf"]
 [ext_resource type="PackedScene" uid="uid://bmyy4qbcwa1tt" path="res://Scenes/interactables/box_rigid.tscn" id="2_syqa8"]
+[ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="3_sj1hf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4yeaw"]
 
@@ -65,7 +66,7 @@ use_collision = true
 size = Vector3(12.7554, 4.76825, 0.851807)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1797726337]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.323811, -4.1946497, 5.497)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8952055, 2.5687711, -4.51597)
 use_collision = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=926572815]
@@ -118,4 +119,22 @@ use_collision = true
 size = Vector3(23.295, 1, 4.43408)
 
 [node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_sj1hf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.781436, -3.8496287, 13.117434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5820198, -0.29203486, 13.117434)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="." unique_id=1767215516]
+transform = Transform3D(-0.3163942, 0, 0.94862777, 0, 1, 0, -0.94862777, 0, -0.3163942, 5.919033, 0.9790063, -27.761759)
+use_collision = true
+size = Vector3(27.75122, 1, 10)
+
+[node name="player_spawn2" parent="." unique_id=1117758822 instance=ExtResource("2_sj1hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8785653, 4.672928, -37.890778)
+spawn_nr = 1
+
+[node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("3_sj1hf")]
+transform = Transform3D(5.537247, 0, 0.33882, 0, 1, 0, -1.9940773, 0, 0.9408512, 2.124545, 2.4094162, -39.857613)
+transit_to = 3
+
+[node name="LevelChange2" parent="." unique_id=2086237095 instance=ExtResource("3_sj1hf")]
+transform = Transform3D(0.9875624, 0, 0.46297216, 0, 1, 0, -0.15722738, 0, 2.907979, -3.3351383, -4.1930923, 13.57091)
+transit_to = 2
+use_spawn_nr = 1

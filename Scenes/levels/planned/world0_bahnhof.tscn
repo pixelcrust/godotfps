@@ -106,7 +106,7 @@ size = Vector3(1.5379045, 1.0842665, 2.9452796)
 
 [node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("2_7hwv3")]
 transform = Transform3D(6.7971926, 0, 0, 0, 1, 0, 0, 0, 1, -61.46515, 7.5801477, -56.351864)
-transit_to = 3
+transit_to = 4
 
 [node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_of4fc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.117778, 2.79879, 0.75165474)

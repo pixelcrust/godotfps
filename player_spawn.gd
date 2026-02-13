@@ -7,6 +7,7 @@ extends Node3D
 func _ready() -> void:
 	if spawn_nr == Global.next_level_spawn_nr:
 		var new_player = player.instantiate()
+		new_player.global_position = global_position
 		get_tree().root.get_children()[0].add_child(new_player)
 		
 		

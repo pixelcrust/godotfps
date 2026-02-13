@@ -4,3 +4,5 @@
 
 [node name="player_spawn" type="Node3D" unique_id=1128441450]
 script = ExtResource("1_yi2gj")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1889091507]

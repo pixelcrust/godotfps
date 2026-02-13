@@ -1,6 +1,6 @@
 extends Node3D
 
-enum levels {Home,Workplace,Bahnhof,WalkingHome}
+enum levels {Home,Workplace,Bahnhof,WalkingHome,Baustelle}
 @export var transit_to : levels
 @export var use_spawn_nr : int = 0
 

@@ -365,7 +365,6 @@ func _physics_process(delta):
 	#turn on flashlight without it in hand
 	if Input.is_action_just_pressed("key_use_flashlight"):
 		for n in inventory:
-			print(n)
 			if(n.item_id == 4): #should only be able if  in invenotry
 				audio_stream_player_3d.stream = sound_flashlight_click
 				audio_stream_player_3d.play(0.0)
@@ -453,7 +452,6 @@ func _physics_process(delta):
 		if outline_meshes.is_empty() == false:
 			set_outline_off()
 			
-	print(str(inventory_timer.time_left))
 	#swap weapon
 	if Input.is_action_just_pressed("key_next_weapon"):
 		#show gui for inventory
@@ -602,7 +600,7 @@ func equip_weapon():
 	#equip weapon
 	if(inventory_selector<inventory.size()):
 		equipped_id = inventory[inventory_selector].item_id
-		print("item_id: "+str(inventory.front().item_id))
+		#print("item_id: "+str(inventory.front().item_id))
 	elif inventory.is_empty() == false:
 		
 		inventory_selector = 0
