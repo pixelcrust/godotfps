@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://g048brg5lbvs"]
+
+[node name="PauseMenu" type="Node2D" unique_id=1755720402]
+
+[node name="main" type="Control" parent="." unique_id=977644389]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="button_continue" type="Button" parent="main" unique_id=616763483]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 179.0
+offset_right = 348.0
+offset_bottom = 226.0
+text = "Continue"
+
+[node name="button_exit" type="Button" parent="main" unique_id=285906379]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 299.0
+offset_right = 349.0
+offset_bottom = 346.0
+text = "Exit
+"
+
+[node name="button_options" type="Button" parent="main" unique_id=74001648]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 241.0
+offset_right = 348.0
+offset_bottom = 282.0
+text = "Options"
+
+[node name="Label" type="Label" parent="main" unique_id=245462141]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 55.0
+offset_right = 368.0
+offset_bottom = 111.0
+scale = Vector2(5.4594827, 5.8197074)
+text = "Pause"
+
+[node name="options" type="Control" parent="." unique_id=2107705071]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="button_apply" type="Button" parent="options" unique_id=228878604]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 395.0
+offset_right = 622.0
+offset_bottom = 431.0
+text = "Apply
+"
+
+[node name="button_back" type="Button" parent="options" unique_id=199240564]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 394.0
+offset_right = 128.0
+offset_bottom = 423.0
+text = "Back"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=459140497]
+offset_right = 660.0
+offset_bottom = 465.0
+color = Color(1, 0.47058824, 0.11764706, 0.09803922)

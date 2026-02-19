@@ -75,3 +75,14 @@ script = ExtResource("1_fvyft")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=570832211]
 stream = SubResource("AudioStreamInteractive_nqnhx")
 autoplay = true
+
+[node name="Control" type="Control" parent="." unique_id=1539060968]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=387349451]
+layout_mode = 0
+offset_right = 158.0
+offset_bottom = 35.0
