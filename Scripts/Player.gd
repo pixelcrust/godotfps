@@ -37,6 +37,7 @@ var gravity = 9.8
 @onready var bullet_spawn = $Head/Camera3D/bullet_spawn
 
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
+@onready var pause_menu: Node2D = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/PauseMenu
 
 
 
@@ -360,7 +361,8 @@ func _physics_process(delta):
 			canvas_layer.visible = true
 			
 	if Input.is_action_just_pressed("key_escape"):
-		_conversation_timeout()
+		if Global.paused == false:
+			_conversation_timeout()
 		
 	#turn on flashlight without it in hand
 	if Input.is_action_just_pressed("key_use_flashlight"):
@@ -440,7 +442,17 @@ func _physics_process(delta):
 	else:
 		is_interacting = 0
 		display_interaction.visible = false
-
+	#pause
+	
+	if Input.is_action_just_pressed("key_pause"):
+		
+		if display_conversation.visible == false:
+			if Global.paused == true:
+				Global.paused = false
+			else:
+				Global.paused = true
+			pause_game()
+			
 	#outline
 	if raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider() != null:
@@ -566,6 +578,16 @@ func _push_away_rigid_bodies():
 			var imp_position = c.get_position() - c.get_collider().global_position
 			imp_position.y = 0
 			c.get_collider().apply_impulse(impulse, imp_position)
+
+func pause_game():
+	if Global.paused == true:
+		pause_menu.visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().paused = true
+	else:
+		pause_menu.visible = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		get_tree().paused = false
 
 func die():
 	if animation_player.is_playing():

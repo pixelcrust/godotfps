@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8t3e1hbyggdb" path="res://shader_underwater.tscn" id="5_04qer"]
 [ext_resource type="Texture2D" uid="uid://s8xdfalmmcfd" path="res://Sprites/heart_icon.png" id="6_r3w6o"]
 [ext_resource type="Texture2D" uid="uid://dqjibcsf605dr" path="res://Sprites/pistol_bullet_icon.png" id="7_6se36"]
+[ext_resource type="PackedScene" uid="uid://g048brg5lbvs" path="res://Scenes/menues/pause_menu.tscn" id="8_n01o1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gmr4f"]
 
@@ -323,6 +324,9 @@ texture = ExtResource("7_6se36")
 [node name="gui_wiggle_timer" type="Timer" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup" unique_id=1867896037]
 wait_time = 5.0
 one_shot = true
+
+[node name="PauseMenu" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=1755720402 instance=ExtResource("8_n01o1")]
+visible = false
 
 [node name="raycast_interaction" type="RayCast3D" parent="Head/Camera3D" unique_id=1772290878]
 transform = Transform3D(5.73208e-15, 1.31134e-07, 3, 3, -1.31134e-07, -1.92556e-20, 1.31134e-07, 3, -1.31134e-07, 0, 0, 0.514353)

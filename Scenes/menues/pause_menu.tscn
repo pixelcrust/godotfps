@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://g048brg5lbvs"]
 
 [node name="PauseMenu" type="Node2D" unique_id=1755720402]
+process_mode = 3
 
 [node name="main" type="Control" parent="." unique_id=977644389]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 213.0
+offset_top = 61.0
+offset_right = 253.0
+offset_bottom = 101.0
 
 [node name="button_continue" type="Button" parent="main" unique_id=616763483]
 layout_mode = 0
@@ -45,8 +48,10 @@ text = "Pause"
 [node name="options" type="Control" parent="." unique_id=2107705071]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 168.0
+offset_top = 158.0
+offset_right = 208.0
+offset_bottom = 198.0
 
 [node name="button_apply" type="Button" parent="options" unique_id=228878604]
 layout_mode = 0
@@ -66,6 +71,6 @@ offset_bottom = 423.0
 text = "Back"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=459140497]
-offset_right = 660.0
-offset_bottom = 465.0
+offset_right = 1150.0
+offset_bottom = 649.0
 color = Color(1, 0.47058824, 0.11764706, 0.09803922)
