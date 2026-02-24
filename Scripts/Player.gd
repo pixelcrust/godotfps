@@ -583,7 +583,7 @@ func pause_game():
 	if Global.paused == true:
 		pause_menu.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().paused = true
+		#get_tree().paused = true
 	else:
 		pause_menu.visible = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

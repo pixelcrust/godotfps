@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://g048brg5lbvs"]
 
+[ext_resource type="Script" uid="uid://b44ktu7ync3ma" path="res://Scenes/menues/pause_menu.gd" id="1_1uysu"]
+
 [node name="PauseMenu" type="Node2D" unique_id=1755720402]
 process_mode = 3
+script = ExtResource("1_1uysu")
 
 [node name="main" type="Control" parent="." unique_id=977644389]
 layout_mode = 3
@@ -74,3 +77,5 @@ text = "Back"
 offset_right = 1150.0
 offset_bottom = 649.0
 color = Color(1, 0.47058824, 0.11764706, 0.09803922)
+
+[connection signal="pressed" from="main/button_continue" to="." method="_on_button_continue_pressed"]
