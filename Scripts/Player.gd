@@ -268,7 +268,7 @@ func _update_camera(delta):
 func _physics_process(delta):
 	#restart scene
 	if(Input.is_action_just_pressed("restart")):
-		get_tree(). reload_current_scene()
+		get_tree().reload_current_scene()
 		
 	#start from checkpoint
 	if(Input.is_action_just_pressed("key_restart_check_point")):

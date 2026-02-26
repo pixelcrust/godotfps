@@ -11,11 +11,14 @@ extends Node3D
 const SOUND_USE = preload("res://Sounds/paper handled 1.wav")
 
 func _ready():
-	player = get_tree().get_nodes_in_group("player")[0]
+	player = get_tree().get_nodes_in_group("player_root")[0]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#await get_tree().create_timer(.2).timeout
+	#player = get_tree().get_nodes_in_group("group_player")[0]
 	pass
+	
 func get_interaction_time():
 	return interaction_time
 

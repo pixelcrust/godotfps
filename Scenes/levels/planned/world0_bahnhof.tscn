@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="2_7hwv3"]
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="2_of4fc"]
+[ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/interactables/note.tscn" id="3_of4fc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -114,3 +115,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.117778, 2.79879, 0.7516547
 [node name="player_spawn2" parent="." unique_id=1149107858 instance=ExtResource("2_of4fc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.405132, 7.5866456, -52.71118)
 spawn_nr = 1
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="." unique_id=1295041778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5818199, 1.514747, -5.208408)
+use_collision = true
+size = Vector3(4.707071, 2.21576, 2.3126738)
+
+[node name="note" parent="." unique_id=70538025 instance=ExtResource("3_of4fc")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.0248728, 1.2756664, -4.050241)
+title = "Schienenersatzverkehr"
+text = "No bus possible"
+cooldown_time = 7
