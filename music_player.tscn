@@ -70,6 +70,7 @@ clip_15/stream = ExtResource("9_5oa1o")
 clip_15/auto_advance = 0
 
 [node name="MusicPlayer" type="Node2D" unique_id=1358460510]
+process_mode = 3
 script = ExtResource("1_fvyft")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=570832211]

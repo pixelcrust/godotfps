@@ -37,7 +37,7 @@ var gravity = 9.8
 @onready var bullet_spawn = $Head/Camera3D/bullet_spawn
 
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
-@onready var pause_menu: Node2D = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/PauseMenu
+
 
 
 
@@ -109,7 +109,7 @@ var inventory_before = null
 @onready var display_conversation_text = ""
 @onready var conversation_timer = $Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D/CanvasGroup/display_conversation/conversation_timer
 
-
+var pause_menu = preload("res://Scenes/menues/pause_menu.tscn")
 #preload equippment? move somewhere
 @onready var asset_gun = preload("res://Scenes/player_parts/gun.tscn")
 @onready var asset_shotgun = preload("res://Scenes/player_parts/shotgun.tscn")
@@ -243,6 +243,8 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	equip_weapon()
 
+	var new_pause_menu = pause_menu.instantiate()
+	get_tree().root.get_children()[0].add_child(new_pause_menu)
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -442,17 +444,7 @@ func _physics_process(delta):
 	else:
 		is_interacting = 0
 		display_interaction.visible = false
-	#pause
-	
-	if Input.is_action_just_pressed("key_pause"):
-		
-		if display_conversation.visible == false:
-			if Global.paused == true:
-				Global.paused = false
-			else:
-				Global.paused = true
-			pause_game()
-			
+
 	#outline
 	if raycast_interaction.is_colliding():
 		if raycast_interaction.get_collider() != null:
@@ -579,15 +571,6 @@ func _push_away_rigid_bodies():
 			imp_position.y = 0
 			c.get_collider().apply_impulse(impulse, imp_position)
 
-func pause_game():
-	if Global.paused == true:
-		pause_menu.visible = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		#get_tree().paused = true
-	else:
-		pause_menu.visible = false
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		get_tree().paused = false
 
 func die():
 	if animation_player.is_playing():
@@ -613,6 +596,7 @@ func _headbob(time) -> Vector3:
 
 func start_conversation(wait_time):
 	print(str(wait_time))
+	Global.in_conversation = true
 	conversation_timer.start()
 	conversation_timer.connect("timeout",_conversation_timeout)
 	conversation_timer.wait_time = wait_time
@@ -839,6 +823,7 @@ func _on_inv_timer_timeout() -> void:
 	display_inventory.visible = false
 	
 func _conversation_timeout():
+	Global.in_conversation = false
 	display_conversation.visible = false
 	
 func set_outline_on(object):

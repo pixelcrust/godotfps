@@ -4,6 +4,7 @@
 
 [node name="PauseMenu" type="Node2D" unique_id=1755720402]
 process_mode = 3
+visible = false
 script = ExtResource("1_1uysu")
 
 [node name="main" type="Control" parent="." unique_id=977644389]
@@ -13,6 +14,7 @@ offset_left = 213.0
 offset_top = 61.0
 offset_right = 253.0
 offset_bottom = 101.0
+mouse_filter = 2
 
 [node name="button_continue" type="Button" parent="main" unique_id=616763483]
 layout_mode = 0
@@ -21,6 +23,7 @@ offset_top = 179.0
 offset_right = 348.0
 offset_bottom = 226.0
 text = "Continue"
+flat = true
 
 [node name="button_exit" type="Button" parent="main" unique_id=285906379]
 layout_mode = 0
@@ -30,6 +33,7 @@ offset_right = 349.0
 offset_bottom = 346.0
 text = "Exit
 "
+flat = true
 
 [node name="button_options" type="Button" parent="main" unique_id=74001648]
 layout_mode = 0
@@ -38,6 +42,7 @@ offset_top = 241.0
 offset_right = 348.0
 offset_bottom = 282.0
 text = "Options"
+flat = true
 
 [node name="Label" type="Label" parent="main" unique_id=245462141]
 layout_mode = 0
@@ -55,6 +60,7 @@ offset_left = 168.0
 offset_top = 158.0
 offset_right = 208.0
 offset_bottom = 198.0
+mouse_filter = 2
 
 [node name="button_apply" type="Button" parent="options" unique_id=228878604]
 layout_mode = 0
@@ -64,6 +70,7 @@ offset_right = 622.0
 offset_bottom = 431.0
 text = "Apply
 "
+flat = true
 
 [node name="button_back" type="Button" parent="options" unique_id=199240564]
 layout_mode = 0
@@ -72,10 +79,16 @@ offset_top = 394.0
 offset_right = 128.0
 offset_bottom = 423.0
 text = "Back"
+flat = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=459140497]
 offset_right = 1150.0
 offset_bottom = 649.0
+mouse_filter = 2
 color = Color(1, 0.47058824, 0.11764706, 0.09803922)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=281366098]
+
 [connection signal="pressed" from="main/button_continue" to="." method="_on_button_continue_pressed"]
+[connection signal="pressed" from="main/button_exit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="main/button_options" to="." method="_on_button_options_pressed"]
