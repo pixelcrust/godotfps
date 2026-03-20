@@ -15,8 +15,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#await get_tree().create_timer(.2).timeout
-	#player = get_tree().get_nodes_in_group("group_player")[0]
 	pass
 	
 func get_interaction_time():

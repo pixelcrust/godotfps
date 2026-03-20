@@ -4,7 +4,7 @@ extends Node2D
 @onready var SOUND_CLICK = preload("res://Sounds/button_on_off_064.wav")
 
 func _physics_process(delta):
-	print("im not paused")
+	#print("im not paused")
 	#if Input.is_action_just_pressed("key_pause"):
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		#get_tree().paused = false
