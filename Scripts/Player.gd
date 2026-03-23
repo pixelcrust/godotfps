@@ -79,7 +79,7 @@ var gravity = 9.8
 #0.. gun
 #1.. shotgun
 
-@onready var inventory = []
+@onready var inventory = Global.inventory
 @onready var inventory_selector = 0
 @onready var inventory_space = 10
 
@@ -138,7 +138,7 @@ const sound_land_hurt = preload("res://Sounds/Bone Cracking 18.wav")
 const SOUND_ITEM_PICKUP = preload("res://Sounds/velcro 1.wav")
 
 @onready var hp_start = 150
-@onready var hp = hp_start
+@onready var hp = Global.player_health
 @onready var flashlight = 0 #0.. off
 @onready var flashlight_range = 200
 @onready var state_before = 0
@@ -153,20 +153,21 @@ func _ready():
 	#adda gun to inventory
 	
 	#set respawn variables
-	#Global.player_health = hp
-	#Global.player_inventory = inventory
-	#Global.player_position = position
-	#Global.player_rotation = rotation
+	Global.player_health = hp
+	Global.player_inventory = inventory
+	Global.player_position = position
+	Global.player_rotation = rotation
+	Global.player_camera_rotation = camera.rotation
+	
+
+	"""
 	inventory.append({
 		"item_id": 0, #pistol
 		"loaded": 7,
 		"max_loaded": 7, # See above assignment.
 		"spare_ammo": 100,
 		"icon": preload("res://Sprites/icons/icon_pistol_2.png")
-	})
-	
-
-	"""
+	})	
 	inventory.append({
 		"item_id": 0, #pistol
 		"loaded": 7,
@@ -579,10 +580,15 @@ func die():
 		animation_player.play("die")
 	await get_tree().create_timer(3).timeout
 	animation_player.play("RESET")
-	position = Global.player_position
+	
+	#new player
+	#var new_player = $".".instantiate()
+	#get_tree().root.get_children()[0].add_child(new_player)
+
+	"""position = Global.player_position
 	hp = Global.player_health
 	rotation = Global.player_rotation
-	camera.rotation = Global.player_camera_rotation
+	camera.rotation = Global.player_camera_rotation"""
 
 	#get_tree().reload_current_scene()
 	#queue_free()

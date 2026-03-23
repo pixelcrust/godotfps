@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqlro6hhkahua"]
+[gd_scene format=3 uid="uid://bqlro6hhkahua"]
 
 [ext_resource type="Script" uid="uid://h5yvbduxpcke" path="res://Scripts/grenade_dropped.gd" id="1_70j3j"]
 [ext_resource type="PackedScene" uid="uid://ndkw41r64lu4" path="res://blender import/model_pipebomb.tscn" id="3_vdbl5"]
@@ -12,24 +12,24 @@ radius = 0.0775856
 height = 0.527924
 radius = 0.108674
 
-[node name="grenade_dropped" type="Node3D"]
+[node name="grenade_dropped" type="Node3D" unique_id=1576089984]
 script = ExtResource("1_70j3j")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=664541729]
 collision_layer = 128
 mass = 0.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=747469121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.187316, 0)
 shape = SubResource("CylinderShape3D_i1s8h")
 
-[node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
+[node name="Area3D" type="Area3D" parent="RigidBody3D" unique_id=381271639 groups=["interactable"]]
 collision_layer = 10
 script = ExtResource("4_02pqg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D" unique_id=647077702]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19533, 0)
 shape = SubResource("CylinderShape3D_o1wbd")
 
-[node name="pipebomb" parent="RigidBody3D" instance=ExtResource("3_vdbl5")]
+[node name="pipebomb" parent="RigidBody3D" unique_id=1223881476 instance=ExtResource("3_vdbl5")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 2.98023e-08, 0)

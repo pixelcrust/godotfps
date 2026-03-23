@@ -22,7 +22,7 @@ const max_loaded = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = get_tree().get_nodes_in_group("player")[0]
+	player = get_tree().get_nodes_in_group("player_root")[0]
 	shotgun.mesh1.set_layer_mask_value(1,true)
 	shotgun.mesh1.set_layer_mask_value(2,false)
 	shotgun.mesh2.set_layer_mask_value(1,true)

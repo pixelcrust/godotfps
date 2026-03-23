@@ -9,5 +9,9 @@ func _on_area_3d_body_shape_entered(body_rid: RID, body: Node3D, body_shape_inde
 		print(str(transit_to))
 		Global.next_level = str(transit_to)
 		Global.next_level_spawn_nr=use_spawn_nr
+		
+		#set player variables for next level
+		Global.inventory = body.inventory
+		Global.player_health = body.hp
 		body.queue_free()
 		get_tree().change_scene_to_file("res://Scenes/menues/loadscreen.tscn")

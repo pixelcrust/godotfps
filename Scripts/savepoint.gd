@@ -10,7 +10,7 @@ var file = null
 var json = JSON.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = get_tree().get_nodes_in_group("player")[0]
+	player = get_tree().get_nodes_in_group("player_root")[0]
 	#file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
 	#file.close()
 

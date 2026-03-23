@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlst0rgesxcjk"]
+[gd_scene format=3 uid="uid://dlst0rgesxcjk"]
 
 [ext_resource type="Script" uid="uid://b1kay8rwp60em" path="res://Scripts/shotgun_dropped.gd" id="1_77pfj"]
 [ext_resource type="PackedScene" uid="uid://hy588alos3mj" path="res://blender import/model_shotgun.tscn" id="2_tycnl"]
@@ -10,25 +10,25 @@ size = Vector3(4.51149, 0.761155, 0.492007)
 [sub_resource type="BoxShape3D" id="BoxShape3D_p7d2t"]
 size = Vector3(5.03164, 1.30436, 0.772461)
 
-[node name="shotgun_dropped" type="Node3D"]
+[node name="shotgun_dropped" type="Node3D" unique_id=903752189]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_77pfj")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1902609867]
 collision_layer = 128
 mass = 0.5
 
-[node name="shotgun" parent="RigidBody3D" instance=ExtResource("2_tycnl")]
+[node name="shotgun" parent="RigidBody3D" unique_id=1147238892 instance=ExtResource("2_tycnl")]
 transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 0.33839, 0.115378, -0.0361976)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1998739146]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.422817, 0.0514371, 0.00196371)
 shape = SubResource("BoxShape3D_dt5af")
 
-[node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
+[node name="Area3D" type="Area3D" parent="RigidBody3D" unique_id=1609210292 groups=["interactable"]]
 collision_layer = 10
 script = ExtResource("4_nem6x")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D" unique_id=209610422]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.469873, 0.0343712, 0.00952148)
 shape = SubResource("BoxShape3D_p7d2t")

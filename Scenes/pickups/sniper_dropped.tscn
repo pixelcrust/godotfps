@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://8rghxxu8rxow"]
+[gd_scene format=4 uid="uid://8rghxxu8rxow"]
 
 [ext_resource type="Script" uid="uid://c7ht83q35erbf" path="res://Scripts/sniper_dropped.gd" id="1_eyl1h"]
 [ext_resource type="ArrayMesh" uid="uid://cnyge50dpdd3d" path="res://Models/Item/SniperRifle_1.obj" id="2_5rq2b"]
@@ -41,15 +41,15 @@ size = Vector3(7.5174, 1.71729, 0.309418)
 [sub_resource type="BoxShape3D" id="BoxShape3D_p7d2t"]
 size = Vector3(7.64948, 2.09528, 1)
 
-[node name="sniper_dropped" type="Node3D"]
+[node name="sniper_dropped" type="Node3D" unique_id=824570066]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_eyl1h")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=956409725]
 collision_layer = 128
 mass = 0.5
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=835230540]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 0, 0)
 visible = false
 mesh = ExtResource("2_5rq2b")
@@ -60,21 +60,21 @@ surface_material_override/2 = SubResource("StandardMaterial3D_y0k4k")
 surface_material_override/3 = SubResource("StandardMaterial3D_r5wdd")
 surface_material_override/4 = SubResource("StandardMaterial3D_mjrbx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/MeshInstance3D" unique_id=1129036309]
 visible = false
 mesh = SubResource("ArrayMesh_240hm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=836142756]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0189337, -0.0480957, 0.0201263)
 shape = SubResource("BoxShape3D_dt5af")
 
-[node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
+[node name="Area3D" type="Area3D" parent="RigidBody3D" unique_id=140638548 groups=["interactable"]]
 collision_layer = 8
 script = ExtResource("3_itfqa")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D" unique_id=864072067]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0124655, -0.0132147, 0)
 shape = SubResource("BoxShape3D_p7d2t")
 
-[node name="sniper_rifle" parent="RigidBody3D" instance=ExtResource("3_a2s6w")]
+[node name="sniper_rifle" parent="RigidBody3D" unique_id=2126238046 instance=ExtResource("3_a2s6w")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -0.0149121, -0.0403867, -0.0431139)
