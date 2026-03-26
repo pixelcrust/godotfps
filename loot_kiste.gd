@@ -25,6 +25,8 @@ func _ready() -> void:
 			drop = preload("res://Scenes/pickups/ammo_pistol.tscn")
 		98:
 			drop = preload("res://Scenes/pickups/ammo_shotgun.tscn")
+		97:
+			drop = preload("res://Scenes/pickups/ammo_sniper.tscn")
 		_:
 			drop = preload("res://Scenes/pickups/grenade_dropped.tscn")
 

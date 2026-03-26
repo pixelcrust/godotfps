@@ -12,7 +12,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = get_tree().get_nodes_in_group("player")[0] # Replace with function body.
+	player = get_tree().get_nodes_in_group("player_root")[0] # Replace with function body.
 	#create tiled ladder
 	mesh_instance_3d.queue_free()
 	

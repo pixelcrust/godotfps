@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dms1akyc4a36y"]
+[gd_scene format=4 uid="uid://dms1akyc4a36y"]
 
 [ext_resource type="ArrayMesh" uid="uid://cxooft7r2m5ar" path="res://Models/Item/FirstAidKit_Hard.obj" id="1_40n4i"]
 [ext_resource type="Script" uid="uid://djp4gqhjd77ed" path="res://Scripts/medikit.gd" id="1_877f1"]
@@ -37,13 +37,13 @@ size = Vector3(1.79987, 1.29618, 0.64373)
 [sub_resource type="BoxShape3D" id="BoxShape3D_n5vck"]
 size = Vector3(2.06836, 1.40942, 0.670776)
 
-[node name="Medikit" type="Node3D"]
+[node name="Medikit" type="Node3D" unique_id=2057730188]
 transform = Transform3D(0.3, 0, 0, 0, 3.57746e-09, 0.3, 0, -0.3, 3.57746e-09, 0, 0, 0)
 script = ExtResource("1_877f1")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1375927398]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=579504260]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 2.66454e-16, 0, -2.66454e-16, 0.3, 0, 0, 0)
 mesh = ExtResource("1_40n4i")
 skeleton = NodePath("../..")
@@ -52,21 +52,21 @@ surface_material_override/1 = SubResource("StandardMaterial3D_3x0yb")
 surface_material_override/2 = SubResource("StandardMaterial3D_j6cbx")
 surface_material_override/3 = SubResource("StandardMaterial3D_ppmid")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/MeshInstance3D" unique_id=1281295861]
 visible = false
 mesh = SubResource("ArrayMesh_4mysr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=413210117]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 5.32907e-16, 0, -5.32907e-16, 0.3, 0, 2.20817e-10, 0.0185173)
 shape = SubResource("BoxShape3D_b0nc4")
 
-[node name="Area3D" type="Area3D" parent="RigidBody3D" groups=["interactable"]]
+[node name="Area3D" type="Area3D" parent="RigidBody3D" unique_id=467059175 groups=["interactable"]]
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("3_wm7fk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D" unique_id=748452223]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 2.22267e-13, 0, -2.22267e-13, 0.3, 0.00761719, -0.0102905, 0.00685771)
 shape = SubResource("BoxShape3D_n5vck")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1457406939]

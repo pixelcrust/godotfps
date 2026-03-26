@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://d3mlec141cgxu"]
+[gd_scene format=4 uid="uid://d3mlec141cgxu"]
 
 [ext_resource type="Script" uid="uid://corfyd8ewu1bc" path="res://loot_kiste.gd" id="1_a0ba0"]
 [ext_resource type="Texture2D" uid="uid://b7dkswy0hk84f" path="res://textures/Box_22-256x256.png" id="2_5mryu"]
@@ -34,24 +34,24 @@ size = Vector3(1, 0.6, 0.8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bplel"]
 size = Vector3(1.1, 0.7, 0.9)
 
-[node name="loot_kiste" type="StaticBody3D"]
+[node name="loot_kiste" type="StaticBody3D" unique_id=529560427]
 script = ExtResource("1_a0ba0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1211228712]
 mesh = SubResource("BoxMesh_frhc1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1858457214]
 visible = false
 mesh = SubResource("ArrayMesh_2ad6y")
 surface_material_override/0 = ExtResource("2_mu53s")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=315347094]
 shape = SubResource("BoxShape3D_8yuw1")
 
-[node name="Area3D" type="Area3D" parent="." groups=["interactable"]]
+[node name="Area3D" type="Area3D" parent="." unique_id=860409207 groups=["interactable"]]
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("3_5db1q")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1436612271]
 shape = SubResource("BoxShape3D_bplel")
