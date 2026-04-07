@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk82t18tmo58u"]
+[gd_scene format=3 uid="uid://bk82t18tmo58u"]
 
-[ext_resource type="PackedScene" uid="uid://dces3e55616v5" path="res://Scenes/player_parts/player.tscn" id="1_3xtgl"]
+[ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="1_2t4jr"]
+[ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="2_s1vb6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2t4jr"]
 
@@ -21,21 +22,33 @@ volumetric_fog_density = 0.015
 volumetric_fog_albedo = Color(1, 0.611765, 0.666667, 1)
 volumetric_fog_detail_spread = 5.09824
 
-[node name="World4Blacksmith" type="Node3D"]
+[node name="World4Blacksmith" type="Node3D" unique_id=1349894325]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1049051477]
 transform = Transform3D(-0.848388, -0.458453, 0.264686, 8.6873e-08, 0.499998, 0.866027, -0.529375, 0.734727, -0.424192, -12.2423, 80.9664, 0.407165)
 light_energy = 0.5
 shadow_enabled = true
 shadow_bias = 0.5
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=52429473]
 environment = SubResource("Environment_lua45")
 
-[node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("1_3xtgl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1041, 3.44005, 0.796161)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0815, 0, -0.682373)
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=494306778]
+transform = Transform3D(1, 0, 0, 0, 0.9973641, 0.07255933, 0, -0.07255933, 0.9973641, 11.0815, 0.19229527, 5.258873)
 use_collision = true
-size = Vector3(56.0809, 1, 11.3647)
+size = Vector3(56.0809, 1, 23.261164)
+
+[node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("1_2t4jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.465783, -14.810258, 1.3672621, 5.0803056)
+use_spawn_nr = 1
+
+[node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_s1vb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.082958, 1.8006074, 4.1233664)
+
+[node name="player_spawn2" parent="." unique_id=1396143795 instance=ExtResource("2_s1vb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.506274, 1.4003477, 13.455315)
+spawn_nr = 1
+
+[node name="LevelChange2" parent="." unique_id=437187919 instance=ExtResource("1_2t4jr")]
+transform = Transform3D(2.859665, 0, 0, 0, 1, 0, 0, 0, 1, 3.1570764, 1.4180833, 16.20116)
+transit_to = 1

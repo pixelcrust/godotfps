@@ -18,6 +18,8 @@ func _ready() -> void:
 			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
 		"4":
 			next_scene = "res://Scenes/levels/planned/world1_baustelle.tscn"
+		"5":
+			next_scene = "res://Scenes/levels/planned/world4_blacksmith.tscn"
 		_:
 			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"
 	ResourceLoader.load_threaded_request(next_scene) # Replace with function body.

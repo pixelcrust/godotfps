@@ -80,3 +80,10 @@ use_spawn_nr = 1
 
 [node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_iwg2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.59243, 16.471682, -0.41444063)
+
+[node name="LevelChange2" parent="." unique_id=1864212014 instance=ExtResource("2_xssoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.4183655, -66.65657, 1.0519085, -1.7272253)
+
+[node name="player_spawn2" parent="." unique_id=1658985716 instance=ExtResource("2_iwg2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7908, 0.49999952, -2.2991796)
+spawn_nr = 1

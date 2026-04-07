@@ -585,10 +585,10 @@ func die():
 	#var new_player = $".".instantiate()
 	#get_tree().root.get_children()[0].add_child(new_player)
 
-	"""position = Global.player_position
+	position = Global.player_position
 	hp = Global.player_health
 	rotation = Global.player_rotation
-	camera.rotation = Global.player_camera_rotation"""
+	camera.rotation = Global.player_camera_rotation
 
 	#get_tree().reload_current_scene()
 	#queue_free()
