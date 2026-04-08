@@ -54,6 +54,7 @@ scale = Vector2(5.4594827, 5.8197074)
 text = "Pause"
 
 [node name="options" type="Control" parent="." unique_id=2107705071]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 168.0
@@ -92,3 +93,5 @@ color = Color(1, 0.47058824, 0.11764706, 0.09803922)
 [connection signal="pressed" from="main/button_continue" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="main/button_exit" to="." method="_on_button_exit_pressed"]
 [connection signal="pressed" from="main/button_options" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="options/button_apply" to="." method="_on_button_apply_pressed"]
+[connection signal="pressed" from="options/button_back" to="." method="_on_button_back_pressed"]

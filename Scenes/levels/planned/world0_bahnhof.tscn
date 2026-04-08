@@ -113,7 +113,7 @@ transform = Transform3D(6.7971926, 0, 0, 0, 1, 0, 0, 0, 1, -61.46515, 7.5801477,
 transit_to = 4
 
 [node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_of4fc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.117778, 2.79879, 0.75165474)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.976837, 1.7377874, 16.692398)
 
 [node name="player_spawn2" parent="." unique_id=1149107858 instance=ExtResource("2_of4fc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.405132, 7.5866456, -52.71118)

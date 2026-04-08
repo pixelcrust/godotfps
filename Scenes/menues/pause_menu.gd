@@ -42,8 +42,24 @@ func _on_button_exit_pressed() -> void:
 	audio_stream_player_2d.stream = SOUND_CLICK
 	audio_stream_player_2d.play(0.6)
 	await get_tree().create_timer(.2).timeout
+	visible = false
 	get_tree().change_scene_to_file("res://Scenes/menues/menu.tscn")
 
 
 func _on_button_options_pressed() -> void:
+	audio_stream_player_2d.stream = SOUND_CLICK
+	audio_stream_player_2d.play(0.6)
+	await get_tree().create_timer(.2).timeout
+	$options.visible = true
+	$main.visible = false
+
+func _on_button_apply_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_button_back_pressed() -> void:
+	audio_stream_player_2d.stream = SOUND_CLICK
+	audio_stream_player_2d.play(0.6)
+	await get_tree().create_timer(.2).timeout
+	$options.visible = false
+	$main.visible = true

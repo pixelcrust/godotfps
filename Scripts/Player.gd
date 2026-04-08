@@ -139,6 +139,7 @@ const SOUND_ITEM_PICKUP = preload("res://Sounds/velcro 1.wav")
 
 @onready var hp_start = 150
 @onready var hp = Global.player_health
+@onready var invincible = false
 @onready var flashlight = 0 #0.. off
 @onready var flashlight_range = 200
 @onready var state_before = 0
@@ -574,6 +575,7 @@ func _push_away_rigid_bodies():
 
 
 func die():
+	invincible = true
 	if animation_player.is_playing():
 		pass
 	else:
@@ -589,7 +591,7 @@ func die():
 	hp = Global.player_health
 	rotation = Global.player_rotation
 	camera.rotation = Global.player_camera_rotation
-
+	invincible = false
 	#get_tree().reload_current_scene()
 	#queue_free()
 
@@ -688,18 +690,20 @@ func equip_weapon():
 	canvas_group.ammo_choose()
 
 func _on_bone_head_bodypart_hit(dmg,time_rooted):
-	hp -= dmg
-	audio_stream_player_3d.stream = sound_hurt_1
-	audio_stream_player_3d.play(0.0)
-	if(time_rooted > 0):
-		set_rooted(time_rooted)
+	if invincible == false:
+		hp -= dmg
+		audio_stream_player_3d.stream = sound_hurt_1
+		audio_stream_player_3d.play(0.0)
+		if(time_rooted > 0):
+			set_rooted(time_rooted)
 
 func _on_bone_body_bodypart_hit(dmg,time_rooted):
-	hp -= dmg
-	audio_stream_player_3d.stream = sound_hurt_1
-	audio_stream_player_3d.play(0.0)
-	if(time_rooted > 0):
-		set_rooted(time_rooted)
+	if invincible == false:
+		hp -= dmg
+		audio_stream_player_3d.stream = sound_hurt_1
+		audio_stream_player_3d.play(0.0)
+		if(time_rooted > 0):
+			set_rooted(time_rooted)
 
 func drop_weapon():
 	equipped.queue_free()
