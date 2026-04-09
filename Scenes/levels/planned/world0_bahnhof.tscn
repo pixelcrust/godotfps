@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/pickups/knife_dropped.tscn" id="4_nnjpv"]
 [ext_resource type="PackedScene" uid="uid://dj1r66vn40rp2" path="res://Scenes/props/lava.tscn" id="5_1tmkq"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="6_m8o6e"]
+[ext_resource type="PackedScene" uid="uid://dpvx11y37ylku" path="res://Scenes/props/verzierung/ortsschild_vicino.tscn" id="7_m8o6e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -138,3 +139,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5941514, 1, 1.5971023)
 
 [node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("6_m8o6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.577883, 0.49999988, 2.2043915)
+
+[node name="ortsschild_vicino" parent="." unique_id=1534358878 instance=ExtResource("7_m8o6e")]
+transform = Transform3D(-0.09348491, 0, -0.4911828, 0, 0.5, 0, 0.4911828, 0, -0.09348491, -37.902607, 7.190443, -34.61392)

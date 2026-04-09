@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://uxwa7gwtksgu"]
 
+[ext_resource type="Texture2D" uid="uid://fp00hxl6m2qe" path="res://textures/schell8.png" id="1_od66m"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_p0fee"]
-size = Vector3(0.5, 0.7, 0.01)
+size = Vector3(0.4, 0.7, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2j8a"]
+albedo_texture = ExtResource("1_od66m")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(-0.17, 0, 0)
 
 [node name="Sammelkarte" type="Node3D" unique_id=1682501228]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1076408114]
 mesh = SubResource("BoxMesh_p0fee")
+surface_material_override/0 = SubResource("StandardMaterial3D_t2j8a")

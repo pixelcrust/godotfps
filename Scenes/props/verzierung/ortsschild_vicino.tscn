@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dpvx11y37ylku"]
+
+[ext_resource type="PackedScene" uid="uid://dqlbtep0q773k" path="res://blender import/ortsschild_vicino.glb" id="1_kxxgr"]
+
+[node name="ortsschild_vicino" unique_id=1534358878 instance=ExtResource("1_kxxgr")]
