@@ -14,6 +14,9 @@ var inventory = []
 var next_level : String = "Bahnhof"
 var next_level_spawn_nr : int = 0
 
+var config = ConfigFile.new()
+var path : String = "user://save.cfg"
+
 #options
 var paused = false
 var player_sensitivity = 0.05

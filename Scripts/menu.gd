@@ -18,6 +18,10 @@ func _ready():
 	#pass # Replace with function body.
 	var new_audio_player = audio_player.instantiate()
 	get_tree().root.get_children()[0].add_child(new_audio_player)
+	
+	Global.config.load(Global.path)
+	Global.config.set_value("OPTION","music_volume",0)
+	Global.config.save(Global.path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

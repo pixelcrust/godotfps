@@ -6,14 +6,16 @@ extends StaticBody3D
 @onready var save_data = []
 
 @onready var sound_tagesschau = preload("res://Sounds/Sigla Tagesschau - Rai Südtirol (2010-2014) (2).mp3")
-var file = null
-var json = JSON.new()
+
+
+
+#var file = null
+#var json = JSON.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player_root")[0]
 	#file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
 	#file.close()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -40,8 +42,26 @@ func save():
 	Global.player_rotation = player.rotation
 	Global.player_camera_rotation = player.camera.rotation
 	
+	
+	
+	# Load data from a file.
+	var err = Global.config.load(Global.path)
+
+	# If the file didn't load, ignore it.
+	if err != OK:
+		print("error on loading config")
+		return
+
+	# Iterate over all sections.
+	Global.config.set_value("PLAYER", "player_hp",Global.player_health)
+	Global.config.set_value("PLAYER", "player_inventory",Global.player_inventory)
+	Global.config.set_value("PLAYER", "player_position",Global.player_position)
+	Global.config.set_value("PLAYER", "player_rotation",Global.player_rotation)
+	Global.config.set_value("PLAYER", "player_camera_rotation",Global.player_camera_rotation)
+	
+	Global.config.save
 	#write variables into file
-	save_data.append({
+	"""save_data.append({
 		"time" : Time.get_date_dict_from_system,
 		"player_inventory" : Global.player_inventory,
 		"player_health" : Global.player_health,
@@ -54,12 +74,26 @@ func save():
 	var inhalt = json.stringify(save_data)
 
 	file.store_string(inhalt)
-	file.close()
+	file.close()"""
 	#print(save_data)
 
 func load_save():
-	file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
-	var inhalt = file.get_as_text()
-	inhalt = json.get_parsed_text()
-	print(inhalt)
-	file.close()
+	#file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
+	#var inhalt = file.get_as_text()
+	#inhalt = json.get_parsed_text()
+	#print(inhalt)
+	#file.close()
+	var err = Global.config.load(Global.path)
+
+	# If the file didn't load, ignore it.
+	if err != OK:
+		return
+
+	# Iterate over all sections.
+	for player in Global.config.get_sections():
+		# Fetch the data for each section.
+		Global.player_health = Global.config.get_value("PLAYER", "player_hp")
+		Global.player_inventory = Global.config.get_value("PLAYER", "player_inventory")
+		Global.player_position = Global.config.get_value("PLAYER", "player_position")
+		Global.player_rotation = Global.config.get_value("PLAYER", "player_rotation")
+		Global.player_camera_rotation = Global.config.get_value("PLAYER", "player_camera_rotation")
