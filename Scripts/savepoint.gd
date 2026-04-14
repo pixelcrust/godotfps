@@ -45,21 +45,21 @@ func save():
 	
 	
 	# Load data from a file.
-	var err = Global.config.load(Global.path)
+	Global.config.load(Global.path)
 
 	# If the file didn't load, ignore it.
-	if err != OK:
+	"""if err != OK:
 		print("error on loading config")
-		return
+		return"""
 
-	# Iterate over all sections.
+
 	Global.config.set_value("PLAYER", "player_hp",Global.player_health)
 	Global.config.set_value("PLAYER", "player_inventory",Global.player_inventory)
 	Global.config.set_value("PLAYER", "player_position",Global.player_position)
 	Global.config.set_value("PLAYER", "player_rotation",Global.player_rotation)
 	Global.config.set_value("PLAYER", "player_camera_rotation",Global.player_camera_rotation)
 	
-	Global.config.save
+	Global.config.save(Global.path)
 	#write variables into file
 	"""save_data.append({
 		"time" : Time.get_date_dict_from_system,
