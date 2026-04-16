@@ -21,6 +21,7 @@ func _ready():
 	
 	Global.config.load(Global.path)
 	Global.config.set_value("OPTION","music_volume",0)
+	button_continue.disabled = !Global.config.get_value("SAVE","save_file_exists",false)
 	Global.config.save(Global.path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,8 +45,7 @@ func _on_button_new_game_pressed():
 func _on_button_continue_pressed():
 	audio_stream_player_2d.stream = SOUND_CLICK
 	audio_stream_player_2d.play(0.06)
-	#read from file
-	file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
+	
 	#file.
 
 

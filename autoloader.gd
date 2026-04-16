@@ -26,5 +26,8 @@ var music_enabled : bool = true
 var current_track : int = 0
 var current_time_stamp : float = 0
 
+#load game
+var save_file_exists : bool = false
+
 #functional variables
 var in_conversation : bool = false

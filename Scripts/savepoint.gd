@@ -41,7 +41,7 @@ func save():
 	Global.player_position = player.position
 	Global.player_rotation = player.rotation
 	Global.player_camera_rotation = player.camera.rotation
-	
+	Global.save_file_exists = true
 	
 	
 	# Load data from a file.
@@ -58,7 +58,7 @@ func save():
 	Global.config.set_value("PLAYER", "player_position",Global.player_position)
 	Global.config.set_value("PLAYER", "player_rotation",Global.player_rotation)
 	Global.config.set_value("PLAYER", "player_camera_rotation",Global.player_camera_rotation)
-	
+	Global.config.set_value("SAVE","save_file_exists",Global.save_file_exists)
 	Global.config.save(Global.path)
 	#write variables into file
 	"""save_data.append({
