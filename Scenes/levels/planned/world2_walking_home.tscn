@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="2_iwg2u"]
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="2_xssoj"]
+[ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="3_iwg2u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xssoj"]
 
@@ -49,7 +50,7 @@ use_collision = true
 size = Vector3(56.0809, 1, 24.970325)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=487495631]
-transform = Transform3D(0.99736965, -0.07245506, 0.002001956, 0.07028051, 0.95994145, -0.27124414, 0.017731242, 0.27067128, 0.9625087, 20.621677, 13.382264, -19.416948)
+transform = Transform3D(0.99736965, -0.07245506, 0.002001956, 0.07028051, 0.95994145, -0.27124414, 0.017731242, 0.27067128, 0.9625087, 20.621677, 13.382264, -18.858421)
 use_collision = true
 size = Vector3(39.89592, 1, 27.23362)
 
@@ -87,3 +88,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.4183655, -66.65657, 1.0519085,
 [node name="player_spawn2" parent="." unique_id=1658985716 instance=ExtResource("2_iwg2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7908, 0.49999952, -2.2991796)
 spawn_nr = 1
+
+[node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("3_iwg2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29172, 11.32934, -13.233103)
+current_level = 2

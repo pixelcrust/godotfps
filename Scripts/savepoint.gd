@@ -7,7 +7,9 @@ extends StaticBody3D
 
 @onready var sound_tagesschau = preload("res://Sounds/Sigla Tagesschau - Rai Südtirol (2010-2014) (2).mp3")
 
-
+enum levels {Bahnhof,Baustelle,WalkingHome,Home,Workplace,Blacksmith,Dam}
+@export var current_level : levels
+@export var spawn_nr_for_this_save : int = 3
 
 #var file = null
 #var json = JSON.new()
@@ -38,11 +40,9 @@ func save():
 	#change global variables
 	Global.player_health = player.hp
 	Global.player_inventory = player.inventory
-	Global.player_position = player.position
-	Global.player_rotation = player.rotation
-	Global.player_camera_rotation = player.camera.rotation
 	Global.save_file_exists = true
-	
+	Global.next_level = str(current_level)
+	Global.next_level_spawn_nr = spawn_nr_for_this_save
 	
 	# Load data from a file.
 	Global.config.load(Global.path)
@@ -51,14 +51,14 @@ func save():
 	"""if err != OK:
 		print("error on loading config")
 		return"""
-
-
+	Global.config.set_value("SAVE","save_file_exists",Global.save_file_exists)
+	Global.config.set_value("SAVE","current_level",Global.next_level)
 	Global.config.set_value("PLAYER", "player_hp",Global.player_health)
 	Global.config.set_value("PLAYER", "player_inventory",Global.player_inventory)
 	Global.config.set_value("PLAYER", "player_position",Global.player_position)
 	Global.config.set_value("PLAYER", "player_rotation",Global.player_rotation)
 	Global.config.set_value("PLAYER", "player_camera_rotation",Global.player_camera_rotation)
-	Global.config.set_value("SAVE","save_file_exists",Global.save_file_exists)
+	
 	Global.config.save(Global.path)
 	#write variables into file
 	"""save_data.append({

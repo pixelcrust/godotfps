@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="2_2852d"]
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="3_2rj35"]
+[ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="3_2852d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e0pjx"]
 
@@ -73,3 +74,7 @@ spawn_nr = 1
 [node name="LevelChange2" parent="." unique_id=396636135 instance=ExtResource("2_2852d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 9.866556, -15.635841, 5.698467, 6.1447744)
 transit_to = 5
+
+[node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("3_2852d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4333992, 2.6287978, 0.33148003)
+current_level = 3

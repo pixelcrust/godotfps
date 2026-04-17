@@ -20,7 +20,6 @@ func _ready():
 	get_tree().root.get_children()[0].add_child(new_audio_player)
 	
 	Global.config.load(Global.path)
-	Global.config.set_value("OPTION","music_volume",0)
 	button_continue.disabled = !Global.config.get_value("SAVE","save_file_exists",false)
 	Global.config.save(Global.path)
 
@@ -39,13 +38,17 @@ func _on_button_new_game_pressed():
 	audio_stream_player_2d.stream = SOUND_CLICK
 	audio_stream_player_2d.play(0.06)
 	await get_tree().create_timer(.2).timeout
+	#next level should be first level
 	get_tree().change_scene_to_file("res://Scenes/menues/loadscreen.tscn")
 
 
 func _on_button_continue_pressed():
+	Global.config.load(Global.path)
+	Global.next_level = Global.config.get_value("SAVE","current_level",1)
 	audio_stream_player_2d.stream = SOUND_CLICK
 	audio_stream_player_2d.play(0.06)
-	
+	await get_tree().create_timer(.2).timeout
+	get_tree().change_scene_to_file("res://Scenes/menues/loadscreen.tscn")
 	#file.
 
 
