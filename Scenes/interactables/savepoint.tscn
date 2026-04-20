@@ -31,3 +31,8 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.293354, -0.153311, -
 shape = SubResource("BoxShape3D_yfam6")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=271665404]
+
+[node name="Timer" type="Timer" parent="." unique_id=669317066]
+wait_time = 0.1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

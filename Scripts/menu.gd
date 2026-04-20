@@ -45,6 +45,7 @@ func _on_button_new_game_pressed():
 func _on_button_continue_pressed():
 	Global.config.load(Global.path)
 	Global.next_level = Global.config.get_value("SAVE","current_level",1)
+	Global.next_level_spawn_nr = Global.config.get_value("SAVE","current_spawn",0)
 	audio_stream_player_2d.stream = SOUND_CLICK
 	audio_stream_player_2d.play(0.06)
 	await get_tree().create_timer(.2).timeout

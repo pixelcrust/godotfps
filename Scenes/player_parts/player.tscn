@@ -163,7 +163,7 @@ collision_layer = 4
 script = ExtResource("1_sfosh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=269666991]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.17, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_gmr4f")
 
@@ -177,7 +177,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20769, 0.0131297)
 shape = SubResource("CapsuleShape3D_uqqjj")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1538542422]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.127, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_42ps6")
 
 [node name="Head" type="Node3D" parent="." unique_id=1669397976]
@@ -224,7 +224,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport" unique_id=603734048]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58874, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 cull_mask = 2
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=2118722748]
@@ -355,7 +355,6 @@ update_mode = 1
 size = Vector3(100, 100, 100)
 
 [node name="bone_head" type="PhysicalBone3D" parent="Head" unique_id=579305981 groups=["group_player", "has_blood", "has_hp"]]
-visible = false
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_wfych")
@@ -363,8 +362,8 @@ damage_multiplier = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/bone_head" unique_id=565215013]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0157435)
-visible = false
 shape = SubResource("SphereShape3D_3bbqp")
+debug_color = Color(0.20613155, 0.56832546, 0.63657725, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1848093713]
 libraries/ = SubResource("AnimationLibrary_j2af8")

@@ -15,13 +15,14 @@ enum levels {Bahnhof,Baustelle,WalkingHome,Home,Workplace,Blacksmith,Dam}
 #var json = JSON.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = get_tree().get_nodes_in_group("player_root")[0]
+	pass
 	#file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
 	#file.close()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
 
 func get_interaction_time():
 	return interactiontime
@@ -53,6 +54,7 @@ func save():
 		return"""
 	Global.config.set_value("SAVE","save_file_exists",Global.save_file_exists)
 	Global.config.set_value("SAVE","current_level",Global.next_level)
+	Global.config.set_value("SAVE","current_spawn",Global.next_level_spawn_nr)
 	Global.config.set_value("PLAYER", "player_hp",Global.player_health)
 	Global.config.set_value("PLAYER", "player_inventory",Global.player_inventory)
 	Global.config.set_value("PLAYER", "player_position",Global.player_position)
@@ -97,3 +99,7 @@ func load_save():
 		Global.player_position = Global.config.get_value("PLAYER", "player_position")
 		Global.player_rotation = Global.config.get_value("PLAYER", "player_rotation")
 		Global.player_camera_rotation = Global.config.get_value("PLAYER", "player_camera_rotation")
+
+
+func _on_timer_timeout() -> void:
+	player = get_tree().get_nodes_in_group("player_root")[0]

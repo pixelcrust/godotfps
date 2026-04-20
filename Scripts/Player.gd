@@ -158,7 +158,7 @@ func _ready():
 	Global.player_inventory = inventory
 	#Global.player_position = position
 	#Global.player_rotation = rotation
-	#Global.player_camera_rotation = camera.rotation
+	#sGlobal.player_camera_rotation = camera.rotation
 	
 
 	"""

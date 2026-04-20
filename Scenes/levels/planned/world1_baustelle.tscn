@@ -143,3 +143,7 @@ use_spawn_nr = 1
 [node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("4_m6a3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.518998, -0.5258933, 4.1118927)
 current_level = 1
+
+[node name="player_spawn3" parent="." unique_id=1466072714 instance=ExtResource("2_sj1hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.016256, 0.10069656, 3.9287195)
+spawn_nr = 3
