@@ -15,6 +15,7 @@ enum levels {Bahnhof,Baustelle,WalkingHome,Home,Workplace,Blacksmith,Dam}
 #var json = JSON.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player = get_tree().get_nodes_in_group("player_root")[0]
 	pass
 	#file = FileAccess.open("user://fps-save.txt",FileAccess.READ)
 	#file.close()
@@ -99,7 +100,3 @@ func load_save():
 		Global.player_position = Global.config.get_value("PLAYER", "player_position")
 		Global.player_rotation = Global.config.get_value("PLAYER", "player_rotation")
 		Global.player_camera_rotation = Global.config.get_value("PLAYER", "player_camera_rotation")
-
-
-func _on_timer_timeout() -> void:
-	player = get_tree().get_nodes_in_group("player_root")[0]

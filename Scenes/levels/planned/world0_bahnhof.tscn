@@ -120,6 +120,10 @@ transform = Transform3D(0.64391, 0, 0.7651013, 0, 1, 0, -0.7651013, 0, 0.64391, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.405132, 7.5866456, -52.71118)
 spawn_nr = 1
 
+[node name="player_spawn3" parent="." unique_id=2106506869 instance=ExtResource("2_of4fc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7945857, 1.3900084, 0.9968504)
+spawn_nr = 3
+
 [node name="CSGBox3D15" type="CSGBox3D" parent="." unique_id=1295041778]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5818199, 1.514747, -5.208408)
 use_collision = true

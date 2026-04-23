@@ -261,10 +261,7 @@ func _update_camera(delta):
 	#mouse_rotation.x = clamp(mouse_rotation.x,deg_to_rad(-89),deg_to_rad(90))
 	
 	#mouse_rotation.y +=  rotation_input * delta*SENSITIVITY
-	print_debug("head rotation: "+str(rad_to_deg(head.rotation.y)))
 	rotate_y(rotation_input*delta*SENSITIVITY)
-	print_debug("camera rotation: "+str(rad_to_deg(camera.rotation.y)))
-	print_debug("body rotation: "+str(rad_to_deg(rotation.y)))
 	
 	#head.transform.basis = Basis.from_euler(mouse_rotation)
 	head.rotation.x = clamp(mouse_rotation.x,deg_to_rad(-89),deg_to_rad(90))
@@ -610,7 +607,6 @@ func _headbob(time) -> Vector3:
 
 
 func start_conversation(wait_time):
-	print(str(wait_time))
 	Global.in_conversation = true
 	conversation_timer.start()
 	conversation_timer.connect("timeout",_conversation_timeout)
