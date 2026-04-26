@@ -177,7 +177,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20769, 0.0131297)
 shape = SubResource("CapsuleShape3D_uqqjj")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1538542422]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.17, 0)
 shape = SubResource("CapsuleShape3D_42ps6")
 
 [node name="Head" type="Node3D" parent="." unique_id=1669397976]
@@ -224,7 +224,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport" unique_id=603734048]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.588, 0)
 cull_mask = 2
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Head/Camera3D/CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=2118722748]
