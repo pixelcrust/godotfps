@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://be2pmw2mwyeej"
+path="res://.godot/imported/Car.obj-817ae51d37b06c6536662b5dbe61d76f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Car.obj-817ae51d37b06c6536662b5dbe61d76f.mesh"]
+
+source_file="res://assets/val straniero/Car 01/Car.obj"
+dest_files=["res://.godot/imported/Car.obj-817ae51d37b06c6536662b5dbe61d76f.mesh", "res://.godot/imported/Car.obj-817ae51d37b06c6536662b5dbe61d76f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -26,6 +26,17 @@ volumetric_fog_detail_spread = 5.09824
 
 [node name="World1Baustelle" type="Node3D" unique_id=660254983]
 
+[node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_sj1hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5820198, -0.29203486, 13.117434)
+
+[node name="player_spawn2" parent="." unique_id=1117758822 instance=ExtResource("2_sj1hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8785653, 4.672928, -37.890778)
+spawn_nr = 1
+
+[node name="player_spawn3" parent="." unique_id=1466072714 instance=ExtResource("2_sj1hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.016256, 0.10069656, 3.9287195)
+spawn_nr = 3
+
 [node name="boden_container" type="CSGBox3D" parent="." unique_id=2056612053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.533563, -1.0083978, 0)
 use_collision = true
@@ -119,17 +130,10 @@ transform = Transform3D(0.99636185, -0.08522568, 0, 0.08522568, 0.99636185, 0, 0
 use_collision = true
 size = Vector3(23.295, 1, 4.43408)
 
-[node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_sj1hf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5820198, -0.29203486, 13.117434)
-
 [node name="CSGBox3D16" type="CSGBox3D" parent="." unique_id=1767215516]
 transform = Transform3D(-0.3163942, 0, 0.94862777, 0, 1, 0, -0.94862777, 0, -0.3163942, 5.919033, 0.9790063, -27.761759)
 use_collision = true
 size = Vector3(27.75122, 1, 10)
-
-[node name="player_spawn2" parent="." unique_id=1117758822 instance=ExtResource("2_sj1hf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8785653, 4.672928, -37.890778)
-spawn_nr = 1
 
 [node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("3_sj1hf")]
 transform = Transform3D(5.537247, 0, 0.33882, 0, 1, 0, -1.9940773, 0, 0.9408512, 2.124545, 2.4094162, -39.857613)
@@ -143,7 +147,3 @@ use_spawn_nr = 1
 [node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("4_m6a3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.518998, -0.5258933, 4.1118927)
 current_level = 1
-
-[node name="player_spawn3" parent="." unique_id=1466072714 instance=ExtResource("2_sj1hf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.016256, 0.10069656, 3.9287195)
-spawn_nr = 3

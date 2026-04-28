@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dpvx11y37ylku" path="res://Scenes/props/verzierung/ortsschild_vicino.tscn" id="7_m8o6e"]
 [ext_resource type="ArrayMesh" uid="uid://c3jhu1uukqu20" path="res://Models/Level/testprops/RailwayTrack_Straight.obj" id="8_cai17"]
 [ext_resource type="PackedScene" uid="uid://pri0gtr8s1qj" path="res://Scenes/props/bush.tscn" id="13_0qnff"]
+[ext_resource type="PackedScene" uid="uid://c2bn8yu51q2gt" path="res://assets/val straniero/Bus_Stop_Rural/MS_Bus_Stop_Rural.fbx" id="14_bgo3h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -151,11 +152,6 @@ spawn_nr = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7945857, 1.3900084, 0.9968504)
 spawn_nr = 3
 
-[node name="CSGBox3D15" type="CSGBox3D" parent="." unique_id=1295041778]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5818199, 1.514747, -5.208408)
-use_collision = true
-size = Vector3(4.707071, 2.21576, 2.3126738)
-
 [node name="note" parent="." unique_id=70538025 instance=ExtResource("3_of4fc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.0248728, 1.5996529, -4.050241)
 title = "Schienenersatzverkehr"
@@ -195,3 +191,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.80874, 0.84534204, -7.7599
 
 [node name="bush4" parent="." unique_id=233797290 instance=ExtResource("13_0qnff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.128974, 0.84534204, -7.7599235)
+
+[node name="MS_Bus_Stop_Rural" parent="." unique_id=315810577 instance=ExtResource("14_bgo3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2869835, 0.5, -5.3239627)
