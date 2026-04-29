@@ -25,6 +25,13 @@ volumetric_fog_detail_spread = 5.09824
 
 [node name="World2WalkingHome" type="Node3D" unique_id=53108505]
 
+[node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_iwg2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.59243, 16.471682, -0.41444063)
+
+[node name="player_spawn2" parent="." unique_id=1658985716 instance=ExtResource("2_iwg2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7908, 0.49999952, -2.2991796)
+spawn_nr = 1
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1250487609]
 transform = Transform3D(-0.848388, -0.458453, 0.264686, 8.6873e-08, 0.499998, 0.866027, -0.529375, 0.734727, -0.424192, -12.2423, 80.9664, 0.407165)
 light_energy = 0.5
@@ -79,16 +86,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 6.43013, 91.974915, 12.268215, 1
 transit_to = 2
 use_spawn_nr = 1
 
-[node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_iwg2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.59243, 16.471682, -0.41444063)
-
 [node name="LevelChange2" parent="." unique_id=1864212014 instance=ExtResource("2_xssoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.4183655, -66.65657, 1.0519085, -1.7272253)
-
-[node name="player_spawn2" parent="." unique_id=1658985716 instance=ExtResource("2_iwg2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7908, 0.49999952, -2.2991796)
-spawn_nr = 1
 
 [node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("3_iwg2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29172, 11.32934, -13.233103)
 current_level = 2
+
+[node name="player_spawn3" parent="." unique_id=607095675 instance=ExtResource("2_iwg2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.023616, 13.00136, -15.230785)
+spawn_nr = 3

@@ -11,7 +11,7 @@ extends Node3D
 const SOUND_USE = preload("res://Sounds/paper handled 1.wav")
 
 func _ready():
-	player = get_tree().get_nodes_in_group("player_root")[0]
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -30,3 +30,7 @@ func use():
 	audio_stream_player_3d.stream = SOUND_USE
 	audio_stream_player_3d.play(0.0)
 	print("used it")
+
+
+func _on_timer_timeout() -> void:
+	player = get_tree().get_nodes_in_group("player_root")[0]

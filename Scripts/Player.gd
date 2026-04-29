@@ -160,7 +160,7 @@ func _ready():
 	#Global.player_rotation = rotation
 	#sGlobal.player_camera_rotation = camera.rotation
 	
-
+	print_debug("player  created")
 	"""
 	inventory.append({
 		"item_id": 0, #pistol

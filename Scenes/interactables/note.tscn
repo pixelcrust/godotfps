@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cxhi1vghrxjws"]
+[gd_scene format=4 uid="uid://cxhi1vghrxjws"]
 
 [ext_resource type="Script" uid="uid://0wncnusetxdl" path="res://Scripts/note_collision.gd" id="1_2co5r"]
 [ext_resource type="Script" uid="uid://d0rtwxa622e8s" path="res://Scripts/note.gd" id="1_tw6hd"]
@@ -28,24 +28,31 @@ _surfaces = [{
 "vertex_data": PackedByteArray("uccOv7nHDj+5xw4/uccOP7nHDj+5xw6/uccOP7nHDj+5xw4/uccOv7nHDj+5xw6/uccOv7nHDr+5xw4/uccOP7nHDr+5xw6/uccOP7nHDr+5xw4/uccOv7nHDr+5xw6/uccOP7nHDj+5xw4/uccOv7nHDj+5xw6/uccOP7nHDj+5xw6/uccOv7nHDj+5xw4/uccOP7nHDr+5xw4/uccOv7nHDr+5xw6/uccOP7nHDr+5xw6/uccOv7nHDr+5xw4/uccOP7nHDj+5xw4/uccOv7nHDr+5xw4/uccOv7nHDj+5xw4/uccOP7nHDr+5xw4/uccOP7nHDj+5xw6/uccOv7nHDr+5xw6/uccOv7nHDj+5xw6/uccOP7nHDr+5xw6//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
 }]
 
-[node name="note" type="Node3D"]
+[node name="note" type="Node3D" unique_id=1074607629]
 script = ExtResource("1_tw6hd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=846504482]
 transform = Transform3D(0.18521, 0, 0, 0, 0.013992, 0, 0, 0, 0.358587, 0, 0, 0)
 mesh = SubResource("BoxMesh_0kmdq")
 
-[node name="Area3D" type="Area3D" parent="MeshInstance3D" groups=["interactable"]]
+[node name="Area3D" type="Area3D" parent="MeshInstance3D" unique_id=561606810 groups=["interactable"]]
 collision_layer = 8
 script = ExtResource("1_2co5r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D" unique_id=1144830017]
 transform = Transform3D(0.539928, 0, 0, 0, 14.2938, 0, 0, 0, 0.557745, 0.00127699, 0.483324, -0.00524247)
 shape = SubResource("BoxShape3D_eptbu")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1746903938]
 visible = false
 mesh = SubResource("ArrayMesh_4vx57")
 surface_material_override/0 = ExtResource("3_42s0r")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1588206582]
+
+[node name="Timer" type="Timer" parent="." unique_id=387105240]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

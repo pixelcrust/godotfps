@@ -53,6 +53,17 @@ albedo_texture = ExtResource("4_ksxay")
 [node name="World" type="Node3D" unique_id=479000817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139556, 0.0229417, -0.36441)
 
+[node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_of4fc")]
+transform = Transform3D(0.64391, 0, 0.7651013, 0, 1, 0, -0.7651013, 0, 0.64391, 14.976837, 1.9368345, 18.585707)
+
+[node name="player_spawn2" parent="." unique_id=1149107858 instance=ExtResource("2_of4fc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.405132, 7.5866456, -52.71118)
+spawn_nr = 1
+
+[node name="player_spawn3" parent="." unique_id=2106506869 instance=ExtResource("2_of4fc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7945857, 1.3900084, 0.9968504)
+spawn_nr = 3
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1124924415]
 transform = Transform3D(-0.848388, -0.458453, 0.264686, 8.6873e-08, 0.499998, 0.866027, -0.529375, 0.734727, -0.424192, -12.2423, 80.9664, 0.407165)
 light_energy = 0.5
@@ -139,18 +150,7 @@ size = Vector3(1.5379045, 1.0842665, 2.9452796)
 
 [node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("2_7hwv3")]
 transform = Transform3D(6.7971926, 0, 0, 0, 1, 0, 0, 0, 1, -61.46515, 7.5801477, -56.351864)
-transit_to = 4
-
-[node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("2_of4fc")]
-transform = Transform3D(0.64391, 0, 0.7651013, 0, 1, 0, -0.7651013, 0, 0.64391, 14.976837, 1.9368345, 18.585707)
-
-[node name="player_spawn2" parent="." unique_id=1149107858 instance=ExtResource("2_of4fc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.405132, 7.5866456, -52.71118)
-spawn_nr = 1
-
-[node name="player_spawn3" parent="." unique_id=2106506869 instance=ExtResource("2_of4fc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7945857, 1.3900084, 0.9968504)
-spawn_nr = 3
+transit_to = 1
 
 [node name="note" parent="." unique_id=70538025 instance=ExtResource("3_of4fc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.0248728, 1.5996529, -4.050241)
@@ -166,7 +166,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5941514, 1, 1.5971023)
 
 [node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("6_m8o6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.577883, 0.49999988, 2.2043915)
-current_level = 2
 
 [node name="ortsschild_vicino" parent="." unique_id=1534358878 instance=ExtResource("7_m8o6e")]
 transform = Transform3D(-0.09348491, 0, -0.4911828, 0, 0.5, 0, 0.4911828, 0, -0.09348491, -37.902607, 7.190443, -34.61392)

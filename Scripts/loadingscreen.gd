@@ -9,17 +9,17 @@ func _ready() -> void:
 	print(Global.next_level)
 	match Global.next_level:
 		"0": 
-			next_scene = "res://Scenes/levels/planned/world3_home.tscn"
-		"1":
-			next_scene = "res://Scenes/levels/planned/world5_workplace.tscn"
-		"2":
 			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"
-		"3":
-			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
-		"4":
+		"1":
 			next_scene = "res://Scenes/levels/planned/world1_baustelle.tscn"
+		"2":
+			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
+		"3":
+			next_scene = "res://Scenes/levels/planned/world3_home"
+		"4":
+			next_scene = "res://Scenes/levels/planned/world4_blacksmith"
 		"5":
-			next_scene = "res://Scenes/levels/planned/world4_blacksmith.tscn"
+			next_scene = "res://Scenes/levels/planned/world5_workplace"
 		_:
 			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"
 	ResourceLoader.load_threaded_request(next_scene) # Replace with function body.

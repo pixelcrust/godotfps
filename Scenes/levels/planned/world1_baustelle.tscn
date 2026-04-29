@@ -37,6 +37,10 @@ spawn_nr = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.016256, 0.10069656, 3.9287195)
 spawn_nr = 3
 
+[node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("4_m6a3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.518998, -0.5258933, 4.1118927)
+current_level = 1
+
 [node name="boden_container" type="CSGBox3D" parent="." unique_id=2056612053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.533563, -1.0083978, 0)
 use_collision = true
@@ -137,13 +141,8 @@ size = Vector3(27.75122, 1, 10)
 
 [node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("3_sj1hf")]
 transform = Transform3D(5.537247, 0, 0.33882, 0, 1, 0, -1.9940773, 0, 0.9408512, 2.124545, 2.4094162, -39.857613)
-transit_to = 3
+transit_to = 2
 
 [node name="LevelChange2" parent="." unique_id=2086237095 instance=ExtResource("3_sj1hf")]
 transform = Transform3D(0.9875624, 0, 0.46297216, 0, 1, 0, -0.15722738, 0, 2.907979, -3.3351383, -4.1930923, 13.57091)
-transit_to = 2
 use_spawn_nr = 1
-
-[node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("4_m6a3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.518998, -0.5258933, 4.1118927)
-current_level = 1
