@@ -19,8 +19,11 @@ func _ready():
 	var new_audio_player = audio_player.instantiate()
 	get_tree().root.get_children()[0].add_child(new_audio_player)
 	
+	#load saved options
 	Global.config.load(Global.path)
 	button_continue.disabled = !Global.config.get_value("SAVE","save_file_exists",false)
+	
+	Global.volume_music = Global.config.get_value("OPTIONS","volume_music",50)
 	Global.config.save(Global.path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

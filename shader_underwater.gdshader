@@ -5,14 +5,14 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform vec4 tint : source_color; // tint effect
 uniform float wave_speed = 3.0; // wave loop speed
 uniform float wave_freq = 10.0; // wave vertical freq
-uniform float wave_width = 1; // wave width 
+uniform float wave_width = 1; // wave width
 uniform float blur = 2.0; // Defines the blur strength. Increase for a larger blur radius.
 
 void fragment(){
 	vec2 wave_uv_offset;
 	wave_uv_offset.y = 0.0;
 	wave_uv_offset.x = cos((TIME*wave_speed)+UV.x+UV.y*wave_freq*2.0)*wave_width*0.01;
-	
+
 	float blur_strength = blur / 100.0;
 	vec3 blurred_color = vec3(0.0);
     int sample_count = 0;
@@ -23,7 +23,7 @@ void fragment(){
         }
     }
     blurred_color /= float(sample_count);
-	
+
 	ALBEDO = blurred_color * tint.rgb;
 	ALPHA = 0.5;//tint.a;
 }

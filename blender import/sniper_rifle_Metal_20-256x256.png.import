@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bker4mqxo6mnr"
+uid="uid://bd8vfj6qp2nv0"
 path.s3tc="res://.godot/imported/sniper_rifle_Metal_20-256x256.png-28412674d3a5cd01352a2e7b1bd4cca9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "398ee7255d35a1cd81c5e82011c6a9e9"
 }
 
 [deps]
