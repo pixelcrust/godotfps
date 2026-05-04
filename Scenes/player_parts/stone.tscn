@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://dg1ans30ehh6f"]
+[gd_scene format=3 uid="uid://cjsytkkscf1my"]
 
-[ext_resource type="Script" uid="uid://0bb2oqsgives" path="res://Scripts/grenade.gd" id="1_tk6fo"]
-[ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="2_e5efc"]
-[ext_resource type="PackedScene" uid="uid://ndkw41r64lu4" path="res://blender import/model_pipebomb.tscn" id="2_oi57i"]
-[ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="4_tbov2"]
+[ext_resource type="Script" uid="uid://biqj41jio13h" path="res://Scenes/player_parts/stone.gd" id="1_uyr0i"]
+[ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="3_n2bjs"]
+[ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="4_lf2pe"]
+[ext_resource type="PackedScene" uid="uid://dvusvyiy85oin" path="res://Scenes/bullets/stone_projectile.tscn" id="5_m1icf"]
 
 [sub_resource type="Animation" id="Animation_0dofl"]
 resource_name = "RESET"
@@ -135,7 +135,7 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0.878285, 0, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rkwu"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uyr0i"]
 _data = {
 &"RESET": SubResource("Animation_0dofl"),
 &"change weapon in": SubResource("Animation_0bj7f"),
@@ -145,25 +145,24 @@ _data = {
 &"shoot": SubResource("Animation_gudao")
 }
 
-[node name="Grenade" type="Node3D" unique_id=434328029 groups=["consumeable"]]
-script = ExtResource("1_tk6fo")
+[node name="stone" type="Node3D" unique_id=1212451321 groups=["consumeable"]]
+script = ExtResource("1_uyr0i")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1212006639]
-libraries/ = SubResource("AnimationLibrary_5rkwu")
+[node name="Node3D" type="Node3D" parent="." unique_id=948934004]
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=493409087]
+[node name="hand_left" parent="Node3D" unique_id=632852495 instance=ExtResource("3_n2bjs")]
+transform = Transform3D(-4.5249686e-07, 0, -0.12499947, 0, 0.125, 0, 0.12499947, 0, -4.5249686e-07, -1.498, 0.4, -1.841)
 
-[node name="creation_spot" type="RayCast3D" parent="." unique_id=1378653389]
+[node name="hand_right" parent="Node3D" unique_id=1586484484 instance=ExtResource("4_lf2pe")]
+transform = Transform3D(0.125, 0, 0, 0, 0.12500003, 0, 0, 0, 0.12500003, -0.242, -0.05, 0.237)
+
+[node name="model_stone" parent="Node3D/hand_right" unique_id=1379481279 instance=ExtResource("5_m1icf")]
+transform = Transform3D(0.6343192, -0.300926, 1.4377353, -0.73573387, 1.2903674, 0.5946819, -1.2713513, -0.89688045, 0.37318957, -1.0606885, 1.3835998, -6.940409)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1432082810]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1876655593]
+libraries/ = SubResource("AnimationLibrary_uyr0i")
+
+[node name="creation_spot" type="RayCast3D" parent="." unique_id=870788873]
 transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
-
-[node name="Node3D" type="Node3D" parent="." unique_id=1958343397]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0.875151)
-
-[node name="hand_left" parent="Node3D" unique_id=1909740024 instance=ExtResource("4_tbov2")]
-transform = Transform3D(-4.5249877e-07, 0, -0.125, 0, 0.125, 0, 0.125, 0, -4.5249877e-07, -1.799, 0, 0.153)
-
-[node name="hand_right" parent="Node3D" unique_id=1585309323 instance=ExtResource("2_e5efc")]
-transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -0.622449, 0.072225, 0.110981)
-
-[node name="model_pipebomb" parent="Node3D/hand_right" unique_id=1950126479 instance=ExtResource("2_oi57i")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.729226, 9.53674e-07, -6.73586)

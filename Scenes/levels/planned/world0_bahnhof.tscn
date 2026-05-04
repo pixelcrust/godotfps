@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cxhi1vghrxjws" path="res://Scenes/interactables/note.tscn" id="3_of4fc"]
 [ext_resource type="Texture2D" uid="uid://cbu2g0e2p2461" path="res://textures/Dirt_04-512x512.png" id="4_ksxay"]
 [ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/pickups/knife_dropped.tscn" id="4_nnjpv"]
-[ext_resource type="PackedScene" uid="uid://dj1r66vn40rp2" path="res://Scenes/props/lava.tscn" id="5_1tmkq"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="6_m8o6e"]
 [ext_resource type="PackedScene" uid="uid://dpvx11y37ylku" path="res://Scenes/props/verzierung/ortsschild_vicino.tscn" id="7_m8o6e"]
 [ext_resource type="ArrayMesh" uid="uid://c3jhu1uukqu20" path="res://Models/Level/testprops/RailwayTrack_Straight.obj" id="8_cai17"]
 [ext_resource type="PackedScene" uid="uid://pri0gtr8s1qj" path="res://Scenes/props/bush.tscn" id="13_0qnff"]
 [ext_resource type="PackedScene" uid="uid://c2bn8yu51q2gt" path="res://assets/val straniero/Bus_Stop_Rural/MS_Bus_Stop_Rural.fbx" id="14_bgo3h"]
+[ext_resource type="PackedScene" uid="uid://dyx7pwh6rb44v" path="res://Scenes/props/verzierung/car.tscn" id="14_lsbt0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -34,21 +34,27 @@ volumetric_fog_density = 0.015
 volumetric_fog_albedo = Color(1, 0.611765, 0.666667, 1)
 volumetric_fog_detail_spread = 5.09824
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksxay"]
+albedo_color = Color(0.14767182, 0.14767179, 0.14767179, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spl7n"]
 albedo_texture = ExtResource("1_wruqn")
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gw4tt"]
 albedo_texture = ExtResource("2_bgo3h")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2b0v4"]
 albedo_texture = ExtResource("1_wruqn")
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kusi7"]
 albedo_texture = ExtResource("3_lsbt0")
-uv1_scale = Vector3(20, 20, 20)
+uv1_scale = Vector3(40, 40, 40)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3s3dn"]
 albedo_texture = ExtResource("4_ksxay")
+uv1_scale = Vector3(5, 5, 5)
 
 [node name="World" type="Node3D" unique_id=479000817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139556, 0.0229417, -0.36441)
@@ -77,6 +83,7 @@ environment = SubResource("Environment_kl5jl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0815, 0, -0.682373)
 use_collision = true
 size = Vector3(56.0809, 1, 11.3647)
+material = SubResource("StandardMaterial3D_ksxay")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=2015142835]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.96571, 3.7330546, 9.87799)
@@ -133,21 +140,6 @@ transform = Transform3D(1, 0, 0, 0, 0.997659, -0.068381, 0, 0.068381, 0.997659, 
 use_collision = true
 size = Vector3(9.69824, 1, 27.4442)
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="." unique_id=1736271660]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.858463, 0.86769384, -3.4556148)
-use_collision = true
-size = Vector3(1.5379045, 1.0842665, 2.9452796)
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="." unique_id=112561766]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.748946, 0.86769384, -3.4556148)
-use_collision = true
-size = Vector3(1.5379045, 1.0842665, 2.9452796)
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=290543386]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.457655, 0.86769384, -3.4556148)
-use_collision = true
-size = Vector3(1.5379045, 1.0842665, 2.9452796)
-
 [node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("2_7hwv3")]
 transform = Transform3D(6.7971926, 0, 0, 0, 1, 0, 0, 0, 1, -61.46515, 7.5801477, -56.351864)
 transit_to = 1
@@ -161,9 +153,6 @@ cooldown_time = 7
 [node name="knife_dropped" parent="." unique_id=727797147 instance=ExtResource("4_nnjpv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.87529665, 0.9495121, 1.1305958)
 
-[node name="lava" parent="." unique_id=821977981 instance=ExtResource("5_1tmkq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5941514, 1, 1.5971023)
-
 [node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("6_m8o6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.577883, 0.49999988, 2.2043915)
 
@@ -171,11 +160,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.577883, 0.49999988, 2.20439
 transform = Transform3D(-0.09348491, 0, -0.4911828, 0, 0.5, 0, 0.4911828, 0, -0.09348491, -37.902607, 7.190443, -34.61392)
 
 [node name="RailwayTrackStraight" type="MeshInstance3D" parent="." unique_id=1228762864]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.478409, -0.189344, 21.903522)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.478409, -0.15450461, 21.903522)
 mesh = ExtResource("8_cai17")
 
 [node name="RailwayTrackStraight2" type="MeshInstance3D" parent="." unique_id=996222956]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.2029634, -0.19075702, 21.909962)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.2029634, -0.15591763, 21.909962)
 mesh = ExtResource("8_cai17")
 skeleton = NodePath("../RailwayTrackStraight")
 
@@ -192,4 +181,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.80874, 0.84534204, -7.7599
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.128974, 0.84534204, -7.7599235)
 
 [node name="MS_Bus_Stop_Rural" parent="." unique_id=315810577 instance=ExtResource("14_bgo3h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2869835, 0.5, -5.3239627)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.2869835, 0.5, -4.8749485)
+
+[node name="Car" parent="." unique_id=1646064923 instance=ExtResource("14_lsbt0")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 11.595676, 0.52702403, -3.578425)

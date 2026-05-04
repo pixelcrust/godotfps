@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm3w8klmsqjlb"]
+[gd_scene format=3 uid="uid://cm3w8klmsqjlb"]
 
 [ext_resource type="Script" uid="uid://e2ksjhdns3aq" path="res://Scripts/grenade_thrown.gd" id="1_a715w"]
 [ext_resource type="PackedScene" uid="uid://ctk8y3gtl1yj7" path="res://Scenes/bullets/explosion.tscn" id="2_oywis"]
@@ -8,23 +8,23 @@
 height = 0.812023
 radius = 0.11441
 
-[node name="Node3D" type="RigidBody3D"]
+[node name="Node3D" type="RigidBody3D" unique_id=756903419]
 mass = 0.5
 script = ExtResource("1_a715w")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=761921427]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.496217, 0)
 shape = SubResource("CylinderShape3D_yp457")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=248531933]
 wait_time = 4.0
 
-[node name="explosion" parent="." instance=ExtResource("2_oywis")]
+[node name="explosion" parent="." unique_id=1471089330 instance=ExtResource("2_oywis")]
 
-[node name="pipebomb" parent="." instance=ExtResource("3_c51h5")]
+[node name="pipebomb" parent="." unique_id=1410886171 instance=ExtResource("3_c51h5")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.209706, 0)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=645039017]
 
 [connection signal="signal_explosion" from="." to="explosion" method="_signal_explosion"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

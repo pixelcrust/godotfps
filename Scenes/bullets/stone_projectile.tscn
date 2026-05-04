@@ -1,0 +1,39 @@
+[gd_scene format=4 uid="uid://dvusvyiy85oin"]
+
+[ext_resource type="Script" uid="uid://dnbasokvngwan" path="res://Scenes/bullets/stone_projectile.gd" id="1_rxo4r"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_gvqtq"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ltg80"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltg80"]
+albedo_color = Color(0.31431612, 0.31431612, 0.3143161, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vetu4"]
+_surfaces = [{
+"aabb": AABB(-0.55345225, -0.5597614, -0.5615457, 1.1069045, 1.131324, 1.1230915),
+"attribute_data": PackedByteArray("q6oqPgAAAABWVVU/AAAAAKuqKj4AAAAAVlVVPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqio/AAAAPwAAgD8AAAA/q6oqPwAAgD8AAIA/AACAPw=="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AgAEAAYAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAASABEAEQASABMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("VUkHve5REj92wQ8/VEkHve5REj92wQ+/VUkHve5REj92wQ8/VEkHve5REj92wQ+/DK8Nv4ZMD7+GTA8/DK8NP4ZMD7+GTA+/DK8NP4ZMD7+GTA8/DK8Nv4ZMD7+GTA+/VUkHve5REj92wQ8/VEkHve5REj92wQ+/VEkHve5REj92wQ+/VUkHve5REj92wQ8/DK8NP4ZMD7+GTA8/DK8Nv4ZMD7+GTA+/DK8NP4ZMD7+GTA+/DK8Nv4ZMD7+GTA8/DK8Nv4ZMD7+GTA8/DK8NP4ZMD7+GTA8/DK8Nv4ZMD7+GTA+/DK8NP4ZMD7+GTA+//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v1TVqqr/////qiqqqv9//79U1aqq/////6oqqqr/f/+/VNWqqv////+qKqqq/3//v1TVqqr/////qiqqqv9//78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vw==")
+}]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4o23c"]
+data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="StoneProjectile" type="RigidBody3D" unique_id=1016027828]
+script = ExtResource("1_rxo4r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=294205886]
+mesh = SubResource("PrismMesh_ltg80")
+surface_material_override/0 = SubResource("StandardMaterial3D_ltg80")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1267617334]
+mesh = SubResource("ArrayMesh_vetu4")
+surface_material_override/0 = ExtResource("2_gvqtq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1507061591]
+shape = SubResource("ConcavePolygonShape3D_4o23c")

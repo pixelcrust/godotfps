@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dyx7pwh6rb44v"]
+
+[ext_resource type="ArrayMesh" uid="uid://m5x2wf7xrhkb" path="res://assets/val straniero/Car 02/Car2.obj" id="1_8tp6v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_laedy"]
+size = Vector3(2.898401, 2.198651, 6.533011)
+
+[node name="Car" type="StaticBody3D" unique_id=1646064923]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=922667296]
+mesh = ExtResource("1_8tp6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=507178074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 1.0723015, -0.030551434)
+shape = SubResource("BoxShape3D_laedy")

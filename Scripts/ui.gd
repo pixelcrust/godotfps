@@ -94,6 +94,9 @@ func ammo_choose():
 		5:
 			icon_ammo.visible = true
 			icon_ammo.texture = icon_explosion
+		6:
+			icon_ammo.visible = true
+			icon_ammo.texture = icon_explosion
 		_:
 			icon_ammo.visible = false
 			icon_ammo.texture = null

@@ -92,6 +92,8 @@ var gravity = 9.8
 @onready var icon_pistol = preload("res://Sprites/icons/icon_pistol_2.png")
 @onready var icon_shotgun = preload("res://Sprites/icons/icon_shotgun.png")
 @onready var icon_sniper = preload("res://Sprites/icons/icon_sniper.png")
+@onready var icon_stone = preload("res://Sprites/icons/icon_stone.png")
+
 const icon_knife = preload("res://Sprites/icons/icon_knife.png")
 const icon_flashlight = preload("res://Sprites/icons/icon_flashlight.png")
 const icon_grenade = preload("res://Sprites/icons/icon_grenade.png")
@@ -117,6 +119,7 @@ var pause_menu = preload("res://Scenes/menues/pause_menu.tscn")
 @onready var asset_knife = preload("res://Scenes/player_parts/knife.tscn")
 @onready var asset_flashlight = preload("res://Scenes/player_parts/flashlight.tscn")
 const asset_grenade = preload("res://Scenes/player_parts/grenade.tscn")
+const asset_stone = preload("res://Scenes/player_parts/stone.tscn")
 
 #preload weapons to be dropped
 @onready var asset_drop_gun = preload("res://Scenes/pickups/gun_dropped.tscn")
@@ -125,6 +128,7 @@ const asset_grenade = preload("res://Scenes/player_parts/grenade.tscn")
 const asset_drop_knife = preload("res://Scenes/pickups/knife_dropped.tscn")
 const asset_drop_flashlight = preload("res://Scenes/pickups/flashlight_dropped.tscn")
 const asset_drop_grenade = preload("res://Scenes/pickups/grenade_dropped.tscn")
+const asset_drop_stone = preload("res://Scenes/pickups/stone_dropped.tscn")
 
 #sound assets
 const sound_flashlight_click = preload("res://Sounds/clicky button 13.wav")
@@ -159,8 +163,14 @@ func _ready():
 	#Global.player_position = position
 	#Global.player_rotation = rotation
 	#sGlobal.player_camera_rotation = camera.rotation
-	
-	print_debug("player  created")
+	inventory.append({
+		"item_id": 6, #grenade
+		"loaded": 1,
+		"max_loaded": 1, # See above assignment.
+		"spare_ammo": 20,
+		"icon": preload("res://Sprites/icons/icon_grenade.png")
+	})
+
 	"""
 	inventory.append({
 		"item_id": 0, #pistol
@@ -683,6 +693,15 @@ func equip_weapon():
 				new_grenade.animation_player.play("change weapon in")
 				new_grenade.player = $"."
 				equipped = new_grenade
+			6:
+				var new_stone = asset_stone.instantiate()
+				camera.add_child(new_stone)
+				new_stone.position = camera.position
+				new_stone.rotate_y(deg_to_rad(90))
+				new_stone.transform.origin = Vector3(1,-0.8,-1)
+				new_stone.animation_player.play("change weapon in")
+				new_stone.player = $"."
+				equipped = new_stone
 			-1: #nothing equipped
 				pass
 			_:
