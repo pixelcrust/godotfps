@@ -151,10 +151,10 @@ script = ExtResource("1_uyr0i")
 [node name="Node3D" type="Node3D" parent="." unique_id=948934004]
 
 [node name="hand_left" parent="Node3D" unique_id=632852495 instance=ExtResource("3_n2bjs")]
-transform = Transform3D(-4.5249686e-07, 0, -0.12499947, 0, 0.125, 0, 0.12499947, 0, -4.5249686e-07, -1.498, 0.4, -1.841)
+transform = Transform3D(-4.5249686e-07, 0, -0.12499947, 0, 0.125, 0, 0.12499947, 0, -4.5249686e-07, -0.4822166, 0.4, -1.841)
 
 [node name="hand_right" parent="Node3D" unique_id=1586484484 instance=ExtResource("4_lf2pe")]
-transform = Transform3D(0.125, 0, 0, 0, 0.12500003, 0, 0, 0, 0.12500003, -0.242, -0.05, 0.237)
+transform = Transform3D(0.125, 0, 0, 0, 0.12500003, 0, 0, 0, 0.12500003, 0.001189217, -0.05, 0.237)
 
 [node name="model_stone" parent="Node3D/hand_right" unique_id=1379481279 instance=ExtResource("5_m1icf")]
 transform = Transform3D(0.6343192, -0.300926, 1.4377353, -0.73573387, 1.2903674, 0.5946819, -1.2713513, -0.89688045, 0.37318957, -1.0606885, 1.3835998, -6.940409)

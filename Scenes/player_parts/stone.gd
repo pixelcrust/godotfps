@@ -4,14 +4,14 @@ extends Node3D
 @onready var player = null
 @onready var ads = 0
 @onready var creation_spot = $creation_spot
-@onready var model_pipebomb = $Node3D/hand_right/model_pipebomb
+@onready var model_stone = $Node3D/hand_right/model_stone
 @onready var hands = $Node3D
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 const SOUND_THROW = preload("res://Sounds/stab 7.wav")
 
 @onready var pos_standard = Vector3(-0.70,-0.10,0.60)
 
-const grenade_thrown = preload("res://Scenes/bullets/grenade_thrown.tscn")
+const stone_thrown = preload("res://Scenes/bullets/stone_projectile.tscn")
 const RECOIL = -5
 @onready var once = true
 
@@ -37,11 +37,11 @@ func shoot(inventory_selector,player_eyes_position,player_shot,collision_point):
 			await get_tree().create_timer(.5).timeout
 			audio_stream_player_3d.stream = SOUND_THROW
 			audio_stream_player_3d.play(0.0)
-			var new_grenade = grenade_thrown.instantiate()
-			new_grenade.position = creation_spot.global_position
-			new_grenade.transform.basis = global_transform.basis
-			model_pipebomb.visible = false
-			get_tree().root.get_children()[0].add_child(new_grenade);
+			var new_stone = stone_thrown.instantiate()
+			new_stone.position = creation_spot.global_position
+			new_stone.transform.basis = global_transform.basis
+			model_stone.visible = false
+			get_tree().root.get_children()[0].add_child(new_stone);
 			var direction = null
 			"""if(target_on_raycast!= null):
 				direction = abs(target_on_raycast - position)
