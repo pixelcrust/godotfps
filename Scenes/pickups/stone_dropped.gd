@@ -3,8 +3,8 @@ extends Node3D
 #@onready var model_flashlight = $RigidBody3D/flashlight1
 
 @onready var rigid_body = $RigidBody3D
-@onready var outline_mesh = $RigidBody3D/pipebomb.outline_mesh
-@onready var model_pipebomb = $RigidBody3D/pipebomb
+@onready var outline_mesh = $RigidBody3D/stone_model.outline_mesh
+@onready var model_stone = $RigidBody3D/stone_model
 
 
 @onready var player = 0
@@ -26,8 +26,8 @@ const max_loaded = 1
 func _ready():
 	player = get_tree().get_nodes_in_group("player_root")[0]
 	#print_debug(model_pistol.mesh.get_layer_mask_value(2))
-	model_pipebomb.mesh.set_layer_mask_value(1,true)
-	model_pipebomb.mesh.set_layer_mask_value(2,false)
+	#model_stone.mesh.set_layer_mask_value(1,true)
+	#model_stone.mesh.set_layer_mask_value(2,false)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

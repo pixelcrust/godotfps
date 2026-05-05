@@ -6,6 +6,7 @@ extends RigidBody3D
 @onready var timer = $Timer
 @onready var model_stone = $MeshInstance3D
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
+
 const SOUND_EXPLOSION = preload("res://Sounds/explosion_large_07.wav")
 
 signal signal_explosion()

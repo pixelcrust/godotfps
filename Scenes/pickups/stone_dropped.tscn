@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://do2adgfja231l" path="res://Scenes/pickups/stone_dropped.gd" id="1_xu183"]
 [ext_resource type="Script" uid="uid://d17yn324fbadx" path="res://Scripts/Area3D.gd" id="2_h4pyj"]
-[ext_resource type="PackedScene" uid="uid://dvusvyiy85oin" path="res://Scenes/bullets/stone_projectile.tscn" id="3_xu183"]
+[ext_resource type="PackedScene" uid="uid://die02w3h6v1mu" path="res://blender import/stone_model.tscn" id="3_xu183"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h4pyj"]
 size = Vector3(0.3972168, 0.37600708, 0.40673828)
@@ -26,5 +26,5 @@ script = ExtResource("2_h4pyj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030517578, -0.007217407, -0.020019531)
 shape = SubResource("BoxShape3D_h4pyj")
 
-[node name="StoneProjectile" parent="." unique_id=1016027828 instance=ExtResource("3_xu183")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+[node name="stone_model" parent="RigidBody3D" unique_id=25922607 instance=ExtResource("3_xu183")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
