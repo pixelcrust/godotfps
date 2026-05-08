@@ -31,8 +31,8 @@ background_mode = 2
 background_color = Color(0.458824, 0.458824, 0.458824, 1)
 background_energy_multiplier = 0.1
 sky = SubResource("Sky_m1s6g")
-ambient_light_color = Color(0.886275, 0, 0, 1)
-ambient_light_sky_contribution = 0.5
+ambient_light_color = Color(0.8547751, 0.8798069, 0.8774465, 1)
+ambient_light_sky_contribution = 0.8
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
@@ -151,7 +151,7 @@ transform = Transform3D(6.7971926, 0, 0, 0, 1, 0, 0, 0, 1, -61.46515, 7.5801477,
 transit_to = 1
 
 [node name="note" parent="." unique_id=70538025 instance=ExtResource("3_of4fc")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.0248728, 1.5996529, -4.050241)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.0248728, 2.356486, -6.002382)
 title = "Schienenersatzverkehr"
 text = "No bus possible"
 cooldown_time = 7
