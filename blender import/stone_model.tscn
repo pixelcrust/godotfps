@@ -21,7 +21,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("VUkHve5REj92wQ8/VEkHve5REj92wQ+/VUkHve5REj92wQ8/VEkHve5REj92wQ+/DK8Nv4ZMD7+GTA8/DK8NP4ZMD7+GTA+/DK8NP4ZMD7+GTA8/DK8Nv4ZMD7+GTA+/VUkHve5REj92wQ8/VEkHve5REj92wQ+/VEkHve5REj92wQ+/VUkHve5REj92wQ8/DK8NP4ZMD7+GTA8/DK8Nv4ZMD7+GTA+/DK8NP4ZMD7+GTA+/DK8Nv4ZMD7+GTA8/DK8Nv4ZMD7+GTA8/DK8NP4ZMD7+GTA8/DK8Nv4ZMD7+GTA+/DK8NP4ZMD7+GTA+//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v1TVqqr/////qiqqqv9//79U1aqq/////6oqqqr/f/+/VNWqqv////+qKqqq/3//v1TVqqr/////qiqqqv9//78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vw==")
 }]
 
-[node name="stone_model" type="RigidBody3D" unique_id=2027319374]
+[node name="stone_model" type="Node3D" unique_id=544489710]
 script = ExtResource("1_6meti")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1040619734]
@@ -29,5 +29,6 @@ mesh = SubResource("PrismMesh_6meti")
 surface_material_override/0 = SubResource("StandardMaterial3D_06twh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=2083756656]
+visible = false
 mesh = SubResource("ArrayMesh_8yr1e")
 surface_material_override/0 = ExtResource("1_tqdsx")

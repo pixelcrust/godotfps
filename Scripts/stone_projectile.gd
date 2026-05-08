@@ -1,9 +1,7 @@
 extends RigidBody3D
 
 @onready var once = 0
-@onready var once2 = 0
 @onready var throwing_multiplier = 9#12
-@onready var timer = $Timer
 @onready var model_stone = $MeshInstance3D
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 
@@ -18,14 +16,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if(once == 0):
+		apply_impulse(transform.basis.x *throwing_multiplier)
+		once = 1
 
 
 func _on_timer_timeout():
-	if once2 == 0:
-		audio_stream_player_3d.stream = SOUND_EXPLOSION
-		audio_stream_player_3d.play(0.0)
-		once2 = 1
-	emit_signal("signal_explosion")
-	await get_tree().create_timer(10.0).timeout
 	queue_free()

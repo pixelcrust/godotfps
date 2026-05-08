@@ -4,7 +4,7 @@ extends Node3D
 @onready var player = null
 @onready var ads = 0
 @onready var creation_spot = $creation_spot
-@onready var model_stone = $Node3D/hand_right/model_stone
+@onready var model_stone = $Node3D/hand_right/stone_model
 @onready var hands = $Node3D
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 const SOUND_THROW = preload("res://Sounds/stab 7.wav")

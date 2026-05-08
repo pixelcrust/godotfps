@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://biqj41jio13h" path="res://Scenes/player_parts/stone.gd" id="1_uyr0i"]
 [ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="3_n2bjs"]
 [ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="4_lf2pe"]
-[ext_resource type="PackedScene" uid="uid://dvusvyiy85oin" path="res://Scenes/bullets/stone_projectile.tscn" id="5_m1icf"]
+[ext_resource type="PackedScene" uid="uid://die02w3h6v1mu" path="res://blender import/stone_model.tscn" id="4_uyr0i"]
 
 [sub_resource type="Animation" id="Animation_0dofl"]
 resource_name = "RESET"
@@ -154,10 +154,10 @@ script = ExtResource("1_uyr0i")
 transform = Transform3D(-4.5249686e-07, 0, -0.12499947, 0, 0.125, 0, 0.12499947, 0, -4.5249686e-07, -0.4822166, 0.4, -1.841)
 
 [node name="hand_right" parent="Node3D" unique_id=1586484484 instance=ExtResource("4_lf2pe")]
-transform = Transform3D(0.125, 0, 0, 0, 0.12500003, 0, 0, 0, 0.12500003, 0.001189217, -0.05, 0.237)
+transform = Transform3D(0.125, 0, 0, 0, 0.12500003, 0, 0, 0, 0.12500003, 0.001189217, -0.05, 0.06293213)
 
-[node name="model_stone" parent="Node3D/hand_right" unique_id=1379481279 instance=ExtResource("5_m1icf")]
-transform = Transform3D(0.6343192, -0.300926, 1.4377353, -0.73573387, 1.2903674, 0.5946819, -1.2713513, -0.89688045, 0.37318957, -1.0606885, 1.3835998, -6.940409)
+[node name="stone_model" parent="Node3D/hand_right" unique_id=544489710 instance=ExtResource("4_uyr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6228617, 1.1296259, -6.630652)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1432082810]
 

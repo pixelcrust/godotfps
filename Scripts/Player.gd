@@ -167,7 +167,7 @@ func _ready():
 		"item_id": 6, #grenade
 		"loaded": 1,
 		"max_loaded": 1, # See above assignment.
-		"spare_ammo": 20,
+		"spare_ammo": 0,
 		"icon": preload("res://Sprites/icons/icon_grenade.png")
 	})
 
