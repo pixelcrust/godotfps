@@ -6,6 +6,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_rxo4r"]
 size = Vector3(0.62213135, 0.623291, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_rxo4r"]
+
 [node name="StoneProjectile" type="RigidBody3D" unique_id=1016027828]
 script = ExtResource("1_rxo4r")
 
@@ -22,5 +24,12 @@ autostart = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1347097672]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0093688965, -0.010375977, 0)
 shape = SubResource("BoxShape3D_rxo4r")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=463600747]
+collision_layer = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=1212409087]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+shape = SubResource("SphereShape3D_rxo4r")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

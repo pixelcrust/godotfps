@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/pickups/gun_dropped.tscn" id="18_mmewa"]
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/pickups/shotgun_dropped.tscn" id="19_vrdfw"]
 [ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/pickups/sniper_dropped.tscn" id="20_620fh"]
+[ext_resource type="PackedScene" uid="uid://crhac86vjk5r7" path="res://assets/val straniero/brick_wall.glb" id="21_kusi7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -212,3 +213,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.1518
 
 [node name="sniper_dropped" parent="." unique_id=824570066 instance=ExtResource("20_620fh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.139104, 0.82382333, -1.204693)
+
+[node name="brick_wall2" parent="." unique_id=134881112 instance=ExtResource("21_kusi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.658439, 0.5, 1.3599328)
