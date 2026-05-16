@@ -9,6 +9,7 @@ size = Vector3(0.62213135, 0.623291, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_rxo4r"]
 
 [node name="StoneProjectile" type="RigidBody3D" unique_id=1016027828]
+collision_layer = 3
 script = ExtResource("1_rxo4r")
 
 [node name="stone_model" parent="." unique_id=25922607 instance=ExtResource("2_rxo4r")]
@@ -33,3 +34,4 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 shape = SubResource("SphereShape3D_rxo4r")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
