@@ -165,4 +165,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6228617, 1.1296259, -6.630
 libraries/ = SubResource("AnimationLibrary_uyr0i")
 
 [node name="creation_spot" type="RayCast3D" parent="." unique_id=870788873]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 0.8721347, 0)

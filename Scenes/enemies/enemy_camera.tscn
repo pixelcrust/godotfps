@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b4215swkhkpmy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vd3dm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hkmdh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqkmi"]
+
+[node name="EnemyCamera" type="CharacterBody3D" unique_id=2017663304]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1033514071]
+mesh = SubResource("BoxMesh_vd3dm")
+
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="MeshInstance3D" unique_id=344098581]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/PhysicalBone3D" unique_id=454242643]
+shape = SubResource("BoxShape3D_hkmdh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=390406093]
+shape = SubResource("BoxShape3D_bqkmi")

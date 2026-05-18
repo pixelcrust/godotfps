@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 @onready var once = 0
-@onready var throwing_multiplier = 9#12
+@onready var throwing_multiplier = 12
 @onready var model_stone = $MeshInstance3D
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 @onready var collision_shape_3d_2: CollisionShape3D = $Area3D/CollisionShape3D2
@@ -32,11 +32,11 @@ func _on_timer_timeout():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 		
 
-	print("stone collision with:" + str(body) )
+	#print("stone collision with:" + str(body) )
 	if(body.is_in_group("player_root") == true):
 		print("stone hit player")
-	elif body.is_ancestor_of(self):
-		print("stone hit stone")
+	#elif body.is_ancestor_of(self):
+		#print("stone hit stone")
 	else:
 		if body.is_in_group("has_blood"):
 			pass

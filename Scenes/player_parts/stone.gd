@@ -39,6 +39,7 @@ func shoot(inventory_selector,player_eyes_position,player_shot,collision_point):
 			audio_stream_player_3d.play(0.0)
 			var new_stone = stone_thrown.instantiate()
 			new_stone.position = creation_spot.global_position
+			
 			new_stone.transform.basis = global_transform.basis
 			model_stone.visible = false
 			get_tree().root.get_children()[0].add_child(new_stone);
