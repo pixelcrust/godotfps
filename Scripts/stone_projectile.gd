@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 @onready var once = 0
-@onready var throwing_multiplier = 12
+@onready var throwing_multiplier = 30
 @onready var model_stone = $MeshInstance3D
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 @onready var collision_shape_3d_2: CollisionShape3D = $Area3D/CollisionShape3D2

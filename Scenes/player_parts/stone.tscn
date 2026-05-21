@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0, -1.5707964, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -35,7 +35,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_0bj7f"]
 resource_name = "change weapon in"
-length = 0.5
+length = 0.33333334
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -62,7 +62,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-1.01229, 1.5708, 0.389208)]
+"values": [Vector3(0, -1.5707964, 0), Vector3(-1.01229, 1.5708, 0.389208)]
 }
 
 [sub_resource type="Animation" id="Animation_7sqd6"]
@@ -78,7 +78,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.7, 2.3, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.438078, 0.663225, -0.97913), Vector3(0.528835, 0.907571, 0.937242), Vector3(0, 0, 0)]
+"values": [Vector3(0, -1.5707964, 0), Vector3(0.438078, 0.663225, -0.97913), Vector3(0.528835, 0.907571, 0.937242), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_b5d6u"]
@@ -154,7 +154,7 @@ script = ExtResource("1_uyr0i")
 transform = Transform3D(-4.5249686e-07, 0, -0.12499947, 0, 0.125, 0, 0.12499947, 0, -4.5249686e-07, -0.4822166, 0.4, -1.841)
 
 [node name="hand_right" parent="Node3D" unique_id=1586484484 instance=ExtResource("4_lf2pe")]
-transform = Transform3D(0.125, 0, 0, 0, 0.12500003, 0, 0, 0, 0.12500003, 0.001189217, -0.05, 0.06293213)
+transform = Transform3D(-5.4639235e-09, 0, -0.12500003, 0, 0.12500003, 0, 0.125, 0, -5.463925e-09, 0.001, 0.4, -0.8600473)
 
 [node name="stone_model" parent="Node3D/hand_right" unique_id=544489710 instance=ExtResource("4_uyr0i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6228617, 1.1296259, -6.630652)
