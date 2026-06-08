@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://yopmutqrdxyv"]
+
+[ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="1_0bbav"]
+[ext_resource type="PackedScene" uid="uid://f7x582prlfmn" path="res://Scenes/interactables/door.tscn" id="3_1qsax"]
+[ext_resource type="PackedScene" uid="uid://d3mlec141cgxu" path="res://Scenes/interactables/loot_kiste.tscn" id="4_ue5q1"]
+[ext_resource type="PackedScene" uid="uid://dnviiuk2u24bi" path="res://Scenes/props/table.tscn" id="5_baut2"]
+[ext_resource type="PackedScene" uid="uid://bqo7g88uvwsta" path="res://Scenes/effects/light.tscn" id="6_ec37b"]
+[ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="6_ue5q1"]
+
+[node name="Bedroom" type="Node3D" unique_id=943319301]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=184627509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1565776, -0.38610792, 3.0853117)
+use_collision = true
+size = Vector3(7.338806, 0.2277832, 10.751717)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=399066717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1561584, 1.6171265, -2.1400304)
+use_collision = true
+size = Vector3(7.312317, 4.234253, 0.19580078)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=712988456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80020905, 1.6210632, 4.8879285)
+use_collision = true
+size = Vector3(2.600418, 4.2421265, 0.19580078)
+
+[node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("1_0bbav")]
+transform = Transform3D(-0.99844563, 0, -0.055734262, 0, 1, 0, 0.055734262, 0, -0.99844563, 5.3987546, 0.4907471, 0.65456915)
+current_level = 3
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=623266295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.539183, 1.6238098, 4.8879285)
+use_collision = true
+size = Vector3(2.58284, 4.2476196, 0.19580078)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1483131609]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.416826, 1.6216736, 1.4064028)
+use_collision = true
+size = Vector3(7.312317, 4.243347, 0.19580078)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=2124323061]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.7029777, 1.6123657, 1.4064028)
+use_collision = true
+size = Vector3(7.312317, 4.2247314, 0.19580078)
+
+[node name="Door" parent="." unique_id=1146493310 instance=ExtResource("3_1qsax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9567122, 1.2566537, 4.9530773)
+locked = true
+
+[node name="loot_kiste" parent="." unique_id=529560427 instance=ExtResource("4_ue5q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0069513, 0.08551845, -0.8993511)
+
+[node name="table" parent="." unique_id=388533718 instance=ExtResource("5_baut2")]
+transform = Transform3D(0.040219024, 0, -0.99919087, 0, 1, 0, 0.99919087, 0, 0.040219024, 5.7761126, -0.27221608, 1.036344)
+
+[node name="lightbulb" parent="." unique_id=1722572900 instance=ExtResource("6_ec37b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4537015, 3.1388717, 3.0695782)
+
+[node name="player_spawn" parent="." unique_id=1128441450 instance=ExtResource("6_ue5q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0474846, 0.0857811, 1.1449511)
+spawn_nr = 3

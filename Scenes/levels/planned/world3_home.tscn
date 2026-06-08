@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="2_2852d"]
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="3_2rj35"]
-[ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="3_2852d"]
+[ext_resource type="PackedScene" uid="uid://yopmutqrdxyv" path="res://Scenes/levels/bedroom.tscn" id="4_2rj35"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e0pjx"]
 
@@ -39,26 +39,6 @@ transform = Transform3D(0.98847276, 0.15139884, 0, -0.15139884, 0.98847276, 0, 0
 use_collision = true
 size = Vector3(56.0809, 1, 38.877308)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1983672759]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.196324, 5.425146, 4.9705787)
-use_collision = true
-size = Vector3(1, 10, 22.670902)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1546782780]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.832666, 5.425146, 5.2864356)
-use_collision = true
-size = Vector3(1, 10, 23.302616)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=924084486]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.626592, 5.425146, -5.8818736)
-use_collision = true
-size = Vector3(1, 10, 11.365)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=2041169235]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.626592, 5.425146, 16.406614)
-use_collision = true
-size = Vector3(1, 10, 11.365)
-
 [node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("2_2852d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.082642, 37.90336, -2.0615654, 7.104371)
 transit_to = 3
@@ -75,6 +55,5 @@ spawn_nr = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 9.866556, -15.635841, 5.698467, 6.1447744)
 transit_to = 5
 
-[node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("3_2852d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4333992, 2.6287978, 0.33148003)
-current_level = 3
+[node name="Bedroom" parent="." unique_id=943319301 instance=ExtResource("4_2rj35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.986618, 2.8988838, 0.5279155)

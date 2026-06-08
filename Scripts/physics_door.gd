@@ -25,7 +25,7 @@ var just_used = false
 func _ready() -> void:
 	lock_rotation = true
 	if locked == false:
-		lock.queue_free()
+		lock.hp = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

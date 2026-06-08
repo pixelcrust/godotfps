@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://f7x582prlfmn"]
+[gd_scene format=4 uid="uid://f7x582prlfmn"]
 
 [ext_resource type="Script" uid="uid://brbnaxkh8fkr" path="res://Scripts/physics_door.gd" id="1_faxgv"]
+[ext_resource type="Script" uid="uid://baoia1lrvclnx" path="res://Scenes/interactables/door.gd" id="1_ixoau"]
 [ext_resource type="Texture2D" uid="uid://bkpg6r2mr5lrj" path="res://textures/Wood_06-512x512.png" id="1_wamce"]
 [ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="2_1kyok"]
 [ext_resource type="Script" uid="uid://cnbcds3nqmpcx" path="res://Scripts/door_collision (2).gd" id="2_rr4s8"]
@@ -56,63 +57,64 @@ size = Vector3(2, 3, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hiws0"]
 size = Vector3(2.2, 3.2, 0.2)
 
-[node name="Door" type="Node3D"]
+[node name="Door" type="Node3D" unique_id=1146493310]
+script = ExtResource("1_ixoau")
 
-[node name="frame" type="StaticBody3D" parent="."]
+[node name="frame" type="StaticBody3D" parent="." unique_id=1081509502]
 physics_material_override = SubResource("PhysicsMaterial_lenwv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="frame"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="frame" unique_id=1975078172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809151, 0, 0)
 shape = SubResource("BoxShape3D_y7wdn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="frame"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="frame" unique_id=1601522111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809015, 0, 0)
 mesh = SubResource("BoxMesh_n3wr0")
 
-[node name="physics_door" type="RigidBody3D" parent="."]
+[node name="physics_door" type="RigidBody3D" parent="." unique_id=1737556703]
 mass = 50.0
 script = ExtResource("1_faxgv")
 locked = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door" unique_id=1651052449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250922, 0, 0)
 mesh = SubResource("BoxMesh_xe6ae")
 surface_material_override/0 = SubResource("StandardMaterial3D_xd8n5")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="physics_door/MeshInstance3D" unique_id=953350882]
 visible = false
 mesh = SubResource("ArrayMesh_6ab8y")
 surface_material_override/0 = ExtResource("2_1kyok")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="physics_door/MeshInstance3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="physics_door/MeshInstance3D" unique_id=428523327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.655089, -0.386465, -0.00333813)
 mesh = SubResource("BoxMesh_undlv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door" unique_id=1829123627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.243889, 0, 0)
 shape = SubResource("BoxShape3D_ldw2c")
 
-[node name="PhysicalBone3D" type="PhysicalBone3D" parent="physics_door" groups=["has_hp"]]
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="physics_door" unique_id=1228475701 groups=["has_hp"]]
 collision_layer = 2
 script = ExtResource("2_rr4s8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door/PhysicalBone3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door/PhysicalBone3D" unique_id=2046621233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248935, 0, 0)
 shape = SubResource("BoxShape3D_lofsl")
 
-[node name="Area3D" type="Area3D" parent="physics_door" groups=["interactable"]]
+[node name="Area3D" type="Area3D" parent="physics_door" unique_id=832040693 groups=["interactable"]]
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("3_q2j5c")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="physics_door/Area3D" unique_id=23293276]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20983, 0.0605233, 0)
 shape = SubResource("BoxShape3D_hiws0")
 
-[node name="lock" parent="physics_door" instance=ExtResource("8_ipa00")]
+[node name="lock" parent="physics_door" unique_id=241608101 instance=ExtResource("8_ipa00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10349, 0.721286, 0.0555805)
 
-[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+[node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=391948069]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.751022, 0, 0)
 node_a = NodePath("../frame")
 node_b = NodePath("../physics_door")
@@ -121,7 +123,7 @@ angular_limit/upper = 1.91986
 angular_limit/lower = -1.91986
 motor/target_velocity = 0.0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1572477851]
 
 [connection signal="bodypart_hit" from="physics_door/PhysicalBone3D" to="physics_door" method="_on_physical_bone_3d_bodypart_hit"]
 [connection signal="unlock_door" from="physics_door/lock" to="physics_door" method="_on_lock_unlock_door"]
