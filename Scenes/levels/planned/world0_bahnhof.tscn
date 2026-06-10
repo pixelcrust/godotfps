@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/pickups/shotgun_dropped.tscn" id="19_vrdfw"]
 [ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/pickups/sniper_dropped.tscn" id="20_620fh"]
 [ext_resource type="PackedScene" uid="uid://crhac86vjk5r7" path="res://assets/val straniero/brick_wall.glb" id="21_kusi7"]
+[ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/props/glass.tscn" id="22_3s3dn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -216,3 +217,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.1391
 
 [node name="brick_wall2" parent="." unique_id=134881112 instance=ExtResource("21_kusi7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.658439, 0.5, 1.3599328)
+
+[node name="glass" parent="." unique_id=92881993 instance=ExtResource("22_3s3dn")]
+transform = Transform3D(0.14978102, 0, -1.1121222, 0, 1.7705356, 0, 4.048088, 0, 0.041149, -6.317191, 1.8188727, 17.489714)
