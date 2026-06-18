@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dpvx11y37ylku" path="res://Scenes/props/verzierung/ortsschild_vicino.tscn" id="7_m8o6e"]
 [ext_resource type="ArrayMesh" uid="uid://c3jhu1uukqu20" path="res://Models/Level/testprops/RailwayTrack_Straight.obj" id="8_cai17"]
 [ext_resource type="PackedScene" uid="uid://pri0gtr8s1qj" path="res://Scenes/props/bush.tscn" id="13_0qnff"]
-[ext_resource type="PackedScene" uid="uid://c2bn8yu51q2gt" path="res://assets/val straniero/Bus_Stop_Rural/MS_Bus_Stop_Rural.fbx" id="14_bgo3h"]
 [ext_resource type="PackedScene" uid="uid://dyx7pwh6rb44v" path="res://Scenes/props/verzierung/car.tscn" id="14_lsbt0"]
 [ext_resource type="PackedScene" uid="uid://w1grx1igvg34" path="res://Scenes/pickups/stone_dropped.tscn" id="15_2b0v4"]
 [ext_resource type="PackedScene" uid="uid://bqlro6hhkahua" path="res://Scenes/pickups/grenade_dropped.tscn" id="16_kusi7"]
@@ -22,6 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/pickups/sniper_dropped.tscn" id="20_620fh"]
 [ext_resource type="PackedScene" uid="uid://crhac86vjk5r7" path="res://assets/val straniero/brick_wall.glb" id="21_kusi7"]
 [ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/props/glass.tscn" id="22_3s3dn"]
+[ext_resource type="PackedScene" uid="uid://c8rdahlwsp77q" path="res://assets/val straniero/busstop_clean_bench.fbx" id="22_620fh"]
+[ext_resource type="PackedScene" uid="uid://d2risb5qv448s" path="res://assets/val straniero/metaltrashcan_open.fbx" id="23_hidpi"]
+[ext_resource type="PackedScene" uid="uid://dn54st361sdth" path="res://assets/val straniero/street_light.glb" id="24_gc1dv"]
+[ext_resource type="PackedScene" uid="uid://kh7srwx05hmh" path="res://assets/val straniero/traffic_light_L.glb" id="25_r5156"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -127,9 +130,9 @@ use_collision = true
 size = Vector3(42.938004, 1, 11.3647)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=1840462022]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.317273, 4.49317, -25.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.317273, 4.49317, -26.926891)
 use_collision = true
-size = Vector3(213.08154, 1, 11.3647)
+size = Vector3(213.08154, 1, 14.718483)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1096384081]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4768306, 0.4052844, 12.42525)
@@ -188,9 +191,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.80874, 0.84534204, -7.7599
 [node name="bush4" parent="." unique_id=233797290 instance=ExtResource("13_0qnff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.128974, 0.84534204, -7.7599235)
 
-[node name="MS_Bus_Stop_Rural" parent="." unique_id=315810577 instance=ExtResource("14_bgo3h")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.2869835, 0.5, -4.8749485)
-
 [node name="Car" parent="." unique_id=1646064923 instance=ExtResource("14_lsbt0")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 11.595676, 0.52702403, -3.578425)
 
@@ -220,3 +220,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.658439, 0.5, 1.3599328)
 
 [node name="glass" parent="." unique_id=92881993 instance=ExtResource("22_3s3dn")]
 transform = Transform3D(0.14978102, 0, -1.1121222, 0, 1.7705356, 0, 4.048088, 0, 0.041149, -6.317191, 1.8188727, 17.489714)
+
+[node name="busstop_clean_bench" parent="." unique_id=1148320085 instance=ExtResource("22_620fh")]
+transform = Transform3D(-0.03966094, 0, -0.99921316, 0, 1, 0, 0.99921316, 0, -0.03966094, -2.1626978, 0.50872254, -5.5374417)
+
+[node name="metaltrashcan_open" parent="." unique_id=915097871 instance=ExtResource("23_hidpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.704007, 0.50000006, -5.914632)
+
+[node name="street_light2" parent="." unique_id=1036660724 instance=ExtResource("24_gc1dv")]
+transform = Transform3D(-0.014066872, 0, -0.99990106, 0, 1, 0, 0.99990106, 0, -0.014066872, -15.2251425, 4.9931693, -34.205956)
+
+[node name="street_light3" parent="." unique_id=1219063379 instance=ExtResource("24_gc1dv")]
+transform = Transform3D(-0.014066872, 0, -0.99990106, 0, 1, 0, 0.99990106, 0, -0.014066872, -8.234862, 4.9931693, -34.205956)
+
+[node name="traffic_light_L2" parent="." unique_id=1620378355 instance=ExtResource("25_r5156")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.72222, 4.9931707, -35.10144)

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bbiybc8ejhp7r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y5lyi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qqp43"]
+
+[node name="PhoneBooth" type="Node3D" unique_id=1816539704]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=29748459]
+transform = Transform3D(1.642721, 0, 0, 0, 2.4111452, 0, 0, 0, 0.18573141, 0, 0, 0.03867817)
+mesh = SubResource("BoxMesh_y5lyi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1926059228]
+transform = Transform3D(1.642721, 0, 0, 0, 2.4111452, 0, 0, 0, 0.18573141, 0, 0, 1.8655953)
+mesh = SubResource("BoxMesh_y5lyi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=992143188]
+transform = Transform3D(-7.1805616e-08, 0, 0.18573141, 0, 2.4111452, 0, -1.642721, 0, -8.118578e-09, -0.7193675, 0, 0.94888186)
+mesh = SubResource("BoxMesh_y5lyi")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=875924222]
+transform = Transform3D(2.442673, 0, 0, 0, 0.11436635, 0, 0, 0, 3.1566114, 0, 1.1368577, 0.86849403)
+mesh = SubResource("CylinderMesh_qqp43")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=674398572]
+transform = Transform3D(-3.321911e-08, 0, -0.3363982, 0, 0.7878945, 0, -0.75996476, 0, 1.4704432e-08, -0.48488623, 0, 0.94888186)
+mesh = SubResource("BoxMesh_y5lyi")
