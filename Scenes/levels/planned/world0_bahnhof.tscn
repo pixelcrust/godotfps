@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://d2risb5qv448s" path="res://assets/val straniero/metaltrashcan_open.fbx" id="23_hidpi"]
 [ext_resource type="PackedScene" uid="uid://dn54st361sdth" path="res://assets/val straniero/street_light.glb" id="24_gc1dv"]
 [ext_resource type="PackedScene" uid="uid://kh7srwx05hmh" path="res://assets/val straniero/traffic_light_L.glb" id="25_r5156"]
+[ext_resource type="PackedScene" uid="uid://bbiybc8ejhp7r" path="res://Scenes/interactables/phone_booth.tscn" id="26_hidpi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -112,11 +113,6 @@ material = SubResource("StandardMaterial3D_gw4tt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9606, 1.10736, -4.17386)
 use_collision = true
 size = Vector3(5.87952, 3.21472, 4.38177)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=140980575]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0595293, 1.514747, -5.59504)
-use_collision = true
-size = Vector3(1.39046, 2.21576, 1.53941)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=743132671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.415, 6.3125, 9.87799)
@@ -235,3 +231,6 @@ transform = Transform3D(-0.014066872, 0, -0.99990106, 0, 1, 0, 0.99990106, 0, -0
 
 [node name="traffic_light_L2" parent="." unique_id=1620378355 instance=ExtResource("25_r5156")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.72222, 4.9931707, -35.10144)
+
+[node name="PhoneBooth" parent="." unique_id=1816539704 instance=ExtResource("26_hidpi")]
+transform = Transform3D(0.07125892, 0, -0.99745786, 0, 1, 0, 0.99745786, 0, 0.07125892, -9.452546, 1.7055731, -5.5423436)

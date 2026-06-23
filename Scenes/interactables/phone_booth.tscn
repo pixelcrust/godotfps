@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://bbiybc8ejhp7r"]
 
+[ext_resource type="Script" uid="uid://xfrh8ehghwt5" path="res://Scenes/interactables/phone_booth.gd" id="1_2nimd"]
+[ext_resource type="PackedScene" uid="uid://cch7yj02lw5be" path="res://Models/phone.tscn" id="3_2nimd"]
+[ext_resource type="Script" uid="uid://co163h5fjdx7h" path="res://npc_interact_collision.gd" id="3_p8f41"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_y5lyi"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qqp43"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+size = Vector3(0.2866211, 0.6469116, 0.5671387)
+
 [node name="PhoneBooth" type="Node3D" unique_id=1816539704]
+script = ExtResource("1_2nimd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=29748459]
 transform = Transform3D(1.642721, 0, 0, 0, 2.4111452, 0, 0, 0, 0.18573141, 0, 0, 0.03867817)
@@ -25,3 +33,16 @@ mesh = SubResource("CylinderMesh_qqp43")
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=674398572]
 transform = Transform3D(-3.321911e-08, 0, -0.3363982, 0, 0.7878945, 0, -0.75996476, 0, 1.4704432e-08, -0.48488623, 0, 0.94888186)
 mesh = SubResource("BoxMesh_y5lyi")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=146039492 groups=["interactable"]]
+collision_layer = 8
+script = ExtResource("3_p8f41")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2013160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35668945, -0.019400835, 0.963789)
+shape = SubResource("BoxShape3D_bhunq")
+
+[node name="desk_phone_with_cable2" parent="." unique_id=777230725 instance=ExtResource("3_2nimd")]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -0.30740607, 0, 1.0515784)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=291218602]
