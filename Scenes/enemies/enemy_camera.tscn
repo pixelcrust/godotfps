@@ -1,20 +1,34 @@
 [gd_scene format=3 uid="uid://b4215swkhkpmy"]
 
 [ext_resource type="PackedScene" uid="uid://n4ssw00ita1y" path="res://Models/security_cam.tscn" id="1_hkmdh"]
+[ext_resource type="Script" uid="uid://bctp4twbsny47" path="res://Scripts/enemy_camera.gd" id="1_k2bn4"]
+[ext_resource type="Script" uid="uid://08s1mj86nylu" path="res://Scripts/bodypart.gd" id="3_2f411"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+size = Vector3(1.552185, 2.3704834, 2.0616455)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_riqys"]
 size = Vector3(1.3530273, 2.8369446, 1.4255371)
 
 [node name="EnemyCamera" type="CharacterBody3D" unique_id=2017663304]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+collision_layer = 4
+script = ExtResource("1_k2bn4")
 
 [node name="SecuritySource" parent="." unique_id=574691270 instance=ExtResource("1_hkmdh")]
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="." unique_id=694072157]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_2f411")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalBone3D" unique_id=1560927100]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052001953, 0.83312535, 0.35082734)
-shape = SubResource("BoxShape3D_riqys")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalBone3D" unique_id=1792502436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17984009, 0.05352784, 0.37994388)
+shape = SubResource("BoxShape3D_bhunq")
+debug_color = Color(0.79178447, 0.40953106, 0.3438504, 0.41960785)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1147944026]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052001953, 0.41224217, 0.35082734)
 shape = SubResource("BoxShape3D_riqys")
+
+[connection signal="bodypart_hit" from="PhysicalBone3D" to="." method="_on_physical_bone_3d_bodypart_hit"]

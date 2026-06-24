@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dn54st361sdth" path="res://assets/val straniero/street_light.glb" id="24_gc1dv"]
 [ext_resource type="PackedScene" uid="uid://kh7srwx05hmh" path="res://assets/val straniero/traffic_light_L.glb" id="25_r5156"]
 [ext_resource type="PackedScene" uid="uid://bbiybc8ejhp7r" path="res://Scenes/interactables/phone_booth.tscn" id="26_hidpi"]
+[ext_resource type="PackedScene" uid="uid://b4215swkhkpmy" path="res://Scenes/enemies/enemy_camera.tscn" id="27_gc1dv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -234,3 +235,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.72222, 4.9931707, -35.101
 
 [node name="PhoneBooth" parent="." unique_id=1816539704 instance=ExtResource("26_hidpi")]
 transform = Transform3D(0.07125892, 0, -0.99745786, 0, 1, 0, 0.99745786, 0, 0.07125892, -9.452546, 1.7055731, -5.5423436)
+
+[node name="EnemyCamera" parent="." unique_id=2017663304 instance=ExtResource("27_gc1dv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.2968836, 3.0816145, 4.6441755)
