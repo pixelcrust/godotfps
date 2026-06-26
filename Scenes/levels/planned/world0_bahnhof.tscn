@@ -192,13 +192,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.128974, 0.84534204, -7.759
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 11.595676, 0.52702403, -3.578425)
 
 [node name="stone_dropped" parent="." unique_id=1576089984 instance=ExtResource("15_2b0v4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4659146, 0.84916943, -3.8043466)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4659146, 0.84916943, -3.085)
 
 [node name="grenade_dropped" parent="." unique_id=983381034 instance=ExtResource("16_kusi7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8302317, 0.6512759, -4.080147)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8302317, 0.6512759, -3.1357472)
 
 [node name="flashlight_dropped" parent="." unique_id=1325206721 instance=ExtResource("17_3s3dn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0578575, 0.73028046, -4.1549654)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0578575, 0.73028046, -3.4496994)
 
 [node name="gun_dropped" parent="." unique_id=1120568420 instance=ExtResource("18_mmewa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58735, 0.8137185, -3.8041987)
@@ -219,10 +219,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.658439, 0.5, 1.3599328)
 transform = Transform3D(0.14978102, 0, -1.1121222, 0, 1.7705356, 0, 4.048088, 0, 0.041149, -6.317191, 1.8188727, 17.489714)
 
 [node name="busstop_clean_bench" parent="." unique_id=1148320085 instance=ExtResource("22_620fh")]
-transform = Transform3D(-0.03966094, 0, -0.99921316, 0, 1, 0, 0.99921316, 0, -0.03966094, -2.1626978, 0.50872254, -5.5374417)
+transform = Transform3D(-0.03966094, 0, -0.99921316, 0, 1, 0, 0.99921316, 0, -0.03966094, 1.9565834, 0.50872254, -5.2176948)
 
 [node name="metaltrashcan_open" parent="." unique_id=915097871 instance=ExtResource("23_hidpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.704007, 0.50000006, -5.914632)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72510916, 0.50000006, -5.914632)
 
 [node name="street_light2" parent="." unique_id=1036660724 instance=ExtResource("24_gc1dv")]
 transform = Transform3D(-0.014066872, 0, -0.99990106, 0, 1, 0, 0.99990106, 0, -0.014066872, -15.2251425, 4.9931693, -34.205956)
@@ -234,7 +234,7 @@ transform = Transform3D(-0.014066872, 0, -0.99990106, 0, 1, 0, 0.99990106, 0, -0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.72222, 4.9931707, -35.10144)
 
 [node name="PhoneBooth" parent="." unique_id=1816539704 instance=ExtResource("26_hidpi")]
-transform = Transform3D(0.07125892, 0, -0.99745786, 0, 1, 0, 0.99745786, 0, 0.07125892, -9.452546, 1.7055731, -5.5423436)
+transform = Transform3D(0.07125892, 0, -0.99745786, 0, 1, 0, 0.99745786, 0, 0.07125892, -6.7337804, 1.7055731, -4.8196883)
 
 [node name="EnemyCamera" parent="." unique_id=2017663304 instance=ExtResource("27_gc1dv")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.2968836, 3.0816145, 4.6441755)

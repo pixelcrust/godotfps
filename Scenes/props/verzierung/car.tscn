@@ -2,14 +2,15 @@
 
 [ext_resource type="ArrayMesh" uid="uid://m5x2wf7xrhkb" path="res://assets/val straniero/Car 02/Car2.obj" id="1_8tp6v"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_laedy"]
-size = Vector3(2.898401, 2.198651, 6.533011)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8tp6v"]
+points = PackedVector3Array(1.3830689, 1.4425758, 0.8259201, 1.1948048, 1.2690876, 3.0799627, 1.1171778, -0.004576691, -1.8720282, -0.91577417, 2.1257458, -1.6743739, -1.1916, 0.010847029, 1.8800651, -1.164178, 0.501776, -3.0178058, 1.1948048, 1.683786, -3.1410627, -1.1896049, 1.2690876, 3.0799627, 1.1274751, -0.01442917, 1.9260147, 0.88406014, 2.0826774, 0.4333898, -1.1896049, 1.683786, -3.1410627, 1.298718, 0.95823115, -3.34895, -1.1916, 0.010847029, -1.845395, 0.75460845, 0.56067455, 3.1781032, -1.3792701, 1.4429622, 0.8267893, -0.87871736, 2.082817, 0.43345326, 0.92117757, 2.1256635, -1.6742468, -1.1178639, 0.47712904, 2.9904761, 1.169358, 0.50178564, -3.0177546, 1.1181909, 0.47967196, 2.9773378, -0.99477893, 2.01163, 0.53847736, 0.999849, 2.0115066, 0.5384033, -0.72274065, 0.48138043, 3.0654893, -1.0087987, 2.0249808, -1.7646457, 1.0103601, 2.0215158, -1.7584072, 0.6312651, 0.48138043, 3.0654893, -1.1916, 0.20199457, 2.1667771)
 
 [node name="Car" type="StaticBody3D" unique_id=1646064923]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=922667296]
 mesh = ExtResource("1_8tp6v")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=507178074]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 1.0723015, -0.030551434)
-shape = SubResource("BoxShape3D_laedy")
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1595824246]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=901501803]
+shape = SubResource("ConvexPolygonShape3D_8tp6v")

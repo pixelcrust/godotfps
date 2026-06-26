@@ -1,38 +1,55 @@
 [gd_scene format=3 uid="uid://bbiybc8ejhp7r"]
 
 [ext_resource type="Script" uid="uid://xfrh8ehghwt5" path="res://Scenes/interactables/phone_booth.gd" id="1_2nimd"]
+[ext_resource type="Texture2D" uid="uid://b3yxh2j5rnb0d" path="res://textures/Tile_02-512x512.png" id="2_p8f41"]
 [ext_resource type="PackedScene" uid="uid://cch7yj02lw5be" path="res://Models/phone.tscn" id="3_2nimd"]
 [ext_resource type="Script" uid="uid://co163h5fjdx7h" path="res://npc_interact_collision.gd" id="3_p8f41"]
+[ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/props/glass.tscn" id="4_7vfir"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5lyi"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p8f41"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2v7e1"]
+albedo_texture = ExtResource("2_p8f41")
+uv1_scale = Vector3(4, 4, 4)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_qqp43"]
+material = SubResource("StandardMaterial3D_2v7e1")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2v7e1"]
+points = PackedVector3Array(-0.21418296, -0.94802845, -0.4511285, 0.022731654, 0.9521457, 0.49888662, 0.17148845, 0.9519953, 0.46901843, -0.12593445, 0.9526843, -0.48329136, 0.49966258, -0.95367396, -0.0068888306, -0.3876465, -0.9379602, 0.31565303, -0.48329246, 0.9526857, -0.12593003, 0.37509736, 0.9401282, -0.3298157, 0.17148845, -0.9519953, 0.46901843, 0.14078338, -0.9454848, -0.47957912, 0.4690145, 0.9520113, 0.17149934, -0.3876465, 0.9379602, 0.31565303, -0.48329246, -0.9526857, -0.12593003, -0.18351147, -0.9430759, 0.46469846, 0.40741244, -0.9469937, 0.2889825, 0.37509736, -0.9401282, -0.3298157, -0.39515373, 0.9557608, -0.3055234, -0.479555, 0.9454372, 0.1408799, 0.46469817, 0.94309926, -0.18351227, 0.14078338, 0.9454848, -0.47957912, -0.24320284, 0.9459547, 0.43649116, -0.479555, -0.9454372, 0.1408799, 0.2889712, 0.9469877, 0.4074208, -0.39515373, -0.9557608, -0.3055234, -0.006990604, -0.953641, 0.4996576, 0.49966258, 0.95367396, -0.0068888306, -0.27194828, 0.943071, -0.41921657, 0.46469817, -0.94309926, -0.18351227, -0.12593445, -0.9526843, -0.48329136, 0.31564754, 0.93797344, -0.38765055, 0.4690145, -0.9520113, 0.17149934, 0.40741244, 0.9469937, 0.2889825)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
 size = Vector3(0.2866211, 0.6469116, 0.5671387)
 
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+size = Vector3(0.3960266, 0.5830078, 0.36120605)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4iskq"]
+points = PackedVector3Array(0.198, 0.2865471, 0.17897937, -0.19753729, -0.2886673, -0.1806, 0.198, -0.2865471, -0.17927462, -0.19786206, -0.2891396, 0.1806, -0.19753729, 0.2886673, -0.1806, -0.19786206, 0.2891396, 0.1806, 0.198, 0.2865471, -0.17927462, 0.198, -0.2865471, 0.17897937)
+
 [node name="PhoneBooth" type="Node3D" unique_id=1816539704]
 script = ExtResource("1_2nimd")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=29748459]
-transform = Transform3D(1.642721, 0, 0, 0, 2.4111452, 0, 0, 0, 0.18573141, 0, 0, 0.03867817)
-mesh = SubResource("BoxMesh_y5lyi")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1926059228]
-transform = Transform3D(1.642721, 0, 0, 0, 2.4111452, 0, 0, 0, 0.18573141, 0, 0, 1.8655953)
-mesh = SubResource("BoxMesh_y5lyi")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=992143188]
 transform = Transform3D(-7.1805616e-08, 0, 0.18573141, 0, 2.4111452, 0, -1.642721, 0, -8.118578e-09, -0.7193675, 0, 0.94888186)
 mesh = SubResource("BoxMesh_y5lyi")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=1438130030]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=634214948]
+shape = SubResource("ConvexPolygonShape3D_p8f41")
+
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=875924222]
 transform = Transform3D(2.442673, 0, 0, 0, 0.11436635, 0, 0, 0, 3.1566114, 0, 1.1368577, 0.86849403)
 mesh = SubResource("CylinderMesh_qqp43")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=674398572]
-transform = Transform3D(-3.321911e-08, 0, -0.3363982, 0, 0.7878945, 0, -0.75996476, 0, 1.4704432e-08, -0.48488623, 0, 0.94888186)
-mesh = SubResource("BoxMesh_y5lyi")
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4" unique_id=51901616]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=1031701968]
+shape = SubResource("ConvexPolygonShape3D_2v7e1")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=146039492 groups=["interactable"]]
 collision_layer = 8
@@ -46,3 +63,18 @@ shape = SubResource("BoxShape3D_bhunq")
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -0.30740607, 0, 1.0515784)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=291218602]
+
+[node name="glass2" parent="." unique_id=460925121 instance=ExtResource("4_7vfir")]
+transform = Transform3D(1, 0, 0, 0, 2.205556, 0, 0, 0, 1, -0.06225586, 0, 1.7399466)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1953990518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45709145, -0.08027005, 1.0139601)
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1564088319]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1451124468]
+shape = SubResource("ConvexPolygonShape3D_4iskq")
+
+[node name="glass3" parent="." unique_id=136233271 instance=ExtResource("4_7vfir")]
+transform = Transform3D(1, 0, 0, 0, 2.205556, 0, 0, 0, 1, -0.08504164, 0, 0.19086647)
