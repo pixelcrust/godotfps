@@ -165,7 +165,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.875
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.577883, 0.49999988, 2.2043915)
 
 [node name="ortsschild_vicino" parent="." unique_id=1534358878 instance=ExtResource("7_m8o6e")]
-transform = Transform3D(-0.09348491, 0, -0.4911828, 0, 0.5, 0, 0.4911828, 0, -0.09348491, -37.902607, 7.190443, -34.61392)
+transform = Transform3D(-0.09348491, 0, -0.4911828, 0, 0.5, 0, 0.4911828, 0, -0.09348491, -37.902607, 7.190443, -36.745094)
 
 [node name="RailwayTrackStraight" type="MeshInstance3D" parent="." unique_id=1228762864]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.478409, -0.15450461, 21.903522)

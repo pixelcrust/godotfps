@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bmyy4qbcwa1tt" path="res://Scenes/interactables/box_rigid.tscn" id="2_syqa8"]
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="3_sj1hf"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="4_m6a3f"]
+[ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/props/glass.tscn" id="5_6r065"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4yeaw"]
 
@@ -105,9 +106,9 @@ use_collision = true
 size = Vector3(9.5829, 4.76825, 3.1656497)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=1797302408]
-transform = Transform3D(0.96996546, 0, 0.24324259, 0, 1, 0, -0.24324259, 0, 0.96996546, 26.89571, 1.88412, -13.04122)
+transform = Transform3D(0.96996546, 0, 0.24324259, 0, 1, 0, -0.24324259, 0, 0.96996546, 26.89571, 2.4441402, -13.04122)
 use_collision = true
-size = Vector3(21.268013, 4.76825, 3.1656497)
+size = Vector3(21.268013, 5.8882904, 3.1656497)
 
 [node name="BoxRigid" parent="." unique_id=1290401740 instance=ExtResource("2_syqa8")]
 transform = Transform3D(0.95953053, 0, 0.28160468, 0, 1, 0, -0.28160468, 0, 0.95953053, 13.000235, 5.6579185, -8.17012)
@@ -116,11 +117,12 @@ transform = Transform3D(0.95953053, 0, 0.28160468, 0, 1, 0, -0.28160468, 0, 0.95
 transform = Transform3D(0.99578434, 0.09172756, 0, -0.09172756, 0.99578434, 0, 0, 0, 1, 6.64752, -2.2131906, 7.22008)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="streets" unique_id=1619630759]
+transform = Transform3D(0.9071741, -0.008550763, -0.4206695, -0.008550748, 0.99921227, -0.038750347, 0.42066938, 0.038750336, 0.90638596, 0, 0, 2.3923526)
 use_collision = true
 size = Vector3(23.295, 1, 4.43408)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="streets" unique_id=1435141198]
-transform = Transform3D(-0.97532976, -0.1845397, -0.12114868, -0.18455902, 0.98275805, -0.011159714, 0.12111929, 0.011474684, -0.99257165, 0.19801807, -2.1496615, 4.910485)
+transform = Transform3D(-0.9099401, -0.17834486, -0.37443587, -0.17853564, 0.9833287, -0.034491487, 0.3743449, 0.035464942, -0.9266111, 0.19801807, -2.1496615, 14.00169)
 use_collision = true
 size = Vector3(23.295, 1, 4.43408)
 
@@ -146,3 +148,6 @@ transit_to = 2
 [node name="LevelChange2" parent="." unique_id=2086237095 instance=ExtResource("3_sj1hf")]
 transform = Transform3D(0.9875624, 0, 0.46297216, 0, 1, 0, -0.15722738, 0, 2.907979, -3.3351383, -4.1930923, 13.57091)
 use_spawn_nr = 1
+
+[node name="glass" parent="." unique_id=1722143255 instance=ExtResource("5_6r065")]
+transform = Transform3D(7.7118983, 0, 0.42789766, 0, 1.2345206, 0, -1.6832875, 0, 1.960392, 8.379741, 4.768991, -9.062013)

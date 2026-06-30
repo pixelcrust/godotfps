@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="2_iwg2u"]
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="2_xssoj"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="3_iwg2u"]
+[ext_resource type="PackedScene" uid="uid://6i18xvra0jtk" path="res://Scenes/props/verzierung/ortsschild_straniero.tscn" id="4_hujh4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xssoj"]
 
@@ -96,3 +97,6 @@ current_level = 2
 [node name="player_spawn3" parent="." unique_id=607095675 instance=ExtResource("2_iwg2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.023616, 13.00136, -15.230785)
 spawn_nr = 3
+
+[node name="ortsschild_straniero" parent="." unique_id=1940582381 instance=ExtResource("4_hujh4")]
+transform = Transform3D(0.04314425, 0, 0.4981351, 0, 0.5, 0, -0.4981351, 0, 0.04314425, 55.249485, 16.063393, 7.989126)
