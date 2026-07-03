@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="2_xssoj"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="3_iwg2u"]
 [ext_resource type="PackedScene" uid="uid://6i18xvra0jtk" path="res://Scenes/props/verzierung/ortsschild_straniero.tscn" id="4_hujh4"]
+[ext_resource type="PackedScene" uid="uid://ckfwiuspr3ati" path="res://Scenes/props/tree_10.tscn" id="5_fe1mb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xssoj"]
 
@@ -100,3 +101,12 @@ spawn_nr = 3
 
 [node name="ortsschild_straniero" parent="." unique_id=1940582381 instance=ExtResource("4_hujh4")]
 transform = Transform3D(0.04314425, 0, 0.4981351, 0, 0.5, 0, -0.4981351, 0, 0.04314425, 55.249485, 16.063393, 7.989126)
+
+[node name="tree10" parent="." unique_id=79791086 instance=ExtResource("5_fe1mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.62652, 14.172387, -19.166)
+
+[node name="tree11" parent="." unique_id=1297250381 instance=ExtResource("5_fe1mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.018436, 14.676237, -20.05199)
+
+[node name="tree12" parent="." unique_id=1479379090 instance=ExtResource("5_fe1mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.574038, 12.358842, -8.126273)
