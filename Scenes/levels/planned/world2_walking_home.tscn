@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://bsf0ouhqr45to"]
 
+[ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="2_7arwl"]
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="2_iwg2u"]
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="2_xssoj"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="3_iwg2u"]
+[ext_resource type="PackedScene" uid="uid://6i18xvra0jtk" path="res://Scenes/props/verzierung/ortsschild_straniero.tscn" id="4_hujh4"]
+[ext_resource type="PackedScene" uid="uid://ckfwiuspr3ati" path="res://Scenes/props/verzierung/tree_10.tscn" id="5_fe1mb"]
+[ext_resource type="PackedScene" uid="uid://f1820x4wfrab" path="res://Scenes/props/verzierung/tree_05.tscn" id="6_detbg"]
+[ext_resource type="PackedScene" uid="uid://pri0gtr8s1qj" path="res://Scenes/props/bush.tscn" id="8_sigxr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xssoj"]
+sky_top_color = Color(0.8069743, 0.8431622, 0.89172775, 1)
+sky_horizon_color = Color(0.39963925, 0.62925947, 0.7977804, 1)
+ground_bottom_color = Color(0.85861164, 0.8146053, 0.76608455, 1)
 
 [sub_resource type="Sky" id="Sky_wyes4"]
 sky_material = SubResource("ProceduralSkyMaterial_xssoj")
@@ -14,7 +22,7 @@ background_mode = 2
 background_color = Color(0.458824, 0.458824, 0.458824, 1)
 background_energy_multiplier = 0.1
 sky = SubResource("Sky_wyes4")
-ambient_light_color = Color(0.886275, 0, 0, 1)
+ambient_light_color = Color(0.5299423, 0.457573, 0.3820259, 1)
 ambient_light_sky_contribution = 0.5
 tonemap_mode = 2
 glow_enabled = true
@@ -22,6 +30,13 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.015
 volumetric_fog_albedo = Color(1, 0.611765, 0.666667, 1)
 volumetric_fog_detail_spread = 5.09824
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7arwl"]
+albedo_texture = ExtResource("2_7arwl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_detbg"]
+albedo_texture = ExtResource("2_7arwl")
+uv1_scale = Vector3(2, 3, 2)
 
 [node name="World2WalkingHome" type="Node3D" unique_id=53108505]
 
@@ -33,7 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7908, 0.49999952, -2.2991
 spawn_nr = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1250487609]
-transform = Transform3D(-0.848388, -0.458453, 0.264686, 8.6873e-08, 0.499998, 0.866027, -0.529375, 0.734727, -0.424192, -12.2423, 80.9664, 0.407165)
+transform = Transform3D(-0.848388, -0.45845282, 0.26468638, 8.6873e-08, 0.49999776, 0.8660267, -0.529375, 0.73472667, -0.42419204, 15.79525, 80.9664, 0.407165)
 light_energy = 0.5
 shadow_enabled = true
 shadow_bias = 0.5
@@ -60,11 +75,13 @@ size = Vector3(56.0809, 1, 24.970325)
 transform = Transform3D(0.99736965, -0.07245506, 0.002001956, 0.07028051, 0.95994145, -0.27124414, 0.017731242, 0.27067128, 0.9625087, 20.621677, 13.382264, -18.858421)
 use_collision = true
 size = Vector3(39.89592, 1, 27.23362)
+material = SubResource("StandardMaterial3D_7arwl")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1685987760]
 transform = Transform3D(0.9844787, -0.1755042, 0, 0.1755042, 0.9844787, 0, 0, 0, 1, 9.532364, 5.401629, -16.31105)
 use_collision = true
 size = Vector3(85.26974, 9.926758, 19.03196)
+material = SubResource("StandardMaterial3D_detbg")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=1038610713]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.04238, 11.176014, -0.6856489)
@@ -96,3 +113,33 @@ current_level = 2
 [node name="player_spawn3" parent="." unique_id=607095675 instance=ExtResource("2_iwg2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.023616, 13.00136, -15.230785)
 spawn_nr = 3
+
+[node name="ortsschild_straniero" parent="." unique_id=1940582381 instance=ExtResource("4_hujh4")]
+transform = Transform3D(0.04314425, 0, 0.4981351, 0, 0.5, 0, -0.4981351, 0, 0.04314425, 55.249485, 13.761829, 7.989126)
+
+[node name="tree10" parent="." unique_id=79791086 instance=ExtResource("5_fe1mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.62652, 14.172387, -19.166)
+
+[node name="tree11" parent="." unique_id=1297250381 instance=ExtResource("5_fe1mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.018436, 14.676237, -20.05199)
+
+[node name="tree12" parent="." unique_id=1479379090 instance=ExtResource("5_fe1mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.574038, 12.358842, -8.126273)
+
+[node name="tree05" parent="." unique_id=1943565945 instance=ExtResource("6_detbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.828667, 12.889831, -15.153297)
+
+[node name="tree06" parent="." unique_id=2049846559 instance=ExtResource("6_detbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.842607, 11.914743, -13.346038)
+
+[node name="tree07" parent="." unique_id=869619980 instance=ExtResource("6_detbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1033897, 11.051884, -14.806114)
+
+[node name="tree13" parent="." unique_id=851383285 instance=ExtResource("5_fe1mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.516277, 11.589911, -14.839651)
+
+[node name="bush" parent="." unique_id=1406910266 instance=ExtResource("8_sigxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.211863, 12.366084, -9.231479)
+
+[node name="bush2" parent="." unique_id=242853937 instance=ExtResource("8_sigxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.666718, 11.753028, -13.43675)

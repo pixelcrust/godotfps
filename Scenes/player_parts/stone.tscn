@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjsytkkscf1my"]
 
-[ext_resource type="Script" uid="uid://biqj41jio13h" path="res://Scenes/player_parts/stone.gd" id="1_uyr0i"]
+[ext_resource type="Script" uid="uid://biqj41jio13h" path="res://Scripts/stone.gd" id="1_uyr0i"]
 [ext_resource type="PackedScene" uid="uid://btmhdwlq4yb5e" path="res://blender import/model_hand_left.tscn" id="3_n2bjs"]
 [ext_resource type="PackedScene" uid="uid://bnjnqwom2kws1" path="res://blender import/model_hand_right.tscn" id="4_lf2pe"]
 [ext_resource type="PackedScene" uid="uid://die02w3h6v1mu" path="res://blender import/stone_model.tscn" id="4_uyr0i"]
@@ -46,7 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.969829, 1.5294, 0.0341529), Vector3(0, 0, 0)]
+"values": [Vector3(-0.969829, 1.5294, 0.0341529), Vector3(0, -1.5707964, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_tcqhy"]
@@ -132,7 +132,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0009999999, 0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1.5707964, 0), Vector3(0.878285, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, -1.5707964, 0), Vector3(0, -1.5707964, 0), Vector3(0.8779006, -1.5707964, 0), Vector3(0, -1.5707964, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uyr0i"]

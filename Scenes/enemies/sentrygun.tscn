@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d6vrirhkna1a"]
+[gd_scene format=3 uid="uid://d6vrirhkna1a"]
 
 [ext_resource type="Script" uid="uid://bvjn7mrlmba6o" path="res://Scripts/sentrygun.gd" id="1_61r0p"]
 [ext_resource type="Script" uid="uid://cndp7dwwuo6yy" path="res://laser.gd" id="1_fwny5"]
@@ -56,85 +56,85 @@ radius = 0.4
 [sub_resource type="BoxShape3D" id="BoxShape3D_4idj3"]
 size = Vector3(0.492584, 1.14917, 0.755661)
 
-[node name="sentrygun" type="CharacterBody3D"]
+[node name="sentrygun" type="CharacterBody3D" unique_id=1596397682]
 collision_layer = 4
 script = ExtResource("1_61r0p")
 
-[node name="gun" type="MeshInstance3D" parent="."]
+[node name="gun" type="MeshInstance3D" parent="." unique_id=1114453009]
 transform = Transform3D(0.514957, 0, 0, 0, 0.433582, 0, 0, 0, 1, 0, 0.472139, 0)
 mesh = SubResource("BoxMesh_wrrps")
 
-[node name="barrel" type="MeshInstance3D" parent="gun"]
+[node name="barrel" type="MeshInstance3D" parent="gun" unique_id=1624948260]
 transform = Transform3D(0.275977, 0, 0, 0, -2.083e-08, -0.259838, 0, 0.476535, -1.13579e-08, -0.293106, -0.288665, 0.822986)
 mesh = SubResource("CylinderMesh_oo2j3")
 
-[node name="RayCast3D" type="RayCast3D" parent="gun/barrel"]
+[node name="RayCast3D" type="RayCast3D" parent="gun/barrel" unique_id=1590552512]
 transform = Transform3D(4.581, 0, 0, 0, -100, 4.23126e-07, 0, -8.74228e-06, -4.84, 0.143, 1.077, 0)
 collision_mask = 11
 script = ExtResource("1_fwny5")
 
-[node name="laser" type="MeshInstance3D" parent="gun/barrel/RayCast3D"]
+[node name="laser" type="MeshInstance3D" parent="gun/barrel/RayCast3D" unique_id=1664969532]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.13687e-13, 1, 0, 0, 0)
 visible = false
 mesh = SubResource("CylinderMesh_ib2vb")
 
-[node name="muzzleflash" parent="gun/barrel" instance=ExtResource("3_kwkni")]
+[node name="muzzleflash" parent="gun/barrel" unique_id=606312126 instance=ExtResource("3_kwkni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.42109e-14, 1, 0, 1.45125, 0.535001)
 
-[node name="PhysicalBone3D" type="PhysicalBone3D" parent="gun" groups=["has_hp"]]
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="gun" unique_id=408277878 groups=["has_hp"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_kb1s8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gun/PhysicalBone3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gun/PhysicalBone3D" unique_id=1331264853]
 shape = SubResource("BoxShape3D_yu1oo")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="gun/PhysicalBone3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="gun/PhysicalBone3D" unique_id=1471165836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286133, -0.262451, 0.835489)
 shape = SubResource("BoxShape3D_ee3ax")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="gun"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="gun" unique_id=2080601117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294014, 0.973624, -0.390654)
 mesh = SubResource("BoxMesh_mhsk1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="gun/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="gun/MeshInstance3D" unique_id=1801780523]
 transform = Transform3D(1, 0, 0, 0, 0.771058, -0.636765, 0, 0.636765, 0.771058, 0, 0.556334, 0)
 mesh = SubResource("SphereMesh_ivk74")
 
-[node name="PhysicalBone3D" type="PhysicalBone3D" parent="gun/MeshInstance3D/MeshInstance3D" groups=["has_hp"]]
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="gun/MeshInstance3D/MeshInstance3D" unique_id=1500628317 groups=["has_hp"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_kb1s8")
 damage_multiplier = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gun/MeshInstance3D/MeshInstance3D/PhysicalBone3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gun/MeshInstance3D/MeshInstance3D/PhysicalBone3D" unique_id=379355865]
 shape = SubResource("CylinderShape3D_ebyjp")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=2146834300]
 transform = Transform3D(0.0984808, -0.0868241, 0, 0.0173648, 0.492404, 0, 0, 0, 0.1, 0.14436, -0.140895, 0)
 mesh = SubResource("CylinderMesh_7cl2f")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=2050299226]
 transform = Transform3D(-0.0569836, 0.0502387, -0.0815593, 0.0173648, 0.492404, -2.74226e-10, 0.0803202, -0.0708131, -0.0578627, -0.0708166, -0.132665, 0.179434)
 mesh = SubResource("CylinderMesh_7cl2f")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=286138282]
 transform = Transform3D(-0.0948391, 0.0836134, 0.0269424, 0.0173648, 0.492404, -2.36726e-10, -0.0265331, 0.0233925, -0.0963021, -0.191345, -0.132665, -0.0353884)
 mesh = SubResource("CylinderMesh_7cl2f")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="between_shots" type="Timer" parent="."]
+[node name="between_shots" type="Timer" parent="." unique_id=813871840]
 one_shot = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1762567659]
 
-[node name="aim_helper" type="Node3D" parent="."]
+[node name="aim_helper" type="Node3D" parent="." unique_id=1892549163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39786, 0)
 
-[node name="timer_wait_till_attack" type="Timer" parent="."]
+[node name="timer_wait_till_attack" type="Timer" parent="." unique_id=1401652428]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=512981547]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00904846, 0.00823009, 0.00547799)
 shape = SubResource("BoxShape3D_4idj3")
 
