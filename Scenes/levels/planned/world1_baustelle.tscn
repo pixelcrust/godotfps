@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="2_sj1hf"]
 [ext_resource type="PackedScene" uid="uid://bmyy4qbcwa1tt" path="res://Scenes/interactables/box_rigid.tscn" id="2_syqa8"]
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="3_sj1hf"]
+[ext_resource type="PackedScene" uid="uid://bvdoalxpcnq0x" path="res://Scenes/props/verzierung/lüftungsschacht.tscn" id="3_tfjfa"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="4_m6a3f"]
 [ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/props/glass.tscn" id="5_6r065"]
 
@@ -151,3 +152,6 @@ use_spawn_nr = 1
 
 [node name="glass" parent="." unique_id=1722143255 instance=ExtResource("5_6r065")]
 transform = Transform3D(7.7118983, 0, 0.42789766, 0, 1.2345206, 0, -1.6832875, 0, 1.960392, 8.379741, 4.768991, -9.062013)
+
+[node name="duct_long" parent="." unique_id=1983723229 instance=ExtResource("3_tfjfa")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -3.148748, 0.19547617, 2.4250395)
