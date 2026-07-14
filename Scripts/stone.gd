@@ -18,6 +18,8 @@ const RECOIL = -5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hands.transform.origin = pos_standard
+	model_stone.mesh.set_layer_mask_value(1,false)
+	model_stone.mesh.set_layer_mask_value(2,true)
 	visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

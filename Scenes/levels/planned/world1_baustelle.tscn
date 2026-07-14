@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bvdoalxpcnq0x" path="res://Scenes/props/verzierung/lüftungsschacht.tscn" id="3_tfjfa"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="4_m6a3f"]
 [ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/props/glass.tscn" id="5_6r065"]
+[ext_resource type="PackedScene" uid="uid://dky53fiwwqf5g" path="res://Scenes/props/verzierung/maschendratzeun.tscn" id="7_c2gps"]
+[ext_resource type="PackedScene" uid="uid://dpksci37273yq" path="res://Scenes/props/verzierung/crane.tscn" id="8_ofbvv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4yeaw"]
 
@@ -154,4 +156,19 @@ use_spawn_nr = 1
 transform = Transform3D(7.7118983, 0, 0.42789766, 0, 1.2345206, 0, -1.6832875, 0, 1.960392, 8.379741, 4.768991, -9.062013)
 
 [node name="duct_long" parent="." unique_id=1983723229 instance=ExtResource("3_tfjfa")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -3.148748, 0.19547617, 2.4250395)
+transform = Transform3D(1.1486809, 0, 0.8003324, 0, 1.4000001, 0, -0.8003324, 0, 1.1486809, -5.1932144, 2.892113, -1.1725003)
+
+[node name="gate2" parent="." unique_id=912480397 instance=ExtResource("7_c2gps")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.729154, 0.29849464, 3.2542527)
+
+[node name="gate3" parent="." unique_id=2075258171 instance=ExtResource("7_c2gps")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.729154, 0.29849464, 2.2012117)
+
+[node name="gate4" parent="." unique_id=1935263222 instance=ExtResource("7_c2gps")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.729154, 0.29849464, 1.1033309)
+
+[node name="gate5" parent="." unique_id=447448427 instance=ExtResource("7_c2gps")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.729154, 0.29849464, -0.007064581)
+
+[node name="Crane" parent="." unique_id=1313097818 instance=ExtResource("8_ofbvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9642444, 25.820322, -10.356436)
