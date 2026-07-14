@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ckfwiuspr3ati" path="res://Scenes/props/verzierung/tree_10.tscn" id="5_fe1mb"]
 [ext_resource type="PackedScene" uid="uid://f1820x4wfrab" path="res://Scenes/props/verzierung/tree_05.tscn" id="6_detbg"]
 [ext_resource type="PackedScene" uid="uid://pri0gtr8s1qj" path="res://Scenes/props/bush.tscn" id="8_sigxr"]
+[ext_resource type="PackedScene" uid="uid://qd8tcmpkhbei" path="res://Scenes/props/verzierung/ms_table_cabin.tscn" id="9_pddkk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xssoj"]
 sky_top_color = Color(0.8069743, 0.8431622, 0.89172775, 1)
@@ -48,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7908, 0.49999952, -2.2991
 spawn_nr = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1250487609]
-transform = Transform3D(-0.848388, -0.45845282, 0.26468638, 8.6873e-08, 0.49999776, 0.8660267, -0.529375, 0.73472667, -0.42419204, 15.79525, 80.9664, 0.407165)
+transform = Transform3D(-0.848388, -0.45845285, 0.26468638, 8.6873e-08, 0.49999776, 0.8660267, -0.529375, 0.73472667, -0.424192, -288.66022, 160.43402, 0.407165)
 light_energy = 0.5
 shadow_enabled = true
 shadow_bias = 0.5
@@ -105,6 +106,7 @@ use_spawn_nr = 1
 
 [node name="LevelChange2" parent="." unique_id=1864212014 instance=ExtResource("2_xssoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.4183655, -66.65657, 1.0519085, -1.7272253)
+transit_to = 3
 
 [node name="savepoint" parent="." unique_id=1420132594 instance=ExtResource("3_iwg2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29172, 11.32934, -13.233103)
@@ -143,3 +145,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.211863, 12.366084, -9.2314
 
 [node name="bush2" parent="." unique_id=242853937 instance=ExtResource("8_sigxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.666718, 11.753028, -13.43675)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=962393123]
+transform = Transform3D(-4.371139e-08, -1, 0, 0.69270015, -3.0278883e-08, 0.7212257, -0.7212257, 3.1525776e-08, 0.69270015, -163.57585, 20.421282, 61.795406)
+use_collision = true
+size = Vector3(101.37727, 1, 177.37808)
+
+[node name="MS_Table_Cabin" parent="." unique_id=482296992 instance=ExtResource("9_pddkk")]
+transform = Transform3D(1, 0, 0, 0, 0.9927038, -0.12057851, 0, 0.12057851, 0.9927038, 4.6512213, 10.617329, -11.833503)
