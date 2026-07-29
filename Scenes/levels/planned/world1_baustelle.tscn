@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bgaxd13cn6ucb" path="res://Scenes/props/glass.tscn" id="5_6r065"]
 [ext_resource type="PackedScene" uid="uid://dky53fiwwqf5g" path="res://Scenes/props/verzierung/maschendratzeun.tscn" id="7_c2gps"]
 [ext_resource type="PackedScene" uid="uid://dpksci37273yq" path="res://Scenes/props/verzierung/crane.tscn" id="8_ofbvv"]
+[ext_resource type="PackedScene" uid="uid://c2ibci4x7sb4v" path="res://Scenes/props/verzierung/street_light.tscn" id="9_rfrrj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4yeaw"]
 
@@ -172,3 +173,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.7
 
 [node name="Crane" parent="." unique_id=1313097818 instance=ExtResource("8_ofbvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9642444, 25.820322, -10.356436)
+
+[node name="street_light2" parent="." unique_id=599851039 instance=ExtResource("9_rfrrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35364342, -1.8321675, 8.978457)
