@@ -28,7 +28,7 @@ ambient_light_sky_contribution = 0.5
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.015
+volumetric_fog_density = 0.0
 volumetric_fog_albedo = Color(1, 0.611765, 0.666667, 1)
 volumetric_fog_detail_spread = 5.09824
 
@@ -38,6 +38,9 @@ albedo_texture = ExtResource("2_7arwl")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_detbg"]
 albedo_texture = ExtResource("2_7arwl")
 uv1_scale = Vector3(2, 3, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+size = Vector3(1.8067017, 36.34137, 48.3208)
 
 [node name="World2WalkingHome" type="Node3D" unique_id=53108505]
 
@@ -49,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7908, 0.49999952, -2.2991
 spawn_nr = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1250487609]
-transform = Transform3D(-0.848388, -0.45845285, 0.26468638, 8.6873e-08, 0.49999776, 0.8660267, -0.529375, 0.73472667, -0.424192, -288.66022, 160.43402, 0.407165)
+transform = Transform3D(-0.848388, -0.45845285, 0.26468638, 8.6873e-08, 0.49999776, 0.8660267, -0.529375, 0.73472667, -0.424192, -288.66022, 55.272293, 0.407165)
 light_energy = 0.5
 shadow_enabled = true
 shadow_bias = 0.5
@@ -146,10 +149,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.211863, 12.366084, -9.2314
 [node name="bush2" parent="." unique_id=242853937 instance=ExtResource("8_sigxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.666718, 11.753028, -13.43675)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=962393123]
-transform = Transform3D(-4.371139e-08, -1, 0, 0.69270015, -3.0278883e-08, 0.7212257, -0.7212257, 3.1525776e-08, 0.69270015, -163.57585, 20.421282, 61.795406)
-use_collision = true
-size = Vector3(101.37727, 1, 177.37808)
-
 [node name="MS_Table_Cabin" parent="." unique_id=482296992 instance=ExtResource("9_pddkk")]
 transform = Transform3D(1, 0, 0, 0, 0.9927038, -0.12057851, 0, 0.12057851, 0.9927038, 4.6512213, 10.617329, -11.833503)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1936879654]
+transform = Transform3D(1, 0, 0, 0, 0.85705227, 0.51522946, 0, -0.51522946, 0.85705227, -79.3974, 27.297829, 21.596436)
+mesh = SubResource("BoxMesh_yf5fn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=430988467]
+transform = Transform3D(1, 0, 0, 0, 0.49675176, -0.8678926, 0, 0.8678926, 0.49675176, -79.3974, 27.297829, -24.807037)
+mesh = SubResource("BoxMesh_yf5fn")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=428619843]
+transform = Transform3D(0.9844787, -0.1755042, 0, 0.1755042, 0.9844787, 0, 0, 0, 1, 39.696503, 4.286197, 13.14027)
+use_collision = true
+size = Vector3(85.26974, 9.926758, 19.03196)
+material = SubResource("StandardMaterial3D_detbg")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1810611034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.454636, 18.862936, -1.8009081)
+use_collision = true
+size = Vector3(23.256392, 1, 7.445118)
