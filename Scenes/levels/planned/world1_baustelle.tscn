@@ -20,13 +20,13 @@ background_mode = 2
 background_color = Color(0.458824, 0.458824, 0.458824, 1)
 background_energy_multiplier = 0.1
 sky = SubResource("Sky_m1s6g")
-ambient_light_color = Color(0.886275, 0, 0, 1)
+ambient_light_color = Color(1, 0.6313726, 0.8627451, 1)
 ambient_light_sky_contribution = 0.5
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.015
-volumetric_fog_albedo = Color(1, 0.611765, 0.666667, 1)
+volumetric_fog_density = 0.035
+volumetric_fog_albedo = Color(0.999991, 0.36986107, 0.50310206, 1)
 volumetric_fog_detail_spread = 5.09824
 
 [node name="World1Baustelle" type="Node3D" unique_id=660254983]
