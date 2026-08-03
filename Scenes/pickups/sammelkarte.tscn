@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://uxwa7gwtksgu"]
+[gd_scene format=4 uid="uid://uxwa7gwtksgu"]
 
+[ext_resource type="Script" uid="uid://denadg0nk0i8i" path="res://Scripts/sammelkarte.gd" id="1_egsxc"]
 [ext_resource type="Texture2D" uid="uid://dt6um3kx07n0r" path="res://Sprites/wattkortn/Sprite-0001.png" id="1_od66m"]
+[ext_resource type="Script" uid="uid://b25ivuvudqe7b" path="res://Scripts/dropped_collision.gd" id="2_odjvc"]
+[ext_resource type="Material" uid="uid://c1adtqg6o2kx2" path="res://outline_material.tres" id="3_egsxc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p0fee"]
 size = Vector3(0.45, 0.7, 0.01)
@@ -10,8 +13,38 @@ albedo_texture = ExtResource("1_od66m")
 uv1_scale = Vector3(3, 2, 2)
 uv1_offset = Vector3(0.005, 0, 0)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hjpc0"]
+points = PackedVector3Array(-0.225, -0.35, -0.005, -0.225, -0.35, 0.005, -0.225, 0.3499315, -0.005, 0.225, -0.35, -0.005, 0.225, -0.35, 0.005, -0.225, 0.3499315, 0.005, 0.225, 0.3499315, -0.005, 0.225, 0.3499315, 0.005)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ue4bv"]
+_surfaces = [{
+"aabb": AABB(-0.2307735, -0.3557735, -0.010773502, 0.461547, 0.711547, 0.021547005),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"material": ExtResource("3_egsxc"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("409svvIntj5YgzA8409sPvIntj5YgzC8409sPvIntj5YgzA8409svvIntj5YgzC8409svvIntr5YgzA8409sPvIntr5YgzC8409sPvIntr5YgzA8409svvIntr5YgzC8409sPvIntj5YgzA8409svvIntj5YgzC8409sPvIntj5YgzC8409svvIntj5YgzA8409sPvIntr5YgzA8409svvIntr5YgzC8409sPvIntr5YgzC8409svvIntr5YgzA8409sPvIntj5YgzA8409svvIntr5YgzA8409svvIntj5YgzA8409sPvIntr5YgzA8409sPvIntj5YgzC8409svvIntr5YgzC8409svvIntj5YgzC8409sPvIntr5YgzC8/3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
 [node name="Sammelkarte" type="Node3D" unique_id=1682501228]
+transform = Transform3D(1.4035016, -0.5293233, 0, 0.5293233, 1.4035016, 0, 0, 0, 1.5, 0, 0, 0)
+script = ExtResource("1_egsxc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1076408114]
 mesh = SubResource("BoxMesh_p0fee")
 surface_material_override/0 = SubResource("StandardMaterial3D_t2j8a")
+
+[node name="StaticBody3D" type="Area3D" parent="MeshInstance3D" unique_id=1045862038 groups=["interactable"]]
+collision_layer = 8
+script = ExtResource("2_odjvc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=302377356]
+shape = SubResource("ConvexPolygonShape3D_hjpc0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=330198510]
+visible = false
+mesh = SubResource("ArrayMesh_ue4bv")

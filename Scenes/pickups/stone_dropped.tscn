@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w1grx1igvg34"]
 
-[ext_resource type="Script" uid="uid://do2adgfja231l" path="res://Scenes/pickups/stone_dropped.gd" id="1_xu183"]
+[ext_resource type="Script" uid="uid://do2adgfja231l" path="res://Scripts/stone_dropped.gd" id="1_xu183"]
 [ext_resource type="Script" uid="uid://d17yn324fbadx" path="res://Scripts/Area3D.gd" id="2_h4pyj"]
 [ext_resource type="PackedScene" uid="uid://die02w3h6v1mu" path="res://blender import/stone_model.tscn" id="3_xu183"]
 

@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://d2risb5qv448s" path="res://assets/val straniero/metaltrashcan_open.fbx" id="23_hidpi"]
 [ext_resource type="PackedScene" uid="uid://c2ibci4x7sb4v" path="res://Scenes/props/verzierung/street_light.tscn" id="25_620fh"]
 [ext_resource type="PackedScene" uid="uid://kh7srwx05hmh" path="res://assets/val straniero/traffic_light_L.glb" id="25_r5156"]
+[ext_resource type="PackedScene" uid="uid://uxwa7gwtksgu" path="res://Scenes/pickups/sammelkarte.tscn" id="26_gc1dv"]
 [ext_resource type="PackedScene" uid="uid://bbiybc8ejhp7r" path="res://Scenes/interactables/phone_booth.tscn" id="26_hidpi"]
 [ext_resource type="PackedScene" uid="uid://b4215swkhkpmy" path="res://Scenes/enemies/enemy_camera.tscn" id="27_gc1dv"]
 
@@ -249,3 +250,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -53.
 
 [node name="street_light5" parent="." unique_id=897985634 instance=ExtResource("25_620fh")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.1536865, 0.5546373, -6.012106)
+
+[node name="Sammelkarte" parent="." unique_id=1682501228 instance=ExtResource("26_gc1dv")]
+transform = Transform3D(0.93566775, -0.35288218, 0, 0.35288218, 0.93566775, 0, 0, 0, 1, -10.373561, 0.91432166, 0.35211036)

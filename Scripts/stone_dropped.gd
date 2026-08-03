@@ -18,7 +18,7 @@ const max_loaded = 1
 	"loaded": 1,
 	"max_loaded": 1, # See above assignment.
 	"spare_ammo": 0,
-	"icon": preload("res://Sprites/icons/icon_grenade.png")
+	"icon": preload("res://Sprites/icons/icon_stone.png")
 	})
 	"""
 
