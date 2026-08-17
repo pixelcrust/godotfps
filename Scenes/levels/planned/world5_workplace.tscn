@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="1_1b00h"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="2_1b00h"]
 [ext_resource type="PackedScene" uid="uid://d6vrirhkna1a" path="res://Scenes/enemies/sentrygun.tscn" id="3_1xclh"]
+[ext_resource type="PackedScene" uid="uid://dyx7pwh6rb44v" path="res://Scenes/props/verzierung/car.tscn" id="4_qdtv6"]
+[ext_resource type="PackedScene" uid="uid://c2ibci4x7sb4v" path="res://Scenes/props/verzierung/street_light.tscn" id="5_s84h3"]
+[ext_resource type="PackedScene" uid="uid://f1820x4wfrab" path="res://Scenes/props/verzierung/tree_05.tscn" id="6_2lho0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1b00h"]
 sky_top_color = Color(0.17569044, 0.4581092, 0.7431162, 1)
@@ -81,9 +84,9 @@ use_collision = true
 size = Vector3(1, 10, 12.683808)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=560077079]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.139859, 5.188242, -9.65632)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.139859, 5.188242, -19.334908)
 use_collision = true
-size = Vector3(1, 10, 28.635256)
+size = Vector3(1, 10, 47.99243)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1421468342]
 transform = Transform3D(1, 0, 0, 0, 0.99924606, -0.038823817, 0, 0.038823817, 0.99924606, 12.680509, 1.3578637, -0.08896715)
@@ -141,19 +144,9 @@ use_collision = true
 size = Vector3(1, 4.7773438, 48.928436)
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="CSGBox3D19" unique_id=227297363]
-transform = Transform3D(1, 0, 0, 0, 0.9975285, 0.07026137, 0, -0.07026137, 0.9975285, 2.8440704, 2.1926014, -5.0332413)
+transform = Transform3D(1, 0, 0, 0, 0.9975272, 0.07026137, 0, -0.07026137, 0.9975272, 0.0073337555, 1.2246232, -15.864172)
 use_collision = true
-size = Vector3(2.899303, 3.9789124, 3.34827)
-
-[node name="CSGBox3D22" type="CSGBox3D" parent="CSGBox3D19" unique_id=156483775]
-transform = Transform3D(1, 0, 0, 0, 0.99968195, -0.025217332, 0, 0.025217332, 0.99968195, 20.153755, 1.7801151, -13.749924)
-use_collision = true
-size = Vector3(8.868597, 2.965042, 4.342226)
-
-[node name="CSGBox3D23" type="CSGBox3D" parent="CSGBox3D19" unique_id=73511315]
-transform = Transform3D(1, 0, 0, 0, 0.99968195, -0.025217332, 0, 0.025217332, 0.99968195, 20.153755, 1.7298696, -7.4297867)
-use_collision = true
-size = Vector3(8.868597, 2.965042, 4.342226)
+size = Vector3(2.899303, 3.9789124, 14.575991)
 
 [node name="CSGBox3D24" type="CSGBox3D" parent="CSGBox3D19" unique_id=866850565]
 transform = Transform3D(0.9185247, 0.04259612, 0.39306232, -0.032670587, 0.99895656, -0.0319108, -0.3940115, 0.016469292, 0.91895825, 13.981423, 0.47646666, -30.22678)
@@ -174,3 +167,20 @@ transform = Transform3D(0.7143242, 0, 0.6998149, 0, 1, 0, -0.6998149, 0, 0.71432
 
 [node name="sentrygun2" parent="." unique_id=1239568708 instance=ExtResource("3_1xclh")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.622539, 2.8003793, -16.565548)
+
+[node name="Car" parent="." unique_id=1646064923 instance=ExtResource("4_qdtv6")]
+transform = Transform3D(0.06897008, 0, 0.99761873, 0, 1, 0, -0.99761873, 0, 0.06897008, 34.30345, -2.0728133, 44.778553)
+
+[node name="Car2" parent="." unique_id=1036912734 instance=ExtResource("4_qdtv6")]
+transform = Transform3D(-0.0036855098, 0, 0.9999932, 0, 1, 0, -0.9999932, 0, -0.0036855098, 34.690765, -1.7882912, 38.761147)
+
+[node name="street_light2" parent="." unique_id=599851039 instance=ExtResource("5_s84h3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.621372, -0.1609714, 23.971317)
+
+[node name="tree05" parent="." unique_id=1943565945 instance=ExtResource("6_2lho0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.899199, 12.585389, 37.756496)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="." unique_id=347607251]
+transform = Transform3D(0.0026982552, 0, -0.99999636, 0, 1, 0, 0.99999636, 0, 0.0026982552, 9.767113, 3.8302708, -50.509945)
+use_collision = true
+size = Vector3(15.317871, 7.2840576, 58.747345)
