@@ -15,11 +15,11 @@ func _ready() -> void:
 		"2":
 			next_scene = "res://Scenes/levels/planned/world2_walking_home.tscn"
 		"3":
-			next_scene = "res://Scenes/levels/planned/world3_home"
+			next_scene = "res://Scenes/levels/planned/world3_home.tscn"
 		"4":
-			next_scene = "res://Scenes/levels/planned/world4_blacksmith"
+			next_scene = "res://Scenes/levels/planned/world4_blacksmith.tscn"
 		"5":
-			next_scene = "res://Scenes/levels/planned/world5_workplace"
+			next_scene = "res://Scenes/levels/planned/world5_workplace.tscn"
 		_:
 			next_scene = "res://Scenes/levels/planned/world0_bahnhof.tscn"
 	ResourceLoader.load_threaded_request(next_scene) # Replace with function body.

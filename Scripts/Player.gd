@@ -163,6 +163,9 @@ func _ready():
 	#Global.player_position = position
 	#Global.player_rotation = rotation
 	#sGlobal.player_camera_rotation = camera.rotation
+
+
+	"""
 	inventory.append({
 		"item_id": 6, #grenade
 		"loaded": 1,
@@ -170,8 +173,6 @@ func _ready():
 		"spare_ammo": 0,
 		"icon": preload("res://Sprites/icons/icon_grenade.png")
 	})
-
-	"""
 	inventory.append({
 		"item_id": 0, #pistol
 		"loaded": 7,

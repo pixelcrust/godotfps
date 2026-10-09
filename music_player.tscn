@@ -20,11 +20,11 @@
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_nqnhx"]
 clip_count = 16
-clip_0/name = &"Herr Mannelig Epic And Mystic Nordic Music Swedish Ballad 1949"
-clip_0/stream = ExtResource("3_u8ia0")
+clip_0/name = &"Bella Ciao Italian Partisan Folk Song From The Late 19 Th Century 3052"
+clip_0/stream = ExtResource("2_rjark")
 clip_0/auto_advance = 0
-clip_1/name = &"Bella Ciao Italian Partisan Folk Song From The Late 19 Th Century 3052"
-clip_1/stream = ExtResource("2_rjark")
+clip_1/name = &"Herr Mannelig Epic And Mystic Nordic Music Swedish Ballad 1949"
+clip_1/stream = ExtResource("3_u8ia0")
 clip_1/auto_advance = 0
 clip_2/name = &"Casatschok Ukrainian Cossack Dance 4920"
 clip_2/stream = ExtResource("3_a2ugy")
@@ -69,7 +69,7 @@ clip_15/name = &"Zither Polka Alpenmusik Music From The Alps 1394"
 clip_15/stream = ExtResource("9_5oa1o")
 clip_15/auto_advance = 0
 
-[node name="MusicPlayer" type="Node2D" unique_id=1358460510]
+[node name="MusicPlayer" type="Node2D" unique_id=1358460510 groups=["group_music_player"]]
 process_mode = 3
 script = ExtResource("1_fvyft")
 

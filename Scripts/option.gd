@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var back = $back
 @onready var sensitivity_slider = $HSlider
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
 @onready var SOUND_CLICK = preload("res://Sounds/button_on_off_064.wav")
@@ -26,6 +25,7 @@ func _on_button_back_pressed():
 	#save options in file
 	Global.config.load(Global.path)
 	Global.config.set_value("OPTIONS","volume_music",Global.volume_music)
+	Global.config.save(Global.path)
 	audio_stream_player_2d.stream = SOUND_CLICK
 	audio_stream_player_2d.play(0.6)
 	await get_tree().create_timer(.2).timeout

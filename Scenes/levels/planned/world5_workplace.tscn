@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dyx7pwh6rb44v" path="res://Scenes/props/verzierung/car.tscn" id="4_qdtv6"]
 [ext_resource type="PackedScene" uid="uid://c2ibci4x7sb4v" path="res://Scenes/props/verzierung/street_light.tscn" id="5_s84h3"]
 [ext_resource type="PackedScene" uid="uid://f1820x4wfrab" path="res://Scenes/props/verzierung/tree_05.tscn" id="6_2lho0"]
+[ext_resource type="PackedScene" uid="uid://curwbo2aommjw" path="res://Scenes/enemies/enemy_bat.tscn" id="7_2lho0"]
+[ext_resource type="PackedScene" uid="uid://b4215swkhkpmy" path="res://Scenes/enemies/enemy_camera.tscn" id="8_w4ehg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1b00h"]
 sky_top_color = Color(0.17569044, 0.4581092, 0.7431162, 1)
@@ -184,3 +186,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.899199, 12.585389, 37.756
 transform = Transform3D(0.0026982552, 0, -0.99999636, 0, 1, 0, 0.99999636, 0, 0.0026982552, 9.767113, 3.8302708, -50.509945)
 use_collision = true
 size = Vector3(15.317871, 7.2840576, 58.747345)
+
+[node name="sentrygun3" parent="." unique_id=850495087 instance=ExtResource("3_1xclh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91687393, 1.4045851, 13.3749275)
+
+[node name="enemy_bat" parent="." unique_id=1321605540 instance=ExtResource("7_2lho0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.105492, 3.8772764, 31.049114)
+
+[node name="EnemyCamera" parent="." unique_id=2017663304 instance=ExtResource("8_w4ehg")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.776324, 9.090819, 0.5549784)
+
+[node name="sentrygun4" parent="." unique_id=1181468474 instance=ExtResource("3_1xclh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.050301, 1.5370674, -5.80768)

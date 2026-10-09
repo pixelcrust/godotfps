@@ -10,20 +10,21 @@ var file = null
 @onready var SOUND_CLICK = preload("res://Sounds/button_on_off_064.wav")
 
 
-var audio_player = preload("res://music_player.tscn")
 
+var audio_player = preload("res://music_player.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#pass # Replace with function body.
-	var new_audio_player = audio_player.instantiate()
-	get_tree().root.get_children()[0].add_child(new_audio_player)
+	if get_tree().get_nodes_in_group("group_music_player").get(0) == null:
+		var new_audio_player = audio_player.instantiate()
+		get_tree().root.get_children()[0].add_child(new_audio_player)
 	
 	#load saved options
 	Global.config.load(Global.path)
 	button_continue.disabled = !Global.config.get_value("SAVE","save_file_exists",false)
 	
-	Global.volume_music = Global.config.get_value("OPTIONS","volume_music",50)
+	Global.volume_music = Global.config.get_value("OPTIONS","volume_music",20)
 	Global.config.save(Global.path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

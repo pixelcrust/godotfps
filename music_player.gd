@@ -9,8 +9,8 @@ var volume : int = 50
 
 
 func _process(delta: float) -> void:
-	audio_stream_player.volume_linear = Global.volume_music / 100
-	
+
+	audio_stream_player.volume_linear = Global.volume_music / 10
 	if(Input.is_action_just_pressed("key_music_next")):
 		pass
 		

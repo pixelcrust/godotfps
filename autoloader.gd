@@ -20,7 +20,7 @@ var path : String = "user://save.cfg"
 #options
 var paused = false
 var player_sensitivity = 0.05
-var volume_music : int = 50
+var volume_music : int = 30
 var volume_sounds : int = 50
 var music_enabled : bool = true
 var current_track : int = 0

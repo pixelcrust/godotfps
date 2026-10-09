@@ -24,7 +24,7 @@ var state = 1
 #3..charging
 
 func _ready() -> void:
-	player = get_tree().get_nodes_in_group("player")[0]
+	player = get_tree().get_nodes_in_group("player_root")[0]
 	
 func _physics_process(delta):
 	# Add the gravity.

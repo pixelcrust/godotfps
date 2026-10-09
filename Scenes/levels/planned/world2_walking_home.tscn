@@ -165,8 +165,3 @@ transform = Transform3D(0.9844787, -0.1755042, 0, 0.1755042, 0.9844787, 0, 0, 0,
 use_collision = true
 size = Vector3(85.26974, 9.926758, 19.03196)
 material = SubResource("StandardMaterial3D_detbg")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1810611034]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.454636, 18.862936, -1.8009081)
-use_collision = true
-size = Vector3(23.256392, 1, 7.445118)
