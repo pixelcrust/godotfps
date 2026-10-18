@@ -7,14 +7,16 @@ var volume : int = 50
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-
+func _ready() -> void:
+	pass
+	
 func _process(delta: float) -> void:
 
 	audio_stream_player.volume_linear = Global.volume_music / 10
-	if(Input.is_action_just_pressed("key_music_next")):
+	if Input.is_action_just_pressed("key_music_next"):
 		pass
 		
-	if(Input.is_action_just_pressed("key_music_pause")):
+	if Input.is_action_just_pressed("key_music_pause"):
 		if(audio_stream_player.stream_paused == true):
 			audio_stream_player.stream_paused = false
 		else:

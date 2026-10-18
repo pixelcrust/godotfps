@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://yo7i30kqta6q" path="res://textures/Grass_12-512x512.png" id="2_7arwl"]
 [ext_resource type="PackedScene" uid="uid://w1g7br6fw83t" path="res://Scenes/levels/player_spawn.tscn" id="2_iwg2u"]
+[ext_resource type="Texture2D" uid="uid://d2ei6g2hv4iel" path="res://textures/background top.png" id="2_wlv3x"]
 [ext_resource type="PackedScene" uid="uid://kr8jpt8n7eld" path="res://Scenes/levels/level_change.tscn" id="2_xssoj"]
 [ext_resource type="PackedScene" uid="uid://b7adh0474y74v" path="res://Scenes/interactables/savepoint.tscn" id="3_iwg2u"]
 [ext_resource type="PackedScene" uid="uid://6i18xvra0jtk" path="res://Scenes/props/verzierung/ortsschild_straniero.tscn" id="4_hujh4"]
@@ -32,6 +33,15 @@ volumetric_fog_density = 0.0
 volumetric_fog_albedo = Color(1, 0.611765, 0.666667, 1)
 volumetric_fog_detail_spread = 5.09824
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x21u1"]
+albedo_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4i8e"]
+albedo_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obi2g"]
+albedo_texture = ExtResource("2_wlv3x")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7arwl"]
 albedo_texture = ExtResource("2_7arwl")
 
@@ -39,8 +49,20 @@ albedo_texture = ExtResource("2_7arwl")
 albedo_texture = ExtResource("2_7arwl")
 uv1_scale = Vector3(2, 3, 2)
 
-[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
-size = Vector3(1.8067017, 36.34137, 48.3208)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlv3x"]
+albedo_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnp6v"]
+albedo_texture = ExtResource("2_7arwl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tu5bv"]
+albedo_texture = ExtResource("2_7arwl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pddkk"]
+albedo_texture = ExtResource("2_wlv3x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v0bn"]
+albedo_texture = ExtResource("2_wlv3x")
 
 [node name="World2WalkingHome" type="Node3D" unique_id=53108505]
 
@@ -64,16 +86,19 @@ environment = SubResource("Environment_hujh4")
 transform = Transform3D(0.9761258, -0.21720634, 0, 0.21720634, 0.9761258, 0, 0, 0, 1, 11.0815, 5.035096, -1.0951042)
 use_collision = true
 size = Vector3(56.0809, 1, 12.190163)
+material = SubResource("StandardMaterial3D_x21u1")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=473278223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.06078, 0, -1.1862707)
 use_collision = true
 size = Vector3(56.0809, 1, 12.365944)
+material = SubResource("StandardMaterial3D_j4i8e")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1019462651]
-transform = Transform3D(0.9993131, 0.029687025, -0.022179786, -0.011515966, -0.32010913, -0.9473107, -0.035222776, 0.94691557, -0.31954736, 10.4853115, 10.509196, 6.1965637)
+transform = Transform3D(0.10450817, 0.034984823, -0.99390876, -0.9224892, -0.37001276, -0.11002275, -0.37160766, 0.92836815, -0.0063962108, 9.426221, 10.579394, 7.2151847)
 use_collision = true
-size = Vector3(56.0809, 1, 24.970325)
+size = Vector3(15.728966, 1, 57.977566)
+material = SubResource("StandardMaterial3D_obi2g")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=487495631]
 transform = Transform3D(0.99736965, -0.07245506, 0.002001956, 0.07028051, 0.95994145, -0.27124414, 0.017731242, 0.27067128, 0.9625087, 20.621677, 13.382264, -18.858421)
@@ -82,25 +107,28 @@ size = Vector3(39.89592, 1, 27.23362)
 material = SubResource("StandardMaterial3D_7arwl")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1685987760]
-transform = Transform3D(0.9844787, -0.1755042, 0, 0.1755042, 0.9844787, 0, 0, 0, 1, 9.532364, 5.401629, -16.31105)
+transform = Transform3D(0.9844787, -0.1755042, 0, 0.1755042, 0.9844787, 0, 0, 0, 1, 9.532364, 5.401629, -33.23519)
 use_collision = true
-size = Vector3(85.26974, 9.926758, 19.03196)
+size = Vector3(85.26974, 9.926758, 52.880238)
 material = SubResource("StandardMaterial3D_detbg")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=1038610713]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.04238, 11.176014, -0.6856489)
 use_collision = true
 size = Vector3(56.0809, 1, 11.3647)
+material = SubResource("StandardMaterial3D_wlv3x")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=2104411105]
-transform = Transform3D(1, 0, 0, 0, 0.85049, 0.52599126, 0, -0.52599126, 0.85049, -40.06078, 3.7698998, 9.558658)
+transform = Transform3D(1, 0, 0, 0, 0.85049, 0.52599126, 0, -0.52599126, 0.85049, -40.06078, 7.3200693, 15.2990265)
 use_collision = true
-size = Vector3(56.0809, 1, 15.430042)
+size = Vector3(56.0809, 1, 28.92901)
+material = SubResource("StandardMaterial3D_rnp6v")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=450324781]
-transform = Transform3D(-0.99994516, 0.005508065, -0.008906145, 0, 0.85049, 0.52599126, 0.010471781, 0.5259624, -0.85044336, -40.06078, 3.7698998, -14.251546)
+transform = Transform3D(-0.99994516, 0.005508065, -0.008906145, 0, 0.85049, 0.52599126, 0.010471781, 0.5259624, -0.85044336, -40.156906, 9.447077, -23.43063)
 use_collision = true
-size = Vector3(56.0809, 1, 15.430042)
+size = Vector3(56.0809, 1, 37.01663)
+material = SubResource("StandardMaterial3D_tu5bv")
 
 [node name="LevelChange" parent="." unique_id=1416941732 instance=ExtResource("2_xssoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 6.43013, 91.974915, 12.268215, 1.168541)
@@ -152,16 +180,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.666718, 11.753028, -13.436
 [node name="MS_Table_Cabin" parent="." unique_id=482296992 instance=ExtResource("9_pddkk")]
 transform = Transform3D(1, 0, 0, 0, 0.9927038, -0.12057851, 0, 0.12057851, 0.9927038, 4.6512213, 10.617329, -11.833503)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1936879654]
-transform = Transform3D(1, 0, 0, 0, 0.85705227, 0.51522946, 0, -0.51522946, 0.85705227, -79.3974, 27.297829, 21.596436)
-mesh = SubResource("BoxMesh_yf5fn")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=430988467]
-transform = Transform3D(1, 0, 0, 0, 0.49675176, -0.8678926, 0, 0.8678926, 0.49675176, -79.3974, 27.297829, -24.807037)
-mesh = SubResource("BoxMesh_yf5fn")
-
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=428619843]
 transform = Transform3D(0.9844787, -0.1755042, 0, 0.1755042, 0.9844787, 0, 0, 0, 1, 39.696503, 4.286197, 13.14027)
 use_collision = true
 size = Vector3(85.26974, 9.926758, 19.03196)
 material = SubResource("StandardMaterial3D_detbg")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1089676406]
+transform = Transform3D(-0.047673896, 0.90227824, -0.42851016, 0.97348505, 0.13805783, 0.18239173, 0.2237272, -0.40845296, -0.8849362, -101.12522, 14.696411, 61.366756)
+use_collision = true
+size = Vector3(99.29116, 1, 78.46329)
+material = SubResource("StandardMaterial3D_pddkk")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=851626459]
+transform = Transform3D(0.110176995, 0.7657475, 0.633634, 0.9214173, 0.1603176, -0.35396096, -0.37262747, 0.6228397, -0.6879097, -87.399055, 13.708113, -62.179115)
+use_collision = true
+size = Vector3(94.036545, 1, 55.947563)
+material = SubResource("StandardMaterial3D_4v0bn")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="." unique_id=1735366068]
+transform = Transform3D(-0.016458709, 0.22999968, -0.9730515, 0.98099476, 0.19189093, 0.028764147, 0.1933354, -0.9540848, -0.22878666, 49.88569, 11.952963, 91.532394)
+use_collision = true
+size = Vector3(99.29116, 1, 269.21796)
+material = SubResource("StandardMaterial3D_pddkk")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="." unique_id=871711986]
+transform = Transform3D(-0.036320686, 0.02737353, 0.9989651, -0.98795605, -0.15143958, -0.031770755, 0.150413, -0.9880874, 0.0325443, 49.88569, 11.952963, -47.79326)
+use_collision = true
+size = Vector3(99.29116, 1, 269.21796)
+material = SubResource("StandardMaterial3D_pddkk")

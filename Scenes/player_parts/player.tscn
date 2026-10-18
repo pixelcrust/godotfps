@@ -186,7 +186,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58754, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1888094256]
 cull_mask = 1048573
 size = 0.5
-far = 100.0
+far = 1000.0
 
 [node name="flashlight" type="SpotLight3D" parent="Head/Camera3D" unique_id=512150366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25633)

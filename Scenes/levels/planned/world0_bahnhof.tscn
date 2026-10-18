@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://uxwa7gwtksgu" path="res://Scenes/pickups/sammelkarte.tscn" id="26_gc1dv"]
 [ext_resource type="PackedScene" uid="uid://bbiybc8ejhp7r" path="res://Scenes/interactables/phone_booth.tscn" id="26_hidpi"]
 [ext_resource type="PackedScene" uid="uid://b4215swkhkpmy" path="res://Scenes/enemies/enemy_camera.tscn" id="27_gc1dv"]
+[ext_resource type="PackedScene" uid="uid://d2aqiqlxdswbe" path="res://Scenes/props/verzierung/ms_barrier_road.tscn" id="27_r5156"]
+[ext_resource type="PackedScene" uid="uid://cgxvrer7gxboa" path="res://Scenes/props/verzierung/ms_brick_pile.tscn" id="28_r5156"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -56,6 +58,7 @@ uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gw4tt"]
 albedo_texture = ExtResource("2_bgo3h")
+uv1_scale = Vector3(1, 1, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2b0v4"]
 albedo_texture = ExtResource("1_wruqn")
@@ -149,9 +152,9 @@ size = Vector3(52.063084, 1, 14.8951)
 material = SubResource("StandardMaterial3D_kusi7")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=402026710]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7604, -0.760814, 20.8956)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1898584, -0.760814, 20.8956)
 use_collision = true
-size = Vector3(71.6394, 1, 7.26299)
+size = Vector3(107.53992, 1, 7.26299)
 material = SubResource("StandardMaterial3D_3s3dn")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=1351083579]
@@ -231,7 +234,7 @@ transform = Transform3D(-0.03966094, 0, -0.99921316, 0, 1, 0, 0.99921316, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72510916, 0.50000006, -5.914632)
 
 [node name="traffic_light_L2" parent="." unique_id=1620378355 instance=ExtResource("25_r5156")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.72222, 4.9931707, -35.10144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.541245, 4.9931707, -35.10144)
 
 [node name="PhoneBooth" parent="." unique_id=1816539704 instance=ExtResource("26_hidpi")]
 transform = Transform3D(0.07125892, 0, -0.99745786, 0, 1, 0, 0.99745786, 0, 0.07125892, -6.7337804, 1.7055731, -4.8196883)
@@ -253,3 +256,47 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.1
 
 [node name="Sammelkarte" parent="." unique_id=1682501228 instance=ExtResource("26_gc1dv")]
 transform = Transform3D(0.93566775, -0.35288218, 0, 0.35288218, 0.93566775, 0, 0, 0, 1, -10.373561, 0.91432166, 0.35211036)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=2094170409]
+transform = Transform3D(-0.00061937235, -0.01678595, 3.0315866, 0.035481144, 0.9616665, 0.05291654, -1.0697284, 0.031906627, -1.3251486e-07, -20.491745, -1.0946405, 32.258377)
+use_collision = true
+size = Vector3(14.954214, 1, 17.322594)
+material = SubResource("StandardMaterial3D_gw4tt")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="." unique_id=1363648716]
+transform = Transform3D(-0.00061937235, -0.01678595, 3.0315866, 0.035481144, 0.9616665, 0.05291654, -1.0697284, 0.031906627, -1.3251486e-07, 30.836632, -1.0946405, 32.258377)
+use_collision = true
+size = Vector3(14.954214, 1, 17.322594)
+material = SubResource("StandardMaterial3D_gw4tt")
+
+[node name="RailwayTrackStraight3" type="MeshInstance3D" parent="." unique_id=263928358]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42.16587, -0.15591763, 21.909962)
+mesh = ExtResource("8_cai17")
+skeleton = NodePath("../RailwayTrackStraight")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="." unique_id=414171740]
+transform = Transform3D(-0.00061937235, -0.01678595, 3.0315866, 0.035481144, 0.9616665, 0.05291654, -1.0697284, 0.031906627, -1.3251486e-07, -35.066895, -1.2178458, 5.5296693)
+use_collision = true
+size = Vector3(22.347713, 1, 7.708578)
+material = SubResource("StandardMaterial3D_gw4tt")
+
+[node name="street_light6" parent="." unique_id=139598089 instance=ExtResource("25_620fh")]
+transform = Transform3D(0.99552876, 0, -0.09445917, 0, 1, 0, 0.09445917, 0, 0.99552876, -66.78586, 5.866988, -53.49303)
+
+[node name="MS_Barrier_Road" parent="." unique_id=923018723 instance=ExtResource("27_r5156")]
+transform = Transform3D(0.07538395, 0, -1.4981046, 0, 1.5, 0, 1.4981046, 0, 0.07538395, -90.74333, 4.9931693, -32.684822)
+
+[node name="MS_Barrier_Road2" parent="." unique_id=479079153 instance=ExtResource("27_r5156")]
+transform = Transform3D(0.07538395, 0, -1.4981046, 0, 1.5, 0, 1.4981046, 0, 0.07538395, -90.74333, 4.9931693, -29.512756)
+
+[node name="MS_Barrier_Road3" parent="." unique_id=1702189721 instance=ExtResource("27_r5156")]
+transform = Transform3D(0.07538395, 0, -1.4981046, 0, 1.5, 0, 1.4981046, 0, 0.07538395, -90.74333, 4.9931693, -25.541676)
+
+[node name="MS_Brick_Pile" parent="." unique_id=825028506 instance=ExtResource("28_r5156")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.53669, 0.905284, 15.93873)
+
+[node name="MS_Brick_Pile2" parent="." unique_id=495917100 instance=ExtResource("28_r5156")]
+transform = Transform3D(0.67825145, 0, -0.7348299, 0, 1, 0, 0.7348299, 0, 0.67825145, -23.034765, 0.90528446, 18.492153)
+
+[node name="MS_Brick_Pile3" parent="." unique_id=1143387507 instance=ExtResource("28_r5156")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.745092, -0.8969147, 16.313372)

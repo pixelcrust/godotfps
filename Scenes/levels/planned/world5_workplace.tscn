@@ -8,6 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://f1820x4wfrab" path="res://Scenes/props/verzierung/tree_05.tscn" id="6_2lho0"]
 [ext_resource type="PackedScene" uid="uid://curwbo2aommjw" path="res://Scenes/enemies/enemy_bat.tscn" id="7_2lho0"]
 [ext_resource type="PackedScene" uid="uid://b4215swkhkpmy" path="res://Scenes/enemies/enemy_camera.tscn" id="8_w4ehg"]
+[ext_resource type="PackedScene" uid="uid://bwwptgjr6pw5b" path="res://Scenes/pickups/ammo_pistol.tscn" id="9_o4js8"]
+[ext_resource type="PackedScene" uid="uid://cqbg8j44khcj6" path="res://Scenes/pickups/ammo_shotgun.tscn" id="10_wwnfr"]
+[ext_resource type="PackedScene" uid="uid://cecbp3mkbmocs" path="res://Scenes/pickups/ammo_sniper.tscn" id="11_gsy87"]
+[ext_resource type="PackedScene" uid="uid://digdc0wdsetba" path="res://Scenes/pickups/flashlight_dropped.tscn" id="12_osctu"]
+[ext_resource type="PackedScene" uid="uid://bqlro6hhkahua" path="res://Scenes/pickups/grenade_dropped.tscn" id="13_y835a"]
+[ext_resource type="PackedScene" uid="uid://dlscv3sge6u5e" path="res://Scenes/pickups/gun_dropped.tscn" id="14_g3a32"]
+[ext_resource type="PackedScene" uid="uid://doj4krciulmc7" path="res://Scenes/pickups/knife_dropped.tscn" id="15_btdy4"]
+[ext_resource type="PackedScene" uid="uid://dlst0rgesxcjk" path="res://Scenes/pickups/shotgun_dropped.tscn" id="16_shqhj"]
+[ext_resource type="PackedScene" uid="uid://8rghxxu8rxow" path="res://Scenes/pickups/sniper_dropped.tscn" id="17_gxjs6"]
+[ext_resource type="PackedScene" uid="uid://w1grx1igvg34" path="res://Scenes/pickups/stone_dropped.tscn" id="18_uwp5g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1b00h"]
 sky_top_color = Color(0.17569044, 0.4581092, 0.7431162, 1)
@@ -166,9 +176,11 @@ current_level = 4
 
 [node name="sentrygun" parent="." unique_id=1596397682 instance=ExtResource("3_1xclh")]
 transform = Transform3D(0.7143242, 0, 0.6998149, 0, 1, 0, -0.6998149, 0, 0.7143242, 8.7751045, 0.6122605, 32.491604)
+time_between_bullets = null
 
 [node name="sentrygun2" parent="." unique_id=1239568708 instance=ExtResource("3_1xclh")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.622539, 2.8003793, -16.565548)
+time_between_bullets = null
 
 [node name="Car" parent="." unique_id=1646064923 instance=ExtResource("4_qdtv6")]
 transform = Transform3D(0.06897008, 0, 0.99761873, 0, 1, 0, -0.99761873, 0, 0.06897008, 34.30345, -2.0728133, 44.778553)
@@ -189,6 +201,7 @@ size = Vector3(15.317871, 7.2840576, 58.747345)
 
 [node name="sentrygun3" parent="." unique_id=850495087 instance=ExtResource("3_1xclh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91687393, 1.4045851, 13.3749275)
+time_between_bullets = null
 
 [node name="enemy_bat" parent="." unique_id=1321605540 instance=ExtResource("7_2lho0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.105492, 3.8772764, 31.049114)
@@ -198,3 +211,34 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.776324, 9.090819, 0.5
 
 [node name="sentrygun4" parent="." unique_id=1181468474 instance=ExtResource("3_1xclh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.050301, 1.5370674, -5.80768)
+time_between_bullets = null
+
+[node name="ammo_pistol" parent="." unique_id=519545078 instance=ExtResource("9_o4js8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.649662, 0.45406646, 19.205975)
+
+[node name="ammo_shotgun" parent="." unique_id=788849470 instance=ExtResource("10_wwnfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.882973, 0.38865992, 20.246284)
+
+[node name="ammo_sniper" parent="." unique_id=1030307865 instance=ExtResource("11_gsy87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0291, 0.30443344, 20.958021)
+
+[node name="flashlight_dropped" parent="." unique_id=1325206721 instance=ExtResource("12_osctu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.533436, 0.5389452, 18.92936)
+
+[node name="grenade_dropped" parent="." unique_id=1576089984 instance=ExtResource("13_y835a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.12927, 0.30199018, 19.984722)
+
+[node name="gun_dropped" parent="." unique_id=172766048 instance=ExtResource("14_g3a32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.57901, 0.48486105, 20.947403)
+
+[node name="knife_dropped" parent="." unique_id=1189270115 instance=ExtResource("15_btdy4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 36.238735, 0.043258697, 23.036472)
+
+[node name="shotgun_dropped" parent="." unique_id=903752189 instance=ExtResource("16_shqhj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.557518, 0.012029402, 23.52466)
+
+[node name="sniper_dropped" parent="." unique_id=824570066 instance=ExtResource("17_gxjs6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.064007, 0.47055772, 21.372719)
+
+[node name="stone_dropped" parent="." unique_id=1842828315 instance=ExtResource("18_uwp5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.35291, 0.06753279, 23.901274)
