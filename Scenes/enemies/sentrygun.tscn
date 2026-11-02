@@ -125,7 +125,6 @@ mesh = SubResource("CylinderMesh_7cl2f")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="between_shots" type="Timer" parent="." unique_id=813871840]
-autostart = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1762567659]
 

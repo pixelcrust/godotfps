@@ -13,6 +13,7 @@ extends Node3D
 const sound_searching = preload("res://Sounds/Atari PC2 - Floppy Failure 3.wav")
 
 @onready var between_shots: Timer = $between_shots
+
 @onready var timer_wait_till_attack: Timer = $timer_wait_till_attack
 
 
@@ -49,7 +50,7 @@ var already_started_timer = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player_root")[0]
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	aim_helper.look_at(player.head.global_position)
