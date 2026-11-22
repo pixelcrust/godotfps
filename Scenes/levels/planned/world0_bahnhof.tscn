@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://d2aqiqlxdswbe" path="res://Scenes/props/verzierung/ms_barrier_road.tscn" id="27_r5156"]
 [ext_resource type="PackedScene" uid="uid://cgxvrer7gxboa" path="res://Scenes/props/verzierung/ms_brick_pile.tscn" id="28_r5156"]
 [ext_resource type="PackedScene" uid="uid://dj1r66vn40rp2" path="res://Scenes/props/lava.tscn" id="29_iv760"]
+[ext_resource type="PackedScene" uid="uid://bde1kwp50xu36" path="res://Scenes/enemies/sentry.tscn" id="30_odaua"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7nxjc"]
 
@@ -304,3 +305,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.745092, -0.8969147, 16.31
 
 [node name="lava" parent="." unique_id=1744456495 instance=ExtResource("29_iv760")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.067612, 0.0552165, 26.592283)
+
+[node name="sentry" parent="." unique_id=2055120841 instance=ExtResource("30_odaua")]
+transform = Transform3D(0.02916257, 0, -0.69939244, 0, 0.70000005, 0, 0.69939244, 0, 0.02916257, 17.72921, 1.8805671, -0.12231889)

@@ -1,10 +1,10 @@
 extends Node3D
 
-@onready var gun = $gun
-@onready var ray_cast_3d = $gun/barrel/RayCast3D
-@onready var laser = $gun/barrel/RayCast3D/laser
+@onready var gun = $Cube_003
+@onready var ray_cast_3d = $Cube_003/RayCast3D
+
 @onready var bullet = preload("res://Scenes/bullets/bullet.tscn")
-@onready var muzzleflash = $gun/barrel/muzzleflash/GPUParticles3D
+@onready var muzzleflash = $Cube_003/muzzleflash
 @onready var aim_helper: Node3D = $aim_helper
 
 #sound
@@ -81,7 +81,7 @@ func _process(delta):
 func aim(delta):
 	
 	gun.rotation.x = -aim_helper.rotation.x
-	gun.rotation.y = calculate_y_angle(gun.global_position,player.head.global_position)+deg_to_rad(90)
+	gun.rotation.y = calculate_y_angle(player.head.global_position,gun.global_position)
 	print(str(rad_to_deg(gun.rotation.y)))
 
 func shoot():

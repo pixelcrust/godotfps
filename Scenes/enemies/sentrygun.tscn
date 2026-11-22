@@ -15,14 +15,14 @@ material = SubResource("StandardMaterial3D_0oj7x")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_oo2j3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3s7sy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lv0o8"]
 transparency = 1
 albedo_color = Color(0.776471, 0.0941176, 0, 0.631373)
 emission_enabled = true
 emission = Color(0.933333, 0, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ib2vb"]
-material = SubResource("StandardMaterial3D_3s7sy")
+material = SubResource("StandardMaterial3D_lv0o8")
 top_radius = 0.02
 bottom_radius = 0.02
 height = 0.001
